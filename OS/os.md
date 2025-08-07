@@ -1,0 +1,852 @@
+<div align = "center"> <h1 style = "color:purple"> 🖥️ Operating System</h1></div>
+
+- Operating system is a system software that acts as an interface between user and computer's hardware.
+
+# 🔑Key functions of os
+
+- Process Management – Manages execution of multiple processes (multitasking).
+- Memory Management – Allocates and deallocates memory space as needed.
+- File System Management – Organizes, stores, retrieves, and protects data on storage devices.
+- Device Management – Manages input/output devices via device drivers.
+- Security and Access Control – Ensures authorized access to data and resources.
+- User Interface – Provides interfaces like CLI (Command Line Interface) or GUI (Graphical User Interface).
+
+<div align="center"> 
+    <img src = "./pic/os.png" width = "500" height = "500">
+</div>
+
+# 📚 Goals of os
+
+- Convenient to Use
+- Efficient Resource management
+- provide security and protection
+- To enable multitasking and multiprogramming
+
+<br>
+
+<div align = "center"> <h1  style="color:purple"> 🥷 Types of OS </h1></div>
+
+- Single process operating system
+- Batch-processing operating system
+- Multiprogramming operating system
+- Multitasking operating system
+- Multi-processing operating system
+- Distributed system
+- Real time OS
+
+# 📚 Single process os
+
+- A single-process operating system, specifically a single-user single-tasking operating system, allows only one process (or program) to be executed at a time by a single user
+
+## Advantages
+
+- Occupies less space in memory
+- Easy to maintain
+- Less chance of damage
+
+## Disadvantages
+
+- It can perform only a single task at a time.
+- Tasks take longer to complete.
+- os remains idle for most of the time and is not utilized to its maximum.
+
+<div align = "center"> 
+    <img src = "./pic/singleProcessOs.png" width = "600" height = "400" style = "border-radius: 15px;">
+</div>
+
+# 📚 Batch processing os
+
+- A batch processing operating system is an operating system that is designed to perform multiple tasks in a sequential manner.
+- Firstly, user prepares his job using punch cards.
+- Then, he submits the job to the computer operator.
+- Operator collects the jobs from different users and sort the jobs into batches with
+  similar needs.
+- Then, operator submits the batches to the processor one by one.
+- All the jobs of one batch are executed together.
+
+## Advantages
+
+- It can perform multiple tasks at a time.
+- It can perform tasks faster than a single-process operating system.
+
+## Disadvantages
+
+- Priorities cannot be set, if a job comes with some higher priority.
+- May lead to starvation. (A batch may take more time to complete)
+- CPU may become idle in case of I/O operations.
+
+<div align = "center"> 
+    <img src = "./pic/batchOs.png" width = "600" height = "350" style = "border-radius: 15px;">
+</div>
+
+# 📚 Multiprogramming os
+
+- Multiprogramming increases CPU utilization by keeping multiple jobs (code and data)
+  in the memory so that the CPU always has one to execute in case some job gets busy with
+  I/O.
+    - Single CPU
+    - Context switching for processes.
+    - Switch happens when current process goes to wait state.
+    - CPU idle time reduced.
+
+# 📚 Multitasking os
+
+- Multitasking is a logical extension of multiprogramming.
+    - Single CPU.
+    - Able to run more than one task simultaneously.
+    - context switching and time sharing is used.
+    - CPU idle time is further reduced.
+
+# 📚 Multi-processing os
+
+- More than one CPUs in a single computer.
+    - Increases reliability, 1 cpu fails, other can work.
+    - Better throughput.
+    - Lesser process starvation, (if 1 CPU is
+      working on some process, other can be
+      executed on other CPU)
+
+# 📚 Distributed os
+
+- OS manages many bunches of resources, > =1 CPUs, >=1 memory, >=1 GPUs, etc
+- Loosely connected autonomous,
+  interconnected computer nodes.
+- collection of independent, networked,
+  communicating, and physically separate
+  computational nodes.
+
+# 📚 RTOS
+
+- Real time error free, computations
+  within tight-time boundaries.
+- Air Traffic control system, ROBOTS etc.
+
+<br>
+
+<div align = "center"> 
+    <h1 style = "color:purple"> 📖 Multi-Tasking and Multi-Threading </h1>
+</div>
+
+# 📨 Program
+
+A program is a set of instructions written in a programming language to perform a specific task.
+
+# 📨 Process
+
+A process is an active instance of a program in execution.
+
+# 📨 Thread
+
+A thread is the smallest unit of execution within a process.
+
+| Multi-Tasking                                                                                                                 | Multi-Threading                                                                                                                                                                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The execution of more than one task <br> simultaneously is called as Multi-Tasking                                            | A process is divided into several <br> different sub-tasks called as threads, which has its own path of execution. <br> This concept is called as multithreading.                                                        |
+| Concept of more than 1 processes being context switched.                                                                      | Concept of more than 1 thread. Threads are context switche                                                                                                                                                               |
+| Isolation and memory protection exists. OS must allocate separate memory and resources to each program that CPU is executing. | No isolation and memory protection, resources are shared among threads of that process. OS allocates memory to a process; multiple threads of that process share the same memory and resources allocated to the process. |
+
+# 📘 Thread Scheduling
+
+- Threads are scheduled for execution based on their priority.
+
+## Difference between Thread Context Switching and Process Context Switching:
+
+| Thread context switching                                                                                  | Process context switching                                                               |
+| :-------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| OS saves current state of thread & switches to another thread of same process.                            | OS saves current state of process & switches to another process by restoring its state. |
+| Doesn’t includes switching of memory address space. (But Program counter, registers & stac are included.) | Includes switching of memory address space.                                             |
+| Fast Switching                                                                                            | Slow Switching                                                                          |
+| CPU’s cache state is preserved.                                                                           | CPU’s cache state is flushed.                                                           |
+
+## Context Switching
+
+- Context Switching is the process of storing the state of a currently running process or thread, so that it can be resumed later, and loading the state of another process or thread to start or resume its execution.
+
+## 🧠 Why is Context Switching needed?
+
+- To implement multitasking or multithreading.
+- To ensure fair CPU time among all active processes/threads.
+- To allow the OS to switch between user applications and system tasks.
+
+## 🔍 Example:
+
+Suppose Process A is running and its time slice ends. The OS:
+
+- Saves A’s context (e.g., PC = 205, register R1 = 50) in A’s PCB.
+- Loads context of Process B from B’s PCB.
+- CPU resumes execution of Process B.
+
+<br>
+
+<div align = "center"> <h1 style = "color:purple"> 🖥️ Components of OS </h1></div>
+
+# 🎰 Kernel
+
+- A kernel is that part of the operating system which interacts directly with
+  the hardware and performs the most crucial tasks
+    - Heart of OS/Core component
+    - very first part of OS to load on start-up
+
+# 👨‍🦲 User space
+
+- Where application software runs, apps don’t have privileged access to the
+  underlying hardware. It interacts with kernel.
+    - GUI, CLI, etc.
+
+# 👩‍💻 Shell
+
+- A shell, also known as a command interpreter, is that part of the operating system that receives
+  commands from the users and gets them executed.
+
+# 📚 Functions of Kernel
+
+- Process Management
+- Memory Management
+- File Management
+- I/O Management
+
+# 🌐 Types of Kernel
+
+- <p style = "color:orange"> Monolithic Kernel </p>
+
+    - All functions are in kernel itself.
+    - Bulky in size.
+    - Memory required to run is high.
+    - Less reliable, one module crashes --> whole kernel is down.
+    - High performance as communication is fast.
+    - Example : Linux, Unix, MS-DOS
+
+- <p style = "color:orange"> Mircro Kernel </p>
+
+    - only major functions are in kernel (memory management, process management)
+    - file management and I/O management are in user space.
+    - smaller in size.
+    - More reliable.
+    - More stable.
+    - Performance is slow.
+    - Overhead switching b/w user mode and kernel mode
+    - Eg. L4 Linux, Symbian OS, MINIX etc
+
+- <p style = "color:orange" > Hybrid Kernel </p>
+
+    - Advantages of both worlds. (File mgmt. in User space and rest in Kernel
+      space. )
+    - Combined approach.
+    - speed and design of mono.
+    - Modularity and stability of micro
+    - Eg. MacOS, Windows NT/7/10
+    - IPC also happens but lesser overheads.
+
+- <p style = "color:orange"> Nano/Exo kernels </p>
+
+# 🧠 How does communication between user and kernel take place?
+
+- Inter Process Communication (IPC)
+    - Two Process executing independently, having independent memory spaces but need to communicate to work.
+    - done by shared memory, and message passing.
+
+<br>
+
+<div align = "center"> <h1 style = "color:purple"> 📲 System Calls</h1></div>
+
+- How does apps interacts with kernel ?
+    - using system calls.
+- A system call is a mechanism using which a user program can request a service from the kernel for
+  which it does not have the permission to perform.
+- System Calls are the only way through which a process can go into kernel mode from user mode.
+
+<div align = "center"> 
+    <img src = "./pic/systemCall.png" width = "500" height = "350" style = "border-radius: 15px;">
+</div>
+
+<div align = "center">
+- Examples of windows and unix system calls
+
+| Category          |                                  windows                                   |                     unix                     |
+| :---------------- | :------------------------------------------------------------------------: | :------------------------------------------: |
+| Process Control   |      Create Process() <br> Exit Process() <br> WaitForSingleObject()       |        fork() <br> exit() <br> wait()        |
+| File Management   |               CreateFile() <br> ReadFile() <br> WriteFile()                | open() <br> read() <br> write() <br> close() |
+| Device Management | SetConsoleMode() <br> ReadConsole() <br> ReadConsole() <br> WriteConsole() |       ioctl() <br> read() <br> write()       |
+| Comunication      |         CreatePipe() <br> CreateFileMapping() <br> MapViewOfFile()         |       pipe() <br> shmget() <br> mmap()       |
+
+</div>
+
+# 🧠 What happens when you turn on your computer ?
+
+- PC On
+- CPU initializes itself and looks for a firmware program (BIOS) stored in
+  BIOS Chip (Basic input-output system chip is a ROM chip found on
+  mother board that allows to access & setup computer system at most
+  basic level.)
+
+    - In modern PCs, CPU loads UEFI (Unified extensible firmware
+      interface)
+
+- CPU runs the BIOS which tests and initializes system hardware. Bios
+  loads configuration settings. If something is not appropriate (like missing
+  RAM) error is thrown and boot process is stopped.
+  This is called POST (Power on self-test) process.
+  (UEFI can do a lot more than just initialize hardware; it’s really a tiny
+  operating system. For example, Intel CPUs have the Intel Management
+  Engine. This provides a variety of features, including powering Intel’s
+  Active Management Technology, which allows for remote management
+  of business PCs.)
+
+- BIOS will handoff responsibility for booting your PC to your OS’s
+  bootloader.
+
+    - BIOS looked at the MBR (master boot record), a special boot
+      sector at the beginning of a disk. The MBR contains code that
+      loads the rest of the operating system, known as a “bootloader.”
+      The BIOS executes the bootloader, which takes it from there and
+      begins booting the actual operating system—Windows or Linux,
+      for example.
+      In other words,
+      the BIOS or UEFI examines a storage device on your system to
+      look for a small program, either in the MBR or on an EFI system
+      partition, and runs it.
+
+- The bootloader is a small program that has the large task of booting the
+  rest of the operating system (Boots Kernel then, User Space). Windows
+  uses a bootloader named Windows Boot Manager (Bootmgr.exe), most
+  Linux systems use GRUB, and Macs use something called boot.efi
+
+<br>
+
+<div align = "center"> <h1 style = "color:purple"> 📚 Process </h1></div>
+
+- A process is an active instance of a program in execution.
+
+- 🧠 How OS creates a process ?
+    - Load the program and static data into memory.
+    - Allocate runtime stack.
+    - Heap memory allocation.
+    - IO tasks.
+- Architecture of a process
+
+<div align = "center">
+    <img src = "./pic/process.png" width = "500" height = "450" style = "border-radius: 15px;">
+</div>
+
+- Stack : Local variables and function call information.
+- Heap : Dynamic allocated values.
+- Data : Global and static data.
+- Text : Compiled code(Loaded from disk)
+
+- PCB : Stores all the information about the process.
+
+    - Stores information of a process such as process id, program counter, process state, priority, etc.
+          <div align = "center"> <img src = "./pic/PCB.png" width = "500" height = "400" style = "border-radius: 15px;"> </div>
+
+- Process States
+    - As Process executes, it changes its state. Each Process may be in one of the following states
+        - New : OS is about to pick the program & convert it into process. OR the process is being created.
+        - Run : Instructions are being executed. CPU is Allocated.
+        - Waiting : Waiting for IO.
+        - Ready : The process is in memory and waiting to be executed.
+        - Terminated : The process has finished execution.
+
+<div align = "center"> <img src = "./pic/processStates.png" width = "550" height = "400" style = "border-radius: 15px;"> </div>
+
+# 📖 Swapping
+
+- Swapping is a mechanism in which a process can be swapped temporarily out of main memory (or move) to secondary storage (disk) and make that memory available to other processes. At some
+  later time, the system swaps back the process from the secondary storage to the main memory.
+
+<div align = "center"> <img src = "./pic/swapping.png" width = "600" height = "450" style = "border-radius: 15px;"> </div>
+
+# 📖 Context Switching
+
+- Switching the CPU to another process requires performing a state save of the current process and a state restore of a different process.
+- When this occurs, the kernel saves the context of the old process in its PCB and loads the saved context of the new process schedule to run.
+
+# 📖 Orphan Process
+
+- The process whose parent process has been terminated and it is still running.
+- Orphan processes are adopted by init process.
+- init is the first process of OS.
+
+# 📖 Zombie Process / Defunct Process
+
+- A zombie process is a process whose execution is completed but it still has an entry in the process table.
+- Zombie processes usually occur for child processes, as the parent process still needs to read its child’s exit status. Once this is done using the wait system call, the zombie process is eliminated from the process table. This is known as reaping the zombie process.
+- It is because parent process may call wait () on child process for a longer time duration and child process got terminated much earlier.
+- As entry in the process table can only be removed, after the parent process reads the exit status of child process. Hence, the child process remains a zombie till it is removed from the process table.
+
+<br>
+
+<div align = "center"> <h1 style = "color:purple"> 🚸 Process Scheduling </h1> </div>
+
+- Process Scheduling is the method by which an operating system decides which process in the ready queue should be executed next by the CPU. The goal is to maximize CPU utilization and system responsiveness while ensuring fairness among processes.
+
+- Types of Process Scheduling
+
+    - <p style = "color:orange"> Preemptive Scheduling </P>
+
+        - In preemptive scheduling, the CPU can be taken away from a running process and assigned to another process (usually with higher priority or fairness requirements).
+
+        - Example Algorithms:
+            - Round Robin
+            - Shortest Remaining Time First (SRTF)
+            - Priority Scheduling
+            - Multilevel Feedback Queue (MFQ)
+        - Key Characteristics
+
+            - Better for real-time systems.
+            - Ensures responsiveness.
+            - More context switches (overhead).
+            - Allows interruption of long tasks.
+
+        - Example :
+            - If Process A is running and Process B (higher priority) arrives, then Process A is preempted, and Process B gets the CPU.
+
+    - <p  style = "color:orange"> Non-Preemptive Scheduling </p>
+        
+        - Once a process starts its execution, it cannot be interrupted until it finishes or blocks (e.g., for I/O).
+        - Example Algorithms:
+            - First Come First Served (FCFS)
+            - Shortest Job First (SJF)
+            - Priority Scheduling (non-preemptive)
+        - Key Characteristics
+            - Simpler to implement.
+            - No context switch overhead due to preemption.
+            - Poor responsiveness for shorter processes.
+            - A long process can block others.
+        - Example :
+            - If Process A is running and Process B arrives, Process A continues until completion, then Process B is scheduled.
+
+- Throughput : Number of processes completed per unit time.
+- Arrival Time : Time when process arrives at ready queue.
+- Burst Time : Time required by the process to complete its execution.
+- Turnaround Time : Time taken from first time process enters ready state till it terminates.
+- Wait Time : Time process spends waiting for CPU. (WT = TAT – BT)
+
+- 🧠 what is convoy effect ?
+    - The Convoy Effect is a phenomenon associated with the First Come First Serve (FCFS) algorithm, in which the whole Operating System slows down due to a few slow processes.
+
+<div align = "center"> 
+<img src = "./pic/convoyEffect.png"  style = "border-radius: 15px;">
+</div>
+
+<br>
+
+<div align = "center"><h1 style = "color:purple"> ㊙️ Introduction to concurrency </h1> </div>
+
+- Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time.
+
+- Key Points :
+
+    - Concurrency is about managing multiple tasks at once.
+    - It's achieved through context switching, where the CPU rapidly switches between tasks.
+    - Used in both single-core (via time slicing) and multi-core (via parallelism) systems.
+    - Implemented using threads, processes, and scheduling algorithms.
+    - Enhances resource utilization, responsiveness, and system throughput.
+
+- Conditions of concurrency :
+
+    - There must be two or more processes or threads that can run independently.
+    - Two Process that share resources (memory, disk, etc.) can still be executed concurrently using proper synchronization.
+    - If both processes try to access shared resources at the same time without proper synchronization, it may lead to:
+        - Race Conditions
+        - Deadlocks
+        - Data inconsistency
+
+<br>
+
+<div align = "center"><h1 style = "color:purple"> Critical Section </h1> </div>
+
+- Proces Synchronization techniques play a key role in maintaining the consistency of shared data.
+
+# 📚 Critical Section
+
+- The critical section refers to the segment of code where processes/threads
+  access shared resources, such as common variables and files, and perform
+  write operations on them. Since processes/threads execute concurrently, any
+  process can be interrupted mid-execution.
+
+# 📖 Race Condition
+
+- A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
+
+- Solution to Race Condition
+
+    - Mutual Exclusion using locks.
+    - Semaphores.
+    - Atomic operations: Make Critical code section an atomic operation, i.e., Executed in one CPU cycle.
+    - Peterson’s Solution can be used to avoid race condition but holds good for only 2 process/threads.
+
+    - Mutex/Locks :
+        - Locks can be used to implement mutual exclusion and avoid race condition by allowing only one thread/process to access critical section.
+        - Disadvantages
+            - Deadlocks.
+            - Starvation of high priority threads.
+            - Contention : one thread has acquired the lock, other thread will be busy waiting, what if thread that had acquired the lock dies, then all other threads will be in infinite waiting.
+
+# 📖 Mututal Exclusion
+
+- Mutual Exclusion ensures that only one process or thread can access a critical section (shared resource) at a time. This prevents race conditions, data inconsistency, and unexpected behavior.
+
+```c
+
+#include <stdio.h>
+#include <pthread.h>
+
+int counter = 0; // shared resource
+pthread_mutex_t lock; // mutex
+
+void* increment(void* arg) {
+    for (int i = 0; i < 1000000; i++) {
+        pthread_mutex_lock(&lock);     // Enter critical section
+        counter++;
+        pthread_mutex_unlock(&lock);   // Exit critical section
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2;
+    pthread_mutex_init(&lock, NULL);  // Initialize mutex
+
+    pthread_create(&t1, NULL, increment, NULL);
+    pthread_create(&t2, NULL, increment, NULL);
+
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+
+    pthread_mutex_destroy(&lock);     // Destroy mutex
+    printf("Final counter (with mutex): %d\n", counter);
+    return 0;
+}
+
+```
+
+# 📖 Semaphore
+
+- A semaphore is a synchronization tool used to control access to shared resources in a concurrent system like a multitasking OS.
+
+- <p style = "color:orange"> 🗝️ Key idea </p>
+
+    - A semaphore is a special variable that is used to
+        - signal and wait.
+        - Ensure mutual exlusion.
+        - Avoid race condition and deadlocks.
+
+- Example : Dining Philosoper Problem ㊙️
+
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <unistd.h>
+
+#define NUM_PHILOSOPHERS 5
+
+sem_t chopsticks[NUM_PHILOSOPHERS];
+
+void* philosopher(void* num) {
+    int id = *(int*)num;
+    int left = id;
+    int right = (id + 1) % NUM_PHILOSOPHERS;
+
+    while (1) {
+        printf("Philosopher %d is thinking...\n", id);
+        sleep(rand() % 3 + 1);  // Think
+
+        printf("Philosopher %d is hungry...\n", id);
+
+        // To prevent deadlock, pick lower-numbered chopstick first
+        if (id % 2 == 0) {
+            sem_wait(&chopsticks[left]);
+            sem_wait(&chopsticks[right]);
+        } else {
+            sem_wait(&chopsticks[right]);
+            sem_wait(&chopsticks[left]);
+        }
+
+        printf("Philosopher %d is eating...\n", id);
+        sleep(rand() % 2 + 1);  // Eat
+
+        sem_post(&chopsticks[left]);
+        sem_post(&chopsticks[right]);
+
+        printf("Philosopher %d finished eating.\n", id);
+        sleep(rand() % 2 + 1);
+    }
+
+    return NULL;
+}
+
+int main() {
+    pthread_t threads[NUM_PHILOSOPHERS];
+    int ids[NUM_PHILOSOPHERS];
+
+    for (int i = 0; i < NUM_PHILOSOPHERS; i++)
+        sem_init(&chopsticks[i], 0, 1);
+
+    for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
+        ids[i] = i;
+        pthread_create(&threads[i], NULL, philosopher, &ids[i]);
+    }
+
+    for (int i = 0; i < NUM_PHILOSOPHERS; i++)
+        pthread_join(threads[i], NULL);
+
+    for (int i = 0; i < NUM_PHILOSOPHERS; i++)
+        sem_destroy(&chopsticks[i]);
+
+    return 0;
+}
+```
+
+- Although the semaphore solution makes sure that no two neighbors are eating simultaneously
+  but it could still create Deadlock.
+- Suppose that all 5 ph. Become hungry at the same time and each picks up their left fork, then
+  All fork semaphores would be 0
+- When each ph. Tries to grab his right fork, he will be waiting for ever (Deadlock)
+
+- Odd-even rule (fix Deadlock) : an odd philosopher Picks up first his left fork and then his right fork, whereas an even philosopher Picks up his right fork then his left fork.
+
+<br>
+
+<div align = "center"> <h1 style = "color:purple"> 🔐 Deadlock </h1> </div>
+
+                            +--------+       wait for       +--------+
+                            |  P1    | -------------------> |  R2    |
+                            |        |                      |        |
+                            +--------+                      +--------+
+                                |                                ^
+                        holds   |                                |  held by
+                                v                                |
+                            +--------+       wait for       +--------+
+                            |  R1    | <------------------- |  P2    |
+                            +--------+                      +--------+
+
+- Two or more processes are waiting on some resource’s availability, which will never be available as it is also busy with some other process. The Processes are said to be in Deadlock.
+
+- Deadlock is a bug present in the process/thread synchronization method.
+
+- # ❕Conditions for deadlock
+
+    - A deadlock can occur only if all four conditions hold simultaneously:
+
+        - Mututal Exclusion :Only 1 process at a time can use the resource, if another process requests that resource, the requesting process must wait until the resource has been released.
+
+        - Hold and wait : A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
+
+        - No Preemption : A resource cannot be forcibly taken away; it must be released voluntarily.
+
+        - Circular wait : A closed chain of processes exists, where each process is waiting for a resource held by the next.
+
+- # 🔑 Deadlock Prevention
+
+    - by ensuring at least one of the necessary conditions cannot hold.
+
+        - Mututal Exclusion : Make resources sharable (not always possible).
+        - Hold and wait : Force all resource requests at once.
+        - No Preemption: Allow the OS to forcibly take resources.
+        - Circular Wait: Impose ordering on resources (e.g., request in increasing order).
+
+- # 🚷 Deadlock Avoidance
+
+- Deadlock avoidance is a technique in operating systems used to dynamically decide whether it is safe to allocate a requested resource to a process, before doing so — ensuring the system never enters an unsafe (potentially deadlocked) state.
+
+- Banker's Algorithm: Deadlock avoidance algorithm that uses a banker's queue to ensure that a process is not starved of resources.
+
+<br>
+
+<div align = "center"> <h1 style = "color:purple"> 👨‍🏭 Memory Management </h1> </div>
+
+- Memory is a hardware component that stores data, instructions and information temporarily or permanently for processing. It consists of an array of bytes or words, each with a unique address.
+
+- <p style = "color:orange"> Memory Management </p>
+    - Memory management is a critical aspect of operating systems that ensures efficient use of the computer's memory resources. It controls how memory is allocated and deallocated to processes, which is key to both performance and stability.
+
+<div align = "center"> 
+    <img src = "./pic/memoryManagement.png" width = "500" height = "400" style = "border-radius: 15px;">
+</div>
+
+- <p style = "color:orange"> 🧠 why memory management is important ? </p>
+
+    - Allocate and de-allocate memory before and after process execution.
+    - To keep track of used memory space by processes.
+    - To minimize fragmentation issues.
+    - To proper utilization of main memory.
+    - To maintain data integrity while executing of process.
+
+# 📚 Static and Dynamic Loading
+
+- <p style = "color:orange"> Static loading</p>
+
+    - Static Loading is basically loading the entire program into a fixed address. It requires more memory space.
+
+- <p style = "color:orange">Dynamic Loading</p>
+
+    - Dynamic loading loads program routines into memory only when they are needed. This saves memory by not loading unused routines.
+
+# 📚 Logical and Physical Address
+
+- <p style = "color:orange"> Logical Address </p>
+   
+    - An address generated by the CPU.
+    - The logical address is basically the address of an instruction or data used by a process.
+    - User can access logical address of the process.
+    - Logical address does not exist physically. Hence, aka, Virtual Address.
+- <p style = "color:orange"> Physical Address </p>
+    
+    - An address generated by the memory management unit.
+    - User can never access the physical address of the Program.
+    - A physical address can be accessed by a user indirectly but not directly.
+
+# 📚 Memory Management Techniques
+
+- Memory management techniques are methods used by an operating system to efficiently allocate, utilize, and manage memory resources for processes.
+
+<div align = "center">
+    <img src = "./pic/memoryManagementTechniques.png" width = "500" height = "400" style = "border-radius: 15px;">
+</div>
+
+- <p style = "color:orange"> 🚟 Continguous Memory Allocation </p>
+
+    - Contiguous memory allocation is a memory management method where each process is given a single, continuous block of memory. This means all the data for a process is stored in adjacent memory locations.
+
+    - Fixed paritioning
+    - Variable paritioning
+
+- <p style = "color:orange"> ❎ Non-Contiguous Memory Allocation </p>
+
+    - This method allows processes to be broken into smaller parts, which are placed in different, non-adjacent memory locations.
+    - paging
+    - segmentation
+
+- <p style = "color:orange"> 🔯 Fixed Partitioning </p>
+
+    - Memory is divided into fixed-sized partitions at system boot time.
+    - A process is loaded into a partition only if it fits within its size.
+    - Leads to internal fragmentation (wasted space inside a partition).
+    - Simple to implement.
+    - Leads to external fragmentation.
+    - No resizing of partitions during runtime.
+
+- <p style = "color:orange"> ㊙️ Variable Partitioning </p>
+    
+    - Memory is divided into variable-sized partitions dynamically based on process size.
+    - A process is loaded into a partition of exactly or closely matching size.
+    - Leads to external fragmentation (free memory scattered in small blocks)
+    - More efficient memory use compared to fixed partitioning.
+    - Compaction may be required to remove fragmentation.
+    - Complex to implement compared to fixed partitioning.
+    - Allows more flexibility and better utilization for varying process sizes.
+
+<div align = "center"> 
+    <img src = "./pic/fixedAndVariable.png" width = "500" height = "450" style = "border-radius: 15px;">
+</div>
+
+- 🧠 How to satisfy a request of a of n size from a list of free holes ?
+
+    - Various algorithms which are implemented by the Operating System in order to find out the holes in the linked list and allocate them to the processes.
+        - First Fit
+        - Best Fit
+        - Worst Fit
+        - Next Fit
+
+- <p style = "color:purple"> 📃 Paging </p>
+
+    - Paging is the process of moving parts of a program, called pages, from secondary storage (like a hard drive) into the main memory (RAM). The main idea behind paging is to break a program into smaller fixed-size blocks called pages.
+
+    - To keep track of where each page is stored in memory, the operating system uses a page table. This table shows the connection between the logical page numbers (used by the program) and the physical page frames (actual locations in RAM). The memory management unit uses the page table to convert logical addresses into physical addresses, so the program can access the correct data in memory.
+    - <p style = "color:purple"> Features </p>
+
+        - <p style = "color:orange"> Logical to physical address mapping</p> Paging divides a process's logical address space into fixed-size pages. Each page maps to a frame in physical memory, enabling flexible memory management.
+        - <p style = "color:orange"> Fixed page and frame size</p> Pages and frames have the same fixed size. This simplifies memory management and improves system performance.
+        - <p style = "color:orange"> Page table entries </p> Each logical page is represented by a page table entry (PTE). A PTE stores the corresponding frame number and control bits.
+        - <p style = "color:orange"> Number of page table entries</p> The page table has one entry per logical page. Thus, its size equals the number of pages in the process's address space.
+        - <p style = "color:orange">Page table stored in main memory</p> The page table is kept in main memory. This can add overhead when processes are swapped in or out
+
+    - <p style = "color:purple"> Advantages </p>
+
+        - Eliminates External Fragmentation
+        - Efficient Memory Utilization
+        - Supports Virtual Memory
+
+    - <p style = "color:purple">Disadvantages </p>
+       
+        - Internal Fragmentation
+        - I/O Overhead During Page Faults
+        - Complexity in Implementation
+        - Page Table Lookup Time
+
+- <p style = "color:purple"> 📄 Segmentation </p>
+    
+    - Segmentation in Operating Systems is a memory management technique in which the process is divided into variable-sized segments, each of which is a logical unit such as:
+    functions, object, array, stack, data, code, etc.
+    - <p style = "color:orange"> Types of Segmentation </p>
+       
+      - Virtual Segmentation : 
+         -  Each process is divided into a number of segments, but the segmentation is not done all at once. This segmentation may or may not take place at the run time of the program. 
+      - Simple Segmentation : 
+        - Each process is divided into a number of segments, all of which are loaded into memory at run time, though not necessarily contiguously.
+    - <p style = "color:orange"> Segment Table</p>
+       
+       - It maps a two-dimensional Logical address into a one-dimensional Physical address. It's each table entry has:
+            - Base Address :  It contains the starting physical address where the segments reside in memory. 
+            - Segment Limit: Also known as segment offset. It specifies the length of the segment.
+    - <p style = "color:orange"> Advantages </p>
+           
+        - Reduced Internal Fragmentation
+        - Segment Table consumes less space in comparison to Page table in paging
+        - As a complete module is loaded all at once, segmentation improves CPU utilization.
+    - <p style = "color:purple"> Disadvantages </p>
+        
+        - External Fragmentation
+        - Complexity
+        - Overhead is associated with keeping a segment table for each activity.
+
+<div align = "center"> <h1 style = "color:purple"> 🖥️ Virtual Memory </h1> </div>
+
+- Virtual memory is a memory management technique used by operating systems to give the appearance of a large, continuous block of memory to applications, even if the physical memory (RAM) is limited. It allows larger applications to run on systems with less RAM.
+
+- <p style = "color:orange"> Objectives </p>
+
+    - To support multiprogramming , it allows more than one program to run at the same time.
+    - A program doesn’t need to be fully loaded in memory to run. Only the needed parts are loaded.
+    - Programs can be bigger than the physical memory available in the system.
+    - Virtual memory creates the illusion of a large memory, even if the actual memory (RAM) is small.
+    - It uses both RAM and disk storage to manage memory, loading only parts of programs into RAM as needed.
+    - This allows the system to run more programs at once and manage memory more efficiently.
+
+<div align = "center"> 
+    <img src = "./pic/virtualMemory.png" width = "500" height = "400" style = "border-radius: 15px;">
+</div>
+
+- <p style = "color:orange"> Types of Virtual Memory </p>
+
+    - Paging
+    - Segmentation
+
+- <p style = "color:orange"> Demand Paging</p> The process of loading the page into memory on demand (whenever a page fault occurs) is known as demand paging.
+
+- <p style = "color:orange"> Thrashing</p>
+   
+    - Thrashing is a condition or a situation when the system is spending a major portion of its time servicing the page faults, but the actual processing done is very negligible.
+
+    - Thrashing occurs in a computer system when the CPU spends more time swapping pages in and out of memory than executing actual processes. This happens when there is insufficient physical memory, causing frequent page faults and excessive paging activity. Thrashing reduces system performance and makes processes run very slowly.
+
+- <p style = "color:orange"> Page Replacement </p>
+    
+    - A page is copied to the main memory when its demand is made, or page fault occurs. There are various page replacement algorithms which are used to determine the pages which will be replaced.
+    - <p style = "color:orange"> First In First Out (FIFO) </p>
+       
+        - The first page to be used is the first page to be loaded into memory.
+        - This is the simplest page replacement algorithm, but it is not the most efficient.
+    - <p style = "color:orange"> Least Recently Used (LRU) </p>
+       
+        - The page that has been used the least is replaced first.
+        - This algorithm is the most commonly used.
+
+    - <p style = "color:orange"> Optimal Page Replacement </p>
+
+        - Optimal page replacement is a page replacement algorithm that aims to minimize the number of page faults and maximize the utilization of memory.
+        - It uses a data structure called a page replacement policy to determine which pages to replace.
+        - The page replacement policy is based on the page's age, frequency of use, and other factors.
