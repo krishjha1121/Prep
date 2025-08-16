@@ -1,6 +1,7 @@
 <div align = "center"> <h1 style = "color:purple"> 🖥️ Operating System</h1></div>
 
 - Operating system is a system software that acts as an interface between user and computer's hardware.
+- A resource manager.
 
 # 🔑Key functions of os
 
@@ -193,6 +194,45 @@ Suppose Process A is running and its time slice ends. The OS:
   underlying hardware. It interacts with kernel.
     - GUI, CLI, etc.
 
+# 📳 User Mode V/S Kernel Mode
+
+- User Mode
+
+    - The CPU executes application code.
+    - Has restricted access to system resources (no direct I/O or hardware access).
+    - If the program needs OS services, it must request them via a system call.
+
+- Kernel Mode
+
+    - The CPU executes OS kernel code.
+    - Has unrestricted access to hardware and all memory.
+    - Used to perform privileged operations on behalf of user programs.
+
+- 🧠 Example
+    ```C
+    #include<unistd.h>
+    #include<stdio.h>
+    int main() {
+        int a, b, c;
+        a = 1;
+        fork();
+        system("Hi");
+        return 0;
+    }
+    ```
+    - First line of code is in a user mode.
+    - Second line of code is in a user mode.
+    - Third line of code is in a kernel mode.
+        - when third line gets executed, the CPU switches to kernel mode.
+        - The CPU executes the system call.
+        - It creates a new process and copies all the instructions in the program and starts executing them from next instructions after fork().
+        - when its done, it returns to the previous process and start executing from the next instructions from fork().
+    - If we have N forks() we will be creating $2^N$ processes in total including the first process.
+
+<div align = "center"> 
+<img src = "./pic/fork.png" width = "700" height = "400" style = "border-radius: 15px;">
+</div>
+
 # 👩‍💻 Shell
 
 - A shell, also known as a command interpreter, is that part of the operating system that receives
@@ -336,17 +376,17 @@ Suppose Process A is running and its time slice ends. The OS:
 - PCB : Stores all the information about the process.
 
     - Stores information of a process such as process id, program counter, process state, priority, etc.
-          <div align = "center"> <img src = "./pic/PCB.png" width = "500" height = "400" style = "border-radius: 15px;"> </div>
+        <div align = "center"> <img src = "./pic/PCB.png" width = "500" height = "400" style = "border-radius: 15px;"> </div>
 
 - Process States
     - As Process executes, it changes its state. Each Process may be in one of the following states
-        - New : OS is about to pick the program & convert it into process. OR the process is being created.
+        - New : OS is about to pick the program & convert it into process. OR the process is being created and we allocate the resrouces.
         - Run : Instructions are being executed. CPU is Allocated.
         - Waiting : Waiting for IO.
         - Ready : The process is in memory and waiting to be executed.
         - Terminated : The process has finished execution.
 
-<div align = "center"> <img src = "./pic/processStates.png" width = "550" height = "400" style = "border-radius: 15px;"> </div>
+<div align = "center"> <img src = "./pic/process_states.png" width = "700" height = "400" style = "border-radius: 15px;"> </div>
 
 # 📖 Swapping
 
@@ -430,6 +470,292 @@ Suppose Process A is running and its time slice ends. The OS:
 
 <br>
 
+<div align = "center">
+    <h1 style = "color:purple"> 📖 Inter Processs Communication and Synchronization </h1>
+
+</div>
+
+- Inter-Process Communication or IPC is a mechanism that allows processes to communicate and exchange data with each other.
+
+<div align = "center">
+
+```C
++-------------------+       +-------------------+
+|     Process A     |       |     Process B     |
+|                   |       |                   |
+|   ┌───────────┐   |       |   ┌───────────┐   |
+|   │   Send     │----------->  │  Receive   │   |
+|   └───────────┘   |       |   └───────────┘   |
+|                   |       |                   |
++-------------------+       +-------------------+
+```
+
+</div>
+
+- 🧠 How can you achieve it ?
+
+    - Let's take an example of streaming a video to youtube.
+    - Lets say onc process is responsible to record your video and another process is responsible to take that video data and send it to youtube server.
+    - To do this, both the processes need to communicate with each other.
+    - Once way to achieve it is ---> lets say we will stored the video data into a file and then another process will grab it from the secondary device where the video data is stored.
+    - This is not very good, since the process will be very slow as the data is stored in a secondary storage.
+    - To solve this problem we need to stored the data into memory.
+
+- Better Solution to the above problems is to use some mechanism listed down below :
+
+    - Shared Memory.
+    - Message Passing.
+    - Pipes.
+
+- Synchronization
+
+    - The process of coordinating the execution of processes or threads so that they can access shared resources or data safely without causing errors like race conditions, data corruption, or inconsistencies.
+
+- Role of Synchronization in IPC
+
+    - Preventing Race Conditions.
+    - Ensuring Mutual Exclusion.
+    - Coordinating Process Execution.
+    - Preventing Deadlocks.
+
+- Example of IPC : Producer Consumer Problem.
+
+    - The Producer–Consumer Problem is a classic process synchronization problem that deals with coordinating two types of processes:
+        - Producer → Generates data and places it in a buffer.
+        - Consumer → Takes data from the buffer and uses it.
+    - The problem arises when producer and consumer run at different speeds and share a common buffer.
+
+    - We have :
+        - A shared buffer of finite size.
+        - Producer inserts items into the buffer.
+        - Consumer removes items from the buffer.
+    - Constraints :
+        - Producer must wait if the buffer is full.
+        - Consumer must wait if the buffer is empty.
+        - Both must not access the buffer at the same time (to avoid race conditions).
+    - 🧠 Why Synchronization is needed ?
+        - Producer may overwrite data before the consumer uses it.
+        - Consumer may try to consume from an empty buffer.
+        - Concurrent modifications can corrupt the buffer.
+
+- Incorrect Solution to producer-consumer problem
+
+```C
+#include <stdio.h>
+#include <pthread.h>
+#include <unistd.h>
+
+#define BUFFER_SIZE 5
+
+int buffer[BUFFER_SIZE];
+int count = 0; // Number of items in buffer
+
+void* producer(void* arg) {
+    int item = 0;
+    while(1) {
+        if(count < BUFFER_SIZE) { // Check if buffer is not full
+            buffer[count] = item;
+            printf("Produced: %d\n", item);
+            count++;
+            item++;
+        }
+        sleep(1);
+    }
+    return NULL;
+}
+
+void* consumer(void* arg) {
+    while(1) {
+        if(count > 0) { // Check if buffer is not empty
+            int item = buffer[count - 1];
+            printf("Consumed: %d\n", item);
+            count--;
+        }
+        sleep(1);
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t prod, cons;
+
+    pthread_create(&prod, NULL, producer, NULL);
+    pthread_create(&cons, NULL, consumer, NULL);
+
+    pthread_join(prod, NULL);
+    pthread_join(cons, NULL);
+
+    return 0;
+}
+```
+
+- No mutual exclusion: Both producer and consumer modify count and buffer simultaneously → race condition.
+- Possible buffer overflow/underflow: Multiple threads may check count and update it concurrently, violating BUFFER_SIZE limit
+- No synchronization primitives: Should use mutexes and condition variables to coordinate access.
+
+- Correct Solution to producer-consumer problem using mutexes
+
+```C
+#include <stdio.h>
+#include <pthread.h>
+#include <unistd.h>
+
+#define BUFFER_SIZE 5
+
+int buffer[BUFFER_SIZE];
+int count = 0;   // Number of items in buffer
+int in = 0;      // Next write index
+int out = 0;     // Next read index
+
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t not_full = PTHREAD_COND_INITIALIZER;
+pthread_cond_t not_empty = PTHREAD_COND_INITIALIZER;
+
+// Producer function
+void* producer(void* arg) {
+    int item = 0;
+    while (1) {
+        pthread_mutex_lock(&mutex);
+
+        while (count == BUFFER_SIZE) { // Buffer full
+            pthread_cond_wait(&not_full, &mutex);
+        }
+
+        buffer[in] = item;
+        in = (in + 1) % BUFFER_SIZE;
+        count++;
+        printf("Produced: %d\n", item++);
+
+        pthread_cond_signal(&not_empty); // Notify consumer
+        pthread_mutex_unlock(&mutex);
+
+        sleep(1); // Simulate production time
+    }
+    return NULL;
+}
+
+// Consumer function
+void* consumer(void* arg) {
+    while (1) {
+        pthread_mutex_lock(&mutex);
+
+        while (count == 0) { // Buffer empty
+            pthread_cond_wait(&not_empty, &mutex);
+        }
+
+        int item = buffer[out];
+        out = (out + 1) % BUFFER_SIZE;
+        count--;
+        printf("Consumed: %d\n", item);
+
+        pthread_cond_signal(&not_full); // Notify producer
+        pthread_mutex_unlock(&mutex);
+
+        sleep(2); // Simulate consumption time
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t prod, cons;
+
+    pthread_create(&prod, NULL, producer, NULL);
+    pthread_create(&cons, NULL, consumer, NULL);
+
+    pthread_join(prod, NULL);
+    pthread_join(cons, NULL);
+
+    return 0;
+}
+```
+
+- To Solve these kinds os problems, we need to use synchronization primitives like mutexes, semaphores, and condition variables.
+
+- Necessary conditions for a Synchronization problem to occur :
+
+    - Critical Section
+        - The critical section refers to the segment of code where processes/threads access shared resources, such as common variables and files, and perform write operations on them. Since processes/threads execute concurrently, any process can be interrupted mid-execution.
+    - Race Condition :
+        - A race condition occurs when two or more processes can access shared data and they try to change it at the same time.
+    - Premption
+
+- How to avoid these kinds of problems ?
+
+    - Mututal Exclusion : Ensure that only one process or thread can access the critical section at a time.
+        - Techniques:
+            - Mutexes: Threads acquire the lock before entering the critical section and release it after leaving.
+            - Semaphores : Counting or binary semaphores can control access to shared resources.
+    - Hold and Wait Prevention
+
+        - Prevent a process from holding one resource while waiting for another.
+        - Example: Require a process to request all required resources at once, or release held resources if the next resource is not available.
+
+    - Avoiding Race Conditions :
+
+        - Use atomic operations whenever possible (operations that cannot be interrupted).
+        - Ensure critical sections are protected using locks (mutexes, semaphores, or monitors).
+        - Peterson’s solution can be used to avoid race condition but holds good for only 2 process/thread.
+
+<div align = "center"> 
+    <img src = "./pic/peter.png" width = "700" height = "400" style = "border-radius: 15px;">
+</div>
+
+- Sample Code for Peterson’s solution :
+
+```C
+#include <stdio.h>
+#include <pthread.h>
+
+int flag[2];   // Indicates if a process wants to enter critical section
+int turn;      // Whose turn is it?
+int shared = 0; // Shared resource
+
+void* process0(void* arg) {
+    for (int i = 0; i < 5; i++) {
+        flag[0] = 1;      // Process 0 wants to enter
+        turn = 1;         // Give turn to process 1
+        while (flag[1] && turn == 1); // Wait if process 1 wants to enter and it's its turn
+
+        // Critical section
+        shared++;
+        printf("Process 0: shared = %d\n", shared);
+
+        flag[0] = 0; // Exit critical section
+    }
+    return NULL;
+}
+
+void* process1(void* arg) {
+    for (int i = 0; i < 5; i++) {
+        flag[1] = 1;      // Process 1 wants to enter
+        turn = 0;         // Give turn to process 0
+        while (flag[0] && turn == 0); // Wait if process 0 wants to enter and it's its turn
+
+        // Critical section
+        shared++;
+        printf("Process 1: shared = %d\n", shared);
+
+        flag[1] = 0; // Exit critical section
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t t0, t1;
+
+    pthread_create(&t0, NULL, process0, NULL);
+    pthread_create(&t1, NULL, process1, NULL);
+
+    pthread_join(t0, NULL);
+    pthread_join(t1, NULL);
+
+    printf("Final value of shared: %d\n", shared);
+    return 0;
+}
+```
+
+<br>
+
 <div align = "center"><h1 style = "color:purple"> ㊙️ Introduction to concurrency </h1> </div>
 
 - Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time.
@@ -453,7 +779,7 @@ Suppose Process A is running and its time slice ends. The OS:
 
 <br>
 
-<div align = "center"><h1 style = "color:purple"> Critical Section </h1> </div>
+<div align = "center"><h1 style = "color:purple"> 🔏 Critical Section </h1> </div>
 
 - Proces Synchronization techniques play a key role in maintaining the consistency of shared data.
 
@@ -486,8 +812,9 @@ Suppose Process A is running and its time slice ends. The OS:
 
 - Mutual Exclusion ensures that only one process or thread can access a critical section (shared resource) at a time. This prevents race conditions, data inconsistency, and unexpected behavior.
 
-```c
+- Sample code for Mutexes :
 
+```c
 #include <stdio.h>
 #include <pthread.h>
 
@@ -517,7 +844,6 @@ int main() {
     printf("Final counter (with mutex): %d\n", counter);
     return 0;
 }
-
 ```
 
 # 📖 Semaphore
@@ -526,15 +852,15 @@ int main() {
 
 - <p style = "color:orange"> 🗝️ Key idea </p>
 
-    - A semaphore is a special variable that is used to
+    - A semaphore is a special variable(part of os itself) that is used to
         - signal and wait.
         - Ensure mutual exlusion.
         - Avoid race condition and deadlocks.
+    - All the operations performed are atomic(either complete or nothing).
 
 - Example : Dining Philosoper Problem ㊙️
 
 ```c
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
