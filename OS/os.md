@@ -295,10 +295,6 @@ Suppose Process A is running and its time slice ends. The OS:
   which it does not have the permission to perform.
 - System Calls are the only way through which a process can go into kernel mode from user mode.
 
-<div align = "center"> 
-    <img src = "./pic/systemCall.png" width = "500" height = "350" style = "border-radius: 15px;">
-</div>
-
 <div align = "center">
 - Examples of windows and unix system calls
 
@@ -365,7 +361,14 @@ Suppose Process A is running and its time slice ends. The OS:
 - Architecture of a process
 
 <div align = "center">
-    <img src = "./pic/process.png" width = "500" height = "450" style = "border-radius: 15px;">
+
+| **Segment**      | **Description**                                                           |
+| ---------------- | ------------------------------------------------------------------------- |
+| **Stack**        | Stores function calls, local variables, return addresses. Grows downward. |
+| **Heap**         | Dynamically allocated memory during runtime. Grows upward.                |
+| **Data Segment** | Stores global and static variables.                                       |
+| **Text Segment** | Stores the program code (instructions to be executed).                    |
+
 </div>
 
 - Stack : Local variables and function call information.
@@ -376,7 +379,23 @@ Suppose Process A is running and its time slice ends. The OS:
 - PCB : Stores all the information about the process.
 
     - Stores information of a process such as process id, program counter, process state, priority, etc.
-        <div align = "center"> <img src = "./pic/PCB.png" width = "500" height = "400" style = "border-radius: 15px;"> </div>
+
+<div align = "center">
+
+🖥️ Process Control Block (PCB Diagram)
+
+| **Field**                  | **Description**                                   |
+| -------------------------- | ------------------------------------------------- |
+| **Process ID (PID)**       | Unique identifier                                 |
+| **Process State**          | New / Ready / Running / Waiting / Terminated      |
+| **Program Counter (PC)**   | Address of next instruction                       |
+| **CPU Registers**          | General purpose, stack, accumulator, etc.         |
+| **CPU Scheduling Info**    | Priority, scheduling queues, timeslices           |
+| **Memory Management Info** | Base register, limit, page tables, segment tables |
+| **I/O Status Information** | List of I/O devices, open files, buffers          |
+| **Accounting Info**        | CPU used, time limits, process number, UID, etc.  |
+
+</div>
 
 - Process States
     - As Process executes, it changes its state. Each Process may be in one of the following states
@@ -471,7 +490,7 @@ Suppose Process A is running and its time slice ends. The OS:
 <br>
 
 <div align = "center">
-    <h1 style = "color:purple"> 📖 Inter Processs Communication and Synchronization </h1>
+    <h1 style = "color:purple"> 📖 Inter Process Communication and Synchronization </h1>
 
 </div>
 
@@ -756,29 +775,6 @@ int main() {
 
 <br>
 
-<div align = "center"><h1 style = "color:purple"> ㊙️ Introduction to concurrency </h1> </div>
-
-- Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time.
-
-- Key Points :
-
-    - Concurrency is about managing multiple tasks at once.
-    - It's achieved through context switching, where the CPU rapidly switches between tasks.
-    - Used in both single-core (via time slicing) and multi-core (via parallelism) systems.
-    - Implemented using threads, processes, and scheduling algorithms.
-    - Enhances resource utilization, responsiveness, and system throughput.
-
-- Conditions of concurrency :
-
-    - There must be two or more processes or threads that can run independently.
-    - Two Process that share resources (memory, disk, etc.) can still be executed concurrently using proper synchronization.
-    - If both processes try to access shared resources at the same time without proper synchronization, it may lead to:
-        - Race Conditions
-        - Deadlocks
-        - Data inconsistency
-
-<br>
-
 <div align = "center"><h1 style = "color:purple"> 🔏 Critical Section </h1> </div>
 
 - Proces Synchronization techniques play a key role in maintaining the consistency of shared data.
@@ -846,9 +842,18 @@ int main() {
 }
 ```
 
-# 📖 Semaphore
+# 📖 Semaphores
 
 - A semaphore is a synchronization tool used to control access to shared resources in a concurrent system like a multitasking OS.
+
+- Types of Semaphores :
+
+    - Binary Semaphores :
+        - This is also known as a mutex lock, as they are locks that provide mutual exclusion. It can have only two values - 0 and 1. Its value is initialized to 1. It is used to implement the solution of critical section problems with multiple processes and a single resource.
+    - Counting Semaphores :
+        - Counting semaphores can be used to control access to a given resource consisting of a finite number of instances. The semaphore is initialized to the number of resources available. Its value can range over an unrestricted domain.
+
+- Binary Semaphores cannot tell me how many process are waiting for the resources, but Counting Semaphores does.
 
 - <p style = "color:orange"> 🗝️ Key idea </p>
 
@@ -856,9 +861,88 @@ int main() {
         - signal and wait.
         - Ensure mutual exlusion.
         - Avoid race condition and deadlocks.
-    - All the operations performed are atomic(either complete or nothing).
+    - All the operations performed are atomic(either complete or nothing, cannot preempt a function).
+
+- Counting Semaphores :
+    <div align = "center">
+    <img src = "./pic/semaphores.png" width = "800" height = "400" style = "border-radius: 15px;">
+    </div>
+
+```java
+import java.util.LinkedList;
+import java.util.Queue;
+// semaphore class
+class Semaphore {
+    // our value
+    int value;
+    public Semaphore(int value) {
+        this.value = value;
+        q = new LinkedList<>();
+    }
+    public void P(Process p) {
+        value--;
+        if (value < 0) {
+            q.add(p);
+            p.block();
+        }
+    }
+    public void V() {
+        value++;
+        if (value <= 0) {
+            Process p = q.remove();
+            p.wakeup();
+        }
+    }
+}
+```
+
+- Binary Semaphores :
+
+<div align = "center">
+  <img src = "./pic/binarySemaphores.png" width = "900" height = "400" style = "border-radius: 15px;">
+</div>
+
+```java
+import java.util.*;
+class Semaphore {
+    public enum Value { Zero, One }
+    public Queue<Process> q = new LinkedList<Process>();
+    public Value value = Value.One;
+    public void P(Semaphore s, Process p) {
+        if (s.value == Value.One) {
+            s.value = Value.Zero;
+        }
+        else {
+            // add the process to the waiting queue
+            q.add(p);
+            p.Sleep();
+        }
+    }
+    public void V(Semaphore s) {
+        if (s.q.size() == 0) {
+            s.value = Value.One;
+        }
+        else {
+            // select a process from waiting queue
+            Process p = q.peek();
+            // remove the process from waiting as it has
+            // been sent for CS
+            q.remove();
+            p.Wakeup();
+        }
+    }
+}
+```
 
 - Example : Dining Philosoper Problem ㊙️
+
+<div align = "center"> 
+    <img src = "./pic/dp1.png" width = "800" height = "400" style = "border-radius: 15px;">
+</div>
+
+- Deadlock problem occurs when each philosopher are hungry are the same time and each one of them picks their left fork.
+
+- Solution : Use a semaphore to ensure that only one philosopher is eating at a time.
 
 ```c
 #include <stdio.h>
@@ -933,6 +1017,29 @@ int main() {
 - When each ph. Tries to grab his right fork, he will be waiting for ever (Deadlock)
 
 - Odd-even rule (fix Deadlock) : an odd philosopher Picks up first his left fork and then his right fork, whereas an even philosopher Picks up his right fork then his left fork.
+
+<br>
+
+<div align = "center"><h1 style = "color:purple"> ㊙️ Introduction to concurrency </h1> </div>
+
+- Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time.
+
+- Key Points :
+
+    - Concurrency is about managing multiple tasks at once.
+    - It's achieved through context switching, where the CPU rapidly switches between tasks.
+    - Used in both single-core (via time slicing) and multi-core (via parallelism) systems.
+    - Implemented using threads, processes, and scheduling algorithms.
+    - Enhances resource utilization, responsiveness, and system throughput.
+
+- Conditions of concurrency :
+
+    - There must be two or more processes or threads that can run independently.
+    - Two Process that share resources (memory, disk, etc.) can still be executed concurrently using proper synchronization.
+    - If both processes try to access shared resources at the same time without proper synchronization, it may lead to:
+        - Race Conditions
+        - Deadlocks
+        - Data inconsistency
 
 <br>
 
