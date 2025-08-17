@@ -511,7 +511,7 @@ Suppose Process A is running and its time slice ends. The OS:
 
 </div>
 
-- 🧠 How can you achieve it ?
+- <p style = "color:orange"> 🧠 How can you achieve it ? </p>
 
     - Let's take an example of streaming a video to youtube.
     - Lets say onc process is responsible to record your video and another process is responsible to take that video data and send it to youtube server.
@@ -520,24 +520,24 @@ Suppose Process A is running and its time slice ends. The OS:
     - This is not very good, since the process will be very slow as the data is stored in a secondary storage.
     - To solve this problem we need to stored the data into memory.
 
-- Better Solution to the above problems is to use some mechanism listed down below :
+- <p style = "color:orange"> Better Solution to the above problems is to use some mechanism listed down below </p>
 
     - Shared Memory.
     - Message Passing.
     - Pipes.
 
-- Synchronization
+- <p style = "color:orange"> Synchronization </p>
 
     - The process of coordinating the execution of processes or threads so that they can access shared resources or data safely without causing errors like race conditions, data corruption, or inconsistencies.
 
-- Role of Synchronization in IPC
+- <p style = "color:orange"> Role of Synchronization in IPC </p>
 
     - Preventing Race Conditions.
     - Ensuring Mutual Exclusion.
     - Coordinating Process Execution.
     - Preventing Deadlocks.
 
-- Example of IPC : Producer Consumer Problem.
+- <p style = "color:orange"> Example of IPC : Producer Consumer Problem </p>
 
     - The Producer–Consumer Problem is a classic process synchronization problem that deals with coordinating two types of processes:
         - Producer → Generates data and places it in a buffer.
@@ -557,7 +557,7 @@ Suppose Process A is running and its time slice ends. The OS:
         - Consumer may try to consume from an empty buffer.
         - Concurrent modifications can corrupt the buffer.
 
-- Incorrect Solution to producer-consumer problem
+- <p style = "color:orange"> Incorrect Solution to producer-consumer problem </p>
 
 ```C
 #include <stdio.h>
@@ -690,7 +690,7 @@ int main() {
 
 - To Solve these kinds os problems, we need to use synchronization primitives like mutexes, semaphores, and condition variables.
 
-- Necessary conditions for a Synchronization problem to occur :
+- <p style = "color:orange">  Necessary conditions for a Synchronization problem to occur </p>
 
     - Critical Section
         - The critical section refers to the segment of code where processes/threads access shared resources, such as common variables and files, and perform write operations on them. Since processes/threads execute concurrently, any process can be interrupted mid-execution.
@@ -698,7 +698,7 @@ int main() {
         - A race condition occurs when two or more processes can access shared data and they try to change it at the same time.
     - Premption
 
-- How to avoid these kinds of problems ?
+- <p style = "color:orange"> How to avoid these kinds of problems ? </p>
 
     - Mututal Exclusion : Ensure that only one process or thread can access the critical section at a time.
         - Techniques:
@@ -719,7 +719,7 @@ int main() {
     <img src = "./pic/peter.png" width = "700" height = "400" style = "border-radius: 15px;">
 </div>
 
-- Sample Code for Peterson’s solution :
+- <p style = "color:orange"> Sample Code for Peterson’s solution </p>
 
 ```C
 #include <stdio.h>
@@ -790,7 +790,7 @@ int main() {
 
 - A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
 
-- Solution to Race Condition
+- <p style = "color:orange"> Solution to Race Condition </p>
 
     - Mutual Exclusion using locks.
     - Semaphores.
@@ -808,7 +808,7 @@ int main() {
 
 - Mutual Exclusion ensures that only one process or thread can access a critical section (shared resource) at a time. This prevents race conditions, data inconsistency, and unexpected behavior.
 
-- Sample code for Mutexes :
+- <p style = "color:orange"> Sample code for Mutexes </p>
 
 ```c
 #include <stdio.h>
@@ -846,7 +846,7 @@ int main() {
 
 - A semaphore is a synchronization tool used to control access to shared resources in a concurrent system like a multitasking OS.
 
-- Types of Semaphores :
+- <p style = "color:orange"> Types of Semaphores </p>
 
     - Binary Semaphores :
         - This is also known as a mutex lock, as they are locks that provide mutual exclusion. It can have only two values - 0 and 1. Its value is initialized to 1. It is used to implement the solution of critical section problems with multiple processes and a single resource.
@@ -863,10 +863,10 @@ int main() {
         - Avoid race condition and deadlocks.
     - All the operations performed are atomic(either complete or nothing, cannot preempt a function).
 
-- Counting Semaphores :
-    <div align = "center">
-    <img src = "./pic/semaphores.png" width = "800" height = "400" style = "border-radius: 15px;">
-    </div>
+- <p style = "color:orange"> Counting Semaphores </p>
+      <div align = "center">
+      <img src = "./pic/semaphores.png" width = "800" height = "400" style = "border-radius: 15px;">
+      </div>
 
 ```java
 import java.util.LinkedList;
@@ -896,7 +896,7 @@ class Semaphore {
 }
 ```
 
-- Binary Semaphores :
+- <p style = "color:orange"> Binary Semaphores </p>
 
 <div align = "center">
   <img src = "./pic/binarySemaphores.png" width = "900" height = "400" style = "border-radius: 15px;">
@@ -934,7 +934,7 @@ class Semaphore {
 }
 ```
 
-- Example : Dining Philosoper Problem ㊙️
+- <p style = "color:orange"> Example : Dining Philosoper Problem </p>
 
 <div align = "center"> 
     <img src = "./pic/dp1.png" width = "800" height = "400" style = "border-radius: 15px;">
@@ -1022,9 +1022,9 @@ int main() {
 
 <div align = "center"><h1 style = "color:purple"> ㊙️ Introduction to concurrency </h1> </div>
 
-- Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time.
+- Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time improving resource utilization and system efficiency.
 
-- Key Points :
+- <p style = "color:orange"> Key Points </p>
 
     - Concurrency is about managing multiple tasks at once.
     - It's achieved through context switching, where the CPU rapidly switches between tasks.
@@ -1032,7 +1032,7 @@ int main() {
     - Implemented using threads, processes, and scheduling algorithms.
     - Enhances resource utilization, responsiveness, and system throughput.
 
-- Conditions of concurrency :
+- <p style = "color:orange"> Conditions of concurrency </p>
 
     - There must be two or more processes or threads that can run independently.
     - Two Process that share resources (memory, disk, etc.) can still be executed concurrently using proper synchronization.
@@ -1041,7 +1041,29 @@ int main() {
         - Deadlocks
         - Data inconsistency
 
-<br>
+- <p style = "color:orange"> The Processes executing in the operating system is one of the following two types </p>
+
+    - independent processes
+        - A process that does not rely on or affect the execution of other processes. Its execution is completely self-contained.
+        - Example : A background file compression process running alone.
+    - cooperative processes
+        - A process that depends on the results or execution of other processes. Its execution may be influenced by other processes.
+        - Example : A process that prints a file after another process generates it.
+
+- <p style = "color:orange"> Problems in Concurrency </p>
+
+    - Sharing global resources
+        - Sharing of global resources safely is difficult. If two processes both make use of a global variable and both perform read and write on that variable, then the order in which various read and write are executed is critical.
+    - Optimal allocation of resources
+        - It is difficult for the operating system to manage the allocation of resources optimally.
+
+- <p style = "color:orange"> Advantages of Concurrency </p>
+    
+    - Running of multiple applications:
+        - It enable to run multiple applications at the same time. <br>
+    - Better resource utilization
+        - It enables that the resources that are unused by one application can be used for other applications.
+    - Better performance
 
 <div align = "center"> <h1 style = "color:purple"> 🔐 Deadlock </h1> </div>
 
@@ -1060,26 +1082,64 @@ int main() {
 
 - Deadlock is a bug present in the process/thread synchronization method.
 
-- # ❕Conditions for deadlock
+- <p style = "color:orange"> Resouce Allocation Graph </p>
 
-    - A deadlock can occur only if all four conditions hold simultaneously:
+    - A Resource Allocation Graph shows which resources are held by which processes and which processes are waiting for specific types of resources, including how many resources are available, how many are allocated, and what each process needs.
 
-        - Mututal Exclusion :Only 1 process at a time can use the resource, if another process requests that resource, the requesting process must wait until the resource has been released.
+<div align = "center"> <img src = "./pic/rag.png" width = "700" height = "400" style = "border-radius: 15px;"> </div>
 
-        - Hold and wait : A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
+- <p style = "color:red"> Note : It is not always true that if a graph has a cycle, then there is a deadlock. </p>
 
-        - No Preemption : A resource cannot be forcibly taken away; it must be released voluntarily.
+- If graph contains no cycles → no deadlock.
+- If graph contains a cycle → if only one instance per resource type, then deadlock.
+  if several instances per resource type, possibility of deadlock
 
-        - Circular wait : A closed chain of processes exists, where each process is waiting for a resource held by the next.
+- # ❕Necessary Conditions for deadlock
+
+    - <p style = "color:orange"> A deadlock can occur only if all four conditions hold simultaneously: </p>
+
+        - <p style = "color:pink"> Mututal Exclusion : </p>
+
+            - if there exist a deadlock that means, there exist a critical section and shared resources(cpu, variables, semaphores) concept being used between two processes or threads.
+
+        - <p style = "color:pink"> Hold and wait : </p>
+
+            - A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
+
+        - <p style = "color:pink"> No Preemption : </p>
+
+            - A resource cannot be forcibly taken away; it must be released voluntarily.
+
+        - <p style = "color:pink"> Circular wait : </p>
+
+            - A closed chain of processes exists, where each process is waiting for a resource held by the next.
 
 - # 🔑 Deadlock Prevention
 
-    - by ensuring at least one of the necessary conditions cannot hold.
+    - By ensuring at least one of the necessary conditions cannot hold.
 
-        - Mututal Exclusion : Make resources sharable (not always possible).
-        - Hold and wait : Force all resource requests at once.
-        - No Preemption: Allow the OS to forcibly take resources.
-        - Circular Wait: Impose ordering on resources (e.g., request in increasing order).
+        - <p style = "color:orange"> Mututal Exclusion</p> 
+            
+            - Try to avoid resource sharing between processes meaning not having a critical section (which is almost not possible).
+
+        - <p style = "color:orange"> No Preemption</p>
+            
+            - Allow the OS to forcibly take resources.
+                - forcefull preemption.
+                - self preemption.
+            - We can use the concept of priority to achieve it.
+            - Starvation Problem
+
+        - <p style = "color:orange"> Circular Wait</p>
+            
+            - Impose ordering on resources (e.g., request in increasing order).
+            - Every process will request the resoures in inreasing order of the resource id.
+            - Starvation Problem.
+        - <p style = "color:orange"> Hold and Wait </p>
+
+            - Let a process request all the resources it needs, let's say it needs r1, r2, r3, and just in case if any of the resources are not available, then don't allocate any of the resources(r1, r2, r3) to the current process.
+            - if process request ri and if all the previously allocated id of rp is less than id of ri we will allocat it, but if not we will release all the rp whose id > id of ri and will request them in future.
+            - Starvation Problem.
 
 - # 🚷 Deadlock Avoidance
 
@@ -1087,13 +1147,154 @@ int main() {
 
 - Banker's Algorithm: Deadlock avoidance algorithm that uses a banker's queue to ensure that a process is not starved of resources.
 
+<div align = "center"> <h1 style = "color:purple"> 💀 Banker's Algorithm (Deadlock Avoidance Algorithm)</h1> </div>
+
+- Banker's Algorithm is a resource allocation and deadlock avoidance algorithm used in operating systems. It ensures that a system remains in a safe state by carefully allocating resources to processes while avoiding unsafe states that could lead to deadlocks.
+
+- max[i][j] = We need to know the maximum number of resource j that a process i need.
+- allot[i][j] = The number of resource j that process i has already been allocated.
+- need[i][j] = The number of resource j that process i needs to completely get executed.
+- avail[j] = The number of resource j that is currently available.
+
+- <p style = "color:orange"> Algorithm </p>
+
+```Java
+import java.util.*;
+class Banker {
+    // Number of processes
+    static int P = 5;
+    // Number of resources
+    static int R = 3;
+    // Function to find the need of each process
+    static void calculateNeed(int need[][], int maxm[][], int allot[][]) {
+        // Calculating Need of each process
+        for (int i = 0; i < P; i++) {
+            for (int j = 0; j < R; j++) {
+                // Need of instance = max instance - allocated instance
+                need[i][j] = maxm[i][j] - allot[i][j];
+            }
+        }
+    }
+    // Function to check if the system is in a safe state
+    static boolean isSafe(int processes[], int avail[], int maxm[][], int allot[][]) {
+        int[][] need = new int[P][R];
+        // Calculate need matrix
+        calculateNeed(need, maxm, allot);
+        // Mark all processes as unfinished
+        boolean[] finish = new boolean[P];
+        // To store safe sequence
+        int[] safeSeq = new int[P];
+        // Make a copy of available resources
+        int[] work = new int[R];
+        for (int i = 0; i < R; i++) {
+            work[i] = avail[i];
+        }
+        int count = 0;
+        while (count < P) {
+            boolean found = false;
+            for (int p = 0; p < P; p++) {
+                // If process is not finished and its needs can be satisfied
+                if (!finish[p]) {
+                    int j;
+                    for (j = 0; j < R; j++) {
+                        if (need[p][j] > work[j]) {
+                            break;
+                        }
+                    }
+                    // If all needs of p are satisfied
+                    if (j == R) {
+                        // Release resources
+                        for (int k = 0; k < R; k++) {
+                            work[k] += allot[p][k];
+                        }
+                        // Add this process to safe sequence
+                        safeSeq[count++] = p;
+                        // Mark as finished
+                        finish[p] = true;
+                        found = true;
+                    }
+                }
+            }
+            // If no process was found
+            if (!found) {
+                System.out.println("System is not in safe state");
+                return false;
+            }
+        }
+        // If system is in safe state
+        System.out.print("System is in safe state.\nSafe sequence is: ");
+        for (int i = 0; i < P; i++) {
+            System.out.print(safeSeq[i] + " ");
+        }
+        System.out.println();
+        return true;
+    }
+    public static void main(String[] args) {
+        int processes[] = {0, 1, 2, 3, 4};
+        // Available instances of resources
+        int avail[] = {3, 3, 2};
+        // Maximum resources that can be allocated to processes
+        int maxm[][] = {
+            {7, 5, 3},
+            {3, 2, 2},
+            {9, 0, 2},
+            {2, 2, 2},
+            {4, 3, 3}
+        };
+        // Resources currently allocated to processes
+        int allot[][] = {
+            {0, 1, 0},
+            {2, 0, 0},
+            {3, 0, 2},
+            {2, 1, 1},
+            {0, 0, 2}
+        };
+        // Check if system is in safe state
+        isSafe(processes, avail, maxm, allot);
+    }
+}
+```
+
 <br>
 
+<div align = "center"> 
+    <h1 style = "color:purple"> ♏ Multi-Threading </h1>
+</div>
+
+- Multithreading is a feature in operating systems that allows a program to do several tasks at the same time. Think of it like having multiple hands working together to complete different parts of a job faster. Each "hand" is called a thread, and they help make programs run more efficiently.
+- Multithreading makes your computer work better by using its resources more effectively, leading to quicker and smoother performance for applications like web browsers, games, and many other programs you use every day.
+
+| Feature          | Multithreading                                                                         | Multitasking                                                                              |
+| ---------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Definition**   | Running multiple threads within a single program simultaneously.                       | Running multiple programs or tasks concurrently.                                          |
+| **Example**      | Web browser loading a page, handling user input, and downloading files simultaneously. | Listening to music, browsing the web, and typing a document at the same time.             |
+| **Scope**        | Within a single program.                                                               | Across multiple programs.                                                                 |
+| **Resource Use** | Utilizes CPU resources more efficiently within a program.                              | Manages system resources to allocate time and memory to different programs.               |
+| **Purpose**      | Enhances the performance and responsiveness of a single application.                   | Improves overall system efficiency by allowing concurrent execution of multiple programs. |
+| **Switching**    | Threads are managed by the program itself.                                             | Programs are managed by the operating system, which switches between them.                |
+
+- <p style = "color:orange"> Drawbacks of multithreading </p>
+
+    - If you don’t make use of the locking mechanisms properly, while investigating data access issues there is a chance of problems arising like data inconsistency and dead-lock.
+    - If many threads try to access the same data, then there is a chance that the situation of thread starvation may arise. Resource contention issues are another problem that can trouble the user.
+    - Display issues may occur if threads lack coordination when displaying data.
+
+- <p style = "color:orange"> Benefits of Multithreading </p>
+
+    - 🚀 Improved performance - Multiple tasks execute in parallel, making programs faster.
+    - ⭐ Better CPU utilization – Keeps CPU busy by running multiple threads instead of idle waiting.
+    - 🖥️ Responsive applications – UI stays smooth while background tasks (like file downloads) run.
+    - ⏩ Faster context switching – Threads switch quicker than processes since they share memory.
+    - 📂 Resource sharing – Threads within a process share memory and resources, reducing overhead.
+    - 📈 Scalability – Effective use of multi-core processors for parallel execution.
+
+<br> 
 <div align = "center"> <h1 style = "color:purple"> 👨‍🏭 Memory Management </h1> </div>
 
 - Memory is a hardware component that stores data, instructions and information temporarily or permanently for processing. It consists of an array of bytes or words, each with a unique address.
 
 - <p style = "color:orange"> Memory Management </p>
+    
     - Memory management is a critical aspect of operating systems that ensures efficient use of the computer's memory resources. It controls how memory is allocated and deallocated to processes, which is key to both performance and stability.
 
 <div align = "center"> 
