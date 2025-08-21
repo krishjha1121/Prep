@@ -99,6 +99,139 @@
         - Query language, a part of DML to specify statement requesting the retrieval of information.
 
 <br> 
+<div align = "center"> <h1 style = "color:purple"> 📖 Relational Model </h1> </div>
+
+- Relational Model organizes the data in the form of tables.
+- Tuple : A single row of the table representing a single data point / a unique record.
+- Degree of table: number of attributes/columns in a given table/relation.
+- Cardinality: Total no. of tuples in a given relation
+- 🗽 Integrity constraints : Integrity constraints in databases are rules that ensure the accuracy, consistency, and validity of data stored in a relational database. They prevent invalid data from being entered and maintain the logical correctness of relationships among tables.
+    - Domain integrity :
+        - Ensures that values in a column are valid according to the column’s data type, range, or format.
+        - Example :
+            ```SQL
+            age INT CHECK (age >= 0);
+            ```
+
+    - Entity Integrity :
+        - Ensures that every table has a primary key, and that primary key values are unique and not NULL.
+        - Prevents duplicate or missing identifiers for rows.
+        - Example :
+            ```SQL
+            student_id INT PRIMARY KEY;
+            ```
+
+    - Referential Integrity :
+        - Ensures consistency between foreign keys and the primary key they reference.
+        - Prevents “orphan” records (foreign key referring to a non-existent row).
+        - Example :
+            ```SQL
+            FOREIGN KEY (course_id) REFERENCES Course(course_id);
+            ```
+
+    - Key Integrity :
+        - Guarantee uniqueness of data in certain columns.
+        - Includes Primary Key, Unique Key, and Foreign Key constraint
+        - Example :
+            ```SQL
+            email VARCHAR(100) UNIQUE;
+            ```
+
+    - Check Constraints
+        - Define a condition that each row must satisfy.
+        - Example :
+            ```SQL
+            salary DECIMAL CHECK (salary > 0);
+            ```
+
+- <p style = "color:green"> Relational Model keys </p>
+   
+    - 🔑 Simple Key : Key with only one attribute.
+    - 🔑 Primary Key :
+        - A column or set of columns that uniquely identifies each row in a table.
+        - Cannot have null values.
+        - There is only one primary key per table.
+        - Example : student_id in student table.
+    - 🔑 Candidate Key :
+        - Set of all unique keys.
+        - Any column (or combination of columns) that can uniquely identify a row.
+        - A table can have multiple candidate keys, but only one is chosen as the primary key
+        - Example : In an employee table, employee_id and employee_email both are candidate key, but one is choosen as primary key, and other remains as candidate key.
+    - 🔑 Super Key :
+        - Candidate Key Union U any other attributes.
+        - A set of one or more attributes that can uniquely identify a row.
+        - Candidate key ⊆ Super key.
+        - A super key may contain extra columns.
+        - Example : In a Books table:
+            - ISBN is a candidate key.
+              ISBN + title is also a super key (but not a candidate key since it has extra column).
+    - 🔑 Alternate Key :
+        - A candidate key that is not chosen as the primary key.
+        - Still uniquely identifies rows.
+        - Example : In a Users table:
+            - Candidate keys: user_id, email.
+              If user_id is chosen as the primary key, email becomes an alternate key.
+    - 🔑 Foreign Key :
+        - A column in one table that refers to the primary key of another table.
+        - Used to link tables together.
+        - Example :
+            - In an Orders table, customer_id can be a foreign key that refers to customer_id in the Customers table.
+    - 🔑 Composite Key :
+        - A key made up of two or more columns that together uniquely identify a row.
+        - Used when a single column is not enough.
+        - Example :
+            - In an Enrollment table:
+              (student_id, course_id) together can be a composite primary key (because a student can take multiple courses).
+    - 🔑 Unique Key :
+        - Like a candidate key: ensures all values are unique, but can allow one null value (depends on DBMS).
+        - Can be used to enforce uniqueness on non-primary attributes.
+        - Example :
+            - In an Employees table:
+              email can be a unique key if it's not the primary key.
+    - 🔑 Compound Key :
+        - PK which is formed using 2 foreign keys.
+        - Key with more than one attribute.
+
+<div align = "center"> 
+    <img src = 'Pictures/keys.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img>
+</div>
+
+# 🔐 Key Constraints
+
+- Key Constraints: The six types of key constraints present in the Database management system are:-
+
+- <p style = "color:green"> NOT NULL </p>
+   
+    - This constraint will restrict the user from not having a NULL value. It ensures that every element in
+      the database has a value.
+
+- <p style = "color:green"> UNIQUE </p>
+   
+    - This constraint ensures that the values in the column are unique.
+
+- <p style = "color:green"> DEFAULT </p> 
+   
+   - it is used to set the default value to the column. The default value is added to the columns if no value
+  is specified for them.
+
+- <p style = "color:green"> CHECK </p>
+   
+    - It is one of the integrity constraints in DBMS. It keeps the check that integrity of data is maintained
+      before and after the completion of the CRUD.
+
+- <p style = "color:green">  PRIMARY KEY </p>
+   
+    - This is an attribute or set of attributes that can uniquely identify each entity in the entity set. The
+      primary key must contain unique as well as not null values.
+
+- <p style = "color:green"> FOREIGN KEY </p>
+   
+    - Whenever there is some relationship between two entities, there must be some common
+      attribute between them. This common attribute must be the primary key of an entity set and will become the
+      foreign key of another entity set. This key will prevent every action which can result in loss of connection
+      between tables.
+
+<br> 
 <div align = "center"> <h1 style = "color:purple"> 📳 Entity RelationShip Model </h1>  </div>
 
 - <p style = "color:orange"> Data Models </p>
@@ -160,96 +293,33 @@
         - Binary, two entities participates. e.g., Student takes Course.
         - Ternary relationship, three entities participates. E.g, Employee works-on branch, employee works-on job.
 
+- Entity Relationship Diagram (ERD)
+    - An entity relationship diagram (ER diagram or ERD) is a visual representation of how items in a database relate to each other.
+
+- Relationship
+    - One to One
+        <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+    - One to Many
+        <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+    - Many to One
+          <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+    - Many to Many
+          <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+- Strong Entity :
+    - An entity that can be uniquely identified by its own attributes, without depending on any other entity.
+    - Has a primary key that uniquely identifies each record.
+    - In an ER diagram, a strong entity is shown with a single rectangle.
+
+- Weak Entity :
+    - An entity that cannot be uniquely identified by its own attributes alone.
+    - Depends on a strong entity (called the owner entity) for its identification.
+    - In an ER diagram, a weak entity is shown with a double rectangle, and its identifying relationship is shown with a double diamond.
+
 <br> 
-<div align = "center"> <h1 style = "color:purple"> 📖 Relational Model </h1> </div>
-
-- Relational Model organizes the data in the form of tables.
-- Tuple : A single row of the table representing a single data point / a unique record.
-- Degree of table: number of attributes/columns in a given table/relation.
-- Cardinality: Total no. of tuples in a given relation
-- <p style = "color:green"> Relational Model keys </p>
-    
-    - 🔑 Primary Key : 
-        - A column or set of columns that uniquely identifies each row in a table.
-        - Cannot have null values.
-        - There is only one primary key per table.
-        - Example : student_id in student table.
-    - 🔑 Candidate Key :
-        - Any column (or combination of columns) that can uniquely identify a row.
-        - A table can have multiple candidate keys, but only one is chosen as the primary key
-        - Example : In an employee table, employee_id and employee_email both are candidate key, but one is choosen as primary key, and other remains as candidate key.
-        
-    - 🔑 Super Key :
-        - A set of one or more attributes that can uniquely identify a row.
-        - Candidate key ⊆ Super key.
-        - A super key may contain extra columns.
-        - Example : In a Books table:
-            - ISBN is a candidate key.
-            ISBN + title is also a super key (but not a candidate key since it has extra column).
-    - 🔑 Alternate Key :
-        - A candidate key that is not chosen as the primary key.
-        - Still uniquely identifies rows.
-        - Example : In a Users table:
-            - Candidate keys: user_id, email.
-              If user_id is chosen as the primary key, email becomes an alternate key.
-    - 🔑 Foreign Key :
-        - A column in one table that refers to the primary key of another table.
-        - Used to link tables together.
-        - Example :
-            - In an Orders table, customer_id can be a foreign key that refers to customer_id in the Customers table.
-    - 🔑 Composite Key :
-        - A key made up of two or more columns that together uniquely identify a row.
-        - Used when a single column is not enough.
-        - Example :
-            - In an Enrollment table:
-              (student_id, course_id) together can be a composite primary key (because a student can take multiple courses).
-    - 🔑 Unique Key :
-        - Like a candidate key: ensures all values are unique, but can allow one null value (depends on DBMS).
-        - Can be used to enforce uniqueness on non-primary attributes.
-        - Example :
-            - In an Employees table:
-              email can be a unique key if it's not the primary key.
-    - 🔑 Compound Key :
-        - PK which is formed using 2 foreign keys.
-
-<div align = "center"> 
-    <img src = 'Pictures/keys.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img>
-</div>
-
-# 🔐 Key Constraints
-
-- Key Constraints: The six types of key constraints present in the Database management system are:-
-
-- <p style = "color:green"> NOT NULL </p>
-   
-    - This constraint will restrict the user from not having a NULL value. It ensures that every element in
-      the database has a value.
-
-- <p style = "color:green"> UNIQUE </p>
-   
-    - This constraint ensures that the values in the column are unique.
-
-- <p style = "color:green"> DEFAULT </p> 
-   
-   - it is used to set the default value to the column. The default value is added to the columns if no value
-  is specified for them.
-
-- <p style = "color:green"> CHECK </p>
-    - It is one of the integrity constraints in DBMS. It keeps the check that integrity of data is maintained
-      before and after the completion of the CRUD.
-
-- <p style = "color:green">  PRIMARY KEY </p>
-   
-    - This is an attribute or set of attributes that can uniquely identify each entity in the entity set. The
-      primary key must contain unique as well as not null values.
-
-- <p style = "color:green"> FOREIGN KEY </p>
-   
-    - Whenever there is some relationship between two entities, there must be some common
-      attribute between them. This common attribute must be the primary key of an entity set and will become the
-      foreign key of another entity set. This key will prevent every action which can result in loss of connection
-      between tables.
-
 <div align = "center"> <h1 style = "color:purple"> 📙 Normalization </h1> </div>
 
 - DBMS Normalization is a systematic approach to decompose (break down) tables to eliminate data redundancy(repetition)
@@ -308,6 +378,27 @@
     - For a table to be in the First Normal Form, it should follow the following rules:
         - It should only have single(atomic) valued attributes/columns.
         - All the columns in a table should have unique names.
+        - Example :
+
+<div align = "center">
+
+Not in 1NF
+
+| StudentID | Name | Subjects           |
+| --------- | ---- | ------------------ |
+| 1         | Raj  | Math, Physics      |
+| 2         | Roy  | Chemistry, Biology |
+
+In 1NF
+
+| StudentID | Name | Subject   |
+| --------- | ---- | --------- |
+| 1         | Raj  | Math      |
+| 1         | Raj  | Physics   |
+| 2         | Roy  | Chemistry |
+| 2         | Roy  | Biology   |
+
+</div>
 
 - <p style = "color:green"> Second Normal Form (2NF) </p>
    
@@ -316,6 +407,39 @@
         - It should not have partial dependencies.
         - 🧠 what is a partial dependency ?
             - When a table has a primary key that is made up of two or more columns, then all the columns(not included in the primary key) in that table should depend on the entire primary key and not on a part of it. If any column(which is not in the primary key) depends on a part of the primary key then we say we have Partial dependency in the table.
+        - Example
+
+<div align = "center"> 
+Not in 2NF
+
+| StudentID | SubjectID | StudentName | SubjectName |
+| --------- | --------- | ----------- | ----------- |
+| 1         | 101       | Raj         | Math        |
+| 1         | 102       | Raj         | Physics     |
+| 2         | 103       | Roy         | Chemistry   |
+
+Not in 2NF Because here lets say we have a primary key (studentId, SubjectId) then StudentName here is having a partial dependency as StudentName is only dependent on studentId but on SubjectId;
+
+In 2NF (split it into 3 tables)
+
+| StudentID | StudentName |
+| --------- | ----------- |
+| 1         | Raj         |
+| 2         | Roy         |
+
+| SubjectID | SubjectName |
+| --------- | ----------- |
+| 101       | Math        |
+| 102       | Physics     |
+| 103       | Chemistry   |
+
+| StudentID | SubjectID |
+| --------- | --------- |
+| 1         | 101       |
+| 1         | 102       |
+| 2         | 103       |
+
+</div>
 
 - <p style = "color:green"> Third Normal Form (3NF) </p>
    
@@ -324,6 +448,31 @@
         - And, it doesn't have Transitive Dependency.
         - 🧠 what is a Transitive Dependency ?
             - In a table we have some column that acts as the primary key and other columns depends on this column. But what if a column that is not the primary key depends on another column that is also not a primary key or part of it? Then we have Transitive dependency in our table.
+        - Example :
+
+<div align = "center"> 
+Not in 3NF
+
+| EmployeeID | EmployeeName | DeptID | DeptName | DeptLocation |
+| ---------- | ------------ | ------ | -------- | ------------ |
+| 1          | Aman         | 10     | IT       | Mumbai       |
+| 2          | Neha         | 20     | HR       | Delhi        |
+
+Not in 3BNF because here, DeptName and DeptLocation are non-prime attributes and depend on DeptID, which is not a key but still determines them.
+
+In 3NF (split it into 2 tables)
+
+| EmployeeID | EmployeeName | DeptID |
+| ---------- | ------------ | ------ |
+| 1          | Aman         | 10     |
+| 2          | Neha         | 20     |
+
+| DeptID | DeptName | DeptLocation |
+| ------ | -------- | ------------ |
+| 10     | IT       | Mumbai       |
+| 20     | HR       | Delhi        |
+
+</div>
 
 - <p style = "color:green"> Boyce-Codd Normal Form (BCNF) </p>
    
@@ -331,12 +480,67 @@
         - This form deals with a certain type of anomaly that is not handled by 3NF.
         - Must be in 3NF.
         - and, for each functional dependency ( X → Y ), X should be a Super Key.
+        - Example :
+
+<div align = "center">
+Not in BCNF
+
+| studentId | Course | Instructor |
+| --------- | ------ | ---------- |
+| 1         | DBMS   | Raj        |
+| 2         | DS     | Raj        |
+| 3         | AI     | Roy        |
+
+Not in BCNF as Candidate key = (StudentID, CourseID) and CourseID is not a key, but it determines Instructor
+
+In BCNF
+
+| Course | Instructor |
+| ------ | ---------- |
+| DBMS   | Raj        |
+| DS     | Raj        |
+| AI     | Roy        |
+
+| studentId | Course |
+| --------- | ------ |
+| 1         | DBMS   |
+| 2         | DS     |
+| 3         | AI     |
+
+</div>
 
 - <p style = "color:green"> Fourth Normal Form (4NF) </p>
    
     - For a table to be in the Fourth Normal Form, it should follow the following rules:
         - It is in the Boyce-Codd Normal Form.
         - And, it doesn't have Multi-Valued Dependency.
+        - Example :
+
+<div align = "center">
+Not in 4NF
+
+| Student | Course | Hobby   |
+| ------- | ------ | ------- |
+| Raj     | DBMS   | Cricket |
+| Raj     | DBMS   | Music   |
+| Raj     | AI     | Cricket |
+| Raj     | AI     | Music   |
+
+Not in 4NF because here, student can have multiple courses and multiple hobbies, but here course and hobby are independent of each other.
+
+In 4NF
+
+| Student | Course |
+| ------- | ------ |
+| Raj     | DBMS   |
+| Raj     | AI     |
+
+| Student | Hobby   |
+| ------- | ------- |
+| Raj     | Cricket |
+| Raj     | Music   |
+
+</div>
 
 - <p style = "color:green"> Fifth Normal Form (5NF) </p>
    
@@ -346,9 +550,54 @@
         - It is the most advanced level of Database Normalization.
         - Using Fifth Normal Form you can fix Join dependency and reduce data redundancy.
         - It also helps in fixing Update anomalies in DBMS design.
+        - cannot be decomposed into smaller tables without losing data or introducing redundancy.
+        - Example :
+
+<div align = "center"> 
+    
+| Supplier | Part | Project |
+| -------- | ---- | ------- |
+| s1        | P1   | j1      |
+| s1        | P1   | j2     |
+| s1 | p2 | j1|
+|s1 | p2 | j2|
+
+Not in 5NF because here a supplier can supply many parts, a supplier can work on many projects and a part can be used in many projects, here all 3 facts are mixed leading to redundant combinations.
+
+In 5NF
+
+| Supplier | Part |
+| -------- | ---- |
+| S1       | P1   |
+| S1       | P2   |
+
+| Supplier | Project |
+| -------- | ------- |
+| S1       | J1      |
+| S1       | J2      |
+
+| Part | Project |
+| ---- | ------- |
+| P1   | J1      |
+| P1   | J2      |
+| P2   | J1      |
+| P2   | J2      |
+
+</div>
+
+- Advantages of Normal Forms :
+    - Reduced data redundancy
+    - Improved data consistency
+    - Simplified database design
+    - Improved query performance
+    - Easier database maintenance
+
+- 🧠 When to Use Normalization and Denormalization ?
+    - Normalization is best suited for transactional systems where data integrity is paramount, such as banking systems and enterprise applications.
+    - Denormalization is ideal for read-heavy applications like data warehousing and reporting systems where performance and query speed are more critical than data integrity.
 
 <br> 
-<div align = "center"> <h1 style = "color:purple"> 🤑 Transaction </h1> </div>
+<div align = "center"> <h1 style = "color:purple"> 🤑 Transaction & Concurrency Control </h1> </div>
 
 - A transaction refers to a sequence of one or more operations (such as read, write, update, or delete) performed on the database as a single logical unit of work.
 
@@ -388,6 +637,21 @@
 - <p style = "color:green"> 🧠What do you mean by serializability in DBMS ? </p>
    
     - Serializability is the property of a schedule of transactions in DBMS which determines whether the database would be in consistent state or not if the transactions are executed following the given schedule.
+
+- <p style = "color:green"> Concurrency Control(higher throughput) </p>
+   
+   
+    - Concurrency control is a critical mechanism in DBMS that ensures the consistency and integrity of data when multiple transactions are performed at the same time.
+    - Concurrency control is a concept in Database Management Systems (DBMS) that ensures multiple transactions can simultaneously access or modify data without causing errors or inconsistencies.
+    - The main goal of concurrency control is to ensure that simultaneous transactions do not lead to data conflicts or violate the consistency of the database. The concept of serializability is often used to achieve this goal.
+
+- <p style = "color:green"> Problems due to Concurreny </p>
+   
+    - Dirty Read – A transaction reads uncommitted data from another transaction
+    - Lost Update – Two transactions overwrite each other’s changes.
+    - Unrepeatable Read – A transaction reads the same data twice but gets different values because another transaction modified it in between.
+    - Phantom Read – A transaction re-executes a query and finds new rows inserted by another transaction.
+- DBMS uses concurrency control (like locks, timestamps, isolation levels) to avoid these issues.
 
 <br> 
 <div align = "center"> <h1 style = "color:purple"> 📚 Indexing in DBMS </h1> </div>
