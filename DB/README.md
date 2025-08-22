@@ -298,16 +298,16 @@
 
 - Relationship
     - One to One
-        <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+      <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - One to Many
-        <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+      <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to One
-          <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+        <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to Many
-          <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+        <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
 - Strong Entity :
     - An entity that can be uniquely identified by its own attributes, without depending on any other entity.
@@ -656,6 +656,73 @@ In 5NF
 <br> 
 <div align = "center"> <h1 style = "color:purple"> 📚 Indexing in DBMS </h1> </div>
 
+<div align = "center"> <h2 style = "color:orange"> Disk Structure </h2> </div>
+<div align = "center">
+    <img src = 'Pictures/disk.png'  style="border-radius: 15px; height: 500px; width: 700px;"> </img>
+</div>
+
+- Assume each block is of size 512B.
+- assume we have a table named Employee of 100 records or rows.
+
+<div align = "center">
+
+| eid     | name    | dep     | sec     | add     |
+| ------- | ------- | ------- | ------- | ------- |
+| Item1.1 | Item2.1 | Item3.1 | Item4.1 | Item5.1 |
+| Item1.2 | Item2.2 | Item3.2 | Item4.2 | Item5.2 |
+
+</div>
+
+- Assume each row is of size 128B then in a block we can store 512 / 128 = 4 rows.
+- So, if we want to store each of these 100 records we need to create 100 / 4 = 25 blocks.
+- By doing so if we want to search some record we need to traverse all 15 blocks.
+- We can do better by creating a index table for Employee table which will store the key value pair i.e Key(eid) and value is a pointer pointing to the block itself saying in which block the information of this record is stored in the disk.
+- For each record we will have their entry.
+- We store index table in the disk as well.
+- Lets say the index table size is 16B then we can st store 512 / 16 = 32 blocks.
+- And total blocks required to store all the index table = 100 / 32 = 4 blocks.
+- For at most we need any 4 blocks to search through the index table and then we can find the block for the record.
+- So in total we need only 4 + 1 = 5 blocks to be searched to find the record not 25 blocks as required without indexing.
+- But what if the size of the index table itself is much bigger due to larger number of data in the original table itself.
+- In that case we can create a multi-level indexing structure mainting another index table for all the index tables.
+- And this the reason why we need to B and B+ Trees.
+
+<div align = "center"> <h2 style = "color:Orange"> B Trees <h2>  </div>
+
+- A B-Tree is a specialized m-way tree designed to optimize data access, especially on disk-based storage systems.
+- In a B-Tree of order m, each node can have up to m children and m-1 keys, allowing it to efficiently manage large datasets.
+- The value of m is decided based on disk block and key sizes.
+- One of the standout features of a B-Tree is its ability to store a significant number of keys within a single node, including large key values. It significantly reduces the tree’s height, hence reducing costly disk operatio
+- B Trees allow faster data retrieval and updates, making them an ideal choice for systems requiring efficient and scalable data management. By maintaining a balanced structure at all times,
+- B-Trees deliver consistent and efficient performance for critical operations such as search, insertion, and deletion.
+
+<div align = "center"> 
+    <img src = 'Pictures/btree.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img>
+</div>
+
+- Properties of B Trees :
+    - All leaf nodes of a B tree are at the same level, i.e. they have the same depth (height of the tree).
+    - The keys of each node of a B tree (in case of multiple keys), should be stored in the ascending order.
+    - In a B tree, all non-leaf nodes (except root node) should have at least $m/2$ children.
+    - All nodes (except root node) should have at least $m/2 - 1$ keys.
+    - A non-leaf node with $n - 1$ key values should have n non NULL children.
+    - Keys are inserted in buttom up manner.
+    - Height when the B-tree is completely full (i.e., all nodes have the maximum m children):
+        - $h_{\min} = \lceil \log_{m}(n+1) \rceil - 1$
+    - Height when the B-tree is least filled (each node has the minimum t children):
+        - $h_{\max} = \lceil \log_{t}(n+1) \rceil$
+
+<div align = "center"> <h2 style = "color:orange"> B+ Trees </h2> </div>
+
+- A B+ Tree is an advanced data structure used in database systems and file systems to maintain sorted data for fast retrieval, especially from disk. It is an extended version of the B Tree, where all actual data is stored only in the leaf nodes, while internal nodes contain only keys for navigation.
+
+- Components of B+ Tree :
+    - Leaf nodes store all the key values and pointers to the actual data.
+    - Internal nodes store only the keys that guide searches.
+    - All leaf nodes are linked together, supporting efficient sequential and range queries.
+
+<div align = "center"> <h2 style = "color:orange"> Indexing </h2> </div>
+
 - Indexing in DBMS is used to speed up data retrieval by minimizing disk scans.
 - When an index is created, it stores sorted key values and pointers to actual data rows. This reduces the number of disk accesses, improving performance especially on large datasets.
 
@@ -680,10 +747,80 @@ In 5NF
     - Data block size can range from 4KB to 32KB.
 
 - DBMS maintains the mapping of Data Page and Data Block.
-- we use B+ Tree to implement indexing in dbms as the time complexity for searching, inserting and deleting is O(logn)
-- <p style = "color:green"> 🧠 How B+ tree works ? </p>
-    
-    - It maintains sorted data.
-    - All leaf are at the same level.
-    - M order B tree means, each node can have at most M childrens.
-    - and M - 1 keys per node.
+
+- Atrributes of indexing :
+    - Access Types: This refers to the type of access such as value-based search, range access, etc.
+    - Access Time: It refers to the time needed to find a particular data element or set of elements.
+    - Insertion Time: It refers to the time taken to find the appropriate space and insert new data.
+    - Deletion Time: Time taken to find an item and delete it as well as update the index structure.
+    - Space Overhead: It refers to the additional space required by the index.
+
+# 📚 Types of Indexing in DBMS
+
+Indexing is a data structure technique to quickly retrieve records from a database.  
+It improves the speed of operations but may add overhead in terms of storage and maintenance.
+
+<div align = "center">
+
+```mermaid
+graph TD
+    A[Indexing]
+    A --> B[Primary Indexing]
+    A --> C[Secondary Indexing]
+    A --> D[Clustering Indexing]
+    B --> E[Dense]
+    B --> F[Sparse]
+```
+
+</div>
+
+- Primary Index
+    - Defined on the **primary key** of a table.
+    - The index entries are **sorted on the primary key field**.
+    - Each record in the data file is uniquely identified.
+    - ✅ Example:
+        - StudentID (Primary Key) → Points to Student Record.
+
+- Secondary Index
+    - Defined on a **non-primary key (candidate key or other attribute)**.
+    - Provides an additional path to retrieve data efficiently.
+    - Can have multiple secondary indexes for different attributes.
+    - ✅ Example:
+        - Name (Secondary Key) → Points to Student Record(s)
+
+- Clustered Index
+    - The **ordering of the index** determines the **physical order of records** in the data file.
+    - A table can have **only one clustered index**.
+    - Often created on primary key by default.
+    - ✅ Example:
+        - Clustered on RollNo → Records stored in sorted order of RollNo.
+
+- Non-Clustered Index
+    - The **index is stored separately** from the actual data.
+    - Contains pointers to the data location.
+    - A table can have **multiple non-clustered indexes**.
+    - ✅ Example:
+        - Non-Clustered on Name → Index table points to actual record locations.
+
+- Dense Index
+    - Index entry for **every search key value** in the data file.
+    - Faster lookup but requires more storage.
+    - ✅ Example:
+        - Key: 10 → Record Address - Key: 20 → Record Address - Key: 30 → Record Address
+
+- Sparse Index
+    - Index entries only for **some search key values**.
+    - Saves space but lookup may take longer.
+    - ✅ Example:
+        - Key: 10 → Record Address - Key: 30 → Record Address - (Skips 20, must traverse from 10 or 30)
+
+# 📊 Summary Table
+
+| Index Type      | Key Field        | Record Order | Multiple Allowed | Storage Usage |
+| --------------- | ---------------- | ------------ | ---------------- | ------------- |
+| Primary Index   | Primary Key      | Sorted       | ❌ No            | Medium        |
+| Secondary Index | Non-Primary Key  | Unsorted     | ✅ Yes           | High          |
+| Clustered Index | Any (usually PK) | Sorted       | ❌ No            | Medium        |
+| Non-Clustered   | Any Attribute    | Unsorted     | ✅ Yes           | High          |
+| Dense Index     | All Keys         | Direct Map   | -                | High          |
+| Sparse Index    | Some Keys        | Indirect Map | -                | Low           |
