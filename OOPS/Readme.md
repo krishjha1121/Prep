@@ -174,7 +174,6 @@ class Dog implements Animal {
         class C extends B {}
         ```
 - Hierarchical Inheritance
-
     - Example 📳
         ```java
         class A {}
@@ -192,7 +191,6 @@ class Dog implements Animal {
         class D extends B, C {}
         ```
 - Multiple Inhertiance can be achieved in java by using concept of interface.
-
     - Example 📳
         ```java
         interface A { public void m1(); }
@@ -210,7 +208,6 @@ class Dog implements Animal {
         }
         ```
 - Java also does not support cyclic inhertiance.
-
     - Example 📳
 
         ```java
@@ -225,7 +222,6 @@ class Dog implements Animal {
 - Polymorphism is the ability of an object to take on many forms.
 
 - Method Signature -->
-
     - Example 📳
         - name_of_method(type_of_parameter1, type_of_parameter2,..., type_of_parametern)
         - return type is not cosidered to be a part of method signature in java, but it is considered in c++
@@ -242,9 +238,9 @@ class Dog implements Animal {
             public void m1() { System.out.println("B"); }
         }
         ```
+
         - here child class B was not happy with the method implementation of parent class A, so it overrides the method.
 - Rules of method overriding (Not a easy concept)
-
     - Method signature must be same.
     - Return may not be same but need to be covariant. (Object-string) (string-object --> not allowed)
 
