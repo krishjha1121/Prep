@@ -298,16 +298,16 @@
 
 - Relationship
     - One to One
-      <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+          <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - One to Many
-      <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+          <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to One
-        <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+      <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to Many
-        <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+      <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
 - Strong Entity :
     - An entity that can be uniquely identified by its own attributes, without depending on any other entity.
@@ -675,7 +675,7 @@ In 5NF
 
 - Assume each row is of size 128B then in a block we can store 512 / 128 = 4 rows.
 - So, if we want to store each of these 100 records we need to create 100 / 4 = 25 blocks.
-- By doing so if we want to search some record we need to traverse all 15 blocks.
+- By doing so if we want to search some record we need to traverse all 25 blocks.
 - We can do better by creating a index table for Employee table which will store the key value pair i.e Key(eid) and value is a pointer pointing to the block itself saying in which block the information of this record is stored in the disk.
 - For each record we will have their entry.
 - We store index table in the disk as well.
@@ -774,12 +774,28 @@ graph TD
 
 </div>
 
+<div align = "center">
+
+| Ordered Files   | Primary Index(Sparse) | Clustered Index |
+| --------------- | --------------------- | --------------- |
+| Unordered Files | Secondary Index       | Secondary Index |
+|                 | Key                   | Non-Key         |
+
+</div>
+
 - Primary Index
     - Defined on the **primary key** of a table.
     - The index entries are **sorted on the primary key field**.
     - Each record in the data file is uniquely identified.
     - ✅ Example:
         - StudentID (Primary Key) → Points to Student Record.
+
+<div align = "center">
+<img src = 'Pictures/primaryIndex.png'> </img>
+</div>
+
+- Here sparse is index is used (since the key is unique and they are sorted in tables as well).
+- Just in case if the keys in table is unique but they are not in sorted order then for each entries we need to make the pointer to its address or block in index table, making is dense.
 
 - Secondary Index
     - Defined on a **non-primary key (candidate key or other attribute)**.
