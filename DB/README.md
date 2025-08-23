@@ -1176,3 +1176,369 @@ It is further divided into three types:
 - **Clustered Index** → Ordered, built on **non-key attribute**, determines data storage order.  
 - **Secondary Index** → Built on **non-ordering attributes**, allows flexible searching.  
 - **Multilevel Indexing** → Adds hierarchy to indexes for efficiency in **large datasets**.  
+# 📌 Primary Indexing
+
+Primary Indexing is an **ordered index** built on the **primary key** of a table.  
+
+Since the **primary key is unique and sorted**, the index entries are also stored in sorted order.
+
+---
+
+## 🔹 Structure
+
+The index file contains two fields:
+1. **Primary Key (search key)**
+2. **Pointer (address) to the actual record in the data file**
+
+---
+
+## 📖 Example
+
+Suppose you have a **Student** table:
+
+| RollNo (PK) | Name   | Marks |
+|-------------|--------|-------|
+| 101         | Aakash | 85    |
+| 102         | Nikhil | 90    |
+| 103         | Riya   | 78    |
+| 104         | Sam    | 88    |
+
+The **primary index** will look like this:
+
+| RollNo (Index Key) | Pointer to Record |
+|---------------------|------------------|
+| 101                 | → Record 1       |
+| 102                 | → Record 2       |
+| 103                 | → Record 3       |
+| 104                 | → Record 4       |
+
+---
+
+## 🔹 How It Works
+
+If you want to search for **RollNo = 103**:
+1. Go to the index file (small in size).  
+2. Perform a **binary search** on the sorted RollNo.  
+3. Get the pointer and directly access the record in the main file.  
+
+✅ This avoids scanning the entire table (**no full table scan**).
+
+---
+
+## ⏱️ Time Complexity
+
+- **Searching in index file:** `O(log₂N)` (binary search)  
+- **Accessing record from pointer:** `O(1)`  
+- ✅ **Overall:** `O(log₂N)`
+
+---
+
+## 📌 Key Points
+
+- Works only on the **primary key**.  
+- Index file is **smaller** than the data file, so searching is faster.  
+- Records in data file are stored in the **same sorted order** as primary key.  
+
+---
+
+# 🔹 Types of Primary Indexing
+
+<div align="center">
+    <img src="Pictures/pdi.png" alt="Dense vs Sparse Index Example" style="border-radius: 15px; height: 250px;">
+</div>
+
+## 1️⃣ Dense Primary Index
+- **Every search key value (primary key) has an entry in the index.**  
+- That means for **each record** in the data file, there’s a corresponding index entry.  
+
+### ✅ Example
+
+**Data File (sorted by RollNo):**
+
+| RollNo | Name   | Marks |
+|--------|--------|-------|
+| 101    | Aakash | 85    |
+| 102    | Nikhil | 90    |
+| 103    | Riya   | 78    |
+| 104    | Sam    | 88    |
+
+**Index File (Dense Index):**
+
+| RollNo | Pointer |
+|--------|---------|
+| 101    | → Rec 1 |
+| 102    | → Rec 2 |
+| 103    | → Rec 3 |
+| 104    | → Rec 4 |
+
+📌 Every row is indexed.  
+- Search is **very fast** (`O(log N)`), but index size is **large**.  
+
+---
+
+<div align="center">
+    <img src="Pictures/psi.png" alt="Dense vs Sparse Index Example" style="border-radius: 15px; height: 250px;">
+</div>
+
+## 2️⃣ Sparse Primary Index
+- **Not every search key has an entry.**  
+- Only **one entry per block (page)** of the data file is kept in the index.  
+- Inside the block, records are searched **linearly**.  
+
+### ✅ Example (suppose each block stores 2 records):
+
+**Data File:**
+
+- **Block 1:** (101, Aakash), (102, Nikhil)  
+- **Block 2:** (103, Riya), (104, Sam)  
+
+**Index File (Sparse Index):**
+
+| RollNo | Pointer (to block) |
+|--------|---------------------|
+| 101    | → Block 1           |
+| 103    | → Block 2           |
+
+📌 Here:
+- To search **RollNo = 102** → go to index (find Block 1) → scan block linearly.  
+- Index size is **much smaller**, but lookup is a bit **slower**.  
+
+---
+
+## 🔍 Comparison
+
+| Feature           | Dense Index                    | Sparse Index                  |
+|-------------------|--------------------------------|--------------------------------|
+| Entries in Index  | One for **every record**       | One for **every block/page**  |
+| Index Size        | Large                          | Small                          |
+| Search Speed      | Very fast (direct access)      | Slower (block scan needed)    |
+| Storage Overhead  | High                           | Low                           |
+| Use Case          | When memory is sufficient      | When data is huge, memory is limited |
+
+---
+
+## 👉 In Summary
+- **Dense Index** → faster search, more storage.  
+- **Sparse Index** → smaller index, slower search.  
+# 📌 Clustering Index
+
+
+<div align="center">
+    <img src="Pictures/ci.png" alt="Dense vs Sparse Index Example" style="border-radius: 15px; height: 250px;">
+</div>
+A **Clustering Index** is created when the records in a data file are physically ordered (clustered) based on a **non-primary key column** (called the clustering field).  
+
+Unlike a primary index (which is built on a primary key that is unique), a clustering index can be built on a field that is **not unique**.
+
+---
+
+## 🔹 Key Idea
+
+- Records with the **same value** of the clustering field are **stored together (clustered)** in the same block.  
+- The **index contains one entry for each distinct value** of the clustering field.  
+- Each index entry points to the **first block containing that value**.
+
+---
+
+## 📖 Example
+
+Suppose you have a **Student** table:
+
+| RollNo (PK) | Name   | Department |
+|-------------|--------|------------|
+| 101         | Aakash | CSE        |
+| 104         | Sam    | CSE        |
+| 103         | Riya   | ECE        |
+| 102         | Nikhil | CSE        |
+| 105         | Aman   | ECE        |
+
+### Step 1: Store data in **clustered order by Department**
+
+| RollNo | Name   | Department |
+|--------|--------|------------|
+| 101    | Aakash | CSE        |
+| 102    | Nikhil | CSE        |
+| 104    | Sam    | CSE        |
+| 103    | Riya   | ECE        |
+| 105    | Aman   | ECE        |
+
+(All `CSE` students are grouped, then `ECE` students.)
+
+### Step 2: Build **Clustering Index** on Department
+
+| Department | Pointer (to first record) |
+|------------|----------------------------|
+| CSE        | → Record 1 (Aakash)       |
+| ECE        | → Record 4 (Riya)         |
+
+---
+
+## 🔹 How It Works
+
+- Search for `Department = CSE`:
+  1. Look into the clustering index → find pointer to the first `CSE` record.  
+  2. Retrieve **all consecutive CSE records** directly since they are stored together.  
+
+✅ Efficient for **range queries** and **group queries** (e.g., “Find all CSE students”).
+
+---
+
+## ⏱️ Time Complexity
+
+- **Search for a value:** `O(log₂M)` in index (where M = distinct values).  
+- **Retrieving records:** sequential scan in clustered block(s).  
+- Much faster than scanning the whole table.
+
+---
+
+## 📌 Key Points
+
+- Built on **non-primary key** (clustering field).  
+- **One index entry per distinct value**.  
+- Records are **physically grouped** by clustering field.  
+- Good for queries on **non-unique attributes** (department, city, branch).
+
+---
+
+## 🔍 Comparison with Primary Index
+
+| Feature           | Primary Index                   | Clustering Index                     |
+|------------------|---------------------------------|-------------------------------------|
+| Based On          | Primary Key (unique)           | Non-primary key (can repeat)        |
+| Record Ordering   | Ordered by primary key         | Ordered by clustering field         |
+| Entries in Index  | One per record (dense/sparse)  | One per distinct value              |
+| Use Case          | Searching by unique key        | Range queries, grouped values       |
+| Example           | RollNo                          | Department, Branch, City            |
+
+---
+
+## 🔹 Advantages
+
+- Efficient for **range queries** (`WHERE department = 'CSE'`).  
+- Saves storage → **one entry per distinct value**.  
+- Supports **group-based queries** effectively.
+
+---
+
+## 🔹 Disadvantages
+
+- Records must be **physically stored in clustered order** → costly to maintain on insert/delete.  
+- Only **one clustering index** can exist per table.  
+- Less efficient for **point queries** on unique values (better to use primary index).
+
+---
+
+✅ **In short:**  
+A Clustering Index **groups records with the same non-key attribute values together** and creates index entries only for distinct values, making it ideal for **range and group queries**.
+# 📌 Secondary Index
+
+<div align="center">
+    <img src="Pictures/si.png" alt="Dense vs Sparse Index Example" style="border-radius: 15px; height: 250px;">
+</div>
+
+A **Secondary Index** is an index built on a **non-clustering field**, which may or may not be unique.  
+Unlike a primary or clustering index, the **data file does not need to be ordered** according to the secondary key.
+
+- It is used to **speed up searches on fields that are not primary keys**.  
+- Can be built on **any column**, even if the column has **duplicate values**.
+
+---
+
+## 🔹 Key Idea
+
+- The **data file itself is not ordered** according to the secondary key.  
+- The **index contains one entry for each occurrence** of the key (dense index).  
+- Each entry contains:  
+  1. **Search key** (the secondary field)  
+  2. **Pointer** to the record in the main data file  
+
+✅ Because multiple records can have the same secondary key, there can be **multiple entries** in the index for the same key.
+
+---
+
+## 📖 Example
+
+Suppose we have a **Student** table:
+
+| RollNo (PK) | Name   | Department |
+|-------------|--------|------------|
+| 101         | Aakash | CSE        |
+| 104         | Sam    | CSE        |
+| 103         | Riya   | ECE        |
+| 102         | Nikhil | CSE        |
+| 105         | Aman   | ECE        |
+
+**Secondary Index on Department:**
+
+| Department | Pointer (to record) |
+|------------|--------------------|
+| CSE        | → Record 1 (Aakash)|
+| CSE        | → Record 4 (Nikhil)|
+| CSE        | → Record 2 (Sam)   |
+| ECE        | → Record 3 (Riya)  |
+| ECE        | → Record 5 (Aman)  |
+
+- The **index is sorted by Department**, but the **data file itself is not clustered**.  
+- The index contains **all occurrences** of each value (dense).
+
+---
+
+## 🔹 How It Works
+
+- Search for `Department = CSE`:
+  1. Look into the **secondary index** → find all entries for CSE.  
+  2. Follow **pointers** to access records in the main data file.  
+
+✅ Allows **fast retrieval** even when the data file is unordered.
+
+---
+
+## ⏱️ Time Complexity
+
+- **Search in index:** `O(log₂N)` if the index is sorted (N = number of index entries).  
+- **Accessing records:** `O(k)` (k = number of records with that key).  
+
+---
+
+## 🔹 Key Points
+
+- Built on **non-primary key** (secondary field).  
+- **Data file order is irrelevant**.  
+- Can be **dense** (entry for every record) or **sparse** (rarely used for secondary index).  
+- Useful for **range queries or lookups on non-primary fields**.  
+- **Multiple secondary indexes** can exist on a table (unlike clustering index, limited to one).  
+
+---
+
+## 🔍 Comparison with Clustering Index
+
+| Feature             | Clustering Index                | Secondary Index                 |
+|--------------------|---------------------------------|--------------------------------|
+| Based On            | Non-primary key (clustering field) | Non-primary key (any field)   |
+| Data Ordering       | Records physically ordered      | Records can be unordered       |
+| Index Entries       | One per distinct value          | One per record (dense)         |
+| Number of Indexes   | Only one per table              | Multiple allowed per table     |
+| Use Case            | Range/group queries             | Lookup/search queries          |
+| Example             | Department, Branch             | Name, City, Age                |
+
+---
+
+## 🔹 Advantages
+
+- Allows **fast retrieval** on fields other than primary key.  
+- **Multiple secondary indexes** can be created.  
+- Works well even if **data is unordered**.  
+
+---
+
+## 🔹 Disadvantages
+
+- Index size can be **large** (dense index).  
+- Accessing multiple records may require **random disk accesses** → slower than clustered access.  
+- Maintaining the index during **inserts/deletes/updates** can be costly.  
+
+---
+
+✅ **In short:**  
+A **Secondary Index** allows efficient searches on **non-primary, non-clustered fields**, storing a **pointer for each record** in the main file.  
+It’s very flexible but can be **slower than clustering index** for range queries.
