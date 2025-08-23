@@ -1,1 +1,1 @@
-## @Contributors : Please don't consider changing the file directly here.
+## @Contributors : Please don't consider changing or commiting the file directly here.

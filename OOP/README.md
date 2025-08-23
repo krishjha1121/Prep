@@ -241,10 +241,8 @@ class Roy {
 class Roy {
     // static variable
     static int a = 10;
-
     // instance variable
     int b = 20;
-
     // static method
     static void m1() {
         a = 20;
