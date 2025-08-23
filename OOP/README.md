@@ -1,52 +1,167 @@
-# Object Oriented Programming #️⃣:
+<div align = "center"> 
+  <h1 style = "color:orange"> 💻 Object Oriented Programming </h1>
+  </div>
 
-Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior. OOP organizes code into reusable, modular components.
+- Object-oriented programming is a programming paradigm built on the concept of objects.
 
 ## Importance:
 
+- An approach to solve problems where all computations are carried out using objects
 - Promotes code reuse through inheritance.
 - Improves code organization and readability.
 - Makes maintenance and scaling easier.
 - Encapsulates data, increasing security and reducing complexity.
+- Follow DRY (Don't Repeat Yourself) Principle.
 
-# Import Statements #️⃣
+<div align = "center">
+    <h2 style = "color:orange"> Import Statements </h2>
+</div>
 
 - Import Statements are used to import classes, packages, and other resources into a program.
-- java.util.ArrayList list = new java.util.ArrayList(); -> Fully Qualified Name.;
-- To use short name directly, use import statement imoprt java.util.ArrayList; -> ArrayList list = new ArrayList();
-- Two Types of Import Statements :
-    - Explicit Import Statements : import java.util.ArrayList; --> Recommended;
-    - Implicit Import Statements : import java.util.\*;
+  <br>
+- An Example of fully qualified name
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Fully Qualified Name.
+        java.util.ArrayList list = new java.util.ArrayList();
+    }
+}
+```
+
+- To use short name directly, use import statement
+
+```java
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        // Short name.
+        ArrayList list = new ArrayList();
+    }
+}
+```
+
+- Types of Import Statements :
+    - Explicit Import Statements
+        ```java
+        //Recommended
+        import java.util.ArrayList;
+        public class Main {
+            publis static void main(String args[]) {
+                ArrayList list = new ArrayList();
+            }
+        }
+        ```
+    - Implicit Import Statements :
+        ```java
+        //Not Recommended
+        import java.util.*;
+        public class Main {
+            public static void main(String args[]) {
+                ArrayList list = new ArrayList();
+            }
+        }
+        ```
 - No need to import the packages that are inside java.lang packages. -> it will automatically get imoprted;
-    - Example : String, Thread, Exception, StringBuffer;
-    - String s = new String("RAJ ROY") --> import statement not required;
-    - Thread t= new Thread(); --> import statement not required;
-    - Exception e = new Exception(); --> import statement not required;
-    - StringBuffer sb = new StringBuffer("RAJ ROY"); --> import statement not required;
-    - All the classes that are present inside the current working directory will be automatically imported.
+    - Example :
+
+```java
+//String, Thread, Exception, StringBuffer are some of the classes that are present inside java.lang package.
+public class Main {
+    public static void main(String args[]) {
+        String s = new String("RAJ ROY");
+        Thread t= new Thread();
+        Exception e = new Exception();
+        StringBuffer sb = new StringBuffer("RAJ ROY");
+        System.out.println(s);
+    }
+}
+```
+
+- Output :
+
+```text
+RAJ ROY
+```
+
+- All the classes that are present inside the current working directory will be automatically imported.
+
 - we know we have java.util.regex.Pattern
     - Lets say we want to use the Pattern class then the import statement can be written as#️⃣
-        - import java.util.regex.Pattern;
-        - import java.util.regex;
-        - import java.util.\*; --> Not allowed;
+        ```java
+         import java.util.regex.Pattern; //valid
+         import java.util.regex.*; //valid
+         import java.util.*; --> //not valid;
+        ```
 
-# Package Statements
+<div align = "center">
+    <h2 style = "color:orange"> Package Statements </h2> </div>
 
-- package -> Group of related classes and interfaces.
-- package statement is used to group related classes and interfaces together.
-- package statements must be the first line of code in a java file other than comment lines.
-- At most one package statements are allowed.
+- Package :
+    - Group of related classes and interfaces.
+- Package statement is used to group related classes and interfaces together.
+- Package statements must be the first line of code in a java file other than comment lines.
+- At most one package statements are allowed in a java file.
 - Resolves naming conflicts.
+- Example :
+    ```java
+    package mypackage; // user-defined package
+    public class Hello {
+        public void sayHi() {
+            System.out.println("Hello from my package!");
+        }
+    }
+    ```
 
-# Class Level Modifiers (Top level classes)
+<div align = "center">
+     <h2 style = "color:orange"> Class and Object </h2>
+</div>
 
-- used to specify the access level or behaviour of a class or interface.
-- public -> accessible from anywhere.
-- <defalut> nothing -> accessible from the same package.
-- abstract -> prohibits instantiation.
-- final -> prohibits child class creation.
+- Class → A blueprint or template that defines the properties (fields/variables) and behaviors (methods) of objects.
+- Object → A real instance of a class that actually uses the defined properties and behaviors.
+- Example :
 
-# Class Level Modifiers (Nested classes)
+```java
+class Car { // class
+    private String color;
+    private int speed;
+    public Car(String color, int speed) {
+        this.color = color;
+        this.speed = speed;
+    }
+    public void run() {
+        System.out.println("Car is running");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car("Red", 100); //object of class Car
+        myCar.run();
+    }
+}
+```
+
+- In the above example, Car is a class and myCar is an object of the Car class.
+- The run() method is a behavior of the Car class and color & speed are the properties of the Car class.
+
+<div align = "center"> 
+    <h2 style = "color:orange">  Access Modifiers </h2>
+</div>
+
+- In Java, access modifiers are essential tools that define how the members of a class, like variables, methods, and even the class itself, can be accessed from other parts of our program.
+
+- Class Level Modifiers (Top level classes)
+    - public : accessible from anywhere.
+    - default(if nothing specified) : accessible from the same package.
+    - abstract : prohibits instantiation.
+    - final :
+        - prohibits child class creation.
+        - Final access modifier is a modifier applicable to classes, methods, and variables. If we declare a parent class method as final then we can’t override that method in the child class because its implementation is final and if a class is declared as final we can’t extend the functionality of that class i.e we can’t create a child class for that class i.e inheritance is not possible for final classes.
+        - Every method present inside the final class is always final by default but every variable present inside the final class need not be final.
+
+- Class Level Modifiers (Nested classes)
 
 - Top level class modifiers + private + protected + static;
     - Examples :
