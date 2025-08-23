@@ -142,38 +142,6 @@ public class Main {
 }
 ```
 
-```cpp
-class Car {
-private:
-    string color;
-    int speed;
-
-public:
-    Car(string color, int speed) {
-        this->color = color;
-        this->speed = speed;
-    }
-
-    void run() {
-        cout << "Car is running" << endl;
-    }
-};
-
-//There are two ways in cpp to make object
-int main() {
-    Car myCar("Red", 100);  
-    myCar.run();
-    return 0;
-}
-
-int main() {
-    Car* myCar = new Car("Red", 100);  
-    myCar->run();
-    delete myCar;
-    return 0;
-}
-```
-
 - In the above example, Car is a class and myCar is an object of the Car class.
 - The run() method is a behavior of the Car class and color & speed are the properties of the Car class.
 
@@ -404,5 +372,4 @@ class Dog implements Animal {
     - Return may not be same but need to be covariant. (Object-string) (string-object --> not allowed)
 
 -
-If this helps in anyway :)
-https://docs.google.com/document/d/15nVPyNqahwlwhPsj3ssqm33Qp9ZMXluDBbCaJS6Tmys/edit?usp=sharing
+
