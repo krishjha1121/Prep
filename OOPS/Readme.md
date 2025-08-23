@@ -142,6 +142,31 @@ public class Main {
 }
 ```
 
+```cpp
+class Car {
+private:
+    string color;
+    int speed;
+
+public:
+    Car(string color, int speed) {
+        this->color = color;
+        this->speed = speed;
+    }
+
+    void run() {
+        cout << "Car is running" << endl;
+    }
+};
+
+int main() {
+    Car* myCar = new Car("Red", 100);  
+    myCar->run();
+    delete myCar;
+    return 0;
+}
+```
+
 - In the above example, Car is a class and myCar is an object of the Car class.
 - The run() method is a behavior of the Car class and color & speed are the properties of the Car class.
 
