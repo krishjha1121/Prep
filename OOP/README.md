@@ -162,9 +162,19 @@ public class Main {
         - Every method present inside the final class is always final by default but every variable present inside the final class need not be final.
 
 - Class Level Modifiers (Nested classes)
+    - Top level class modifiers + private + protected + static;
 
-- Top level class modifiers + private + protected + static;
-    - Examples :
+- static :
+    - The static keyword in Java is mainly used for memory management, allowing variables and methods to belong to the class itself rather than individual instances.
+    - The static keyword belongs to the class rather than an instance of the class.
+    - The static keyword is used for a constant variable or a method that is the same for every instance of a class.
+    - We do not need to create objects of the class to use static methods.
+    - We can call static members using the class name directly.
+    - Static members belong to the class, not to any specified object.
+    - Static members can not access non-static members.
+    - Static methods cannot be overridden in subclasses because they belong to the class, not to an object.
+
+- Examples :
 
 - This example demonstrates that a static method can be called without creating an instance of the class.
 
@@ -184,6 +194,8 @@ class Roy {
 }
 ```
 
+- static block :
+    - If you need to do the computation in order to initialize your static variables, you can declare a static block that gets executed exactly once, when the class is first loaded.
 - This example demonstrates the use of a static block to initialize static variables before the main method is executed.
 
 ```java
@@ -206,6 +218,11 @@ class Roy {
 }
 ```
 
+- static variables :
+    - When a variable is declared as static, then a single copy of the variable is created and shared among all objects at the class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.
+    - Importance :
+        - We can create static variables at the class level only.
+        - static block and static variables are executed in the order they are present in a program.
 - This example demonstrates that static variables are initialized by calling static methods before the static block is executed.
 
 ```java
@@ -234,6 +251,11 @@ class Roy {
 }
 ```
 
+- static methods :
+    - When a method is declared with the static keyword, it is known as the static method. The most common example of a static method is the main() method. As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object. Methods declared as static have several restrictions:
+        - They can only directly call other static methods.
+        - They can only directly access static data.
+        - They cannot refer to this or super in any way.
 - This example demonstrates the restriction that static methods cannot access instance variables, instance methods, or use super in a static context.
 
 ```java
