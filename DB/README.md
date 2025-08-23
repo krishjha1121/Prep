@@ -298,16 +298,16 @@
 
 - Relationship
     - One to One
-          <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+      <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - One to Many
-          <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+      <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to One
-      <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+        <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to Many
-      <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+        <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
 - Strong Entity :
     - An entity that can be uniquely identified by its own attributes, without depending on any other entity.
