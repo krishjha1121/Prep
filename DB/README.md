@@ -298,16 +298,16 @@
 
 - Relationship
     - One to One
-      <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+        <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - One to Many
-      <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+        <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to One
-        <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+          <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
     - Many to Many
-        <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+          <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
 - Strong Entity :
     - An entity that can be uniquely identified by its own attributes, without depending on any other entity.
@@ -721,6 +721,266 @@ In 5NF
     - Internal nodes store only the keys that guide searches.
     - All leaf nodes are linked together, supporting efficient sequential and range queries.
 
+# BST vs B-Tree
+
+A **BST (Binary Search Tree)** and a **B-Tree** both store data in sorted order, but they are designed for different use cases.  
+The main reason to use a **B-Tree** over a **BST** is **performance in disk-based or large data systems**.
+
+---
+
+## 🔹 Binary Search Tree (BST)
+
+- Each node has at most **2 children**.
+- **Operations** (search, insert, delete):
+    - **O(log n)** in best/average case (if balanced).
+    - **O(n)** in worst case (if skewed/unbalanced).
+- Stored usually in **memory (RAM)**, where accessing nodes is cheap (constant time).
+
+---
+
+## 🔹 B-Tree
+
+- A **generalization of BST** → each node can have **many keys** and **many children** (not limited to 2).
+- Nodes are designed to match the **block size of disks/pages** in databases.
+- Each read/write loads an entire **block**, reducing **disk I/O**.
+- **Operations** (search, insert, delete): **O(log n)**, but with **fewer disk reads**.
+- Always kept **balanced** (height is low).
+
+---
+
+## ⚡ Why B-Tree over BST?
+
+1. **Disk I/O minimization**
+    - Accessing disk is **millions of times slower** than RAM.
+    - BST may require traversing many small nodes → many disk reads.
+    - B-Tree packs many keys in one node → fewer disk accesses.
+
+2. **Guaranteed balance**
+    - B-Tree is **always balanced** (low height).
+    - BST can become skewed like a linked list unless extra balancing (AVL, Red-Black).
+
+3. **Databases & File Systems**
+    - Used in **databases, indexing, and file systems** (NTFS, EXT4, HFS+).
+    - Optimized for **range queries** and **sequential access**.
+
+---
+
+## 👉 In short
+
+- **Use BST** when data fits in memory and you want simplicity.
+- **Use B-Tree** when data is on **disk/storage** and you need efficient indexing with **minimal disk reads**.
+
+# 🔹 Difference between B-Tree and B+ Tree
+
+---
+
+## 1. Where keys and data are stored
+
+- **B-Tree**
+    - Both **keys + data** (records/pointers to records) can be stored in **internal nodes** and **leaf nodes**.
+    - Searching might **stop at an internal node**.
+
+- **B+ Tree**
+    - Internal nodes store **only keys** (indexing), **no data**.
+    - Leaf nodes store **all actual data/record pointers**.
+    - All leaves are **linked together** (linked list).
+
+---
+
+## 2. Search Efficiency
+
+- **B-Tree**: Search may **stop early** at internal nodes → not consistent.
+- **B+ Tree**: Always goes to the **leaf level** → predictable search time.
+
+---
+
+## 3. Range Queries
+
+- **B-Tree**: No direct way to scan sequentially → need **in-order traversal**.
+- **B+ Tree**: Leaves are linked → **fast sequential access** and **range queries** (e.g., `WHERE age BETWEEN 20 AND 30`).
+
+---
+
+## 4. Space Utilization
+
+- **B-Tree**: Internal nodes hold both **keys + data** → fewer keys per node → **larger height**.
+- **B+ Tree**: Internal nodes hold **only keys** → more branching factor → **smaller height**, fewer disk I/Os.
+
+---
+
+## ⚡ Why DBMS and File Systems Prefer B+ Tree
+
+- **Better disk read efficiency** → shorter, broader tree (internal nodes are smaller).
+- **Fast range queries** → leaf nodes are linked list.
+- **Consistent access time** → every search goes to leaf.
+- **Efficient sequential scans** of entire table/index.
+
+---
+
+## 🔹 Example
+
+Suppose **block size = 4 KB**:
+
+- **B-Tree**: Internal node stores **keys + record pointers**, so it may hold ~50 keys.
+- **B+ Tree**: Internal node stores **only keys**, so it can hold ~200+ keys.
+
+👉 Tree height shrinks a lot → fewer disk accesses.
+
+---
+
+## ✅ In short
+
+We use **B+ Tree** over **B-Tree** because it gives:
+
+- Smaller height (**fewer disk I/Os**)
+- Better **range queries** (linked leaves)
+- **Predictable search time** (always goes to leaves)
+
+# 🔍 Need of Indexing in DBMS
+
+Indexing in DBMS is like the **index of a book** – instead of scanning every page to find a topic, you directly go to the page number from the index.
+
+Without indexing, the database might need to **scan the entire table (linear search)**, which is very slow for large datasets.
+
+---
+
+## ✅ Why Indexing is Needed?
+
+### 1. Faster Data Retrieval
+
+- Speeds up queries by avoiding full table scans.
+- Example: Searching for `EmployeeID = 105` in a table of **1M rows** → index allows quick access instead of scanning all rows.
+
+### 2. Efficient Searching
+
+- Index uses **tree structures** (B-Tree, B+ Tree) or **hashing**.
+- Reduces search complexity from **O(n)** → **O(log n)** or even **O(1)**.
+
+### 3. Improves Range Queries
+
+- Ordered indexes make queries like:
+
+# 📂 Dense Index vs Sparse Index
+
+## 🔹 1. Dense Index
+
+**Definition**: For every search key value in the data file, there exists an index entry.
+
+### How it works:
+
+- Suppose we have records `A, B, C, D, F, H`.
+- The index contains an entry for **every key** (`A, B, C, D, F, H`).
+- Each index entry points directly to the location of that record in the data file.
+
+### ✅ Advantages:
+
+- Very fast lookups (because every record has an index entry).
+- Direct access to any record.
+
+### ❌ Disadvantages:
+
+- More space overhead (since index stores one entry for each record).
+- Slower inserts/deletes (index must also be updated for every change).
+
+**Use case**: When fast retrieval is critical, and space overhead is acceptable.
+
+## 🔹 2. Sparse Index
+
+**Definition**: Index records are created **only for some search key values** (not all).
+
+### How it works:
+
+- Index stores only a **few keys** (e.g., first record of each block/page: `A, D, G, L...`).
+- To search:
+    1. Use the index to find the **closest key ≤ search value**.
+    2. Then scan sequentially in the data file until the exact record is found.
+
+### ✅ Advantages:
+
+- Much smaller index size (less space needed).
+- Faster to maintain (fewer updates).
+
+### ❌ Disadvantages:
+
+- Slower lookups (may require scanning records within a block).
+- Works only if data file is stored in **sorted order**.
+
+**Use case**: When dataset is huge, and space efficiency is more important than fastest possible lookup.
+
+<img src = "Pictures/denseandsparse.png"> </img>
+
+## ⚡ Key Differences (Dense vs Sparse)
+
+| Feature                | Dense Index 🟢            | Sparse Index 🟡                           |
+| ---------------------- | ------------------------- | ----------------------------------------- |
+| **Index entries**      | One for **every record**  | One for **few records** (e.g., per block) |
+| **Space requirement**  | High                      | Low                                       |
+| **Search speed**       | Very fast (direct access) | Slower (needs sequential scan)            |
+| **Maintenance**        | Costly (frequent updates) | Easier (fewer updates)                    |
+| **Works with sorted?** | Not necessary             | **Necessary**                             |
+
+👉 **In short**:
+
+- **Dense Index** → Faster, but larger index.
+- **Sparse Index** → Smaller, but slower (requires sequential scan).
+
+# 📌 Single Level Indexing vs Multilevel Indexing
+
+---
+
+## 📌 Single Level Indexing
+
+- In this approach, **one index file** is created for the data file.
+- The index file contains **pointers to the actual data records**.
+
+### 🔎 Searching process:
+
+1. Look up the index.
+2. Use it to directly access the data file.
+
+👉 Works fine for **small datasets**, but as data grows, the index itself becomes too large, leading to **slow searches**.
+
+---
+
+## 📌 Multilevel Indexing
+
+- Instead of keeping **one large index**, we create **indexes on indexes**.
+- The first-level index points to **second-level indexes**, which in turn point to the **data blocks**.
+
+### 🔎 Searching process:
+
+1. Start from the **top-level index**.
+2. Narrow down step by step until you reach the data file.
+
+👉 This reduces the **search time drastically** because each index file is smaller and can be searched quickly.
+
+---
+
+<img src = "Pictures/sm.png"> </img>
+
+## ⚡ Comparison
+
+| Feature               | Single Level Indexing 🟢     | Multilevel Indexing 🟡             |
+| --------------------- | ---------------------------- | ---------------------------------- |
+| **Structure**         | One index file               | Multiple levels of indexes         |
+| **Search time**       | Slower for large data (O(n)) | Much faster (like O(log n))        |
+| **Space requirement** | Requires large index file    | Smaller indexes at multiple levels |
+| **Use case**          | Small databases              | Large databases                    |
+
+---
+
+## ✅ Real-Life Analogy
+
+- **Single Level Indexing** → Like having a book with **one index list** at the back. If the index is huge, it takes time to find.
+- **Multilevel Indexing** → Like having a **dictionary with tabs (A, B, C…)** → first you go to the tab, then to the word → faster navigation.
+
+---
+
+👉 **In short**:
+
+- **Single Level Index** → Simple but inefficient for huge data.
+- **Multilevel Index** → Hierarchical structure (like **B-Tree**), reduces search time and improves efficiency for large databases.
+
 <div align = "center"> <h2 style = "color:orange"> Indexing </h2> </div>
 
 - Indexing in DBMS is used to speed up data retrieval by minimizing disk scans.
@@ -841,250 +1101,3 @@ graph TD
 | Dense Index     | All Keys         | Direct Map   | -                | High          |
 | Sparse Index    | Some Keys        | Indirect Map | -                | Low           |
 
-
-# BST vs B-Tree
-
-A **BST (Binary Search Tree)** and a **B-Tree** both store data in sorted order, but they are designed for different use cases.  
-The main reason to use a **B-Tree** over a **BST** is **performance in disk-based or large data systems**.
-
----
-
-## 🔹 Binary Search Tree (BST)
-
-- Each node has at most **2 children**.  
-- **Operations** (search, insert, delete):  
-  - **O(log n)** in best/average case (if balanced).  
-  - **O(n)** in worst case (if skewed/unbalanced).  
-- Stored usually in **memory (RAM)**, where accessing nodes is cheap (constant time).  
-
----
-
-## 🔹 B-Tree
-
-- A **generalization of BST** → each node can have **many keys** and **many children** (not limited to 2).  
-- Nodes are designed to match the **block size of disks/pages** in databases.  
-- Each read/write loads an entire **block**, reducing **disk I/O**.  
-- **Operations** (search, insert, delete): **O(log n)**, but with **fewer disk reads**.  
-- Always kept **balanced** (height is low).  
-
----
-
-## ⚡ Why B-Tree over BST?
-
-1. **Disk I/O minimization**  
-   - Accessing disk is **millions of times slower** than RAM.  
-   - BST may require traversing many small nodes → many disk reads.  
-   - B-Tree packs many keys in one node → fewer disk accesses.  
-
-2. **Guaranteed balance**  
-   - B-Tree is **always balanced** (low height).  
-   - BST can become skewed like a linked list unless extra balancing (AVL, Red-Black).  
-
-3. **Databases & File Systems**  
-   - Used in **databases, indexing, and file systems** (NTFS, EXT4, HFS+).  
-   - Optimized for **range queries** and **sequential access**.  
-
----
-
-## 👉 In short
-
-- **Use BST** when data fits in memory and you want simplicity.  
-- **Use B-Tree** when data is on **disk/storage** and you need efficient indexing with **minimal disk reads**. 
-
-
-# 🔹 Difference between B-Tree and B+ Tree
-
----
-
-## 1. Where keys and data are stored
-- **B-Tree**  
-  - Both **keys + data** (records/pointers to records) can be stored in **internal nodes** and **leaf nodes**.  
-  - Searching might **stop at an internal node**.  
-
-- **B+ Tree**  
-  - Internal nodes store **only keys** (indexing), **no data**.  
-  - Leaf nodes store **all actual data/record pointers**.  
-  - All leaves are **linked together** (linked list).  
-
----
-
-## 2. Search Efficiency
-- **B-Tree**: Search may **stop early** at internal nodes → not consistent.  
-- **B+ Tree**: Always goes to the **leaf level** → predictable search time.  
-
----
-
-## 3. Range Queries
-- **B-Tree**: No direct way to scan sequentially → need **in-order traversal**.  
-- **B+ Tree**: Leaves are linked → **fast sequential access** and **range queries** (e.g., `WHERE age BETWEEN 20 AND 30`).  
-
----
-
-## 4. Space Utilization
-- **B-Tree**: Internal nodes hold both **keys + data** → fewer keys per node → **larger height**.  
-- **B+ Tree**: Internal nodes hold **only keys** → more branching factor → **smaller height**, fewer disk I/Os.  
-
----
-
-## ⚡ Why DBMS and File Systems Prefer B+ Tree
-- **Better disk read efficiency** → shorter, broader tree (internal nodes are smaller).  
-- **Fast range queries** → leaf nodes are linked list.  
-- **Consistent access time** → every search goes to leaf.  
-- **Efficient sequential scans** of entire table/index.  
-
----
-
-## 🔹 Example
-Suppose **block size = 4 KB**:  
-- **B-Tree**: Internal node stores **keys + record pointers**, so it may hold ~50 keys.  
-- **B+ Tree**: Internal node stores **only keys**, so it can hold ~200+ keys.  
-
-👉 Tree height shrinks a lot → fewer disk accesses.  
-
----
-
-## ✅ In short
-We use **B+ Tree** over **B-Tree** because it gives:  
-- Smaller height (**fewer disk I/Os**)  
-- Better **range queries** (linked leaves)  
-- **Predictable search time** (always goes to leaves)  
- 
-# 🔍 Need of Indexing in DBMS
-
-Indexing in DBMS is like the **index of a book** – instead of scanning every page to find a topic, you directly go to the page number from the index.  
-
-Without indexing, the database might need to **scan the entire table (linear search)**, which is very slow for large datasets.  
-
----
-
-## ✅ Why Indexing is Needed?
-
-### 1. Faster Data Retrieval
-- Speeds up queries by avoiding full table scans.  
-- Example: Searching for `EmployeeID = 105` in a table of **1M rows** → index allows quick access instead of scanning all rows.  
-
-### 2. Efficient Searching
-- Index uses **tree structures** (B-Tree, B+ Tree) or **hashing**.  
-- Reduces search complexity from **O(n)** → **O(log n)** or even **O(1)**.  
-
-### 3. Improves Range Queries
-- Ordered indexes make queries like:
-  
-
-# 📂 Dense Index vs Sparse Index
-
-
-## 🔹 1. Dense Index
-
-**Definition**: For every search key value in the data file, there exists an index entry.  
-
-### How it works:
-- Suppose we have records `A, B, C, D, F, H`.  
-- The index contains an entry for **every key** (`A, B, C, D, F, H`).  
-- Each index entry points directly to the location of that record in the data file.  
-
-### ✅ Advantages:
-- Very fast lookups (because every record has an index entry).  
-- Direct access to any record.  
-
-### ❌ Disadvantages:
-- More space overhead (since index stores one entry for each record).  
-- Slower inserts/deletes (index must also be updated for every change).  
-
-**Use case**: When fast retrieval is critical, and space overhead is acceptable.  
-
-
-
-## 🔹 2. Sparse Index
-
-**Definition**: Index records are created **only for some search key values** (not all).  
-
-### How it works:
-- Index stores only a **few keys** (e.g., first record of each block/page: `A, D, G, L...`).  
-- To search:  
-  1. Use the index to find the **closest key ≤ search value**.  
-  2. Then scan sequentially in the data file until the exact record is found.  
-
-### ✅ Advantages:
-- Much smaller index size (less space needed).  
-- Faster to maintain (fewer updates).  
-
-### ❌ Disadvantages:
-- Slower lookups (may require scanning records within a block).  
-- Works only if data file is stored in **sorted order**.  
-
-**Use case**: When dataset is huge, and space efficiency is more important than fastest possible lookup.  
-
-<img width="916" height="658" alt="image" src="https://github.com/user-attachments/assets/0f68d3ce-b002-4a52-a596-bba5756a8456" />
-
-
-## ⚡ Key Differences (Dense vs Sparse)
-
-| Feature              | Dense Index 🟢                  | Sparse Index 🟡                          |
-|----------------------|---------------------------------|------------------------------------------|
-| **Index entries**    | One for **every record**        | One for **few records** (e.g., per block) |
-| **Space requirement**| High                           | Low                                      |
-| **Search speed**     | Very fast (direct access)      | Slower (needs sequential scan)           |
-| **Maintenance**      | Costly (frequent updates)      | Easier (fewer updates)                   |
-| **Works with sorted?**| Not necessary                 | **Necessary**                            |
-
-
-
-👉 **In short**:  
-- **Dense Index** → Faster, but larger index.  
-- **Sparse Index** → Smaller, but slower (requires sequential scan).  
-
-
-
-# 📌 Single Level Indexing vs Multilevel Indexing
-
----
-
-## 📌 Single Level Indexing
-
-- In this approach, **one index file** is created for the data file.  
-- The index file contains **pointers to the actual data records**.  
-
-### 🔎 Searching process:
-1. Look up the index.  
-2. Use it to directly access the data file.  
-
-👉 Works fine for **small datasets**, but as data grows, the index itself becomes too large, leading to **slow searches**.  
-
----
-
-## 📌 Multilevel Indexing
-
-- Instead of keeping **one large index**, we create **indexes on indexes**.  
-- The first-level index points to **second-level indexes**, which in turn point to the **data blocks**.  
-
-### 🔎 Searching process:
-1. Start from the **top-level index**.  
-2. Narrow down step by step until you reach the data file.  
-
-👉 This reduces the **search time drastically** because each index file is smaller and can be searched quickly.  
-
----
-<img width="970" height="677" alt="image" src="https://github.com/user-attachments/assets/43af3613-8c06-4a98-9c46-1d0de7704186" />
-
-## ⚡ Comparison
-
-| Feature              | Single Level Indexing 🟢       | Multilevel Indexing 🟡                   |
-|----------------------|--------------------------------|------------------------------------------|
-| **Structure**        | One index file                 | Multiple levels of indexes               |
-| **Search time**      | Slower for large data (O(n))   | Much faster (like O(log n))              |
-| **Space requirement**| Requires large index file      | Smaller indexes at multiple levels       |
-| **Use case**         | Small databases                | Large databases                          |
-
----
-
-## ✅ Real-Life Analogy
-
-- **Single Level Indexing** → Like having a book with **one index list** at the back. If the index is huge, it takes time to find.  
-- **Multilevel Indexing** → Like having a **dictionary with tabs (A, B, C…)** → first you go to the tab, then to the word → faster navigation.  
-
----
-
-👉 **In short**:  
-- **Single Level Index** → Simple but inefficient for huge data.  
-- **Multilevel Index** → Hierarchical structure (like **B-Tree**), reduces search time and improves efficiency for large databases.  
