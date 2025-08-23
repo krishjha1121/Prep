@@ -1101,3 +1101,65 @@ graph TD
 | Dense Index     | All Keys         | Direct Map   | -                | High          |
 | Sparse Index    | Some Keys        | Indirect Map | -                | Low           |
 
+
+# 📌 Types of Indexing in DBMS
+
+Indexing helps in faster retrieval of data. It can be broadly divided into:
+
+- **Single-Level Indexing**
+- **Multilevel Indexing**
+
+
+
+## 🔹 Single-Level Indexing
+
+This means there is only **one index file** for the data file.  
+It is further divided into three types:
+
+
+
+### 1. **Primary Index**
+- Built on the **primary key** of the table.  
+- Ordered index → index entries are stored in **sorted order** of primary key.  
+- Since primary keys are unique, each entry points to exactly one record.  
+- **Efficient for direct lookups.**
+
+👉 **Example**: Employee table indexed on `EmpID` (primary key).  
+
+
+### 2. **Clustered Index**
+- Built on a **non-primary key attribute** that determines the **physical order** of data.  
+- Ordered, but not on primary key.  
+- Only **one clustered index** is allowed per table, because data can be physically ordered only in one way.  
+
+👉 **Example**: A clustered index on `Salary` where rows are physically ordered by salary values.  
+
+
+
+### 3. **Secondary Index**
+- Built on a **non-ordering key** (any attribute that is neither primary key nor clustered).  
+- Does not affect the **physical order** of data.  
+- Multiple **secondary indexes** can exist in a table.  
+- Typically implemented using **dense indexes**.  
+
+👉 **Example**: An index on `Department` in Employee table, even though data is not stored in department order.  
+
+
+
+## 🔹 Multilevel Indexing
+- When the index file itself becomes too large, we create **indexes on indexes**.  
+- Reduces search time by applying a **hierarchical structure (like B-Tree)**.  
+- Useful for **large databases**.  
+
+
+
+<div align="center">
+    <img src="Pictures/pcs.png" alt="Types of Indexing in DBMS" style="border-radius: 15px; height: 350px;">
+</div>
+
+## ✅ Summary
+
+- **Primary Index** → Ordered, built on **primary key**.  
+- **Clustered Index** → Ordered, built on **non-key attribute**, determines data storage order.  
+- **Secondary Index** → Built on **non-ordering attributes**, allows flexible searching.  
+- **Multilevel Indexing** → Adds hierarchy to indexes for efficiency in **large datasets**.  
