@@ -159,6 +159,13 @@ public:
     }
 };
 
+//There are two ways in cpp to make object
+int main() {
+    Car myCar("Red", 100);  
+    myCar.run();
+    return 0;
+}
+
 int main() {
     Car* myCar = new Car("Red", 100);  
     myCar->run();
