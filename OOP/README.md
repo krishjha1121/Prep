@@ -874,11 +874,25 @@ classDiagram
 
 - In single inheritance, a sub-class is derived from only one super class. It inherits the properties and behavior of a single-parent class. Sometimes, it is also known as simple inheritance.
 
+<div align = "center">
+
+```mermaid
+classDiagram
+    class A
+    class B
+    A <|-- B : extends
+```
+
+</div>
+
+
 > Example :
 ```java
 class A {}
 class B extends A {}
 ```
+
+
 
 > Example :
 
@@ -914,6 +928,19 @@ This Vehicle is Car
 > Multilevel Inheritance
 
 - In Multilevel Inheritance, a derived class will be inheriting a base class and as well as the derived class also acts as the base class for other classes.
+
+<div align = "center">
+
+```mermaid
+classDiagram
+    class A
+    class B
+    class C
+    A <|-- B : extends
+    B <|-- C : extends
+```
+</div>
+
 
 > Example :
 
@@ -959,6 +986,19 @@ This 4 Wheeler Vehicle is a Car
 > Hierarchical Inheritance
 
 - In hierarchical inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class. For example, cars and buses both are vehicle
+
+<div align = "center">
+
+```mermaid
+classDiagram
+    class A
+    class B
+    class C
+    A <|-- B : extends
+    A <|-- C : extends
+```
+
+</div>
 
 > Example :
 
@@ -1007,6 +1047,18 @@ This Vehicle is Bus
 > Multiple Inheritance (Can be achieved through interfaces)
 
 - In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes.
+
+<div align = "center">
+
+```mermaid
+classDiagram
+    class A
+    class B
+    class C
+    A <|-- C : extends
+    B <|-- C : extends
+```
+</div>
 
 - Example 📳
 
@@ -1058,7 +1110,6 @@ This is a LandVehicle
 interface A {
     void show();
 }
-
 interface B {
     void show();
 }
@@ -1074,6 +1125,43 @@ public class Main {
         obj.show();  // Output: Implemented once, works for both A and B
     }
 }
+```
+
+> Example :
+```java
+// First interface
+interface Animal {
+    void eat();
+}
+// Second interface
+interface Pet {
+    void play();
+}
+// A class can implement multiple interfaces
+class Dog implements Animal, Pet {
+    @Override
+    public void eat() {
+        System.out.println("Dog is eating.");
+    }
+    @Override
+    public void play() {
+        System.out.println("Dog is playing.");
+    }
+}
+// Main class to run the program
+public class MultipleInheritanceDemo {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();   // From Animal interface
+        dog.play();  // From Pet interface
+    }
+}
+```
+
+> Output :
+```text
+Dog is eating.
+Dog is playing.
 ```
 
 > 🧠 **Reason why multiple inheritance is not allowed in Java :**
@@ -1130,40 +1218,96 @@ classDiagram
 
 </div>
 
-- Hybrid Interitance (Combination of two or more type of inheritance, not allowed in java)
-    - Example 📳
-        ```java
-        class A {}
-        class B extends A {}
-        class C extends B {}
-        class D extends B, C {}
-        ```
-- Multiple Inhertiance can be achieved in java by using concept of interface.
-    - Example 📳
-        ```java
-        interface A { public void m1(); }
-        interface B {}
-        class C implements A, B { public void m1(){}}
-        ```
+> Hybrid Interitance (Combination of two or more type of inheritance, not allowed in java)
 
-- Java does not support multiple inhertiance because of ambiguity problem.
-    - Example 📳
-        ```java
-        class A { public void m1(){} }
-        class B { public void m1(){} }
-        class C extends A, B {
-            //call m1 --> which m1 method to call ?
-        }
-        ```
-- Java also does not support cyclic inhertiance.
-    - Example 📳
+- It is a mix of two or more of the above types of inheritance. In Java, we can achieve hybrid inheritance only through Interfaces if we want to involve multiple inheritance to implement Hybrid inheritance.
+- In Java, hybrid inheritance (a combination of multiple and multilevel inheritance) is not directly supported with classes because of the diamond problem. But we can achieve it using a mix of classes and interfaces.
 
-        ```java
-        class A extends A{} ❎
+<div align = "center">
 
-        class A extends B {}
-        class B extends A {} : ❎
-        ```
+```mermaid
+classDiagram
+    class A
+    class B
+    class C
+    class D
+    A <|-- B : extends
+    B <|-- C : extends
+    B <|-- D : extends
+    C <|-- D : extends
+```
+</div>
+
+> Example :
+
+```java
+class A {}
+class B extends A {}
+class C extends B {}
+class D extends B, C {}
+```
+> Example :
+
+```java
+// Parent class
+class A {
+    void displayA() {
+        System.out.println("Class A method");
+    }
+}
+// Interface 1
+interface B {
+    void displayB();
+}
+// Interface 2
+interface C {
+    void displayC();
+}
+// Class D extends class A and implements interfaces B and C
+class D extends A implements B, C {
+    @Override
+    public void displayB() {
+        System.out.println("Interface B method implemented in Class D");
+    }
+    @Override
+    public void displayC() {
+        System.out.println("Interface C method implemented in Class D");
+    }
+
+    void displayD() {
+        System.out.println("Class D method");
+    }
+}
+public class HybridInheritanceExample {
+    public static void main(String[] args) {
+        D obj = new D();
+        obj.displayA(); // from Class A
+        obj.displayB(); // from Interface B
+        obj.displayC(); // from Interface C
+        obj.displayD(); // from Class D
+    }
+}
+```
+
+> Output :
+
+```text
+Class A method
+Interface B method implemented in Class D
+Interface C method implemented in Class D
+Class D method
+```
+
+
+> Java also does not support cyclic inhertiance.
+
+- Example 📳
+
+```java
+class A extends A{} ❎
+class A extends B {}
+class B extends A {} : ❎
+```
 
 # Polymorphism
 
