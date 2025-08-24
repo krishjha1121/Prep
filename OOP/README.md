@@ -1273,7 +1273,6 @@ class D extends A implements B, C {
     public void displayC() {
         System.out.println("Interface C method implemented in Class D");
     }
-
     void displayD() {
         System.out.println("Class D method");
     }
@@ -1309,34 +1308,390 @@ class A extends B {}
 class B extends A {} : ❎
 ```
 
-# Polymorphism
 
-- Polymorphism is the ability of an object to take on many forms.
+> 🧠 **What Can Be Done in a Subclass ?**
 
-- Method Signature -->
-    - Example 📳
-        - name_of_method(type_of_parameter1, type_of_parameter2,..., type_of_parametern)
-        - return type is not cosidered to be a part of method signature in java, but it is considered in c++
+- The inherited fields can be used directly, just like any other fields.
+- We can declare new fields in the subclass that are not in the superclass.
+- The inherited methods can be used directly as they are.
+- We can write a new instance method in the subclass that has the same signature as the one in the superclass, thus overriding it (as in the example above, toString() method is overridden).
+- We can write a new static method in the subclass that has the same signature as the one in the superclass, thus hiding it.
+- We can declare new methods in the subclass that are not in the superclass.
+- We can write a subclass constructor that invokes the constructor of the superclass, either implicitly or by using the keyword super.
 
-- (Automatic promotion in overloading(static polymorphism)) check promotion table for overloading concept , char --> int --> long --> float --> double
 
-- Method overriding(dynamic Polymorphism)
-    - Example 📳
 
-        ```java
-        class A {
-            public void m1() {}
+> ## Abstraction
+
+- Abstraction in Java is the process of hiding internal implementation details and showing only essential functionality to the user
+- Abstraction can be achieved through abstract classes and interfaces.
+
+> Using Abstract class :
+
+```java
+// Abstract class - common behavior and abstraction
+abstract class Vehicle {
+    private String brand;
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
+    // Abstract method -> must be implemented by subclasses
+    public abstract void drive();
+    // Concrete method -> can be inherited directly
+    public void showBrand() {
+        System.out.println("Brand: " + brand);
+    }
+}
+// Car extends Vehicle
+class Car extends Vehicle {
+    public Car(String brand) {
+        super(brand);
+    }
+    @Override
+    public void drive() {
+        System.out.println("Driving a car smoothly on the road...");
+    }
+}
+// Bike extends Vehicle
+class Bike extends Vehicle {
+    public Bike(String brand) {
+        super(brand);
+    }
+    @Override
+    public void drive() {
+        System.out.println("Riding a bike through traffic...");
+    }
+}
+public class AbstractClassExample {
+    public static void main(String[] args) {
+        Vehicle car = new Car("Tesla");
+        car.showBrand();
+        car.drive();
+
+        Vehicle bike = new Bike("Yamaha");
+        bike.showBrand();
+        bike.drive();
+    }
+}
+```
+
+> Using Interface :
+
+```java
+// Interface - pure abstraction
+interface Animal {
+    void makeSound();
+    void move();
+}
+// Dog implements Animal
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks: Woof Woof!");
+    }
+    @Override
+    public void move() {
+        System.out.println("Dog runs on 4 legs.");
+    }
+}
+// Bird implements Animal
+class Bird implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bird chirps: Tweet Tweet!");
+    }
+    @Override
+    public void move() {
+        System.out.println("Bird flies in the sky.");
+    }
+}
+public class InterfaceExample {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.makeSound();
+        dog.move();
+
+        Animal bird = new Bird();
+        bird.makeSound();
+        bird.move();
+    }
+}
+```
+
+> #### Advantages of Abstraction :
+
+- Abstraction makes complex systems easier to understand by hiding the implementation details.
+- Abstraction keeps different part of the system separated.
+- Abstraction maintains code more efficiently.
+- Abstraction increases the security by only showing the necessary details to the user.
+
+> #### Disadvantages of Abstraction :
+
+- It can add unnecessary complexity if overused.
+- May reduce flexibility in implementation.
+- Makes debugging and understanding the system harder for unfamiliar users.
+- Overhead from abstraction layers can affect performance.
+
+> ## Encapsulation
+
+- Encapsulation means binding (wrapping) the data (variables) and the methods (functions) that operate on that data into a single unit (class), while restricting direct access to some of the object's components.
+
+- This is usually achieved by :
+    - Declaring fields (variables) as private.
+    - Providing public getter and setter methods to access and update the private fields safely
+    - This way, the internal representation of an object is hidden from the outside world, and access to it is controlled.
+
+> Example :
+
+```java
+// Class representing a Bank Account
+class BankAccount {
+    // Private data members (hidden from outside)
+    private String accountHolderName;
+    private double balance;
+    // Constructor
+    public BankAccount(String accountHolderName, double balance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+    // Public getter for account holder name
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+    // Public setter for account holder name
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+    // Public getter for balance
+    public double getBalance() {
+        return balance;
+    }
+    // Controlled way to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount!");
         }
-        class B extends A {
-            public void m1() { System.out.println("B"); }
+    }
+    // Controlled way to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance or invalid amount!");
         }
-        ```
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Create a new bank account
+        BankAccount account = new BankAccount("Raj", 1000);
 
-        - here child class B was not happy with the method implementation of parent class A, so it overrides the method.
+        // Access through getters and setters
+        System.out.println("Account Holder: " + account.getAccountHolderName());
+        System.out.println("Initial Balance: " + account.getBalance());
 
-- Rules of method overriding (Not a easy concept)
-    - Method signature must be same.
-    - Return may not be same but need to be covariant. (Object-string) (string-object --> not allowed)
+        // Modify values using encapsulated methods
+        account.deposit(500);
+        account.withdraw(200);
 
--
+        // Updated balance
+        System.out.println("Final Balance: " + account.getBalance());
+    }
+}
+```
+> Output :
+
+```text
+Account Holder: Raj
+Initial Balance: 1000.0
+Deposited: 500.0
+Withdrawn: 200.0
+Final Balance: 1300.0
+```
+
+
+> Key points in above example :
+
+- Private fields: accountHolderName, balance cannot be accessed directly outside the class.
+- Public methods (get, set, deposit, withdraw): These control how the fields are accessed or modified.
+- Security & control: You cannot directly set balance to a negative value — logic in methods prevents misuse.
+
+
+> Uses of Encapsulation :
+
+- Data Hiding
+    - The internal data of an object is hidden from the outside world, preventing direct access.
+- Data Integrity:
+    - Only validated or safe values can be assigned to an object’s attributes via setter methods.
+- Reusability
+    - Encapsulated code is more flexible and reusable for future modifications or requirements.
+- Security:
+    - Sensitive data is protected as it cannot be accessed directly.
+
+> Disadvantages of Encapsulation :
+
+- Sometimes encapuslation can make the code complex and hard to understand if we do not use it in the right way.
+- It can make it more difficult to understand how the program works because some part of the program are hidden.
+
+
+> ## Polymorphism
+
+- Polymorphism in Java is one of the core concepts in object-oriented programming (OOP) that allows objects to behave differently based on their specific class type.
+- polymorphism allows the same method or object to behave differently based on the context, specially on the project's actual runtime class.
+
+> Key Features :
+
+- Multiple Behaviors:
+    - The same method can behave differently depending on the object that calls this method.
+- Method Overriding
+    - A child class can redefine a method of its parent class.
+- Method Overloading
+    - We can define multiple methods with the same name but different parameters.
+- Runtime Decision
+    - At runtime, Java determines which method to call depending on the object's actual class.
+
+> 🧠 **why use polymorphism ?**
+
+- Code Reusability
+    - Polymorphism allows the same method or class to be used with different types of objects, which makes the code more useable.
+- Flexibility
+    - Polymorphism enables object of different classes to be treated as objects of a common superclass, which provides flexibility in method execution and object interaction.
+- Abstraction
+    - It allows the use of abstract classes or interfaces, enabling you to work with general types (like a superclass or interface) instead of concrete types (like specific subclasses), thus simplifying the interaction with objects.
+
+- Dynamic Behavior
+    - With polymorphism, Java can select the appropriate method to call at runtime, giving the program dynamic behavior based on the actual object type rather than the reference type, which enhances flexibility.
+
+> Types of Polymorphism :
+
+
+<div align = "center">
+
+```mermaid
+graph TD
+    A[Polymorphism in Java]:::main --> B[Compile-time<br/>Polymorphism]:::compile
+    A --> C[Runtime<br/>Polymorphism]:::runtime
+
+    B --> D[Method Overloading]:::methodOverload
+    C --> E[Method Overriding]:::methodOverride
+    C --> F[Virtual Functions]:::virtual
+
+    classDef main fill:#dff0d8,stroke:#333,stroke-width:2px,color:red;
+    classDef compile fill:#d9edf7,stroke:#333,stroke-width:1px,color:red;
+    classDef runtime fill:#e2d9f7,stroke:#333,stroke-width:1px,color:red;
+    classDef methodOverload fill:#fcf8e3,stroke:#333,stroke-width:1px,color:red;
+    classDef methodOverride fill:#d9f7f2,stroke:#333,stroke-width:1px,color:red;
+    classDef virtual fill:#f7d9d9,stroke:#333,stroke-width:1px,color:red;
+```
+</div>
+
+
+> Compile-time Polymorphism / static Polymorphism:
+
+- Compile-Time Polymorphism in Java is also known as static polymorphism and also known as method overloading. This happens when multiple methods in the same class have the same name but different parameters.
+
+> ##### Note :
+- Java doesn't support the Operator Overloading.
+
+> ##### Example :
+```java
+class MathUtils {
+    // Overloaded method 1: adds two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+    // Overloaded method 2: adds three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    // Overloaded method 3: adds two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+    // Overloaded method 4: adds an integer and a double
+    public double add(int a, double b) {
+        return a + b;
+    }
+}
+public class OverloadingExample {
+    public static void main(String[] args) {
+        MathUtils mu = new MathUtils();
+
+        System.out.println("Sum of 2 int: " + mu.add(5, 10));        // calls 1
+        System.out.println("Sum of 3 int: " + mu.add(5, 10, 15));    // calls 2
+        System.out.println("Sum of 2 double: " + mu.add(5.5, 4.5));  // calls 3
+        System.out.println("Sum of int & double: " + mu.add(5, 4.5)); // calls 4
+    }
+}
+```
+
+> Output :
+
+```text
+Sum of 2 int: 15
+Sum of 3 int: 30
+Sum of 2 double: 10.0
+Sum of int & double: 9.5
+```
+
+> 🧠 **Why is method overloading also called Static / Compile-Time Polymorphism?**
+- In overloading, the method that will be executed is decided by the compiler at compile-time, based on the method signature (number and type of arguments).
+
+
+> Runtime Polymorphism / Dynamic Polymorphism :
+
+- It is a process in which a function call to the overridden method is resolved at Runtime.
+- Method overriding, on the other hand, occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden.
+
+> Example :
+
+```java
+// Parent Class
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+// Child Class
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+// Another Child Class
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+public class RuntimePolymorphismDemo {
+    public static void main(String[] args) {
+        Animal a;
+        a = new Dog();
+        a.sound();
+        a = new Cat();
+        a.sound();
+    }
+}
+```
+
+> Output :
+
+```text
+Dog barks
+Cat meows
+```
+
+> 🧠 **Why is method overriding also called as Dynamic / Runtime Polymorphism?**
+
+- Because the method that will be executed is decided at runtime, based on the actual type of the object.
+- At runtime, based on the actual object (parent or child), the JVM decides which method implementation to call.
+
+
 ````
