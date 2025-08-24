@@ -779,44 +779,356 @@ flowchart LR
 - Use an interface when you need to define a contract for behavior that multiple classes can implement.
 - Interface is ideal for achieving abstraction and multiple inheritance.
 
+<div align = "center">
+    <h2 style = "color:orange"> Pillars of OOPS </h2>
+</div>
 
-# Pillars of OOPS
+- They are the **fundamental building blocks or core principles** that support the whole idea of Object-Oriented Programming
 
-- Abstraction : It is the process of hiding the implementation and exposing only the services.
-- Encapsulation : It is the process of hiding the internal details of an object and exposing only the external interface.
-- Inheritance : It is the process of creating a new class from an existing class.
-- Polymorphism : It is the process of using a single interface to represent different types.
+> ## Inheritance
 
-# Types of Inheritance
+- It is the mechanism in Java by which one class is allowed to inherit the features(fields and methods) of another class.
+- Inheritance means creating new classes based on existing ones.
+- A class that inherits from another class can reuse the methods and fields of that class.
+> Example :
 
+```java
+// Parent class
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+// Child class 1
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks.");
+    }
+}
+// Child class 2
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat meows.");
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();   // Inherited from Animal
+        d.bark();  // Dog-specific method
+
+        Cat c = new Cat();
+        c.eat();   // Inherited from Animal
+        c.meow();  // Cat-specific method
+    }
+}
+```
+
+<div align = "center">
+
+```mermaid
+classDiagram
+    class Animal {
+        +eat()
+    }
+    class Dog {
+        +bark()
+    }
+    class Cat {
+        +meow()
+    }
+
+    Animal <|-- Dog : extends
+    Animal <|-- Cat : extends
+```
+</div>
+
+- `Animal` is the parent class(base class).
+- `Dog` and `Cat` inherit from `Animal`(child class).
+
+> Note :
+
+- In Java, inheritance is implemented using the extends keyword. The class that inherits is called the subclass (child class) and the class being inherited from is called the superclass (parent class).
+
+
+> 🧠 **why use inheritance ?**
+
+- Code Reusability :
+    -  The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code.
+- Method Overriding :
+    -  Method Overriding is achievable only through Inheritance. It is one of the ways by which Java achieves Run Time Polymorphism.
+- Abstraction :
+    -  The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionality to the user.
+
+
+> #### Types of Inheritance
 - Single Inheritance
-    - Example 📳
-        ```java
-        class A {}
-        class B extends A {}
-        ```
 - Multiple Inheritance
-    - Example 📳
-        ```java
-        class A {}
-        class B {}
-        class C extends A, B {} // Not allowed in Java.
-        ```
 - Multilevel Inheritance
-    - Example 📳
-        ```java
-        class A {}
-        class B extends A {}
-        class C extends B {}
-        ```
 - Hierarchical Inheritance
-    - Example 📳
-        ```java
-        class A {}
-        class B extends A {}
-        class C extends A {}
-        class D extends A {}
-        ```
+- Hybrid Interitance (Combination of two or more type of inheritance, not allowed in java)
+- Multiple Inhertiance can be achieved in java by using concept of interface.
+
+> Single Inheritance
+
+- In single inheritance, a sub-class is derived from only one super class. It inherits the properties and behavior of a single-parent class. Sometimes, it is also known as simple inheritance.
+
+> Example :
+```java
+class A {}
+class B extends A {}
+```
+
+> Example :
+
+```java
+//Super class
+class Vehicle {
+    Vehicle() {
+        System.out.println("This is a Vehicle");
+    }
+}
+// Subclass
+class Car extends Vehicle {
+    Car() {
+        super(); // always is there by default;
+        System.out.println("This Vehicle is Car");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        // Creating object of subclass invokes base class constructor
+        Car obj = new Car();
+    }
+}
+```
+> Output :
+
+```text
+This is a Vehicle
+This Vehicle is Car
+```
+
+
+> Multilevel Inheritance
+
+- In Multilevel Inheritance, a derived class will be inheriting a base class and as well as the derived class also acts as the base class for other classes.
+
+> Example :
+
+```java
+class A {}
+class B extends A {}
+class C extends B {}
+ ```
+
+> Example :
+
+```java
+class Vehicle {
+    Vehicle() {
+        System.out.println("This is a Vehicle");
+    }
+}
+class FourWheeler extends Vehicle {
+    FourWheeler() {
+        System.out.println("4 Wheeler Vehicles");
+    }
+}
+class Car extends FourWheeler {
+    Car() {
+        System.out.println("This 4 Wheeler Vehicle is a Car");
+    }
+}
+public class Roy {
+    public static void main(String[] args) {
+        Car obj = new Car(); // Triggers all constructors in order
+    }
+}
+```
+
+> Output :
+
+```text
+This is a Vehicle
+4 Wheeler Vehicles
+This 4 Wheeler Vehicle is a Car
+```
+
+> Hierarchical Inheritance
+
+- In hierarchical inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class. For example, cars and buses both are vehicle
+
+> Example :
+
+```java
+class A {}
+class B extends A {}
+class C extends A {}
+```
+
+> Example :
+
+```java
+class Vehicle {
+    Vehicle() {
+        System.out.println("This is a Vehicle");
+    }
+}
+class Car extends Vehicle {
+    Car() {
+        System.out.println("This Vehicle is Car");
+    }
+}
+class Bus extends Vehicle {
+    Bus() {
+        System.out.println("This Vehicle is Bus");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Car obj1 = new Car();
+        Bus obj2 = new Bus();
+    }
+}
+```
+
+> Output :
+
+```text
+This is a Vehicle
+This Vehicle is Car
+This is a Vehicle
+This Vehicle is Bus
+```
+
+
+> Multiple Inheritance (Can be achieved through interfaces)
+
+- In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes.
+
+- Example 📳
+
+```java
+class A {}
+class B {}
+class C extends A, B {} // Not allowed in Java.
+```
+
+> Example :
+
+```java
+interface LandVehicle {
+    default void landInfo() {
+        System.out.println("This is a LandVehicle");
+    }
+}
+interface WaterVehicle {
+    default void waterInfo() {
+        System.out.println("This is a WaterVehicle");
+    }
+}
+// Subclass implementing both interfaces
+class AmphibiousVehicle implements LandVehicle, WaterVehicle {
+    AmphibiousVehicle() {
+        System.out.println("This is an AmphibiousVehicle");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        AmphibiousVehicle obj = new AmphibiousVehicle();
+        obj.waterInfo();
+        obj.landInfo();
+    }
+}
+```
+
+> Output :
+
+```text
+This is an AmphibiousVehicle
+This is a WaterVehicle
+This is a LandVehicle
+```
+
+> Example :
+
+```java
+interface A {
+    void show();
+}
+
+interface B {
+    void show();
+}
+class MyClass implements A, B {
+    // Only one implementation needed
+    public void show() {
+        System.out.println("Implemented once, works for both A and B");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.show();  // Output: Implemented once, works for both A and B
+    }
+}
+```
+
+> 🧠 **Reason why multiple inheritance is not allowed in Java :**
+
+- Ambiguity & Complexity
+    - If a class were allowed to inherit from multiple classes that define the same method, the Java compiler would not know which version of the method to use. This leads to ambiguity and can complicate debugging and maintenance of code.
+- The Diamond Problem :
+    - The diamond problem is illustrated in this diagram with a more complex hierarchy. Here, Child inherits from two intermediate classes (Intermediate1 and Intermediate2), which both inherit from Parent1 and Parent2 respectively. Both Parent1 and Parent2 classes again inherit from the same Base class. This creates a "diamond-shaped" inheritance structure, where the Base class is at the top, Parent1 and Parent2 form the middle, and Child is at the bottom.
+    - The problem arises because there are two paths from the Child class to the Base class, through Intermediate1 and Intermediate2. If Base class's +doSomething() method is overridden in both Parent1 and Parent2, and Intermediate1 and Intermediate2 do not override it, the Child class faces ambiguity in deciding which version of the method to inherit. This situation complicates method resolution and can lead to unexpected behaviour.
+
+    - `Base` → root class.
+    - `Parent1` and `Parent2` inherit from `Base`.
+    - `Intermediate1` inherits from `Parent1`, `Intermediate2` inherits from `Parent2`.
+    - `Child` inherits from `Intermediate1` and `Intermediate2`.
+
+
+<div align = "center">
+
+```mermaid
+classDiagram
+    class Base {
+        +doSomething()
+    }
+
+    class Parent1 {
+        +doSomething()
+    }
+
+    class Parent2 {
+        +doSomething()
+    }
+
+    class Intermediate1 {
+        +doSomething()
+    }
+
+    class Intermediate2 {
+        +doSomething()
+    }
+
+    class Child
+
+    %% Inheritance relations
+    Base <|-- Parent1 : Inheritance
+    Base <|-- Parent2 : Inheritance
+
+    Parent1 <|-- Intermediate1 : Inheritance
+    Parent2 <|-- Intermediate2 : Inheritance
+
+    Intermediate1 <|-- Child : Inheritance
+    Intermediate2 <|-- Child : Inheritance
+
+```
+
+</div>
 
 - Hybrid Interitance (Combination of two or more type of inheritance, not allowed in java)
     - Example 📳
