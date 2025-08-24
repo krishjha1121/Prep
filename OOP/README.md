@@ -1566,6 +1566,48 @@ Final Balance: 1300.0
 - Dynamic Behavior
     - With polymorphism, Java can select the appropriate method to call at runtime, giving the program dynamic behavior based on the actual object type rather than the reference type, which enhances flexibility.
 
+
+> Automatic Type Promotion :
+- Automatic type promotion is a feature in Java that allows the compiler to automatically convert one type to another just in case if the exact match is not found.
+
+> Example :
+
+```java
+class Test {
+    public int m1(int i) {
+        return i;
+    }
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.m1('a')); // here the character will be promoted to int(no compilation error)
+    }
+}
+```
+
+<div align = "center">
+
+```mermaid
+graph TD
+    A[Object]
+    B[Double]
+    C[Float]
+    D[Long]
+    E[Integer]
+    F[Short]
+    G[Character]
+    H[Byte]
+
+    B --> A
+    C --> B
+    D --> C
+    E --> D
+    F --> E
+    G --> E
+    H --> F
+```
+
+</div>
+
 > Types of Polymorphism :
 
 
