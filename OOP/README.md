@@ -169,15 +169,16 @@ public class Main {
 
 - Top level class modifiers + private + protected + static;
 
-- static :
-    - The static keyword in Java is mainly used for memory management, allowing variables and methods to belong to the class itself rather than individual instances.
-    - The static keyword belongs to the class rather than an instance of the class.
-    - The static keyword is used for a constant variable or a method that is the same for every instance of a class.
-    - We do not need to create objects of the class to use static methods.
-    - We can call static members using the class name directly.
-    - Static members belong to the class, not to any specified object.
-    - Static members can not access non-static members.
-    - Static methods cannot be overridden in subclasses because they belong to the class, not to an object.
+> static :
+
+- The static keyword in Java is mainly used for memory management, allowing variables and methods to belong to the class itself rather than individual instances.
+- The static keyword belongs to the class rather than an instance of the class.
+- The static keyword is used for a constant variable or a method that is the same for every instance of a class.
+- We do not need to create objects of the class to use static methods.
+- We can call static members using the class name directly.
+- Static members belong to the class, not to any specified object.
+- Static members can not access non-static members.
+- Static methods cannot be overridden in subclasses because they belong to the class, not to an object.
 
 > This example demonstrates that a static method can be called without creating an instance of the class.
 
@@ -221,7 +222,12 @@ class Roy {
 }
 ```
 
-- static variables : - When a variable is declared as static, then a single copy of the variable is created and shared among all objects at the class level. Static variables are, essentially, global variables. All instances of the class share the same static variable. - Importance : - We can create static variables at the class level only. - static block and static variables are executed in the order they are present in a program.
+> static variables :
+
+- When a variable is declared as static, then a single copy of the variable is created and shared among all objects at the class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.
+- Importance :
+    - We can create static variables at the class level only.
+    - static block and static variables are executed in the order they are present in a program.
 
 > This example demonstrates that static variables are initialized by calling static methods before the static block is executed.
 
@@ -251,7 +257,12 @@ class Roy {
 }
 ```
 
-- static methods : - When a method is declared with the static keyword, it is known as the static method. The most common example of a static method is the main() method. As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object. Methods declared as static have several restrictions: - They can only directly call other static methods. - They can only directly access static data. - They cannot refer to this or super in any way.
+> static methods :
+
+- When a method is declared with the static keyword, it is known as the static method. The most common example of a static method is the main() method. As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object. Methods declared as static have several restrictions:
+- They can only directly call other static methods.
+- They can only directly access static data.
+- They cannot refer to this or super in any way.
 
 > This example demonstrates the restriction that static methods cannot access instance variables, instance methods, or use super in a static context.
 
@@ -287,8 +298,9 @@ class Roy {
 }
 ```
 
-```bash
-//output
+> Output :
+
+```text
 prog.java:18: error: non-static variable b cannot be referenced from a static context
          b = 10; // compilation error
          ^
@@ -356,8 +368,9 @@ public class StaticDemo {
 }
 ```
 
-```bash
-//output
+> Output :
+
+```text
 name : Geek1
 rollNo : 1
 cllgName : XYZ
@@ -365,6 +378,16 @@ name : Geek2
 rollNo : 2
 cllgName : XYZ
 ```
+
+> ### Table for visibility of access modifiers
+
+| visibility                                | public | protected | default | private |
+| ----------------------------------------- | ------ | --------- | ------- | ------- |
+| within the same class                     | ✅     | ✅        | ✅      | ✅      |
+| from child class of same package          | ✅     | ✅        | ✅      | ❎      |
+| from non child class of same package      | ✅     | ✅        | ✅      | ❎      |
+| from child class of different package     | ✅     | ✅        | ❎      | ❎      |
+| from non child class of different package | ✅     | ❎        | ❎      | ❎      |
 
 <div align = "center">
     <h2 style = "color:orange">  static classes </h2>
@@ -422,60 +445,216 @@ public class Roy {
 
 <div align = "center"> <h2 style = "color:orange"> Abstract (Partial or Incomplete) </h2> </div>
 
-- abstract method
-- abstract class
+- An abstract is a Java modifier applicable for classes and methods in Java but not for Variables
 
-> # Abstract Method
+> ### Abstract Method
 
 - abstract method is a method that is declared in an abstract class but does not have an implementation.
+- The abstract Method is used for creating blueprints for classes or interfaces.
+- Here methods are defined but these methods don't provide the implementation.
+- Abstract Methods can only be implemented using subclasses or classes that implement the interfaces.
+- A subclass must override them to provide a method definition.
+
+> ##### Rules :
+
+- Any class that contains one or more abstract methods must also be declared abstract.
+- If a class contains an abstract method it needs to be abstract and vice versa is not true.
+- An abstract class may or may not contain abstract methods(java).
+- If a non-abstract class extends an abstract class, then the class must implement all the abstract methods of the abstract class else the concrete class has to be declared as abstract as well.
+- The following are various illegal combinations of other modifiers for methods with respect to abstract modifiers:
+    - final
+    - abstract native
+    - abstract synchronized
+    - abstract static
+    - abstract private
+    - abstract strictfp
+
+> ##### Example :
 
 ```java
-public abstract class Shape {
-    public abstract double area();
+//Example 1
+abstract class Shape {
+    abstract double area(); // abstract method
+    abstract double perimeter(); // abstract method
 }
 ```
 
-# Abstract Class
-
-- abstract class is a class that cannot be instantiated.
-- abstract class can have abstract methods.first
-- child class is responsible for implementing the all abstract methods.(compulsory to implement all the abstract methods);
+> ##### Example :
 
 ```java
-public abstract class Shape {
-    public abstract double area();
-    public abstract double perimeter();
+//Example 2;
+// Abstract class
+abstract class Vehicle {
+    // Abstract method (no body)
+    abstract void start();
+    // Normal method
+    void fuel() {
+        System.out.println("This vehicle needs fuel to run.");
+    }
 }
-public class Rectangle extends Shape {
-    private double length;
-    private double width;
+// Subclass 1
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car starts with a key.");
+    }
+}
+// Subclass 2
+class Bike extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Bike starts with a kick or button.");
+    }
+}
 
-    public Rectangle(double length, double width) {
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();   // Polymorphism
+        v1.start();               // Car's implementation
+        v1.fuel();
+
+        Vehicle v2 = new Bike();  // Polymorphism
+        v2.start();               // Bike's implementation
+        v2.fuel();
+    }
+}
+```
+
+> ##### Output :
+
+```text
+Car starts with a key.
+This vehicle needs fuel to run.
+Bike starts with a kick or button.
+This vehicle needs fuel to run.
+```
+
+> NOTE :
+
+- Although abstract classes cannot be used to instantiate objects, they can be used to create object references, because Java’s approach to run-time polymorphism is implemented through the use of super-class references. Thus, it must be possible to create a reference to an abstract class so that it can be used to point to a subclass object.
+
+> ### Abstract Class
+
+- Abstract class is declared with the abstract keyword.
+- Abstract class is a class that cannot be instantiated.
+- Abstract class can have abstract methods as well as concrete methods.
+- Child class is responsible for implementing the all abstract methods.(compulsory to implement all the abstract methods);
+
+> ##### Example :
+
+```java
+import java.util.*; //Not recommended.
+// Abstract class
+abstract class Shape {
+    String name;
+    Shape(String name) {
+        this.name = name;
+    }
+    // Abstract methods (must be implemented by subclasses)
+    abstract double area();
+    abstract double perimeter();
+    // Concrete method (common to all shapes)
+    void display() {
+        System.out.println("Shape: " + name);
+        System.out.println("Area: " + area());
+        System.out.println("Perimeter: " + perimeter());
+        System.out.println("----------------------");
+    }
+}
+// Subclass 1: Circle
+class Circle extends Shape {
+    double radius;
+    Circle(double radius) {
+        super("Circle");
+        this.radius = radius;
+    }
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+    @Override
+    double perimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+// Subclass 2: Rectangle
+class Rectangle extends Shape {
+    double length, width;
+    Rectangle(double length, double width) {
+        super("Rectangle");
         this.length = length;
         this.width = width;
     }
-
-    public double area() {
+    @Override
+    double area() {
         return length * width;
     }
-
-    public double perimeter() {
+    @Override
+    double perimeter() {
         return 2 * (length + width);
+    }
+}
+// Subclass 3: Triangle
+class Triangle extends Shape {
+    double a, b, c;
+    Triangle(double a, double b, double c) {
+        super("Triangle");
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+    @Override
+    double area() {
+        double s = (a + b + c) / 2;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    @Override
+    double perimeter() {
+        return a + b + c;
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Shape s1 = new Circle(5);
+        Shape s2 = new Rectangle(4, 6);
+        Shape s3 = new Triangle(3, 4, 5);
+        // Polymorphism: common interface, different implementations
+        s1.display();
+        s2.display();
+        s3.display();
     }
 }
 ```
 
-- Rectangle must implement both area() and perimeter() methods or else declare the Rectangle class as abstract.
+> Output :
 
-# Table for visibility of access modifiers
+```text
+Shape: Circle
+Area: 78.53981633974483
+Perimeter: 31.41592653589793
+----------------------
+Shape: Rectangle
+Area: 24.0
+Perimeter: 20.0
+----------------------
+Shape: Triangle
+Area: 6.0
+Perimeter: 12.0
+----------------------
+```
 
-| visibility                                | public | protected | default | private |
-| ----------------------------------------- | ------ | --------- | ------- | ------- |
-| within the same class                     | ✅     | ✅        | ✅      | ✅      |
-| from child class of same package          | ✅     | ✅        | ✅      | ❎      |
-| from non child class of same package      | ✅     | ✅        | ✅      | ❎      |
-| from child class of different package     | ✅     | ✅        | ❎      | ❎      |
-| from non child class of different package | ✅     | ❎        | ❎      | ❎      |
+> ##### important observations about abstract classes
+
+- An instance of an abstract class can not be created.
+- Constructors are allowed.
+- We can have an abstract class without any abstract method.
+- There can be a final method in abstract class but any abstract method in class(abstract class) can not be declared as final.
+- We can define static methods in an abstract class.
+- We can use the abstract keyword for declaring top-level classes (Outer class) as well as inner classes as abstract.
+- If a class contains at least one abstract method then compulsory should declare a class as abstract
+- If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that Child class as abstract so that the next level Child class should provide implementation to the remaining abstract method
 
 # Interface
 
