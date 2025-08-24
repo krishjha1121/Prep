@@ -4,7 +4,7 @@
 
 - Object-oriented programming is a programming paradigm built on the concept of objects.
 
-## Importance:
+> ## Importance:
 
 - An approach to solve problems where all computations are carried out using objects
 - Promotes code reuse through inheritance.
@@ -64,7 +64,8 @@ public class Main {
         }
         ```
 - No need to import the packages that are inside java.lang packages. -> it will automatically get imoprted;
-    - Example :
+
+> Example :
 
 ```java
 //String, Thread, Exception, StringBuffer are some of the classes that are present inside java.lang package.
@@ -79,7 +80,7 @@ public class Main {
 }
 ```
 
-- Output :
+> Output :
 
 ```text
 RAJ ROY
@@ -104,15 +105,17 @@ RAJ ROY
 - Package statements must be the first line of code in a java file other than comment lines.
 - At most one package statements are allowed in a java file.
 - Resolves naming conflicts.
-- Example :
-    ```java
-    package mypackage; // user-defined package
-    public class Hello {
-        public void sayHi() {
-            System.out.println("Hello from my package!");
-        }
+
+> Example :
+
+```java
+package mypackage; // user-defined package
+public class Hello {
+    public void sayHi() {
+        System.out.println("Hello from my package!");
     }
-    ```
+}
+```
 
 <div align = "center">
      <h2 style = "color:orange"> Class and Object </h2>
@@ -152,17 +155,19 @@ public class Main {
 
 - In Java, access modifiers are essential tools that define how the members of a class, like variables, methods, and even the class itself, can be accessed from other parts of our program.
 
-- Class Level Modifiers (Top level classes)
-    - public : accessible from anywhere.
-    - default(if nothing specified) : accessible from the same package.
-    - abstract : prohibits instantiation.
-    - final :
-        - prohibits child class creation.
-        - Final access modifier is a modifier applicable to classes, methods, and variables. If we declare a parent class method as final then we can’t override that method in the child class because its implementation is final and if a class is declared as final we can’t extend the functionality of that class i.e we can’t create a child class for that class i.e inheritance is not possible for final classes.
-        - Every method present inside the final class is always final by default but every variable present inside the final class need not be final.
+> Class Level Modifiers (Top level classes)
 
-- Class Level Modifiers (Nested classes)
-    - Top level class modifiers + private + protected + static;
+- public : accessible from anywhere.
+- default(if nothing specified) : accessible from the same package.
+- abstract : prohibits instantiation.
+- final :
+    - prohibits child class creation.
+    - Final access modifier is a modifier applicable to classes, methods, and variables. If we declare a parent class method as final then we can’t override that method in the child class because its implementation is final and if a class is declared as final we can’t extend the functionality of that class i.e we can’t create a child class for that class i.e inheritance is not possible for final classes.
+    - Every method present inside the final class is always final by default but every variable present inside the final class need not be final.
+
+> Class Level Modifiers (Nested classes)
+
+- Top level class modifiers + private + protected + static;
 
 - static :
     - The static keyword in Java is mainly used for memory management, allowing variables and methods to belong to the class itself rather than individual instances.
@@ -174,9 +179,7 @@ public class Main {
     - Static members can not access non-static members.
     - Static methods cannot be overridden in subclasses because they belong to the class, not to an object.
 
-- Examples :
-
-- This example demonstrates that a static method can be called without creating an instance of the class.
+> This example demonstrates that a static method can be called without creating an instance of the class.
 
 ```java
 /* Java program to demonstrate that a static member */
@@ -194,9 +197,9 @@ class Roy {
 }
 ```
 
-- static block :
-    - If you need to do the computation in order to initialize your static variables, you can declare a static block that gets executed exactly once, when the class is first loaded.
-- This example demonstrates the use of a static block to initialize static variables before the main method is executed.
+- static block : - If you need to do the computation in order to initialize your static variables, you can declare a static block that gets executed exactly once, when the class is first loaded.
+
+> This example demonstrates the use of a static block to initialize static variables before the main method is executed.
 
 ```java
 /* Java program to demonstrate use of static blocks */
@@ -218,12 +221,9 @@ class Roy {
 }
 ```
 
-- static variables :
-    - When a variable is declared as static, then a single copy of the variable is created and shared among all objects at the class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.
-    - Importance :
-        - We can create static variables at the class level only.
-        - static block and static variables are executed in the order they are present in a program.
-- This example demonstrates that static variables are initialized by calling static methods before the static block is executed.
+- static variables : - When a variable is declared as static, then a single copy of the variable is created and shared among all objects at the class level. Static variables are, essentially, global variables. All instances of the class share the same static variable. - Importance : - We can create static variables at the class level only. - static block and static variables are executed in the order they are present in a program.
+
+> This example demonstrates that static variables are initialized by calling static methods before the static block is executed.
 
 ```java
 /* Java program to demonstrate execution */
@@ -251,12 +251,9 @@ class Roy {
 }
 ```
 
-- static methods :
-    - When a method is declared with the static keyword, it is known as the static method. The most common example of a static method is the main() method. As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object. Methods declared as static have several restrictions:
-        - They can only directly call other static methods.
-        - They can only directly access static data.
-        - They cannot refer to this or super in any way.
-- This example demonstrates the restriction that static methods cannot access instance variables, instance methods, or use super in a static context.
+- static methods : - When a method is declared with the static keyword, it is known as the static method. The most common example of a static method is the main() method. As discussed above, Any static member can be accessed before any objects of its class are created, and without reference to any object. Methods declared as static have several restrictions: - They can only directly call other static methods. - They can only directly access static data. - They cannot refer to this or super in any way.
+
+> This example demonstrates the restriction that static methods cannot access instance variables, instance methods, or use super in a static context.
 
 ```java
 /* Java program to demonstrate restriction on static methods */
@@ -308,10 +305,11 @@ prog.java:25: error: cannot find symbol
 4 errors
 ```
 
-- 🧠 when to use static variables and methods ?
-    - Use the static variable for the property that is common to all objects. For example, in class Student, all students share the same college name. Use static methods for changing static variables.
+> 🧠 when to use static variables and methods ?
 
-- Example: This example demonstrates the use of static variables and methods to share data (like cllgName and counter) across all instances of a class.
+- Use the static variable for the property that is common to all objects. For example, in class Student, all students share the same college name. Use static methods for changing static variables.
+
+> This example demonstrates the use of static variables and methods to share data (like cllgName and counter) across all instances of a class.
 
 ```java
 /* A java program to demonstrate use of static keyword with methods and variables */
@@ -375,7 +373,7 @@ cllgName : XYZ
 - A class can be made static only if it is a nested class. We cannot declare a top-level class with a static modifier but can declare nested classes as static. Such types of classes are called Nested static classes.
 - Nested static class doesn’t need a reference of Outer class. In this case, a static class cannot access non-static members of the Outer class.
 
-- Example :
+> Example :
 
 ```java
 /* A java program to demonstrate use of static keyword with Classes */
@@ -397,7 +395,7 @@ public class Roy {
 }
 ```
 
-- The table below demonstrates the difference between Static and Non-Static
+> The table below demonstrates the difference between Static and Non-Static
 
 | Static                                                          | Non-Static                                                              |
 | --------------------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -407,25 +405,27 @@ public class Roy {
 | Static members cannot use `this` or `super` keyword.            | Non-static members can use `this` and `super` keyword.                  |
 | Static members exist for the duration of the class's lifecycle. | Non-static members exist as long as the object they belong to is alive. |
 
-- Advantages of static keyword
-    - Static members use the memory only once and this helps save memory when we have to deal with big programs.
-    - Static members provide fast access because static members belong to the class not to an object and that's why they can be access faster than regular member.
-    - We can access static members from anywhere, whether an object of the class has been created or not.
-    - We can use static final variables to create constant that stays the same throughout the program.
+> Advantages of static keyword
 
-- Disadvantages of static keyword
-    - Static members can't be overridden or dynamically bound like instance members.
-    - Static methods and variables make unit testing difficult due to tight coupling.
-    - Static variables create a global state, which can lead to unwanted side effects across different parts of the program.
-    - Static variables stay in memory as long as the program runs, which might cause memory to be used longer than needed.
-    - Using too many static members can reduce the benefits of object-oriented programming, like hiding data and using inheritance.
+- Static members use the memory only once and this helps save memory when we have to deal with big programs.
+- Static members provide fast access because static members belong to the class not to an object and that's why they can be access faster than regular member.
+- We can access static members from anywhere, whether an object of the class has been created or not.
+- We can use static final variables to create constant that stays the same throughout the program.
+
+> Disadvantages of static keyword
+
+- Static members can't be overridden or dynamically bound like instance members.
+- Static methods and variables make unit testing difficult due to tight coupling.
+- Static variables create a global state, which can lead to unwanted side effects across different parts of the program.
+- Static variables stay in memory as long as the program runs, which might cause memory to be used longer than needed.
+- Using too many static members can reduce the benefits of object-oriented programming, like hiding data and using inheritance.
 
 <div align = "center"> <h2 style = "color:orange"> Abstract (Partial or Incomplete) </h2> </div>
 
 - abstract method
 - abstract class
 
-# Abstract Method
+> # Abstract Method
 
 - abstract method is a method that is declared in an abstract class but does not have an implementation.
 
