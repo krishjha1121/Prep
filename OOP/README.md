@@ -11,7 +11,7 @@
 - Improves code organization and readability.
 - Makes maintenance and scaling easier.
 - Encapsulates data, increasing security and reducing complexity.
-- Follow DRY (Don't Repeat Yourself) Principle.
+- Follow **DRY (Don't Repeat Yourself)** Principle.
 
 <div align = "center">
     <h2 style = "color:orange"> Import Statements </h2>
@@ -162,8 +162,8 @@ public class Main {
 - abstract : prohibits instantiation.
 - final :
     - prohibits child class creation.
-    - Final access modifier is a modifier applicable to classes, methods, and variables. If we declare a parent class method as final then we can’t override that method in the child class because its implementation is final and if a class is declared as final we can’t extend the functionality of that class i.e we can’t create a child class for that class i.e inheritance is not possible for final classes.
-    - Every method present inside the final class is always final by default but every variable present inside the final class need not be final.
+    - Final access modifier is a modifier applicable to classes, methods, and variables. If we declare a parent class method as final then **we can’t override that method in the child class** because its implementation is final and **if a class is declared as final we can’t extend the functionality of that class** i.e we can’t create a child class for that class i.e inheritance is not possible for final classes.
+    - **Every method present inside the final class is always final by default** but every variable present inside the final class need not be final.
 
 > Class Level Modifiers (Nested classes)
 
@@ -171,14 +171,14 @@ public class Main {
 
 > static :
 
-- The static keyword in Java is mainly used for memory management, allowing variables and methods to belong to the class itself rather than individual instances.
+- The static keyword in Java is mainly used for memory management, allowing variables and methods to belong to the **class itself rather than individual instances.**
 - The static keyword belongs to the class rather than an instance of the class.
 - The static keyword is used for a constant variable or a method that is the same for every instance of a class.
 - We do not need to create objects of the class to use static methods.
 - We can call static members using the class name directly.
 - Static members belong to the class, not to any specified object.
 - Static members can not access non-static members.
-- Static methods cannot be overridden in subclasses because they belong to the class, not to an object.
+- Static methods **cannot be overridden** in subclasses because they belong to the class, not to an object.
 
 > This example demonstrates that a static method can be called without creating an instance of the class.
 
@@ -198,7 +198,9 @@ class Roy {
 }
 ```
 
-- static block : - If you need to do the computation in order to initialize your static variables, you can declare a static block that gets executed exactly once, when the class is first loaded.
+> static block :
+
+- If you need to do the computation in order to initialize your static variables, you can declare a static block that gets executed exactly once, when the class is first loaded.
 
 > This example demonstrates the use of a static block to initialize static variables before the main method is executed.
 
@@ -317,7 +319,7 @@ prog.java:25: error: cannot find symbol
 4 errors
 ```
 
-> 🧠 when to use static variables and methods ?
+> 🧠 **when to use static variables and methods ?**
 
 - Use the static variable for the property that is common to all objects. For example, in class Student, all students share the same college name. Use static methods for changing static variables.
 
@@ -445,11 +447,11 @@ public class Roy {
 
 <div align = "center"> <h2 style = "color:orange"> Abstract (Partial or Incomplete) </h2> </div>
 
-- An abstract is a Java modifier applicable for classes and methods in Java but not for Variables
+- An abstract is a **Java modifier** applicable for classes and methods in Java but not for Variables
 
 > ### Abstract Method
 
-- abstract method is a method that is declared in an abstract class but does not have an implementation.
+- Abstract method is a method that is declared in an abstract class but does not have an **implementation.**
 - The abstract Method is used for creating blueprints for classes or interfaces.
 - Here methods are defined but these methods don't provide the implementation.
 - Abstract Methods can only be implemented using subclasses or classes that implement the interfaces.
@@ -532,7 +534,7 @@ This vehicle needs fuel to run.
 
 > NOTE :
 
-- Although abstract classes cannot be used to instantiate objects, they can be used to create object references, because Java’s approach to run-time polymorphism is implemented through the use of super-class references. Thus, it must be possible to create a reference to an abstract class so that it can be used to point to a subclass object.
+- Although abstract classes cannot be used to instantiate objects, they can be used to **create object references**, because Java’s approach to run-time polymorphism is implemented through the use of super-class references. Thus, it must be **possible to create a reference to an abstract class** so that it can be used to point to a subclass object.
 
 > ### Abstract Class
 
@@ -647,50 +649,136 @@ Perimeter: 12.0
 
 > ##### important observations about abstract classes
 
-- An instance of an abstract class can not be created.
+- An instance of an abstract class cannot be created.
 - Constructors are allowed.
 - We can have an abstract class without any abstract method.
-- There can be a final method in abstract class but any abstract method in class(abstract class) can not be declared as final.
-- We can define static methods in an abstract class.
+- There can be a **final method** in abstract class **but any abstract method in class(abstract class) can not be declared as final.**
+- We can define **static methods** in an abstract class.
 - We can use the abstract keyword for declaring top-level classes (Outer class) as well as inner classes as abstract.
 - If a class contains at least one abstract method then compulsory should declare a class as abstract
 - If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that Child class as abstract so that the next level Child class should provide implementation to the remaining abstract method
 
-# Interface
+<div align = "center"> <h2 style = "color:orange"> Interfaces </h2> </div>
 
-an **interface** is a contract that defines a set of method signatures (and sometimes properties) that aclass must implement, but does not provide any implementation itself. Interfaces allowdifferent classesto guarantee they provide certain behaviors, enabling polymorphism and decoupling code from specific implementations.
+- Any contract between client and service provider.
+- An **interface** is a contract that defines a set of method signatures (and sometimes properties) that a class must implement, but does not provide any implementation itself.
+- Interfaces allow different classes to guarantee they provide certain behaviors, enabling polymorphism and decoupling code from specific implementations.
 
-# What is the difference between and interface and abstract class ?
+> #### Key Properties of Interfaces :
 
-An interface defines a contract: it specifies method signatures (and sometimes properties) that implementing classes must provide, but contains no implementation (except default methods in some languages like Java).
+- The interface in Java is a mechanism to achieve **abstraction and multiple inheritance**.
+- By default, variables in an interface are public, static and final.
+- In other words, interfaces primarily define methods that other classes must implement.
 
-An abstract class can provide both method signatures (abstract methods) and concrete method implementations. It can also have fields and constructors.
+> ##### Example :
 
-Key differences:
+```java
+// Payment interface (contract)
+interface Payment {
+    void pay(double amount);   // abstract method
+}
+// Implementation 1: Credit Card Payment
+class CreditCardPayment implements Payment {
+    private String cardNumber;
+    CreditCardPayment(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " using Credit Card: " + cardNumber);
+    }
+}
+// Implementation 2: PayPal Payment
+class PayPalPayment implements Payment {
+    private String email;
+    PayPalPayment(String email) {
+        this.email = email;
+    }
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " using PayPal account: " + email);
+    }
+}
+// Implementation 3: UPI Payment
+class UPIPayment implements Payment {
+    private String upiId;
+    UPIPayment(String upiId) {
+        this.upiId = upiId;
+    }
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " using UPI ID: " + upiId);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Payment p1 = new CreditCardPayment("1234-5678-9876-5432");
+        Payment p2 = new PayPalPayment("user@example.com");
+        Payment p3 = new UPIPayment("raj@upi");
+
+        p1.pay(1500.00);
+        p2.pay(299.99);
+        p3.pay(500.00);
+    }
+}
+```
+
+> Output :
+
+```text
+Paid ₹1500.0 using Credit Card: 1234-5678-9876-5432
+Paid ₹299.99 using PayPal account: user@example.com
+Paid ₹500.0 using UPI ID: raj@upi
+```
+
+> Relationship between Interfaces and Classes :
+
+- A class can extend another class and similarly, an interface can extend another interface. However, only a class can implement an interface and the reverse (an interface implementing a class) is not allowed.
+
+<div align = "center">
+    
+```mermaid
+flowchart LR
+    %% First: class extends class
+    A2[class] -->|extends| A1[class]
+
+    %% Second: class implements interface
+    B2[class] -.->|implements| B1[interface]
+
+    %% Third: interface extends interface
+    C2[interface] -->|extends| C1[interface]
+
+````
+
+</div>
+
+
+> 🧠 **What is the difference between and interface and abstract class ?**
+
+- An interface defines a contract: it specifies method signatures (and sometimes properties) that implementing classes must provide, but contains no implementation (except default methods in some languages like Java).
+
+- An abstract class can provide both method signatures (abstract methods) and concrete method implementations. It can also have fields and constructors.
+
+> Key differences:
 
 - A class can implement multiple interfaces, but can inherit from only one abstract class (in most languages).
 - Interfaces cannot have state (fields), while abstract classes can.
 - Abstract classes are used for sharing code among related classes; interfaces are for defining capabilities.
 - Example
 
-```java
-interface Animal {
-    void makeSound(); /* All methods are always abstract and public */
-    void run();
-}
+> 🧠 **When to Use Class and Interface ?**
 
-class Dog implements Animal {
-    public void makeSound() { /* Public is Necessary here. */
-        System.out.println("Woof!");
-    }
-    publi void run() {
-        System.out.println("Running...");
-    }
-}
-```
 
-- Dog should always implement all the required methods of an interface.
-- if Just in case Dog is not able to provide all the methods of an interface declare class Dog as abstract.
+> ##### Use Class when:
+
+- Use a class when you need to represent a real-world entity with attributes (fields) and behaviors (methods).
+- Use a class when you need to create objects that hold state and perform actions
+- Classes are used for defining templates for objects with specific functionality and properties.
+
+> ##### Use  Interface when:
+- Use an interface when you need to define a contract for behavior that multiple classes can implement.
+- Interface is ideal for achieving abstraction and multiple inheritance.
+
 
 # Pillars of OOPS
 
@@ -795,3 +883,4 @@ class Dog implements Animal {
     - Return may not be same but need to be covariant. (Object-string) (string-object --> not allowed)
 
 -
+````
