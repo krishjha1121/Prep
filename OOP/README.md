@@ -948,7 +948,7 @@ classDiagram
 class A {}
 class B extends A {}
 class C extends B {}
- ```
+```
 
 > Example :
 
@@ -1058,6 +1058,7 @@ classDiagram
     A <|-- C : extends
     B <|-- C : extends
 ```
+
 </div>
 
 - Example 📳
@@ -1236,6 +1237,7 @@ classDiagram
     B <|-- D : extends
     C <|-- D : extends
 ```
+
 </div>
 
 > Example :
@@ -1246,6 +1248,7 @@ class B extends A {}
 class C extends B {}
 class D extends B, C {}
 ```
+
 > Example :
 
 ```java
@@ -1734,6 +1737,257 @@ Cat meows
 
 - Because the method that will be executed is decided at runtime, based on the actual type of the object.
 - At runtime, based on the actual object (parent or child), the JVM decides which method implementation to call.
+
+
+
+<div align = "center">
+    <h2 style = "color:orange"> Constructors </h2>
+</div>
+
+- Spcecial block of code which is used to initialize an object.
+
+> Characteristics of Constructors :
+
+- Same Name as the class :
+    - A constructor has the same name as the class in which it is defined.
+- No Return Type :
+    - Constructors do not have any return type, not even void. The main purpose of a constructor is to initialize the object, not to return a value.
+- Automatically Called on Object Creation :
+    - When an object of a class is created, the constructor is called automatically to initialize the object’s attributes.
+- Used to Set Initial Values for Object Attributes :
+    - Constructors are primarily used to set the initial state or values of an object’s attributes when it is created.
+> Note :
+
+- If you think your class is not a subclass it actually is, every class in Java is the subclass of a class object even if you don't say extends object in your class definition.
+
+- The first line of a constructor is a call to super() or this(), (a call to a constructor of a super-class or an overloaded constructor), if you don't type in the call to super in your constructor the compiler will provide you with a non-argument call to super at the first line of your code, the super constructor must be called to create an object:
+
+- A constructor in Java can not be abstract, final, static, or Synchronized.
+
+
+> Constructors vs Methods in java
+
+
+| Features   | Constructor                                           | Method                                         |
+|------------|------------------------------------------------------|-----------------------------------------------|
+| Name       | Constructors must have the same name as the class name | Methods can have any valid name              |
+| Return Type| Constructors do not return any type                  | Methods have the return type or void if does not return any value |
+| Invocation | Constructors are called automatically with `new` keyword | Methods are called explicitly               |
+| Purpose    | Constructors are used to initialize objects         | Methods are used to perform operations       |
+
+
+
+> **🧠Why do we need constructor ?**
+
+- it ensures that an object is properly **initialized before use.**
+- Without Constructors :
+    - Objects might have undefined or default values.
+    - Extra initialization methods would be required.
+    - Risk of improper object state
+
+> **🧠 when java constructor is called ?**
+
+- Each time an object is created using a new() keyword, at least one constructor (it could be the default constructor) is invoked to assign initial values to the data members of the same class.
+
+
+> ## Types of Constructors :
+
+<div align = "center">
+
+```mermaid
+
+flowchart TD
+    A[Constructors in Java] --> B[Default Constructor]
+    A --> C[Parameterized Constructor]
+    A --> D[Copy Constructor]
+
+```
+
+</div>
+
+> ##### Default Constructors :
+
+- A constructor that has no parameters is known as default constructor.
+- A Default Constructor is invisible.
+- if we write a constructor with no arguments, the compiler does not create a default constructor.
+- Defining a parameterized constructor does not automatically create a no-argument constructor, we must explicitly define if needed.
+- The default constructor can be implicit or explicit.
+
+
+- Implicit Default Constructor :
+    - If no constructor is defined in a class, the Java compiler automatically provides a default constructor. This constructor doesn’t take any parameters and initializes the object with default values, such as 0 for numbers, null for objects.
+
+- Explicit Default Constructor :
+    - If we define a constructor that takes no parameters, it's called an explicit default constructor. This constructor replaces the one the compiler would normally create automatically. Once you define any constructor (with or without parameters), the compiler no longer provides the default constructor for you.
+
+> Example :
+
+```java
+class Student {
+    String name;
+    int age;
+    // Default constructor
+    Student() {
+        this.name = "Unknown";
+        this.age = 0;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(); // Calls default constructor
+        s1.display();
+    }
+}
+```
+
+> Output :
+
+```text
+Name: Unknown, Age: 0
+```
+
+
+> ##### Parameterized Constructor :
+
+- A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with our own values, then use a parameterized constructor.
+
+
+> Example :
+
+```java
+class Student {
+    String name;
+    int age;
+    // Parameterized constructor
+    Student(String name, int age) {
+        this.name = n;
+        this.age = a;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s2 = new Student("Alice", 20); // Calls parameterized constructor
+        s2.display();
+    }
+}
+```
+
+
+> Output
+```text
+Name: Alice, Age: 20
+```
+
+
+> ## Copy Constructor :
+
+- Unlike other constructors copy constructor is passed with another object which copies the data available from the passed object to the newly created object.
+
+> ##### NOTE:
+
+- Java does not provide a built-in copy constructor like C++. We can create our own by writing a constructor that takes an object of the same class as a parameter and copies its fields.
+
+> Example :
+
+```java
+import java.io.*;
+class Roy {
+    // data members of the class
+    String name;
+    int id;
+    // Parameterized Constructor
+    Roy(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+    // Copy Constructor
+    Roy(Roy obj2) {
+        this.name = obj2.name;
+        this.id = obj2.id;
+    }
+}
+
+class Raj {
+    public static void main(String[] args) {
+        // This would invoke the parameterized constructor
+        System.out.println("First Object");
+        Roy obj1 = new Roy("Unknown", 68);
+        System.out.println("Name: " + obj1.name
+                           + " and Id: " + obj1.id);
+
+        System.out.println();
+
+        // This would invoke the copy constructor
+        Roy obj2 = new Roy(obj1);
+        System.out.println(
+            "Copy Constructor used Second Object");
+        System.out.println("Name: " + obj2.name
+                           + " and Id: " + obj2.id);
+    }
+}
+```
+
+
+> Output
+
+```text
+First Object
+Name: Unknown and Id: 68
+
+Copy Constructor used Second Object
+Name: Unknown and Id: 68
+```
+
+> ### Constructor Overloading
+
+- This is a key concept in OOPs related to constructors is constructor overloading. This allows us to create multiple constructors in the same class with different parameter lists.
+- A class can have multiple constructors with different parameter lists.
+
+> Example :
+
+```java
+class Student {
+    String name;
+    int age;
+    // Default constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+    // Parameterized constructor
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student("Bob", 22);
+        s1.display();
+        s2.display();
+    }
+}
+```
+
+> Output
+
+```text
+Name: Unknown, Age: 0
+Name: Bob, Age: 22
+```
+
 
 
 ````
