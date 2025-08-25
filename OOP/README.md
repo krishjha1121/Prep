@@ -1764,6 +1764,7 @@ Cat meows
 
 - A constructor in Java can not be abstract, final, static, or Synchronized.
 
+- Allowed access modifiers for constructors are public, default(nothing), protected, private.
 
 > Constructors vs Methods in java
 
@@ -1812,7 +1813,7 @@ flowchart TD
 - if we write a constructor with no arguments, the compiler does not create a default constructor.
 - Defining a parameterized constructor does not automatically create a no-argument constructor, we must explicitly define if needed.
 - The default constructor can be implicit or explicit.
-
+- The access modifier of default constructor is same as class modifier(only true for public and default).
 
 - Implicit Default Constructor :
     - If no constructor is defined in a class, the Java compiler automatically provides a default constructor. This constructor doesn’t take any parameters and initializes the object with default values, such as 0 for numbers, null for objects.
@@ -1987,7 +1988,5 @@ public class Main {
 Name: Unknown, Age: 0
 Name: Bob, Age: 22
 ```
-
-
 
 ````
