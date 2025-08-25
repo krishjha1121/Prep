@@ -149,7 +149,7 @@ graph TD
 
 </div>
 
-> ## Benefits of SQL
+> ## Benefits of SQL :
 
 - Efficiency :
     - SQL is designed to handle complex queries and large datasets with optimal performance, making data retrieval and manipulation seamless.
