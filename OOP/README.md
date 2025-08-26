@@ -948,7 +948,7 @@ classDiagram
 class A {}
 class B extends A {}
 class C extends B {}
- ```
+```
 
 > Example :
 
@@ -1058,6 +1058,7 @@ classDiagram
     A <|-- C : extends
     B <|-- C : extends
 ```
+
 </div>
 
 - Example 📳
@@ -1236,6 +1237,7 @@ classDiagram
     B <|-- D : extends
     C <|-- D : extends
 ```
+
 </div>
 
 > Example :
@@ -1246,6 +1248,7 @@ class B extends A {}
 class C extends B {}
 class D extends B, C {}
 ```
+
 > Example :
 
 ```java
@@ -1273,7 +1276,6 @@ class D extends A implements B, C {
     public void displayC() {
         System.out.println("Interface C method implemented in Class D");
     }
-
     void displayD() {
         System.out.println("Class D method");
     }
@@ -1309,34 +1311,682 @@ class A extends B {}
 class B extends A {} : ❎
 ```
 
-# Polymorphism
 
-- Polymorphism is the ability of an object to take on many forms.
+> 🧠 **What Can Be Done in a Subclass ?**
 
-- Method Signature -->
-    - Example 📳
-        - name_of_method(type_of_parameter1, type_of_parameter2,..., type_of_parametern)
-        - return type is not cosidered to be a part of method signature in java, but it is considered in c++
+- The inherited fields can be used directly, just like any other fields.
+- We can declare new fields in the subclass that are not in the superclass.
+- The inherited methods can be used directly as they are.
+- We can write a new instance method in the subclass that has the same signature as the one in the superclass, thus overriding it (as in the example above, toString() method is overridden).
+- We can write a new static method in the subclass that has the same signature as the one in the superclass, thus hiding it.
+- We can declare new methods in the subclass that are not in the superclass.
+- We can write a subclass constructor that invokes the constructor of the superclass, either implicitly or by using the keyword super.
 
-- (Automatic promotion in overloading(static polymorphism)) check promotion table for overloading concept , char --> int --> long --> float --> double
 
-- Method overriding(dynamic Polymorphism)
-    - Example 📳
 
-        ```java
-        class A {
-            public void m1() {}
+> ## Abstraction
+
+- Abstraction in Java is the process of hiding internal implementation details and showing only essential functionality to the user
+- Abstraction can be achieved through abstract classes and interfaces.
+
+> Using Abstract class :
+
+```java
+// Abstract class - common behavior and abstraction
+abstract class Vehicle {
+    private String brand;
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
+    // Abstract method -> must be implemented by subclasses
+    public abstract void drive();
+    // Concrete method -> can be inherited directly
+    public void showBrand() {
+        System.out.println("Brand: " + brand);
+    }
+}
+// Car extends Vehicle
+class Car extends Vehicle {
+    public Car(String brand) {
+        super(brand);
+    }
+    @Override
+    public void drive() {
+        System.out.println("Driving a car smoothly on the road...");
+    }
+}
+// Bike extends Vehicle
+class Bike extends Vehicle {
+    public Bike(String brand) {
+        super(brand);
+    }
+    @Override
+    public void drive() {
+        System.out.println("Riding a bike through traffic...");
+    }
+}
+public class AbstractClassExample {
+    public static void main(String[] args) {
+        Vehicle car = new Car("Tesla");
+        car.showBrand();
+        car.drive();
+
+        Vehicle bike = new Bike("Yamaha");
+        bike.showBrand();
+        bike.drive();
+    }
+}
+```
+
+> Using Interface :
+
+```java
+// Interface - pure abstraction
+interface Animal {
+    void makeSound();
+    void move();
+}
+// Dog implements Animal
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks: Woof Woof!");
+    }
+    @Override
+    public void move() {
+        System.out.println("Dog runs on 4 legs.");
+    }
+}
+// Bird implements Animal
+class Bird implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bird chirps: Tweet Tweet!");
+    }
+    @Override
+    public void move() {
+        System.out.println("Bird flies in the sky.");
+    }
+}
+public class InterfaceExample {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.makeSound();
+        dog.move();
+
+        Animal bird = new Bird();
+        bird.makeSound();
+        bird.move();
+    }
+}
+```
+
+> #### Advantages of Abstraction :
+
+- Abstraction makes complex systems easier to understand by hiding the implementation details.
+- Abstraction keeps different part of the system separated.
+- Abstraction maintains code more efficiently.
+- Abstraction increases the security by only showing the necessary details to the user.
+
+> #### Disadvantages of Abstraction :
+
+- It can add unnecessary complexity if overused.
+- May reduce flexibility in implementation.
+- Makes debugging and understanding the system harder for unfamiliar users.
+- Overhead from abstraction layers can affect performance.
+
+> ## Encapsulation
+
+- Encapsulation means binding (wrapping) the data (variables) and the methods (functions) that operate on that data into a single unit (class), while restricting direct access to some of the object's components.
+
+- This is usually achieved by :
+    - Declaring fields (variables) as private.
+    - Providing public getter and setter methods to access and update the private fields safely
+    - This way, the internal representation of an object is hidden from the outside world, and access to it is controlled.
+
+> Example :
+
+```java
+// Class representing a Bank Account
+class BankAccount {
+    // Private data members (hidden from outside)
+    private String accountHolderName;
+    private double balance;
+    // Constructor
+    public BankAccount(String accountHolderName, double balance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+    // Public getter for account holder name
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+    // Public setter for account holder name
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+    // Public getter for balance
+    public double getBalance() {
+        return balance;
+    }
+    // Controlled way to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount!");
         }
-        class B extends A {
-            public void m1() { System.out.println("B"); }
+    }
+    // Controlled way to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance or invalid amount!");
         }
-        ```
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Create a new bank account
+        BankAccount account = new BankAccount("Raj", 1000);
 
-        - here child class B was not happy with the method implementation of parent class A, so it overrides the method.
+        // Access through getters and setters
+        System.out.println("Account Holder: " + account.getAccountHolderName());
+        System.out.println("Initial Balance: " + account.getBalance());
 
-- Rules of method overriding (Not a easy concept)
-    - Method signature must be same.
-    - Return may not be same but need to be covariant. (Object-string) (string-object --> not allowed)
+        // Modify values using encapsulated methods
+        account.deposit(500);
+        account.withdraw(200);
 
--
+        // Updated balance
+        System.out.println("Final Balance: " + account.getBalance());
+    }
+}
+```
+> Output :
+
+```text
+Account Holder: Raj
+Initial Balance: 1000.0
+Deposited: 500.0
+Withdrawn: 200.0
+Final Balance: 1300.0
+```
+
+
+> Key points in above example :
+
+- Private fields: accountHolderName, balance cannot be accessed directly outside the class.
+- Public methods (get, set, deposit, withdraw): These control how the fields are accessed or modified.
+- Security & control: You cannot directly set balance to a negative value — logic in methods prevents misuse.
+
+
+> Uses of Encapsulation :
+
+- Data Hiding
+    - The internal data of an object is hidden from the outside world, preventing direct access.
+- Data Integrity:
+    - Only validated or safe values can be assigned to an object’s attributes via setter methods.
+- Reusability
+    - Encapsulated code is more flexible and reusable for future modifications or requirements.
+- Security:
+    - Sensitive data is protected as it cannot be accessed directly.
+
+> Disadvantages of Encapsulation :
+
+- Sometimes encapuslation can make the code complex and hard to understand if we do not use it in the right way.
+- It can make it more difficult to understand how the program works because some part of the program are hidden.
+
+
+> ## Polymorphism
+
+- Polymorphism in Java is one of the core concepts in object-oriented programming (OOP) that allows objects to behave differently based on their specific class type.
+- polymorphism allows the same method or object to behave differently based on the context, specially on the project's actual runtime class.
+
+> Key Features :
+
+- Multiple Behaviors:
+    - The same method can behave differently depending on the object that calls this method.
+- Method Overriding
+    - A child class can redefine a method of its parent class.
+- Method Overloading
+    - We can define multiple methods with the same name but different parameters.
+- Runtime Decision
+    - At runtime, Java determines which method to call depending on the object's actual class.
+
+> 🧠 **why use polymorphism ?**
+
+- Code Reusability
+    - Polymorphism allows the same method or class to be used with different types of objects, which makes the code more useable.
+- Flexibility
+    - Polymorphism enables object of different classes to be treated as objects of a common superclass, which provides flexibility in method execution and object interaction.
+- Abstraction
+    - It allows the use of abstract classes or interfaces, enabling you to work with general types (like a superclass or interface) instead of concrete types (like specific subclasses), thus simplifying the interaction with objects.
+
+- Dynamic Behavior
+    - With polymorphism, Java can select the appropriate method to call at runtime, giving the program dynamic behavior based on the actual object type rather than the reference type, which enhances flexibility.
+
+
+> Automatic Type Promotion :
+- Automatic type promotion is a feature in Java that allows the compiler to automatically convert one type to another just in case if the exact match is not found.
+
+> Example :
+
+```java
+class Test {
+    public int m1(int i) {
+        return i;
+    }
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.m1('a')); // here the character will be promoted to int(no compilation error)
+    }
+}
+```
+
+<div align = "center">
+
+```mermaid
+graph TD
+    A[Object]
+    B[Double]
+    C[Float]
+    D[Long]
+    E[Integer]
+    F[Short]
+    G[Character]
+    H[Byte]
+
+    B --> A
+    C --> B
+    D --> C
+    E --> D
+    F --> E
+    G --> E
+    H --> F
+```
+
+</div>
+
+> Types of Polymorphism :
+
+
+<div align = "center">
+
+```mermaid
+graph TD
+    A[Polymorphism in Java]:::main --> B[Compile-time<br/>Polymorphism]:::compile
+    A --> C[Runtime<br/>Polymorphism]:::runtime
+
+    B --> D[Method Overloading]:::methodOverload
+    C --> E[Method Overriding]:::methodOverride
+    C --> F[Virtual Functions]:::virtual
+
+    classDef main fill:#dff0d8,stroke:#333,stroke-width:2px,color:red;
+    classDef compile fill:#d9edf7,stroke:#333,stroke-width:1px,color:red;
+    classDef runtime fill:#e2d9f7,stroke:#333,stroke-width:1px,color:red;
+    classDef methodOverload fill:#fcf8e3,stroke:#333,stroke-width:1px,color:red;
+    classDef methodOverride fill:#d9f7f2,stroke:#333,stroke-width:1px,color:red;
+    classDef virtual fill:#f7d9d9,stroke:#333,stroke-width:1px,color:red;
+```
+</div>
+
+
+> Compile-time Polymorphism / static Polymorphism:
+
+- Compile-Time Polymorphism in Java is also known as static polymorphism and also known as method overloading. This happens when multiple methods in the same class have the same name but different parameters.
+
+> ##### Note :
+- Java doesn't support the Operator Overloading.
+
+> ##### Example :
+```java
+class MathUtils {
+    // Overloaded method 1: adds two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+    // Overloaded method 2: adds three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    // Overloaded method 3: adds two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+    // Overloaded method 4: adds an integer and a double
+    public double add(int a, double b) {
+        return a + b;
+    }
+}
+public class OverloadingExample {
+    public static void main(String[] args) {
+        MathUtils mu = new MathUtils();
+
+        System.out.println("Sum of 2 int: " + mu.add(5, 10));        // calls 1
+        System.out.println("Sum of 3 int: " + mu.add(5, 10, 15));    // calls 2
+        System.out.println("Sum of 2 double: " + mu.add(5.5, 4.5));  // calls 3
+        System.out.println("Sum of int & double: " + mu.add(5, 4.5)); // calls 4
+    }
+}
+```
+
+> Output :
+
+```text
+Sum of 2 int: 15
+Sum of 3 int: 30
+Sum of 2 double: 10.0
+Sum of int & double: 9.5
+```
+
+> 🧠 **Why is method overloading also called Static / Compile-Time Polymorphism?**
+- In overloading, the method that will be executed is decided by the compiler at compile-time, based on the method signature (number and type of arguments).
+
+
+> Runtime Polymorphism / Dynamic Polymorphism :
+
+- It is a process in which a function call to the overridden method is resolved at Runtime.
+- Method overriding, on the other hand, occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden.
+
+> Example :
+
+```java
+// Parent Class
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+// Child Class
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+// Another Child Class
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+public class RuntimePolymorphismDemo {
+    public static void main(String[] args) {
+        Animal a;
+        a = new Dog();
+        a.sound();
+        a = new Cat();
+        a.sound();
+    }
+}
+```
+
+> Output :
+
+```text
+Dog barks
+Cat meows
+```
+
+> 🧠 **Why is method overriding also called as Dynamic / Runtime Polymorphism?**
+
+- Because the method that will be executed is decided at runtime, based on the actual type of the object.
+- At runtime, based on the actual object (parent or child), the JVM decides which method implementation to call.
+
+
+
+<div align = "center">
+    <h2 style = "color:orange"> Constructors </h2>
+</div>
+
+- Spcecial block of code which is used to initialize an object.
+
+> Characteristics of Constructors :
+
+- Same Name as the class :
+    - A constructor has the same name as the class in which it is defined.
+- No Return Type :
+    - Constructors do not have any return type, not even void. The main purpose of a constructor is to initialize the object, not to return a value.
+- Automatically Called on Object Creation :
+    - When an object of a class is created, the constructor is called automatically to initialize the object’s attributes.
+- Used to Set Initial Values for Object Attributes :
+    - Constructors are primarily used to set the initial state or values of an object’s attributes when it is created.
+> Note :
+
+- If you think your class is not a subclass it actually is, every class in Java is the subclass of a class object even if you don't say extends object in your class definition.
+
+- The first line of a constructor is a call to super() or this(), (a call to a constructor of a super-class or an overloaded constructor), if you don't type in the call to super in your constructor the compiler will provide you with a non-argument call to super at the first line of your code, the super constructor must be called to create an object:
+
+- A constructor in Java can not be abstract, final, static, or Synchronized.
+
+- Allowed access modifiers for constructors are public, default(nothing), protected, private.
+
+> Constructors vs Methods in java
+
+
+| Features   | Constructor                                           | Method                                         |
+|------------|------------------------------------------------------|-----------------------------------------------|
+| Name       | Constructors must have the same name as the class name | Methods can have any valid name              |
+| Return Type| Constructors do not return any type                  | Methods have the return type or void if does not return any value |
+| Invocation | Constructors are called automatically with `new` keyword | Methods are called explicitly               |
+| Purpose    | Constructors are used to initialize objects         | Methods are used to perform operations       |
+
+
+
+> **🧠Why do we need constructor ?**
+
+- it ensures that an object is properly **initialized before use.**
+- Without Constructors :
+    - Objects might have undefined or default values.
+    - Extra initialization methods would be required.
+    - Risk of improper object state
+
+> **🧠 when java constructor is called ?**
+
+- Each time an object is created using a new() keyword, at least one constructor (it could be the default constructor) is invoked to assign initial values to the data members of the same class.
+
+
+> ## Types of Constructors :
+
+<div align = "center">
+
+```mermaid
+
+flowchart TD
+    A[Constructors in Java] --> B[Default Constructor]
+    A --> C[Parameterized Constructor]
+    A --> D[Copy Constructor]
+
+```
+
+</div>
+
+> ##### Default Constructors :
+
+- A constructor that has no parameters is known as default constructor.
+- A Default Constructor is invisible.
+- if we write a constructor with no arguments, the compiler does not create a default constructor.
+- Defining a parameterized constructor does not automatically create a no-argument constructor, we must explicitly define if needed.
+- The default constructor can be implicit or explicit.
+- The access modifier of default constructor is same as class modifier(only true for public and default).
+
+- Implicit Default Constructor :
+    - If no constructor is defined in a class, the Java compiler automatically provides a default constructor. This constructor doesn’t take any parameters and initializes the object with default values, such as 0 for numbers, null for objects.
+
+- Explicit Default Constructor :
+    - If we define a constructor that takes no parameters, it's called an explicit default constructor. This constructor replaces the one the compiler would normally create automatically. Once you define any constructor (with or without parameters), the compiler no longer provides the default constructor for you.
+
+> Example :
+
+```java
+class Student {
+    String name;
+    int age;
+    // Default constructor
+    Student() {
+        this.name = "Unknown";
+        this.age = 0;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(); // Calls default constructor
+        s1.display();
+    }
+}
+```
+
+> Output :
+
+```text
+Name: Unknown, Age: 0
+```
+
+
+> ##### Parameterized Constructor :
+
+- A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with our own values, then use a parameterized constructor.
+
+
+> Example :
+
+```java
+class Student {
+    String name;
+    int age;
+    // Parameterized constructor
+    Student(String name, int age) {
+        this.name = n;
+        this.age = a;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s2 = new Student("Alice", 20); // Calls parameterized constructor
+        s2.display();
+    }
+}
+```
+
+
+> Output
+```text
+Name: Alice, Age: 20
+```
+
+
+> ## Copy Constructor :
+
+- Unlike other constructors copy constructor is passed with another object which copies the data available from the passed object to the newly created object.
+
+> ##### NOTE:
+
+- Java does not provide a built-in copy constructor like C++. We can create our own by writing a constructor that takes an object of the same class as a parameter and copies its fields.
+
+> Example :
+
+```java
+import java.io.*;
+class Roy {
+    // data members of the class
+    String name;
+    int id;
+    // Parameterized Constructor
+    Roy(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+    // Copy Constructor
+    Roy(Roy obj2) {
+        this.name = obj2.name;
+        this.id = obj2.id;
+    }
+}
+
+class Raj {
+    public static void main(String[] args) {
+        // This would invoke the parameterized constructor
+        System.out.println("First Object");
+        Roy obj1 = new Roy("Unknown", 68);
+        System.out.println("Name: " + obj1.name
+                           + " and Id: " + obj1.id);
+
+        System.out.println();
+
+        // This would invoke the copy constructor
+        Roy obj2 = new Roy(obj1);
+        System.out.println(
+            "Copy Constructor used Second Object");
+        System.out.println("Name: " + obj2.name
+                           + " and Id: " + obj2.id);
+    }
+}
+```
+
+
+> Output
+
+```text
+First Object
+Name: Unknown and Id: 68
+
+Copy Constructor used Second Object
+Name: Unknown and Id: 68
+```
+
+> ### Constructor Overloading
+
+- This is a key concept in OOPs related to constructors is constructor overloading. This allows us to create multiple constructors in the same class with different parameter lists.
+- A class can have multiple constructors with different parameter lists.
+
+> Example :
+
+```java
+class Student {
+    String name;
+    int age;
+    // Default constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+    // Parameterized constructor
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student("Bob", 22);
+        s1.display();
+        s2.display();
+    }
+}
+```
+
+> Output
+
+```text
+Name: Unknown, Age: 0
+Name: Bob, Age: 22
+```
+
 ````
