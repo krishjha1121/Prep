@@ -1542,3 +1542,172 @@ Suppose we have a **Student** table:
 ✅ **In short:**  
 A **Secondary Index** allows efficient searches on **non-primary, non-clustered fields**, storing a **pointer for each record** in the main file.  
 It’s very flexible but can be **slower than clustering index** for range queries.
+# 🔄 Transactions in DBMS
+
+A **transaction** is a sequence of one or more SQL operations (like `INSERT`, `DELETE`, `UPDATE`, `SELECT`) that forms a **logical unit of work** on a database.
+
+👉 **Goal**:  
+- Either all operations succeed (and are made permanent),  
+- Or none of them are applied (rolled back).  
+
+Transactions are essential for **data integrity and consistency**.
+
+---
+
+## ✅ ACID Properties of a Transaction
+
+To ensure correctness in a multi-user environment, transactions must follow **ACID**:
+
+### 1. Atomicity
+- **All or Nothing principle**  
+- If one part fails, the whole transaction is rolled back.  
+- Prevents **partial updates**.  
+
+📌 **Example**:  
+Money transfer → Debit succeeds but credit fails → Rollback debit.
+
+---
+
+### 2. Consistency
+- Database must remain valid **before and after** a transaction.  
+- All **constraints** (e.g., PK, FK, balance ≥ 0) must hold.  
+- If DB starts consistent → must end consistent.
+
+---
+
+### 3. Isolation
+- Concurrent transactions must not interfere.  
+- Executed **as if running alone**.  
+- Prevents issues:  
+  - Dirty Reads  
+  - Non-repeatable Reads  
+  - Phantom Reads  
+
+---
+
+### 4. Durability
+- Once committed → changes are **permanent**.  
+- Survive crashes and restarts.
+
+---
+
+## 🔁 Transaction States
+
+A transaction passes through the following states:
+
+1. **Active** → Performing read/write.  
+   - Success → Partially Committed.  
+   - Failure → Failed.  
+
+2. **Partially Committed** → Execution finished, waiting to commit.  
+   - Success → Committed.  
+   - Failure → Failed.  
+
+3. **Committed** → Changes **permanently saved**. No rollback possible.  
+
+4. **Failed** → Error during execution or commit. Rollback needed.  
+
+5. **Aborted** → Rollback done, DB restored to original state.  
+
+6. **Terminated** → Transaction completed (commit/abort).  
+
+---
+
+## 🔁 Operations in a Transaction
+
+- `Read(X)` → Reads value of X.  
+- `Write(X)` → Writes value to X.  
+- `Commit` → Finalizes & makes changes permanent.  
+- `Rollback` → Undo all changes since transaction began.  
+
+---
+
+## 🔁 Recovery Mechanism in DBMS
+
+To enforce **Atomicity & Durability**, DBMS includes **Recovery Management**:
+
+- If transaction fails → undo changes.  
+- If succeeds → preserve changes even after crash.  
+
+---
+
+## 📄 1. Shadow-Copy Scheme
+
+### 🔧 How it Works
+- A **db-pointer** points to current DB copy.  
+- When transaction starts → create new copy.  
+- Updates applied only on **new copy**.  
+- Old copy = **shadow copy**.  
+
+📌 Cases:
+- If **abort** → discard new copy.  
+- If **commit** → write new copy & update `db-pointer`.  
+
+### ✅ Guarantees
+- **Atomicity** → old DB intact if fail.  
+- **Durability** → committed DB survives crash.  
+
+⚠️ **Drawback**:  
+- Very **inefficient** (entire DB copy per transaction).  
+
+---
+
+## 📝 2. Log-Based Recovery
+
+A **log** = chronological record of DB operations.  
+
+👉 Stored in **stable storage** (survives crashes).  
+👉 Written **before DB changes**.  
+
+Two approaches:
+
+---
+
+### 🕒 A. Deferred Database Modifications
+
+- Changes are logged, **not applied** until commit.  
+- At commit → apply logs to DB.  
+
+📌 Cases:
+- Crash **before commit** → ignore logs.  
+- Crash **during write** → redo logs.  
+
+✅ **Benefits**:  
+- Simple rollback (ignore logs).  
+- Ensures atomicity.
+
+---
+
+### ⚡ B. Immediate Database Modifications
+
+- Changes made to DB **before commit**.  
+- Logs written **first** (Write-Ahead Logging - WAL).  
+
+📌 Cases:
+- Crash **before commit** → rollback using old values.  
+- Crash **after commit** → redo using new values.  
+
+✅ **Benefits**:  
+- Faster updates.  
+- Supports concurrent transactions.  
+
+---
+
+## ✅ Comparison of Recovery Methods
+
+| Method                  | Atomicity Guarantee          | Durability Guarantee       | Drawback                         |
+|--------------------------|------------------------------|-----------------------------|----------------------------------|
+| **Shadow-Copy**         | Discard new copy if fail     | db-pointer updated after commit | Inefficient (full DB copy each time) |
+| **Log-Based (Deferred)** | Ignore logs on abort         | Redo from logs if crash     | Slower final write                |
+| **Log-Based (Immediate)**| Undo using old values        | Redo using new values       | More complex rollback logic       |
+
+---
+
+## 🔚 Summary
+
+- **Transactions** = logical units of work.  
+- Must follow **ACID properties**.  
+- **States**: Active → Partially Committed → Committed/Failed → Aborted/Terminated.  
+- **Recovery** ensures atomicity & durability using:  
+  - Shadow-Copy (simple but inefficient)  
+  - Log-Based (deferred/immediate, widely used).  
