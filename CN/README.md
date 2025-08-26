@@ -133,7 +133,6 @@ The **OSI model** explains how this communication works without changing their h
  * Main Responsibility: The physical layer is concerned with
 transmitting raw bits over a communication medium/channel.
 
-
-
-   
-   
+*
+*
+*
