@@ -1,50 +1,3 @@
-<!--───────────────────────────────────────────-->
-<h1 align="center"> 🌎 DATABASE </h1>
-<p align="center">
-</p>
-
----
-
-🧑‍💻 **Author:** RK ROY
-
-> 🧾 _"Databases aren’t just about data—they’re about trust, speed, and reliability."_
-
----
-
-- <p style = "color:orange"> 📚 Data </p>
-    
-    - Data is a collections of raw, unorganized facts and details like numbers, text, images, and more.
-    - Data is measured in terms of bits and bytes.
-    - Data can be recorded and does not have any meaning unless processed.
-- <p style = "color:orange"> ㊙️ Types of data </p>
-    
-    - <p style = "color:"> Quantitative data </p>
-        
-        - Numerical Form.
-        - weight, volume, temperature, etc.
-    - Qualitative data
-        - Descriptive, but not numerical.
-        - Gender, ethnicity, religion, etc.
-
-- <p style = "color:orange"> Information </p>
-    
-    - Provides context of the data and enables decision making.
-
-- <p style = "color:orange"> Database </p>
-      
-    - Database is an electronic place/system where data is stored in a way that it can be easily accessed, managed, and updated.
-    - To make real use Data, we need Database management systems. (DBMS)
-
-- <p style = "color:orange"> DBMS </p>
-   
-    - A DBMS (Database Management System) is software that interacts with users, applications, and the database itself to store, manage, and retrieve data efficiently and securely.
-    - Advantages :
-        - Data Integrity and Consistency : Ensures accuracy and consistency of data across the database.
-        - Data Sharing : Multiple users and applications can access the database simultaneously
-        - Data Security : Allows different users to have different levels of access.
-        - Data Redundancy Control : Eliminates duplicate data by centralizing storage.
-
-<br>
 
 <div align = "center"> <h1 style = "color:purple"> 📚 DBMS Architecture </h1> </div>
 
@@ -1711,3 +1664,960 @@ Two approaches:
 - **Recovery** ensures atomicity & durability using:  
   - Shadow-Copy (simple but inefficient)  
   - Log-Based (deferred/immediate, widely used).  
+# 📘 What is NoSQL?
+
+**NoSQL** stands for **"Not Only SQL"**.  
+It's a category of databases designed to handle:
+
+- Unstructured / Semi-structured data  
+- High scalability and availability  
+- Schema-less flexibility  
+- Distributed architecture  
+
+Unlike traditional **Relational Databases (RDBMS)**, NoSQL databases do not store data in tables with rows and columns. Instead, they use different models like **documents, key-value pairs, columns, and graphs**.
+
+---
+
+## 🧱 Key Characteristics of NoSQL
+- **Schema-free** – You don’t need to predefine the structure of your data.  
+- **Non-tabular structure** – Uses flexible formats (JSON, key-value, etc.).  
+- **Handles big data** – Designed for high data volume and velocity.  
+- **Horizontal scaling** – Easily distributes data across multiple servers.  
+- **Open-source and Cloud-friendly** – Built for cloud-native applications.  
+
+---
+
+## 📜 History Behind NoSQL
+Emerged in the **late 2000s**, as:
+- Storage costs dropped significantly.  
+- Agile development needed faster schema adaptation.  
+- Data became more unstructured and dynamic.  
+
+**NoSQL improved developer productivity** and supported:
+- Cloud computing  
+- Geographically distributed applications  
+- Real-time, scalable apps  
+
+---
+
+## ✅ Advantages of NoSQL
+### A. 🔄 Flexible Schema
+- No fixed schema required.  
+- Easy to adapt when data format or requirements change.  
+
+### B. 🧩 Horizontal Scaling (Scale-Out)
+- Add more servers (nodes) to handle more data or traffic.  
+- Achieved via **Sharding** or **Replica Sets**.  
+- Easier than scaling relational DBs (which require vertical scaling).  
+
+### C. 🔁 High Availability
+- **Auto-replication**: Data is duplicated across servers.  
+- If one server fails, another still serves the data.  
+
+### D. ⚡ Fast Reads & Writes
+- No joins, since related data is often stored together.  
+- Ideal for read-heavy applications.  
+- Great for **real-time apps** and **caching**.  
+
+### E. 🧠 Built-in Caching
+- Some NoSQL DBs like **Redis** serve as in-memory caches for fast data retrieval.  
+
+### F. ☁️ Cloud-native
+- Built for **microservices**, **real-time apps**, and **distributed cloud systems**.  
+
+---
+
+## 🧰 When to Use NoSQL?
+- Fast-paced **Agile development**  
+- **Unstructured / semi-structured** data  
+- Need to store **huge data volumes**  
+- **Scalable architecture** required (scale-out)  
+- Use cases like **real-time streaming, IoT, microservices**  
+
+---
+
+## ❌ Common Misconceptions about NoSQL
+1. **❌ Doesn’t Support Relationships**  
+   - **Truth**: NoSQL can store relationship data – just differently.  
+   - Relationships are often embedded within documents (e.g., MongoDB).  
+   - No need for joins; nested structures make it easier.  
+
+2. **❌ No ACID Support**  
+   - **Truth**: Many NoSQL DBs (like MongoDB 4.x+) **do support ACID transactions**.  
+
+---
+
+## 🔄 Types of NoSQL Databases
+
+### 1. 🔑 Key-Value Store
+- Simplest NoSQL type: stores data as **key-value pairs**  
+- Keys are unique identifiers; values can be anything (JSON, string, int, blob)  
+- **Examples**: Redis, DynamoDB, Riak  
+
+**Use Cases**:
+- Caching  
+- Session management  
+- Fast lookups  
+
+---
+
+### 2. 🧱 Document-Based Store
+- Stores data in **JSON-like documents**  
+- Schema is flexible  
+- Fields can store arrays, nested documents, etc.  
+- **Examples**: MongoDB, CouchDB  
+
+**Use Cases**:
+- E-commerce platforms  
+- Content management  
+- Mobile apps  
+- Supports ACID transactions  
+
+---
+
+### 3. 📊 Column-Oriented Store (Wide-Column)
+- Stores data in **columns, not rows**  
+- Efficient for **analytical queries, aggregates, and compressions**  
+- **Examples**: Apache Cassandra, HBase, Google Bigtable  
+
+**Use Cases**:
+- Time-series data  
+- Analytics dashboards  
+- IoT and telemetry  
+
+---
+
+### 4. 🌐 Graph-Based Store
+- Data is stored as **nodes (entities)** and **edges (relationships)**  
+- Direct relationship modeling (no joins)  
+- Optimized for traversal queries  
+- **Examples**: Neo4j, Amazon Neptune  
+
+**Use Cases**:
+- Social networks  
+- Fraud detection  
+- Recommendation systems  
+- Knowledge graphs  
+# ⚠️ Disadvantages of NoSQL
+
+### 1. Data Redundancy
+- Data is often duplicated for performance → higher storage cost.  
+- Compression helps but doesn’t eliminate redundancy.  
+
+### 2. Costly Deletes & Updates
+- Not as efficient due to data duplication and lack of joins.  
+
+### 3. Not One-Size-Fits-All
+- Each NoSQL type fits specific use cases.  
+- You may need to use multiple types together.  
+
+### 4. Limited ACID Support (generally)
+- Though some support it (like MongoDB), others prioritize **availability over consistency**.  
+
+### 5. Lacks Constraint Enforcement
+- No **foreign keys** or strict schema enforcement by default.  
+
+---
+
+# ⚔️ SQL vs NoSQL — Quick Comparison
+
+| Feature          | SQL                                | NoSQL                                                         |
+|------------------|------------------------------------|---------------------------------------------------------------|
+| **Data Model**   | Tables with fixed schemas          | JSON docs, key-value pairs, column families, graphs           |
+| **Schema**       | Predefined (Fixed)                 | Flexible (Schema-less)                                        |
+| **Scaling**      | Vertical (Scale-up)                | Horizontal (Scale-out)                                        |
+| **ACID**         | Fully supported                    | Partial (varies by DB)                                        |
+| **JOINs**        | Supported                          | Not needed (nested or denormalized data)                      |
+| **Data Mapping** | Requires ORM                       | Native data structures (e.g., MongoDB maps to JSON-like docs) |
+| **Examples**     | MySQL, Oracle, PostgreSQL          | MongoDB, Redis, Cassandra, Neo4j                              |
+| **Best For**     | Complex queries, strict schemas    | Real-time apps, scalability, schema flexibility, big data, IoT|
+
+---
+
+# 🧠 Summary
+**NoSQL** is a powerful alternative to traditional databases, best suited for:
+
+- Modern, agile applications  
+- Handling massive and varied data  
+- Applications with **real-time needs**  
+
+👉 Choose NoSQL when your use case demands:  
+**flexibility, performance, scalability, and high availability.**  
+# ✅ Types of Databases
+
+## 1. Relational Databases (RDBMS)
+
+**Definition:**  
+- Based on the Relational Model (E.F. Codd, 1970s).
+- Data is stored in tables (rows and columns).
+- Tables are related using foreign keys.
+
+**Key Features:**  
+- Use SQL (Structured Query Language).
+- Follow ACID properties (Atomicity, Consistency, Isolation, Durability).
+- Highly structured and normalized data.
+- Good for complex queries and joins.
+
+**Example:**  
+- **User Table:** `user_id`, `name`, `email`
+- **Orders Table:** `order_id`, `user_id`, `amount`
+- Use `JOIN` to get all orders by a particular user.
+
+**Use Cases:**  
+- Banking systems
+- School databases
+- HR systems
+
+**Popular Tools:**  
+- MySQL
+- PostgreSQL
+- Oracle DB
+- MS SQL Server
+
+**Limitations:**  
+- Struggles with horizontal scaling.
+- Not suited for unstructured or dynamic schema.
+
+---
+
+## 2. Object-Oriented Databases (OODBMS)
+
+**Definition:**  
+- Based on Object-Oriented Programming (OOP).
+- Data is stored as objects (like in Java, C++, Python).
+
+**Key Concepts:**  
+- Supports encapsulation, inheritance, and object identity.
+- Each object bundles both data and methods together.
+
+**Example:**  
+```cpp
+class Student {
+    string name;
+    int age;
+    void printDetails();
+}
+```
+- The entire object (data + function) can be stored and retrieved from the DB.
+
+**Use Cases:**  
+- CAD/CAM
+- Scientific applications
+- Multimedia databases
+
+**Popular Tools:**  
+- ObjectDB
+- db4o
+- GemStone
+
+**Advantages:**  
+- Works well with complex real-world models.
+- Integrates directly with OOP languages.
+- Handles multimedia and spatial data easily.
+
+**Limitations:**  
+- High complexity, slower CRUD operations.
+- Less community support.
+- Doesn’t support views like RDBMS.
+
+---
+
+## 3. NoSQL Databases
+
+**Definition:**  
+- "Not Only SQL": Designed for modern web apps with high volume and flexible data.
+- Non-tabular, can store unstructured or semi-structured data.
+
+**Types:**  
+- Key-Value (Redis, DynamoDB)
+- Document (MongoDB)
+- Wide-Column (Cassandra)
+- Graph (Neo4j)
+
+**Example (MongoDB Document):**  
+```json
+{
+  "name": "Nikhil",
+  "skills": ["Flutter", "Node.js"],
+  "active": true
+}
+```
+
+**Use Cases:**  
+- Real-time analytics
+- Content management
+- IoT
+- Chat apps
+
+**Advantages:**  
+- Flexible schema
+- Horizontally scalable
+- Fast for read-heavy workloads
+- Designed for Big Data and Cloud
+
+**Limitations:**  
+- Not all support ACID transactions
+- Some may have data redundancy
+- Complex updates can be difficult
+
+> 👉 For full details, see LEC-15 notes.<!--───────────────────────────────────────────-->
+## 4. Hierarchical Databases
+
+**Definition:**  
+- Data is organized in a tree-like (parent-child) structure.
+- Each child record has only **one parent**.
+- Follows a **one-to-many relationship**.
+
+**Characteristics:**  
+- Fast and simple traversal (from root to leaf).
+- Cannot easily model many-to-many relationships.
+
+**Example:**
+```
+Company
+ ├── Department A
+ │    ├── Employee 1
+ │    └── Employee 2
+ └── Department B
+    └── Employee 3
+```
+
+**Use Cases:**  
+- File systems  
+- Drop-down menus  
+- XML-based data
+
+**Popular Tools:**  
+- IBM IMS  
+- Windows Registry
+
+**Advantages:**  
+- Fast access for simple hierarchical data.
+- Works well with directory-like structures.
+
+**Limitations:**  
+- Inflexible for complex data (only one parent per node).
+- Data redundancy due to lack of normalization.
+- Full traversal required for some queries.
+
+---
+
+## 5. Network Databases
+
+**Definition:**  
+- Extension of hierarchical databases.
+- Allows a child to have **multiple parents** (supports many-to-many relationships).
+- Uses a **graph structure** instead of a tree.
+
+**Characteristics:**  
+- Relationships are explicitly modeled using links.
+- More flexible than the hierarchical model.
+
+**Example:**  
+An employee works in multiple departments:
+```
+Department A ↔ Employee 1 ↔ Department B
+```
+
+**Use Cases:**  
+- Telecom  
+- Transport  
+- Engineering applications (complex relationships)
+
+**Popular Tools:**  
+- IDMS  
+- TurboIMAGE  
+- Raima DB
+
+**Advantages:**  
+- Better at modeling complex relationships.
+
+**Limitations:**  
+- Difficult to maintain and query.
+- Poor community support today.
+- Many-to-many relationships can slow down performance.
+
+---
+
+## 📊 Summary Table
+
+| Database Type      | Structure         | Schema   | Relationships      | Examples         | Use Cases                       |
+|--------------------|------------------|----------|--------------------|------------------|----------------------------------|
+| Relational         | Tables (SQL)     | Fixed    | Join (Foreign Key) | MySQL, Oracle    | Banking, ERP, School systems     |
+| Object-Oriented    | Objects (OOP)    | Classes  | Inheritance        | ObjectDB, GemStone| Multimedia, complex object data  |
+| Hierarchical       | Tree             | Rigid    | One-to-many        | IBM IMS          | XML, file systems, dropdowns     |
+
+---
+
+# ✅ What is Clustering in DBMS?
+
+## 🔸 Definition
+
+**Clustering** in DBMS means connecting multiple servers (nodes) to manage a single database system. These servers work together to provide:
+
+- **High Availability**
+- **Fault Tolerance**
+- **Scalability**
+- **Data Redundancy**
+
+---
+
+## ✅ Why Clustering is Needed?
+
+Imagine a shopping website (like Amazon) with millions of users placing orders simultaneously.  
+A single server can't handle such massive traffic or data.
+
+**Solution:**  
+Cluster multiple servers so each handles part of the load.
+
+---
+
+## ✅ How Clustering Works
+
+- Multiple servers (nodes) are connected.
+- The same database is **replicated** across these nodes (Replica Sets).
+- Requests are routed to any available node.
+- If one node fails, another node handles the request.
+- Synchronization logic keeps all nodes up-to-date.
+
+> **Example:**  
+> If DB on Server A fails, Server B takes over with no data loss.
+
+---
+
+## ✅ Advantages of Clustering
+
+### 1. 🔁 Data Redundancy
+
+- Each node/server has a replica of the data.
+- If one server fails, others still have the data.
+- Prevents data loss (intentional redundancy).
+
+### 2. ⚖️ Load Balancing
+
+- Requests are distributed across all servers.
+- No single machine is overloaded.
+- Supports more users without crashing.
+
+### 3. 🔄 High Availability
+
+- System remains available even if some nodes fail.
+- Essential for mission-critical systems (banking, e-commerce, healthcare).
+
+### 4. 📈 Scalability
+
+- Easily add new nodes to handle more traffic.
+
+### 5. 🛡️ Fault Tolerance
+
+- If one server fails, others continue handling requests.
+
+---
+
+## ✅ Real-World Architecture
+
+```mermaid
+flowchart TD
+    LB[Load Balancer]
+    LB --> N1[Node 1 (DB)]
+    LB --> N2[Node 2 (DB)]
+    LB --> N3[Node 3 (DB)]
+```
+
+- All nodes have the same database.
+- Load balancer routes requests based on availability.
+- If Node 2 crashes, Node 1 and Node 3 still serve users.
+
+---
+
+## ✅ Summary Table
+
+| Feature         | Description                                 |
+|-----------------|---------------------------------------------|
+| Data Redundancy | Same data stored on multiple nodes for backup|
+| Load Balancing  | Distributes traffic among nodes evenly       |
+| High Availability| System remains accessible if nodes fail     |
+| Scalability     | Add new nodes to handle more traffic         |
+| Fault Tolerance | Other servers continue if one fails          |
+
+---
+
+## ✅ Technologies That Use DB Clustering
+
+| Tool        | Type                        |
+|-------------|-----------------------------|
+| MongoDB     | Replica Sets, Sharding      |
+| MySQL       | Shared-nothing architecture |
+| Amazon RDS  | Multi-AZ Deployment         |
+| PostgreSQL  | Patroni, BDR, Citus         |
+| Oracle RAC  | Real Application Clusters   |
+
+---
+| Network            | Graph            | Complex  | Many-to-many       | IDMS, TurboIMAGE | Telecom, engineering apps        |
+
+
+
+
+
+# 🔶 Partitioning in Databases
+
+Partitioning is a database optimization technique where a large table is split into smaller, manageable parts called **partitions**.  
+Think of it as dividing a huge Excel sheet into several smaller sheets for easier handling.
+
+- SQL queries can access partitioned data transparently—no query changes needed.
+
+---
+
+## 🔸 Why Partition?
+
+- Large databases are hard to manage and slow to query.
+- Partitioning breaks data into smaller pieces, making operations faster and easier.
+
+---
+
+# 🔶 Types of Partitioning
+
+## 1. Vertical Partitioning (Column-wise)
+
+- Divides a table based on columns.
+- Each partition stores a subset of attributes (columns).
+- To get full data for a row, you need to **JOIN** partitions.
+
+**Example:**
+
+```sql
+-- Original Table
+Employee(emp_id, name, salary, address, phone)
+
+-- After vertical partition
+Emp_basic(emp_id, name)
+Emp_details(emp_id, salary, address, phone)
+```
+
+**Use Case:**  
+- Different applications use different columns.
+- Optimizes access patterns.
+
+---
+
+## 2. Horizontal Partitioning (Row-wise)
+
+- Divides a table based on rows.
+- Each partition contains different rows but the same columns.
+- Each partition can be stored on different servers.
+
+**Example:**
+
+```sql
+-- Original Table: Sales(year, region, amount)
+
+-- Partition by year
+Sales_2021(...)
+Sales_2022(...)
+```
+
+**Use Case:**  
+- Data is too large for one server.
+- Easy to split by logical ranges (dates, regions, user IDs, etc.).
+
+---
+
+# 🔶 When to Use Partitioning?
+
+- Dataset is too large to handle efficiently.
+- Query response time is slow due to volume.
+- Multiple concurrent requests overload the server.
+
+---
+
+# 🔶 Benefits of Partitioning
+
+| Feature      | Benefit                                      |
+|--------------|----------------------------------------------|
+| Parallelism  | Multiple queries run on different partitions |
+| Availability | If one partition fails, others remain online |
+| Performance  | Smaller tables → faster indexes/queries      |
+| Manageability| Easier to archive, backup, or purge data     |
+| Cost Saving  | Avoids expensive hardware upgrades           |
+
+---
+
+# 🔶 What is Sharding?
+
+**Sharding** is a special form of horizontal partitioning where  
+**each shard is stored on a separate database server/instance**.
+
+- A routing layer directs queries to the correct shard.
+- Common in distributed/cloud databases (MongoDB, Cassandra, Facebook TAO).
+
+**Example:**
+
+- Users with `user_id` 1–1,000,000 → Shard 1
+- Users with `user_id` 1,000,001–2,000,000 → Shard 2
+
+---
+
+# 🔶 Sharding Architecture
+
+```lua
+          +---------------------+
+           |   Application/API   |
+           +---------------------+
+                     |
+              +---------------+
+              | Routing Layer |
+              +---------------+
+             /        |        \
+     +----------+ +----------+ +----------+
+     | Shard 1  | | Shard 2  | | Shard 3  |
+     +----------+ +----------+ +----------+
+```
+
+---
+
+# 🔶 Advantages of Sharding
+
+- **Scalability:** Easily add new shards/servers as data grows.
+- **Availability:** If one shard fails, others keep running.
+- **Performance:** Smaller datasets per shard → faster queries.
+
+---
+
+# 🔶 Disadvantages of Sharding
+
+| Problem         | Explanation                                         |
+|-----------------|-----------------------------------------------------|
+| Complexity      | Routing, mapping, shard key selection is complex    |
+| Data Skew       | Uneven distribution can overload some shards        |
+| Re-sharding     | Changing shard boundaries is difficult/risky        |
+| Analytical Queries | Need to scan all shards for full data            |
+| Scatter-Gather  | Querying across shards increases network/CPU usage  |
+
+---
+
+# 🔶 Scatter-Gather Problem
+
+Occurs when a query must search all shards, even if only a few records match.
+
+**Example:**
+
+```sql
+SELECT * FROM users WHERE email LIKE '%@gmail.com';
+```
+
+- Query can't use `user_id` for routing.
+- Must be sent to all shards, processed independently, then aggregated.
+
+**Results:**  
+- High network traffic  
+- Increased query time  
+- CPU usage on all shards
+
+---
+
+# 🔶 Distributed Databases
+
+A **distributed database** is the result of applying partitioning, sharding, and clustering.  
+It behaves like one logical DB but is physically stored across multiple servers/nodes.
+
+**Examples:**  
+- Google Bigtable  
+- Amazon DynamoDB  
+- Apache Cassandra  
+- CockroachDB
+
+---
+
+# ✅ Summary Table
+
+| Concept        | Description                                    |
+|----------------|------------------------------------------------|
+| Partitioning   | Splitting data within a table (vertical/horizontal) |
+| Sharding       | Horizontal partitioning + distributed across servers |
+| Distributed DB | Logical DB spread across multiple locations    |
+| Routing Layer  | Forwards queries to correct shard              |
+| Benefits       | Scalability, availability, parallelism         |
+| Challenges     | Complexity, skew, re-sharding, scatter-gather  |
+
+# ✅ Case Study: Scaling a Cab Booking App
+
+## 🚗 Startup Phase: Monolithic Setup
+
+- **Small user base** (~10 customers)
+- **Single server** handles everything:
+    - Customers
+    - Trips
+    - Locations
+    - Booking history
+- **Light traffic:** ~1 trip booking every 5 minutes
+- **No scaling needed** — simple monolithic architecture
+
+---
+
+## 🚨 Problem Phase: Traffic Spike
+
+- **Bookings increase:** 30 per minute
+- **Issues:**
+    - API latency rises
+    - Transactions fail (deadlocks, starvation)
+    - App becomes sluggish
+    - Poor customer experience
+
+---
+
+## ⚙️ Pattern 1: Query Optimization & Connection Pooling
+
+**Goal:** Improve performance without major architectural changes
+
+- **Query Optimization**
+    - Use indexes
+    - Avoid `SELECT *` and unnecessary joins
+- **Caching**
+    - In-memory cache (e.g., Redis) for frequently accessed data
+        - Booking history
+        - User profiles
+        - Payment history
+- **Connection Pooling**
+    - Reuse DB connections (e.g., HikariCP, pgbouncer)
+- **DB Redundancy**
+    - Secondary copy for read-heavy operations (optional)
+
+> **Scales to 2 cities, ~100 bookings/minute**
+
+---
+
+## ⚙️ Pattern 2: Vertical Scaling (Scale Up)
+
+**Goal:** Upgrade hardware
+
+- Double RAM
+- Upgrade CPU
+- Switch to SSD/faster storage
+
+**Limitation:**  
+- Cost increases exponentially
+- Good short-term fix
+
+> **Scales to 5 cities, ~300 bookings/minute**
+
+---
+
+## ⚙️ Pattern 3: Command Query Responsibility Segregation (CQRS)
+
+**Problem:** Large machine struggles with read/write separation
+
+- **Primary DB:** Handles all writes
+- **Read Replicas:** Handle read queries
+- **Data Replication:** Asynchronous to replicas
+
+**Limitation:**  
+- Write load still goes to one primary
+- Replication lag affects real-time experience
+
+> **Write load becomes bottleneck**
+
+---
+
+## ⚙️ Pattern 4: Multi-Primary Replication
+
+**Goal:** Distribute write load
+
+- Every node acts as both primary & replica
+- Logical ring of replication
+- Write anywhere, read from fastest responder
+
+**Challenges:**  
+- Conflict resolution for concurrent writes
+- Data consistency is tricky
+
+> **Scales to 10+ cities, 50 requests/sec**
+
+---
+
+## ⚙️ Pattern 5: Partitioning by Functionality
+
+**Problem:** All data in one DB schema
+
+- **Split DB by functionality:**
+    - User/profile info → DB 1
+    - Trip info → DB 2
+    - Location info → DB 3
+- Each DB can be scaled separately
+
+**Limitation:**  
+- Application layer must join results across DBs
+- Adds complexity
+
+> **Preparing for international expansion**
+
+---
+
+## ⚙️ Pattern 6: Horizontal Scaling (Sharding)
+
+**Problem:** DB instance too large
+
+- **Shard the database:**
+    - Use 50 machines
+    - Each stores part of the data (e.g., by customer ID or region)
+    - Each shard may have replicas
+
+**Challenges:**  
+- Shard mapping logic
+- Re-sharding during growth
+- Scatter-gather for analytics queries
+
+> **Scale across continents**
+
+---
+
+## ⚙️ Pattern 7: Data Centre-Wise Partitioning
+
+**Problem:** High latency for international requests
+
+- **Deploy app/DBs to multiple global data centers**
+    - India, Europe, US, etc.
+- **Geo-route traffic** to nearest data center
+- **Cross-data center replication**
+    - Disaster recovery
+    - High availability
+
+> **Global-level availability — ready for IPO!**
+
+---
+
+## 🔁 Summary Table
+
+| Pattern # | Name                         | What It Solves                  | When to Use                   |
+|-----------|------------------------------|----------------------------------|-------------------------------|
+| 1         | Query Optimization & Pooling | Early performance issues         | Small to medium traffic       |
+| 2         | Vertical Scaling             | Easy RAM/CPU boost               | Quick fix, but limited        |
+| 3         | CQRS                         | Separate read/write load         | Medium-scale traffic          |
+| 4         | Multi-Primary Replication    | Write bottleneck, availability   | Distributed writes            |
+| 5         | Functional Partitioning      | Module-wise isolation            | Feature-based scaling         |
+| 6         | Horizontal Scaling (Sharding)| Too much data, bottlenecks       | Very large scale systems      |
+| 7         | Data Center Partitioning     | High global latency              | Multi-region deployments      |
+# 📌 CAP Theorem in Distributed Databases
+
+The **CAP Theorem** (Brewer’s Theorem) states that a distributed database system can only guarantee **two out of three** properties at any time:
+
+- **C – Consistency:** All nodes see the same data at the same time.
+- **A – Availability:** Every request receives a response (may not be the latest).
+- **P – Partition Tolerance:** The system continues to operate even if network partitions occur.
+
+> **You can only pick two:**  
+> - **CP:** Consistency + Partition Tolerance (sacrifices Availability)  
+> - **CA:** Consistency + Availability (sacrifices Partition Tolerance)  
+> - **AP:** Availability + Partition Tolerance (sacrifices Consistency)
+
+---
+
+## 🔍 CAP Terms Explained
+
+### 1. 🟩 Consistency
+- All nodes return the same, up-to-date data for any request.
+- **Example:** Update profile picture → all users see the new picture instantly.
+
+### 2. 🟦 Availability
+- System always responds to requests, even if some nodes are down.
+- **Example:** Instagram feed loads even during server issues (may show stale data).
+
+### 3. 🟨 Partition Tolerance
+- System keeps working even if some nodes can’t communicate.
+- **Example:** Server A and B lose connection, but the app still works (with possible trade-offs).
+
+---
+
+## ⚖️ CAP Trade-Offs
+
+| Model | Guarantees | Sacrifices | Example DB | Use Case |
+|-------|------------|------------|------------|----------|
+| CP    | Consistency + Partition Tolerance | Availability | MongoDB | Banking, Payments |
+| AP    | Availability + Partition Tolerance | Consistency | Cassandra, DynamoDB | Social apps, Realtime Games |
+| CA    | Consistency + Availability | Partition Tolerance | MySQL, PostgreSQL | Enterprise systems without network failures |
+
+**Partition Tolerance is essential** in real-world distributed systems.  
+So, the real choice is between **Consistency** and **Availability**.
+
+---
+
+## 💡 NoSQL Databases & CAP
+
+- **CA:** MySQL, PostgreSQL (single-node setups)
+- **CP:** MongoDB (primary/secondary replication)
+- **AP:** Cassandra, DynamoDB (eventual consistency)
+
+**Eventual Consistency:**  
+In AP systems, data may not be instantly consistent, but will synchronize over time.
+
+---
+
+## 📊 CAP Use Cases
+
+| Use Case                  | CAP Preference | Database Type | Example DB         |
+|---------------------------|---------------|--------------|--------------------|
+| Banking / Financial       | CP            | Document     | MongoDB            |
+| Social Media Feed         | AP            | Wide Column  | Cassandra          |
+| Internal CRM / ERP        | CA            | Relational   | PostgreSQL, MySQL  |
+
+---
+
+# 🧠 Master-Slave Database Concept
+
+**Master-Slave** is a database architecture for scaling read/write operations:
+
+- **Master DB:** Handles all writes (insert, update, delete).
+- **Slave DBs:** Replicas of master, handle reads (queries, views).
+
+---
+
+## ⚙️ How It Works
+
+- **Writes:** Go to master (source of truth).
+- **Reads:** Served from slaves (reduces load, improves speed).
+- **Replication:** Master data is copied to slaves.
+    - **Synchronous:** Writes to master and slaves at the same time (strong consistency).
+    - **Asynchronous:** Slaves updated after master (faster, but may be slightly stale).
+
+---
+
+## 📌 CQRS Pattern
+
+This setup implements **Command Query Responsibility Segregation (CQRS):**
+- **Command (Write):** Master
+- **Query (Read):** Slaves
+
+---
+
+## 📊 Real-World Example
+
+**Cab Booking App:**
+- **Master DB:** Handles bookings, payments, user updates.
+- **Slave DBs:** Serve booking history, cab availability, location views.
+
+---
+
+## ✅ Advantages
+
+| Benefit         | Description                                 |
+|-----------------|---------------------------------------------|
+| Scalability     | Add more slaves for more users              |
+| High Availability| If one slave fails, others serve data      |
+| Load Balancing  | Distributes workload                        |
+| Data Safety     | Master is source of truth; slaves backup    |
+| Performance     | Faster reads, reduced latency               |
+
+---
+
+## ❌ Challenges
+
+| Challenge         | Why it Matters                             |
+|-------------------|--------------------------------------------|
+| Replication Lag   | Slaves may be behind master (async)        |
+| Write Bottleneck  | Master can become bottleneck for heavy writes |
+| Complex Config    | Managing replication/failover is tricky    |
+
+---
+
+**Summary:**  
+Master-Slave architecture separates reads and writes for scalability, availability, and redundancy.  
+Replication keeps slaves updated, and CQRS pattern optimizes performance for high-traffic systems.
