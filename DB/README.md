@@ -1,3 +1,47 @@
+<h1 align="center"> 🌎 DATABASE </h1>
+<p align="center">
+</p>
+
+---
+
+🧑‍💻 **Author:** RK ROY
+
+> 🧾 _"Databases aren’t just about data—they’re about trust, speed, and reliability."_
+
+---
+
+- <p style = "color:orange"> 📚 Data </p>
+    
+    - Data is a collections of raw, unorganized facts and details like numbers, text, images, and more.
+    - Data is measured in terms of bits and bytes.
+    - Data can be recorded and does not have any meaning unless processed.
+- <p style = "color:orange"> ㊙️ Types of data </p>
+    
+    - <p style = "color:"> Quantitative data </p>
+        
+        - Numerical Form.
+        - weight, volume, temperature, etc.
+    - Qualitative data
+        - Descriptive, but not numerical.
+        - Gender, ethnicity, religion, etc.
+
+- <p style = "color:orange"> Information </p>
+    
+    - Provides context of the data and enables decision making.
+
+- <p style = "color:orange"> Database </p>
+      
+    - Database is an electronic place/system where data is stored in a way that it can be easily accessed, managed, and updated.
+    - To make real use Data, we need Database management systems. (DBMS)
+
+- <p style = "color:orange"> DBMS </p>
+     
+    - A DBMS (Database Management System) is software that interacts with users, applications, and the database itself to store, manage, and retrieve data efficiently and securely.
+      - Advantages :
+          - Data Integrity and Consistency : Ensures accuracy and consistency of data across the database.
+          - Data Sharing : Multiple users and applications can access the database simultaneously
+          - Data Security : Allows different users to have different levels of access.
+  <br>
 
 <div align = "center"> <h1 style = "color:purple"> 📚 DBMS Architecture </h1> </div>
 
@@ -36,7 +80,6 @@
    - E.g., ER model, Relational Model, object-oriented model, object-relational data model etc.
 
 - <p style = "color:orange"> Database Languages </p>
-     
      
     - Data definition language (DDL) to specify the database schema.
     - Data manipulation language (DML) to express database queries and updates.
@@ -249,31 +292,35 @@
 - Entity Relationship Diagram (ERD)
     - An entity relationship diagram (ER diagram or ERD) is a visual representation of how items in a database relate to each other.
 
-- Relationship
-    - One to One
-<<<<<<< HEAD
-        <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+- Relationship - One to One
 
-    - One to Many
-        <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+<div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
-    - Many to One
-          <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+- One to Many
 
-    - Many to Many
-          <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
-=======
-          <div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+<div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
-    - One to Many
-          <div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+- Many to One
 
-    - Many to One
-      <div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+<div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
-    - Many to Many
-      <div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
->>>>>>> parent of 676c407 (OOPS initial commit)
+- Many to Many
+
+<div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+<div> <img src = 'Pictures/one2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+- One to Many
+
+<div> <img src = 'Pictures/one2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+- Many to One
+
+<div> <img src = 'Pictures/many2one.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
+
+- Many to Many
+
+<div> <img src = 'Pictures/many2many.png'  style="border-radius: 15px; height : 450 width: 300px;"> </img> </div>
 
 - Strong Entity :
     - An entity that can be uniquely identified by its own attributes, without depending on any other entity.
@@ -1067,7 +1114,6 @@ graph TD
 | Dense Index     | All Keys         | Direct Map   | -                | High          |
 | Sparse Index    | Some Keys        | Indirect Map | -                | Low           |
 
-
 # 📌 Types of Indexing in DBMS
 
 Indexing helps in faster retrieval of data. It can be broadly divided into:
@@ -1075,49 +1121,42 @@ Indexing helps in faster retrieval of data. It can be broadly divided into:
 - **Single-Level Indexing**
 - **Multilevel Indexing**
 
-
-
 ## 🔹 Single-Level Indexing
 
 This means there is only **one index file** for the data file.  
 It is further divided into three types:
 
-
-
 ### 1. **Primary Index**
-- Built on the **primary key** of the table.  
-- Ordered index → index entries are stored in **sorted order** of primary key.  
-- Since primary keys are unique, each entry points to exactly one record.  
+
+- Built on the **primary key** of the table.
+- Ordered index → index entries are stored in **sorted order** of primary key.
+- Since primary keys are unique, each entry points to exactly one record.
 - **Efficient for direct lookups.**
 
-👉 **Example**: Employee table indexed on `EmpID` (primary key).  
-
+👉 **Example**: Employee table indexed on `EmpID` (primary key).
 
 ### 2. **Clustered Index**
-- Built on a **non-primary key attribute** that determines the **physical order** of data.  
-- Ordered, but not on primary key.  
-- Only **one clustered index** is allowed per table, because data can be physically ordered only in one way.  
 
-👉 **Example**: A clustered index on `Salary` where rows are physically ordered by salary values.  
+- Built on a **non-primary key attribute** that determines the **physical order** of data.
+- Ordered, but not on primary key.
+- Only **one clustered index** is allowed per table, because data can be physically ordered only in one way.
 
-
+👉 **Example**: A clustered index on `Salary` where rows are physically ordered by salary values.
 
 ### 3. **Secondary Index**
-- Built on a **non-ordering key** (any attribute that is neither primary key nor clustered).  
-- Does not affect the **physical order** of data.  
-- Multiple **secondary indexes** can exist in a table.  
-- Typically implemented using **dense indexes**.  
 
-👉 **Example**: An index on `Department` in Employee table, even though data is not stored in department order.  
+- Built on a **non-ordering key** (any attribute that is neither primary key nor clustered).
+- Does not affect the **physical order** of data.
+- Multiple **secondary indexes** can exist in a table.
+- Typically implemented using **dense indexes**.
 
-
+👉 **Example**: An index on `Department` in Employee table, even though data is not stored in department order.
 
 ## 🔹 Multilevel Indexing
-- When the index file itself becomes too large, we create **indexes on indexes**.  
-- Reduces search time by applying a **hierarchical structure (like B-Tree)**.  
-- Useful for **large databases**.  
 
-
+- When the index file itself becomes too large, we create **indexes on indexes**.
+- Reduces search time by applying a **hierarchical structure (like B-Tree)**.
+- Useful for **large databases**.
 
 <div align="center">
     <img src="Pictures/pcs.png" alt="Types of Indexing in DBMS" style="border-radius: 15px; height: 350px;">
@@ -1125,13 +1164,14 @@ It is further divided into three types:
 
 ## ✅ Summary
 
-- **Primary Index** → Ordered, built on **primary key**.  
-- **Clustered Index** → Ordered, built on **non-key attribute**, determines data storage order.  
-- **Secondary Index** → Built on **non-ordering attributes**, allows flexible searching.  
-- **Multilevel Indexing** → Adds hierarchy to indexes for efficiency in **large datasets**.  
+- **Primary Index** → Ordered, built on **primary key**.
+- **Clustered Index** → Ordered, built on **non-key attribute**, determines data storage order.
+- **Secondary Index** → Built on **non-ordering attributes**, allows flexible searching.
+- **Multilevel Indexing** → Adds hierarchy to indexes for efficiency in **large datasets**.
+
 # 📌 Primary Indexing
 
-Primary Indexing is an **ordered index** built on the **primary key** of a table.  
+Primary Indexing is an **ordered index** built on the **primary key** of a table.
 
 Since the **primary key is unique and sorted**, the index entries are also stored in sorted order.
 
@@ -1140,6 +1180,7 @@ Since the **primary key is unique and sorted**, the index entries are also store
 ## 🔹 Structure
 
 The index file contains two fields:
+
 1. **Primary Key (search key)**
 2. **Pointer (address) to the actual record in the data file**
 
@@ -1150,7 +1191,7 @@ The index file contains two fields:
 Suppose you have a **Student** table:
 
 | RollNo (PK) | Name   | Marks |
-|-------------|--------|-------|
+| ----------- | ------ | ----- |
 | 101         | Aakash | 85    |
 | 102         | Nikhil | 90    |
 | 103         | Riya   | 78    |
@@ -1159,20 +1200,21 @@ Suppose you have a **Student** table:
 The **primary index** will look like this:
 
 | RollNo (Index Key) | Pointer to Record |
-|---------------------|------------------|
-| 101                 | → Record 1       |
-| 102                 | → Record 2       |
-| 103                 | → Record 3       |
-| 104                 | → Record 4       |
+| ------------------ | ----------------- |
+| 101                | → Record 1        |
+| 102                | → Record 2        |
+| 103                | → Record 3        |
+| 104                | → Record 4        |
 
 ---
 
 ## 🔹 How It Works
 
 If you want to search for **RollNo = 103**:
-1. Go to the index file (small in size).  
-2. Perform a **binary search** on the sorted RollNo.  
-3. Get the pointer and directly access the record in the main file.  
+
+1. Go to the index file (small in size).
+2. Perform a **binary search** on the sorted RollNo.
+3. Get the pointer and directly access the record in the main file.
 
 ✅ This avoids scanning the entire table (**no full table scan**).
 
@@ -1180,17 +1222,17 @@ If you want to search for **RollNo = 103**:
 
 ## ⏱️ Time Complexity
 
-- **Searching in index file:** `O(log₂N)` (binary search)  
-- **Accessing record from pointer:** `O(1)`  
+- **Searching in index file:** `O(log₂N)` (binary search)
+- **Accessing record from pointer:** `O(1)`
 - ✅ **Overall:** `O(log₂N)`
 
 ---
 
 ## 📌 Key Points
 
-- Works only on the **primary key**.  
-- Index file is **smaller** than the data file, so searching is faster.  
-- Records in data file are stored in the **same sorted order** as primary key.  
+- Works only on the **primary key**.
+- Index file is **smaller** than the data file, so searching is faster.
+- Records in data file are stored in the **same sorted order** as primary key.
 
 ---
 
@@ -1201,15 +1243,16 @@ If you want to search for **RollNo = 103**:
 </div>
 
 ## 1️⃣ Dense Primary Index
-- **Every search key value (primary key) has an entry in the index.**  
-- That means for **each record** in the data file, there’s a corresponding index entry.  
+
+- **Every search key value (primary key) has an entry in the index.**
+- That means for **each record** in the data file, there’s a corresponding index entry.
 
 ### ✅ Example
 
 **Data File (sorted by RollNo):**
 
 | RollNo | Name   | Marks |
-|--------|--------|-------|
+| ------ | ------ | ----- |
 | 101    | Aakash | 85    |
 | 102    | Nikhil | 90    |
 | 103    | Riya   | 78    |
@@ -1218,14 +1261,15 @@ If you want to search for **RollNo = 103**:
 **Index File (Dense Index):**
 
 | RollNo | Pointer |
-|--------|---------|
+| ------ | ------- |
 | 101    | → Rec 1 |
 | 102    | → Rec 2 |
 | 103    | → Rec 3 |
 | 104    | → Rec 4 |
 
-📌 Every row is indexed.  
-- Search is **very fast** (`O(log N)`), but index size is **large**.  
+📌 Every row is indexed.
+
+- Search is **very fast** (`O(log N)`), but index size is **large**.
 
 ---
 
@@ -1234,52 +1278,55 @@ If you want to search for **RollNo = 103**:
 </div>
 
 ## 2️⃣ Sparse Primary Index
-- **Not every search key has an entry.**  
-- Only **one entry per block (page)** of the data file is kept in the index.  
-- Inside the block, records are searched **linearly**.  
+
+- **Not every search key has an entry.**
+- Only **one entry per block (page)** of the data file is kept in the index.
+- Inside the block, records are searched **linearly**.
 
 ### ✅ Example (suppose each block stores 2 records):
 
 **Data File:**
 
-- **Block 1:** (101, Aakash), (102, Nikhil)  
-- **Block 2:** (103, Riya), (104, Sam)  
+- **Block 1:** (101, Aakash), (102, Nikhil)
+- **Block 2:** (103, Riya), (104, Sam)
 
 **Index File (Sparse Index):**
 
 | RollNo | Pointer (to block) |
-|--------|---------------------|
-| 101    | → Block 1           |
-| 103    | → Block 2           |
+| ------ | ------------------ |
+| 101    | → Block 1          |
+| 103    | → Block 2          |
 
 📌 Here:
-- To search **RollNo = 102** → go to index (find Block 1) → scan block linearly.  
-- Index size is **much smaller**, but lookup is a bit **slower**.  
+
+- To search **RollNo = 102** → go to index (find Block 1) → scan block linearly.
+- Index size is **much smaller**, but lookup is a bit **slower**.
 
 ---
 
 ## 🔍 Comparison
 
-| Feature           | Dense Index                    | Sparse Index                  |
-|-------------------|--------------------------------|--------------------------------|
-| Entries in Index  | One for **every record**       | One for **every block/page**  |
-| Index Size        | Large                          | Small                          |
-| Search Speed      | Very fast (direct access)      | Slower (block scan needed)    |
-| Storage Overhead  | High                           | Low                           |
-| Use Case          | When memory is sufficient      | When data is huge, memory is limited |
+| Feature          | Dense Index               | Sparse Index                         |
+| ---------------- | ------------------------- | ------------------------------------ |
+| Entries in Index | One for **every record**  | One for **every block/page**         |
+| Index Size       | Large                     | Small                                |
+| Search Speed     | Very fast (direct access) | Slower (block scan needed)           |
+| Storage Overhead | High                      | Low                                  |
+| Use Case         | When memory is sufficient | When data is huge, memory is limited |
 
 ---
 
 ## 👉 In Summary
-- **Dense Index** → faster search, more storage.  
-- **Sparse Index** → smaller index, slower search.  
-# 📌 Clustering Index
 
+- **Dense Index** → faster search, more storage.
+- **Sparse Index** → smaller index, slower search.
+
+# 📌 Clustering Index
 
 <div align="center">
     <img src="Pictures/ci.png" alt="Dense vs Sparse Index Example" style="border-radius: 15px; height: 250px;">
 </div>
-A **Clustering Index** is created when the records in a data file are physically ordered (clustered) based on a **non-primary key column** (called the clustering field).  
+A **Clustering Index** is created when the records in a data file are physically ordered (clustered) based on a **non-primary key column** (called the clustering field).
 
 Unlike a primary index (which is built on a primary key that is unique), a clustering index can be built on a field that is **not unique**.
 
@@ -1287,8 +1334,8 @@ Unlike a primary index (which is built on a primary key that is unique), a clust
 
 ## 🔹 Key Idea
 
-- Records with the **same value** of the clustering field are **stored together (clustered)** in the same block.  
-- The **index contains one entry for each distinct value** of the clustering field.  
+- Records with the **same value** of the clustering field are **stored together (clustered)** in the same block.
+- The **index contains one entry for each distinct value** of the clustering field.
 - Each index entry points to the **first block containing that value**.
 
 ---
@@ -1298,7 +1345,7 @@ Unlike a primary index (which is built on a primary key that is unique), a clust
 Suppose you have a **Student** table:
 
 | RollNo (PK) | Name   | Department |
-|-------------|--------|------------|
+| ----------- | ------ | ---------- |
 | 101         | Aakash | CSE        |
 | 104         | Sam    | CSE        |
 | 103         | Riya   | ECE        |
@@ -1308,7 +1355,7 @@ Suppose you have a **Student** table:
 ### Step 1: Store data in **clustered order by Department**
 
 | RollNo | Name   | Department |
-|--------|--------|------------|
+| ------ | ------ | ---------- |
 | 101    | Aakash | CSE        |
 | 102    | Nikhil | CSE        |
 | 104    | Sam    | CSE        |
@@ -1320,7 +1367,7 @@ Suppose you have a **Student** table:
 ### Step 2: Build **Clustering Index** on Department
 
 | Department | Pointer (to first record) |
-|------------|----------------------------|
+| ---------- | ------------------------- |
 | CSE        | → Record 1 (Aakash)       |
 | ECE        | → Record 4 (Riya)         |
 
@@ -1329,8 +1376,8 @@ Suppose you have a **Student** table:
 ## 🔹 How It Works
 
 - Search for `Department = CSE`:
-  1. Look into the clustering index → find pointer to the first `CSE` record.  
-  2. Retrieve **all consecutive CSE records** directly since they are stored together.  
+    1. Look into the clustering index → find pointer to the first `CSE` record.
+    2. Retrieve **all consecutive CSE records** directly since they are stored together.
 
 ✅ Efficient for **range queries** and **group queries** (e.g., “Find all CSE students”).
 
@@ -1338,51 +1385,52 @@ Suppose you have a **Student** table:
 
 ## ⏱️ Time Complexity
 
-- **Search for a value:** `O(log₂M)` in index (where M = distinct values).  
-- **Retrieving records:** sequential scan in clustered block(s).  
+- **Search for a value:** `O(log₂M)` in index (where M = distinct values).
+- **Retrieving records:** sequential scan in clustered block(s).
 - Much faster than scanning the whole table.
 
 ---
 
 ## 📌 Key Points
 
-- Built on **non-primary key** (clustering field).  
-- **One index entry per distinct value**.  
-- Records are **physically grouped** by clustering field.  
+- Built on **non-primary key** (clustering field).
+- **One index entry per distinct value**.
+- Records are **physically grouped** by clustering field.
 - Good for queries on **non-unique attributes** (department, city, branch).
 
 ---
 
 ## 🔍 Comparison with Primary Index
 
-| Feature           | Primary Index                   | Clustering Index                     |
-|------------------|---------------------------------|-------------------------------------|
-| Based On          | Primary Key (unique)           | Non-primary key (can repeat)        |
-| Record Ordering   | Ordered by primary key         | Ordered by clustering field         |
-| Entries in Index  | One per record (dense/sparse)  | One per distinct value              |
-| Use Case          | Searching by unique key        | Range queries, grouped values       |
-| Example           | RollNo                          | Department, Branch, City            |
+| Feature          | Primary Index                 | Clustering Index              |
+| ---------------- | ----------------------------- | ----------------------------- |
+| Based On         | Primary Key (unique)          | Non-primary key (can repeat)  |
+| Record Ordering  | Ordered by primary key        | Ordered by clustering field   |
+| Entries in Index | One per record (dense/sparse) | One per distinct value        |
+| Use Case         | Searching by unique key       | Range queries, grouped values |
+| Example          | RollNo                        | Department, Branch, City      |
 
 ---
 
 ## 🔹 Advantages
 
-- Efficient for **range queries** (`WHERE department = 'CSE'`).  
-- Saves storage → **one entry per distinct value**.  
+- Efficient for **range queries** (`WHERE department = 'CSE'`).
+- Saves storage → **one entry per distinct value**.
 - Supports **group-based queries** effectively.
 
 ---
 
 ## 🔹 Disadvantages
 
-- Records must be **physically stored in clustered order** → costly to maintain on insert/delete.  
-- Only **one clustering index** can exist per table.  
+- Records must be **physically stored in clustered order** → costly to maintain on insert/delete.
+- Only **one clustering index** can exist per table.
 - Less efficient for **point queries** on unique values (better to use primary index).
 
 ---
 
 ✅ **In short:**  
 A Clustering Index **groups records with the same non-key attribute values together** and creates index entries only for distinct values, making it ideal for **range and group queries**.
+
 # 📌 Secondary Index
 
 <div align="center">
@@ -1392,18 +1440,18 @@ A Clustering Index **groups records with the same non-key attribute values toget
 A **Secondary Index** is an index built on a **non-clustering field**, which may or may not be unique.  
 Unlike a primary or clustering index, the **data file does not need to be ordered** according to the secondary key.
 
-- It is used to **speed up searches on fields that are not primary keys**.  
+- It is used to **speed up searches on fields that are not primary keys**.
 - Can be built on **any column**, even if the column has **duplicate values**.
 
 ---
 
 ## 🔹 Key Idea
 
-- The **data file itself is not ordered** according to the secondary key.  
-- The **index contains one entry for each occurrence** of the key (dense index).  
-- Each entry contains:  
-  1. **Search key** (the secondary field)  
-  2. **Pointer** to the record in the main data file  
+- The **data file itself is not ordered** according to the secondary key.
+- The **index contains one entry for each occurrence** of the key (dense index).
+- Each entry contains:
+    1. **Search key** (the secondary field)
+    2. **Pointer** to the record in the main data file
 
 ✅ Because multiple records can have the same secondary key, there can be **multiple entries** in the index for the same key.
 
@@ -1414,7 +1462,7 @@ Unlike a primary or clustering index, the **data file does not need to be ordere
 Suppose we have a **Student** table:
 
 | RollNo (PK) | Name   | Department |
-|-------------|--------|------------|
+| ----------- | ------ | ---------- |
 | 101         | Aakash | CSE        |
 | 104         | Sam    | CSE        |
 | 103         | Riya   | ECE        |
@@ -1424,14 +1472,14 @@ Suppose we have a **Student** table:
 **Secondary Index on Department:**
 
 | Department | Pointer (to record) |
-|------------|--------------------|
-| CSE        | → Record 1 (Aakash)|
-| CSE        | → Record 4 (Nikhil)|
-| CSE        | → Record 2 (Sam)   |
-| ECE        | → Record 3 (Riya)  |
-| ECE        | → Record 5 (Aman)  |
+| ---------- | ------------------- |
+| CSE        | → Record 1 (Aakash) |
+| CSE        | → Record 4 (Nikhil) |
+| CSE        | → Record 2 (Sam)    |
+| ECE        | → Record 3 (Riya)   |
+| ECE        | → Record 5 (Aman)   |
 
-- The **index is sorted by Department**, but the **data file itself is not clustered**.  
+- The **index is sorted by Department**, but the **data file itself is not clustered**.
 - The index contains **all occurrences** of each value (dense).
 
 ---
@@ -1439,8 +1487,8 @@ Suppose we have a **Student** table:
 ## 🔹 How It Works
 
 - Search for `Department = CSE`:
-  1. Look into the **secondary index** → find all entries for CSE.  
-  2. Follow **pointers** to access records in the main data file.  
+    1. Look into the **secondary index** → find all entries for CSE.
+    2. Follow **pointers** to access records in the main data file.
 
 ✅ Allows **fast retrieval** even when the data file is unordered.
 
@@ -1448,60 +1496,62 @@ Suppose we have a **Student** table:
 
 ## ⏱️ Time Complexity
 
-- **Search in index:** `O(log₂N)` if the index is sorted (N = number of index entries).  
-- **Accessing records:** `O(k)` (k = number of records with that key).  
+- **Search in index:** `O(log₂N)` if the index is sorted (N = number of index entries).
+- **Accessing records:** `O(k)` (k = number of records with that key).
 
 ---
 
 ## 🔹 Key Points
 
-- Built on **non-primary key** (secondary field).  
-- **Data file order is irrelevant**.  
-- Can be **dense** (entry for every record) or **sparse** (rarely used for secondary index).  
-- Useful for **range queries or lookups on non-primary fields**.  
-- **Multiple secondary indexes** can exist on a table (unlike clustering index, limited to one).  
+- Built on **non-primary key** (secondary field).
+- **Data file order is irrelevant**.
+- Can be **dense** (entry for every record) or **sparse** (rarely used for secondary index).
+- Useful for **range queries or lookups on non-primary fields**.
+- **Multiple secondary indexes** can exist on a table (unlike clustering index, limited to one).
 
 ---
 
 ## 🔍 Comparison with Clustering Index
 
-| Feature             | Clustering Index                | Secondary Index                 |
-|--------------------|---------------------------------|--------------------------------|
-| Based On            | Non-primary key (clustering field) | Non-primary key (any field)   |
-| Data Ordering       | Records physically ordered      | Records can be unordered       |
-| Index Entries       | One per distinct value          | One per record (dense)         |
-| Number of Indexes   | Only one per table              | Multiple allowed per table     |
-| Use Case            | Range/group queries             | Lookup/search queries          |
-| Example             | Department, Branch             | Name, City, Age                |
+| Feature           | Clustering Index                   | Secondary Index             |
+| ----------------- | ---------------------------------- | --------------------------- |
+| Based On          | Non-primary key (clustering field) | Non-primary key (any field) |
+| Data Ordering     | Records physically ordered         | Records can be unordered    |
+| Index Entries     | One per distinct value             | One per record (dense)      |
+| Number of Indexes | Only one per table                 | Multiple allowed per table  |
+| Use Case          | Range/group queries                | Lookup/search queries       |
+| Example           | Department, Branch                 | Name, City, Age             |
 
 ---
 
 ## 🔹 Advantages
 
-- Allows **fast retrieval** on fields other than primary key.  
-- **Multiple secondary indexes** can be created.  
-- Works well even if **data is unordered**.  
+- Allows **fast retrieval** on fields other than primary key.
+- **Multiple secondary indexes** can be created.
+- Works well even if **data is unordered**.
 
 ---
 
 ## 🔹 Disadvantages
 
-- Index size can be **large** (dense index).  
-- Accessing multiple records may require **random disk accesses** → slower than clustered access.  
-- Maintaining the index during **inserts/deletes/updates** can be costly.  
+- Index size can be **large** (dense index).
+- Accessing multiple records may require **random disk accesses** → slower than clustered access.
+- Maintaining the index during **inserts/deletes/updates** can be costly.
 
 ---
 
 ✅ **In short:**  
 A **Secondary Index** allows efficient searches on **non-primary, non-clustered fields**, storing a **pointer for each record** in the main file.  
 It’s very flexible but can be **slower than clustering index** for range queries.
+
 # 🔄 Transactions in DBMS
 
 A **transaction** is a sequence of one or more SQL operations (like `INSERT`, `DELETE`, `UPDATE`, `SELECT`) that forms a **logical unit of work** on a database.
 
-👉 **Goal**:  
-- Either all operations succeed (and are made permanent),  
-- Or none of them are applied (rolled back).  
+👉 **Goal**:
+
+- Either all operations succeed (and are made permanent),
+- Or none of them are applied (rolled back).
 
 Transactions are essential for **data integrity and consistency**.
 
@@ -1512,9 +1562,10 @@ Transactions are essential for **data integrity and consistency**.
 To ensure correctness in a multi-user environment, transactions must follow **ACID**:
 
 ### 1. Atomicity
-- **All or Nothing principle**  
-- If one part fails, the whole transaction is rolled back.  
-- Prevents **partial updates**.  
+
+- **All or Nothing principle**
+- If one part fails, the whole transaction is rolled back.
+- Prevents **partial updates**.
 
 📌 **Example**:  
 Money transfer → Debit succeeds but credit fails → Rollback debit.
@@ -1522,24 +1573,27 @@ Money transfer → Debit succeeds but credit fails → Rollback debit.
 ---
 
 ### 2. Consistency
-- Database must remain valid **before and after** a transaction.  
-- All **constraints** (e.g., PK, FK, balance ≥ 0) must hold.  
+
+- Database must remain valid **before and after** a transaction.
+- All **constraints** (e.g., PK, FK, balance ≥ 0) must hold.
 - If DB starts consistent → must end consistent.
 
 ---
 
 ### 3. Isolation
-- Concurrent transactions must not interfere.  
-- Executed **as if running alone**.  
-- Prevents issues:  
-  - Dirty Reads  
-  - Non-repeatable Reads  
-  - Phantom Reads  
+
+- Concurrent transactions must not interfere.
+- Executed **as if running alone**.
+- Prevents issues:
+    - Dirty Reads
+    - Non-repeatable Reads
+    - Phantom Reads
 
 ---
 
 ### 4. Durability
-- Once committed → changes are **permanent**.  
+
+- Once committed → changes are **permanent**.
 - Survive crashes and restarts.
 
 ---
@@ -1548,30 +1602,30 @@ Money transfer → Debit succeeds but credit fails → Rollback debit.
 
 A transaction passes through the following states:
 
-1. **Active** → Performing read/write.  
-   - Success → Partially Committed.  
-   - Failure → Failed.  
+1. **Active** → Performing read/write.
+    - Success → Partially Committed.
+    - Failure → Failed.
 
-2. **Partially Committed** → Execution finished, waiting to commit.  
-   - Success → Committed.  
-   - Failure → Failed.  
+2. **Partially Committed** → Execution finished, waiting to commit.
+    - Success → Committed.
+    - Failure → Failed.
 
-3. **Committed** → Changes **permanently saved**. No rollback possible.  
+3. **Committed** → Changes **permanently saved**. No rollback possible.
 
-4. **Failed** → Error during execution or commit. Rollback needed.  
+4. **Failed** → Error during execution or commit. Rollback needed.
 
-5. **Aborted** → Rollback done, DB restored to original state.  
+5. **Aborted** → Rollback done, DB restored to original state.
 
-6. **Terminated** → Transaction completed (commit/abort).  
+6. **Terminated** → Transaction completed (commit/abort).
 
 ---
 
 ## 🔁 Operations in a Transaction
 
-- `Read(X)` → Reads value of X.  
-- `Write(X)` → Writes value to X.  
-- `Commit` → Finalizes & makes changes permanent.  
-- `Rollback` → Undo all changes since transaction began.  
+- `Read(X)` → Reads value of X.
+- `Write(X)` → Writes value to X.
+- `Commit` → Finalizes & makes changes permanent.
+- `Rollback` → Undo all changes since transaction began.
 
 ---
 
@@ -1579,38 +1633,42 @@ A transaction passes through the following states:
 
 To enforce **Atomicity & Durability**, DBMS includes **Recovery Management**:
 
-- If transaction fails → undo changes.  
-- If succeeds → preserve changes even after crash.  
+- If transaction fails → undo changes.
+- If succeeds → preserve changes even after crash.
 
 ---
 
 ## 📄 1. Shadow-Copy Scheme
 
 ### 🔧 How it Works
-- A **db-pointer** points to current DB copy.  
-- When transaction starts → create new copy.  
-- Updates applied only on **new copy**.  
-- Old copy = **shadow copy**.  
+
+- A **db-pointer** points to current DB copy.
+- When transaction starts → create new copy.
+- Updates applied only on **new copy**.
+- Old copy = **shadow copy**.
 
 📌 Cases:
-- If **abort** → discard new copy.  
-- If **commit** → write new copy & update `db-pointer`.  
+
+- If **abort** → discard new copy.
+- If **commit** → write new copy & update `db-pointer`.
 
 ### ✅ Guarantees
-- **Atomicity** → old DB intact if fail.  
-- **Durability** → committed DB survives crash.  
 
-⚠️ **Drawback**:  
-- Very **inefficient** (entire DB copy per transaction).  
+- **Atomicity** → old DB intact if fail.
+- **Durability** → committed DB survives crash.
+
+⚠️ **Drawback**:
+
+- Very **inefficient** (entire DB copy per transaction).
 
 ---
 
 ## 📝 2. Log-Based Recovery
 
-A **log** = chronological record of DB operations.  
+A **log** = chronological record of DB operations.
 
 👉 Stored in **stable storage** (survives crashes).  
-👉 Written **before DB changes**.  
+👉 Written **before DB changes**.
 
 Two approaches:
 
@@ -1618,263 +1676,303 @@ Two approaches:
 
 ### 🕒 A. Deferred Database Modifications
 
-- Changes are logged, **not applied** until commit.  
-- At commit → apply logs to DB.  
+- Changes are logged, **not applied** until commit.
+- At commit → apply logs to DB.
 
 📌 Cases:
-- Crash **before commit** → ignore logs.  
-- Crash **during write** → redo logs.  
 
-✅ **Benefits**:  
-- Simple rollback (ignore logs).  
+- Crash **before commit** → ignore logs.
+- Crash **during write** → redo logs.
+
+✅ **Benefits**:
+
+- Simple rollback (ignore logs).
 - Ensures atomicity.
 
 ---
 
 ### ⚡ B. Immediate Database Modifications
 
-- Changes made to DB **before commit**.  
-- Logs written **first** (Write-Ahead Logging - WAL).  
+- Changes made to DB **before commit**.
+- Logs written **first** (Write-Ahead Logging - WAL).
 
 📌 Cases:
-- Crash **before commit** → rollback using old values.  
-- Crash **after commit** → redo using new values.  
 
-✅ **Benefits**:  
-- Faster updates.  
-- Supports concurrent transactions.  
+- Crash **before commit** → rollback using old values.
+- Crash **after commit** → redo using new values.
+
+✅ **Benefits**:
+
+- Faster updates.
+- Supports concurrent transactions.
 
 ---
 
 ## ✅ Comparison of Recovery Methods
 
-| Method                  | Atomicity Guarantee          | Durability Guarantee       | Drawback                         |
-|--------------------------|------------------------------|-----------------------------|----------------------------------|
-| **Shadow-Copy**         | Discard new copy if fail     | db-pointer updated after commit | Inefficient (full DB copy each time) |
-| **Log-Based (Deferred)** | Ignore logs on abort         | Redo from logs if crash     | Slower final write                |
-| **Log-Based (Immediate)**| Undo using old values        | Redo using new values       | More complex rollback logic       |
+| Method                    | Atomicity Guarantee      | Durability Guarantee            | Drawback                             |
+| ------------------------- | ------------------------ | ------------------------------- | ------------------------------------ |
+| **Shadow-Copy**           | Discard new copy if fail | db-pointer updated after commit | Inefficient (full DB copy each time) |
+| **Log-Based (Deferred)**  | Ignore logs on abort     | Redo from logs if crash         | Slower final write                   |
+| **Log-Based (Immediate)** | Undo using old values    | Redo using new values           | More complex rollback logic          |
 
 ---
 
 ## 🔚 Summary
 
-- **Transactions** = logical units of work.  
-- Must follow **ACID properties**.  
-- **States**: Active → Partially Committed → Committed/Failed → Aborted/Terminated.  
-- **Recovery** ensures atomicity & durability using:  
-  - Shadow-Copy (simple but inefficient)  
-  - Log-Based (deferred/immediate, widely used).  
+- **Transactions** = logical units of work.
+- Must follow **ACID properties**.
+- **States**: Active → Partially Committed → Committed/Failed → Aborted/Terminated.
+- **Recovery** ensures atomicity & durability using:
+    - Shadow-Copy (simple but inefficient)
+    - Log-Based (deferred/immediate, widely used).
+
 # 📘 What is NoSQL?
 
 **NoSQL** stands for **"Not Only SQL"**.  
 It's a category of databases designed to handle:
 
-- Unstructured / Semi-structured data  
-- High scalability and availability  
-- Schema-less flexibility  
-- Distributed architecture  
+- Unstructured / Semi-structured data
+- High scalability and availability
+- Schema-less flexibility
+- Distributed architecture
 
 Unlike traditional **Relational Databases (RDBMS)**, NoSQL databases do not store data in tables with rows and columns. Instead, they use different models like **documents, key-value pairs, columns, and graphs**.
 
 ---
 
 ## 🧱 Key Characteristics of NoSQL
-- **Schema-free** – You don’t need to predefine the structure of your data.  
-- **Non-tabular structure** – Uses flexible formats (JSON, key-value, etc.).  
-- **Handles big data** – Designed for high data volume and velocity.  
-- **Horizontal scaling** – Easily distributes data across multiple servers.  
-- **Open-source and Cloud-friendly** – Built for cloud-native applications.  
+
+- **Schema-free** – You don’t need to predefine the structure of your data.
+- **Non-tabular structure** – Uses flexible formats (JSON, key-value, etc.).
+- **Handles big data** – Designed for high data volume and velocity.
+- **Horizontal scaling** – Easily distributes data across multiple servers.
+- **Open-source and Cloud-friendly** – Built for cloud-native applications.
 
 ---
 
 ## 📜 History Behind NoSQL
+
 Emerged in the **late 2000s**, as:
-- Storage costs dropped significantly.  
-- Agile development needed faster schema adaptation.  
-- Data became more unstructured and dynamic.  
+
+- Storage costs dropped significantly.
+- Agile development needed faster schema adaptation.
+- Data became more unstructured and dynamic.
 
 **NoSQL improved developer productivity** and supported:
-- Cloud computing  
-- Geographically distributed applications  
-- Real-time, scalable apps  
+
+- Cloud computing
+- Geographically distributed applications
+- Real-time, scalable apps
 
 ---
 
 ## ✅ Advantages of NoSQL
+
 ### A. 🔄 Flexible Schema
-- No fixed schema required.  
-- Easy to adapt when data format or requirements change.  
+
+- No fixed schema required.
+- Easy to adapt when data format or requirements change.
 
 ### B. 🧩 Horizontal Scaling (Scale-Out)
-- Add more servers (nodes) to handle more data or traffic.  
-- Achieved via **Sharding** or **Replica Sets**.  
-- Easier than scaling relational DBs (which require vertical scaling).  
+
+- Add more servers (nodes) to handle more data or traffic.
+- Achieved via **Sharding** or **Replica Sets**.
+- Easier than scaling relational DBs (which require vertical scaling).
 
 ### C. 🔁 High Availability
-- **Auto-replication**: Data is duplicated across servers.  
-- If one server fails, another still serves the data.  
+
+- **Auto-replication**: Data is duplicated across servers.
+- If one server fails, another still serves the data.
 
 ### D. ⚡ Fast Reads & Writes
-- No joins, since related data is often stored together.  
-- Ideal for read-heavy applications.  
-- Great for **real-time apps** and **caching**.  
+
+- No joins, since related data is often stored together.
+- Ideal for read-heavy applications.
+- Great for **real-time apps** and **caching**.
 
 ### E. 🧠 Built-in Caching
-- Some NoSQL DBs like **Redis** serve as in-memory caches for fast data retrieval.  
+
+- Some NoSQL DBs like **Redis** serve as in-memory caches for fast data retrieval.
 
 ### F. ☁️ Cloud-native
-- Built for **microservices**, **real-time apps**, and **distributed cloud systems**.  
+
+- Built for **microservices**, **real-time apps**, and **distributed cloud systems**.
 
 ---
 
 ## 🧰 When to Use NoSQL?
-- Fast-paced **Agile development**  
-- **Unstructured / semi-structured** data  
-- Need to store **huge data volumes**  
-- **Scalable architecture** required (scale-out)  
-- Use cases like **real-time streaming, IoT, microservices**  
+
+- Fast-paced **Agile development**
+- **Unstructured / semi-structured** data
+- Need to store **huge data volumes**
+- **Scalable architecture** required (scale-out)
+- Use cases like **real-time streaming, IoT, microservices**
 
 ---
 
 ## ❌ Common Misconceptions about NoSQL
-1. **❌ Doesn’t Support Relationships**  
-   - **Truth**: NoSQL can store relationship data – just differently.  
-   - Relationships are often embedded within documents (e.g., MongoDB).  
-   - No need for joins; nested structures make it easier.  
 
-2. **❌ No ACID Support**  
-   - **Truth**: Many NoSQL DBs (like MongoDB 4.x+) **do support ACID transactions**.  
+1. **❌ Doesn’t Support Relationships**
+    - **Truth**: NoSQL can store relationship data – just differently.
+    - Relationships are often embedded within documents (e.g., MongoDB).
+    - No need for joins; nested structures make it easier.
+
+2. **❌ No ACID Support**
+    - **Truth**: Many NoSQL DBs (like MongoDB 4.x+) **do support ACID transactions**.
 
 ---
 
 ## 🔄 Types of NoSQL Databases
 
 ### 1. 🔑 Key-Value Store
-- Simplest NoSQL type: stores data as **key-value pairs**  
-- Keys are unique identifiers; values can be anything (JSON, string, int, blob)  
-- **Examples**: Redis, DynamoDB, Riak  
+
+- Simplest NoSQL type: stores data as **key-value pairs**
+- Keys are unique identifiers; values can be anything (JSON, string, int, blob)
+- **Examples**: Redis, DynamoDB, Riak
 
 **Use Cases**:
-- Caching  
-- Session management  
-- Fast lookups  
+
+- Caching
+- Session management
+- Fast lookups
 
 ---
 
 ### 2. 🧱 Document-Based Store
-- Stores data in **JSON-like documents**  
-- Schema is flexible  
-- Fields can store arrays, nested documents, etc.  
-- **Examples**: MongoDB, CouchDB  
+
+- Stores data in **JSON-like documents**
+- Schema is flexible
+- Fields can store arrays, nested documents, etc.
+- **Examples**: MongoDB, CouchDB
 
 **Use Cases**:
-- E-commerce platforms  
-- Content management  
-- Mobile apps  
-- Supports ACID transactions  
+
+- E-commerce platforms
+- Content management
+- Mobile apps
+- Supports ACID transactions
 
 ---
 
 ### 3. 📊 Column-Oriented Store (Wide-Column)
-- Stores data in **columns, not rows**  
-- Efficient for **analytical queries, aggregates, and compressions**  
-- **Examples**: Apache Cassandra, HBase, Google Bigtable  
+
+- Stores data in **columns, not rows**
+- Efficient for **analytical queries, aggregates, and compressions**
+- **Examples**: Apache Cassandra, HBase, Google Bigtable
 
 **Use Cases**:
-- Time-series data  
-- Analytics dashboards  
-- IoT and telemetry  
+
+- Time-series data
+- Analytics dashboards
+- IoT and telemetry
 
 ---
 
 ### 4. 🌐 Graph-Based Store
-- Data is stored as **nodes (entities)** and **edges (relationships)**  
-- Direct relationship modeling (no joins)  
-- Optimized for traversal queries  
-- **Examples**: Neo4j, Amazon Neptune  
+
+- Data is stored as **nodes (entities)** and **edges (relationships)**
+- Direct relationship modeling (no joins)
+- Optimized for traversal queries
+- **Examples**: Neo4j, Amazon Neptune
 
 **Use Cases**:
-- Social networks  
-- Fraud detection  
-- Recommendation systems  
-- Knowledge graphs  
+
+- Social networks
+- Fraud detection
+- Recommendation systems
+- Knowledge graphs
+
 # ⚠️ Disadvantages of NoSQL
 
 ### 1. Data Redundancy
-- Data is often duplicated for performance → higher storage cost.  
-- Compression helps but doesn’t eliminate redundancy.  
+
+- Data is often duplicated for performance → higher storage cost.
+- Compression helps but doesn’t eliminate redundancy.
 
 ### 2. Costly Deletes & Updates
-- Not as efficient due to data duplication and lack of joins.  
+
+- Not as efficient due to data duplication and lack of joins.
 
 ### 3. Not One-Size-Fits-All
-- Each NoSQL type fits specific use cases.  
-- You may need to use multiple types together.  
+
+- Each NoSQL type fits specific use cases.
+- You may need to use multiple types together.
 
 ### 4. Limited ACID Support (generally)
-- Though some support it (like MongoDB), others prioritize **availability over consistency**.  
+
+- Though some support it (like MongoDB), others prioritize **availability over consistency**.
 
 ### 5. Lacks Constraint Enforcement
-- No **foreign keys** or strict schema enforcement by default.  
+
+- No **foreign keys** or strict schema enforcement by default.
 
 ---
 
 # ⚔️ SQL vs NoSQL — Quick Comparison
 
-| Feature          | SQL                                | NoSQL                                                         |
-|------------------|------------------------------------|---------------------------------------------------------------|
-| **Data Model**   | Tables with fixed schemas          | JSON docs, key-value pairs, column families, graphs           |
-| **Schema**       | Predefined (Fixed)                 | Flexible (Schema-less)                                        |
-| **Scaling**      | Vertical (Scale-up)                | Horizontal (Scale-out)                                        |
-| **ACID**         | Fully supported                    | Partial (varies by DB)                                        |
-| **JOINs**        | Supported                          | Not needed (nested or denormalized data)                      |
-| **Data Mapping** | Requires ORM                       | Native data structures (e.g., MongoDB maps to JSON-like docs) |
-| **Examples**     | MySQL, Oracle, PostgreSQL          | MongoDB, Redis, Cassandra, Neo4j                              |
-| **Best For**     | Complex queries, strict schemas    | Real-time apps, scalability, schema flexibility, big data, IoT|
+| Feature          | SQL                             | NoSQL                                                          |
+| ---------------- | ------------------------------- | -------------------------------------------------------------- |
+| **Data Model**   | Tables with fixed schemas       | JSON docs, key-value pairs, column families, graphs            |
+| **Schema**       | Predefined (Fixed)              | Flexible (Schema-less)                                         |
+| **Scaling**      | Vertical (Scale-up)             | Horizontal (Scale-out)                                         |
+| **ACID**         | Fully supported                 | Partial (varies by DB)                                         |
+| **JOINs**        | Supported                       | Not needed (nested or denormalized data)                       |
+| **Data Mapping** | Requires ORM                    | Native data structures (e.g., MongoDB maps to JSON-like docs)  |
+| **Examples**     | MySQL, Oracle, PostgreSQL       | MongoDB, Redis, Cassandra, Neo4j                               |
+| **Best For**     | Complex queries, strict schemas | Real-time apps, scalability, schema flexibility, big data, IoT |
 
 ---
 
 # 🧠 Summary
+
 **NoSQL** is a powerful alternative to traditional databases, best suited for:
 
-- Modern, agile applications  
-- Handling massive and varied data  
-- Applications with **real-time needs**  
+- Modern, agile applications
+- Handling massive and varied data
+- Applications with **real-time needs**
 
 👉 Choose NoSQL when your use case demands:  
-**flexibility, performance, scalability, and high availability.**  
+**flexibility, performance, scalability, and high availability.**
+
 # ✅ Types of Databases
 
 ## 1. Relational Databases (RDBMS)
 
-**Definition:**  
+**Definition:**
+
 - Based on the Relational Model (E.F. Codd, 1970s).
 - Data is stored in tables (rows and columns).
 - Tables are related using foreign keys.
 
-**Key Features:**  
+**Key Features:**
+
 - Use SQL (Structured Query Language).
 - Follow ACID properties (Atomicity, Consistency, Isolation, Durability).
 - Highly structured and normalized data.
 - Good for complex queries and joins.
 
-**Example:**  
+**Example:**
+
 - **User Table:** `user_id`, `name`, `email`
 - **Orders Table:** `order_id`, `user_id`, `amount`
 - Use `JOIN` to get all orders by a particular user.
 
-**Use Cases:**  
+**Use Cases:**
+
 - Banking systems
 - School databases
 - HR systems
 
-**Popular Tools:**  
+**Popular Tools:**
+
 - MySQL
 - PostgreSQL
 - Oracle DB
 - MS SQL Server
 
-**Limitations:**  
+**Limitations:**
+
 - Struggles with horizontal scaling.
 - Not suited for unstructured or dynamic schema.
 
@@ -1882,15 +1980,18 @@ Emerged in the **late 2000s**, as:
 
 ## 2. Object-Oriented Databases (OODBMS)
 
-**Definition:**  
+**Definition:**
+
 - Based on Object-Oriented Programming (OOP).
 - Data is stored as objects (like in Java, C++, Python).
 
-**Key Concepts:**  
+**Key Concepts:**
+
 - Supports encapsulation, inheritance, and object identity.
 - Each object bundles both data and methods together.
 
-**Example:**  
+**Example:**
+
 ```cpp
 class Student {
     string name;
@@ -1898,24 +1999,29 @@ class Student {
     void printDetails();
 }
 ```
+
 - The entire object (data + function) can be stored and retrieved from the DB.
 
-**Use Cases:**  
+**Use Cases:**
+
 - CAD/CAM
 - Scientific applications
 - Multimedia databases
 
-**Popular Tools:**  
+**Popular Tools:**
+
 - ObjectDB
 - db4o
 - GemStone
 
-**Advantages:**  
+**Advantages:**
+
 - Works well with complex real-world models.
 - Integrates directly with OOP languages.
 - Handles multimedia and spatial data easily.
 
-**Limitations:**  
+**Limitations:**
+
 - High complexity, slower CRUD operations.
 - Less community support.
 - Doesn’t support views like RDBMS.
@@ -1924,55 +2030,65 @@ class Student {
 
 ## 3. NoSQL Databases
 
-**Definition:**  
+**Definition:**
+
 - "Not Only SQL": Designed for modern web apps with high volume and flexible data.
 - Non-tabular, can store unstructured or semi-structured data.
 
-**Types:**  
+**Types:**
+
 - Key-Value (Redis, DynamoDB)
 - Document (MongoDB)
 - Wide-Column (Cassandra)
 - Graph (Neo4j)
 
-**Example (MongoDB Document):**  
+**Example (MongoDB Document):**
+
 ```json
 {
-  "name": "Nikhil",
-  "skills": ["Flutter", "Node.js"],
-  "active": true
+	"name": "Nikhil",
+	"skills": ["Flutter", "Node.js"],
+	"active": true
 }
 ```
 
-**Use Cases:**  
+**Use Cases:**
+
 - Real-time analytics
 - Content management
 - IoT
 - Chat apps
 
-**Advantages:**  
+**Advantages:**
+
 - Flexible schema
 - Horizontally scalable
 - Fast for read-heavy workloads
 - Designed for Big Data and Cloud
 
-**Limitations:**  
+**Limitations:**
+
 - Not all support ACID transactions
 - Some may have data redundancy
 - Complex updates can be difficult
 
 > 👉 For full details, see LEC-15 notes.<!--───────────────────────────────────────────-->
+
 ## 4. Hierarchical Databases
 
-**Definition:**  
+**Definition:**
+
 - Data is organized in a tree-like (parent-child) structure.
 - Each child record has only **one parent**.
 - Follows a **one-to-many relationship**.
 
-**Characteristics:**  
+**Characteristics:**
+
 - Fast and simple traversal (from root to leaf).
 - Cannot easily model many-to-many relationships.
 
 **Example:**
+
 ```
 Company
  ├── Department A
@@ -1982,20 +2098,24 @@ Company
     └── Employee 3
 ```
 
-**Use Cases:**  
-- File systems  
-- Drop-down menus  
+**Use Cases:**
+
+- File systems
+- Drop-down menus
 - XML-based data
 
-**Popular Tools:**  
-- IBM IMS  
+**Popular Tools:**
+
+- IBM IMS
 - Windows Registry
 
-**Advantages:**  
+**Advantages:**
+
 - Fast access for simple hierarchical data.
 - Works well with directory-like structures.
 
-**Limitations:**  
+**Limitations:**
+
 - Inflexible for complex data (only one parent per node).
 - Data redundancy due to lack of normalization.
 - Full traversal required for some queries.
@@ -2004,35 +2124,42 @@ Company
 
 ## 5. Network Databases
 
-**Definition:**  
+**Definition:**
+
 - Extension of hierarchical databases.
 - Allows a child to have **multiple parents** (supports many-to-many relationships).
 - Uses a **graph structure** instead of a tree.
 
-**Characteristics:**  
+**Characteristics:**
+
 - Relationships are explicitly modeled using links.
 - More flexible than the hierarchical model.
 
 **Example:**  
 An employee works in multiple departments:
+
 ```
 Department A ↔ Employee 1 ↔ Department B
 ```
 
-**Use Cases:**  
-- Telecom  
-- Transport  
+**Use Cases:**
+
+- Telecom
+- Transport
 - Engineering applications (complex relationships)
 
-**Popular Tools:**  
-- IDMS  
-- TurboIMAGE  
+**Popular Tools:**
+
+- IDMS
+- TurboIMAGE
 - Raima DB
 
-**Advantages:**  
+**Advantages:**
+
 - Better at modeling complex relationships.
 
-**Limitations:**  
+**Limitations:**
+
 - Difficult to maintain and query.
 - Poor community support today.
 - Many-to-many relationships can slow down performance.
@@ -2041,11 +2168,11 @@ Department A ↔ Employee 1 ↔ Department B
 
 ## 📊 Summary Table
 
-| Database Type      | Structure         | Schema   | Relationships      | Examples         | Use Cases                       |
-|--------------------|------------------|----------|--------------------|------------------|----------------------------------|
-| Relational         | Tables (SQL)     | Fixed    | Join (Foreign Key) | MySQL, Oracle    | Banking, ERP, School systems     |
-| Object-Oriented    | Objects (OOP)    | Classes  | Inheritance        | ObjectDB, GemStone| Multimedia, complex object data  |
-| Hierarchical       | Tree             | Rigid    | One-to-many        | IBM IMS          | XML, file systems, dropdowns     |
+| Database Type   | Structure     | Schema  | Relationships      | Examples           | Use Cases                       |
+| --------------- | ------------- | ------- | ------------------ | ------------------ | ------------------------------- |
+| Relational      | Tables (SQL)  | Fixed   | Join (Foreign Key) | MySQL, Oracle      | Banking, ERP, School systems    |
+| Object-Oriented | Objects (OOP) | Classes | Inheritance        | ObjectDB, GemStone | Multimedia, complex object data |
+| Hierarchical    | Tree          | Rigid   | One-to-many        | IBM IMS            | XML, file systems, dropdowns    |
 
 ---
 
@@ -2116,13 +2243,17 @@ Cluster multiple servers so each handles part of the load.
 
 ## ✅ Real-World Architecture
 
+<div align = "center">
+
 ```mermaid
 flowchart TD
     LB[Load Balancer]
-    LB --> N1[Node 1 (DB)]
-    LB --> N2[Node 2 (DB)]
-    LB --> N3[Node 3 (DB)]
+    LB --> N1["Node 1 (DB)"]
+    LB --> N2["Node 2 (DB)"]
+    LB --> N3["Node 3 (DB)"]
 ```
+
+</div>
 
 - All nodes have the same database.
 - Load balancer routes requests based on availability.
@@ -2132,32 +2263,29 @@ flowchart TD
 
 ## ✅ Summary Table
 
-| Feature         | Description                                 |
-|-----------------|---------------------------------------------|
-| Data Redundancy | Same data stored on multiple nodes for backup|
-| Load Balancing  | Distributes traffic among nodes evenly       |
-| High Availability| System remains accessible if nodes fail     |
-| Scalability     | Add new nodes to handle more traffic         |
-| Fault Tolerance | Other servers continue if one fails          |
+| Feature           | Description                                   |
+| ----------------- | --------------------------------------------- |
+| Data Redundancy   | Same data stored on multiple nodes for backup |
+| Load Balancing    | Distributes traffic among nodes evenly        |
+| High Availability | System remains accessible if nodes fail       |
+| Scalability       | Add new nodes to handle more traffic          |
+| Fault Tolerance   | Other servers continue if one fails           |
 
 ---
 
 ## ✅ Technologies That Use DB Clustering
 
-| Tool        | Type                        |
-|-------------|-----------------------------|
-| MongoDB     | Replica Sets, Sharding      |
-| MySQL       | Shared-nothing architecture |
-| Amazon RDS  | Multi-AZ Deployment         |
-| PostgreSQL  | Patroni, BDR, Citus         |
-| Oracle RAC  | Real Application Clusters   |
+| Tool       | Type                        |
+| ---------- | --------------------------- |
+| MongoDB    | Replica Sets, Sharding      |
+| MySQL      | Shared-nothing architecture |
+| Amazon RDS | Multi-AZ Deployment         |
+| PostgreSQL | Patroni, BDR, Citus         |
+| Oracle RAC | Real Application Clusters   |
 
 ---
-| Network            | Graph            | Complex  | Many-to-many       | IDMS, TurboIMAGE | Telecom, engineering apps        |
 
-
-
-
+| Network | Graph | Complex | Many-to-many | IDMS, TurboIMAGE | Telecom, engineering apps |
 
 # 🔶 Partitioning in Databases
 
@@ -2194,7 +2322,8 @@ Emp_basic(emp_id, name)
 Emp_details(emp_id, salary, address, phone)
 ```
 
-**Use Case:**  
+**Use Case:**
+
 - Different applications use different columns.
 - Optimizes access patterns.
 
@@ -2216,7 +2345,8 @@ Sales_2021(...)
 Sales_2022(...)
 ```
 
-**Use Case:**  
+**Use Case:**
+
 - Data is too large for one server.
 - Easy to split by logical ranges (dates, regions, user IDs, etc.).
 
@@ -2232,13 +2362,13 @@ Sales_2022(...)
 
 # 🔶 Benefits of Partitioning
 
-| Feature      | Benefit                                      |
-|--------------|----------------------------------------------|
-| Parallelism  | Multiple queries run on different partitions |
-| Availability | If one partition fails, others remain online |
-| Performance  | Smaller tables → faster indexes/queries      |
-| Manageability| Easier to archive, backup, or purge data     |
-| Cost Saving  | Avoids expensive hardware upgrades           |
+| Feature       | Benefit                                      |
+| ------------- | -------------------------------------------- |
+| Parallelism   | Multiple queries run on different partitions |
+| Availability  | If one partition fails, others remain online |
+| Performance   | Smaller tables → faster indexes/queries      |
+| Manageability | Easier to archive, backup, or purge data     |
+| Cost Saving   | Avoids expensive hardware upgrades           |
 
 ---
 
@@ -2285,13 +2415,13 @@ Sales_2022(...)
 
 # 🔶 Disadvantages of Sharding
 
-| Problem         | Explanation                                         |
-|-----------------|-----------------------------------------------------|
-| Complexity      | Routing, mapping, shard key selection is complex    |
-| Data Skew       | Uneven distribution can overload some shards        |
-| Re-sharding     | Changing shard boundaries is difficult/risky        |
-| Analytical Queries | Need to scan all shards for full data            |
-| Scatter-Gather  | Querying across shards increases network/CPU usage  |
+| Problem            | Explanation                                        |
+| ------------------ | -------------------------------------------------- |
+| Complexity         | Routing, mapping, shard key selection is complex   |
+| Data Skew          | Uneven distribution can overload some shards       |
+| Re-sharding        | Changing shard boundaries is difficult/risky       |
+| Analytical Queries | Need to scan all shards for full data              |
+| Scatter-Gather     | Querying across shards increases network/CPU usage |
 
 ---
 
@@ -2308,9 +2438,10 @@ SELECT * FROM users WHERE email LIKE '%@gmail.com';
 - Query can't use `user_id` for routing.
 - Must be sent to all shards, processed independently, then aggregated.
 
-**Results:**  
-- High network traffic  
-- Increased query time  
+**Results:**
+
+- High network traffic
+- Increased query time
 - CPU usage on all shards
 
 ---
@@ -2320,24 +2451,25 @@ SELECT * FROM users WHERE email LIKE '%@gmail.com';
 A **distributed database** is the result of applying partitioning, sharding, and clustering.  
 It behaves like one logical DB but is physically stored across multiple servers/nodes.
 
-**Examples:**  
-- Google Bigtable  
-- Amazon DynamoDB  
-- Apache Cassandra  
+**Examples:**
+
+- Google Bigtable
+- Amazon DynamoDB
+- Apache Cassandra
 - CockroachDB
 
 ---
 
 # ✅ Summary Table
 
-| Concept        | Description                                    |
-|----------------|------------------------------------------------|
-| Partitioning   | Splitting data within a table (vertical/horizontal) |
+| Concept        | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| Partitioning   | Splitting data within a table (vertical/horizontal)  |
 | Sharding       | Horizontal partitioning + distributed across servers |
-| Distributed DB | Logical DB spread across multiple locations    |
-| Routing Layer  | Forwards queries to correct shard              |
-| Benefits       | Scalability, availability, parallelism         |
-| Challenges     | Complexity, skew, re-sharding, scatter-gather  |
+| Distributed DB | Logical DB spread across multiple locations          |
+| Routing Layer  | Forwards queries to correct shard                    |
+| Benefits       | Scalability, availability, parallelism               |
+| Challenges     | Complexity, skew, re-sharding, scatter-gather        |
 
 # ✅ Case Study: Scaling a Cab Booking App
 
@@ -2394,7 +2526,8 @@ It behaves like one logical DB but is physically stored across multiple servers/
 - Upgrade CPU
 - Switch to SSD/faster storage
 
-**Limitation:**  
+**Limitation:**
+
 - Cost increases exponentially
 - Good short-term fix
 
@@ -2410,7 +2543,8 @@ It behaves like one logical DB but is physically stored across multiple servers/
 - **Read Replicas:** Handle read queries
 - **Data Replication:** Asynchronous to replicas
 
-**Limitation:**  
+**Limitation:**
+
 - Write load still goes to one primary
 - Replication lag affects real-time experience
 
@@ -2426,7 +2560,8 @@ It behaves like one logical DB but is physically stored across multiple servers/
 - Logical ring of replication
 - Write anywhere, read from fastest responder
 
-**Challenges:**  
+**Challenges:**
+
 - Conflict resolution for concurrent writes
 - Data consistency is tricky
 
@@ -2444,7 +2579,8 @@ It behaves like one logical DB but is physically stored across multiple servers/
     - Location info → DB 3
 - Each DB can be scaled separately
 
-**Limitation:**  
+**Limitation:**
+
 - Application layer must join results across DBs
 - Adds complexity
 
@@ -2461,7 +2597,8 @@ It behaves like one logical DB but is physically stored across multiple servers/
     - Each stores part of the data (e.g., by customer ID or region)
     - Each shard may have replicas
 
-**Challenges:**  
+**Challenges:**
+
 - Shard mapping logic
 - Re-sharding during growth
 - Scatter-gather for analytics queries
@@ -2487,15 +2624,16 @@ It behaves like one logical DB but is physically stored across multiple servers/
 
 ## 🔁 Summary Table
 
-| Pattern # | Name                         | What It Solves                  | When to Use                   |
-|-----------|------------------------------|----------------------------------|-------------------------------|
-| 1         | Query Optimization & Pooling | Early performance issues         | Small to medium traffic       |
-| 2         | Vertical Scaling             | Easy RAM/CPU boost               | Quick fix, but limited        |
-| 3         | CQRS                         | Separate read/write load         | Medium-scale traffic          |
-| 4         | Multi-Primary Replication    | Write bottleneck, availability   | Distributed writes            |
-| 5         | Functional Partitioning      | Module-wise isolation            | Feature-based scaling         |
-| 6         | Horizontal Scaling (Sharding)| Too much data, bottlenecks       | Very large scale systems      |
-| 7         | Data Center Partitioning     | High global latency              | Multi-region deployments      |
+| Pattern # | Name                          | What It Solves                 | When to Use              |
+| --------- | ----------------------------- | ------------------------------ | ------------------------ |
+| 1         | Query Optimization & Pooling  | Early performance issues       | Small to medium traffic  |
+| 2         | Vertical Scaling              | Easy RAM/CPU boost             | Quick fix, but limited   |
+| 3         | CQRS                          | Separate read/write load       | Medium-scale traffic     |
+| 4         | Multi-Primary Replication     | Write bottleneck, availability | Distributed writes       |
+| 5         | Functional Partitioning       | Module-wise isolation          | Feature-based scaling    |
+| 6         | Horizontal Scaling (Sharding) | Too much data, bottlenecks     | Very large scale systems |
+| 7         | Data Center Partitioning      | High global latency            | Multi-region deployments |
+
 # 📌 CAP Theorem in Distributed Databases
 
 The **CAP Theorem** (Brewer’s Theorem) states that a distributed database system can only guarantee **two out of three** properties at any time:
@@ -2504,9 +2642,10 @@ The **CAP Theorem** (Brewer’s Theorem) states that a distributed database syst
 - **A – Availability:** Every request receives a response (may not be the latest).
 - **P – Partition Tolerance:** The system continues to operate even if network partitions occur.
 
-> **You can only pick two:**  
-> - **CP:** Consistency + Partition Tolerance (sacrifices Availability)  
-> - **CA:** Consistency + Availability (sacrifices Partition Tolerance)  
+> **You can only pick two:**
+>
+> - **CP:** Consistency + Partition Tolerance (sacrifices Availability)
+> - **CA:** Consistency + Availability (sacrifices Partition Tolerance)
 > - **AP:** Availability + Partition Tolerance (sacrifices Consistency)
 
 ---
@@ -2514,14 +2653,17 @@ The **CAP Theorem** (Brewer’s Theorem) states that a distributed database syst
 ## 🔍 CAP Terms Explained
 
 ### 1. 🟩 Consistency
+
 - All nodes return the same, up-to-date data for any request.
 - **Example:** Update profile picture → all users see the new picture instantly.
 
 ### 2. 🟦 Availability
+
 - System always responds to requests, even if some nodes are down.
 - **Example:** Instagram feed loads even during server issues (may show stale data).
 
 ### 3. 🟨 Partition Tolerance
+
 - System keeps working even if some nodes can’t communicate.
 - **Example:** Server A and B lose connection, but the app still works (with possible trade-offs).
 
@@ -2529,11 +2671,11 @@ The **CAP Theorem** (Brewer’s Theorem) states that a distributed database syst
 
 ## ⚖️ CAP Trade-Offs
 
-| Model | Guarantees | Sacrifices | Example DB | Use Case |
-|-------|------------|------------|------------|----------|
-| CP    | Consistency + Partition Tolerance | Availability | MongoDB | Banking, Payments |
-| AP    | Availability + Partition Tolerance | Consistency | Cassandra, DynamoDB | Social apps, Realtime Games |
-| CA    | Consistency + Availability | Partition Tolerance | MySQL, PostgreSQL | Enterprise systems without network failures |
+| Model | Guarantees                         | Sacrifices          | Example DB          | Use Case                                    |
+| ----- | ---------------------------------- | ------------------- | ------------------- | ------------------------------------------- |
+| CP    | Consistency + Partition Tolerance  | Availability        | MongoDB             | Banking, Payments                           |
+| AP    | Availability + Partition Tolerance | Consistency         | Cassandra, DynamoDB | Social apps, Realtime Games                 |
+| CA    | Consistency + Availability         | Partition Tolerance | MySQL, PostgreSQL   | Enterprise systems without network failures |
 
 **Partition Tolerance is essential** in real-world distributed systems.  
 So, the real choice is between **Consistency** and **Availability**.
@@ -2553,11 +2695,11 @@ In AP systems, data may not be instantly consistent, but will synchronize over t
 
 ## 📊 CAP Use Cases
 
-| Use Case                  | CAP Preference | Database Type | Example DB         |
-|---------------------------|---------------|--------------|--------------------|
-| Banking / Financial       | CP            | Document     | MongoDB            |
-| Social Media Feed         | AP            | Wide Column  | Cassandra          |
-| Internal CRM / ERP        | CA            | Relational   | PostgreSQL, MySQL  |
+| Use Case            | CAP Preference | Database Type | Example DB        |
+| ------------------- | -------------- | ------------- | ----------------- |
+| Banking / Financial | CP             | Document      | MongoDB           |
+| Social Media Feed   | AP             | Wide Column   | Cassandra         |
+| Internal CRM / ERP  | CA             | Relational    | PostgreSQL, MySQL |
 
 ---
 
@@ -2583,6 +2725,7 @@ In AP systems, data may not be instantly consistent, but will synchronize over t
 ## 📌 CQRS Pattern
 
 This setup implements **Command Query Responsibility Segregation (CQRS):**
+
 - **Command (Write):** Master
 - **Query (Read):** Slaves
 
@@ -2591,6 +2734,7 @@ This setup implements **Command Query Responsibility Segregation (CQRS):**
 ## 📊 Real-World Example
 
 **Cab Booking App:**
+
 - **Master DB:** Handles bookings, payments, user updates.
 - **Slave DBs:** Serve booking history, cab availability, location views.
 
@@ -2598,23 +2742,23 @@ This setup implements **Command Query Responsibility Segregation (CQRS):**
 
 ## ✅ Advantages
 
-| Benefit         | Description                                 |
-|-----------------|---------------------------------------------|
-| Scalability     | Add more slaves for more users              |
-| High Availability| If one slave fails, others serve data      |
-| Load Balancing  | Distributes workload                        |
-| Data Safety     | Master is source of truth; slaves backup    |
-| Performance     | Faster reads, reduced latency               |
+| Benefit           | Description                              |
+| ----------------- | ---------------------------------------- |
+| Scalability       | Add more slaves for more users           |
+| High Availability | If one slave fails, others serve data    |
+| Load Balancing    | Distributes workload                     |
+| Data Safety       | Master is source of truth; slaves backup |
+| Performance       | Faster reads, reduced latency            |
 
 ---
 
 ## ❌ Challenges
 
-| Challenge         | Why it Matters                             |
-|-------------------|--------------------------------------------|
-| Replication Lag   | Slaves may be behind master (async)        |
-| Write Bottleneck  | Master can become bottleneck for heavy writes |
-| Complex Config    | Managing replication/failover is tricky    |
+| Challenge        | Why it Matters                                |
+| ---------------- | --------------------------------------------- |
+| Replication Lag  | Slaves may be behind master (async)           |
+| Write Bottleneck | Master can become bottleneck for heavy writes |
+| Complex Config   | Managing replication/failover is tricky       |
 
 ---
 
