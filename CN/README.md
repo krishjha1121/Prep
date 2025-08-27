@@ -175,6 +175,23 @@ less than the rate at which data are produced in the sender, the data link
 layer imposes a flow control mechanism to avoid overloading of receiver. 
 
  * A trailer is added to the end of frame for error control.
+ * **Access control**: When two or more devices are connected to the same link, 
+data link layer protocols determine which device has control over the link at 
+any given time.
 
 
-new changes
+> ### Network Layer
+ * **MainResponsibility**: The network is responsible for the source-to
+destination delivery of packet, possibly across multiple networks 
+(links).
+
+
+<P align="center">
+ <img src="image-6.png" alt="alt text" />
+ </P>
+
+* **Logical Addressing**: If packet passes the network boundary, we need another addressing system to help 
+distinguish the source and destination systems.
+
+>Q: If the Data Link layer can deliver packets using MAC addresses, why do we need logical addressing (IP addresses) in the Network layer?
+> * MAC addresses work only inside a local network (e.g., your laptop to a printer via a switch). But if you send data to a server in another country, the packet must cross many networks. Here, the IP address (logical address) guides routers to deliver data end-to-end, just like a full postal address across cities.
