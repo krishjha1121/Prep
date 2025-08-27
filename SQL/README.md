@@ -1,5 +1,7 @@
 <div align = "center">
-   
+
+🧑‍💻 **Author:** RK ROY
+
 > # 🧰 SQL
 
 </div>
