@@ -175,3 +175,10 @@ less than the rate at which data are produced in the sender, the data link
 layer imposes a flow control mechanism to avoid overloading of receiver. 
 
  * A trailer is added to the end of frame for error control.
+
+
+
+
+
+
+
