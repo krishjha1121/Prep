@@ -1,6 +1,6 @@
 # <h1 align="center">Computer Network</h1>
 
-
+### Auther: Anil Kumar
 ---
 - **Network:**
        A network is a set of devices connected by communication meduim.
@@ -132,7 +132,46 @@ The **OSI model** explains how this communication works without changing their h
 
  * Main Responsibility: The physical layer is concerned with
 transmitting raw bits over a communication medium/channel.
+ <P align="center">
+ <img src="image-4.png" alt="alt text" />
+ </P>
 
-*
-*
-*
+* It also define the type of transmission media.
+* The physical layer data consists of a stream of
+bits (sequence of 0s and 1s) with no interpretation(explanation).
+* **Data Rate**: The number of bits transmitted per second is also specified
+by the physical layer.
+* Bit synchronization at the physical layer ensures sender and receiver agree on timing so that each bit (0 or 1) is correctly recognized. Without it, bits would get misread, causing data corruption.
+* It also defines the Line configuration, Physical topology,Transmission mode.
+
+> ### Data Link Layer
+
+* **Main Responsibility**: It makes 
+physical layer appear error-free to the network layer.
+
+<P align="center">
+ <img src="image-5.png" alt="alt text" />
+ </P>
+
+
+| Feature              | Hop-to-Hop Delivery                          | End-to-End Delivery                        |
+|-----------------------|----------------------------------------------|--------------------------------------------|
+| **OSI Layer**        | Data Link Layer                              | Network Layer                              |
+| **Scope**            | Delivery from one node(router,switch..) to the next (one link) | Delivery from source device to destination device |
+| **Responsibility**   | Ensures a frame is delivered to the next hop | Ensures a packet is delivered across the entire path |
+| **Unit of Data**     | Frame                                        | Packet                                     |
+| **Reliability**      | Checks errors at each link (e.g., CRC)       | Ensures packet reaches the correct destination |
+| **Example**          | PC → Switch, Switch → Router                 | Client → Web Server across the Internet    |
+
+> Why Both Hop-to-Hop and End-to-End Delivery are Needed?
+> * We need both because hop-to-hop checks each step of the journey, while end-to-end makes sure the whole message reaches the destination. Together, they keep communication reliable and complete.
+
+
+* **Framing**: The data link layer divides the stream of bits received from 
+the network layer into manageable data units called frames.
+
+* **Flow control**: If the rate at which the data are absorbed by the receiver is 
+less than the rate at which data are produced in the sender, the data link 
+layer imposes a flow control mechanism to avoid overloading of receiver. 
+
+ * A trailer is added to the end of frame for error control.
