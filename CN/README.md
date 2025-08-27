@@ -175,6 +175,74 @@ less than the rate at which data are produced in the sender, the data link
 layer imposes a flow control mechanism to avoid overloading of receiver. 
 
  * A trailer is added to the end of frame for error control.
+ * **Access control**: When two or more devices are connected to the same link, 
+data link layer protocols determine which device has control over the link at 
+any given time.
 
 
-new changes
+> ### Network Layer
+ * **MainResponsibility**: The network is responsible for the source-to
+destination delivery of packet, possibly across multiple networks 
+(links).
+
+
+<P align="center">
+ <img src="image-6.png" alt="alt text" />
+ </P>
+
+* **Logical Addressing**: If packet passes the network boundary, we need another addressing system to help 
+distinguish the source and destination systems.
+
+>Q: If the Data Link layer can deliver packets using MAC addresses, why do we need logical addressing (IP addresses) in the Network layer?
+> * MAC addresses work only inside a local network (e.g., your laptop to a printer via a switch). But if you send data to a server in another country, the packet must cross many networks. Here, the IP address (logical address) guides routers to deliver data end-to-end, just like a full postal address across cities.
+>
+
+* **Routing**:  When independent networks or links are connected to form internetwork 
+(network of networks), the connecting devices (called routers or switches) routes or 
+switch the packets to their final destination. The network layer ensures this 
+mechanism for source-to-destination delivery.
+
+
+> ### Transport Layer
+* **Main Responsibility**: The transport layer is responsible for process-to-process delivery of the 
+entire message in segments.
+
+
+<P align="center">
+ <img src="image-7.png" alt="alt text" />
+ </P>
+
+* **Service-point addressing**:Since computers often run multiple programs at the same time, source-to-destination delivery means not only sending data from the source computer to the destination computer, but also ensuring delivery from a specific process (running program) on one computer to the corresponding process on the other.
+
+* **Segmentation**:
+ A message is divided into transmittable segments, with each segment 
+containing a sequence number.
+* Transport Layer can be either connectionless and connection-oriented. is its connectionless then segments are individually sent to destination.but if its connection oriented transport layer needs to make first connection with transport layer of the destination machine before delivering data.
+* **Flow Control**:like data link layer flow control does't happen at each hop, in this layer flow control heppen end-to-end.
+
+* **Error Control**: error control perfromed process to process.
+
+> ### Session Layer
+
+* **Main Responsibility**: The session layer is responsible for dialog 
+control and synchronization.
+
+* **Dialog Control**:Dialog control is the function of the session layer in networking that manages who can talk, when, and for how long in a communication between two devices.
+* **Synchronization**:This Layer allow to add check point to a stream of data. if a crash happens then requires to transmit only those data after the recent check point.
+
+> ### Presentation Layer:
+
+* **Main Responsibility**: The presentation layer is responsible for 
+translation, compression and encryption.
+
+* **Translation**: The presentation layer at the sender changes the information from its sender
+dependent format into a common format.
+
+* **Encryption**:Encryption means that the sender transforms the original information to another 
+form and sends the resulting message out over the network.
+
+ * **Compression**: Data compressing reduces the number of bits contained in 
+the information.
+
+>**Application Layer**: The application layer is responsible for 
+providing services to the user.
