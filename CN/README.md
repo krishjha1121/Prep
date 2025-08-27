@@ -177,8 +177,4 @@ layer imposes a flow control mechanism to avoid overloading of receiver.
  * A trailer is added to the end of frame for error control.
 
 
-
-
-
-
-
+new changes
