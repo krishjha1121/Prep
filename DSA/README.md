@@ -1197,6 +1197,194 @@ public class QueueUsingStackOptimized<T> {
     }
 ```
 
+> ### Applications of Stack
+
+> #### Infix to Postfix Conversion using Stack
+
+```text
+infix : a+b*(c^d-e)^(f+g*h)-i
+postfix : abcd^e-fgh*+^*+i-
+```
+
+```java
+import java.util.Stack;
+class Roy {
+    // A utility function to return precedence of a given operator
+    // Higher returned value means higher precedence
+    static int Prec(char ch) {
+        switch (ch) {
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            case '^':
+                return 3;
+        }
+        return -1;
+    }
+    static String infixToPostfix(String exp) {
+        String result = "";
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < exp.length(); ++i) {
+            char c = exp.charAt(i);
+            // If the scanned character is an operand, add it to output.
+            if (Character.isLetterOrDigit(c)) {
+                result += c;
+            }
+            // If the scanned character is an '(', push it to the stack.
+            else if (c == '(') {
+                stack.push(c);
+            }
+            // If the scanned character is an ')',
+            // pop and output from the stack until an '(' is encountered.
+            else if (c == ')') {
+                while (!stack.isEmpty() && stack.peek() != '(') {
+                    result += stack.pop();
+                }
+                stack.pop();
+            }
+            // An operator is encountered
+            else {
+                while (!stack.isEmpty() && Prec(c) <= Prec(stack.peek())) {
+                    result += stack.pop();
+                }
+                stack.push(c);
+            }
+        }
+        // pop all the operators from the stack
+        while (!stack.isEmpty()) {
+            if (stack.peek() == '(') {
+                return "Invalid Expression";
+            }
+            result += stack.pop();
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        String exp = "(p+q)*(m-n)";
+        System.out.println("Infix expression: " + exp);
+        System.out.println("Postfix expression: " + infixToPostfix(exp));
+    }
+}
+
+```
+
+> #### Output :
+
+```text
+pq+mn-*
+```
+
+> #### Postfix to Infix Conversion
+
+```java
+class Solution {
+    static String postToInfix(String s) {
+        int n = s.length();
+        Stack<String> st = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            String current = s.charAt(i) + "";
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                st.add(current);
+            }
+            else {
+                String first = st.pop();
+                String second = st.pop();
+                String newString = "("+ second + "" + s.charAt(i) + "" + first + ")";
+                st.add(newString);
+            }
+        }
+        StringBuilder res = new StringBuilder();
+        while (st.size() > 0)
+            res.append(st.pop());
+        return res.toString();
+    }
+}
+```
+
+> #### Infix to Prefix Conversion
+
+```java
+class Solution {
+    public String infixToPrefix(String temp) {
+        int n = temp.length();
+        String s = "";
+        for (int i = n - 1; i >= 0; i--) {
+            char current = temp.charAt(i);
+            if (current == '(')
+                s += ")";
+            else if (current == ')')
+                s += "(";
+            else
+                s += current;
+        }
+        StringBuilder res = new StringBuilder();
+        Stack<Character> st = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char current = s.charAt(i);
+            if (Character.isLetterOrDigit(current)) {
+                res.append(current);
+            }
+            else if (current == '(')
+                st.add(current);
+            else if (current == ')') {
+                while (st.size() > 0 && st.peek() != '(')
+                    res.append(st.pop());
+                st.pop();
+            }
+            else {
+                while (st.size() > 0 && precedence(current) <= precedence(st.peek())) {
+                    res.append(st.pop());
+                }
+                st.add(current);
+            }
+        }
+        while (st.size() > 0)
+            res.append(st.pop());
+        return res.reverse().toString();
+    }
+    private int precedence(char ch) {
+        if (ch == '+' || ch == '-')
+            return 1;
+        else if (ch == '*' || ch == '/')
+            return 2;
+        else if (ch == '^')
+            return 3;
+        return -1;
+    }
+}
+```
+
+> #### Prefix to Infix Conversion
+
+```java
+class Solution {
+    static String preToInfix(String s) {
+        int n = s.length();
+        StringBuilder res = new StringBuilder();
+        Stack<String> st = new Stack<>();
+        for (int i = n - 1; i >= 0; i--) {
+            char current = s.charAt(i);
+            if (Character.isLetterOrDigit(current)) {
+                st.add(current + "");
+            }
+            else {
+                String first = st.pop();
+                String second = st.pop();
+                String newString = "(" + first + "" + current + "" + second + ")";
+                st.add(newString);
+            }
+        }
+        while (st.size() > 0) {
+            res.append(st.pop());
+        }
+        return res.toString();
+    }
+}
+```
+
 > ### Priority Queue
 
 #### Theory
@@ -1216,17 +1404,55 @@ PriorityQueue<Task> taskQueue = new PriorityQueue<>(
 );
 ```
 
-**Common Interview Questions:**
+> #### **Common Interview Questions:**
 
-1. Implement a stack using queues and vice versa.
-2. How would you implement a min/max stack?
-3. What's the difference between stack and heap memory?
-4. Explain the applications of stacks in compiler design.
-5. How does function recursion use the call stack?
+> 1. Implement a stack using queues and vice versa --> done already.
+
+> 2. How would you implement a min/max stack?
+
+- Maintain a Stack of pairs of min/max elements. <currentElement, min/max So bar below the stack>
+
+> 3. What's the difference between stack and heap memory?
+
+| Feature          | Stack Memory                                           | Heap Memory                                      |
+| ---------------- | ------------------------------------------------------ | ------------------------------------------------ |
+| **Usage**        | Stores method calls, local variables, recursion frames | Stores dynamically allocated objects (via `new`) |
+| **Allocation**   | Automatic by compiler                                  | Manual (programmer / JVM GC)                     |
+| **Access Speed** | Faster                                                 | Slower                                           |
+| **Lifetime**     | Ends when function call ends                           | Exists until explicitly deleted or GC            |
+| **Size**         | Limited, smaller                                       | Larger, flexible size                            |
+| **Errors**       | `StackOverflowError` if exceeded                       | `OutOfMemoryError` if heap exhausted             |
+
+> 4. Explain the applications of stacks in compiler design.
+
+- Syntax Parsing: Used in parsing expressions (infix → postfix).
+- Function Calls: Managing function call/return sequence.
+- Expression Evaluation: Evaluating postfix and prefix expressions.
+- Backtracking: Used in semantic analysis, undo operations.
+- Memory Management: Handling nested scopes, symbol tables.
+
+> 5. How does function recursion use the call stack?
+
+- Each function call is pushed onto the call stack with its:
+- Parameters
+- Return address
+- Local variables
+- When the function finishes, its frame is popped from the stack.
+- This allows recursive functions to track different execution contexts.
+
+```text
+factorial(3)
+→ push frame for factorial(3)
+→ calls factorial(2) → push frame
+→ calls factorial(1) → push frame
+→ returns 1 → pop frame
+→ factorial(2) returns 2 → pop frame
+→ factorial(3) returns 6 → pop frame
+```
 
 ---
 
-## 🌳 Trees
+> ## 🌳 Trees
 
 ### Binary Trees
 
