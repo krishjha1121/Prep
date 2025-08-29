@@ -1389,9 +1389,10 @@ class Solution {
 
 #### Theory
 
-- **Definition**: Elements have priorities, higher priority elements are served first
+- **Definition**: Elements have priorities, by default, it uses natural ordering (min-heap)
 - **Implementation**: Usually implemented using heaps
 - **Applications**: Task scheduling, Dijkstra's algorithm
+- A PriorityQueue in Java is a queue where elements are ordered based on their priority, rather than the order of insertion.
 
 ```java path=null start=null
 // Using Java's built-in PriorityQueue
@@ -1403,6 +1404,121 @@ PriorityQueue<Task> taskQueue = new PriorityQueue<>(
     (t1, t2) -> Integer.compare(t2.priority, t1.priority)
 );
 ```
+
+<div align = "center">
+
+> ## HEAP
+
+</div>
+
+- A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is greater than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.
+
+- A Complete Binary Tree is a type of binary tree with the following properties:
+    - All levels, except possibly the last, are completely filled with nodes.
+    - In the last level, all nodes are filled from left to right without gaps.
+
+- Example : --> Complete Binary Tree
+
+<div align = "center">
+
+```mermaid
+
+flowchart TD
+    style A fill:#ff0000,stroke:#000,stroke-width:1px
+    style B fill:#ff0000,stroke:#000,stroke-width:1px
+    style C fill:#ff0000,stroke:#000,stroke-width:1px
+    style D fill:#ff0000,stroke:#000,stroke-width:1px
+    style E fill:#ff0000,stroke:#000,stroke-width:1px
+    style F fill:#ff0000,stroke:#000,stroke-width:1px
+
+    A["1"]
+    B["2"]
+    C["3"]
+    D["4"]
+    E["5"]
+    F["6"]
+
+    A --> B
+    A --> C
+    B --> D
+    B --> E
+    C --> F
+```
+
+</div>
+
+- Example : --> Not a Complete Binary Tree
+
+<div align = "center">
+
+```mermaid
+flowchart TD
+    style A fill:#ff0000,stroke:#000,stroke-width:1px
+    style B fill:#ff0000,stroke:#000,stroke-width:1px
+    style C fill:#ff0000,stroke:#000,stroke-width:1px
+    style D fill:#ff0000,stroke:#000,stroke-width:1px
+    style E fill:#ff0000,stroke:#000,stroke-width:1px
+
+    A["1"]
+    B["2"]
+    C["3"]
+    D["4"]
+    E["5"]
+
+    A --> B
+    A --> C
+    B --> D
+    C --> E
+```
+
+</div>
+
+> #### Implementation
+
+> ## Heaps are widely used in several applications:
+
+> #### 1. **Priority Queue**
+
+- Heaps provide an efficient way to implement **priority queues**.
+- Operations:
+    - `insert()` → O(log n)
+    - `extract-max` / `extract-min` → O(log n)
+- Commonly used in task scheduling, CPU scheduling, and network traffic management.
+
+> #### 2. **Heap Sort**
+
+- Heap can be used to **sort an array** in O(n log n) time.
+- Steps:
+    1. Build a max-heap from the array.
+    2. Swap root with the last element and reduce heap size.
+    3. Heapify the root.
+    4. Repeat until the array is sorted.
+
+> #### 3. **Graph Algorithms**
+
+- **Dijkstra’s shortest path algorithm**
+    - Uses a min-heap (priority queue) to efficiently pick the next vertex with the smallest distance.
+- **Prim’s Minimum Spanning Tree (MST)**
+    - Uses a min-heap to pick the edge with minimum weight.
+
+> #### 4. **Order Statistics**
+
+- Find the **kth largest/smallest element** efficiently.
+- Use a min-heap of size k to keep track of the top k elements.
+
+> #### 5. **Median Maintenance**
+
+- Use **two heaps** (max-heap + min-heap) to maintain the median of a dynamically changing dataset.
+- Useful in real-time analytics and streaming data.
+
+> #### 6. **Load Balancing**
+
+- Heaps can manage servers by load.
+- Max-heap or min-heap helps pick the **least loaded or most loaded server** quickly.
+
+> #### 7. **Interval Problems**
+
+- Problems like **meeting rooms**, **merging k sorted arrays**, or **finding overlapping intervals** often use heaps to efficiently process events in order.
 
 > #### **Common Interview Questions:**
 
