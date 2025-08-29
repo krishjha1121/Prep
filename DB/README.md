@@ -4,7 +4,7 @@
 
 ---
 
-🧑‍💻 **Author:** RK ROY
+🧑‍💻 **Author:** RK ROY & Senju Nikhil
 
 > 🧾 _"Databases aren’t just about data—they’re about trust, speed, and reliability."_
 
