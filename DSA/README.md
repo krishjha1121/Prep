@@ -215,7 +215,7 @@ public class ArrayOperations {
 }
 ```
 
-#### Complexity Analysis
+> #### Complexity Analysis
 
 | Operation          | Time Complexity | Space Complexity |
 | ------------------ | --------------- | ---------------- |
@@ -225,7 +225,7 @@ public class ArrayOperations {
 | Insert (arbitrary) | O(n)            | O(1)             |
 | Delete             | O(n)            | O(1)             |
 
-#### Use Cases
+> #### Use Cases
 
 - **Database indexing**
 - **Implementing other data structures**
@@ -269,25 +269,72 @@ public class StringConcepts {
 }
 ```
 
-**Common Interview Questions:**
+> ## Common Interview Questions:\*\*
 
-1. Why are strings immutable in Java?
-2. What's the difference between `==` and `.equals()` for strings?
-3. Explain string interning and the string pool.
-4. When would you use StringBuilder vs StringBuffer?
-5. What are the time complexities of common string operations?
+> #### 1. Why are strings immutable in Java?
 
----
+- **Security**: Prevents tampering with sensitive data like file paths, class loaders, and network connections.
+- **Thread-safety**: Immutable objects are safe to share across multiple threads.
+- **Caching/Hashing**: The hashcode of a string can be cached, making it efficient in hash-based collections like `HashMap`.
+- **String Pool**: Immutability allows reuse of string literals in the pool, saving memory.
 
-## 🔗 Linked Lists
+> #### 2. What's the difference between `==` and `.equals()` for strings?
+
+- `==` → Compares **references** (whether two variables point to the same object).
+- `.equals()` → Compares **contents** (character sequences).
+
+> #### 3. Explain string interning and the string pool.
+
+- String Pool: A special memory region in the heap where unique string literals are stored.
+- Interning: Ensures identical string literals share the same reference, reducing memory usage.
+
+Example:
+
+```java
+String a = "java";
+String b = "java";
+System.out.println(a == b);  // true (same pooled reference)
+```
+
+> #### **4. When would you use StringBuilder vs StringBuffer?**
+
+- StringBuilder
+    - Mutable.
+    - Not thread-safe.
+    - Faster.
+    - Best for single-threaded operations.
+
+- StringBuffer
+    - Mutable.
+    - Thread-safe (synchronized).
+    - Slower than StringBuilder.
+    - Best for multi-threaded operations.
+
+> #### **5. Time Complexities of Common String Operations**
+
+| Operation                   | Time Complexity                    |
+| --------------------------- | ---------------------------------- |
+| Access character (`charAt`) | O(1)                               |
+| Concatenation using `+`     | O(n)                               |
+| Substring                   | O(n) (copies chars)                |
+| Length                      | O(1)                               |
+| Equals (content compare)    | O(n)                               |
+| Hashcode (first call)       | O(n), then cached                  |
+| StringBuilder `append()`    | Amortized O(1)                     |
+| StringBuffer `append()`     | Amortized O(1), slower due to sync |
+
+> ## 🔗 Linked Lists
 
 ### Theory
 
 - **Definition**: Linear data structure where elements are stored in nodes
 - **Node Structure**: Data + Reference to next node
 - **Dynamic Size**: Can grow/shrink during runtime
+- It mainly allows efficient insertion and deletion operations compared to arrays.
+- Like arrays, it is also used to implement other data structures like stack, queue and deque.
+- **Access** : Sequential access, but in array it is random.
 
-### Types of Linked Lists
+> ### Types of Linked Lists
 
 ```mermaid
 graph TD
@@ -297,13 +344,17 @@ graph TD
     A --> E["Circular Doubly Linked List"]
 ```
 
-#### Singly Linked List
+> #### Singly Linked List
+
+<div align = "center">
 
 ```mermaid
 graph LR
     A["Node 1<br/>Data: 10<br/>Next: →"] --> B["Node 2<br/>Data: 20<br/>Next: →"]
     B --> C["Node 3<br/>Data: 30<br/>Next: null"]
 ```
+
+</div>
 
 ```java path=null start=null
 public class SinglyLinkedList<T> {
@@ -384,13 +435,17 @@ public class SinglyLinkedList<T> {
 }
 ```
 
-#### Doubly Linked List
+> #### Doubly Linked List
+
+<div align = "center">
 
 ```mermaid
 graph LR
     A["← Node 1 →<br/>Data: 10"] <--> B["← Node 2 →<br/>Data: 20"]
     B <--> C["← Node 3 →<br/>Data: 30"]
 ```
+
+</div>
 
 ```java path=null start=null
 public class DoublyLinkedList<T> {
@@ -411,7 +466,6 @@ public class DoublyLinkedList<T> {
     // Insert at beginning: O(1)
     public void insertAtBeginning(T data) {
         Node<T> newNode = new Node<>(data);
-
         if (head == null) {
             head = tail = newNode;
         } else {
@@ -438,34 +492,371 @@ public class DoublyLinkedList<T> {
 }
 ```
 
-### Complexity Comparison
+> ### Complexity Comparison
 
-| Operation          | Singly LL | Doubly LL          | Array          |
-| ------------------ | --------- | ------------------ | -------------- |
-| Access             | O(n)      | O(n)               | O(1)           |
-| Search             | O(n)      | O(n)               | O(n)           |
-| Insert (beginning) | O(1)      | O(1)               | O(n)           |
-| Insert (end)       | O(n)      | O(1)               | O(1) amortized |
-| Delete             | O(n)      | O(1) if node given | O(n)           |
+| Operation          | Singly LL                        | Doubly LL                                 | Array          |
+| ------------------ | -------------------------------- | ----------------------------------------- | -------------- |
+| Access             | O(n)                             | O(n)                                      | O(1)           |
+| Search             | O(n)                             | O(n)                                      | O(n)           |
+| Insert (beginning) | O(1)                             | O(1)                                      | O(n)           |
+| Insert (end)       | O(n), O(1) if tail is maintained | O(1)                                      | O(1) amortized |
+| Delete             | O(n)                             | O(1) if node reference is given else O(N) | O(n)           |
 
-### Use Cases
+> ## Circular Linked List in Java
+
+> ## 🔹 What is a Circular Linked List?
+
+- A **Circular Linked List (CLL)** is a variation of a linked list where:
+    - The **last node** points back to the **first node**.
+    - It can be **singly circular** (only `next` points back) or **doubly circular** (`next` and `prev` both wrap around).
+- No `null` references in the chain, making traversal continuous.
+
+> ## 🔹 Singly Circular Linked List
+
+> ### Structure
+
+- Each node has:
+    - `data`
+    - `next` (points to next node, last node points back to head)
+
+<div align = "center">
+
+```mermaid
+flowchart LR
+    H((Head)) --> A[10]
+    A --> B[20]
+    B --> C[30]
+    C --> H((Head))
+  style H fill:#ffffff,stroke:#000000,stroke-width:2px,color:#ff0000;
+```
+
+</div>
+
+> #### Implementation
+
+```java
+public class CircularSinglyLinkedList<T> {
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
+    private static class Node<T> {
+        T data;
+        Node<T> next;
+
+        Node(T data) {
+            this.data = data;
+        }
+    }
+
+    // Insert at end: O(1)
+    public void insertAtEnd(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = tail = newNode;
+            tail.next = head; // circular link
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+            tail.next = head; // keep circular
+        }
+        size++;
+    }
+
+    // Insert at beginning: O(1)
+    public void insertAtBeginning(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = tail = newNode;
+            tail.next = head;
+        } else {
+            newNode.next = head;
+            head = newNode;
+            tail.next = head; // keep circular
+        }
+        size++;
+    }
+
+    // Traverse: O(n)
+    public void traverse(int cycles) {
+        if (head == null) return;
+        Node<T> current = head;
+        int count = 0;
+        do {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+            count++;
+        } while (current != head && count < size * cycles);
+        System.out.println("(back to head)");
+    }
+}
+```
+
+> #### Time Complexity
+
+| Operation           | Time Complexity |
+| ------------------- | --------------- |
+| Insert at Beginning | O(1)            |
+| Insert at End       | O(1)            |
+| Delete at Beginning | O(1)            |
+| Delete at End       | O(n)            |
+| Traverse/Search     | O(n)            |
+
+> ## **Doubly Circular Linked List**
+
+- Structure
+    - Each node has:
+        - data
+        - next (points to next node)
+        - prev (points to previous node)
+        - head.prev = tail and tail.next = head
+
+<div align = "center">
+
+```mermaid
+flowchart LR
+    H((Head)) <--> A[10]
+    A <--> B[20]
+    B <--> C[30]
+    C <--> H((Head))
+style H fill:#ffffff,stroke:#000000,stroke-width:2px,color:#ff0000;
+```
+
+</div>
+
+> ### Implementation
+
+```java
+public class CircularDoublyLinkedList<T> {
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
+    private static class Node<T> {
+        T data;
+        Node<T> next;
+        Node<T> prev;
+
+        Node(T data) {
+            this.data = data;
+        }
+    }
+
+    // Insert at end: O(1)
+    public void insertAtEnd(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = tail = newNode;
+            head.next = head;
+            head.prev = head;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            newNode.next = head;
+            head.prev = newNode;
+            tail = newNode;
+        }
+        size++;
+    }
+
+    // Insert at beginning: O(1)
+    public void insertAtBeginning(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = tail = newNode;
+            head.next = head;
+            head.prev = head;
+        } else {
+            newNode.next = head;
+            newNode.prev = tail;
+            head.prev = newNode;
+            tail.next = newNode;
+            head = newNode;
+        }
+        size++;
+    }
+
+    // Traverse forward: O(n)
+    public void traverseForward(int cycles) {
+        if (head == null) return;
+        Node<T> current = head;
+        int count = 0;
+        do {
+            System.out.print(current.data + " <-> ");
+            current = current.next;
+            count++;
+        } while (current != head && count < size * cycles);
+        System.out.println("(back to head)");
+    }
+
+    // Traverse backward: O(n)
+    public void traverseBackward(int cycles) {
+        if (tail == null) return;
+        Node<T> current = tail;
+        int count = 0;
+        do {
+            System.out.print(current.data + " <-> ");
+            current = current.prev;
+            count++;
+        } while (current != tail && count < size * cycles);
+        System.out.println("(back to tail)");
+    }
+}
+```
+
+> #### Time Complexity
+
+| Operation           | Time Complexity |
+| ------------------- | --------------- |
+| Insert at Beginning | O(1)            |
+| Insert at End       | O(1)            |
+| Delete at Beginning | O(1)            |
+| Delete at End       | O(1)            |
+| Traverse/Search     | O(n)            |
+
+> ### Use Cases
 
 - **Music playlists** (next/previous functionality)
 - **Browser history** (back/forward navigation)
 - **Undo/Redo operations**
 - **Implementation of stacks and queues**
 
-**Common Interview Questions:**
+> **Common Interview Questions:**
 
-1. How do you detect a cycle in a linked list?
-2. How do you find the middle element of a linked list?
-3. How do you reverse a linked list iteratively and recursively?
-4. What are the advantages and disadvantages of linked lists vs arrays?
-5. How do you merge two sorted linked lists?
+> #### 1. How do you detect a cycle in a linked list?
+
+- To detect a cycle, we use **Floyd’s Cycle Detection Algorithm (Tortoise and Hare)**:
+    - Have two pointers: `slow` moves one step at a time, `fast` moves two steps.
+    - If they ever meet, there is a cycle.
+    - If `fast` or `fast.next` becomes null, then there is no cycle.
+
+```java
+boolean hasCycle(Node head) {
+    Node slow = head, fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) return true; // cycle detected
+    }
+    return false; // no cycle
+```
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+> #### 2. How do you find the middle element of a linked list?
+
+- To find the middle, use two pointers:
+    - `slow` moves one step at a time.
+    - `fast` moves two steps at a time.
+    - When `fast` reaches the end, `slow` will be at the middle element.
+
+```java
+Node findMiddle(Node head) {
+    Node slow = head, fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
+```
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+> #### 3. How do you reverse a linked list iteratively and recursively?
+
+- **Iterative approach:**
+    - Maintain three pointers (`prev`, `curr`, `next`).
+    - Traverse the list and reverse the `next` links one by one.
+
+```java
+Node reverseIterative(Node head) {
+    Node prev = null, curr = head, next;
+    while (curr != null) {
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+```
+
+- **Recursive approach:**
+    - Recursively reverse the rest of the list.
+    - Make the current node the new tail by adjusting its `next`.
+
+```java
+Node reverseRecursive(Node head) {
+    if (head == null || head.next == null) return head;
+    Node newHead = reverseRecursive(head.next);
+    head.next.next = head;
+    head.next = null;
+    return newHead;
+}
+```
+
+**Time Complexity:** O(n)
+
+**Space Complexity:**
+
+- Iterative: O(1)
+- Recursive: O(n) due to call stack
+
+> #### 4. What are the advantages and disadvantages of linked lists vs arrays?
+
+| Aspect        | Linked List                           | Array                         |
+| ------------- | ------------------------------------- | ----------------------------- |
+| Memory        | Dynamic, grows/shrinks at runtime     | Fixed size (must be declared) |
+| Insertion     | O(1) at beginning (with head pointer) | O(n) (requires shifting)      |
+| Deletion      | O(1) at beginning (with head pointer) | O(n) (requires shifting)      |
+| Random Access | O(n), must traverse                   | O(1), direct indexing         |
+| Cache Usage   | Poor (non-contiguous memory)          | Good (contiguous memory)      |
+| Extra Space   | Requires pointer for next/prev        | No extra space needed         |
+
+**Advantages of Linked List:**
+
+- Dynamic size.
+- Efficient insertions/deletions at head/tail.
+
+**Disadvantages of Linked List:**
+
+- Extra memory for pointers.
+- Slower traversal and poor cache performance.
+
+> #### 5. How do you merge two sorted linked lists?
+
+- To merge two sorted linked lists:
+    - Use two pointers to traverse both lists.
+    - Compare values, attach the smaller one to the merged list.
+    - Continue until all nodes from both lists are processed.
+
+```java
+Node mergeSortedLists(Node l1, Node l2) {
+    Node dummy = new Node(0);
+    Node tail = dummy;
+    while (l1 != null && l2 != null) {
+        if (l1.data <= l2.data) {
+            tail.next = l1;
+            l1 = l1.next;
+        } else {
+            tail.next = l2;
+            l2 = l2.next;
+        }
+        tail = tail.next;
+    }
+    if (l1 != null) tail.next = l1;
+    if (l2 != null) tail.next = l2;
+    return dummy.next;
+}
+```
+
+**Time Complexity:** O(n + m)  
+**Space Complexity:** O(1) (if done in-place)
 
 ---
 
-## 📚 Stacks and Queues
+> ## 📚 Stacks and Queues
 
 ### Stack (LIFO - Last In First Out)
 
