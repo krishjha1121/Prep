@@ -858,7 +858,7 @@ Node mergeSortedLists(Node l1, Node l2) {
 
 > ## 📚 Stacks and Queues
 
-### Stack (LIFO - Last In First Out)
+> ### Stack (LIFO - Last In First Out)
 
 #### Theory
 
@@ -886,17 +886,59 @@ graph TB
     end
 ```
 
-#### Implementation
+> #### Implementation
+
+```java
+// Stackk using Array;
+public class Stack<T> {
+    private T[] stack;
+    private int top;
+    public Stack() {
+        stack = new T[(int)(1e5 + 1)];
+        top = -1;
+    }
+
+    // Push: O(1)
+    public void push(T data) {
+        stack[++top] = data;
+    }
+
+    // Pop: O(1)
+    public T pop() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return stack[top--];
+    }
+
+    // Peek: O(1)
+    public T peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return stack[top];
+    }
+
+    // isEmpty: O(1)
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    // Size: O(1)
+    public int size() {
+        return top + 1;
+    }
+}
+```
 
 ```java path=null start=null
+// Stack Using LinkedList
 public class Stack<T> {
     private Node<T> top;
     private int size;
-
     private static class Node<T> {
         T data;
         Node<T> next;
-
         Node(T data) {
             this.data = data;
         }
@@ -936,7 +978,29 @@ public class Stack<T> {
 }
 ```
 
-#### Use Cases
+```java
+// Stack Using Queue (Not Efficient) ;
+class stack {
+    Queue < Integer > q = new LinkedList < > ();
+    void push(int x) {
+        q.add(x);
+        for (int i = 0; i < q.size() - 1; i++) {
+            q.add(q.remove());
+        }
+    }
+    int pop() {
+        return q.remove();
+    }
+    int top() {
+        return q.peek();
+    }
+    int size() {
+        return q.size();
+    }
+}
+```
+
+> #### Use Cases
 
 - **Function call management** (call stack)
 - **Expression evaluation** (infix to postfix)
@@ -944,13 +1008,15 @@ public class Stack<T> {
 - **Undo operations in applications**
 - **Browser history**
 
-### Queue (FIFO - First In First Out)
+> ### Queue (FIFO - First In First Out)
 
 #### Theory
 
 - **Principle**: First element added is first to be removed
 - **Operations**: Enqueue, Dequeue, Front, Rear
 - **Variants**: Simple Queue, Circular Queue, Priority Queue, Deque
+
+<div align = "center">
 
 ```mermaid
 graph LR
@@ -965,27 +1031,87 @@ graph LR
     end
 ```
 
-#### Implementation
+</div>
+
+> #### Implementation
+
+```java
+// Queue Using Array;
+public class Queue<T> {
+    private T[] arr;
+    private int front;
+    private int rear;
+    private int size;
+    private int capacity;
+    @SuppressWarnings("unchecked")
+    public Queue(int capacity) {
+        this.capacity = capacity;
+        arr = (T[]) new Object[capacity];
+        front = 0;
+        rear = -1;
+        size = 0;
+    }
+    // Check if queue is empty
+    public boolean isEmpty() {
+        return size == 0;
+    }
+    // Check if queue is full
+    public boolean isFull() {
+        return size == capacity;
+    }
+    // Enqueue: O(1)
+    public void enqueue(T data) {
+        if (isFull()) {
+            System.out.println("Queue is full!");
+            return;
+        }
+        rear = (rear + 1) % capacity; // circular increment
+        arr[rear] = data;
+        size++;
+    }
+    // Dequeue: O(1)
+    public T dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty!");
+            return null;
+        }
+        T item = arr[front];
+        arr[front] = null; // optional: clear reference
+        front = (front + 1) % capacity; // circular increment
+        size--;
+        return item;
+    }
+    // Peek (front element): O(1)
+    public T peek() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty!");
+            return null;
+        }
+        return arr[front];
+    }
+    // Get size
+    public int getSize() {
+        return size;
+    }
+}
+```
 
 ```java path=null start=null
+// Using LinkedList
 public class Queue<T> {
     private Node<T> front;
     private Node<T> rear;
     private int size;
-
     private static class Node<T> {
         T data;
         Node<T> next;
-
         Node(T data) {
             this.data = data;
         }
     }
-
     // Enqueue: O(1)
     public void enqueue(T data) {
         Node<T> newNode = new Node<>(data);
-
         if (rear == null) {
             front = rear = newNode;
         } else {
@@ -994,16 +1120,13 @@ public class Queue<T> {
         }
         size++;
     }
-
     // Dequeue: O(1)
     public T dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
-
         T data = front.data;
         front = front.next;
-
         if (front == null) {
             rear = null;
         }
@@ -1013,7 +1136,68 @@ public class Queue<T> {
 }
 ```
 
-### Priority Queue
+```java
+// Queue Using Stack (Not Efficient) ;
+public class QueueUsingStackUnoptimized<T> {
+    private Stack<T> s1 = new Stack<>();
+    private Stack<T> s2 = new Stack<>();
+    // Enqueue: O(1)
+    public void enqueue(T data) {
+        s1.push(data);
+    }
+    // Dequeue: O(n)
+    public T dequeue() {
+        if (s1.isEmpty()) {
+            System.out.println("Queue is empty!");
+            return null;
+        }
+        // Move elements to s2
+        while (!s1.isEmpty()) {
+            s2.push(s1.pop());
+        }
+        // Pop from s2
+        T front = s2.pop();
+        // Move back to s1
+        while (!s2.isEmpty()) {
+            s1.push(s2.pop());
+        }
+        return front;
+    }
+    public boolean isEmpty() {
+        return s1.isEmpty();
+    }
+}
+```
+
+```java
+// Queue Using Stack (Efficient) --> Amortized O(1), Worst O(n) (Deque);
+public class QueueUsingStackOptimized<T> {
+    private Stack<T> s1 = new Stack<>();
+    private Stack<T> s2 = new Stack<>();
+    // Enqueue: O(1)
+    public void enqueue(T data) {
+        s1.push(data);
+    }
+    // Dequeue: Amortized O(1)
+    public T dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty!");
+            return null;
+        }
+        // If s2 is empty, refill it from s1
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+        }
+        return s2.pop();
+    }
+    public boolean isEmpty() {
+        return s1.isEmpty() && s2.isEmpty();
+    }
+```
+
+> ### Priority Queue
 
 #### Theory
 
