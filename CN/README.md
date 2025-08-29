@@ -1,6 +1,6 @@
 # <h1 align="center">Computer Network</h1>
 
-### 🧑‍💻Author: Anil Kumar
+
 ---
 - **Network:**
        A network is a set of devices connected by communication meduim.
