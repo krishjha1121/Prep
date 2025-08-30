@@ -1619,6 +1619,8 @@ public class BinarySearchTree {
 - **Rotations**: Single and double rotations to maintain balance
 - **Guarantee**: O(log n) operations in all cases
 
+<div align = "center">
+
 ```mermaid
 graph TD
     subgraph "AVL Rotations"
@@ -1628,7 +1630,11 @@ graph TD
     end
 ```
 
-### Red-Black Trees
+</div>
+
+> ### Red-Black Trees
+
+- Red-Black trees are self-balancing binary search trees that maintain balance through a set of coloring rules and rotations. They guarantee O(log n) time complexity for search, insertion, and deletion operations.
 
 #### Theory
 
@@ -1638,7 +1644,590 @@ graph TD
     3. No two adjacent red nodes
     4. Every path from root to null has same number of black nodes
 
-### Trie (Prefix Tree)
+> ## Basic Structure
+
+```mermaid
+graph TD
+    a["26 🔴"] --> b["17 ⚫"]
+    a --> c["41 ⚫"]
+    b --> d["14 🔴"]
+    b --> e["21 ⚫"]
+    c --> f["30 🔴"]
+    c --> g["47 🔴"]
+    d --> h["nil ⚫"]
+    d --> i["nil ⚫"]
+    e --> j["19 ⚫"]
+    e --> k["23 ⚫"]
+    f --> l["nil ⚫"]
+    f --> m["nil ⚫"]
+    g --> n["nil ⚫"]
+    g --> o["nil ⚫"]
+    j --> p["nil ⚫"]
+    j --> q["nil ⚫"]
+    k --> r["nil ⚫"]
+    k --> s["nil ⚫"]
+
+    style a fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style d fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style f fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style g fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style b fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style c fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style e fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style j fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style k fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style h fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style i fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style l fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style m fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style n fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style o fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style p fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style q fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style r fill:#666,stroke:#333,stroke-width:1px,color:#fff
+    style s fill:#666,stroke:#333,stroke-width:1px,color:#fff
+```
+
+> #### Java Implementation
+
+```java path=null start=null
+public class RedBlackTree {
+    private static final boolean RED = true;
+    private static final boolean BLACK = false;
+
+    private class Node {
+        int key;
+        boolean color;
+        Node left, right, parent;
+
+        Node(int key) {
+            this.key = key;
+            this.color = RED; // New nodes are always red
+            this.left = null;
+            this.right = null;
+            this.parent = null;
+        }
+    }
+
+    private Node root;
+    private Node NIL; // Sentinel node representing null
+
+    public RedBlackTree() {
+        NIL = new Node(0);
+        NIL.color = BLACK;
+        root = NIL;
+    }
+
+    // Left rotation
+    private void leftRotate(Node x) {
+        Node y = x.right;
+        x.right = y.left;
+
+        if (y.left != NIL) {
+            y.left.parent = x;
+        }
+
+        y.parent = x.parent;
+
+        if (x.parent == NIL) {
+            root = y;
+        } else if (x == x.parent.left) {
+            x.parent.left = y;
+        } else {
+            x.parent.right = y;
+        }
+
+        y.left = x;
+        x.parent = y;
+    }
+
+    // Right rotation
+    private void rightRotate(Node x) {
+        Node y = x.left;
+        x.left = y.right;
+
+        if (y.right != NIL) {
+            y.right.parent = x;
+        }
+
+        y.parent = x.parent;
+
+        if (x.parent == NIL) {
+            root = y;
+        } else if (x == x.parent.right) {
+            x.parent.right = y;
+        } else {
+            x.parent.left = y;
+        }
+
+        y.right = x;
+        x.parent = y;
+    }
+
+    // Insert operation
+    public void insert(int key) {
+        Node newNode = new Node(key);
+        newNode.left = NIL;
+        newNode.right = NIL;
+
+        Node parent = NIL;
+        Node current = root;
+
+        // Standard BST insertion
+        while (current != NIL) {
+            parent = current;
+            if (newNode.key < current.key) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+
+        newNode.parent = parent;
+
+        if (parent == NIL) {
+            root = newNode; // Tree was empty
+        } else if (newNode.key < parent.key) {
+            parent.left = newNode;
+        } else {
+            parent.right = newNode;
+        }
+
+        // Fix Red-Black tree violations
+        insertFixup(newNode);
+    }
+
+    // Fix Red-Black tree properties after insertion
+    private void insertFixup(Node z) {
+        while (z.parent.color == RED) {
+            if (z.parent == z.parent.parent.left) {
+                Node uncle = z.parent.parent.right;
+
+                // Case 1: Uncle is red
+                if (uncle.color == RED) {
+                    z.parent.color = BLACK;
+                    uncle.color = BLACK;
+                    z.parent.parent.color = RED;
+                    z = z.parent.parent;
+                }
+                // Case 2 & 3: Uncle is black
+                else {
+                    // Case 2: z is right child
+                    if (z == z.parent.right) {
+                        z = z.parent;
+                        leftRotate(z);
+                    }
+                    // Case 3: z is left child
+                    z.parent.color = BLACK;
+                    z.parent.parent.color = RED;
+                    rightRotate(z.parent.parent);
+                }
+            } else {
+                Node uncle = z.parent.parent.left;
+
+                // Case 1: Uncle is red
+                if (uncle.color == RED) {
+                    z.parent.color = BLACK;
+                    uncle.color = BLACK;
+                    z.parent.parent.color = RED;
+                    z = z.parent.parent;
+                }
+                // Case 2 & 3: Uncle is black
+                else {
+                    // Case 2: z is left child
+                    if (z == z.parent.left) {
+                        z = z.parent;
+                        rightRotate(z);
+                    }
+                    // Case 3: z is right child
+                    z.parent.color = BLACK;
+                    z.parent.parent.color = RED;
+                    leftRotate(z.parent.parent);
+                }
+            }
+        }
+        root.color = BLACK; // Root is always black
+    }
+
+    // Search operation
+    public boolean search(int key) {
+        return searchHelper(root, key);
+    }
+
+    private boolean searchHelper(Node node, int key) {
+        if (node == NIL) {
+            return false;
+        }
+
+        if (key == node.key) {
+            return true;
+        } else if (key < node.key) {
+            return searchHelper(node.left, key);
+        } else {
+            return searchHelper(node.right, key);
+        }
+    }
+
+    // Find minimum node in subtree
+    private Node minimum(Node node) {
+        while (node.left != NIL) {
+            node = node.left;
+        }
+        return node;
+    }
+
+    // Transplant operation for deletion
+    private void transplant(Node u, Node v) {
+        if (u.parent == NIL) {
+            root = v;
+        } else if (u == u.parent.left) {
+            u.parent.left = v;
+        } else {
+            u.parent.right = v;
+        }
+        v.parent = u.parent;
+    }
+
+    // Delete operation
+    public void delete(int key) {
+        Node z = findNode(root, key);
+        if (z == NIL) return; // Key not found
+
+        Node y = z;
+        Node x;
+        boolean yOriginalColor = y.color;
+
+        if (z.left == NIL) {
+            x = z.right;
+            transplant(z, z.right);
+        } else if (z.right == NIL) {
+            x = z.left;
+            transplant(z, z.left);
+        } else {
+            y = minimum(z.right);
+            yOriginalColor = y.color;
+            x = y.right;
+
+            if (y.parent == z) {
+                x.parent = y;
+            } else {
+                transplant(y, y.right);
+                y.right = z.right;
+                y.right.parent = y;
+            }
+
+            transplant(z, y);
+            y.left = z.left;
+            y.left.parent = y;
+            y.color = z.color;
+        }
+
+        if (yOriginalColor == BLACK) {
+            deleteFixup(x);
+        }
+    }
+
+    // Fix Red-Black tree properties after deletion
+    private void deleteFixup(Node x) {
+        while (x != root && x.color == BLACK) {
+            if (x == x.parent.left) {
+                Node sibling = x.parent.right;
+
+                // Case 1: Sibling is red
+                if (sibling.color == RED) {
+                    sibling.color = BLACK;
+                    x.parent.color = RED;
+                    leftRotate(x.parent);
+                    sibling = x.parent.right;
+                }
+
+                // Case 2: Sibling is black with two black children
+                if (sibling.left.color == BLACK && sibling.right.color == BLACK) {
+                    sibling.color = RED;
+                    x = x.parent;
+                } else {
+                    // Case 3: Sibling is black with red left child and black right child
+                    if (sibling.right.color == BLACK) {
+                        sibling.left.color = BLACK;
+                        sibling.color = RED;
+                        rightRotate(sibling);
+                        sibling = x.parent.right;
+                    }
+
+                    // Case 4: Sibling is black with red right child
+                    sibling.color = x.parent.color;
+                    x.parent.color = BLACK;
+                    sibling.right.color = BLACK;
+                    leftRotate(x.parent);
+                    x = root;
+                }
+            } else {
+                Node sibling = x.parent.left;
+
+                // Case 1: Sibling is red
+                if (sibling.color == RED) {
+                    sibling.color = BLACK;
+                    x.parent.color = RED;
+                    rightRotate(x.parent);
+                    sibling = x.parent.left;
+                }
+
+                // Case 2: Sibling is black with two black children
+                if (sibling.right.color == BLACK && sibling.left.color == BLACK) {
+                    sibling.color = RED;
+                    x = x.parent;
+                } else {
+                    // Case 3: Sibling is black with red right child and black left child
+                    if (sibling.left.color == BLACK) {
+                        sibling.right.color = BLACK;
+                        sibling.color = RED;
+                        leftRotate(sibling);
+                        sibling = x.parent.left;
+                    }
+
+                    // Case 4: Sibling is black with red left child
+                    sibling.color = x.parent.color;
+                    x.parent.color = BLACK;
+                    sibling.left.color = BLACK;
+                    rightRotate(x.parent);
+                    x = root;
+                }
+            }
+        }
+        x.color = BLACK;
+    }
+
+    // Helper method to find a node
+    private Node findNode(Node node, int key) {
+        if (node == NIL || key == node.key) {
+            return node;
+        }
+
+        if (key < node.key) {
+            return findNode(node.left, key);
+        } else {
+            return findNode(node.right, key);
+        }
+    }
+
+    // In-order traversal for testing
+    public void inorderTraversal() {
+        inorderHelper(root);
+        System.out.println();
+    }
+
+    private void inorderHelper(Node node) {
+        if (node != NIL) {
+            inorderHelper(node.left);
+            System.out.print(node.key + "(" + (node.color ? "R" : "B") + ") ");
+            inorderHelper(node.right);
+        }
+    }
+}
+```
+
+## Insertion Cases
+
+Red-Black tree insertion involves inserting a node as red and then fixing any violations of the Red-Black properties.
+
+### Case 1: Uncle is Red
+
+**Problem**: New red node has red parent and red uncle.
+**Solution**: Recolor parent, uncle, and grandparent.
+
+```mermaid
+graph TD
+    subgraph "Before"
+        A["G ⚫"] --> B["P 🔴"]
+        A --> C["U 🔴"]
+        B --> D["N 🔴"]
+        B --> E["NIL ⚫"]
+        C --> F["NIL ⚫"]
+        C --> G1["NIL ⚫"]
+    end
+
+    subgraph "After"
+        A1["G 🔴"] --> B1["P ⚫"]
+        A1 --> C1["U ⚫"]
+        B1 --> D1["N 🔴"]
+        B1 --> E1["NIL ⚫"]
+        C1 --> F1["NIL ⚫"]
+        C1 --> G2["NIL ⚫"]
+    end
+
+    style B fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style C fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style D fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style A1 fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style D1 fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style A fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style B1 fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style C1 fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+```
+
+### Case 2: Uncle is Black (Triangle Configuration)
+
+**Problem**: New node, parent, and grandparent form a triangle.
+**Solution**: Rotate to make it a line, then apply Case 3.
+
+```mermaid
+graph TD
+    subgraph "Before"
+        A["G ⚫"] --> B["P 🔴"]
+        A --> C["U ⚫"]
+        B --> D["NIL ⚫"]
+        B --> E["N 🔴"]
+        C --> F["NIL ⚫"]
+        C --> G1["NIL ⚫"]
+    end
+
+    subgraph "After Left Rotation on P"
+        A1["G ⚫"] --> E1["N 🔴"]
+        A1 --> C1["U ⚫"]
+        E1 --> B1["P 🔴"]
+        E1 --> D1["NIL ⚫"]
+        C1 --> F1["NIL ⚫"]
+        C1 --> G2["NIL ⚫"]
+    end
+
+    style B fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style E fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style E1 fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style B1 fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style A fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style A1 fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style C1 fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+```
+
+### Case 3: Uncle is Black (Line Configuration)
+
+**Problem**: New node, parent, and grandparent form a line.
+**Solution**: Recolor and rotate grandparent.
+
+```mermaid
+graph TD
+    subgraph "Before"
+        A["G ⚫"] --> B["P 🔴"]
+        A --> C["U ⚫"]
+        B --> D["N 🔴"]
+        B --> E["NIL ⚫"]
+        C --> F["NIL ⚫"]
+        C --> G1["NIL ⚫"]
+    end
+
+    subgraph "After Right Rotation on G"
+        B1["P ⚫"] --> D1["N 🔴"]
+        B1 --> A1["G 🔴"]
+        A1 --> E1["NIL ⚫"]
+        A1 --> C1["U ⚫"]
+        C1 --> F1["NIL ⚫"]
+        C1 --> G2["NIL ⚫"]
+    end
+
+    style B fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style D fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style D1 fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style A1 fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style A fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style B1 fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    style C1 fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+```
+
+## Deletion Cases
+
+Red-Black tree deletion is more complex and involves several cases to maintain the properties.
+
+### Deletion Overview
+
+1. **Standard BST deletion** to remove the node
+2. **Fix Red-Black violations** if a black node was deleted
+3. **Apply various cases** based on sibling color and children
+
+### Key Deletion Cases
+
+- **Case 1**: Sibling is red → Recolor and rotate
+- **Case 2**: Sibling is black with all black children → Recolor sibling
+- **Case 3**: Sibling is black with red left child, black right child → Rotate sibling
+- **Case 4**: Sibling is black with red right child → Final rotation and recoloring
+
+## Complexity Analysis
+
+| Operation | Time Complexity | Space Complexity |
+| --------- | --------------- | ---------------- |
+| Search    | O(log n)        | O(1)             |
+| Insert    | O(log n)        | O(1)             |
+| Delete    | O(log n)        | O(1)             |
+| Traversal | O(n)            | O(log n)         |
+
+## Properties and Guarantees
+
+- **Height**: The height is at most 2 × log₂(n + 1)
+- **Black Height**: All root-to-leaf paths have the same number of black nodes
+- **Red Nodes**: Cannot have red children (no adjacent red nodes)
+- **Balance**: Longest path is at most twice the length of shortest path
+
+## Red-Black vs AVL Trees
+
+| Aspect                | Red-Black Tree                | AVL Tree                |
+| --------------------- | ----------------------------- | ----------------------- |
+| **Height Constraint** | Height ≤ 2 × log₂(n + 1)      | Height ≤ 1.44 × log₂(n) |
+| **Balance Factor**    | Color-based rules             | Height difference ≤ 1   |
+| **Insertions**        | Fewer rotations (max 2)       | More rotations (max 2)  |
+| **Deletions**         | More complex, max 3 rotations | Simpler, max 1 rotation |
+| **Memory**            | 1 bit per node (color)        | Balance factor storage  |
+| **Use Cases**         | Frequent insertions/deletions | Frequent searches       |
+
+## Applications
+
+- **Java TreeMap and TreeSet** implementations
+- **C++ std::map and std::set**
+- **Linux Completely Fair Scheduler**
+- **Database indexing** (some implementations)
+- **Memory management** in some systems
+
+## Common Interview Questions
+
+1. **What are the properties of Red-Black trees?**
+2. **Why are Red-Black trees preferred over AVL trees in some cases?**
+3. **How do you fix violations after insertion?**
+4. **What is the maximum height of a Red-Black tree with n nodes?**
+5. **Compare Red-Black trees with other balanced BSTs.**
+
+## Example Usage
+
+```java path=null start=null
+public class RedBlackTreeExample {
+    public static void main(String[] args) {
+        RedBlackTree rbt = new RedBlackTree();
+
+        // Insert values
+        int[] values = {10, 20, 30, 15, 25, 5, 1};
+        for (int value : values) {
+            rbt.insert(value);
+            System.out.println("Inserted: " + value);
+        }
+
+        // Print in-order traversal
+        System.out.print("In-order traversal: ");
+        rbt.inorderTraversal();
+
+        // Search for values
+        System.out.println("Search 15: " + rbt.search(15)); // true
+        System.out.println("Search 100: " + rbt.search(100)); // false
+
+        // Delete a value
+        rbt.delete(20);
+        System.out.print("After deleting 20: ");
+        rbt.inorderTraversal();
+    }
+}
+```
+
+Red-Black trees provide an excellent balance between the simplicity of implementation and the performance guarantees, making them ideal for many real-world applications where frequent insertions and deletions occur alongside searches.
+
+> ### Trie (Prefix Tree)
 
 #### Theory
 
@@ -1646,6 +2235,8 @@ graph TD
 - **Structure**: Each path from root to leaf represents a string
 - **Applications**: Autocomplete, spell checkers, IP routing
 
+<div align = "center">
+    
 ```mermaid
 graph TD
     A["Root"] --> B["c"]
@@ -1657,6 +2248,7 @@ graph TD
     C --> H["h"]
     H --> I["e (end)"]
 ```
+</div>
 
 ```java path=null start=null
 public class Trie {
@@ -1718,7 +2310,7 @@ public class Trie {
 
 ---
 
-## 🕸️ Graphs
+> ## 🕸️ Graphs
 
 ### Theory
 
@@ -1726,6 +2318,7 @@ public class Trie {
 - **Types**: Directed vs Undirected, Weighted vs Unweighted
 - **Representations**: Adjacency Matrix, Adjacency List, Edge List
 
+<div align = "center">
 ```mermaid
 graph LR
     subgraph "Graph Types"
@@ -1736,10 +2329,11 @@ graph LR
         E["Acyclic Graph (DAG)"]
     end
 ```
+</div>
 
-### Graph Representations
+> ### Graph Representations
 
-#### Adjacency List
+> #### Adjacency List
 
 ```java path=null start=null
 public class GraphAdjacencyList {
@@ -1763,7 +2357,7 @@ public class GraphAdjacencyList {
 }
 ```
 
-#### Adjacency Matrix
+> #### Adjacency Matrix
 
 ```java path=null start=null
 public class GraphAdjacencyMatrix {
@@ -1783,10 +2377,12 @@ public class GraphAdjacencyMatrix {
 }
 ```
 
-### Graph Traversal Algorithms
+> ### Graph Traversal Algorithms
 
 #### Depth-First Search (DFS)
 
+<div align = "center">
+    
 ```mermaid
 graph TD
     A["Start: Visit A"] --> B["Visit B (neighbor of A)"]
@@ -1795,6 +2391,7 @@ graph TD
     D --> E["Visit C (neighbor of B)"]
     E --> F["Continue DFS..."]
 ```
+</div>
 
 ```java path=null start=null
 public class GraphTraversal {
@@ -1836,7 +2433,7 @@ public class GraphTraversal {
 }
 ```
 
-#### Breadth-First Search (BFS)
+> #### Breadth-First Search (BFS)
 
 ```java path=null start=null
 // BFS: O(V + E)
@@ -1861,9 +2458,9 @@ public void bfs(int startVertex, Map<Integer, List<Integer>> adjList, int vertic
 }
 ```
 
-### Shortest Path Algorithms
+> ### Shortest Path Algorithms
 
-#### Dijkstra's Algorithm
+> #### Dijkstra's Algorithm
 
 - **Purpose**: Find shortest path from source to all vertices
 - **Requirement**: Non-negative edge weights
@@ -1907,20 +2504,20 @@ public class DijkstraAlgorithm {
 }
 ```
 
-#### Floyd-Warshall Algorithm
+> #### Floyd-Warshall Algorithm
 
 - **Purpose**: All pairs shortest path
 - **Time Complexity**: O(V³)
 - **Space Complexity**: O(V²)
 
-### Minimum Spanning Tree
+> ### Minimum Spanning Tree
 
-#### Kruskal's Algorithm
+> #### Kruskal's Algorithm
 
 - **Approach**: Sort edges, use Union-Find to detect cycles
 - **Time Complexity**: O(E log E)
 
-#### Prim's Algorithm
+> #### Prim's Algorithm
 
 - **Approach**: Start from vertex, grow MST by adding minimum weight edge
 - **Time Complexity**: O(E log V) with priority queue
@@ -1939,10 +2536,13 @@ public class DijkstraAlgorithm {
 
 ### Theory
 
+- A Hash table is defined as a data structure used to insert, look up, and remove key-value pairs quickly. It operates on the hashing concept, where each key is translated by a hash function into a distinct index in an array. The index functions as a storage location for the matching value. In simple words, it maps the keys with the value.
 - **Definition**: Data structure that maps keys to values using hash function
 - **Hash Function**: Converts key into array index
 - **Collision**: When two keys map to same index
 - **Load Factor**: Number of elements / Table size
+
+<div align="center">
 
 ```mermaid
 flowchart LR
@@ -1951,7 +2551,9 @@ flowchart LR
     C --> D["Hash Table[3]<br/>Value: 'Engineer'"]
 ```
 
-### Hash Functions
+</div>
+
+> ### Hash Functions
 
 ```java path=null start=null
 public class HashFunctions {
@@ -1959,13 +2561,11 @@ public class HashFunctions {
     public int divisionHash(int key, int tableSize) {
         return key % tableSize;
     }
-
     // Multiplication Method
     public int multiplicationHash(int key, int tableSize) {
         double A = 0.6180339887; // (√5 - 1) / 2
         return (int)(tableSize * ((key * A) % 1));
     }
-
     // String hash function
     public int stringHash(String key, int tableSize) {
         int hash = 0;
@@ -1974,15 +2574,18 @@ public class HashFunctions {
         for (char c : key.toCharArray()) {
             hash = hash * prime + c;
         }
-
         return Math.abs(hash) % tableSize;
     }
 }
 ```
 
-### Collision Resolution
+> ### Collision Resolution
 
-#### Separate Chaining
+- Collisions happen when two or more keys point to the same array index. Chaining, open addressing, and double hashing are a few techniques for resolving collisions.
+
+> #### Separate Chaining
+
+<div align = "center">
 
 ```mermaid
 graph LR
@@ -1994,12 +2597,13 @@ graph LR
     end
 ```
 
+</div>
+
 ```java path=null start=null
 public class HashTableChaining<K, V> {
     private LinkedList<Entry<K, V>>[] table;
     private int capacity;
     private int size;
-
     private static class Entry<K, V> {
         K key;
         V value;
@@ -2014,61 +2618,49 @@ public class HashTableChaining<K, V> {
     public HashTableChaining(int capacity) {
         this.capacity = capacity;
         table = new LinkedList[capacity];
-
         for (int i = 0; i < capacity; i++) {
             table[i] = new LinkedList<>();
         }
     }
-
     private int hash(K key) {
         return Math.abs(key.hashCode()) % capacity;
     }
-
     // Put: O(1) average, O(n) worst case
     public void put(K key, V value) {
         int index = hash(key);
         LinkedList<Entry<K, V>> chain = table[index];
-
         for (Entry<K, V> entry : chain) {
             if (entry.key.equals(key)) {
                 entry.value = value;
                 return;
             }
         }
-
         chain.add(new Entry<>(key, value));
         size++;
-
         // Resize if load factor exceeds threshold
         if ((double) size / capacity > 0.75) {
             resize();
         }
     }
-
     // Get: O(1) average, O(n) worst case
     public V get(K key) {
         int index = hash(key);
         LinkedList<Entry<K, V>> chain = table[index];
-
         for (Entry<K, V> entry : chain) {
             if (entry.key.equals(key)) {
                 return entry.value;
             }
         }
-
         return null;
     }
-
     private void resize() {
         LinkedList<Entry<K, V>>[] oldTable = table;
         capacity *= 2;
         size = 0;
         table = new LinkedList[capacity];
-
         for (int i = 0; i < capacity; i++) {
             table[i] = new LinkedList<>();
         }
-
         for (LinkedList<Entry<K, V>> chain : oldTable) {
             for (Entry<K, V> entry : chain) {
                 put(entry.key, entry.value);
@@ -2078,7 +2670,7 @@ public class HashTableChaining<K, V> {
 }
 ```
 
-#### Open Addressing
+> #### Open Addressing
 
 - **Linear Probing**: Check next slot sequentially
 - **Quadratic Probing**: Check slots at quadratic intervals
@@ -2533,6 +3125,8 @@ public class BuildHeap {
 - **Operations**: Union, Find, Connected
 - **Optimizations**: Union by rank, Path compression
 
+<div align = "center">
+
 ```mermaid
 graph TD
     subgraph "Union-Find Structure"
@@ -2546,6 +3140,8 @@ graph TD
         H["Set 3"] --> I["6"]
     end
 ```
+
+</div>
 
 ```java path=null start=null
 public class UnionFind {
@@ -2593,13 +3189,15 @@ public class UnionFind {
 }
 ```
 
-### Segment Tree
+> ### Segment Tree
 
 #### Theory
 
 - **Purpose**: Range query and update operations
 - **Structure**: Binary tree where each node represents a range
 - **Applications**: Range sum, range minimum, lazy propagation
+
+<div align = "center">
 
 ```mermaid
 graph TD
@@ -2610,6 +3208,8 @@ graph TD
     C --> F["[4,5] sum=9"]
     C --> G["[6,7] sum=17"]
 ```
+
+</div>
 
 ```java path=null start=null
 public class SegmentTree {
@@ -2678,7 +3278,7 @@ public class SegmentTree {
 }
 ```
 
-### LRU Cache
+> ### LRU Cache
 
 #### Theory
 
@@ -2774,9 +3374,11 @@ public class LRUCache {
 
 ---
 
-## 🔄 Sorting Algorithms
+> ## 🔄 Sorting Algorithms
 
-### Comparison-Based Sorting
+> ### Comparison-Based Sorting
+
+<div align = "center">
 
 ```mermaid
 graph TD
@@ -2795,7 +3397,9 @@ graph TD
     C --> L["Bucket Sort O(n+k)"]
 ```
 
-#### Merge Sort
+</div>
+
+> #### Merge Sort
 
 - **Strategy**: Divide and Conquer
 - **Time Complexity**: O(n log n) in all cases
@@ -2842,7 +3446,7 @@ public class MergeSort {
 }
 ```
 
-#### Quick Sort
+> #### Quick Sort
 
 - **Strategy**: Divide and Conquer with pivot
 - **Time Complexity**: O(n log n) average, O(n²) worst
@@ -2882,9 +3486,9 @@ public class QuickSort {
 }
 ```
 
-### Non-Comparison Based Sorting
+> ### Non-Comparison Based Sorting
 
-#### Counting Sort
+> #### Counting Sort
 
 - **Requirement**: Integer keys in limited range
 - **Time Complexity**: O(n + k) where k is range
@@ -2945,15 +3549,15 @@ public class CountingSort {
 
 ---
 
-## 🔍 Searching Algorithms
+> ## 🔍 Searching Algorithms
 
-### Linear Search
+> ### Linear Search
 
 - **Time Complexity**: O(n)
 - **Space Complexity**: O(1)
 - **Use Case**: Unsorted data
 
-### Binary Search
+> ### Binary Search
 
 #### Theory
 
@@ -2961,6 +3565,8 @@ public class CountingSort {
 - **Strategy**: Divide and Conquer
 - **Time Complexity**: O(log n)
 - **Space Complexity**: O(1) iterative, O(log n) recursive
+
+<div align = "center">
 
 ```mermaid
 graph TD
@@ -2973,15 +3579,15 @@ graph TD
     E --> H["Found!"]
 ```
 
+</div>
+
 ```java path=null start=null
 public class BinarySearch {
     // Iterative Binary Search
     public int binarySearch(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
-
         while (left <= right) {
             int mid = left + (right - left) / 2;
-
             if (arr[mid] == target) {
                 return mid;
             } else if (arr[mid] < target) {
@@ -2990,18 +3596,14 @@ public class BinarySearch {
                 right = mid - 1;
             }
         }
-
         return -1;
     }
-
     // Recursive Binary Search
     public int binarySearchRecursive(int[] arr, int target, int left, int right) {
         if (left > right) {
             return -1;
         }
-
         int mid = left + (right - left) / 2;
-
         if (arr[mid] == target) {
             return mid;
         } else if (arr[mid] < target) {
@@ -3010,15 +3612,12 @@ public class BinarySearch {
             return binarySearchRecursive(arr, target, left, mid - 1);
         }
     }
-
     // Find first occurrence
     public int findFirst(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
         int result = -1;
-
         while (left <= right) {
             int mid = left + (right - left) / 2;
-
             if (arr[mid] == target) {
                 result = mid;
                 right = mid - 1; // Continue searching left
@@ -3028,7 +3627,6 @@ public class BinarySearch {
                 right = mid - 1;
             }
         }
-
         return result;
     }
 
@@ -3049,20 +3647,19 @@ public class BinarySearch {
                 right = mid - 1;
             }
         }
-
         return result;
     }
 }
 ```
 
-### Specialized Search Algorithms
+> ### Specialized Search Algorithms
 
-#### Exponential Search
+> #### Exponential Search
 
 - **Use Case**: Unbounded/infinite arrays
 - **Time Complexity**: O(log n)
 
-#### Interpolation Search
+> #### Interpolation Search
 
 - **Use Case**: Uniformly distributed data
 - **Time Complexity**: O(log log n) average, O(n) worst
@@ -3070,15 +3667,12 @@ public class BinarySearch {
 ```java path=null start=null
 public int interpolationSearch(int[] arr, int target) {
     int low = 0, high = arr.length - 1;
-
     while (low <= high && target >= arr[low] && target <= arr[high]) {
         if (low == high) {
             return arr[low] == target ? low : -1;
         }
-
         // Interpolation formula
         int pos = low + ((target - arr[low]) * (high - low)) / (arr[high] - arr[low]);
-
         if (arr[pos] == target) {
             return pos;
         } else if (arr[pos] < target) {
@@ -3102,7 +3696,7 @@ public int interpolationSearch(int[] arr, int target) {
 
 ---
 
-## 💡 Dynamic Programming
+> ## 💡 Dynamic Programming
 
 ### Theory
 
@@ -3110,11 +3704,13 @@ public int interpolationSearch(int[] arr, int target) {
 - **Principle**: Break problem into subproblems, store results to avoid recomputation
 - **Approaches**: Top-down (Memoization), Bottom-up (Tabulation)
 
-### Key Characteristics
+> ### Key Characteristics
 
 1. **Overlapping Subproblems**
 2. **Optimal Substructure**
 3. **Memoization** or **Tabulation**
+
+<div align = "center">
 
 ```mermaid
 graph TD
@@ -3125,37 +3721,31 @@ graph TD
     C --> E["Iterative + Table"]
 ```
 
-#### Classic Examples
+</div>
+
+> #### Classic Examples
 
 ```java path=null start=null
 public class DynamicProgramming {
-
     // Fibonacci - Memoization: O(n) time, O(n) space
     public int fibonacciMemo(int n, Map<Integer, Integer> memo) {
         if (n <= 1) return n;
-
         if (memo.containsKey(n)) {
             return memo.get(n);
         }
-
         int result = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
         memo.put(n, result);
-
         return result;
     }
-
     // Fibonacci - Tabulation: O(n) time, O(1) space
     public int fibonacciTab(int n) {
         if (n <= 1) return n;
-
         int prev2 = 0, prev1 = 1;
-
         for (int i = 2; i <= n; i++) {
             int current = prev1 + prev2;
             prev2 = prev1;
             prev1 = current;
         }
-
         return prev1;
     }
 
@@ -3163,7 +3753,6 @@ public class DynamicProgramming {
     public int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length(), n = text2.length();
         int[][] dp = new int[m + 1][n + 1];
-
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
@@ -3173,7 +3762,6 @@ public class DynamicProgramming {
                 }
             }
         }
-
         return dp[m][n];
     }
 
@@ -3194,13 +3782,12 @@ public class DynamicProgramming {
                 }
             }
         }
-
         return dp[n][capacity];
     }
 }
 ```
 
-### DP Patterns
+> ### DP Patterns
 
 1. **Linear DP**: Fibonacci, Climbing Stairs
 2. **2D DP**: Longest Common Subsequence, Edit Distance
@@ -3218,9 +3805,11 @@ public class DynamicProgramming {
 
 ---
 
-## 🎯 Interview Tips
+> ## 🎯 Interview Tips
 
-### Problem-Solving Approach
+> ### Problem-Solving Approach
+
+<div align = "center">
 
 ```mermaid
 flowchart TD
@@ -3235,20 +3824,22 @@ flowchart TD
     I --> J["Optimize if Needed"]
 ```
 
-### Time Complexity Analysis Framework
+</div>
+
+> ### Time Complexity Analysis Framework
 
 1. **Identify the basic operation**
 2. **Count how many times it's executed**
 3. **Express as a function of input size**
 4. **Find the dominant term**
 
-### Space Complexity Considerations
+> ### Space Complexity Considerations
 
 - **Input space**: Space needed to store input
 - **Auxiliary space**: Extra space used by algorithm
 - **Recursion depth**: Stack space for recursive calls
 
-### Common Optimization Techniques
+> ### Common Optimization Techniques
 
 1. **Two Pointers**: For array/string problems
 2. **Sliding Window**: For subarray/substring problems
@@ -3257,7 +3848,7 @@ flowchart TD
 5. **Dynamic Programming**: For optimization problems
 6. **Greedy Algorithms**: For optimization with greedy choice property
 
-### Data Structure Selection Guide
+> ### Data Structure Selection Guide
 
 | Requirement                        | Best Data Structure   |
 | ---------------------------------- | --------------------- |
@@ -3273,30 +3864,30 @@ flowchart TD
 | Hierarchical data                  | Tree                  |
 | Relationships between entities     | Graph                 |
 
-### Interview Checklist
+> ### Interview Checklist
 
-#### Before Coding
+> #### Before Coding
 
 - [ ] Understand the problem completely
 - [ ] Ask about input constraints and edge cases
 - [ ] Discuss approach and time/space complexity
 - [ ] Get confirmation before starting to code
 
-#### During Coding
+> #### During Coding
 
 - [ ] Write clean, readable code
 - [ ] Handle edge cases
 - [ ] Use meaningful variable names
 - [ ] Explain your thought process
 
-#### After Coding
+> #### After Coding
 
 - [ ] Walk through your solution with examples
 - [ ] Discuss time and space complexity
 - [ ] Identify potential optimizations
 - [ ] Consider alternative approaches
 
-### Common Edge Cases
+> ### Common Edge Cases
 
 1. **Empty input** (null, empty array/string)
 2. **Single element**
@@ -3306,9 +3897,9 @@ flowchart TD
 6. **Very large inputs**
 7. **Already sorted/reverse sorted data**
 
-### Key Concepts to Remember
+> ### Key Concepts to Remember
 
-#### Algorithmic Paradigms
+> #### Algorithmic Paradigms
 
 1. **Brute Force**: Try all possibilities
 2. **Divide and Conquer**: Break into smaller subproblems
@@ -3317,34 +3908,11 @@ flowchart TD
 5. **Backtracking**: Try partial solutions, backtrack when stuck
 6. **Branch and Bound**: Systematically enumerate solutions
 
-#### Important Theorems
+> #### Important Theorems
 
 1. **Master Theorem**: For analyzing divide-and-conquer recurrences
 2. **Amortized Analysis**: Average performance over sequence of operations
 3. **Lower Bound**: Theoretical minimum complexity for certain problems
-
----
-
-## 📚 Additional Resources
-
-### Books
-
-- **"Introduction to Algorithms" by Cormen, Leiserson, Rivest, Stein**
-- **"Algorithms" by Robert Sedgewick**
-- **"Cracking the Coding Interview" by Gayle McDowell**
-
-### Online Platforms
-
-- **LeetCode**: Practice coding problems
-- **HackerRank**: Algorithmic challenges
-- **Codeforces**: Competitive programming
-- **GeeksforGeeks**: Tutorials and explanations
-
-### Java-Specific Resources
-
-- **Java Collections Framework**
-- **Java Concurrency utilities**
-- **Stream API for functional programming**
 
 ---
 
@@ -3359,4 +3927,3 @@ _"The best way to learn is by doing. Practice these concepts regularly!"_
 **Made with ❤️ for aspiring software engineers**
 
 </div>
-$$
