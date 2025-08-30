@@ -1405,238 +1405,6 @@ PriorityQueue<Task> taskQueue = new PriorityQueue<>(
 );
 ```
 
-<div align = "center">
-
-> ## HEAP
-
-</div>
-
-- A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is greater than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.
-
-- A Complete Binary Tree is a type of binary tree with the following properties:
-    - All levels, except possibly the last, are completely filled with nodes.
-    - In the last level, all nodes are filled from left to right without gaps.
-
-- Example : --> Complete Binary Tree
-
-<div align = "center">
-
-```mermaid
-
-flowchart TD
-    style A fill:#ff0000,stroke:#000,stroke-width:1px
-    style B fill:#ff0000,stroke:#000,stroke-width:1px
-    style C fill:#ff0000,stroke:#000,stroke-width:1px
-    style D fill:#ff0000,stroke:#000,stroke-width:1px
-    style E fill:#ff0000,stroke:#000,stroke-width:1px
-    style F fill:#ff0000,stroke:#000,stroke-width:1px
-
-    A["1"]
-    B["2"]
-    C["3"]
-    D["4"]
-    E["5"]
-    F["6"]
-
-    A --> B
-    A --> C
-    B --> D
-    B --> E
-    C --> F
-```
-
-</div>
-
-- Example : --> Not a Complete Binary Tree
-
-<div align = "center">
-
-```mermaid
-flowchart TD
-    style A fill:#ff0000,stroke:#000,stroke-width:1px
-    style B fill:#ff0000,stroke:#000,stroke-width:1px
-    style C fill:#ff0000,stroke:#000,stroke-width:1px
-    style D fill:#ff0000,stroke:#000,stroke-width:1px
-    style E fill:#ff0000,stroke:#000,stroke-width:1px
-
-    A["1"]
-    B["2"]
-    C["3"]
-    D["4"]
-    E["5"]
-
-    A --> B
-    A --> C
-    B --> D
-    C --> E
-```
-
-</div>
-
-> #### Implementation
-
-```java
-/* Min Heap */
-public class MinHeap<T extends Comparable<T>> {
-    private T[] heap;
-    private int size;
-
-    @SuppressWarnings("unchecked")
-    public MinHeap(int capacity) {
-        this.heap = (T[]) new Comparable[capacity];
-        this.size = 0;
-    }
-    private void swap(int i, int j) {
-        T temp = heap[i];
-        heap[i] = heap[j];
-        heap[j] = temp;
-    }
-    public void insert(T val) {
-        if (size == heap.length)
-            throw new IllegalStateException("Heap is full");
-        int currIdx = size;
-        heap[size++] = val;
-        while (currIdx > 0 && heap[currIdx].compareTo(heap[(currIdx - 1) / 2]) < 0) {
-            swap(currIdx, (currIdx - 1) / 2);
-            currIdx = (currIdx - 1) / 2;
-        }
-    }
-    public T popMin() {
-        if (size == 0)
-            throw new IllegalStateException("Heap is empty");
-        T ans = heap[0];
-        heap[0] = heap[--size];
-        if (size > 0)
-            heapifyDown(0);
-        return ans;
-    }
-    private void heapifyDown(int currIdx) {
-        int left = 2 * currIdx + 1;
-        int right = 2 * currIdx + 2;
-        int smallest = currIdx;
-        if (left < size && heap[left].compareTo(heap[smallest]) < 0)
-            smallest = left;
-        if (right < size && heap[right].compareTo(heap[smallest]) < 0)
-            smallest = right;
-        if (smallest != currIdx) {
-            swap(currIdx, smallest);
-            heapifyDown(smallest);
-        }
-    }
-    public int getSize() {
-        return size;
-    }
-    public boolean isEmpty() {
-        return size == 0;
-    }
-}
-
-```
-
-> ## Heaps are widely used in several applications:
-
-```java
-/* Max Heap */
-public class MaxHeap<T extends Comparable<T>> {
-    private T[] heap;
-    private int size;
-
-    @SuppressWarnings("unchecked")
-    public MaxHeap(int capacity) {
-        this.heap = (T[]) new Comparable[capacity];
-        this.size = 0;
-    }
-    private void swap(int i, int j) {
-        T temp = heap[i];
-        heap[i] = heap[j];
-        heap[j] = temp;
-    }
-    public void insert(T val) {
-        if (size == heap.length)
-            throw new IllegalStateException("Heap is full");
-
-        int currIdx = size;
-        heap[size++] = val;
-
-        while (currIdx > 0 && heap[currIdx].compareTo(heap[(currIdx - 1) / 2]) > 0) {
-            swap(currIdx, (currIdx - 1) / 2);
-            currIdx = (currIdx - 1) / 2;
-        }
-    }
-    public T popMax() {
-        if (size == 0)
-            throw new IllegalStateException("Heap is empty");
-        T ans = heap[0];
-        heap[0] = heap[--size];
-        if (size > 0)
-            heapifyDown(0);
-        return ans;
-    }
-    private void heapifyDown(int currIdx) {
-        int left = 2 * currIdx + 1;
-        int right = 2 * currIdx + 2;
-        int largest = currIdx;
-        if (left < size && heap[left].compareTo(heap[largest]) > 0)
-            largest = left;
-        if (right < size && heap[right].compareTo(heap[largest]) > 0)
-            largest = right;
-        if (largest != currIdx) {
-            swap(currIdx, largest);
-            heapifyDown(largest);
-        }
-    }
-    public int getSize() {
-        return size;
-    }
-    public boolean isEmpty() {
-        return size == 0;
-    }
-}
-```
-
-> #### 1. **Priority Queue**
-
-- Heaps provide an efficient way to implement **priority queues**.
-- Operations:
-    - `insert()` → O(log n)
-    - `extract-max` / `extract-min` → O(log n)
-- Commonly used in task scheduling, CPU scheduling, and network traffic management.
-
-> #### 2. **Heap Sort**
-
-- Heap can be used to **sort an array** in O(n log n) time.
-- Steps:
-    1. Build a max-heap from the array.
-    2. Swap root with the last element and reduce heap size.
-    3. Heapify the root.
-    4. Repeat until the array is sorted.
-
-> #### 3. **Graph Algorithms**
-
-- **Dijkstra’s shortest path algorithm**
-    - Uses a min-heap (priority queue) to efficiently pick the next vertex with the smallest distance.
-- **Prim’s Minimum Spanning Tree (MST)**
-    - Uses a min-heap to pick the edge with minimum weight.
-
-> #### 4. **Order Statistics**
-
-- Find the **kth largest/smallest element** efficiently.
-- Use a min-heap of size k to keep track of the top k elements.
-
-> #### 5. **Median Maintenance**
-
-- Use **two heaps** (max-heap + min-heap) to maintain the median of a dynamically changing dataset.
-- Useful in real-time analytics and streaming data.
-
-> #### 6. **Load Balancing**
-
-- Heaps can manage servers by load.
-- Max-heap or min-heap helps pick the **least loaded or most loaded server** quickly.
-
-> #### 7. **Interval Problems**
-
-- Problems like **meeting rooms**, **merging k sorted arrays**, or **finding overlapping intervals** often use heaps to efficiently process events in order.
-
 > #### **Common Interview Questions:**
 
 > 1. Implement a stack using queues and vice versa --> done already.
@@ -1695,6 +1463,8 @@ factorial(3)
 - **Terminology**: Root, Parent, Child, Leaf, Height, Depth
 - **Properties**: Height, Balance Factor, Complete vs Full trees
 
+<div align = "center">
+
 ```mermaid
 graph TD
     A["1 (Root)"] --> B["2"]
@@ -1704,6 +1474,8 @@ graph TD
     C --> F["6"]
     C --> G["7"]
 ```
+
+</div>
 
 #### Implementation
 
@@ -2392,138 +2164,354 @@ graph TD
     end
 ```
 
-### Implementation
+- A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is greater than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.
 
-```java path=null start=null
-public class MinHeap {
-    private int[] heap;
+- A Complete Binary Tree is a type of binary tree with the following properties:
+    - All levels, except possibly the last, are completely filled with nodes.
+    - In the last level, all nodes are filled from left to right without gaps.
+
+- Example : --> Complete Binary Tree
+
+<div align = "center">
+
+```mermaid
+
+flowchart TD
+    style A fill:#ff0000,stroke:#000,stroke-width:1px
+    style B fill:#ff0000,stroke:#000,stroke-width:1px
+    style C fill:#ff0000,stroke:#000,stroke-width:1px
+    style D fill:#ff0000,stroke:#000,stroke-width:1px
+    style E fill:#ff0000,stroke:#000,stroke-width:1px
+    style F fill:#ff0000,stroke:#000,stroke-width:1px
+
+    A["1"]
+    B["2"]
+    C["3"]
+    D["4"]
+    E["5"]
+    F["6"]
+
+    A --> B
+    A --> C
+    B --> D
+    B --> E
+    C --> F
+```
+
+</div>
+
+- Example : --> Not a Complete Binary Tree
+
+<div align = "center">
+
+```mermaid
+flowchart TD
+    style A fill:#ff0000,stroke:#000,stroke-width:1px
+    style B fill:#ff0000,stroke:#000,stroke-width:1px
+    style C fill:#ff0000,stroke:#000,stroke-width:1px
+    style D fill:#ff0000,stroke:#000,stroke-width:1px
+    style E fill:#ff0000,stroke:#000,stroke-width:1px
+
+    A["1"]
+    B["2"]
+    C["3"]
+    D["4"]
+    E["5"]
+
+    A --> B
+    A --> C
+    B --> D
+    C --> E
+```
+
+</div>
+
+> #### Implementation
+
+```java
+/* Min Heap */
+public class MinHeap<T extends Comparable<T>> {
+    private T[] heap;
     private int size;
-    private int capacity;
 
+    @SuppressWarnings("unchecked")
     public MinHeap(int capacity) {
-        this.capacity = capacity;
+        this.heap = (T[]) new Comparable[capacity];
         this.size = 0;
-        heap = new int[capacity];
     }
-
-    // Helper methods
-    private int parent(int i) { return (i - 1) / 2; }
-    private int leftChild(int i) { return 2 * i + 1; }
-    private int rightChild(int i) { return 2 * i + 2; }
-
     private void swap(int i, int j) {
-        int temp = heap[i];
+        T temp = heap[i];
         heap[i] = heap[j];
         heap[j] = temp;
     }
-
-    // Insert: O(log n)
-    public void insert(int value) {
-        if (size >= capacity) {
+    public void insert(T val) {
+        if (size == heap.length)
             throw new IllegalStateException("Heap is full");
-        }
-
-        heap[size] = value;
-        size++;
-        heapifyUp(size - 1);
-    }
-
-    private void heapifyUp(int index) {
-        while (index > 0 && heap[parent(index)] > heap[index]) {
-            swap(index, parent(index));
-            index = parent(index);
+        int currIdx = size;
+        heap[size++] = val;
+        while (currIdx > 0 && heap[currIdx].compareTo(heap[(currIdx - 1) / 2]) < 0) {
+            swap(currIdx, (currIdx - 1) / 2);
+            currIdx = (currIdx - 1) / 2;
         }
     }
-
-    // Extract min: O(log n)
-    public int extractMin() {
-        if (size <= 0) {
+    public T popMin() {
+        if (size == 0)
             throw new IllegalStateException("Heap is empty");
-        }
-
-        if (size == 1) {
-            size--;
-            return heap[0];
-        }
-
-        int root = heap[0];
-        heap[0] = heap[size - 1];
-        size--;
-        heapifyDown(0);
-
-        return root;
+        T ans = heap[0];
+        heap[0] = heap[--size];
+        if (size > 0)
+            heapifyDown(0);
+        return ans;
     }
-
-    private void heapifyDown(int index) {
-        int smallest = index;
-        int left = leftChild(index);
-        int right = rightChild(index);
-
-        if (left < size && heap[left] < heap[smallest]) {
+    private void heapifyDown(int currIdx) {
+        int left = 2 * currIdx + 1;
+        int right = 2 * currIdx + 2;
+        int smallest = currIdx;
+        if (left < size && heap[left].compareTo(heap[smallest]) < 0)
             smallest = left;
-        }
-
-        if (right < size && heap[right] < heap[smallest]) {
+        if (right < size && heap[right].compareTo(heap[smallest]) < 0)
             smallest = right;
-        }
-
-        if (smallest != index) {
-            swap(index, smallest);
+        if (smallest != currIdx) {
+            swap(currIdx, smallest);
             heapifyDown(smallest);
         }
     }
+    public int getSize() {
+        return size;
+    }
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
 
-    // Build heap from array: O(n)
-    public static void buildHeap(int[] arr) {
-        int n = arr.length;
+```
 
-        // Start from last non-leaf node and heapify down
-        for (int i = (n / 2) - 1; i >= 0; i--) {
-            heapifyDown(arr, n, i);
+```java
+/* Max Heap */
+public class MaxHeap<T extends Comparable<T>> {
+    private T[] heap;
+    private int size;
+
+    @SuppressWarnings("unchecked")
+    public MaxHeap(int capacity) {
+        this.heap = (T[]) new Comparable[capacity];
+        this.size = 0;
+    }
+    private void swap(int i, int j) {
+        T temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+    public void insert(T val) {
+        if (size == heap.length)
+            throw new IllegalStateException("Heap is full");
+
+        int currIdx = size;
+        heap[size++] = val;
+
+        while (currIdx > 0 && heap[currIdx].compareTo(heap[(currIdx - 1) / 2]) > 0) {
+            swap(currIdx, (currIdx - 1) / 2);
+            currIdx = (currIdx - 1) / 2;
         }
     }
+    public T popMax() {
+        if (size == 0)
+            throw new IllegalStateException("Heap is empty");
+        T ans = heap[0];
+        heap[0] = heap[--size];
+        if (size > 0)
+            heapifyDown(0);
+        return ans;
+    }
+    private void heapifyDown(int currIdx) {
+        int left = 2 * currIdx + 1;
+        int right = 2 * currIdx + 2;
+        int largest = currIdx;
+        if (left < size && heap[left].compareTo(heap[largest]) > 0)
+            largest = left;
+        if (right < size && heap[right].compareTo(heap[largest]) > 0)
+            largest = right;
+        if (largest != currIdx) {
+            swap(currIdx, largest);
+            heapifyDown(largest);
+        }
+    }
+    public int getSize() {
+        return size;
+    }
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
+```
 
-    private static void heapifyDown(int[] arr, int n, int i) {
-        int smallest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+> #### Heap Time and Space Complexity Table
 
-        if (left < n && arr[left] < arr[smallest]) {
+| Operation               | MinHeap (Generic) | MaxHeap (Generic) | Explanation                                       |
+| ----------------------- | ----------------- | ----------------- | ------------------------------------------------- |
+| `insert()`              | O(log n)          | O(log n)          | Traverses up the tree to maintain heap property   |
+| `popMin()` / `popMax()` | O(log n)          | O(log n)          | Traverses down the tree to maintain heap property |
+| `peek()`                | O(1)              | O(1)              | Access the root element directly                  |
+| `isEmpty()`             | O(1)              | O(1)              | Checks if the heap has no elements                |
+| `getSize()`             | O(1)              | O(1)              | Returns the current number of elements            |
+| Space Complexity        | O(n)              | O(n)              | Array storing all heap elements                   |
+
+> #### Why Building a Heap is **O(N)** (Not O(N log N))
+
+- Heaps are usually built in two ways:
+
+-   1. **Naive Method**  
+       Insert elements one by one into an empty heap using `insert()`.
+    - Each `insert()` takes **O(log n)** (worst case).
+    - For `n` elements → **O(n log n)**.
+
+-   2. **Optimal Method (Heapify)** ✅
+    - Place all `n` elements into an array.
+    - Treat it as a **complete binary tree**.
+    - Call `heapifyDown()` from the **last non-leaf node** up to the root.
+    - Total complexity = **O(n)**.
+
+> #### 🧮 Proof: Why is Heapify O(N)?
+
+- ### Height of a Heap
+    - A heap is a **complete binary tree** of height **h = log₂N**.
+    - Work done to heapify a node depends on its **height** (max swaps needed).
+
+- ### Number of Nodes per Height
+    - Height 0 (leaves): ~ ${N/2}$ nodes → cost O(0)
+    - Height 1: ~ $N/4$ nodes → cost O(1)
+    - Height 2: ~ $N/8$ nodes → cost O(2)
+    - …
+    - Height h: 1 node (root) → cost O(h)
+
+- ### Summing the Work
+
+Total cost:
+
+$$T(n)=\sum_{k=0}^{h}{\frac{n}{2^{k+1}}}\cdot O(k)$$
+
+Number of nodes at height `k`:
+
+$$
+\frac{n}{2^{k+1}}
+$$
+
+So:
+
+$$
+T(n) \approx \sum_{k=0}^{\log n} \frac{n}{2^{k+1}} \cdot k
+$$
+
+Factor out `n`:
+
+$$
+T(n) = n \cdot \sum_{k=0}^{\log n} \frac{k}{2^{k+1}}
+$$
+
+- ### Key Observation
+
+The series:
+
+$$
+\sum_{k=0}^{\infty} \frac{k}{2^{k+1}} = 1
+$$
+
+is a **convergent series**.
+
+Thus:
+
+$$
+T(n) = O(n)
+$$
+
+✅ Hence, **building a heap using heapify is O(n)**.
+
+> #### Java Implementation (Build Heap in O(N))
+
+```java
+public class BuildHeap {
+    public static void heapifyDown(int[] arr, int n, int idx) {
+        int smallest = idx;
+        int left = 2 * idx + 1;
+        int right = 2 * idx + 2;
+
+        if (left < n && arr[left] < arr[smallest])
             smallest = left;
-        }
-
-        if (right < n && arr[right] < arr[smallest]) {
+        if (right < n && arr[right] < arr[smallest])
             smallest = right;
-        }
 
-        if (smallest != i) {
-            int temp = arr[i];
-            arr[i] = arr[smallest];
+        if (smallest != idx) {
+            int temp = arr[idx];
+            arr[idx] = arr[smallest];
             arr[smallest] = temp;
 
             heapifyDown(arr, n, smallest);
         }
     }
+    public static void buildMinHeap(int[] arr, int n) {
+        // Start from the last non-leaf node
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapifyDown(arr, n, i);
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 8, 4, 1, 2};
+        int n = arr.length;
+
+        buildMinHeap(arr, n);
+
+        System.out.print("MinHeap: ");
+        for (int val : arr) {
+            System.out.print(val + " ");
+        }
+    }
 }
 ```
 
-### Heap Applications
+> ## Heaps are widely used in several applications:
 
-- **Priority Queues**
-- **Heap Sort algorithm**
-- **Graph algorithms** (Dijkstra's, Prim's)
-- **Find K largest/smallest elements**
-- **Median maintenance**
+> #### 1. **Priority Queue**
 
-### Complexity Analysis
+- Heaps provide an efficient way to implement **priority queues**.
+- Operations:
+    - `insert()` → O(log n)
+    - `extract-max` / `extract-min` → O(log n)
+- Commonly used in task scheduling, CPU scheduling, and network traffic management.
 
-| Operation       | Time Complexity | Space Complexity |
-| --------------- | --------------- | ---------------- |
-| Insert          | O(log n)        | O(1)             |
-| Extract Min/Max | O(log n)        | O(1)             |
-| Peek            | O(1)            | O(1)             |
-| Build Heap      | O(n)            | O(1)             |
-| Heapify         | O(log n)        | O(1)             |
+> #### 2. **Heap Sort**
+
+- Heap can be used to **sort an array** in O(n log n) time.
+- Steps:
+    1. Build a max-heap from the array.
+    2. Swap root with the last element and reduce heap size.
+    3. Heapify the root.
+    4. Repeat until the array is sorted.
+
+> #### 3. **Graph Algorithms**
+
+- **Dijkstra’s shortest path algorithm**
+    - Uses a min-heap (priority queue) to efficiently pick the next vertex with the smallest distance.
+- **Prim’s Minimum Spanning Tree (MST)**
+    - Uses a min-heap to pick the edge with minimum weight.
+
+> #### 4. **Order Statistics**
+
+- Find the **kth largest/smallest element** efficiently.
+- Use a min-heap of size k to keep track of the top k elements.
+
+> #### 5. **Median Maintenance**
+
+- Use **two heaps** (max-heap + min-heap) to maintain the median of a dynamically changing dataset.
+- Useful in real-time analytics and streaming data.
+
+> #### 6. **Load Balancing**
+
+- Heaps can manage servers by load.
+- Max-heap or min-heap helps pick the **least loaded or most loaded server** quickly.
+
+> #### 7. **Interval Problems**
+
+- Problems like **meeting rooms**, **merging k sorted arrays**, or **finding overlapping intervals** often use heaps to efficiently process events in order.
 
 **Common Interview Questions:**
 
@@ -3371,3 +3359,4 @@ _"The best way to learn is by doing. Practice these concepts regularly!"_
 **Made with ❤️ for aspiring software engineers**
 
 </div>
+$$
