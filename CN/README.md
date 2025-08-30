@@ -13,14 +13,11 @@
 
 ## Communication Protocol
 
-   
+```mermaid
+  flowchart LR
+    Sender[Sender] <------->| Communication Medium | Receiver[Receiver]
 
-  ```mermaid
-    flowchart LR
-      Sender[Sender] <------->| Communication Medium | Receiver[Receiver]
-
-  ```
-  
+```
 
 <div style="background-color: #b15b21; padding: 10px; border-radius: 8px; font-weight: bold; width: fit-content; margin: 20px auto; text-align: center;">
   Both sender and receiver follow the protocol.
@@ -244,8 +241,6 @@
 
 > **Application Layer**: The application layer is responsible for
 > providing services to the user.
-
-<<<<<<< HEAD
 
 > **Application Layer**: The application layer is responsible for
 > providing services to the user.
@@ -610,11 +605,8 @@ flowchart
 
 =======
 
-> > > > > > > 126361f6cbbcb9bbb98096adde8edf2ac5ef037a
-
-* ## DNS
-  
-* **Name Space**:-Names must be unique because addresses are unique.
+- ## DNS
+- **Name Space**:-Names must be unique because addresses are unique.
 
 ```mermaid
 flowchart
@@ -623,314 +615,299 @@ flowchart
 
 ```
 
-* **Flat name space**:-A name is a sequence of characters without interface.
-* **Hierarchical Name Space**:-
-   1. Each name is made of several parts.
-   2. Each parts may have meaning/interpretation.
-   3. Eg. (nits.ac.in=>     nits .  ac. in)
-   4. Authority to assign and control of name space can be decentralized.
-   5. The central authority can assign and control a part of the name that 
-defines the nature of the organization and name of the organization.
-   6. The organization add (suffixes) or (prefixes) to define its host or 
-resources.
-  7. The management of the organization need not to worry about the 
-prefix chosen by different organization.
-  8. names are defined in an inverted tree structure with the 
-root at the top. 
+- **Flat name space**:-A name is a sequence of characters without interface.
+- **Hierarchical Name Space**:-
+    1. Each name is made of several parts.
+    2. Each parts may have meaning/interpretation.
+    3. Eg. (nits.ac.in=> nits . ac. in)
+    4. Authority to assign and control of name space can be decentralized.
+    5. The central authority can assign and control a part of the name that
+       defines the nature of the organization and name of the organization.
+    6. The organization add (suffixes) or (prefixes) to define its host or
+       resources.
+    7. The management of the organization need not to worry about the
+       prefix chosen by different organization.
+    8. names are defined in an inverted tree structure with the
+       root at the top.
 
+- ### Label
+    - Each node in the tree has a label, which is a string with max of 63
+      characters.
+    - The root label is null string (empty string)
+      <P align="center">
+      <img src="image-15.png" alt="alt text" />
+          </P>
 
+- ### Domain Name
+    - The domain names are always read from the node uptothe root so
+      that it ends with last label of the root (null).
+    - Each node in the tree has a domain name.
+    - A full domain name is a sequence of labels separated by dots (.).
+    - A full domain name always ends with a null label, which means last
+      character is a dot because the null string is nothing.
 
-* ### Label
-  * Each node in the tree has a label, which is a string with max of 63 
-characters.
-  * The root label is null string (empty string)
-  
-  
-    <P align="center">
- <img src="image-15.png" alt="alt text" />
- </P>
+            <P align="center">
 
-* ### Domain Name
-  * The domain names are always read from the node uptothe root so 
-that it ends with last label of the root (null).
-  * Each node in the tree has a domain name.
-  * A full domain name is a sequence of labels separated by dots (.).
-  * A full domain name always ends with a null label, which means last 
-character is a dot because the null string is nothing.
+          <img src="image-16.png" alt="alt text" />
+          </P>
 
+### Domain Name Categories
 
+1.  **Fully Qualified Domain Name (FQDN)**:If a domain name is terminated by a labelof root i.e. null string it is call
+    FQDN.
+2.  **Partially Qualified Domain Name (PQDN)**:A PQDN starts from a node but it does not reach the root.
 
-   <P align="center">
- <img src="image-16.png" alt="alt text" />
- </P>
-  
-###  Domain Name Categories
- 1. **Fully Qualified Domain Name (FQDN)**:If a domain name is terminated by a labelof root i.e. null string it is call 
-FQDN.
- 2. **Partially Qualified Domain Name (PQDN)**:A PQDN starts from a node but it does not reach the root.
-  
-* ### Domain
-   * A domain is subtree of the domain space.
-   * The name of the domain is the domain name of the node at the top of 
-the subtree.
+- ### Domain
+    - A domain is subtree of the domain space.
+    - The name of the domain is the domain name of the node at the top of
+      the subtree.
 
+            <P align="center">
 
-
-   <P align="center">
- <img src="image-17.png" alt="alt text" />
- </P>
+          <img src="image-17.png" alt="alt text" />
+          </P>
 
 ### Distribution of Name Space
 
-* The information contained in the domain name space must be stored.
-* However, it is very inefficient and also unreliable to have just one computer 
-store such a huge amount of information. 
-*  It is not reliable because any failure makes the data inaccessible.
-*  The solution to these problems is to distribute the information among many 
-computers called DNS servers.
-* Because a domain created in this way could be very large, DNS allows 
-domains to be divided further into smaller domains (subdomains).
+- The information contained in the domain name space must be stored.
+- However, it is very inefficient and also unreliable to have just one computer
+  store such a huge amount of information.
+- It is not reliable because any failure makes the data inaccessible.
+- The solution to these problems is to distribute the information among many
+  computers called DNS servers.
+- Because a domain created in this way could be very large, DNS allows
+  domains to be divided further into smaller domains (subdomains).
 
-   <P align="center">
- <img src="image-18.png" alt="alt text" />
- </P>
+           <P align="center">
 
+         <img src="image-18.png" alt="alt text" />
+         </P>
 
-###  DNS in the Internet
-* DNS is a protocol that can be used in different platforms. 
-* In the Internet, the domain name space (tree) is divided into three 
-different sections: 
-  1. **Generic domains**:-Defines registered hosts according to their generic behavior. 
-  2. **Country Domains**:-he country domains section uses two-character country abbreviations 
-(e.g., infor Bharat). 
-   3. **Inverse Domain**:-The inverse domain is used to map an address to a name, The server asks its resolverto send a query to the DNS server to map 
-an address to a name to determine if the client is on the authorized 
-list.
+### DNS in the Internet
 
-* ### Name-address Resolution
-* The resolver, a DNS client within the client/server-based DNS system, maps names to addresses (or vice versa) by sending a request to the nearest DNS server, which either provides the information directly or refers/queries other servers, and once the mapping is obtained, the resolver interprets the response, checks for errors, and delivers the final result to the requesting process
+- DNS is a protocol that can be used in different platforms.
+- In the Internet, the domain name space (tree) is divided into three
+  different sections:
+    1. **Generic domains**:-Defines registered hosts according to their generic behavior.
+    2. **Country Domains**:-he country domains section uses two-character country abbreviations
+       (e.g., infor Bharat).
+    3. **Inverse Domain**:-The inverse domain is used to map an address to a name, The server asks its resolverto send a query to the DNS server to map
+       an address to a name to determine if the client is on the authorized
+       list.
+
+- ### Name-address Resolution
+- The resolver, a DNS client within the client/server-based DNS system, maps names to addresses (or vice versa) by sending a request to the nearest DNS server, which either provides the information directly or refers/queries other servers, and once the mapping is obtained, the resolver interprets the response, checks for errors, and delivers the final result to the requesting process
 
 1. Recursive Resolution:-
-   
+
    <P align="center">
  <img src="image-19.png" alt="alt text" />
  </P>
 
- 2. Iterative Resolution:-
-  
+2. Iterative Resolution:-
     <P align="center">
  <img src="image-20.png" alt="alt text" />
  </P>
 
+- ## Electronic Mail (email)
 
- * ## Electronic Mail (email)
-  
-  * There are three components in email systems:
-      1. User Agent (UA)
-      2. Message Transfer Agent (MTA)
-      3. Message Access Agent (MAA)
-    
-
+- There are three components in email systems:
+    1. User Agent (UA)
+    2. Message Transfer Agent (MTA)
+    3. Message Access Agent (MAA)
 
  <P align="center">
  <img src="image-21.png" alt="alt text" />
  </P>
 
- * **User Agent (UA)**:-
-   1. It provides service to the user to make the process of sending and 
-receiving a message easier.
-   2. It is a software package (program) that composes, reads, replies to, 
-and forwards messages. Various services are shown in Figure below.
-  3. To deliver mail, a mail handling system must use an addressing system with 
-unique addresses. 
-  4.  In the Internet, the address consists of two parts: a local partand a domain 
-name, separated by an @sign.
+- **User Agent (UA)**:-
+    1. It provides service to the user to make the process of sending and
+       receiving a message easier.
+    2. It is a software package (program) that composes, reads, replies to,
+       and forwards messages. Various services are shown in Figure below.
 
-###  MIME
-* Multipurpose Internet Mail Extensions (MIME) is a supplementary 
-protocol that allows non-ASCII data to be sent through e-mail.
-* Simple electronic email can send messages only in 7-bit ASCII format.
-* MIME transforms non-ASCII data at the sender site to ASCII data and 
-delivers them to the client MTA to be sent through the Internet. 
-* Message at the receiving side is transformed back to original data.
+3. To deliver mail, a mail handling system must use an addressing system with
+   unique addresses.
+4. In the Internet, the address consists of two parts: a local partand a domain
+   name, separated by an @sign.
 
-###  Message Transfer Agent : SMTP(protocol)
-* The actual mail transfer is done through message transfer agents. 
-* To send mail, a system must have the client MTA, and to receive mail, a 
-system must have a server MTA. 
-* The formal protocol that defines the MTA client and server in the 
-Internet is called the Simple Mail Transfer Protocol (SMTP).
-* SMTP is used two times, between the sender and the sender's mail 
-server and between the two mail servers.
+### MIME
+
+- Multipurpose Internet Mail Extensions (MIME) is a supplementary
+  protocol that allows non-ASCII data to be sent through e-mail.
+- Simple electronic email can send messages only in 7-bit ASCII format.
+- MIME transforms non-ASCII data at the sender site to ASCII data and
+  delivers them to the client MTA to be sent through the Internet.
+- Message at the receiving side is transformed back to original data.
+
+### Message Transfer Agent : SMTP(protocol)
+
+- The actual mail transfer is done through message transfer agents.
+- To send mail, a system must have the client MTA, and to receive mail, a
+  system must have a server MTA.
+- The formal protocol that defines the MTA client and server in the
+  Internet is called the Simple Mail Transfer Protocol (SMTP).
+- SMTP is used two times, between the sender and the sender's mail
+  server and between the two mail servers.
 
  <P align="center">
  <img src="image-22.png" alt="alt text" />
  </P>
 
- ### Message Access Agent: POP and IMAP
- * SMTP is used in first two stages (components).
- * It is not involved in the third stage because SMTP is a pushprotocol; it 
-pushes the message from the client to the server.
- * In last stage, message has to be pulled from server to client.  So, third 
-stage has to use pull protocol.
+### Message Access Agent: POP and IMAP
 
-* Message Access Protocols:
-   1. Post office Protocol version 3 (POP3)
-   2. Internet Mail Access Protocol ver4 (IMAP4)
+- SMTP is used in first two stages (components).
+- It is not involved in the third stage because SMTP is a pushprotocol; it
+  pushes the message from the client to the server.
+- In last stage, message has to be pulled from server to client. So, third
+  stage has to use pull protocol.
 
+- Message Access Protocols:
+    1. Post office Protocol version 3 (POP3)
+    2. Internet Mail Access Protocol ver4 (IMAP4)
 
-##  POP3
-* Post Office Protocol, version 3 (POP3) is simple and limited in 
-functionality. 
-* The client POP3 software is installed on the recipient computer.
-* The server POP3 software is installed on the mail server.
-* POP3 has two modes: 
-   1. Delete mode-the mail is deleted from the mailbox after each retrieval.
-   2. Keep mode-the mail remains in the mailbox after retrieval.
+## POP3
 
-##  IMAP4
-* IMAP4 is similar to POP3, but it has more features; IMAP4 is more 
-powerful and more complex.
-* A user can partially download e-mail. 
-* A user can create, delete, or rename mailboxes on the mail server. 
-* A user can search the contents of the e-mail for a specific string of 
-characters prior to downloading.
+- Post Office Protocol, version 3 (POP3) is simple and limited in
+  functionality.
+- The client POP3 software is installed on the recipient computer.
+- The server POP3 software is installed on the mail server.
+- POP3 has two modes:
+    1. Delete mode-the mail is deleted from the mailbox after each retrieval.
+    2. Keep mode-the mail remains in the mailbox after retrieval.
 
+## IMAP4
 
-* ## Web-based Email
-* Some websites today provide this service to anyone who accesses the 
-site eg. Google, Yahoo, Hotmail.
-* Mail transfer from Alice's browser to her mail server is done through 
-HTTP.
+- IMAP4 is similar to POP3, but it has more features; IMAP4 is more
+  powerful and more complex.
+- A user can partially download e-mail.
+- A user can create, delete, or rename mailboxes on the mail server.
+- A user can search the contents of the e-mail for a specific string of
+  characters prior to downloading.
 
-* The transfer of the message from the sending mail server to the 
-receiving mail server is still through SMTP.
-*  Finally, the message from the receiving server (the Web server) to 
-Bob's browser is done through HTTP.
+- ## Web-based Email
+- Some websites today provide this service to anyone who accesses the
+  site eg. Google, Yahoo, Hotmail.
+- Mail transfer from Alice's browser to her mail server is done through
+  HTTP.
 
-* ##  File Transfer -FTP
-* File Transfer Protocol (FTP) is the standard mechanism provided by 
-TCP/IP for copying a file from one host to another.
- * FTP establishes two TCP connections between the hosts.
- * One connection is used for data transfer, the other for control information 
-(commands and responses). 
- * FTP uses two well-known TCP ports:
-   1. Port 21 is used for the control connection, and
-   2. port 20 is used for the data connection. 
+- The transfer of the message from the sending mail server to the
+  receiving mail server is still through SMTP.
+- Finally, the message from the receiving server (the Web server) to
+  Bob's browser is done through HTTP.
 
-
-
+- ## File Transfer -FTP
+- File Transfer Protocol (FTP) is the standard mechanism provided by
+  TCP/IP for copying a file from one host to another.
+- FTP establishes two TCP connections between the hosts.
+- One connection is used for data transfer, the other for control information
+  (commands and responses).
+- FTP uses two well-known TCP ports:
+    1. Port 21 is used for the control connection, and
+    2. port 20 is used for the data connection.
 
  <P align="center">
  <img src="image-23.png" alt="alt text" />
  </P>
 
-* ##  Routing Protocols and Algorithms
+- ## Routing Protocols and Algorithms
 
 ## Types of Routing
- * Autonomous system(AS) is a group 
-of networks and routers come under 
-single administrative authority.
- 1. Inter-domain routing-Routing 
-between AS
 
-2. Intra-domain routing-Routing within 
-AS
+- Autonomous system(AS) is a group
+  of networks and routers come under
+  single administrative authority.
 
+1. Inter-domain routing-Routing
+   between AS
 
+2. Intra-domain routing-Routing within
+   AS
 
  <P align="center">
  <img src="image-24.png" alt="alt text" />
  </P>
 
+> ### Two Node Instability
 
- > ###  Two Node Instability
-  * Imagine only 2 stations (nodes) trying to send data on a shared medium.> * If both nodes sense the channel as idle at the same time, they may transmit simultaneously → collision. 
- * After collision, both back off and retry, but if they both choose the same backoff time repeatedly → continuous collisions can occur.
-* This situation is called 2-node instability (system becomes unstable because just 2 nodes cannot resolve the collision smoothly).
-
+- Imagine only 2 stations (nodes) trying to send data on a shared medium.> \* If both nodes sense the channel as idle at the same time, they may transmit simultaneously → collision.
+- After collision, both back off and retry, but if they both choose the same backoff time repeatedly → continuous collisions can occur.
+- This situation is called 2-node instability (system becomes unstable because just 2 nodes cannot resolve the collision smoothly).
 
 ### Three-Node Instability
-* Now, consider 3 or more nodes sharing the medium.
-* When collisions occur among them, the backoff algorithm has more randomness (different nodes likely pick different wait times).
-* But as the number of nodes increases, probability of repeated collisions also increases.
-* This makes the system unstable with 3 or more nodes, where throughput may collapse due to excessive collisions.
 
+- Now, consider 3 or more nodes sharing the medium.
+- When collisions occur among them, the backoff algorithm has more randomness (different nodes likely pick different wait times).
+- But as the number of nodes increases, probability of repeated collisions also increases.
+- This makes the system unstable with 3 or more nodes, where throughput may collapse due to excessive collisions.
 
-* ## Routing Information Protocol (RIP)
-   * It is based on distance vector routing (DVR).
-   * Metric used in RIP is hop count i.e. the number of links (networks) that 
-have to be used to reach the destination.
- * It helps routers figure out the best path to send data from one network to another.
- * Maximum hop count = 15.
+- ## Routing Information Protocol (RIP)
+    - It is based on distance vector routing (DVR).
+    - Metric used in RIP is hop count i.e. the number of links (networks) that
+      have to be used to reach the destination.
+- It helps routers figure out the best path to send data from one network to another.
+- Maximum hop count = 15.
 
+- ### What is Border Gateway Protocol (BGP)?
+- To exchange routing information between different Autonomous Systems (AS)
+- Unlike RIP (distance vector) or OSPF (link state), BGP is a path vector protocol – it keeps the whole path (list of AS numbers) to avoid loop
 
-* ### What is Border Gateway Protocol (BGP)?
-* To exchange routing information between different Autonomous Systems (AS)
-* Unlike RIP (distance vector) or OSPF (link state), BGP is a path vector protocol – it keeps the whole path (list of AS numbers) to avoid loop
+## Addressing
 
-##  Addressing
-*  Data link layer, we need a MAC address to choose ONE node 
-among SEVERAL node.
-* At the Network layer we need an IP address to choose one Host 
-among Millions.
-* At the Transport layer we need a transport layer address called a 
-PORT NUMBER ,to choose among multiple processes running on the 
-destination host.
-* Destination port number for delivery; source port no for the reply
+- Data link layer, we need a MAC address to choose ONE node
+  among SEVERAL node.
+- At the Network layer we need an IP address to choose one Host
+  among Millions.
+- At the Transport layer we need a transport layer address called a
+  PORT NUMBER ,to choose among multiple processes running on the
+  destination host.
+- Destination port number for delivery; source port no for the reply
 
-* ### Socket Address
-* Process to process delivery needs two identifiers , IP address and port 
-number at each end to make a connection.
-* The combination of IP address and a Port number is called a socket 
-address
+- ### Socket Address
+- Process to process delivery needs two identifiers , IP address and port
+  number at each end to make a connection.
+- The combination of IP address and a Port number is called a socket
+  address
 
-| Feature            | UDP (User Datagram Protocol)        | TCP (Transmission Control Protocol) | SMTP (Simple Mail Transfer Protocol) |
-|--------------------|-------------------------------------|--------------------------------------|---------------------------------------|
-| Layer              | Transport Layer                    | Transport Layer                      | Application Layer                     |
-| Connection         | Connectionless                     | Connection-oriented                   | Connection-oriented (uses TCP)         |
-| Reliability        | No reliability, no ACKs            | Reliable (ACKs, retransmission)       | Reliable (inherited from TCP)          |
-| Data Transfer      | Fast, low overhead                 | Slower due to error checking & flow control | Used for sending emails (store-and-forward) |
-| Ordering           | No guarantee of order              | Ensures ordered delivery              | Ensures email delivery in correct sequence |
-| Use Cases          | Streaming, VoIP, DNS, gaming       | File transfer, web browsing, emails   | Email transfer between mail servers    |
-| Protocol Type      | Transport protocol                 | Transport protocol                    | Application protocol (runs on TCP)     |
-| Port Number        | Varies (e.g., DNS uses 53)         | Varies (e.g., HTTP uses 80, HTTPS 443)| Default port 25 (SMTP), also 465/587   |
-
+| Feature       | UDP (User Datagram Protocol) | TCP (Transmission Control Protocol)         | SMTP (Simple Mail Transfer Protocol)        |
+| ------------- | ---------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Layer         | Transport Layer              | Transport Layer                             | Application Layer                           |
+| Connection    | Connectionless               | Connection-oriented                         | Connection-oriented (uses TCP)              |
+| Reliability   | No reliability, no ACKs      | Reliable (ACKs, retransmission)             | Reliable (inherited from TCP)               |
+| Data Transfer | Fast, low overhead           | Slower due to error checking & flow control | Used for sending emails (store-and-forward) |
+| Ordering      | No guarantee of order        | Ensures ordered delivery                    | Ensures email delivery in correct sequence  |
+| Use Cases     | Streaming, VoIP, DNS, gaming | File transfer, web browsing, emails         | Email transfer between mail servers         |
+| Protocol Type | Transport protocol           | Transport protocol                          | Application protocol (runs on TCP)          |
+| Port Number   | Varies (e.g., DNS uses 53)   | Varies (e.g., HTTP uses 80, HTTPS 443)      | Default port 25 (SMTP), also 465/587        |
 
 ### TCP Connection Establishment
-* TCP transmits data in full-Duplex mode .
-* When two TCP’s in two machines are connected, they are able .
-to send segment to each other simultaneously.
-* So each party must initialize communication and get approval .
-from other party before any data are transferred.
- * The connection establishment in TCP is called Three way 
-handshaking.
 
+- TCP transmits data in full-Duplex mode .
+- When two TCP’s in two machines are connected, they are able .
+  to send segment to each other simultaneously.
+- So each party must initialize communication and get approval .
+  from other party before any data are transferred.
+- The connection establishment in TCP is called Three way
+  handshaking.
 
-* TCP uses sliding window to handle the flow control.
+- TCP uses sliding window to handle the flow control.
 
-###  TCP Congestion Control
+### TCP Congestion Control
 
-   * Two Categories of Congestion Control Mechanisms:
-     1. Open Loop Congestion Control
-        * These policies are applied to prevent congestion before it happens.
-        * In these mechanisms, congestion control is handled by either source or 
-destination.
-     2. Closed Loop Congestion Control
-         *  These mechanisms try to overcome congestion after it happens
-  
+- Two Categories of Congestion Control Mechanisms: 1. Open Loop Congestion Control
+  _ These policies are applied to prevent congestion before it happens.
+  _ In these mechanisms, congestion control is handled by either source or
+  destination. 2. Closed Loop Congestion Control \* These mechanisms try to overcome congestion after it happens
 
-  ## ARP v/s RARP
+## ARP v/s RARP
 
-| Feature            | ARP (Address Resolution Protocol)                     | RARP (Reverse Address Resolution Protocol)            |
-|--------------------|-------------------------------------------------------|-------------------------------------------------------|
-| Full Form          | Address Resolution Protocol                           | Reverse Address Resolution Protocol                   |
-| Purpose            | Finds the **MAC address** from a given **IP address** | Finds the **IP address** from a given **MAC address** |
-| Direction          | IP → MAC                                              | MAC → IP                                              |
-| Layer              | Network Layer (works between IP & Data Link)          | Network Layer (works between Data Link & IP)          |
-| Used By            | Sender device (e.g., computer sending data)           | Diskless machines (need IP at boot time)              |
-| Packet Broadcast   | Broadcasts an ARP request asking "Who has this IP?"   | Broadcasts a RARP request asking "Who has this MAC?"  |
-| Response           | Device with that IP replies with its MAC address      | RARP server replies with the IP address               |
-| Current Use        | Still in use in LANs (IPv4)                           | Obsolete, replaced by BOOTP and DHCP                  |
-
-
+| Feature          | ARP (Address Resolution Protocol)                     | RARP (Reverse Address Resolution Protocol)            |
+| ---------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| Full Form        | Address Resolution Protocol                           | Reverse Address Resolution Protocol                   |
+| Purpose          | Finds the **MAC address** from a given **IP address** | Finds the **IP address** from a given **MAC address** |
+| Direction        | IP → MAC                                              | MAC → IP                                              |
+| Layer            | Network Layer (works between IP & Data Link)          | Network Layer (works between Data Link & IP)          |
+| Used By          | Sender device (e.g., computer sending data)           | Diskless machines (need IP at boot time)              |
+| Packet Broadcast | Broadcasts an ARP request asking "Who has this IP?"   | Broadcasts a RARP request asking "Who has this MAC?"  |
+| Response         | Device with that IP replies with its MAC address      | RARP server replies with the IP address               |
+| Current Use      | Still in use in LANs (IPv4)                           | Obsolete, replaced by BOOTP and DHCP                  |
