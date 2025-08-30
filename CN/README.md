@@ -609,3 +609,73 @@ flowchart
 =======
 
 > > > > > > > 126361f6cbbcb9bbb98096adde8edf2ac5ef037a
+
+* ## DNS
+  
+* **Name Space**:-Names must be unique because addresses are unique.
+
+```mermaid
+flowchart
+  node1[Name space method]--->node2[Flat name space]
+  node1[Name space method]--->node3[Hierarchical Name Space]
+
+```
+
+* **Flat name space**:-A name is a sequence of characters without interface.
+* **Hierarchical Name Space**:-
+   1. Each name is made of several parts.
+   2. Each parts may have meaning/interpretation.
+   3. Eg. (nits.ac.in=>     nits .  ac. in)
+   4. Authority to assign and control of name space can be decentralized.
+   5. The central authority can assign and control a part of the name that 
+defines the nature of the organization and name of the organization.
+   6. The organization add (suffixes) or (prefixes) to define its host or 
+resources.
+  7. The management of the organization need not to worry about the 
+prefix chosen by different organization.
+  8. names are defined in an inverted tree structure with the 
+root at the top. 
+
+
+
+* ### Label
+  * Each node in the tree has a label, which is a string with max of 63 
+characters.
+  * The root label is null string (empty string)
+  
+  
+    <P align="center">
+ <img src="image-15.png" alt="alt text" />
+ </P>
+
+* ### Domain Name
+  * The domain names are always read from the node uptothe root so 
+that it ends with last label of the root (null).
+  * Each node in the tree has a domain name.
+  * A full domain name is a sequence of labels separated by dots (.).
+  * A full domain name always ends with a null label, which means last 
+character is a dot because the null string is nothing.
+
+
+
+   <P align="center">
+ <img src="image-16.png" alt="alt text" />
+ </P>
+  
+###  Domain Name Categories
+ 1. **Fully Qualified Domain Name (FQDN)**:If a domain name is terminated by a labelof root i.e. null string it is call 
+FQDN.
+ 2. **Partially Qualified Domain Name (PQDN)**:A PQDN starts from a node but it does not reach the root.
+  
+* ### Domain
+   * A domain is subtree of the domain space.
+   * The name of the domain is the domain name of the node at the top of 
+the subtree.
+
+
+
+   <P align="center">
+ <img src="image-17.png" alt="alt text" />
+ </P>
+
+ 
