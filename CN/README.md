@@ -131,9 +131,9 @@
 
 - Main Responsibility: The physical layer is concerned with
   transmitting raw bits over a communication medium/channel.
-  <P align="center">
-  <img src="image-4.png" alt="alt text" />
-  </P>
+    <P align="center">
+    <img src="image-4.png" alt="alt text" />
+    </P>
 
 - It also define the type of transmission media.
 - The physical layer data consists of a stream of
