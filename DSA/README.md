@@ -1475,7 +1475,124 @@ flowchart TD
 
 > #### Implementation
 
+```java
+/* Min Heap */
+public class MinHeap<T extends Comparable<T>> {
+    private T[] heap;
+    private int size;
+
+    @SuppressWarnings("unchecked")
+    public MinHeap(int capacity) {
+        this.heap = (T[]) new Comparable[capacity];
+        this.size = 0;
+    }
+    private void swap(int i, int j) {
+        T temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+    public void insert(T val) {
+        if (size == heap.length)
+            throw new IllegalStateException("Heap is full");
+        int currIdx = size;
+        heap[size++] = val;
+        while (currIdx > 0 && heap[currIdx].compareTo(heap[(currIdx - 1) / 2]) < 0) {
+            swap(currIdx, (currIdx - 1) / 2);
+            currIdx = (currIdx - 1) / 2;
+        }
+    }
+    public T popMin() {
+        if (size == 0)
+            throw new IllegalStateException("Heap is empty");
+        T ans = heap[0];
+        heap[0] = heap[--size];
+        if (size > 0)
+            heapifyDown(0);
+        return ans;
+    }
+    private void heapifyDown(int currIdx) {
+        int left = 2 * currIdx + 1;
+        int right = 2 * currIdx + 2;
+        int smallest = currIdx;
+        if (left < size && heap[left].compareTo(heap[smallest]) < 0)
+            smallest = left;
+        if (right < size && heap[right].compareTo(heap[smallest]) < 0)
+            smallest = right;
+        if (smallest != currIdx) {
+            swap(currIdx, smallest);
+            heapifyDown(smallest);
+        }
+    }
+    public int getSize() {
+        return size;
+    }
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
+
+```
+
 > ## Heaps are widely used in several applications:
+
+```java
+/* Max Heap */
+public class MaxHeap<T extends Comparable<T>> {
+    private T[] heap;
+    private int size;
+
+    @SuppressWarnings("unchecked")
+    public MaxHeap(int capacity) {
+        this.heap = (T[]) new Comparable[capacity];
+        this.size = 0;
+    }
+    private void swap(int i, int j) {
+        T temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+    public void insert(T val) {
+        if (size == heap.length)
+            throw new IllegalStateException("Heap is full");
+
+        int currIdx = size;
+        heap[size++] = val;
+
+        while (currIdx > 0 && heap[currIdx].compareTo(heap[(currIdx - 1) / 2]) > 0) {
+            swap(currIdx, (currIdx - 1) / 2);
+            currIdx = (currIdx - 1) / 2;
+        }
+    }
+    public T popMax() {
+        if (size == 0)
+            throw new IllegalStateException("Heap is empty");
+        T ans = heap[0];
+        heap[0] = heap[--size];
+        if (size > 0)
+            heapifyDown(0);
+        return ans;
+    }
+    private void heapifyDown(int currIdx) {
+        int left = 2 * currIdx + 1;
+        int right = 2 * currIdx + 2;
+        int largest = currIdx;
+        if (left < size && heap[left].compareTo(heap[largest]) > 0)
+            largest = left;
+        if (right < size && heap[right].compareTo(heap[largest]) > 0)
+            largest = right;
+        if (largest != currIdx) {
+            swap(currIdx, largest);
+            heapifyDown(largest);
+        }
+    }
+    public int getSize() {
+        return size;
+    }
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
+```
 
 > #### 1. **Priority Queue**
 
