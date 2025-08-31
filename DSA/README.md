@@ -1690,17 +1690,17 @@ graph TD
 </div>
 
 <<<<<<< Updated upstream
+
 > ### Red-Black Trees
 
-- Red-Black trees are self-balancing binary search trees that maintain balance through a set of coloring rules and rotations. They guarantee O(log n) time complexity for search, insertion, and deletion operations.
-=======
-> ### ⏱️ Time Complexity
->
-> | Operation | Time Complexity | Why                   |
-> | --------- | --------------- | --------------------- |
-> | Search    | O(log n)        | Balanced height       |
-> | Insert    | O(log n)        | May involve rotations |
-> | Delete    | O(log n)        | May involve rotations |
+- # Red-Black trees are self-balancing binary search trees that maintain balance through a set of coloring rules and rotations. They guarantee O(log n) time complexity for search, insertion, and deletion operations.
+    > ### ⏱️ Time Complexity
+    >
+    > | Operation | Time Complexity | Why                   |
+    > | --------- | --------------- | --------------------- |
+    > | Search    | O(log n)        | Balanced height       |
+    > | Insert    | O(log n)        | May involve rotations |
+    > | Delete    | O(log n)        | May involve rotations |
 
 > ## Summary of AVL Tree Rotations
 
@@ -1739,13 +1739,14 @@ graph TD
 - AVL-Tree are more balanced compared to red RB-Tree, however the the time complexity remains same.
 - AVL-Tree(Searching faster sing they are highly balanced), RB-Tree(Insertion and delection are faster since the only require atmost 2 rotations)
 - Every AVL-Tree satisfies the property of RB-Tree but the vice-versa is not true.
->>>>>>> Stashed changes
+    > > > > > > > Stashed changes
 
 #### Theory
 
 > #### Properties:
 
 <<<<<<< Updated upstream
+
 > ## Basic Structure
 
 ```mermaid
@@ -2327,14 +2328,14 @@ public class RedBlackTreeExample {
 }
 ```
 
-Red-Black trees provide an excellent balance between the simplicity of implementation and the performance guarantees, making them ideal for many real-world applications where frequent insertions and deletions occur alongside searches.
-=======
+# Red-Black trees provide an excellent balance between the simplicity of implementation and the performance guarantees, making them ideal for many real-world applications where frequent insertions and deletions occur alongside searches.
+
 - Node Color: Each node is either red or black.
 - Root Property: The root of the tree is always black.
 - Red Property: Red nodes cannot have red children (no two consecutive red nodes on any path).
 - Black Property: Every path from a node to its descendant null nodes (leaves) has the same number of black nodes.
 - Leaf Property: All leaves (NIL nodes) are black.
->>>>>>> Stashed changes
+    > > > > > > > Stashed changes
 
 > ### Trie (Prefix Tree)
 
@@ -2349,7 +2350,8 @@ Red-Black trees provide an excellent balance between the simplicity of implement
     
 =======
 
->>>>>>> Stashed changes
+> > > > > > > Stashed changes
+
 ```mermaid
 graph TD
     A["Root"] --> B["c"]
@@ -2361,6 +2363,7 @@ graph TD
     C --> H["h"]
     H --> I["e (end)"]
 ```
+
 </div>
 
 </div>
