@@ -1380,3 +1380,1058 @@ int main()
 
 Define variables in the most limited existing scope. Avoid creating new blocks solely to limit variable scope; consider using functions instead.
 
+
+
+## 7.4 — Introduction to global variables
+
+**Alex &nbsp;&nbsp; June 9, 2024**
+
+In lesson 7.3 -- Local variables, we covered that local variables are variables defined inside a function body. Local variables have block scope (are only visible within the block they are declared in), and have automatic duration (they are created at the point of definition and destroyed when the block is exited).
+
+### Declaring global variables
+
+In C++, variables can also be declared outside of a function. Such variables are called **global variables**. By convention, global variables are declared at the top of a file, below the includes, in the global namespace.
+
+```cpp
+#include <iostream>
+
+// Variables declared outside of a function are global variables
+int g_x {}; // global variable g_x
+
+void doSomething()
+{
+    // global variables can be seen and used everywhere in the file
+    g_x = 3;
+    std::cout << g_x << '\n';
+}
+
+int main()
+{
+    doSomething();
+    std::cout << g_x << '\n';
+
+    // global variables can be seen and used everywhere in the file
+    g_x = 5;
+    std::cout << g_x << '\n';
+
+    return 0;
+}
+// g_x goes out of scope here
+```
+
+**Output:**
+```
+3
+3
+5
+```
+
+### The scope of global variables
+
+Identifiers declared in the global namespace have **global namespace scope** (commonly called global scope, and sometimes informally called file scope), which means they are visible from the point of declaration until the end of the file in which they are declared.
+
+Once declared, a global variable can be used anywhere in the file from that point onward. In the above example, global variable `g_x` is used in both functions `doSomething()` and `main()`.
+
+Global variables can also be defined inside a user-defined namespace. Here is the same example as above, but `g_x` has been moved from the global scope into user-defined namespace `Foo`:
+
+```cpp
+#include <iostream>
+
+namespace Foo // Foo is defined in the global scope
+{
+    int g_x {}; // g_x is now inside the Foo namespace, but is still a global variable
+}
+
+void doSomething()
+{
+    // global variables can be seen and used everywhere in the file
+    Foo::g_x = 3;
+    std::cout << Foo::g_x << '\n';
+}
+
+int main()
+{
+    doSomething();
+    std::cout << Foo::g_x << '\n';
+
+    // global variables can be seen and used everywhere in the file
+    Foo::g_x = 5;
+    std::cout << Foo::g_x << '\n';
+
+    return 0;
+}
+```
+
+Although the identifier `g_x` is now limited to the scope of namespace `Foo`, that name is still globally accessible (via `Foo::g_x`), and `g_x` is still a global variable.
+
+> **Key insight:**  
+> Variables declared inside a namespace are also global variables.
+
+**Best practice:**  
+Prefer defining global variables inside a namespace rather than in the global namespace.
+
+### Global variables have static duration
+
+Global variables are created when the program starts (before `main()` begins execution), and destroyed when it ends. This is called **static duration**. Variables with static duration are sometimes called *static variables*.
+
+### Naming global variables
+
+By convention, some developers prefix global variable identifiers with `g` or `g_` to indicate that they are global. This prefix serves several purposes:
+
+- It helps avoid naming collisions with other identifiers in the global namespace.
+- It helps prevent inadvertent name shadowing (see lesson 7.5).
+- It helps indicate that the prefixed variables persist beyond the scope of the function, and thus any changes we make to them will also persist.
+
+Global variables defined inside a user-defined namespace often omit the prefix (since the first two points above are not an issue in this case, and we can infer that a variable is a global when we see a prepended namespace name). However, it doesn’t hurt if you want to keep the prefix as a more visible reminder of the third point.
+
+**Best practice:**  
+Consider using a `g` or `g_` prefix when naming global variables (especially those defined in the global namespace), to help differentiate them from local variables and function parameters.
+
+> **Author’s note:**  
+> Using prefixes to represent the scope or duration of a variable (such as `g_` for global, `s_` for static, and `m_` for member) adds value and is not the same as Hungarian notation for types.
+
+### Global variable initialization
+
+Unlike local variables, which are uninitialized by default, variables with static duration are **zero-initialized by default**.
+
+Non-constant global variables can be optionally initialized:
+
+```cpp
+int g_x;       // no explicit initializer (zero-initialized by default)
+int g_y {};    // value initialized (resulting in zero-initialization)
+int g_z { 1 }; // list initialized with specific value
+```
+
+### Constant global variables
+
+Just like local variables, global variables can be constant. As with all constants, constant global variables must be initialized.
+
+```cpp
+#include <iostream>
+
+const int g_x;     // error: constant variables must be initialized
+constexpr int g_w; // error: constexpr variables must be initialized
+
+const int g_y { 1 };     // const global variable g_y, initialized with a value
+constexpr int g_z { 2 }; // constexpr global variable g_z, initialized with a value
+
+void doSomething()
+{
+    // global variables can be seen and used everywhere in the file
+    std::cout << g_y << '\n';
+    std::cout << g_z << '\n';
+}
+
+int main()
+{
+    doSomething();
+
+    // global variables can be seen and used everywhere in the file
+    std::cout << g_y << '\n';
+    std::cout << g_z << '\n';
+
+    return 0;
+}
+// g_y and g_z go out of scope here
+```
+
+> See lesson 7.10 for sharing global constants across multiple files.
+
+### A word of caution about (non-constant) global variables
+
+New programmers are often tempted to use lots of global variables, because they can be used without having to explicitly pass them to every function that needs them. However, use of non-constant global variables should generally be avoided altogether! We’ll discuss why in lesson 7.8.
+
+### Quick Summary
+
+```cpp
+// Non-constant global variables
+int g_x;                 // defines non-initialized global variable (zero initialized by default)
+int g_x {};              // defines explicitly value-initialized global variable
+int g_x { 1 };           // defines explicitly initialized global variable
+
+// Const global variables
+const int g_y;           // error: const variables must be initialized
+const int g_y { 2 };     // defines initialized global const
+
+// Constexpr global variables
+constexpr int g_y;       // error: constexpr variables must be initialized
+constexpr int g_y { 3 }; // defines initialized global constexpr
+```
+
+
+
+> ## 🚨 VERY VERY IMPORTANT CONCEPT: Categories of "Specifiers" in C++
+>
+> **Specifiers** in C++ are keywords that *fundamentally* change how variables and functions behave. Understanding them is **critical** for mastering C++!
+>
+> ### 1. Storage Class Specifiers
+> - **Purpose:** Control *linkage* and *storage duration* of variables.
+> - **Examples:**  
+>   `static`, `extern`, `mutable`, `thread_local`
+>
+> ### 2. Type Qualifiers (cv-qualifiers)
+> - **Purpose:** Modify the *type* of an object, affecting mutability and access.
+> - **Examples:**  
+>   `const`, `volatile`, `restrict` (C only), `mutable` (special meaning in classes)
+>
+> ### 3. Function Specifiers
+> - **Purpose:** Change *function behavior* and properties.
+> - **Examples:**  
+>   `inline`, `virtual`, `explicit`, `constexpr`, etc.
+>
+> ---
+>
+> **⚡ Mastery of these specifiers is ABSOLUTELY ESSENTIAL for understanding:**
+> - Object lifetimes
+> - Type safety
+> - Function semantics
+>
+> <span style="color:red; font-weight:bold;">Do not skip this concept!</span>
+## 7.6 — Internal Linkage
+
+**Alex &nbsp;&nbsp; January 30, 2025**
+
+---
+
+### What is Internal Linkage?
+
+Internal linkage restricts an identifier's visibility to a single translation unit (source file and its includes). Identifiers with internal linkage are **not accessible from other files**—even if they have the same name and type elsewhere.
+
+> **Key Insight:**  
+> Identifiers with internal linkage are either invisible to the linker or marked for use only in their translation unit.
+
+---
+
+### Internal Linkage for Global Variables
+
+- **Non-constant globals**: Use `static` to give internal linkage.
+- **const/constexpr globals**: Have internal linkage by default.
+
+```cpp
+#include <iostream>
+
+static int g_x{};        // internal linkage via static
+const int g_y{ 1 };      // internal linkage by default
+constexpr int g_z{ 2 };  // internal linkage by default
+
+int main()
+{
+    std::cout << g_x << ' ' << g_y << ' ' << g_z << '\n';
+    return 0;
+}
+```
+
+**Multiple files can have their own internal variables with the same name:**
+
+**a.cpp**
+```cpp
+constexpr int g_x { 2 }; // only accessible in a.cpp
+```
+
+**main.cpp**
+```cpp
+#include <iostream>
+static int g_x { 3 }; // only accessible in main.cpp
+
+int main()
+{
+    std::cout << g_x << '\n'; // prints 3
+    return 0;
+}
+```
+
+---
+
+### Why const Globals Have Internal Linkage
+
+- **Const objects** can be used in constant expressions and propagated via header files.
+- Internal linkage allows each translation unit to have its own definition, avoiding ODR (One Definition Rule) violations.
+- Enables safe use of constants in headers included in multiple files.
+
+---
+
+### Internal Linkage for Functions
+
+Functions default to **external linkage**, but can be made internal with `static`:
+
+**add.cpp**
+```cpp
+static int add(int x, int y)
+{
+    return x + y;
+}
+```
+
+**main.cpp**
+```cpp
+#include <iostream>
+int add(int x, int y); // forward declaration
+
+int main()
+{
+    std::cout << add(3, 4) << '\n'; // linker error: add is not accessible
+    return 0;
+}
+```
+
+---
+
+### Modern C++: Prefer Unnamed Namespaces
+
+- `static` for internal linkage is less common now.
+- **Unnamed namespaces** provide internal linkage for more identifier types and are preferred for multiple internal items.
+
+---
+
+### When to Use Internal Linkage?
+
+- To **hide identifiers** from other files (e.g., helper functions, private globals).
+- To **avoid naming collisions** across translation units.
+
+> **Best Practice:**  
+> Give internal linkage to identifiers you explicitly want to keep private to a file.  
+> Consider unnamed namespaces for broader internal linkage.
+
+---
+
+### Quick Summary
+
+```cpp
+// Internal global variables:
+static int g_x;          // zero-initialized internal global
+static int g_x{ 1 };     // initialized internal global
+
+const int g_y { 2 };     // initialized internal global const
+constexpr int g_y { 3 }; // initialized internal global constexpr
+
+// Internal functions:
+static int foo() {};     // internal function
+```
+
+---
+
+> See lesson 7.12 for a comprehensive summary of scope, duration, and linkage.
+
+
+## 7.7 — External linkage and variable forward declarations
+
+**Alex &nbsp;&nbsp; December 11, 2024**
+
+In the prior lesson, we discussed internal linkage, which restricts an identifier's visibility to a single file. Now, let's explore **external linkage**.
+
+### What is External Linkage?
+
+Identifiers with external linkage can be accessed from multiple files in a program. This allows sharing functions and variables across translation units.
+
+> **Key Insight:**  
+> Identifiers with external linkage are visible to the linker, enabling cross-file access and deduplication.
+
+---
+
+### Functions Have External Linkage by Default
+
+Functions are externally linked unless marked otherwise. To use a function from another file, provide a **forward declaration** in the file where you want to use it.
+
+**Example:**
+
+**a.cpp**
+```cpp
+#include <iostream>
+
+void sayHi()
+{
+    std::cout << "Hi!\n";
+}
+```
+
+**main.cpp**
+```cpp
+void sayHi(); // forward declaration
+
+int main()
+{
+    sayHi(); // linker connects this call to a.cpp's definition
+    return 0;
+}
+```
+
+Output:
+```
+Hi!
+```
+
+If `sayHi()` had internal linkage (`static`), the linker would not be able to connect the call, resulting in a linker error.
+
+---
+
+### Global Variables with External Linkage
+
+Global variables are **external by default** (except for `const` and `constexpr`, which are internal unless marked `extern`). To use a global variable from another file, declare it with `extern` (without initialization) in the file where you want to use it.
+
+**Example:**
+
+**a.cpp**
+```cpp
+int g_x { 2 };              // non-const globals: external by default
+extern const int g_y { 3 }; // const global: external linkage via extern
+```
+
+**main.cpp**
+```cpp
+#include <iostream>
+
+extern int g_x;       // forward declaration
+extern const int g_y; // forward declaration
+
+int main()
+{
+    std::cout << g_x << ' ' << g_y << '\n'; // prints 2 3
+    return 0;
+}
+```
+
+---
+
+### The `extern` Keyword
+
+- For **non-const globals**, `extern` is used for forward declarations only.
+- For **const/constexpr globals**, `extern` is required for external linkage and for forward declarations.
+
+**Note:**  
+Do not use `extern` with an initializer for non-const globals unless you intend a definition. Compilers may warn about suspicious usage.
+
+---
+
+### Forward Declaration Syntax
+
+```cpp
+// Non-constant
+int g_x;        // definition
+int g_x { 1 };  // definition with initializer
+extern int g_x; // forward declaration
+
+// Constant
+extern const int g_y { 1 }; // definition (must be initialized)
+extern const int g_y;       // forward declaration
+```
+
+---
+
+### Limitations with `constexpr`
+
+`constexpr` variables cannot be forward declared, as their value must be known at compile time. You can forward declare a `constexpr` as `const`, but it will be treated as a runtime constant.
+
+---
+
+### Best Practices
+
+- Use `extern` for global variable forward declarations and const global variable definitions.
+- Do **not** use `extern` for non-const global variable definitions (they are implicitly external).
+- Avoid using `extern` with initializers for non-const globals unless necessary.
+
+---
+
+### Quick Summary
+
+```cpp
+// Forward declarations (extern, no initializer):
+extern int g_y;                 // non-const global
+extern const int g_y;           // const global
+extern constexpr int g_y;       // not allowed
+
+// External global variable definitions:
+int g_x;                        // non-initialized
+int g_x { 1 };                  // initialized
+
+// External const global variable definitions:
+extern const int g_x { 2 };     // initialized const
+extern constexpr int g_x { 3 }; // initialized constexpr
+```
+
+See lesson 7.12 for a comprehensive summary of scope, duration, and linkage.
+
+
+## 7.8 — Why (non-const) global variables are evil
+
+**Alex &nbsp;&nbsp; January 29, 2025**
+
+---
+
+> **"Avoid global variables!"**  
+> — Every experienced C++ developer, ever
+
+Global variables are one of the most abused features in C++. While they seem convenient in small programs, they become a source of bugs and confusion in larger projects. This lesson explains why **non-const global variables** are especially problematic.
+
+---
+
+### The Dangers of Non-const Global Variables
+
+Non-const global variables can be changed by any function, at any time, from anywhere in your program. This makes your program's state unpredictable and hard to reason about.
+
+**Example: Unintended Modification**
+
+```cpp
+#include <iostream>
+
+int g_mode; // global variable (zero-initialized)
+
+void doSomething()
+{
+    g_mode = 2; // modifies global variable
+}
+
+int main()
+{
+    g_mode = 1; // sets global variable
+
+    doSomething(); // changes g_mode unexpectedly
+
+    if (g_mode == 1)
+        std::cout << "No threat detected.\n";
+    else
+        std::cout << "Launching nuclear missiles...\n";
+
+    return 0;
+}
+```
+
+> **Result:**  
+> The programmer expects `g_mode` to be `1`, but `doSomething()` changed it to `2`.  
+> The program's behavior is now unpredictable!
+
+---
+
+### Why Are Global Variables Problematic?
+
+- **Unpredictable State:** Any function can change a global variable, making it hard to track changes.
+- **Difficult Debugging:** You may need to search the entire codebase to find where a global variable is modified.
+- **Reduced Modularity:** Functions that rely on globals are less reusable and harder to test.
+- **Initialization Order Issues:** The order in which global variables are initialized (especially across files) is not guaranteed.
+
+---
+
+### The Static Initialization Order Fiasco
+
+Global variables are initialized before `main()` runs, but the order is not always clear—especially across multiple files.
+
+**Example: Ambiguous Initialization**
+
+```cpp
+#include <iostream>
+
+int initX();
+int initY();
+
+int g_x{ initX() }; // g_x initialized first
+int g_y{ initY() };
+
+int initX() { return g_y; } // g_y not initialized yet!
+int initY() { return 5; }
+
+int main()
+{
+    std::cout << g_x << ' ' << g_y << '\n'; // prints: 0 5
+}
+```
+
+> **Warning:**  
+> Never initialize a global variable using another global variable from a different file.
+
+---
+
+### When Are Non-const Globals Acceptable?
+
+Rarely! Only use a non-const global if:
+- There should only ever be **one** instance of the thing it represents.
+- Its use is **ubiquitous** throughout your program.
+
+**Examples:**  
+- Logging objects  
+- Random number generators  
+- `std::cout` and `std::cin` (implemented as globals in the standard library)
+
+---
+
+### Best Practices for Global Variables
+
+1. **Prefer Local Variables:** Use local variables and pass them as function arguments.
+2. **Namespace Your Globals:** Place globals inside a namespace to avoid collisions.
+
+    ```cpp
+    namespace constants
+    {
+        constexpr double gravity { 9.8 };
+    }
+    std::cout << constants::gravity << '\n';
+    ```
+
+3. **Encapsulate Access:** Make globals `static` or `const` and provide access functions.
+
+    ```cpp
+    namespace constants
+    {
+        constexpr double gravity { 9.8 };
+    }
+    double getGravity() { return constants::gravity; }
+    ```
+
+4. **Pass as Arguments:** Write functions that accept values as parameters instead of using globals directly.
+
+    ```cpp
+    double instantVelocity(int time, double gravity)
+    {
+        return gravity * time;
+    }
+    std::cout << instantVelocity(5, constants::gravity) << '\n';
+    ```
+
+---
+
+### A C++ Joke
+
+> **Q:** What's the best naming prefix for a global variable?  
+> **A:** `//`  
+> *Because every global deserves a comment!*
+
+---
+
+**Summary:**
+
+- Non-const global variables make code unpredictable and hard to maintain.
+- Prefer local variables, namespaces, encapsulation, and parameter passing.
+- Only use non-const globals when absolutely necessary—and document them well!
+## 7.9 — How to use global constants safely and effectively
+
+**Alex &nbsp;&nbsp; January 30, 2025**
+
+---
+
+Global constants are a powerful tool for sharing immutable values across multiple files in a project. Used correctly, they improve code clarity, maintainability, and safety. This lesson covers best practices for defining, sharing, and using global constants in C++.
+
+---
+
+### Why Use Global Constants?
+
+- **Consistency:** Ensures the same value is used everywhere.
+- **Maintainability:** Changing the constant in one place updates all usages.
+- **Safety:** Prevents accidental modification.
+
+---
+
+### Defining Global Constants
+
+Prefer `constexpr` for compile-time constants, and `const` for runtime constants. Place global constants inside a namespace to avoid naming collisions.
+
+**Example:**
+
+```cpp
+// constants.h
+#pragma once
+
+namespace constants
+{
+    constexpr double gravity { 9.8 };
+    constexpr int maxPlayers { 4 };
+}
+```
+
+---
+
+### Sharing Global Constants Across Multiple Files
+
+1. **Declare constants in a header file** (e.g., `constants.h`).
+2. **Include the header** wherever the constants are needed.
+
+**Example usage:**
+
+```cpp
+// main.cpp
+#include <iostream>
+#include "constants.h"
+
+int main()
+{
+    std::cout << "Gravity is " << constants::gravity << '\n';
+    std::cout << "Max players: " << constants::maxPlayers << '\n';
+    return 0;
+}
+```
+
+---
+
+### Best Practices
+
+- **Use namespaces** for all global constants.
+- **Prefer `constexpr`** for values known at compile time.
+- **Avoid macros** for constants; use typed variables instead.
+- **Never use non-const globals for shared values.**
+- **Document constants** clearly in the header file.
+
+---
+
+### Common Pitfalls
+
+- **Multiple definitions:** Only define the constant once, in the header, using `constexpr` or `inline const` (C++17+).
+- **Initialization order:** Constants are safe; avoid using non-const globals.
+- **Name collisions:** Namespaces prevent accidental overlap.
+
+---
+
+### Quick Reference
+
+```cpp
+// constants.h
+namespace constants
+{
+    constexpr double pi { 3.141592653589793 };
+    constexpr int screenWidth { 1024 };
+    constexpr int screenHeight { 768 };
+}
+```
+
+---
+
+**Summary:**
+
+- Use global constants for shared, immutable values.
+- Place them in a namespace and a header file.
+- Prefer `constexpr` and avoid macros.
+- Never use non-const global variables for shared data.
+
+---
+
+---
+## 7.11 — Static Local Variables
+
+**Alex &nbsp;&nbsp; December 26, 2024**
+
+The term `static` is one of the most confusing in C++, because it has different meanings depending on context. Previously, we learned that global variables have *static duration* (created at program start, destroyed at program end), and that `static` gives global identifiers *internal linkage* (visible only in their file).
+
+This lesson explores the use of `static` for **local variables**.
+
+---
+
+### Static Local Variables
+
+By default, local variables have *automatic duration*: they are created when the block is entered and destroyed when the block is exited.
+
+Using the `static` keyword on a local variable changes its duration to *static duration*. This means the variable is created at program start and destroyed at program end—just like a global variable. The variable retains its value between function calls.
+
+#### Example: Automatic Duration
+
+```cpp
+#include <iostream>
+
+void incrementAndPrint()
+{
+    int value{ 1 }; // automatic duration
+    ++value;
+    std::cout << value << '\n';
+} // value is destroyed here
+
+int main()
+{
+    incrementAndPrint();
+    incrementAndPrint();
+    incrementAndPrint();
+    return 0;
+}
+```
+
+**Output:**
+```
+2
+2
+2
+```
+
+Each call creates a new `value`, increments it, prints 2, then destroys it.
+
+#### Example: Static Duration
+
+```cpp
+#include <iostream>
+
+void incrementAndPrint()
+{
+    static int s_value{ 1 }; // static duration
+    ++s_value;
+    std::cout << s_value << '\n';
+} // s_value is not destroyed here
+
+int main()
+{
+    incrementAndPrint();
+    incrementAndPrint();
+    incrementAndPrint();
+    return 0;
+}
+```
+
+**Output:**
+```
+2
+3
+4
+```
+
+`s_value` is created once at program start, and its value persists across calls.
+
+---
+
+### Initialization Details
+
+- Static local variables with a constexpr initializer are initialized at program start.
+- If no initializer or a non-constexpr initializer is provided, they are zero-initialized at program start, and then initialized the first time the definition is encountered.
+- Initialization only happens once.
+
+**Best practice:**  
+Always initialize static local variables.
+
+**Tip:**  
+Prefix static local variables with `s_` (e.g., `s_value`) for clarity.
+
+---
+
+### Use Case: Unique ID Generation
+
+Static local variables are ideal for generating unique IDs:
+
+```cpp
+int generateID()
+{
+    static int s_itemID{ 0 };
+    return s_itemID++; // returns current value, then increments
+}
+```
+
+Each call returns a unique number. The variable is local (not accessible elsewhere), but persists for the program's lifetime.
+
+---
+
+### Scope and Lifetime
+
+- **Scope:** Block scope (only accessible in the function/block).
+- **Lifetime:** Static duration (exists until program ends).
+
+Static local variables combine the safety of local scope with the persistence of global variables.
+
+---
+
+### Static Local Constants
+
+Static local variables can be `const` or `constexpr`. This is useful for expensive initialization:
+
+```cpp
+const static int s_expensiveValue{ expensiveCalculation() };
+```
+
+The value is computed once and reused on every function call.
+
+---
+
+### Pitfall: Using Static Locals to Alter Flow
+
+Static local variables can make functions non-reusable and unpredictable if used to alter control flow:
+
+```cpp
+#include <iostream>
+
+int getInteger()
+{
+    static bool s_isFirstCall{ true };
+
+    if (s_isFirstCall)
+    {
+        std::cout << "Enter an integer: ";
+        s_isFirstCall = false;
+    }
+    else
+    {
+        std::cout << "Enter another integer: ";
+    }
+
+    int i{};
+    std::cin >> i;
+    return i;
+}
+```
+
+If you call `getInteger()` multiple times, the prompt changes after the first call. This internal state makes the function hard to reuse and understand.
+
+**Better approach:** Pass state as a parameter:
+
+```cpp
+constexpr bool g_firstCall{ true };
+
+int getInteger(bool bFirstCall)
+{
+    if (bFirstCall)
+        std::cout << "Enter an integer: ";
+    else
+        std::cout << "Enter another integer: ";
+
+    int i{};
+    std::cin >> i;
+    return i;
+}
+```
+
+Now, the caller controls the prompt, making the function reusable.
+
+---
+
+### Summary and Best Practices
+
+- Use static local variables for values that must persist across function calls and are unique for the program's lifetime.
+- Prefer `const` static locals for expensive initialization.
+- Avoid non-const static locals for altering control flow or when the variable should be resettable.
+- Consider passing state as a parameter for reusable functions.
+- Prefix static locals with `s_` for clarity.
+
+**Advanced:**  
+For multiple independent persistent values (e.g., multiple ID generators), consider using functors or classes.
+
+---
+
+
+
+
+---
+
+## 7.12 — Summary: Scope, Duration, Linkage, and Storage Class Specifiers
+
+**Alex &nbsp;&nbsp; January 31, 2025**
+
+This section summarizes the most important concepts for understanding how variables and functions behave in C++: **scope**, **duration**, **linkage**, and **storage class specifiers**.
+
+---
+
+### 1. Scope
+
+- **Scope** determines where an identifier can be accessed in source code.
+    - **Block (local) scope:** Exists only within the `{}` block where declared.
+    - **Global scope:** Exists from its declaration to the end of the file (and possibly in other files, depending on linkage).
+
+**Example:**
+```cpp
+#include <iostream>
+
+int g_var { 10 }; // global scope
+
+void foo()
+{
+    int x { 5 }; // block scope
+    std::cout << x << '\n';     // accessible
+    std::cout << g_var << '\n'; // accessible
+}
+
+int main()
+{
+    foo();
+    // std::cout << x; // error: x is out of scope
+}
+```
+
+**Rule of thumb:**  
+Local variables vanish after their block ends.  
+Globals exist throughout the file, unless linkage restricts them.
+
+---
+
+### 2. Duration
+
+- **Duration** is when a variable is created and destroyed (its lifetime).
+    - **Automatic duration:** Created when definition is reached; destroyed when block ends (default for locals and parameters).
+    - **Static duration:** Created when the program starts; destroyed when the program ends (globals and static locals).
+    - **Dynamic duration:** Created and destroyed manually (with `new`/`delete`).
+
+**Example:**
+```cpp
+void test() {
+    int x{5}; // automatic duration
+} // destroyed here
+
+void counter() {
+    static int s_val{0}; // static duration
+    ++s_val;
+    std::cout << s_val << '\n';
+}
+
+int* ptr = new int(42); // dynamic duration
+delete ptr; // must explicitly destroy
+```
+
+**Rule of thumb:**  
+Automatic = temporary  
+Static = whole program  
+Dynamic = you manage
+
+---
+
+### 3. Linkage
+
+- **Linkage** determines if an identifier can be shared across files.
+    - **No linkage:** Unique each time declared (locals, block enums/classes).
+    - **Internal linkage:** Shared only within one translation unit (file). (`static` globals, `const` globals, `static` functions)
+    - **External linkage:** Shared across multiple files. (non-const globals, non-static functions, `extern` variables)
+
+**Example:**
+```cpp
+// No linkage
+void foo() {
+    int x{5}; // unique to this function
+}
+
+// Internal linkage
+static int g_val { 10 }; // only visible in this file
+const int g_const { 20 }; // also internal by default
+
+// External linkage
+// globals.cpp
+int g_val { 10 }; // definition
+
+// main.cpp
+extern int g_val; // forward declaration
+```
+
+**Rule of thumb:**  
+Local vars: no linkage.  
+Globals: internal by default if const or static, external otherwise.
+
+---
+
+### 4. Storage Class Specifiers
+
+- **Keywords that affect duration and linkage:**
+    - `static` → static duration + internal linkage
+    - `extern` → static duration + external linkage
+    - `thread_local` → one variable per thread
+    - `mutable` → allows modification in const objects
+
+---
+
+### 5. Summary Table
+
+| Type                  | Example                   | Scope   | Duration   | Linkage   |
+|-----------------------|--------------------------|---------|------------|-----------|
+| Local variable        | `int x;`                 | Block   | Automatic  | None      |
+| Static local          | `static int s_x;`        | Block   | Static     | None      |
+| Dynamic local         | `int* p{new int};`       | Block   | Dynamic    | None      |
+| Function param        | `void f(int x);`         | Block   | Automatic  | None      |
+| Internal global       | `static int g_x;`        | Global  | Static     | Internal  |
+| External global       | `int g_x;`               | Global  | Static     | External  |
+| Inline global (C++17) | `inline int g_x;`        | Global  | Static     | External  |
+| Constexpr global      | `constexpr int g_x{1};`  | Global  | Static     | Internal  |
+| Extern const          | `extern const int g_x;`  | Global  | Static     | External  |
+
+---
+
+### 🚀 Best Practices
+
+- Prefer locals over globals (minimize scope).
+- Use `const`/`constexpr` wherever possible.
+- Use static locals only when remembering state is intentional.
+- Use `extern` only when you really need cross-file globals.
+
+---
