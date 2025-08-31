@@ -2435,3 +2435,1417 @@ Globals: internal by default if const or static, external otherwise.
 - Use `extern` only when you really need cross-file globals.
 
 ---
+
+
+## 10.1 — Implicit type conversion
+
+**Alex &nbsp;&nbsp; March 3, 2025**
+
+We introduced type conversion in lesson 4.12 -- Introduction to type conversion and `static_cast`. Here are the key points:
+
+- **Type conversion** is the process of converting data from one type to another.
+- **Implicit type conversion** is performed automatically by the compiler when a value of one type is used where another type is expected.
+- **Explicit type conversion** is requested by using a cast operator, such as `static_cast`.
+- Conversions do not change the original data; instead, a temporary object of the target type is created.
+
+### Why conversions are needed
+
+Different data types store and interpret values differently. For example, the integer value `3` and the floating-point value `3.0` have different binary representations. When assigning an `int` to a `float`, the compiler must convert the value, not just copy the bits.
+
+**Example:**
+```cpp
+float f{ 3 }; // int 3 is implicitly converted to float 3.0
+```
+
+If you copy the bits directly:
+```cpp
+#include <iostream>
+#include <cstring>
+
+int main()
+{
+    int n { 3 };
+    float f {};
+    std::memcpy(&f, &n, sizeof(float));
+    std::cout << f << '\n'; // prints 4.2039e-45 (not 3.0)
+    return 0;
+}
+```
+
+### When implicit type conversion happens
+
+Implicit conversion occurs in many situations:
+- Initializing or assigning a variable:
+    ```cpp
+    double d{ 3 }; // int to double
+    d = 6;         // int to double
+    ```
+- Returning a value from a function:
+    ```cpp
+    float doSomething() { return 3.0; } // double to float
+    ```
+- Using binary operators with mixed types:
+    ```cpp
+    double division{ 4.0 / 3 }; // int to double
+    ```
+- Using non-Boolean values in conditions:
+    ```cpp
+    if (5) // int to bool
+    ```
+- Passing arguments to functions:
+    ```cpp
+    void doSomething(long l) {}
+    doSomething(3); // int to long
+    ```
+
+### The standard conversions
+
+C++ defines a set of "standard conversions" for fundamental types and some compound types. As of C++23, there are 14 standard conversions, grouped into categories:
+
+| Category                | Description                                               | See Lesson                |
+|-------------------------|----------------------------------------------------------|---------------------------|
+| Numeric promotions      | Small integral types to int/unsigned, float to double    | 10.2                      |
+| Numeric conversions     | Other integral/floating conversions                      | 10.3                      |
+| Qualification conversions | Add/remove `const` or `volatile`                      |                           |
+| Value transformations   | Change value category (lvalue/rvalue, array/function decay) | 12.2, 17.8, 20.1        |
+| Pointer conversions     | `nullptr` to pointer, pointer type conversions           |                           |
+
+**Full list of standard conversions:**
+- Lvalue-to-rvalue
+- Array-to-pointer
+- Function-to-pointer
+- Temporary materialization
+- Qualification conversion
+- Integral promotions
+- Floating point promotions
+- Integral conversions
+- Floating point conversions
+- Integral-floating conversions
+- Boolean conversions
+- Pointer conversions
+- Pointer-to-member conversions
+- Function pointer conversions
+
+### Type conversion can fail
+
+If the compiler cannot find a valid conversion, compilation fails.
+
+**Example:**
+```cpp
+int x { "14" }; // error: cannot convert string literal to int
+```
+
+Some conversions are disallowed by specific features:
+```cpp
+int x { 3.5 }; // error: narrowing conversion disallowed by brace-initialization
+```
+
+Ambiguous conversions can also cause errors (see lesson 11.3).
+
+### Summary
+
+- Implicit conversions happen automatically when needed.
+- The compiler uses standard conversion rules for fundamental types.
+- If no valid conversion exists, compilation fails.
+- Most conversions "just work," but be aware of narrowing and ambiguous cases.
+
+
+## 10.2 — Floating-point and integral promotion
+
+**Alex &nbsp;&nbsp; July 31, 2024**
+
+C++ fundamental types have minimum size guarantees, but their actual size depends on the compiler and architecture. For performance, types like `int` and `double` are typically set to match the CPU's natural word size.
+
+### What is Numeric Promotion?
+
+Numeric promotion is the automatic conversion of certain narrower numeric types (like `char` or `float`) to wider types (`int` or `double`) for efficient processing. Promotions are always value-preserving (safe), so the compiler applies them freely and without warnings.
+
+#### Why Numeric Promotion Matters
+
+Numeric promotion lets you write functions that accept `int` or `double` parameters and call them with arguments of types that can be promoted, reducing code duplication.
+
+### Floating-point Promotion
+
+- `float` is promoted to `double`.
+
+**Example:**
+```cpp
+#include <iostream>
+
+void printDouble(double d)
+{
+    std::cout << d << '\n';
+}
+
+int main()
+{
+    printDouble(5.0);   // double, no promotion
+    printDouble(4.0f);  // float promoted to double
+    return 0;
+}
+```
+
+### Integral Promotion
+
+- `signed char` and `signed short` → `int`
+- `unsigned char`, `char8_t`, and `unsigned short` → `int` (if `int` can hold all values), otherwise `unsigned int`
+- `char` follows `signed char` or `unsigned char` rules depending on implementation
+- `bool` → `int` (`false` becomes `0`, `true` becomes `1`)
+
+**Example:**
+```cpp
+#include <iostream>
+
+void printInt(int x)
+{
+    std::cout << x << '\n';
+}
+
+int main()
+{
+    printInt(2);
+
+    short s{ 3 };
+    printInt(s);      // short promoted to int
+
+    printInt('a');    // char promoted to int
+    printInt(true);   // bool promoted to int
+
+    return 0;
+}
+```
+
+> On some systems, unsigned types may be promoted to `unsigned int` instead of `int`. Promotions may change signedness but always preserve value.
+
+### Not All Widening Conversions Are Promotions
+
+Conversions like `char` to `short` or `int` to `long` are *numeric conversions*, not promotions. Promotions specifically help convert smaller types to the CPU's natural size for efficiency.
+
+> The distinction matters for function overload resolution (see lesson 11.3).
+
+### Summary
+
+- Numeric promotions convert narrow types to wider types (`float` → `double`, small integrals → `int`/`unsigned int`).
+- Promotions are safe and automatic.
+- Not all widening conversions are promotions; some are conversions.
+- Numeric promotion simplifies code and improves portability.
+
+## 10.3 — Numeric conversions
+
+**Alex &nbsp;&nbsp; August 20, 2024**
+
+In lesson 10.2, we covered numeric promotions—automatic, value-preserving conversions to `int` or `double`. Numeric conversions are a broader category, covering all other conversions between fundamental numeric types.
+
+### Categories of Numeric Conversions
+
+1. **Integral to integral** (excluding promotions):
+    ```cpp
+    short s = 3;         // int to short
+    long l = 3;          // int to long
+    char ch = s;         // short to char
+    unsigned int u = 3;  // int to unsigned int
+    ```
+2. **Floating-point to floating-point** (excluding promotions):
+    ```cpp
+    float f = 3.0;           // double to float
+    long double ld = 3.0;    // double to long double
+    ```
+3. **Floating-point to integral**:
+    ```cpp
+    int i = 3.5; // double to int (fractional part lost)
+    ```
+4. **Integral to floating-point**:
+    ```cpp
+    double d = 3; // int to double
+    ```
+5. **Integral or floating-point to bool**:
+    ```cpp
+    bool b1 = 3;   // int to bool
+    bool b2 = 3.0; // double to bool
+    ```
+
+> **Note:**  
+> Brace initialization (`int x{3.5};`) disallows narrowing conversions; copy initialization (`int x = 3.5;`) allows them.
+
+---
+
+### Safety of Numeric Conversions
+
+- **Value-preserving conversions:**  
+  Destination type can represent all source values (e.g., `int` to `long`, `short` to `double`).  
+  ```cpp
+  int n = 5;
+  long l = n; // safe
+  short s = 5;
+  double d = s; // safe
+  ```
+  Converting back yields the original value.
+
+- **Reinterpretive conversions:**  
+  Signed/unsigned conversions may wrap values but do not lose data.  
+  ```cpp
+  int n2 = -5;
+  unsigned int u2 = n2; // wraps to large unsigned value
+  int n3 = static_cast<int>(static_cast<unsigned int>(-5)); // converts back to -5
+  ```
+  Use with caution—may produce unexpected results.
+
+- **Lossy conversions:**  
+  Data may be lost (e.g., fractional part, precision, overflow).  
+  ```cpp
+  int j = 3.5; // 3.5 → 3 (fraction lost)
+  float g = 1.23456789; // precision lost
+  ```
+  Converting back does not restore the original value.
+
+---
+
+### Platform Considerations
+
+Some conversions are only safe on certain architectures. For example, `int` to `double` is usually safe, but may be lossy if both are 8 bytes.
+
+```cpp
+std::cout << static_cast<long long>(static_cast<double>(10000000000000001LL)); // may lose digits
+```
+
+---
+
+### Practical Guidelines
+
+- **Overflow:** Assigning a value outside the destination type's range leads to undefined or implementation-defined behavior.
+- **Precision loss:** Converting from a wider to a narrower floating-point type loses precision.
+- **Fractional loss:** Converting floating-point to integral loses the fractional part.
+- **Compiler warnings:** Most compilers warn about lossy conversions, but not always for signed/unsigned conversions.
+
+---
+
+### Summary
+
+- Numeric conversions cover all fundamental type conversions not handled by promotions.
+- Value-preserving conversions are safe; reinterpretive and lossy conversions are unsafe.
+- Prefer explicit casts for unsafe conversions and be mindful of platform-specific behavior.
+- The compiler will usually warn about dangerous conversions, except for signed/unsigned.
+
+
+## 10.6 — Explicit type conversion (casting) and `static_cast`
+
+**Alex &nbsp;&nbsp; March 4, 2025**
+
+When you need to convert a value from one type to another in C++, you can use **explicit type conversion** (casting). This is especially useful when implicit conversion would not produce the desired result, such as when performing floating-point division with integer variables.
+
+### C-style Casts
+
+C-style casts use the syntax `(type)value` or `type(value)`. For example:
+
+```cpp
+int x { 10 };
+int y { 4 };
+std::cout << (double)x / y << '\n'; // C-style cast
+std::cout << double(x) / y << '\n'; // function-style cast
+```
+
+**Drawbacks:**  
+- C-style casts can perform multiple kinds of conversions (static, const, reinterpret), making code harder to read and maintain.
+- They are discouraged in modern C++.
+
+**Best practice:**  
+Avoid C-style casts in favor of named casts.
+
+### `static_cast`
+
+The preferred way to perform most explicit conversions is with `static_cast`:
+
+```cpp
+int x { 10 };
+int y { 4 };
+std::cout << static_cast<double>(x) / y << '\n'; // prints 2.5
+```
+
+- `static_cast` provides compile-time type checking.
+- It only allows safe conversions between related types.
+- If the conversion is invalid, compilation fails.
+
+**Example:**
+
+```cpp
+char c { 'a' };
+std::cout << static_cast<int>(c) << '\n'; // prints 97
+```
+
+### Making Narrowing Conversions Explicit
+
+If you need to perform a narrowing conversion (e.g., `int` to `char`), use `static_cast` to indicate intent:
+
+```cpp
+int i { 48 };
+char ch { static_cast<char>(i) }; // explicit narrowing conversion
+```
+
+### Comparison: List Initialization vs. `static_cast`
+
+- List initialization (`int{x}`) disallows narrowing conversions.
+- `static_cast<int>(x)` allows explicit narrowing conversions.
+
+**Example:**
+
+```cpp
+int x { 10 };
+int y { 4 };
+std::cout << double{x} / y << '\n'; // may fail on some platforms
+std::cout << static_cast<double>(x) / y << '\n'; // always works
+```
+
+### Summary
+
+- Prefer `static_cast` for explicit type conversions.
+- Avoid C-style casts.
+- Use explicit casts to clarify intent and suppress warnings about narrowing conversions.
+
+---
+
+## static_cast vs. dynamic_cast: Key Differences
+
+Both `static_cast` and `dynamic_cast` can convert pointers/references between related classes, but they differ in safety and use cases:
+
+| Feature                | `static_cast`                | `dynamic_cast`                   |
+|------------------------|------------------------------|----------------------------------|
+| When checked           | Compile-time only            | Runtime (uses RTTI)              |
+| Works with             | Any related types            | Polymorphic classes (with `virtual`) |
+| Invalid cast result    | Undefined behavior           | `nullptr` (pointer) / exception (reference) |
+| Performance            | Fast (no runtime cost)       | Slower (runtime type check)      |
+| Use case               | Safe upcasting, basic conversions | Safe downcasting when unsure    |
+
+**static_cast**
+- No runtime check; compiler trusts you.
+- Use when you are certain of the object's type.
+- Unsafe for downcasts if the type is not guaranteed.
+
+**dynamic_cast**
+- Performs runtime type checking.
+- Only works with polymorphic types (at least one virtual function).
+- Returns `nullptr` for invalid pointer casts, throws `std::bad_cast` for references.
+- Use when you need safe downcasting and are unsure of the object's runtime type.
+
+**Example:**
+```cpp
+class Base { public: virtual ~Base(){} };
+class Derived : public Base {};
+
+Base* b = new Base();
+
+// Unsafe downcast: may cause undefined behavior
+Derived* d1 = static_cast<Derived*>(b);
+
+// Safe downcast: returns nullptr if b is not a Derived
+Derived* d2 = dynamic_cast<Derived*>(b);
+if (d2)
+{
+    // d2 is a valid Derived*
+}
+else
+{
+    // Cast failed
+}
+```
+
+**Rule of thumb:**  
+Use `static_cast` for safe upcasts or when you know the type.  
+Use `dynamic_cast` for safe downcasts when the type may vary at runtime.
+## 10.4 — Type deduction with `auto`
+
+**Alex &nbsp;&nbsp; March 5, 2025**
+
+Type deduction with `auto` lets the compiler automatically determine the type of a variable from its initializer, reducing redundancy and improving readability.
+
+### Basic Usage
+
+Instead of explicitly specifying the type:
+
+```cpp
+double d { 5.0 }; // d is double
+int i { 3 };      // i is int
+```
+
+You can use `auto`:
+
+```cpp
+auto d { 5.0 }; // deduced as double
+auto i { 3 };   // deduced as int
+```
+
+The compiler looks at the initializer and deduces the type.
+
+### Rules of `auto` Deduction
+
+- An initializer is required:
+    ```cpp
+    auto x; // error: cannot deduce type
+    ```
+- Works with expressions, function calls, literals, etc.:
+    ```cpp
+    auto sum = 1 + 2;          // int
+    auto f   = 3.14f;          // float
+    auto s   = add(5, 6);      // type of add’s return
+    ```
+- `const` is dropped unless explicitly specified:
+    ```cpp
+    const int a = 10;
+    auto b = a;       // int (const dropped)
+    const auto c = a; // const int
+    ```
+- String literals deduce to `const char*`, not `std::string`.
+
+### Why Use `auto`?
+
+- **Reduces redundancy:**  
+  ```cpp
+  std::vector<int>::iterator it = v.begin();
+  auto it = v.begin(); // cleaner
+  ```
+- **Avoids mistakes with conversions:**  
+  ```cpp
+  std::string_view getStr();
+  std::string s1 { getStr() }; // expensive conversion
+  auto s2 { getStr() };        // keeps string_view
+  ```
+- **Always matches initializer type:**  
+  Prevents subtle bugs when you forget the exact type.
+- **Improves readability for complex types:**  
+  ```cpp
+  auto m = std::map<std::string, std::vector<int>>{};
+  ```
+- **Forces initialization:**  
+  `auto x;` doesn’t compile, helping avoid uninitialized variables.
+
+### Downsides of `auto`
+
+- Can obscure the type:
+    ```cpp
+    auto x = 5;  // int
+    auto y = 2;
+    std::cout << x / y; // integer division (may want double)
+    ```
+- Type changes if initializer changes:
+    ```cpp
+    auto sum = add(5, 6) + gravity; // could be int today, double tomorrow
+    ```
+
+### Best Practices
+
+**Use `auto` when:**
+- The exact type doesn’t matter to the logic.
+- The type is obvious from context.
+- The type is long/complex (iterators, templates).
+
+**Don’t use `auto` when:**
+- You need a specific type regardless of the initializer.
+- You want the code to clearly communicate the type.
+
+**Summary:**  
+`auto` reduces redundancy, avoids accidental conversions, improves readability for complex types, and prevents uninitialized variables. Use it when the type is obvious or unimportant, but prefer explicit types when clarity or precision matters.
+
+
+## 11.1 — Introduction to Function Overloading
+
+**Alex &nbsp;&nbsp; December 28, 2023**
+
+Function overloading allows you to define multiple functions with the same name, as long as their parameter lists differ in type or number. This lets you write cleaner, more intuitive code without inventing unique names for similar operations.
+
+### Why Overload Functions?
+
+Suppose you want to add both integers and doubles:
+
+```cpp
+int add(int x, int y)
+{
+    return x + y;
+}
+
+double add(double x, double y)
+{
+    return x + y;
+}
+```
+
+Both functions are named `add`, but the compiler can distinguish them by their parameter types.
+
+### How Overload Resolution Works
+
+When you call an overloaded function, the compiler selects the correct version based on the argument types:
+
+```cpp
+std::cout << add(1, 2);      // calls add(int, int)
+std::cout << add(1.2, 3.4);  // calls add(double, double)
+```
+
+### Key Points
+
+- Functions can be overloaded if their parameter lists are different.
+- The compiler matches function calls to the correct overload using argument types.
+- If overloads cannot be differentiated, or a call is ambiguous, compilation fails.
+
+### Example
+
+```cpp
+#include <iostream>
+
+int add(int x, int y)
+{
+    return x + y;
+}
+
+double add(double x, double y)
+{
+    return x + y;
+}
+
+int main()
+{
+    std::cout << add(1, 2) << '\n';      // 3
+    std::cout << add(1.2, 3.4) << '\n';  // 4.6
+    return 0;
+}
+```
+
+### Best Practice
+
+Use function overloading to simplify your code and reduce the number of function names you need to remember.
+
+---
+
+> **Next:**  
+> Lesson 11.2 covers how overloaded functions are differentiated.  
+> Lesson 11.3 explains how the compiler resolves calls to overloaded functions.
+
+## 11.2 — How Overloaded Functions Are Differentiated
+
+**Alex &nbsp;&nbsp; December 29, 2023**
+
+C++ distinguishes overloaded functions by their **signature**—not by their return type. The signature includes:
+
+- Function name
+- Number of parameters
+- Types of parameters
+- (For member functions) qualifiers like `const`, `&`, `&&`
+
+**Return type is NOT part of the signature.**
+
+### Differentiating Overloads
+
+| Property                | Used for Overload? | Notes                                 |
+|-------------------------|--------------------|---------------------------------------|
+| Name                    | Yes                | Must be the same                      |
+| Number of parameters    | Yes                | Different count = different overloads |
+| Parameter types         | Yes                | e.g., `int` vs `double`               |
+| Typedef/alias changes   | No                 | Aliases don’t create new overloads    |
+| `const` on value params | No                 | `int` vs `const int` is the same      |
+| Return type             | No                 | Ignored for overload resolution       |
+| Member qualifiers       | Yes (advanced)     | For class methods only                |
+
+**Examples:**
+
+```cpp
+int add(int x, int y);        // two ints
+int add(int x, int y, int z); // three ints
+double add(double a, double b); // two doubles
+```
+
+All are valid overloads—different parameter lists.
+
+**Aliased types don’t create new overloads:**
+
+```cpp
+typedef int Height;
+void print(int value);
+void print(Height value); // same as print(int)
+```
+
+**`const` on value parameters doesn’t count:**
+
+```cpp
+void print(int);
+void print(const int); // same as print(int)
+```
+
+**But for pointers/references, `const` does matter:**
+
+```cpp
+void f(int&);
+void f(const int&); // different overloads
+```
+
+**Ellipsis (`...`) is unique:**
+
+```cpp
+void foo(int x, int y);
+void foo(int x, ...); // different overloads
+```
+
+### Why Return Type Is Ignored
+
+You cannot overload only by return type:
+
+```cpp
+int getValue();
+double getValue(); // ERROR
+```
+
+Because the compiler can’t tell which to call:
+
+```cpp
+getValue(); // ambiguous
+```
+
+Instead, use distinct names:
+
+```cpp
+int getIntValue();
+double getDoubleValue();
+```
+
+### Function Signature
+
+In C++, a function’s signature is:
+
+- Name
+- Number and types of parameters
+- Member qualifiers (`const`, `&`, `&&` for methods)
+
+Return type is **not** part of the signature.
+
+### Name Mangling
+
+Compilers generate unique internal names for each overload so the linker can distinguish them.
+
+**Example:**
+
+```cpp
+int fcn();
+int fcn(int);
+```
+
+May become:
+
+- `__fcn_v` (no params)
+- `__fcn_i` (int param)
+
+(Actual mangling depends on compiler.)
+
+---
+
+**Summary:**
+
+- Overloads differ by number and types of parameters.
+- Typedefs, aliases, and `const` on value params don’t create new overloads.
+- Return type is ignored.
+- Member functions can differ by qualifiers.
+- Name mangling ensures unique compiled functions.
+
+---
+
+
+## 11.3 — Function overload resolution and ambiguous matches
+
+**Alex &nbsp;&nbsp; December 30, 2023**
+
+When you call an overloaded function, the compiler tries to find the best match by applying conversions in a strict order. If more than one candidate is equally good at any step, the call is ambiguous and results in a compile error.
+
+### Overload Resolution Steps
+
+1. **Exact match (including trivial conversions)**
+2. **Promotion** (integral promotions, float → double)
+3. **Standard conversions** (widening/narrowing, pointer conversions)
+4. **User-defined conversions** (conversion operators, converting constructors)
+5. **Ellipsis (`...`)** (last resort)
+
+At each step:
+- If exactly one viable overload is found, it is chosen.
+- If none, move to the next step.
+- If multiple, the call is ambiguous.
+
+---
+
+### Step Details & Ambiguity
+
+#### 1. Exact Match (Best)
+Includes identical types, reference bindings, and trivial conversions (e.g., `int` to `const int&`).
+
+**Example (ambiguous):**
+```cpp
+void foo(int);          // by value
+void foo(const int&);   // by const-ref
+
+int x = 1;
+foo(x); // ambiguous: both are exact matches
+```
+
+#### 2. Promotion
+Covers only certain promotions:
+- Integral: `char`, `short`, `bool` → `int` (or `unsigned int`)
+- Floating: `float` → `double`
+
+**Example (unambiguous):**
+```cpp
+void foo(int);
+void foo(double);
+
+foo('a'); // char promoted to int → foo(int) chosen
+```
+
+#### 3. Standard Numeric Conversions
+Covers conversions like `long`→`int`, `int`↔`double`, etc.
+
+**Example (ambiguous):**
+```cpp
+void foo(int);
+void foo(double);
+
+foo(5L); // long can convert to int or double (both standard conversions) → ambiguous
+```
+
+Another example:
+```cpp
+void foo(unsigned int);
+void foo(float);
+
+foo(0); // int can convert to unsigned int or float → ambiguous
+```
+
+#### 4. User-defined Conversions
+If no match so far, conversion operators or converting constructors are considered.
+
+#### 5. Ellipsis (`...`)
+Used only if nothing else matches.
+
+---
+
+### How the Compiler Chooses
+
+For multiple arguments, the compiler compares conversion sequences parameter-by-parameter. A candidate is better if it is strictly better for at least one parameter and no worse for the others. If neither is better overall, the call is ambiguous.
+
+**Example (resolved):**
+```cpp
+void print(char, int);    // prints 'a'
+void print(char, double); // prints 'b'
+void print(char, float);  // prints 'c'
+
+print('x', 'a'); // 'a' (char) promoted to int, so print(char, int) is chosen
+```
+
+---
+
+### Fixing Ambiguous Calls
+
+- Add an overload that exactly matches the argument type.
+- Cast the argument explicitly: `foo(static_cast<int>(5L))`.
+- Use literal suffixes: `0u`, `5.0f`, `5L`.
+- Change or remove conflicting overloads.
+- Use templates or concepts for advanced control.
+
+---
+
+### Quick Reference
+
+- **Order:** exact → promotion → standard conversions → user-defined → ellipsis
+- **Ambiguity:** Multiple candidates in the same step = error
+- **Promotions** are preferred over conversions
+- **long** is not promoted to int (only standard conversion)
+
+---
+
+**Summary:**  
+Overload resolution is strict and predictable. Ambiguity occurs when multiple overloads are equally good at the same step. Use explicit casts or overloads to resolve ambiguity.
+
+/**
+ * Advantages of Object-Oriented Programming (OOP) over other paradigms:
+ *
+ * 1. Encapsulation (Data Security):
+ *    - Data is hidden inside classes and only accessible through methods.
+ *    - Prevents accidental modification.
+ *    - Example: private balance in a BankAccount class can’t be changed directly.
+ *
+ * 2. Reusability with Inheritance:
+ *    - Enables creation of base classes and derived classes.
+ *    - Saves time by avoiding code duplication.
+ *    - Example: Car → ElectricCar, SportsCar.
+ *
+ * 3. Polymorphism (Flexibility):
+ *    - Allows the same function name to have different behavior depending on the object.
+ *    - Example: draw() method behaves differently for Circle and Square.
+ *
+ * 4. Abstraction (Hiding Implementation Details):
+ *    - Users interact with functionality without knowing internal implementation.
+ *    - Example: Using .sort() in C++ STL without knowing its internal algorithm.
+ *
+ * 5. Easier to Maintain & Scale:
+ *    - Modular and organized code structure for large projects.
+ *    - Teams can work on different classes independently.
+ *
+ * 6. Real-World Modeling:
+ *    - Direct mapping to real-world entities, making design intuitive.
+ *    - Example: Student, Teacher, Course objects in a University system.
+ *
+ * In summary, OOP makes programs modular, reusable, secure, and easier to maintain compared to procedural programming.
+ */
+
+## 14.1 — Introduction to object-oriented programming
+
+**Alex &nbsp;&nbsp; September 15, 2023**
+
+### Procedural programming
+
+Back in lesson 1.3 -- Introduction to objects and variables, we defined an object in C++ as “a piece of memory that can be used to store values”. An object with a name is called a variable. Our C++ programs have consisted of sequential lists of instructions to the computer that define data (via objects) and operations performed on that data (via functions containing statements and expressions).
+
+Up to now, we’ve been doing a type of programming called procedural programming. In procedural programming, the focus is on creating “procedures” (which in C++ are called functions) that implement our program logic. We pass data objects to these functions, those functions perform operations on the data, and then potentially return a result to be used by the caller.
+
+In procedural programming, the functions and the data those functions operate on are separate entities. The programmer is responsible for combining the functions and the data together to produce the desired result. This leads to code that looks like this:
+
+```cpp
+eat(you, apple);
+```
+
+Now, take a look around you -- everywhere you look are objects: books and buildings and food and even you. Such objects have two major components to them:  
+1. Some number of associated properties (e.g. weight, color, size, solidity, shape, etc…)  
+2. Some number of behaviors that they can exhibit (e.g. being opened, making something else hot, etc…)  
+These properties and behaviors are inseparable.
+
+In programming, properties are represented by objects, and behaviors are represented by functions. And thus, procedural programming represents reality fairly poorly, as it separates properties (objects) and behaviors (functions).
+
+---
+
+### What is object-oriented programming?
+
+In object-oriented programming (often abbreviated as OOP), the focus is on creating program-defined data types that contain both properties and a set of well-defined behaviors. The term “object” in OOP refers to the objects that we can instantiate from such types.
+
+This leads to code that looks more like this:
+
+```cpp
+you.eat(apple);
+```
+
+This makes it clearer who the subject is (`you`), what behavior is being invoked (`eat()`), and what objects are accessories to that behavior (`apple`).
+
+Because the properties and behaviors are no longer separate, objects are easier to modularize, which makes our programs easier to write and understand, and also provides a higher degree of code reusability. These objects also provide a more intuitive way to work with our data by allowing us to define how we interact with the objects, and how they interact with other objects.
+
+We’ll discuss how to create such objects in the next lesson.
+
+---
+
+### A procedural vs OOP-like example
+
+Here’s a short program written in a procedural programming style that prints the name and number of legs of an animal:
+
+```cpp
+#include <iostream>
+#include <string_view>
+
+enum AnimalType
+{
+    cat,
+    dog,
+    chicken,
+};
+
+constexpr std::string_view animalName(AnimalType type)
+{
+    switch (type)
+    {
+    case cat: return "cat";
+    case dog: return "dog";
+    case chicken: return "chicken";
+    default:  return "";
+    }
+}
+
+constexpr int numLegs(AnimalType type)
+{
+    switch (type)
+    {
+    case cat: return 4;
+    case dog: return 4;
+    case chicken: return 2;
+    default:  return 0;
+    }
+}
+
+int main()
+{
+    constexpr AnimalType animal{ cat };
+    std::cout << "A " << animalName(animal) << " has " << numLegs(animal) << " legs\n";
+    return 0;
+}
+```
+
+While this works just fine, consider what happens when we want to update this program so that our animal is now a snake. To add a snake to our code, we’d need to modify `AnimalType`, `numLegs()`, `animalName()`. If this were a larger codebase, we’d also need to update any other function that uses `AnimalType` -- if `AnimalType` was used in a lot of places, that could be a lot of code that needs to get touched (and potentially broken).
+
+Now let’s write that same program (producing the same output) using more of an OOP mindset:
+
+```cpp
+#include <iostream>
+#include <string_view>
+
+struct Cat
+{
+    std::string_view name{ "cat" };
+    int numLegs{ 4 };
+};
+
+struct Dog
+{
+    std::string_view name{ "dog" };
+    int numLegs{ 4 };
+};
+
+struct Chicken
+{
+    std::string_view name{ "chicken" };
+    int numLegs{ 2 };
+};
+
+int main()
+{
+    constexpr Cat animal;
+    std::cout << "a " << animal.name << " has " << animal.numLegs << " legs\n";
+    return 0;
+}
+```
+
+In this example, each animal is its own program-defined type, and that type manages everything related to that animal (which in this case, is just keeping track of the name and number of legs).
+
+Now consider the case where we want to update our animal to a snake. All we have to do is create a `Snake` type and use it instead of `Cat`. Very little existing code needs to be changed, which means much less risk of breaking something that already works.
+
+As presented, our `Cat`, `Dog`, and `Chicken` example above has a lot of repetition (as each defines the exact same set of members). In such a case, creating a common `Animal` struct and creating an instance for each animal might be preferable. But what if we want to add a new member to `Chicken` that’s not applicable to the other animals (e.g. `wormsPerDay`)? With a common `Animal` struct, all animals will get that member. With our OOP model, we can restrict that member to `Chicken` objects.
+
+---
+
+### OOP brings other benefits to the table
+
+In school, when you submit your programming assignments, your work is essentially done. Your professor or teacher’s assistant will run your code to see if it produces the correct result. It either does or doesn’t, and you are graded accordingly. Your code is likely discarded at that point.
+
+On the other hand, when you submit your code into a repository that is used by other developers, or into an application that’s used by real users, it’s an entirely different ballgame. Some new OS or software release will break your code. Users will find some logic error you made. A business partner will demand some new capability. Other developers will need to extend your code without breaking it. Your code needs to be able to evolve, perhaps significantly, and it needs to be able to do so with minimal time investment, minimal headaches, and minimal breakage.
+
+The best way to address these is by keeping your code as modular (and non-redundant) as possible. To assist with this, OOP also brings a number of other useful concepts to the table: inheritance, encapsulation, abstraction, and polymorphism.
+
+---
+
+### Author’s note
+
+Language designers have a philosophy: never use a small word where a big one will do.
+
+Also why is the word abbreviation so long?
+
+We’ll cover what all of these are in due time, and how they can assist in making your code less redundant, and easier to modify and extend. Once you’ve been properly familiarized with OOP and it clicks, you will likely never want to go back to pure procedural programming again.
+
+That said, OOP doesn’t replace procedural programming -- rather, it gives you additional tools in your programming tool belt to manage complexity when needed.
+
+---
+
+### The term “object”
+
+Note that the term “object” is overloaded a bit, and this causes some amount of confusion. In traditional programming, an object is a piece of memory to store values. And that’s it. In object-oriented programming, an “object” implies that it is both an object in the traditional programming sense, and that it combines both properties and behaviors. We will favor the traditional meaning of the term object in these tutorials, and prefer the term “class object” when specifically referring to OOP objects.
+
+## 14.2 — Why classes are better than structs
+
+Structs are useful for grouping related data, but they have limitations—especially when you need to enforce rules or invariants. In C++, classes extend structs by allowing you to combine data and behavior, hide implementation details, and enforce validity.
+
+### Structs: Simple Data Aggregates
+
+A struct lets you bundle related data together:
+
+```cpp
+struct Date {
+    int day{};
+    int month{};
+    int year{};
+};
+```
+
+You can pass a `Date` as a single unit, but there's no way to prevent invalid states (e.g., a month value outside 1–12).
+
+### The Invariant Problem
+
+Suppose you have:
+
+```cpp
+struct Fraction {
+    int numerator{0};
+    int denominator{1}; // Should never be 0!
+};
+```
+
+Nothing stops users from creating `Fraction f{5, 0};`, which is invalid and can cause runtime errors.
+
+### Classes: Data + Behavior + Safety
+
+Classes allow you to:
+
+- Make member variables private (hidden from users)
+- Provide constructors and setter functions that enforce rules
+- Add member functions for safe access and modification
+
+Example:
+
+```cpp
+class Fraction {
+private:
+    int m_numerator{};
+    int m_denominator{1};
+
+public:
+    Fraction(int num, int den) {
+        if (den == 0) {
+            throw std::invalid_argument("Denominator cannot be 0!");
+        }
+        m_numerator = num;
+        m_denominator = den;
+    }
+};
+```
+
+Now, invalid fractions can't be created.
+
+### Technical Difference: struct vs class
+
+In C++, the only difference is default access:
+
+- `struct`: members are public by default
+- `class`: members are private by default
+
+Otherwise, both can have member functions, constructors, etc.
+
+### When to Use Each
+
+- Use `struct` for simple, plain data holders (no invariants)
+- Use `class` when you need to  enforce rules, hide details, or add behavior
+
+Most of the C++ Standard Library uses classes for safety and encapsulation.
+
+**Summary:**  
+Structs are great for simple aggregates. Classes are essential for modeling real-world entities safely, enforcing invariants, and combining data with behavior.
+
+
+## 14.2 — Introduction to classes
+
+**Alex &nbsp;&nbsp; June 26, 2024**
+
+In the previous chapter, we covered structs (see lesson 13.7) and discussed how they are great for bundling multiple member variables into a single object that can be initialized and passed around as a unit. Structs provide a convenient package for storing and moving related data values.
+
+Consider the following struct:
+
+```cpp
+#include <iostream>
+
+struct Date
+{
+    int day{};
+    int month{};
+    int year{};
+};
+
+void printDate(const Date& date)
+{
+    std::cout << date.day << '/' << date.month << '/' << date.year; // assume DMY format
+}
+
+int main()
+{
+    Date date{ 4, 10, 21 }; // initialize using aggregate initialization
+    printDate(date);        // can pass entire struct to function
+
+    return 0;
+}
+```
+
+This program prints:
+
+```
+4/10/21
+```
+
+> **Note:**  
+> In these tutorials, all of our structs are aggregates. See lesson 13.8 for details on aggregate initialization.
+
+---
+
+### The Class Invariant Problem
+
+Structs are useful, but they do not provide an effective way to document and enforce class invariants.  
+A **class invariant** is a condition that must always be true for an object to be valid. If an invariant is violated, the object is in an invalid state and further use may cause undefined behavior.
+
+**Example:**
+
+```cpp
+struct Fraction
+{
+    int numerator { 0 };
+    int denominator { 1 }; // class invariant: should never be 0
+};
+```
+
+If you create a `Fraction` with a denominator of 0, the object is invalid:
+
+```cpp
+Fraction f { 5, 0 };   // invalid: denominator is 0
+```
+
+Using this object may cause errors, such as division by zero.
+
+> **Key insight:**  
+> Using an object whose class invariant has been violated may result in unexpected or undefined behavior.
+
+---
+
+### More Complex Invariants
+
+Some invariants involve relationships between members:
+
+```cpp
+#include <string>
+
+struct Employee
+{
+    std::string name {};
+    char firstInitial {}; // should always hold first character of `name` (or `0`)
+};
+```
+
+Here, `firstInitial` should always match the first character of `name`.  
+Relying on users to maintain such invariants is error-prone.
+
+> **Key insight:**  
+> Relying on the user of an object to maintain class invariants is likely to result in problems.
+
+---
+
+### Introduction to Classes
+
+C++ classes were designed to solve these problems.  
+A **class** is a program-defined compound type, similar to a struct, but with mechanisms to enforce invariants and encapsulate behavior.
+
+**Example:**
+
+```cpp
+class Employee
+{
+    int m_id {};
+    int m_age {};
+    double m_wage {};
+};
+```
+
+Classes and structs are technically almost identical, but are used differently in practice.  
+See lesson 14.5 for details on technical and practical differences.
+
+---
+
+### Defining a Class
+
+Classes are defined using the `class` keyword.  
+Here's the previous `Date` example as a class:
+
+```cpp
+#include <iostream>
+
+class Date
+{
+public:
+    int m_day{};
+    int m_month{};
+    int m_year{};
+};
+
+void printDate(const Date& date)
+{
+    std::cout << date.m_day << '/' << date.m_month << '/' << date.m_year;
+}
+
+int main()
+{
+    Date date{ 4, 10, 21 };
+    printDate(date);
+
+    return 0;
+}
+```
+
+This prints:
+
+```
+4/10/21
+```
+
+> **Related:**  
+> See lesson 14.5 for access specifiers and member naming conventions.
+
+---
+
+### Classes in the Standard Library
+
+Most C++ standard library types (e.g., `std::string`, `std::string_view`) are classes.  
+Classes are foundational to C++—the language was originally called “C with classes”.
+
+---
+
+### Quiz Time
+
+**Question #1**
+
+Given:
+
+```cpp
+struct minMax
+{
+    int min; // holds the minimum value seen so far
+    int max; // holds the maximum value seen so far
+};
+```
+
+**What is the invariant?**
+
+> The invariant is:  
+> `min` should always be less than or equal to `max`.  
+> That is, for any valid `minMax` object, `min <= max` must be true.
+    
+
+
+
+# Member functions
+- In lesson 13.7 -- Introduction to structs, members, and member selection, we introduced the struct program-defined type, which can contain member variables. Here is an example of a struct used to hold a date:
+
+## 4.5 — Public and private members and access specifiers
+
+In C++, each member of a class or struct has an **access level** that determines who can access it. The two most common access levels are **public** and **private**.
+
+### Structs: Members Are Public by Default
+
+Members of a `struct` are public unless specified otherwise. Public members can be accessed from anywhere in your code.
+
+```cpp
+#include <iostream>
+
+struct Date
+{
+    int year {};       // public by default
+    int month {};      // public by default
+    int day {};        // public by default
+
+    void print() const // public by default
+    {
+        std::cout << year << '/' << month << '/' << day;
+    }
+};
+
+int main()
+{
+    Date today { 2020, 10, 14 };
+    today.day = 16;    // allowed: public member
+    today.print();     // allowed: public member function
+    return 0;
+}
+```
+
+### Classes: Members Are Private by Default
+
+Members of a `class` are private unless specified otherwise. Private members can only be accessed by other members of the same class.
+
+```cpp
+#include <iostream>
+
+class Date
+{
+    int m_year {};     // private by default
+    int m_month {};    // private by default
+    int m_day {};      // private by default
+
+    void print() const // private by default
+    {
+        std::cout << m_year << '/' << m_month << '/' << m_day;
+    }
+};
+
+int main()
+{
+    Date today { 2020, 10, 14 }; // error: cannot use aggregate initialization
+    today.m_day = 16;            // error: m_day is private
+    today.print();               // error: print() is private
+    return 0;
+}
+```
+
+### Access Specifiers
+
+You can explicitly set access levels using `public:`, `private:`, and `protected:` specifiers.
+
+```cpp
+class Date
+{
+public:
+    void print() const
+    {
+        std::cout << m_year << '/' << m_month << '/' << m_day;
+    }
+
+private:
+    int m_year { 2020 };
+    int m_month { 10 };
+    int m_day { 14 };
+};
+
+int main()
+{
+    Date d{};
+    d.print(); // allowed: print() is public
+    return 0;
+}
+```
+
+### Naming Convention for Private Members
+
+It's common to prefix private member variables with `m_` to distinguish them from parameters and local variables.
+
+```cpp
+void setName(std::string_view name)
+{
+    m_name = name; // m_name is a member, name is a parameter
+}
+```
+
+### Access Levels Summary
+
+| Access level | Specifier   | Member access | Derived class access | Public access |
+|--------------|-------------|---------------|---------------------|--------------|
+| Public       | `public:`   | yes           | yes                 | yes          |
+| Protected    | `protected:`| yes           | yes                 | no           |
+| Private      | `private:`  | yes           | no                  | no           |
+
+### Best Practices
+
+- **Structs:** Avoid access specifiers; keep all members public.
+- **Classes:** Make member variables private (or protected), and member functions public.
+- **Prefix** private member variables with `m_` for clarity.
+
+### Per-Class Access
+
+Access is granted on a per-class basis. Member functions can access private members of any object of the same class.
+
+```cpp
+class Person
+{
+private:
+    std::string m_name{};
+
+public:
+    void kisses(const Person& p) const
+    {
+        std::cout << m_name << " kisses " << p.m_name << '\n'; // allowed
+    }
+};
+```
+
+### Technical Difference: struct vs class
+
+- `struct`: members are public by default
+- `class`: members are private by default
+
+Use a `struct` for simple data aggregates with no invariants; use a `class` otherwise.
+
