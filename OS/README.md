@@ -111,12 +111,28 @@
 
 # 📚 Distributed os
 
-- OS manages many bunches of resources, > =1 CPUs, >=1 memory, >=1 GPUs, etc
-- Loosely connected autonomous,
-  interconnected computer nodes.
-- collection of independent, networked,
-  communicating, and physically separate
-  computational nodes.
+- A Distributed Operating System is an OS that manages a collection of independent computers (nodes) and makes them appear to the user as a single coherent system.
+    - Each node has its own processor and memory.
+    - The OS coordinates all these nodes so users feel like they are using one powerful machine instead of many.
+    - Think of it as a virtual single system built from multiple networked computers.
+
+- Key Features :
+    - Resource Sharing
+    - Scalability
+    - Concurrency
+    - Fault Tolerance --> if one node fails, others can continue to run.
+
+- Advantages :
+    - Better performance (parallelism).
+    - Reliability (fault tolerance).
+    - Resource utilization (idle resources used efficiently).
+    - Easier scalability.
+
+- Challenges :
+    - Synchronization between nodes.
+    - Deadlocks across distributed processes.
+    - Security (data is spread across many nodes).
+    - Communication overhead (network delays, message passing).
 
 # 📚 RTOS
 
@@ -447,7 +463,6 @@ Suppose Process A is running and its time slice ends. The OS:
             - Ensures responsiveness.
             - More context switches (overhead).
             - Allows interruption of long tasks.
-
         - Example :
             - If Process A is running and Process B (higher priority) arrives, then Process A is preempted, and Process B gets the CPU.
 
@@ -1072,10 +1087,8 @@ int main() {
             - if there exist a deadlock that means, there exist a critical section and shared resources(cpu, variables, semaphores) concept being used between two processes or threads.
         - <p style = "color:pink"> Hold and wait : </p>
             - A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
-
         - <p style = "color:pink"> No Preemption : </p>
             - A resource cannot be forcibly taken away; it must be released voluntarily.
-
         - <p style = "color:pink"> Circular wait : </p>
             - A closed chain of processes exists, where each process is waiting for a resource held by the next.
 
@@ -1351,12 +1364,10 @@ class Banker {
         - <p style = "color:orange"> Page table entries </p> Each logical page is represented by a page table entry (PTE). A PTE stores the corresponding frame number and control bits.
         - <p style = "color:orange"> Number of page table entries</p> The page table has one entry per logical page. Thus, its size equals the number of pages in the process's address space.
         - <p style = "color:orange">Page table stored in main memory</p> The page table is kept in main memory. This can add overhead when processes are swapped in or out
-
     - <p style = "color:purple"> Advantages </p>
         - Eliminates External Fragmentation
         - Efficient Memory Utilization
         - Supports Virtual Memory
-
     - <p style = "color:purple">Disadvantages </p>
        
         - Internal Fragmentation
