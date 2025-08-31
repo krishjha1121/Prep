@@ -169,6 +169,8 @@ flowchart TD
 - **Access**: Random access using indices
 - **Memory Layout**: Elements stored sequentially
 
+<div align = "center">
+
 ```mermaid
 graph LR
     subgraph "Array Memory Layout"
@@ -178,6 +180,8 @@ graph LR
         D --> E["...<br/>Index n-1"]
     end
 ```
+
+</div>
 
 > #### Implementation in Java
 
@@ -1455,7 +1459,7 @@ factorial(3)
 
 > ## 🌳 Trees
 
-### Binary Trees
+> ### Binary Trees
 
 #### Theory
 
@@ -1482,7 +1486,6 @@ graph TD
 ```java path=null start=null
 public class BinaryTree<T> {
     private TreeNode<T> root;
-
     private static class TreeNode<T> {
         T data;
         TreeNode<T> left;
@@ -1492,9 +1495,7 @@ public class BinaryTree<T> {
             this.data = data;
         }
     }
-
     // Tree Traversals
-
     // Inorder: Left → Root → Right
     public void inorderTraversal(TreeNode<T> node, List<T> result) {
         if (node != null) {
@@ -1521,35 +1522,54 @@ public class BinaryTree<T> {
             result.add(node.data);
         }
     }
-
     // Level Order Traversal (BFS)
     public List<T> levelOrderTraversal() {
         List<T> result = new ArrayList<>();
         if (root == null) return result;
-
         Queue<TreeNode<T>> queue = new LinkedList<>();
         queue.offer(root);
-
         while (!queue.isEmpty()) {
             TreeNode<T> current = queue.poll();
             result.add(current.data);
-
             if (current.left != null) queue.offer(current.left);
             if (current.right != null) queue.offer(current.right);
         }
-
         return result;
     }
 }
 ```
 
-### Binary Search Tree (BST)
+> #### Properties of Binary Trees
+
+- The maximum number of nodes at level L of a binary tree is $2^L$.
+- The maximum number of nodes in a binary tree of height H is $2^H – 1$.
+
+> #### Applications of Binary Tree
+
+- Binary Tree can be used to represent hierarchical data.
+- Huffman Coding trees are used in data compression algorithms.
+- Priority Queue is another application of binary tree that is used for searching maximum or minimum in O(1) time complexity.
+- Useful for indexing segmented at the database is useful in storing cache in the system,
+- Binary trees can be used to implement decision trees, a type of machine learning algorithm used for classification and regression analysis.
+- DOM in HTML: Binary trees help manage the hierarchical structure of web pages.
+- Routing Algorithms: Support decision-making in network routing.
+
+> #### Disadvantages
+
+- Skewed Trees: Unbalanced trees can degrade performance to O(n), similar to linked lists.
+- Memory Overhead: Additional pointers in each node increase memory usage.
+- Complex Implementation:Balancing trees (e.g., AVL, Red-Black) requires sophisticated rotations.
+- Limited Degree: Restricts each node to two children, which might not be ideal for some applications.
+
+> ### Binary Search Tree (BST)
 
 #### Theory
 
 - **Property**: Left subtree < Root < Right subtree
 - **Search Efficiency**: O(log n) average case, O(n) worst case
 - **Inorder Traversal**: Gives sorted sequence
+
+<div align = "center">
 
 ```mermaid
 graph TD
@@ -1563,10 +1583,12 @@ graph TD
     H --> I["13"]
 ```
 
+</div>
+
 ```java path=null start=null
+
 public class BinarySearchTree {
     private TreeNode root;
-
     private class TreeNode {
         int val;
         TreeNode left, right;
@@ -1575,7 +1597,6 @@ public class BinarySearchTree {
             this.val = val;
         }
     }
-
     // Search: O(log n) average, O(n) worst
     public boolean search(int val) {
         return searchHelper(root, val);
@@ -1589,35 +1610,71 @@ public class BinarySearchTree {
             searchHelper(node.left, val) :
             searchHelper(node.right, val);
     }
-
     // Insert: O(log n) average, O(n) worst
     public void insert(int val) {
         root = insertHelper(root, val);
     }
-
     private TreeNode insertHelper(TreeNode node, int val) {
         if (node == null) {
             return new TreeNode(val);
         }
-
         if (val < node.val) {
             node.left = insertHelper(node.left, val);
         } else if (val > node.val) {
             node.right = insertHelper(node.right, val);
         }
-
         return node;
+    }
+    // Delete: O(log n) average, O(n) worst
+    public void delete(int val) {
+        root = deleteHelper(root, val);
+    }
+    private TreeNode deleteHelper(TreeNode node, int val) {
+        if (node == null) return null;
+        if (val < node.val) {
+            node.left = deleteHelper(node.left, val);
+        } else if (val > node.val) {
+            node.right = deleteHelper(node.right, val);
+        } else {
+            // Node found
+            // Case 1: No child
+            if (node.left == null && node.right == null) {
+                return null;
+            }
+            // Case 2: One child
+            else if (node.left == null) {
+                return node.right;
+            } else if (node.right == null) {
+                return node.left;
+            }
+            // Case 3: Two children
+            else {
+                int minVal = findMin(node.right);
+                node.val = minVal;
+                node.right = deleteHelper(node.right, minVal);
+            }
+        }
+        return node;
+    }
+    private int findMin(TreeNode node) {
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node.val;
     }
 }
 ```
 
-### AVL Trees (Self-Balancing BST)
+> ### AVL Trees (Self-Balancing BST)
 
 #### Theory
 
 - **Balance Factor**: Height difference between left and right subtrees ∈ {-1, 0, 1}
 - **Rotations**: Single and double rotations to maintain balance
 - **Guarantee**: O(log n) operations in all cases
+- Named after inventors **Adelson-Velsky and Landis**.
+
+<div align = "center">
 
 <div align = "center">
 
@@ -1632,18 +1689,63 @@ graph TD
 
 </div>
 
+<<<<<<< Updated upstream
 > ### Red-Black Trees
 
 - Red-Black trees are self-balancing binary search trees that maintain balance through a set of coloring rules and rotations. They guarantee O(log n) time complexity for search, insertion, and deletion operations.
+=======
+> ### ⏱️ Time Complexity
+>
+> | Operation | Time Complexity | Why                   |
+> | --------- | --------------- | --------------------- |
+> | Search    | O(log n)        | Balanced height       |
+> | Insert    | O(log n)        | May involve rotations |
+> | Delete    | O(log n)        | May involve rotations |
+
+> ## Summary of AVL Tree Rotations
+
+| Rotation Type            | When to Use                                        | Steps                                                                |
+| ------------------------ | -------------------------------------------------- | -------------------------------------------------------------------- |
+| Left Rotation (LL)       | Balance factor > 1 and left child is left-heavy    | Single right rotation on the unbalanced node                         |
+| Right Rotation (RR)      | Balance factor < -1 and right child is right-heavy | Single left rotation on the unbalanced node                          |
+| Left-Right Rotation (LR) | Balance factor > 1 and left child is right-heavy   | Left rotation on left child, then right rotation on unbalanced node  |
+| Right-Left Rotation (RL) | Balance factor < -1 and right child is left-heavy  | Right rotation on right child, then left rotation on unbalanced node |
+
+> #### Applications of AVL Tree:
+
+- AVL Tree is used as a first example self balancing BST in teaching DSA as it is easier to understand and implement compared to Red Black
+- Applications, where insertions and deletions are less common but frequent data lookups along with other operations of BST like sorted traversal, floor, ceil, min and max.
+- Red Black tree is more commonly implemented in language libraries like map in C++, set in C++, TreeMap in Java and TreeSet in Java.
+- AVL Trees can be used in a real time environment where predictable and consistent performance is required.
+
+> #### Advantages of AVL Tree:
+
+- AVL trees can self-balance themselves and therefore provides time complexity as O(log n) for search, insert and delete.
+- As it is a balanced BST, so items can be traversed in sorted order.
+- Since the balancing rules are strict compared to Red Black Tree, AVL trees in general have relatively less height and hence the search is faster.
+- AVL tree is relatively less complex to understand and implement compared to Red Black Trees.
+
+> #### Disadvantages of AVL Tree:
+
+- It is difficult to implement compared to normal BST.
+- Less used compared to Red-Black trees. Due to its rather strict balance.
+- AVL trees provide complicated insertion and removal operations as more rotations are performed.
+
+> ### Red-Black Trees
+
+- A Red-Black Tree is a self-balancing binary search tree where each node has an additional attribute: a color, which can be either red or black. The primary objective of these trees is to maintain balance during insertions and deletions, ensuring efficient data retrieval and manipulation.
+- Gurantees the time complexity of all the operations are same as avl tree.
+- At most 2 rotations are requred to balance the tree + some color changing.
+- AVL-Tree are more balanced compared to red RB-Tree, however the the time complexity remains same.
+- AVL-Tree(Searching faster sing they are highly balanced), RB-Tree(Insertion and delection are faster since the only require atmost 2 rotations)
+- Every AVL-Tree satisfies the property of RB-Tree but the vice-versa is not true.
+>>>>>>> Stashed changes
 
 #### Theory
 
-- **Properties**:
-    1. Every node is either red or black
-    2. Root is always black
-    3. No two adjacent red nodes
-    4. Every path from root to null has same number of black nodes
+> #### Properties:
 
+<<<<<<< Updated upstream
 > ## Basic Structure
 
 ```mermaid
@@ -2226,6 +2328,13 @@ public class RedBlackTreeExample {
 ```
 
 Red-Black trees provide an excellent balance between the simplicity of implementation and the performance guarantees, making them ideal for many real-world applications where frequent insertions and deletions occur alongside searches.
+=======
+- Node Color: Each node is either red or black.
+- Root Property: The root of the tree is always black.
+- Red Property: Red nodes cannot have red children (no two consecutive red nodes on any path).
+- Black Property: Every path from a node to its descendant null nodes (leaves) has the same number of black nodes.
+- Leaf Property: All leaves (NIL nodes) are black.
+>>>>>>> Stashed changes
 
 > ### Trie (Prefix Tree)
 
@@ -2236,7 +2345,11 @@ Red-Black trees provide an excellent balance between the simplicity of implement
 - **Applications**: Autocomplete, spell checkers, IP routing
 
 <div align = "center">
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
 ```mermaid
 graph TD
     A["Root"] --> B["c"]
@@ -2248,6 +2361,8 @@ graph TD
     C --> H["h"]
     H --> I["e (end)"]
 ```
+</div>
+
 </div>
 
 ```java path=null start=null
