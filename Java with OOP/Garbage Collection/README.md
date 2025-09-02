@@ -145,6 +145,80 @@ The allocation failed, the value of failed_malloc is: (nil)
 
 ---
 
+> The ways to make an object eligible for GC :
+
+- Even though programmer is not responsible to destroy useless objects, it is highly recommended to make an object eligible for GC if it is not longer required.
+- An Object is said to be eligible for GC if and only if it does not contain any reference variable.
+- The following are the various ways to make an object eligible for GC :
+    - Nullifying the reference variable:
+        - if an object is no longer required then assign null to all its reference variables then that object is automatically eligible for GC. This approach is nothing but nullifying the reference variable. Shown in example above.
+    - Reassigning the reference variable :
+        - if an object is no longer required then reassign its reference variable to some other object then old object will be eligible for GC(Garbage Collection).
+    - The Objects which are created inside a method are by default eligible for GC once a method completes.
+    - Island of isolation :
+
+```java
+// Java Program to Illustrate Island of Isolation
+public class Test {
+    Test i;
+    // Method 1
+    // Main driver method
+    public static void main(String[] args) {
+        // Creating object of class inside main() method
+        Test t1 = new Test();
+        Test t2 = new Test();
+
+        // Object of t1 gets a copy of t2
+        t1.i = t2;
+
+        // Object of t2 gets a copy of t1
+        t2.i = t1;
+
+        // Till now no object eligible
+        // for garbage collection
+        t1 = null;
+
+        // Now two objects are eligible for
+        // garbage collection
+        t2 = null;
+
+        // Calling garbage collector
+        System.gc();
+    }
+
+    // Method 2
+    // overriding finalize() Method
+    @Override protected void finalize() throws Throwable
+    {
+        // Print statement
+        System.out.println("Finalize method called");
+    }
+}
+```
+
+Note :
+
+- if an object does not contain any reference variable then it is eligible for garbage collection always.
+- Even though object having references sometimes it is eligible for garbage collection(if all references are internal references, eg : island of isolation)
+
+> The methods for requesting JVM to run GC
+
+- There is no guarantee that the jvm will always listen to our request and send the garbage collector for us.
+- Once we made an object eligible for GC it may not be destroyed immediately by garbage collector, whenever JVM runs GC then only the objects will be destroyed but when exactly JVM runs garbage collector, we can't expect it is varied from JVM to JVM.
+- Instead of waiting until JVM runs GC we can request JVM to run GC programmatically but whether JVM accept our request or not there is not guarantee but most of the times JVM accept our request.
+- The following are two ways for requesting JVM to run GC:
+    - By using system call :
+        - System class contains a static method called gc() for this purpose [System.gc()].
+    - By using Runtime class :
+        - Java application can communicate with JVM by using Runtime Object.
+        - Runtime class present in java.lang package and it is a singleton class.
+        - We can create Runtime object by using Runtime.getRuntime() method.
+        - Runtime r = Runtime.getRuntime();
+        - Once we got runtime object we can call the following methods on that object :
+            - Total Memory : r.totalMemory() --> it return number of bytes of total memory present in the heap(i.e Heap Size)
+            - Free Memory : r.freeMemory() --> it return number of bytes of free memory present in the heap(i.e Heap Size)
+            - gc : r.gc() --> it will trigger garbage collection.
+
 ## 🏗️ Memory Management in Java
 
 ### JVM Memory Areas
