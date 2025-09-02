@@ -2762,6 +2762,4 @@ This setup implements **Command Query Responsibility Segregation (CQRS):**
 
 ---
 
-**Summary:**  
-
-
+**Summary:**
