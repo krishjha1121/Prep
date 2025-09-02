@@ -837,6 +837,10 @@ public class TryWithResourcesExample {
         }
     }
 }
+// try (r1; r2; r3) --> Here only only those resources are allowed that implements autclosable interface introduced in java v1.7;
+// try (r1; r2; r3) --> All the reference variable of the resources are implicitly final.
+// try with resources but without catch is totally valid from java v1.7 onwards.
+
 ```
 
 ---
@@ -2976,7 +2980,6 @@ public class MultiCatchExample {
             System.err.println("❌ Multiple exception types: " + e.getClass().getSimpleName());
             System.err.println("📄 Message: " + e.getMessage());
             logError(e);
-
         } catch (RuntimeException e) {
             System.err.println("⚡ Runtime exception: " + e.getMessage());
         }
@@ -2989,6 +2992,7 @@ public class MultiCatchExample {
         // Implementation here
     }
 }
+// Remember that in a single catch block, you can write multiple exception types but but there should not be parent child or child parent relationship between any two exception.
 ```
 
 ### Wrong vs Right Order:
