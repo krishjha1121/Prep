@@ -609,8 +609,7 @@ class Test {
     public stati void main(String args[]) {
         try {
             System.out.println("RK ROY");
-        } catch (IOEXception e) {
-        }
+        } catch (IOEXception e) {}
     }
 }
 // Compile-time error : you cannot write catch block if not needed for fully checked exception (IOException, InterruptedException, ..)
@@ -735,7 +734,6 @@ class A {
 class B extends A {
     // void show() {} ❌ Error
 }
-
 // Final class (cannot be inherited)
 final class C {}
 // class D extends C {} ❌ Error
@@ -1881,7 +1879,6 @@ public class BankingSystem {
         public synchronized void deposit(double amount) throws BankingException {
             validateAccount();
             validateAmount(amount);
-
             balance += amount;
             System.out.println(String.format("✅ Deposit successful: $%.2f. New balance: $%.2f",
                                             amount, balance));
@@ -1923,7 +1920,6 @@ public class BankingSystem {
             }
             Account account = new Account(accountNumber, accountHolderName, initialBalance);
             accounts.put(accountNumber, account);
-
             System.out.println(String.format("✅ Account created successfully: %s for %s with balance $%.2f",
                                             accountNumber, accountHolderName, initialBalance));
         }
@@ -2432,7 +2428,6 @@ public class FileProcessingSystem {
             // Add timestamp
             processedLine.append(",PROCESSED_AT=")
                         .append(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-
             return processedLine.toString();
         }
         private void log(String message) {
@@ -2771,7 +2766,6 @@ public class ValidationException extends RuntimeException {
         return sb.toString();
     }
 }
-
 // User class with validation
 class User {
     private String username;
