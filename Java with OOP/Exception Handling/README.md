@@ -321,7 +321,6 @@ Exceptions that are checked by compiler for smooth execution of program at runti
 ```java path=null start=null
 import java.io.*;
 import java.sql.*;
-
 public class CheckedExceptionExample {
     // FileNotFoundException - Checked Exception
     public void readFile(String fileName) throws IOException {
@@ -603,6 +602,20 @@ class Test {
 // Note --> This will get compile time error, since parent exception will catch the exception, it does not makes sense to have ArithmeticException since we catch the exception from top to down.
 ```
 
+Note :
+
+```java
+class Test {
+    public stati void main(String args[]) {
+        try {
+            System.out.println("RK ROY");
+        } catch (IOEXception e) {
+        }
+    }
+}
+// Compile-time error : you cannot write catch block if not needed for fully checked exception (IOException, InterruptedException, ..)
+```
+
 ---
 
 ## 🧹 Finally Block
@@ -695,6 +708,84 @@ public class FinallyVsReturn {
 }
 ```
 
+# 🔑 `final`, `finally`, and `finalize()`
+
+In Java, `final`, `finally`, and `finalize()` look similar but serve very different purposes.
+
+---
+
+## 1.`final` (Keyword)
+
+- Used for **variables, methods, and classes**.
+- Prevents modification, overriding, or inheritance.
+
+**Examples:**
+
+```java
+// Final variable (constant)
+final int x = 10;
+// x = 20; ❌ Error
+
+// Final method (cannot be overridden)
+class A {
+    final void show() {
+        System.out.println("Hello");
+    }
+}
+class B extends A {
+    // void show() {} ❌ Error
+}
+
+// Final class (cannot be inherited)
+final class C {}
+// class D extends C {} ❌ Error
+```
+
+## 2.`finally` (Block)
+
+- Used with **try-catch** in exception handling.
+- **Purpose:** Ensures that cleanup code (like closing files, releasing resources) always executes.
+- **Guarantee:** Executes whether an exception occurs or not.
+- **Exception:** Will not run only in rare cases like `System.exit(0)` or sudden JVM crash.
+
+### Example:
+
+```java
+try {
+    int x = 10 / 0; // Exception occurs here
+} catch (ArithmeticException e) {
+    System.out.println("Exception handled");
+} finally {
+    System.out.println("Finally block executed");
+}
+```
+
+## 3.`finalize()` (Method)
+
+- Defined in the `java.lang.Object` class.
+- **Purpose:** Called by the **Garbage Collector (GC)** before an object is destroyed.
+- Can be overridden to perform cleanup tasks (like releasing resources, closing connections).
+- **Important:** Execution of `finalize()` is **not guaranteed** — depends on when/if the GC runs.
+- In modern Java, it is considered **deprecated** and not recommended for resource management (use `try-with-resources` instead).
+
+### Example:
+
+```java
+class Test {
+    @Override
+    protected void finalize() {
+        System.out.println("Object is destroyed");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t = null;          // Make object eligible for GC
+        System.gc();       // Request garbage collection
+    }
+}
+```
+
 ### Try-With-Resources (Java 7+):
 
 Automatic resource management - a modern alternative to finally:
@@ -766,10 +857,13 @@ Two important keywords that are often confused:
 
 ### 📢 `throws` Keyword
 
+- Used to deligate the responsibility of handling the exception to the caller (JVM or Method).
+- It is used only to convince the compiler and its usage does not prevent abnormal termination of the program.
 - **Purpose**: Declare that method might throw exceptions
 - **Usage**: In method signature
 - **Syntax**: `methodName() throws ExceptionType1, ExceptionType2`
 - **Effect**: Passes responsibility to caller
+- **Scope** : Should try to use only for checked exceptions.
 
 ### Comparison Table:
 
@@ -897,7 +991,6 @@ public class ThrowAndThrowsExample {
         try {
             authenticateUser(username, password); // Must handle AuthenticationException
             System.out.println("🎉 User logged in successfully!");
-
         } catch (AuthenticationException e) {
             System.err.println("🚫 Login failed: " + e.getMessage());
         }
@@ -917,9 +1010,9 @@ Exception propagation is the process by which an exception is passed from the me
 
 ```mermaid
 flowchart TD
-    A[main() method] --> B[method1()]
-    B --> C[method2()]
-    C --> D[method3()]
+    A["main() method"] --> B["method1()"]
+    B --> C["method2()"]
+    C --> D["method3()"]
     D --> E["💥 Exception occurs"]
     E --> F{"method3() handles it?"}
     F -->|No| G["Propagate to method2()"]
@@ -1005,7 +1098,6 @@ public class CheckedExceptionPropagation {
         try {
             processFileMethod();
             System.out.println("✅ File operations completed");
-
         } catch (FileNotFoundException e) {
             System.err.println("❌ File not found: " + e.getMessage());
 
@@ -1031,7 +1123,6 @@ public class StopPropagationExample {
         try {
             System.out.println("🚀 Calling risky method...");
             riskyMethod();
-
         } catch (Exception e) {
             System.err.println("✋ Exception caught and handled in intermediateMethod");
             System.err.println("📄 Message: " + e.getMessage());
@@ -1162,7 +1253,6 @@ public void processFile(String fileName) throws IOException {
         // File automatically closed even if exception occurs
     }
 }
-
 // ✅ GOOD - Using finally block
 public void processFileAlternative(String fileName) throws IOException {
     FileInputStream fis = null;
@@ -1341,12 +1431,10 @@ public class ValidationBestPractice {
         if (email == null) {
             throw new IllegalArgumentException("📧 Email cannot be null");
         }
-
         if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
             throw new IllegalArgumentException("📧 Invalid email format: " + email);
         }
     }
-
     private void validateAge(int age) {
         if (age < 0) {
             throw new IllegalArgumentException(
@@ -1383,10 +1471,8 @@ Convert low-level exceptions to high-level business exceptions:
 
 ```java path=null start=null
 public class ExceptionTranslationExample {
-
     // Low-level data access layer
     public class UserRepository {
-
         public User findById(String userId) throws DataAccessException {
             try {
                 // Database operation that might throw SQLException
@@ -1398,41 +1484,32 @@ public class ExceptionTranslationExample {
                 if (!rs.next()) {
                     return null;
                 }
-
                 return mapResultSetToUser(rs);
-
             } catch (SQLException e) {
                 // Translate SQLException to DataAccessException
                 throw new DataAccessException(
                     "Failed to retrieve user with ID: " + userId, e);
             }
         }
-
         private Connection getConnection() throws SQLException {
             // Database connection logic
             return DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "");
         }
-
         private User mapResultSetToUser(ResultSet rs) throws SQLException {
             // Mapping logic
             return new User(rs.getString("id"), rs.getString("name"), rs.getString("email"));
         }
     }
-
     // High-level service layer
     public class UserService {
         private UserRepository userRepository = new UserRepository();
-
         public User getUser(String userId) throws UserServiceException {
             try {
                 User user = userRepository.findById(userId);
-
                 if (user == null) {
                     throw new UserNotFoundException("User not found with ID: " + userId);
                 }
-
                 return user;
-
             } catch (DataAccessException e) {
                 // Translate data access exception to service exception
                 throw new UserServiceException(
@@ -1440,35 +1517,29 @@ public class ExceptionTranslationExample {
             }
         }
     }
-
     // Exception classes
     class DataAccessException extends Exception {
         public DataAccessException(String message, Throwable cause) {
             super(message, cause);
         }
     }
-
     class UserServiceException extends Exception {
         public UserServiceException(String message, Throwable cause) {
             super(message, cause);
         }
     }
-
     class UserNotFoundException extends UserServiceException {
         public UserNotFoundException(String message) {
             super(message, null);
         }
     }
-
     class User {
         private String id, name, email;
-
         public User(String id, String name, String email) {
             this.id = id;
             this.name = name;
             this.email = email;
         }
-
         // Getters...
     }
 }
@@ -1480,12 +1551,10 @@ Implement retry logic for transient failures:
 
 ```java path=null start=null
 public class RetryMechanismExample {
-
     public class RetryableService {
         private static final Logger logger = LoggerFactory.getLogger(RetryableService.class);
         private static final int MAX_RETRIES = 3;
         private static final long RETRY_DELAY_MS = 1000;
-
         public String callExternalService(String request) throws ServiceException {
             return executeWithRetry(() -> {
                 // Simulate external service call
@@ -1495,22 +1564,18 @@ public class RetryMechanismExample {
                 return "Success: " + request;
             });
         }
-
         private <T> T executeWithRetry(RetryableOperation<T> operation) throws ServiceException {
             int attempts = 0;
             Exception lastException = null;
-
             while (attempts < MAX_RETRIES) {
                 try {
                     attempts++;
                     logger.info("🚀 Attempt {} of {}", attempts, MAX_RETRIES);
 
                     return operation.execute();
-
                 } catch (TransientServiceException e) {
                     lastException = e;
                     logger.warn("⚠️ Attempt {} failed: {}", attempts, e.getMessage());
-
                     if (attempts < MAX_RETRIES) {
                         try {
                             logger.info("😴 Waiting {}ms before retry...", RETRY_DELAY_MS);
@@ -1520,40 +1585,34 @@ public class RetryMechanismExample {
                             throw new ServiceException("Retry interrupted", ie);
                         }
                     }
-
                 } catch (PermanentServiceException e) {
                     // Don't retry permanent failures
                     logger.error("❌ Permanent failure, not retrying: {}", e.getMessage());
                     throw new ServiceException("Permanent service failure", e);
                 }
             }
-
             // All retries exhausted
             logger.error("💥 All {} attempts failed", MAX_RETRIES);
             throw new ServiceException(
                 String.format("Service call failed after %d attempts", MAX_RETRIES),
                 lastException);
         }
-
         @FunctionalInterface
         private interface RetryableOperation<T> {
             T execute() throws TransientServiceException, PermanentServiceException;
         }
     }
-
     // Exception hierarchy for retry logic
     abstract class ServiceException extends Exception {
         public ServiceException(String message, Throwable cause) {
             super(message, cause);
         }
     }
-
     class TransientServiceException extends RuntimeException {
         public TransientServiceException(String message) {
             super(message);
         }
     }
-
     class PermanentServiceException extends RuntimeException {
         public PermanentServiceException(String message) {
             super(message);
@@ -1569,26 +1628,20 @@ Prevent cascade failures by implementing circuit breaker:
 ```java path=null start=null
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-
 public class CircuitBreakerExample {
-
     public class CircuitBreaker {
         private final int failureThreshold;
         private final long timeoutDuration;
         private final int successThreshold;
-
         private final AtomicInteger failureCount = new AtomicInteger(0);
         private final AtomicInteger successCount = new AtomicInteger(0);
         private final AtomicLong lastFailureTime = new AtomicLong(0);
-
         private volatile CircuitState state = CircuitState.CLOSED;
-
         public CircuitBreaker(int failureThreshold, long timeoutDuration, int successThreshold) {
             this.failureThreshold = failureThreshold;
             this.timeoutDuration = timeoutDuration;
             this.successThreshold = successThreshold;
         }
-
         public <T> T execute(CircuitBreakerOperation<T> operation) throws CircuitBreakerException {
             if (state == CircuitState.OPEN) {
                 if (System.currentTimeMillis() - lastFailureTime.get() > timeoutDuration) {
@@ -1599,7 +1652,6 @@ public class CircuitBreakerExample {
                     throw new CircuitBreakerException("🚫 Circuit breaker is OPEN - calls not allowed");
                 }
             }
-
             try {
                 T result = operation.execute();
                 onSuccess();
@@ -1610,10 +1662,8 @@ public class CircuitBreakerExample {
                 throw new CircuitBreakerException("Operation failed", e);
             }
         }
-
         private void onSuccess() {
             failureCount.set(0);
-
             if (state == CircuitState.HALF_OPEN) {
                 int currentSuccessCount = successCount.incrementAndGet();
                 if (currentSuccessCount >= successThreshold) {
@@ -1622,48 +1672,39 @@ public class CircuitBreakerExample {
                 }
             }
         }
-
         private void onFailure() {
             int currentFailureCount = failureCount.incrementAndGet();
             lastFailureTime.set(System.currentTimeMillis());
-
             if (currentFailureCount >= failureThreshold) {
                 state = CircuitState.OPEN;
                 System.out.println("❌ Circuit breaker moving to OPEN state");
             }
         }
-
         public CircuitState getState() {
             return state;
         }
-
         @FunctionalInterface
         public interface CircuitBreakerOperation<T> {
             T execute() throws Exception;
         }
     }
-
     enum CircuitState {
         CLOSED,    // Normal operation
         OPEN,      // Failing fast
         HALF_OPEN  // Testing if service recovered
     }
-
     class CircuitBreakerException extends Exception {
         public CircuitBreakerException(String message) {
             super(message);
         }
-
         public CircuitBreakerException(String message, Throwable cause) {
             super(message, cause);
         }
     }
-
     // Usage example
     public class ExternalServiceClient {
         private final CircuitBreaker circuitBreaker =
             new CircuitBreaker(3, 10000, 2); // 3 failures, 10s timeout, 2 successes to close
-
         public String callService(String request) throws CircuitBreakerException {
             return circuitBreaker.execute(() -> {
                 // Simulate external service call
@@ -1684,75 +1725,58 @@ Implement exception monitoring for production systems:
 ```java path=null start=null
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-
 public class ExceptionMonitoringExample {
-
     public class ExceptionMetrics {
         private final ConcurrentHashMap<String, AtomicLong> exceptionCounts = new ConcurrentHashMap<>();
         private final ConcurrentHashMap<String, AtomicLong> exceptionTimestamps = new ConcurrentHashMap<>();
-
         public void recordException(Exception exception) {
             String exceptionType = exception.getClass().getSimpleName();
-
             // Increment counter
             exceptionCounts.computeIfAbsent(exceptionType, k -> new AtomicLong(0)).incrementAndGet();
-
             // Record timestamp
             exceptionTimestamps.put(exceptionType, new AtomicLong(System.currentTimeMillis()));
-
             // Log with context
             logException(exception);
-
             // Send to monitoring system (e.g., Prometheus, CloudWatch)
             sendToMonitoringSystem(exceptionType);
         }
-
         private void logException(Exception exception) {
             System.err.printf("🚨 Exception recorded: %s - %s%n",
                             exception.getClass().getSimpleName(),
                             exception.getMessage());
         }
-
         private void sendToMonitoringSystem(String exceptionType) {
             // Integration with monitoring systems
             System.out.printf("📈 Metrics sent for exception type: %s%n", exceptionType);
         }
-
         public void printMetrics() {
             System.out.println("📈 Exception Metrics:");
             exceptionCounts.forEach((type, count) ->
                 System.out.printf("• %s: %d occurrences%n", type, count.get()));
         }
-
         public long getExceptionCount(String exceptionType) {
             return exceptionCounts.getOrDefault(exceptionType, new AtomicLong(0)).get();
         }
     }
-
     // Monitored service wrapper
     public class MonitoredService {
         private final ExceptionMetrics metrics = new ExceptionMetrics();
-
         public String riskyOperation(String input) throws ServiceException {
             try {
                 // Simulate risky operation
                 if (input == null) {
                     throw new ValidationException("Input cannot be null");
                 }
-
                 if (input.equals("fail")) {
                     throw new BusinessException("Business logic failure");
                 }
-
                 if (Math.random() < 0.3) {
                     throw new TransientException("Random transient failure");
                 }
-
                 return "Processed: " + input;
 
             } catch (Exception e) {
                 metrics.recordException(e);
-
                 // Re-throw as ServiceException
                 if (e instanceof ServiceException) {
                     throw (ServiceException) e;
@@ -1761,26 +1785,21 @@ public class ExceptionMonitoringExample {
                 }
             }
         }
-
         public void printMetrics() {
             metrics.printMetrics();
         }
     }
-
     // Exception hierarchy for monitoring
     abstract class ServiceException extends Exception {
         public ServiceException(String message) { super(message); }
         public ServiceException(String message, Throwable cause) { super(message, cause); }
     }
-
     class ValidationException extends ServiceException {
         public ValidationException(String message) { super(message); }
     }
-
     class BusinessException extends ServiceException {
         public BusinessException(String message) { super(message); }
     }
-
     class TransientException extends ServiceException {
         public TransientException(String message) { super(message); }
     }
@@ -1801,79 +1820,64 @@ A complete banking system with proper exception handling:
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
 public class BankingSystem {
-
     // Custom exceptions for banking operations
     public static class BankingException extends Exception {
         private String errorCode;
         private LocalDateTime timestamp;
-
         public BankingException(String message, String errorCode) {
             super(message);
             this.errorCode = errorCode;
             this.timestamp = LocalDateTime.now();
         }
-
         public String getErrorCode() { return errorCode; }
         public LocalDateTime getTimestamp() { return timestamp; }
     }
-
     public static class InsufficientBalanceException extends BankingException {
         private double availableBalance;
         private double requestedAmount;
-
         public InsufficientBalanceException(double availableBalance, double requestedAmount) {
             super(String.format("💳 Insufficient balance. Available: $%.2f, Requested: $%.2f",
                                availableBalance, requestedAmount), "INSUFFICIENT_BALANCE");
             this.availableBalance = availableBalance;
             this.requestedAmount = requestedAmount;
         }
-
         public double getAvailableBalance() { return availableBalance; }
         public double getRequestedAmount() { return requestedAmount; }
         public double getDeficit() { return requestedAmount - availableBalance; }
     }
-
     public static class AccountNotFoundException extends BankingException {
         public AccountNotFoundException(String accountNumber) {
             super("🔍 Account not found: " + accountNumber, "ACCOUNT_NOT_FOUND");
         }
     }
-
     public static class InvalidTransactionException extends BankingException {
         public InvalidTransactionException(String reason) {
             super("❌ Invalid transaction: " + reason, "INVALID_TRANSACTION");
         }
     }
-
     // Account class
     public static class Account {
         private final String accountNumber;
         private double balance;
         private final String accountHolderName;
         private boolean isActive;
-
         public Account(String accountNumber, String accountHolderName, double initialBalance) {
             this.accountNumber = accountNumber;
             this.accountHolderName = accountHolderName;
             this.balance = initialBalance;
             this.isActive = true;
         }
-
         public synchronized void withdraw(double amount) throws BankingException {
             validateAccount();
             validateAmount(amount);
-
             if (amount > balance) {
                 throw new InsufficientBalanceException(balance, amount);
             }
-
             balance -= amount;
             System.out.println(String.format("✅ Withdrawal successful: $%.2f. New balance: $%.2f",
                                             amount, balance));
         }
-
         public synchronized void deposit(double amount) throws BankingException {
             validateAccount();
             validateAmount(amount);
@@ -1882,13 +1886,11 @@ public class BankingSystem {
             System.out.println(String.format("✅ Deposit successful: $%.2f. New balance: $%.2f",
                                             amount, balance));
         }
-
         private void validateAccount() throws BankingException {
             if (!isActive) {
                 throw new InvalidTransactionException("Account is inactive");
             }
         }
-
         private void validateAmount(double amount) throws BankingException {
             if (amount <= 0) {
                 throw new InvalidTransactionException(
@@ -1900,7 +1902,6 @@ public class BankingSystem {
                     String.format("Amount exceeds daily limit of $10,000. Provided: $%.2f", amount));
             }
         }
-
         // Getters
         public String getAccountNumber() { return accountNumber; }
         public double getBalance() { return balance; }
@@ -1908,38 +1909,30 @@ public class BankingSystem {
         public boolean isActive() { return isActive; }
         public void setActive(boolean active) { this.isActive = active; }
     }
-
     // Banking service
     public static class BankingService {
         private final Map<String, Account> accounts = new ConcurrentHashMap<>();
-
         public void createAccount(String accountNumber, String accountHolderName, double initialBalance)
                 throws BankingException {
-
             if (accounts.containsKey(accountNumber)) {
                 throw new InvalidTransactionException("Account already exists: " + accountNumber);
             }
-
             if (initialBalance < 100) {
                 throw new InvalidTransactionException(
                     "Minimum initial balance is $100. Provided: $" + initialBalance);
             }
-
             Account account = new Account(accountNumber, accountHolderName, initialBalance);
             accounts.put(accountNumber, account);
 
             System.out.println(String.format("✅ Account created successfully: %s for %s with balance $%.2f",
                                             accountNumber, accountHolderName, initialBalance));
         }
-
         public void performTransaction(String accountNumber, String operation, double amount)
                 throws BankingException {
-
             Account account = accounts.get(accountNumber);
             if (account == null) {
                 throw new AccountNotFoundException(accountNumber);
             }
-
             try {
                 switch (operation.toLowerCase()) {
                     case "withdraw":
@@ -1959,31 +1952,24 @@ public class BankingSystem {
                 throw e; // Re-throw for caller to handle
             }
         }
-
         public void transferFunds(String fromAccount, String toAccount, double amount)
                 throws BankingException {
-
             // This is a compound operation - needs transaction-like behavior
             Account from = accounts.get(fromAccount);
             Account to = accounts.get(toAccount);
-
             if (from == null) {
                 throw new AccountNotFoundException(fromAccount);
             }
             if (to == null) {
                 throw new AccountNotFoundException(toAccount);
             }
-
             try {
                 // Withdraw from source account
                 from.withdraw(amount);
-
                 try {
                     // Deposit to destination account
                     to.deposit(amount);
                     System.out.println(String.format("✅ Transfer completed: $%.2f from %s to %s",
-                                                    amount, fromAccount, toAccount));
-
                 } catch (BankingException e) {
                     // Rollback: deposit back to source account
                     try {
@@ -2000,7 +1986,6 @@ public class BankingSystem {
                 throw new InvalidTransactionException("Transfer failed: " + e.getMessage());
             }
         }
-
         public Account getAccount(String accountNumber) throws AccountNotFoundException {
             Account account = accounts.get(accountNumber);
             if (account == null) {
@@ -2009,14 +1994,11 @@ public class BankingSystem {
             return account;
         }
     }
-
     // Demo application
     public static void main(String[] args) {
         BankingService bankingService = new BankingService();
-
         try {
             System.out.println("🏦 Banking System Demo\n");
-
             // Create accounts
             bankingService.createAccount("ACC-001", "John Doe", 1000.0);
             bankingService.createAccount("ACC-002", "Jane Smith", 500.0);
@@ -2070,94 +2052,75 @@ import java.io.*;
 import java.net.*;
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
-
 public class WebServiceClient {
-
     // Custom exceptions
     public static class ServiceException extends Exception {
         private final int statusCode;
         private final String endpoint;
-
         public ServiceException(String message, String endpoint) {
             super(message);
             this.statusCode = -1;
             this.endpoint = endpoint;
         }
-
         public ServiceException(String message, String endpoint, int statusCode) {
             super(message);
             this.statusCode = statusCode;
             this.endpoint = endpoint;
         }
-
         public ServiceException(String message, String endpoint, Throwable cause) {
             super(message, cause);
             this.statusCode = -1;
             this.endpoint = endpoint;
         }
-
         public int getStatusCode() { return statusCode; }
         public String getEndpoint() { return endpoint; }
     }
-
     public static class TransientServiceException extends ServiceException {
         public TransientServiceException(String message, String endpoint) {
             super(message, endpoint);
         }
-
         public TransientServiceException(String message, String endpoint, int statusCode) {
             super(message, endpoint, statusCode);
         }
     }
-
     public static class PermanentServiceException extends ServiceException {
         public PermanentServiceException(String message, String endpoint, int statusCode) {
             super(message, endpoint, statusCode);
         }
     }
-
     // Service response class
     public static class ServiceResponse {
         private final int statusCode;
         private final String body;
         private final boolean success;
-
         public ServiceResponse(int statusCode, String body) {
             this.statusCode = statusCode;
             this.body = body;
             this.success = statusCode >= 200 && statusCode < 300;
         }
-
         public int getStatusCode() { return statusCode; }
         public String getBody() { return body; }
         public boolean isSuccess() { return success; }
     }
-
     // HTTP client with retry logic
     public static class ResilientHttpClient {
         private static final int MAX_RETRIES = 3;
         private static final long RETRY_DELAY_MS = 1000;
         private static final long BACKOFF_MULTIPLIER = 2;
-
         private final AtomicInteger requestCounter = new AtomicInteger(0);
-
         public ServiceResponse callService(String endpoint, String requestBody) throws ServiceException {
             int requestId = requestCounter.incrementAndGet();
             System.out.printf("🚀 [Request #%d] Calling service: %s%n", requestId, endpoint);
 
             return executeWithRetry(endpoint, requestBody, requestId);
         }
-
         private ServiceResponse executeWithRetry(String endpoint, String requestBody, int requestId)
                 throws ServiceException {
-
             int attempts = 0;
             long currentDelay = RETRY_DELAY_MS;
             Exception lastException = null;
-
             while (attempts < MAX_RETRIES) {
                 attempts++;
-
                 try {
                     System.out.printf("🔄 [Request #%d] Attempt %d/%d%n", requestId, attempts, MAX_RETRIES);
 
@@ -2169,7 +2132,6 @@ public class WebServiceClient {
                     } else {
                         handleErrorResponse(response, endpoint, attempts, requestId);
                     }
-
                 } catch (IOException e) {
                     lastException = e;
                     System.err.printf("⚠️ [Request #%d] Network error on attempt %d: %s%n",
@@ -2179,24 +2141,20 @@ public class WebServiceClient {
                         waitBeforeRetry(currentDelay, requestId, attempts);
                         currentDelay *= BACKOFF_MULTIPLIER;
                     }
-
                 } catch (TransientServiceException e) {
                     lastException = e;
                     System.err.printf("⚠️ [Request #%d] Transient error on attempt %d: %s%n",
                                     requestId, attempts, e.getMessage());
-
                     if (attempts < MAX_RETRIES) {
                         waitBeforeRetry(currentDelay, requestId, attempts);
                         currentDelay *= BACKOFF_MULTIPLIER;
                     }
-
                 } catch (PermanentServiceException e) {
                     System.err.printf("❌ [Request #%d] Permanent error, not retrying: %s%n",
                                     requestId, e.getMessage());
                     throw e;
                 }
             }
-
             // All retries exhausted
             System.err.printf("💥 [Request #%d] All %d attempts failed%n", requestId, MAX_RETRIES);
             throw new ServiceException(
@@ -2204,11 +2162,9 @@ public class WebServiceClient {
                 endpoint,
                 lastException);
         }
-
         private ServiceResponse performHttpCall(String endpoint, String requestBody) throws IOException, ServiceException {
             // Simulate HTTP call
             System.out.printf("📞 Making HTTP call to: %s%n", endpoint);
-
             // Simulate network delay
             try {
                 Thread.sleep(100);
@@ -2216,10 +2172,8 @@ public class WebServiceClient {
                 Thread.currentThread().interrupt();
                 throw new ServiceException("Request interrupted", endpoint, e);
             }
-
             // Simulate different response scenarios
             double random = Math.random();
-
             if (random < 0.3) {
                 // Simulate network error
                 throw new IOException("Connection timeout");
@@ -2236,12 +2190,9 @@ public class WebServiceClient {
                 return new ServiceResponse(200, "{\"result\": \"success\", \"data\": \"response data\"}");
             }
         }
-
         private void handleErrorResponse(ServiceResponse response, String endpoint,
                                        int attempt, int requestId) throws ServiceException {
-
             int statusCode = response.getStatusCode();
-
             if (statusCode >= 500 && statusCode < 600) {
                 // Server errors are typically transient
                 throw new TransientServiceException(
@@ -2260,7 +2211,6 @@ public class WebServiceClient {
                     String.format("Unexpected response: %d", statusCode), endpoint, statusCode);
             }
         }
-
         private void waitBeforeRetry(long delay, int requestId, int attempt) {
             try {
                 System.out.printf("😴 [Request #%d] Waiting %dms before retry (attempt %d)%n",
@@ -2272,34 +2222,26 @@ public class WebServiceClient {
             }
         }
     }
-
     // Demo application
     public static void main(String[] args) {
         ResilientHttpClient client = new ResilientHttpClient();
-
         System.out.println("🌐 Web Service Client Demo\n");
-
         // Test multiple service calls
         String[] endpoints = {
             "/api/users",
             "/api/orders",
             "/api/products"
         };
-
         for (String endpoint : endpoints) {
             try {
                 System.out.println("🔄 Testing endpoint: " + endpoint);
-
                 ServiceResponse response = client.callService("https://api.example.com" + endpoint,
                                                             "{\"request\": \"data\"}");
-
                 System.out.printf("✅ Response: Status=%d, Body=%s%n%n",
                                  response.getStatusCode(), response.getBody());
-
             } catch (PermanentServiceException e) {
                 System.err.printf("❌ Permanent failure for %s: %s (Status: %d)%n%n",
                                 e.getEndpoint(), e.getMessage(), e.getStatusCode());
-
             } catch (ServiceException e) {
                 System.err.printf("❌ Service call failed for %s: %s%n", e.getEndpoint(), e.getMessage());
                 if (e.getCause() != null) {
@@ -2323,42 +2265,34 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
-
 public class FileProcessingSystem {
-
     // Custom exceptions for file operations
     public static class FileProcessingException extends Exception {
         private final String fileName;
         private final String operation;
-
         public FileProcessingException(String message, String fileName, String operation) {
             super(message);
             this.fileName = fileName;
             this.operation = operation;
         }
-
         public FileProcessingException(String message, String fileName, String operation, Throwable cause) {
             super(message, cause);
             this.fileName = fileName;
             this.operation = operation;
         }
-
         public String getFileName() { return fileName; }
         public String getOperation() { return operation; }
     }
-
     public static class InvalidFileFormatException extends FileProcessingException {
         public InvalidFileFormatException(String message, String fileName) {
             super(message, fileName, "VALIDATION");
         }
     }
-
     public static class FileAccessException extends FileProcessingException {
         public FileAccessException(String message, String fileName, String operation, Throwable cause) {
             super(message, fileName, operation, cause);
         }
     }
-
     // Processing result class
     public static class ProcessingResult {
         private final String fileName;
@@ -2366,7 +2300,6 @@ public class FileProcessingSystem {
         private final int recordsProcessed;
         private final List<String> errors;
         private final LocalDateTime processedAt;
-
         public ProcessingResult(String fileName, boolean success, int recordsProcessed, List<String> errors) {
             this.fileName = fileName;
             this.success = success;
@@ -2374,7 +2307,6 @@ public class FileProcessingSystem {
             this.errors = new ArrayList<>(errors);
             this.processedAt = LocalDateTime.now();
         }
-
         // Getters
         public String getFileName() { return fileName; }
         public boolean isSuccess() { return success; }
@@ -2382,17 +2314,14 @@ public class FileProcessingSystem {
         public List<String> getErrors() { return new ArrayList<>(errors); }
         public LocalDateTime getProcessedAt() { return processedAt; }
     }
-
     // File processor with comprehensive error handling
     public static class RobustFileProcessor {
         private final Queue<String> processingLog = new ConcurrentLinkedQueue<>();
         private final String outputDirectory;
-
         public RobustFileProcessor(String outputDirectory) {
             this.outputDirectory = outputDirectory;
             createOutputDirectory();
         }
-
         private void createOutputDirectory() {
             try {
                 Path outputPath = Paths.get(outputDirectory);
@@ -2404,60 +2333,46 @@ public class FileProcessingSystem {
                 log("❌ Failed to create output directory: " + e.getMessage());
             }
         }
-
         public ProcessingResult processFile(String inputFilePath) {
             String fileName = Paths.get(inputFilePath).getFileName().toString();
             List<String> errors = new ArrayList<>();
             int recordsProcessed = 0;
-
             log(String.format("🚀 Starting processing: %s", fileName));
-
             try {
                 // Validate file exists and is readable
                 validateFile(inputFilePath);
-
                 // Process the file with resource management
                 recordsProcessed = processFileContent(inputFilePath, errors);
-
                 log(String.format("✅ Successfully processed %d records from %s", recordsProcessed, fileName));
                 return new ProcessingResult(fileName, true, recordsProcessed, errors);
-
             } catch (FileProcessingException e) {
                 String errorMsg = String.format("❌ Processing failed for %s: %s", fileName, e.getMessage());
                 log(errorMsg);
                 errors.add(errorMsg);
-
                 return new ProcessingResult(fileName, false, recordsProcessed, errors);
-
             } catch (Exception e) {
                 String errorMsg = String.format("❌ Unexpected error processing %s: %s", fileName, e.getMessage());
                 log(errorMsg);
                 errors.add(errorMsg);
-
                 return new ProcessingResult(fileName, false, recordsProcessed, errors);
             }
         }
-
         private void validateFile(String filePath) throws FileProcessingException {
             Path path = Paths.get(filePath);
-
             if (!Files.exists(path)) {
                 throw new FileAccessException(
                     "File does not exist", filePath, "READ",
                     new FileNotFoundException(filePath));
             }
-
             if (!Files.isReadable(path)) {
                 throw new FileAccessException(
                     "File is not readable", filePath, "READ",
                     new AccessDeniedException(filePath));
             }
-
             if (!Files.isRegularFile(path)) {
                 throw new FileAccessException(
                     "Path is not a regular file", filePath, "READ", null);
             }
-
             // Check file extension
             String fileName = path.getFileName().toString().toLowerCase();
             if (!fileName.endsWith(".txt") && !fileName.endsWith(".csv")) {
@@ -2465,40 +2380,31 @@ public class FileProcessingSystem {
                     "Unsupported file format. Only .txt and .csv files are supported", filePath);
             }
         }
-
         private int processFileContent(String inputFilePath, List<String> errors)
                 throws FileProcessingException {
-
             String fileName = Paths.get(inputFilePath).getFileName().toString();
             String outputFilePath = Paths.get(outputDirectory, "processed_" + fileName).toString();
-
             int recordsProcessed = 0;
             int lineNumber = 0;
-
             // Use try-with-resources for automatic resource management
             try (BufferedReader reader = Files.newBufferedReader(Paths.get(inputFilePath));
                  BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputFilePath))) {
-
                 String line;
                 while ((line = reader.readLine()) != null) {
                     lineNumber++;
-
                     try {
                         // Process each line
                         String processedLine = processLine(line, lineNumber);
                         writer.write(processedLine);
                         writer.newLine();
                         recordsProcessed++;
-
                     } catch (InvalidFileFormatException e) {
                         String errorMsg = String.format("Line %d: %s", lineNumber, e.getMessage());
                         errors.add(errorMsg);
                         log("⚠️ " + errorMsg);
-
                         // Continue processing other lines
                     }
                 }
-
                 writer.flush();
                 log(String.format("📄 Output written to: %s", outputFilePath));
 
@@ -2506,47 +2412,39 @@ public class FileProcessingSystem {
                 throw new FileAccessException(
                     "IO error during file processing", inputFilePath, "READ_WRITE", e);
             }
-
             return recordsProcessed;
         }
-
         private String processLine(String line, int lineNumber) throws InvalidFileFormatException {
             if (line == null || line.trim().isEmpty()) {
                 throw new InvalidFileFormatException("Empty or null line", String.valueOf(lineNumber));
             }
-
             // Simulate data validation and processing
             String[] parts = line.split(",");
             if (parts.length < 2) {
                 throw new InvalidFileFormatException("Line must have at least 2 comma-separated values", String.valueOf(lineNumber));
             }
-
             // Simulate data transformation
             StringBuilder processedLine = new StringBuilder();
             for (int i = 0; i < parts.length; i++) {
                 if (i > 0) processedLine.append(",");
                 processedLine.append(parts[i].trim().toUpperCase());
             }
-
             // Add timestamp
             processedLine.append(",PROCESSED_AT=")
                         .append(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 
             return processedLine.toString();
         }
-
         private void log(String message) {
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
             String logEntry = String.format("[%s] %s", timestamp, message);
             processingLog.offer(logEntry);
             System.out.println(logEntry);
         }
-
         public void printProcessingLog() {
             System.out.println("\n📄 Processing Log:");
             processingLog.forEach(System.out::println);
         }
-
         public void saveProcessingLog(String logFilePath) {
             try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(logFilePath))) {
                 for (String logEntry : processingLog) {
@@ -2560,16 +2458,12 @@ public class FileProcessingSystem {
             }
         }
     }
-
     // Demo application
     public static void main(String[] args) {
         System.out.println("📁 File Processing System Demo\n");
-
         RobustFileProcessor processor = new RobustFileProcessor("output");
-
         // Create sample test files
         createTestFiles();
-
         // Test files to process
         String[] testFiles = {
             "test_data.txt",
@@ -2577,23 +2471,18 @@ public class FileProcessingSystem {
             "nonexistent.txt",
             "empty_file.txt"
         };
-
         List<ProcessingResult> results = new ArrayList<>();
-
         for (String testFile : testFiles) {
             System.out.println("──────────────────────────────");
             ProcessingResult result = processor.processFile(testFile);
             results.add(result);
             System.out.println();
         }
-
         // Print summary
         printProcessingSummary(results);
-
         // Save processing log
         processor.saveProcessingLog("processing_log.txt");
     }
-
     private static void createTestFiles() {
         try {
             // Create valid test file
@@ -2602,7 +2491,6 @@ public class FileProcessingSystem {
                 "Jane,Smith,Manager",
                 "Bob,Johnson,Developer"
             ));
-
             // Create file with invalid data
             Files.write(Paths.get("invalid_data.csv"), Arrays.asList(
                 "Valid,Data,Entry",
@@ -2611,7 +2499,6 @@ public class FileProcessingSystem {
                 "", // Empty line
                 "Final,Valid,Entry"
             ));
-
             // Create empty file
             Files.write(Paths.get("empty_file.txt"), Collections.emptyList());
 
@@ -2619,30 +2506,24 @@ public class FileProcessingSystem {
             System.err.println("❌ Failed to create test files: " + e.getMessage());
         }
     }
-
     private static void printProcessingSummary(List<ProcessingResult> results) {
         System.out.println("📈 Processing Summary:");
         System.out.println("=".repeat(60));
-
         int totalFiles = results.size();
         int successfulFiles = 0;
         int totalRecordsProcessed = 0;
-
         for (ProcessingResult result : results) {
             if (result.isSuccess()) {
                 successfulFiles++;
                 totalRecordsProcessed += result.getRecordsProcessed();
             }
-
             String status = result.isSuccess() ? "✅ SUCCESS" : "❌ FAILED";
             System.out.printf("%-20s %s (%d records)%n",
                             result.getFileName(), status, result.getRecordsProcessed());
-
             if (!result.getErrors().isEmpty()) {
                 result.getErrors().forEach(error -> System.out.println("    ⚠️ " + error));
             }
         }
-
         System.out.println("=".repeat(60));
         System.out.printf("📄 Files processed: %d/%d successful%n", successfulFiles, totalFiles);
         System.out.printf("📂 Total records processed: %d%n", totalRecordsProcessed);
@@ -2683,6 +2564,8 @@ Exception handling in Java is a powerful mechanism that enables developers to wr
 
 #### 📊 **Exception Hierarchy Guidelines**
 
+<div align = "center">
+
 ```mermaid
 flowchart TD
     A[Design Exception Hierarchy] --> B{Is it recoverable?}
@@ -2698,6 +2581,8 @@ flowchart TD
     style E fill:#e8f5e8
     style F fill:#ffebee
 ```
+
+</div>
 
 #### ⚡ **Advanced Patterns**
 
@@ -2736,24 +2621,6 @@ flowchart LR
 | **🟩 Advanced**   | Resilient systems          | Retry logic, circuit breakers, monitoring         |
 | **🟧 Expert**     | Proactive exception design | Exception hierarchies, business-driven exceptions |
 
-### 🎓 **Learning Path**
-
-1. **📚 Master the Basics**: Understand exception hierarchy and keywords
-2. **🎯 Practice with Examples**: Work through real-world scenarios
-3. **🔧 Build Custom Exceptions**: Create meaningful business exceptions
-4. **🎨 Apply Best Practices**: Follow established patterns and guidelines
-5. **⚡ Learn Advanced Patterns**: Implement retry logic and circuit breakers
-6. **📈 Add Monitoring**: Track and analyze exception patterns
-
-### 🔗 **Additional Resources**
-
-For further learning, explore:
-
-- **Oracle Java Documentation**: Official exception handling guide
-- **Effective Java by Joshua Bloch**: Exception handling best practices
-- **Java Concurrency in Practice**: Exception handling in concurrent code
-- **Microservices Patterns**: Resilience patterns for distributed systems
-
 ---
 
 ## 🔧 Custom Exceptions
@@ -2768,6 +2635,8 @@ Creating your own exception classes for specific business logic:
 - **🏗️ Clean Architecture**: Separate business logic errors
 
 ### Types of Custom Exceptions:
+
+<div align = "center">
 
 ```mermaid
 flowchart TD
@@ -2784,45 +2653,40 @@ flowchart TD
     style E fill:#ffebee
 ```
 
+</div>
+
 ### Custom Checked Exception:
 
 ```java path=null start=null
+
 // Custom checked exception for banking operations
 public class InsufficientFundsException extends Exception {
-
     private double currentBalance;
     private double requestedAmount;
-
     // Constructor with message only
     public InsufficientFundsException(String message) {
         super(message);
     }
-
     // Constructor with message and cause
     public InsufficientFundsException(String message, Throwable cause) {
         super(message, cause);
     }
-
     // Constructor with detailed information
     public InsufficientFundsException(String message, double currentBalance, double requestedAmount) {
         super(message);
         this.currentBalance = currentBalance;
         this.requestedAmount = requestedAmount;
     }
-
     // Getter methods
     public double getCurrentBalance() {
         return currentBalance;
     }
-
     public double getRequestedAmount() {
         return requestedAmount;
     }
-
     public double getDeficit() {
         return requestedAmount - currentBalance;
     }
-
     @Override
     public String toString() {
         return String.format("InsufficientFundsException: %s [Balance: $%.2f, Requested: $%.2f, Deficit: $%.2f]",
@@ -2834,31 +2698,25 @@ public class InsufficientFundsException extends Exception {
 class BankAccount {
     private String accountNumber;
     private double balance;
-
     public BankAccount(String accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
     }
-
     public void withdraw(double amount) throws InsufficientFundsException {
         if (amount <= 0) {
             throw new IllegalArgumentException("💰 Withdrawal amount must be positive");
         }
-
         if (amount > balance) {
             throw new InsufficientFundsException(
                 "💳 Insufficient funds for withdrawal",
                 balance, amount);
         }
-
         balance -= amount;
         System.out.println(String.format("✅ Withdrawn $%.2f. New balance: $%.2f", amount, balance));
     }
-
     public double getBalance() {
         return balance;
     }
-
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -2870,45 +2728,36 @@ class BankAccount {
 ```java path=null start=null
 // Custom unchecked exception for validation errors
 public class ValidationException extends RuntimeException {
-
     private String fieldName;
     private Object fieldValue;
     private String validationRule;
-
     public ValidationException(String message) {
         super(message);
     }
-
     public ValidationException(String message, String fieldName, Object fieldValue) {
         super(message);
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
     }
-
     public ValidationException(String message, String fieldName, Object fieldValue, String validationRule) {
         super(message);
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
         this.validationRule = validationRule;
     }
-
     public String getFieldName() {
         return fieldName;
     }
-
     public Object getFieldValue() {
         return fieldValue;
     }
-
     public String getValidationRule() {
         return validationRule;
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("ValidationException: ");
         sb.append(getMessage());
-
         if (fieldName != null) {
             sb.append(" [Field: ").append(fieldName);
             if (fieldValue != null) {
@@ -2919,7 +2768,6 @@ public class ValidationException extends RuntimeException {
             }
             sb.append("]");
         }
-
         return sb.toString();
     }
 }
@@ -2929,39 +2777,32 @@ class User {
     private String username;
     private String email;
     private int age;
-
     public User(String username, String email, int age) {
         setUsername(username);
         setEmail(email);
         setAge(age);
     }
-
     public void setUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             throw new ValidationException(
                 "👤 Username cannot be empty",
                 "username", username, "NOT_EMPTY");
         }
-
         if (username.length() < 3) {
             throw new ValidationException(
                 "👤 Username must be at least 3 characters",
                 "username", username, "MIN_LENGTH_3");
         }
-
         this.username = username;
     }
-
     public void setEmail(String email) {
         if (email == null || !email.contains("@")) {
             throw new ValidationException(
                 "📧 Invalid email format",
                 "email", email, "VALID_EMAIL");
         }
-
         this.email = email;
     }
-
     public void setAge(int age) {
         if (age < 0 || age > 150) {
             throw new ValidationException(
@@ -2971,7 +2812,6 @@ class User {
 
         this.age = age;
     }
-
     // Getters
     public String getUsername() { return username; }
     public String getEmail() { return email; }
@@ -2986,24 +2826,20 @@ class User {
 public abstract class BusinessException extends Exception {
     private String errorCode;
     private long timestamp;
-
     public BusinessException(String message, String errorCode) {
         super(message);
         this.errorCode = errorCode;
         this.timestamp = System.currentTimeMillis();
     }
-
     public String getErrorCode() { return errorCode; }
     public long getTimestamp() { return timestamp; }
 }
-
 // Specific business exceptions
 class OrderException extends BusinessException {
     public OrderException(String message, String errorCode) {
         super(message, errorCode);
     }
 }
-
 class PaymentException extends BusinessException {
     private String transactionId;
 
@@ -3014,12 +2850,10 @@ class PaymentException extends BusinessException {
 
     public String getTransactionId() { return transactionId; }
 }
-
 class InventoryException extends BusinessException {
     private String productId;
     private int availableQuantity;
     private int requestedQuantity;
-
     public InventoryException(String message, String errorCode,
                             String productId, int availableQuantity, int requestedQuantity) {
         super(message, errorCode);
@@ -3027,7 +2861,6 @@ class InventoryException extends BusinessException {
         this.availableQuantity = availableQuantity;
         this.requestedQuantity = requestedQuantity;
     }
-
     // Getters
     public String getProductId() { return productId; }
     public int getAvailableQuantity() { return availableQuantity; }
@@ -3039,13 +2872,10 @@ class InventoryException extends BusinessException {
 
 ```java path=null start=null
 public class CustomExceptionDemo {
-
     public static void demonstrateBankingException() {
         BankAccount account = new BankAccount("ACC-001", 500.0);
-
         try {
             account.withdraw(750.0); // This will throw InsufficientFundsException
-
         } catch (InsufficientFundsException e) {
             System.err.println("🏦 Banking Error: " + e.getMessage());
             System.err.println("💰 Current Balance: $" + e.getCurrentBalance());
@@ -3053,11 +2883,9 @@ public class CustomExceptionDemo {
             System.err.println("📉 Deficit: $" + e.getDeficit());
         }
     }
-
     public static void demonstrateValidationException() {
         try {
             User user = new User("", "invalid-email", -5); // Multiple validation errors
-
         } catch (ValidationException e) {
             System.err.println("✋ Validation Error: " + e.getMessage());
             System.err.println("📋 Field: " + e.getFieldName());
@@ -3065,13 +2893,10 @@ public class CustomExceptionDemo {
             System.err.println("📄 Full details: " + e.toString());
         }
     }
-
     public static void main(String[] args) {
         System.out.println("🎯 Demonstrating Custom Exceptions:\n");
-
         System.out.println("1️⃣ Banking Exception Demo:");
         demonstrateBankingException();
-
         System.out.println("\n2️⃣ Validation Exception Demo:");
         demonstrateValidationException();
     }
@@ -3096,9 +2921,7 @@ You can handle different types of exceptions with multiple catch blocks:
 ```java path=null start=null
 import java.io.*;
 import java.sql.*;
-
 public class MultipleCatchExample {
-
     public static void demonstrateMultipleCatch() {
         try {
             // Code that can throw different exceptions
@@ -3139,7 +2962,6 @@ public class MultipleCatchExample {
             System.out.println("🧹 Cleanup completed");
         }
     }
-
     private static String getUserInput() {
         // Simulated user input
         return "invalid_number";
@@ -3151,12 +2973,10 @@ public class MultipleCatchExample {
 
 ```java path=null start=null
 public class MultiCatchExample {
-
     public static void demonstrateMultiCatch() {
         try {
             // Code that might throw different exceptions
             performRiskyOperation();
-
         } catch (IOException | SQLException | ClassNotFoundException e) {
             // Handle multiple exception types with same logic
             System.err.println("❌ Multiple exception types: " + e.getClass().getSimpleName());
@@ -3167,12 +2987,10 @@ public class MultiCatchExample {
             System.err.println("⚡ Runtime exception: " + e.getMessage());
         }
     }
-
     private static void logError(Exception e) {
         // Common error logging logic
         System.out.println("📝 Logged error: " + e.getClass().getSimpleName());
     }
-
     private static void performRiskyOperation() throws IOException, SQLException, ClassNotFoundException {
         // Implementation here
     }
@@ -3183,7 +3001,6 @@ public class MultiCatchExample {
 
 ```java path=null start=null
 public class CatchOrderExample {
-
     // ❌ WRONG - This won't compile
     public static void wrongOrder() {
         try {
@@ -3196,7 +3013,6 @@ public class CatchOrderExample {
             System.out.println("IO exception");
         }
     }
-
     // ✅ CORRECT - Specific to general order
     public static void correctOrder() {
         try {
@@ -3213,3 +3029,21 @@ public class CatchOrderExample {
 ```
 
 ---
+
+### 🎓 **Learning Path**
+
+1. **📚 Master the Basics**: Understand exception hierarchy and keywords
+2. **🎯 Practice with Examples**: Work through real-world scenarios
+3. **🔧 Build Custom Exceptions**: Create meaningful business exceptions
+4. **🎨 Apply Best Practices**: Follow established patterns and guidelines
+5. **⚡ Learn Advanced Patterns**: Implement retry logic and circuit breakers
+6. **📈 Add Monitoring**: Track and analyze exception patterns
+
+### 🔗 **Additional Resources**
+
+For further learning, explore:
+
+- **Oracle Java Documentation**: Official exception handling guide
+- **Effective Java by Joshua Bloch**: Exception handling best practices
+- **Java Concurrency in Practice**: Exception handling in concurrent code
+- **Microservices Patterns**: Resilience patterns for distributed systems
