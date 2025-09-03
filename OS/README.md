@@ -1443,3 +1443,5 @@ class Banker {
         - Optimal page replacement is a page replacement algorithm that aims to minimize the number of page faults and maximize the utilization of memory.
         - It uses a data structure called a page replacement policy to determine which pages to replace.
         - The page replacement policy is based on the page's age, frequency of use, and other factors.
+
+

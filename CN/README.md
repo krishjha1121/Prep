@@ -41,7 +41,7 @@
 > ### During data communication, data flow is of 3 type:
 
 <p align="center">
-  <img src="image.png" alt="alt text" />
+  <img src="images/image.png" alt="alt text" />
 </p>
   
 - type of connection between them : point to point, multipoint
@@ -65,7 +65,7 @@
   out physically.
 
 <p align="center">
-  <img src="image-1.png" alt="alt text" />
+  <img src="images/image-1.png" alt="alt text" />
 </p>
 
 - **Mesh Topology**  
@@ -119,7 +119,7 @@
 > ### Layered Architecture of OSI Model
 
  <P align="center">
- <img src="image-3.png" alt="alt text" />
+ <img src="images/image-3.png" alt="alt text" />
  </P>
 
 - Each layer in the sending device adds its own information
@@ -131,7 +131,7 @@
 - Main Responsibility: The physical layer is concerned with
   transmitting raw bits over a communication medium/channel.
     <P align="center">
-    <img src="image-4.png" alt="alt text" />
+    <img src="images/image-4.png" alt="alt text" />
     </P>
 
 - It also define the type of transmission media.
@@ -148,7 +148,7 @@
   physical layer appear error-free to the network layer.
 
 <P align="center">
- <img src="image-5.png" alt="alt text" />
+ <img src="images/image-5.png" alt="alt text" />
  </P>
 
 | Feature            | Hop-to-Hop Delivery                                            | End-to-End Delivery                                  |
@@ -183,7 +183,7 @@
   (links).
 
 <P align="center">
- <img src="image-6.png" alt="alt text" />
+ <img src="images/image-6.png" alt="alt text" />
  </P>
 
 - **Logical Addressing**: If packet passes the network boundary, we need another addressing system to help
@@ -204,7 +204,7 @@
   entire message in segments.
 
 <P align="center">
- <img src="image-7.png" alt="alt text" />
+ <img src="images/image-7.png" alt="alt text" />
  </P>
 
 - **Service-point addressing**:Since computers often run multiple programs at the same time, source-to-destination delivery means not only sending data from the source computer to the destination computer, but also ensuring delivery from a specific process (running program) on one computer to the corresponding process on the other.
@@ -279,11 +279,11 @@
 > ### IP Addressing
 
 <P align="center">
- <img src="image-8.png" alt="alt text" />
+ <img src="images/image-8.png" alt="alt text" />
  </P>
 
 <P align="center">
- <img src="image-9.png" alt="alt text" />
+ <img src="images/image-9.png" alt="alt text" />
  </P>
 
 - If we can have a common network id for all the node in a particular
@@ -337,7 +337,7 @@ What do u know about NAT ?
 >   IPv6.
 
 <P align="center">
- <img src="image-10.png" alt="alt text" />
+ <img src="images/image-10.png" alt="alt text" />
  </P>
  
  * The header of the IPv6 packet is converted to an IPv4 header.
@@ -398,7 +398,7 @@ What do u know about NAT ?
 > ### Transmission media
 
 <P align="center">
- <img src="image-11.png" alt="alt text" />
+ <img src="images/image-11.png" alt="alt text" />
  </P>
 
 > ### Error Detection vs. Error Correction
@@ -438,7 +438,7 @@ What do u know about NAT ?
        bit into the outgoing bit stream.
 
 <P align="center">
- <img src="image-12.png" alt="alt text" />
+ <img src="images/image-12.png" alt="alt text" />
  </P>
 
 > ### Flow Control:
@@ -567,7 +567,7 @@ flowchart
 ```
 
    <P align="center">
-<img src="image-13.png" alt="alt text" />
+<img src="images/image-13.png" alt="alt text" />
 </P>
 
 1. In circuit switching, a physical circuit (or channel) is established between the
@@ -580,7 +580,7 @@ flowchart
 5. Datagram switching is done at the network layer.
 
     <P align="center">
- <img src="image-14.png" alt="alt text" />
+ <img src="images/image-14.png" alt="alt text" />
  </P>
 
 6. A virtual-circuit network is cross between a circuit-switched network and
@@ -635,7 +635,7 @@ flowchart
       characters.
     - The root label is null string (empty string)
       <P align="center">
-      <img src="image-15.png" alt="alt text" />
+      <img src="images/image-15.png" alt="alt text" />
           </P>
 
 - ### Domain Name
@@ -646,10 +646,9 @@ flowchart
     - A full domain name always ends with a null label, which means last
       character is a dot because the null string is nothing.
 
-            <P align="center">
-
-          <img src="image-16.png" alt="alt text" />
-          </P>
+      <P align="center">
+       <img src="images/image-16.png" alt="alt text" />
+         </P>
 
 ### Domain Name Categories
 
@@ -662,10 +661,9 @@ flowchart
     - The name of the domain is the domain name of the node at the top of
       the subtree.
 
-            <P align="center">
-
-          <img src="image-17.png" alt="alt text" />
-          </P>
+     <P align="center">
+          <img src="images/image-17.png" alt="alt text" />
+      </P>
 
 ### Distribution of Name Space
 
@@ -678,10 +676,9 @@ flowchart
 - Because a domain created in this way could be very large, DNS allows
   domains to be divided further into smaller domains (subdomains).
 
-           <P align="center">
-
-         <img src="image-18.png" alt="alt text" />
-         </P>
+     <P align="center">
+         <img src="images/image-18.png" alt="alt text" />
+     </P>
 
 ### DNS in the Internet
 
@@ -701,12 +698,12 @@ flowchart
 1. Recursive Resolution:-
 
    <P align="center">
- <img src="image-19.png" alt="alt text" />
+ <img src="images/image-19.png" alt="alt text" />
  </P>
 
 2. Iterative Resolution:-
     <P align="center">
- <img src="image-20.png" alt="alt text" />
+ <img src="images/image-20.png" alt="alt text" />
  </P>
 
 - ## Electronic Mail (email)
@@ -717,7 +714,7 @@ flowchart
     3. Message Access Agent (MAA)
 
  <P align="center">
- <img src="image-21.png" alt="alt text" />
+ <img src="images/image-21.png" alt="alt text" />
  </P>
 
 - **User Agent (UA)**:-
@@ -751,7 +748,7 @@ flowchart
   server and between the two mail servers.
 
  <P align="center">
- <img src="image-22.png" alt="alt text" />
+ <img src="images/image-22.png" alt="alt text" />
  </P>
 
 ### Message Access Agent: POP and IMAP
@@ -807,7 +804,7 @@ flowchart
     2. port 20 is used for the data connection.
 
  <P align="center">
- <img src="image-23.png" alt="alt text" />
+ <img src="images/image-23.png" alt="alt text" />
  </P>
 
 - ## Routing Protocols and Algorithms
@@ -825,7 +822,7 @@ flowchart
    AS
 
  <P align="center">
- <img src="image-24.png" alt="alt text" />
+ <img src="images/image-24.png" alt="alt text" />
  </P>
 
 > ### Two Node Instability
