@@ -1,3 +1,5 @@
+<div align = "center"> 🧑‍💻 Author: Rk Roy </div>
+
 # 🗑️ Java Garbage Collection - Complete Guide
 
 > **"Memory management is one of the most important aspects of Java programming. Understanding Garbage Collection is crucial for writing efficient, scalable Java applications."**
@@ -58,19 +60,19 @@ public class GCExample {
 }
 ```
 
-- A dangling pointer is a pointer that holds the memory address of an object that has already been deallocated or gone out of scope
+- A `dangling pointer` is a pointer that holds the memory address of an object that has already been deallocated or gone out of scope
 
-- The functions malloc() and calloc() are library functions that allocate memory dynamically. Dynamic means the memory is allocated during runtime (execution of the program) from the heap segment.
+- The functions `malloc()` and `calloc()` are library functions that allocate memory dynamically. Dynamic means the memory is allocated during runtime (execution of the program) from the heap segment.
 
 > malloc()
 
-- malloc() allocates a memory block of given size (in bytes) and returns a pointer to the beginning of the block
-- malloc() doesn't initialize the allocated memory.
+- `malloc()` allocates a memory block of given size (in bytes) and returns a pointer to the beginning of the block
+- `malloc()` doesn't initialize the allocated memory.
 - If you try to read from the allocated memory without first initializing it, then you will invoke undefined behavior, which usually means the values you read will be garbage values.
 
 > calloc()
 
-- calloc() allocates the memory and also initializes every byte in the allocated memory to 0.
+- `calloc()` allocates the memory and also initializes every byte in the allocated memory to 0.
 - If you try to read the value of the allocated memory without initializing it, you'll get 0 as it has already been initialized to 0 by calloc().
 
 > malloc() takes a single argument, which is the number of bytes to allocate.
@@ -196,7 +198,7 @@ public class Test {
 }
 ```
 
-Note :
+> **Note** :
 
 - if an object does not contain any reference variable then it is eligible for garbage collection always.
 - Even though object having references sometimes it is eligible for garbage collection(if all references are internal references, eg : island of isolation)
@@ -207,17 +209,17 @@ Note :
 - Once we made an object eligible for GC it may not be destroyed immediately by garbage collector, whenever JVM runs GC then only the objects will be destroyed but when exactly JVM runs garbage collector, we can't expect it is varied from JVM to JVM.
 - Instead of waiting until JVM runs GC we can request JVM to run GC programmatically but whether JVM accept our request or not there is not guarantee but most of the times JVM accept our request.
 - The following are two ways for requesting JVM to run GC:
-    - By using system call :
-        - System class contains a static method called gc() for this purpose [System.gc()].
-    - By using Runtime class :
+    - **By using system call** :
+        - System class contains a static method called gc() for this purpose `System.gc()`.
+    - **By using Runtime class** :
         - Java application can communicate with JVM by using Runtime Object.
-        - Runtime class present in java.lang package and it is a singleton class.
+        - Runtime class present in java.lang package and it is a **singleton class**.
         - We can create Runtime object by using Runtime.getRuntime() method.
-        - Runtime r = Runtime.getRuntime();
+        - `Runtime r = Runtime.getRuntime();`
         - Once we got runtime object we can call the following methods on that object :
-            - Total Memory : r.totalMemory() --> it return number of bytes of total memory present in the heap(i.e Heap Size)
-            - Free Memory : r.freeMemory() --> it return number of bytes of free memory present in the heap(i.e Heap Size)
-            - gc : r.gc() --> it will trigger garbage collection.
+            - **Total Memory** : `r.totalMemory()` --> it return number of bytes of total memory present in the heap(i.e Heap Size)
+            - **Free Memory** : `r.freeMemory()` --> it return number of bytes of free memory present in the heap(i.e Heap Size)
+            - **gc** : `r.gc()` --> it will trigger garbage collection.
 
 ```java
 //Runtime example
@@ -245,17 +247,22 @@ class System {
 
 > # Finalization
 
-- Just before destroying an object garbage collector calls finalize() method to perform clean up activities.
-- Once a finally method completes autommatically garbase that destorys that object.
-- finalize method present in object class with the following declaration.
+- Just before destroying an object garbage collector calls `finalize()` method to perform clean up activities.
+- Once a `finalize()` method completes garbage collector autommatically destroys that object.
+- `finalize()` method present in object class with the following declaration.
 
-```java
-protected void finalize() throws Throwable {}
-```
+    ```java
+    protected void finalize() throws Throwable {}
+    ```
 
 - we can override finalize method in our class to define our own clean up activities.
 
 > #### Examples
+
+> case 1
+
+- Just before destroying an object garbage collector calls finalize() method on the object which is eligible for GC then the correspoding class finalize() method will be executed.
+- For example, if String object is eligible for GC then String class finalize method will be executed but not Test class Finalize method.
 
 ```java
 import java.lang.*;
@@ -275,6 +282,11 @@ public class Test {
 // Because the finalize method here is for object of type Test
 ```
 
+> #### Note :
+
+- In the above example, string object eligible for GC and hence string class finalize method got executed which have empty implementation and hence the output is : End of Main
+- If we replace string object with Test object then the Test class finalize method will be executed, in that case the output will be either End of main followed by Finalize method called or Finalize method called followed by End of Main.
+
 ```java
 import java.lang.*;
 import java.util.*;
@@ -289,11 +301,103 @@ public class Test {
         System.out.println("Finalize method called");
     }
 }
+// Now here the the output will be either --> End of Main followed by Finalize method called or Finalize method called followed by End of Main.
 ```
 
-- case 1 :
-    - Just before destroying an object garbage collector calls finalize() method on the object which is eligible for GC then the correspoding class finalize() method will be executed.
-    - For example, if String object is eligible for GC then String class finalize method will be executed but not Test class Finalize method.
+> case 2
+
+- Based on our requirement we can call `finalize()` method explicitly then it will be exected just like a normal method call and object won't be destroyed.
+
+> #### Example
+
+```java
+import java.lang.*;
+import java.util.*;
+public class Test {
+    public static void main(String args[]) {
+        Test t1 = new Test();
+        t1.finalize();
+        t1.finalize();
+        t1 = null;
+        System.gc();
+        System.out.println("End of Main");
+    }
+    public void finalize() {
+        System.out.println("Finalize method called");
+    }
+}
+// Output : Finalize method called 3 time.
+```
+
+- In the above program, `finalize()` method got executed 3 times, where two time it was done explicity by the programmer and one time by the garbage collector.
+
+- If we are calling `finalize()` method explicity then it will be executed like a normal method call and object won't be destroyed, where as if garbage collector calls finalize() method then the object will be destoryed.
+
+> case 3
+
+- Even though object is eligible for GC multiple times but garbage collector calls `finalize()` method only once.
+
+```java
+public class Test {
+    static Test t;
+    public static void main(String args[]) throws InterruptedException {
+        Test temp = new Test();
+        System.out.println(temp.hashCode());
+        temp = null;
+        System.gc();
+        Thread.sleep(50000);
+        System.out.println(t.hashCode());
+
+        t = null;
+        System.gc();
+        Thread.sleep(50000);
+        System.out.println("End of Main");
+    }
+    public void finalize() {
+        System.out.println("Finalize method called");
+        t = this;
+    }
+}
+/* Output :
+    25724761
+    Finalize method called
+    End of Main
+*/
+```
+
+> Note :
+
+- In the above program, even though object is eligible for GC two times but garbage collector calls `finalize()` method only once.
+
+> case 4
+
+- We can't expect exact behaviour of garbage collector, it is varied from **JVM to JVM** hence for the following questions we can't answer exact answers :
+    - When exactly JVM runs garbage collector ?
+    - In which order garbage collector identifies eligible objects ?
+    - In which order garbage collector destroys eligible objects ?
+    - Whether garbage collector destroys all eligible objects or not ?
+    - What ist he algorithm followed by garbage collector ? etc.
+
+> Note :
+
+- Whenever programs runs with low memory then JVM runs garbage collector but we can't expect exactly at what time.
+- Most of the garbage collectors follow standard algorithm called as **Mark and Sweep** algorithm.It does not mean every garbage collector follows the same algorithm.
+
+> case 5 (😅 sometimes garbage collector may also cry)
+
+- When we don't make an object eligible for GC or when no object is by somehow not eligible for GC, after some time the JVM will send gc to do its job as the memory will be almost full after some time but the GC will not be able to destroy any object in that case when after some time when JVM encounters the same error the JVM will give left and right to garbage collector.
+
+- **Memory Leaks** :
+    - The objects which are not used in our program and which are not eligible for GC, such type of useless objects are called Memory Leaks.
+    - In our program if memory leaks is present then the program will be terminated by rising **outOfMemoryError**
+    - Hence if an object is no longer required, it is highly recommended to make that object eligible for GC.
+
+- The following are various third-party tools to identify memory leaks :
+    - **HP OVO**
+    - **HP J Meter**
+    - **JProbe**
+    - **Patrol**
+    - **IBM Tivoli**
 
 ## 🏗️ Memory Management in Java
 
@@ -478,6 +582,8 @@ graph TD
 
 ### 🔄 Mark and Sweep Algorithm
 
+<div align = "center">
+    
 ```mermaid
 flowchart TD
     A[Start GC] --> B[Mark Phase]
@@ -494,7 +600,9 @@ flowchart TD
     style B fill:#e3f2fd
     style E fill:#f3e5f5
     style H fill:#e8f5e8
-```
+
+````
+</div>
 
 ### 📝 Reachability Example
 
@@ -528,7 +636,7 @@ class Node {
 
     Node(String data) { this.data = data; }
 }
-```
+````
 
 ---
 
@@ -1301,6 +1409,9 @@ graph LR
 
 ---
 
+<div align = "center">
 _Created with ❤️ for Java developers who want to master Garbage Collection_
 
 > 💡 **Pro Tip**: Start with default GC settings and only optimize when you have clear performance requirements and measurement data!
+
+</div>
