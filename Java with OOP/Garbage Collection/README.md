@@ -219,6 +219,82 @@ Note :
             - Free Memory : r.freeMemory() --> it return number of bytes of free memory present in the heap(i.e Heap Size)
             - gc : r.gc() --> it will trigger garbage collection.
 
+```java
+//Runtime example
+import java.util.*;
+import java.lang.*;
+public class RuntimeExample {
+    public static void main(String[] args) {
+        Runtime r = Runtime.getRuntime();
+        long totalMemory = r.totalMemory();
+        long freeMemory = r.freeMemory();
+        long usedMemory = totalMemory - freeMemory;
+        System.out.println("Used: " + usedMemory);
+        System.out.println("Free: " + freeMemory);
+        System.out.println("Total: " + totalMemory);
+    }
+}
+// Note :
+// Its convenient to use System.gc() but it is recommended to use Runtime Object.gc() because internally System.gc() itself calls runtime object.gc() only.
+class System {
+    public static void gc() {
+        Runtime.getRuntime().gc();
+    }
+}
+```
+
+> # Finalization
+
+- Just before destroying an object garbage collector calls finalize() method to perform clean up activities.
+- Once a finally method completes autommatically garbase that destorys that object.
+- finalize method present in object class with the following declaration.
+
+```java
+protected void finalize() throws Throwable {}
+```
+
+- we can override finalize method in our class to define our own clean up activities.
+
+> #### Examples
+
+```java
+import java.lang.*;
+import java.util.*;
+public class Test {
+    public static void main(String args[]) {
+        String str = new String("RAJ");
+        str = null;
+        System.gc();
+        System.out.println("End of Main");
+    }
+    public void finalize() {
+        System.out.println("Finalize method called");
+    }
+}
+// Note here the output will : End of main. --> only this line.
+// Because the finalize method here is for object of type Test
+```
+
+```java
+import java.lang.*;
+import java.util.*;
+public class Test {
+    public static void main(String args[]) {
+        Test t1 = new Test();
+        t1 = null;
+        System.gc();
+        System.out.println("End of Main");
+    }
+    public void finalize() {
+        System.out.println("Finalize method called");
+    }
+}
+```
+
+- case 1 :
+    - Just before destroying an object garbage collector calls finalize() method on the object which is eligible for GC then the correspoding class finalize() method will be executed.
+    - For example, if String object is eligible for GC then String class finalize method will be executed but not Test class Finalize method.
+
 ## 🏗️ Memory Management in Java
 
 ### JVM Memory Areas
