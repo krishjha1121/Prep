@@ -139,6 +139,8 @@
 - Real time error free, computations
   within tight-time boundaries.
 - Air Traffic control system, ROBOTS etc.
+- Eg--> FreeRTOS, NuttX, Contiki, TinyOS, VxWorks, etc.
+- RTOS is like a strict teacher 👩‍🏫 who ensures every student (task) speaks exactly on time, never late. A general OS is like a friendly teacher who tries to give everyone equal chance, but doesn’t mind small delays.
 
 <br>
 
@@ -160,7 +162,7 @@ A thread is the smallest unit of execution within a process.
 
 | Multi-Tasking                                                                                                                 | Multi-Threading                                                                                                                                                                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The execution of more than one task <br> simultaneously is called as Multi-Tasking                                            | A process is divided into several <br> different sub-tasks called as threads, which has its own path of execution. <br> This concept is called as multithreading.                                                        |
+| The execution of more than one task <br> simultaneously is called as Multi-Tasking                                            | A process is divided into several <br> different sub-tasks called as threads, which has its own path of execution. <br> The process of executing this thread simultaneously is called as multi-threading.                |
 | Concept of more than 1 processes being context switched.                                                                      | Concept of more than 1 thread. Threads are context switche                                                                                                                                                               |
 | Isolation and memory protection exists. OS must allocate separate memory and resources to each program that CPU is executing. | No isolation and memory protection, resources are shared among threads of that process. OS allocates memory to a process; multiple threads of that process share the same memory and resources allocated to the process. |
 
@@ -265,7 +267,7 @@ Suppose Process A is running and its time slice ends. The OS:
 
 # 🌐 Types of Kernel
 
-- <p style = "color:orange"> Monolithic Kernel </p>
+- Monolithic Kernel
     - All functions are in kernel itself.
     - Bulky in size.
     - Memory required to run is high.
@@ -273,7 +275,7 @@ Suppose Process A is running and its time slice ends. The OS:
     - High performance as communication is fast.
     - Example : Linux, Unix, MS-DOS
 
-- <p style = "color:orange"> Mircro Kernel </p>
+- Mircro Kernel
     - only major functions are in kernel (memory management, process management)
     - file management and I/O management are in user space.
     - smaller in size.
@@ -283,7 +285,7 @@ Suppose Process A is running and its time slice ends. The OS:
     - Overhead switching b/w user mode and kernel mode
     - Eg. L4 Linux, Symbian OS, MINIX etc
 
-- <p style = "color:orange" > Hybrid Kernel </p>
+- Hybrid Kernel
     - Advantages of both worlds. (File mgmt. in User space and rest in Kernel
       space. )
     - Combined approach.
@@ -292,13 +294,7 @@ Suppose Process A is running and its time slice ends. The OS:
     - Eg. MacOS, Windows NT/7/10
     - IPC also happens but lesser overheads.
 
-- <p style = "color:orange"> Nano/Exo kernels </p>
-
-# 🧠 How does communication between user and kernel take place?
-
-- Inter Process Communication (IPC)
-    - Two Process executing independently, having independent memory spaces but need to communicate to work.
-    - done by shared memory, and message passing.
+- Nano/Exo kernels
 
 <br>
 
@@ -451,7 +447,7 @@ Suppose Process A is running and its time slice ends. The OS:
 - Process Scheduling is the method by which an operating system decides which process in the ready queue should be executed next by the CPU. The goal is to maximize CPU utilization and system responsiveness while ensuring fairness among processes.
 
 - Types of Process Scheduling
-    - <p style = "color:orange"> Preemptive Scheduling </P>
+    - Preemptive Scheduling
         - In preemptive scheduling, the CPU can be taken away from a running process and assigned to another process (usually with higher priority or fairness requirements).
         - Example Algorithms:
             - Round Robin
@@ -466,8 +462,7 @@ Suppose Process A is running and its time slice ends. The OS:
         - Example :
             - If Process A is running and Process B (higher priority) arrives, then Process A is preempted, and Process B gets the CPU.
 
-    - <p  style = "color:orange"> Non-Preemptive Scheduling </p>
-        
+    - Non-Preemptive Scheduling
         - Once a process starts its execution, it cannot be interrupted until it finishes or blocks (e.g., for I/O).
         - Example Algorithms:
             - First Come First Served (FCFS)
@@ -518,29 +513,29 @@ Suppose Process A is running and its time slice ends. The OS:
 
 </div>
 
-- <p style = "color:orange"> 🧠 How can you achieve it ? </p>
+- 🧠 How can you achieve it ?
     - Let's take an example of streaming a video to youtube.
-    - Lets say onc process is responsible to record your video and another process is responsible to take that video data and send it to youtube server.
+    - Lets say one process is responsible to record your video and another process is responsible to take that video data and send it to youtube server.
     - To do this, both the processes need to communicate with each other.
     - Once way to achieve it is ---> lets say we will stored the video data into a file and then another process will grab it from the secondary device where the video data is stored.
     - This is not very good, since the process will be very slow as the data is stored in a secondary storage.
     - To solve this problem we need to stored the data into memory.
 
-- <p style = "color:orange"> Better Solution to the above problems is to use some mechanism listed down below </p>
+- Better Solution to the above problems is to use some mechanism listed down below
     - Shared Memory.
     - Message Passing.
     - Pipes.
 
-- <p style = "color:orange"> Synchronization </p>
+- Synchronization
     - The process of coordinating the execution of processes or threads so that they can access shared resources or data safely without causing errors like race conditions, data corruption, or inconsistencies.
 
-- <p style = "color:orange"> Role of Synchronization in IPC </p>
+- Role of Synchronization in IPC
     - Preventing Race Conditions.
     - Ensuring Mutual Exclusion.
     - Coordinating Process Execution.
     - Preventing Deadlocks.
 
-- <p style = "color:orange"> Example of IPC : Producer Consumer Problem </p>
+- Example of IPC : Producer Consumer Problem
     - The Producer–Consumer Problem is a classic process synchronization problem that deals with coordinating two types of processes:
         - Producer → Generates data and places it in a buffer.
         - Consumer → Takes data from the buffer and uses it.
@@ -558,7 +553,7 @@ Suppose Process A is running and its time slice ends. The OS:
         - Consumer may try to consume from an empty buffer.
         - Concurrent modifications can corrupt the buffer.
 
-- <p style = "color:orange"> Incorrect Solution to producer-consumer problem </p>
+- Incorrect Solution to producer-consumer problem
 
 ```C
 #include <stdio.h>
@@ -691,14 +686,14 @@ int main() {
 
 - To Solve these kinds os problems, we need to use synchronization primitives like mutexes, semaphores, and condition variables.
 
-- <p style = "color:orange">  Necessary conditions for a Synchronization problem to occur </p>
+- Necessary conditions for a Synchronization problem to occur
     - Critical Section
         - The critical section refers to the segment of code where processes/threads access shared resources, such as common variables and files, and perform write operations on them. Since processes/threads execute concurrently, any process can be interrupted mid-execution.
     - Race Condition :
         - A race condition occurs when two or more processes can access shared data and they try to change it at the same time.
     - Premption
 
-- <p style = "color:orange"> How to avoid these kinds of problems ? </p>
+- How to avoid these kinds of problems ?
     - Mututal Exclusion : Ensure that only one process or thread can access the critical section at a time.
         - Techniques:
             - Mutexes: Threads acquire the lock before entering the critical section and release it after leaving.
@@ -786,7 +781,7 @@ int main() {
 
 - A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
 
-- <p style = "color:orange"> Solution to Race Condition </p>
+- Solution to Race Condition
     - Mutual Exclusion using locks.
     - Semaphores.
     - Atomic operations: Make Critical code section an atomic operation, i.e., Executed in one CPU cycle.
@@ -840,7 +835,7 @@ int main() {
 
 - A semaphore is a synchronization tool used to control access to shared resources in a concurrent system like a multitasking OS.
 
-- <p style = "color:orange"> Types of Semaphores </p>
+- Types of Semaphores
     - Binary Semaphores :
         - This is also known as a mutex lock, as they are locks that provide mutual exclusion. It can have only two values - 0 and 1. Its value is initialized to 1. It is used to implement the solution of critical section problems with multiple processes and a single resource.
     - Counting Semaphores :
@@ -848,7 +843,7 @@ int main() {
 
 - Binary Semaphores cannot tell me how many process are waiting for the resources, but Counting Semaphores does.
 
-- <p style = "color:orange"> 🗝️ Key idea </p>
+- 🗝️ Key idea
     - A semaphore is a special variable(part of os itself) that is used to
         - signal and wait.
         - Ensure mutual exlusion.
@@ -1016,14 +1011,14 @@ int main() {
 
 - Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time improving resource utilization and system efficiency.
 
-- <p style = "color:orange"> Key Points </p>
+- Key Points
     - Concurrency is about managing multiple tasks at once.
     - It's achieved through context switching, where the CPU rapidly switches between tasks.
     - Used in both single-core (via time slicing) and multi-core (via parallelism) systems.
     - Implemented using threads, processes, and scheduling algorithms.
     - Enhances resource utilization, responsiveness, and system throughput.
 
-- <p style = "color:orange"> Conditions of concurrency </p>
+- Conditions of concurrency
     - There must be two or more processes or threads that can run independently.
     - Two Process that share resources (memory, disk, etc.) can still be executed concurrently using proper synchronization.
     - If both processes try to access shared resources at the same time without proper synchronization, it may lead to:
@@ -1031,7 +1026,7 @@ int main() {
         - Deadlocks
         - Data inconsistency
 
-- <p style = "color:orange"> The Processes executing in the operating system is one of the following two types </p>
+- The Processes executing in the operating system is one of the following two types
     - independent processes
         - A process that does not rely on or affect the execution of other processes. Its execution is completely self-contained.
         - Example : A background file compression process running alone.
@@ -1039,14 +1034,13 @@ int main() {
         - A process that depends on the results or execution of other processes. Its execution may be influenced by other processes.
         - Example : A process that prints a file after another process generates it.
 
-- <p style = "color:orange"> Problems in Concurrency </p>
+- Problems in Concurrency
     - Sharing global resources
         - Sharing of global resources safely is difficult. If two processes both make use of a global variable and both perform read and write on that variable, then the order in which various read and write are executed is critical.
     - Optimal allocation of resources
         - It is difficult for the operating system to manage the allocation of resources optimally.
 
-- <p style = "color:orange"> Advantages of Concurrency </p>
-    
+- Advantages of Concurrency
     - Running of multiple applications:
         - It enable to run multiple applications at the same time. <br>
     - Better resource utilization
@@ -1070,7 +1064,7 @@ int main() {
 
 - Deadlock is a bug present in the process/thread synchronization method.
 
-- <p style = "color:orange"> Resouce Allocation Graph </p>
+- Resouce Allocation Graph
     - A Resource Allocation Graph shows which resources are held by which processes and which processes are waiting for specific types of resources, including how many resources are available, how many are allocated, and what each process needs.
 
 <div align = "center"> <img src = "./pic/rag.png" width = "700" height = "400" style = "border-radius: 15px;"> </div>
@@ -1082,36 +1076,33 @@ int main() {
   if several instances per resource type, possibility of deadlock
 
 - # ❕Necessary Conditions for deadlock
-    - <p style = "color:orange"> A deadlock can occur only if all four conditions hold simultaneously: </p>
-        - <p style = "color:pink"> Mututal Exclusion : </p>
+    - A deadlock can occur only if all four conditions hold simultaneously:
+        - Mututal Exclusion :
             - if there exist a deadlock that means, there exist a critical section and shared resources(cpu, variables, semaphores) concept being used between two processes or threads.
-        - <p style = "color:pink"> Hold and wait : </p>
+        - Hold and wait :
             - A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
-        - <p style = "color:pink"> No Preemption : </p>
+        - No Preemption :
             - A resource cannot be forcibly taken away; it must be released voluntarily.
-        - <p style = "color:pink"> Circular wait : </p>
+        - Circular wait :
             - A closed chain of processes exists, where each process is waiting for a resource held by the next.
 
 - # 🔑 Deadlock Prevention
     - By ensuring at least one of the necessary conditions cannot hold.
-        - <p style = "color:orange"> Mututal Exclusion</p> 
-            
+        - Mututal Exclusion
             - Try to avoid resource sharing between processes meaning not having a critical section (which is almost not possible).
 
-        - <p style = "color:orange"> No Preemption</p>
-            
+        - Preemption
             - Allow the OS to forcibly take resources.
                 - forcefull preemption.
                 - self preemption.
             - We can use the concept of priority to achieve it.
             - Starvation Problem
 
-        - <p style = "color:orange"> Circular Wait</p>
-            
+        - Circular Wait
             - Impose ordering on resources (e.g., request in increasing order).
             - Every process will request the resoures in inreasing order of the resource id.
             - Starvation Problem.
-        - <p style = "color:orange"> Hold and Wait </p>
+        - Hold and Wait
             - Let a process request all the resources it needs, let's say it needs r1, r2, r3, and just in case if any of the resources are not available, then don't allocate any of the resources(r1, r2, r3) to the current process.
             - if process request ri and if all the previously allocated id of rp is less than id of ri we will allocat it, but if not we will release all the rp whose id > id of ri and will request them in future.
             - Starvation Problem.
@@ -1248,12 +1239,12 @@ class Banker {
 | **Purpose**      | Enhances the performance and responsiveness of a single application.                   | Improves overall system efficiency by allowing concurrent execution of multiple programs. |
 | **Switching**    | Threads are managed by the program itself.                                             | Programs are managed by the operating system, which switches between them.                |
 
-- <p style = "color:orange"> Drawbacks of multithreading </p>
+- Drawbacks of multithreading
     - If you don’t make use of the locking mechanisms properly, while investigating data access issues there is a chance of problems arising like data inconsistency and dead-lock.
     - If many threads try to access the same data, then there is a chance that the situation of thread starvation may arise. Resource contention issues are another problem that can trouble the user.
     - Display issues may occur if threads lack coordination when displaying data.
 
-- <p style = "color:orange"> Benefits of Multithreading </p>
+- Benefits of Multithreading
     - 🚀 Improved performance - Multiple tasks execute in parallel, making programs faster.
     - ⭐ Better CPU utilization – Keeps CPU busy by running multiple threads instead of idle waiting.
     - 🖥️ Responsive applications – UI stays smooth while background tasks (like file downloads) run.
@@ -1268,20 +1259,19 @@ class Banker {
 
 # 📚 Static and Dynamic Loading
 
-- <p style = "color:orange"> Static loading</p>
+- Static loading
     - Static Loading is basically loading the entire program into a fixed address. It requires more memory space.
     - Speed of execution is faster than dynamic loading.
     - Unefficient use of memory since we are loading all the modules of the program at once.
 
-- <p style = "color:orange">Dynamic Loading</p>
+- Dynamic Loading
     - Dynamic loading loads program routines into memory only when they are needed. This saves memory by not loading unused routines.
     - Speed of execution is slower than static loading.
     - Efficient use of memory since we are loading only the modules that are needed.
 
 # 📚 Logical and Physical Address
 
-- <p style = "color:orange"> Logical Address </p>
-   
+- Logical Address
     - An address generated by the CPU.
     - The logical address is basically the address of an instruction or data used by a process.
     - User can access logical address of the process.
@@ -1300,7 +1290,7 @@ class Banker {
     <img src = "./pic/memoryManagement.png" width = "500" height = "400" style = "border-radius: 15px;">
 </div>
 
-- <p style = "color:orange"> 🧠 why memory management is important ? </p>
+- 🧠 why memory management is important ?
     - Allocate and de-allocate memory before and after process execution.
     - To keep track of used memory space by processes.
     - To minimize fragmentation issues.
@@ -1315,17 +1305,17 @@ class Banker {
     <img src = "./pic/memoryManagementTechniques.png" width = "500" height = "400" style = "border-radius: 15px;">
 </div>
 
-- <p style = "color:orange"> 🚟 Continguous Memory Allocation </p>
+- 🚟 Continguous Memory Allocation
     - Contiguous memory allocation is a memory management method where each process is given a single, continuous block of memory. This means all the data for a process is stored in adjacent memory locations.
     - Fixed paritioning
     - Variable paritioning
 
-- <p style = "color:orange"> ❎ Non-Contiguous Memory Allocation </p>
+- Non-Contiguous Memory Allocation
     - This method allows processes to be broken into smaller parts, which are placed in different, non-adjacent memory locations.
     - paging
     - segmentation
 
-- <p style = "color:orange"> 🔯 Fixed Partitioning </p>
+- 🔯 Fixed Partitioning
     - Memory is divided into fixed-sized partitions at system boot time(The size of each partition may vary).
     - A process is loaded into a partition only if it fits within its size.
     - Leads to internal fragmentation (wasted space inside a partition).
@@ -1334,8 +1324,7 @@ class Banker {
     - No resizing of partitions during runtime.
     - Also know as multi-programming with fixed number of tasks(MFT).
 
-- <p style = "color:orange"> ㊙️ Variable Partitioning </p>
-    
+- ㊙️ Variable Partitioning
     - Memory is divided into variable-sized partitions dynamically based on process size.
     - A process is loaded into a partition of exactly or closely matching size.
     - Leads to external fragmentation (free memory scattered in small blocks)
@@ -1355,21 +1344,20 @@ class Banker {
         - Worst Fit
         - Next Fit
 
-- <p style = "color:purple"> 📃 Paging </p>
+- 📃 Paging
     - Paging is the process of moving parts of a program, called pages, from secondary storage (like a hard drive) into the main memory (RAM). The main idea behind paging is to break a program into smaller fixed-size blocks called pages.
     - To keep track of where each page is stored in memory, the operating system uses a page table. This table shows the connection between the logical page numbers (used by the program) and the physical page frames (actual locations in RAM). The memory management unit uses the page table to convert logical addresses into physical addresses, so the program can access the correct data in memory.
-    - <p style = "color:purple"> Features </p>
+    - Features
         - <p style = "color:orange"> Logical to physical address mapping</p> Paging divides a process's logical address space into fixed-size pages. Each page maps to a frame in physical memory, enabling flexible memory management.
         - <p style = "color:orange"> Fixed page and frame size</p> Pages and frames have the same fixed size. This simplifies memory management and improves system performance.
         - <p style = "color:orange"> Page table entries </p> Each logical page is represented by a page table entry (PTE). A PTE stores the corresponding frame number and control bits.
         - <p style = "color:orange"> Number of page table entries</p> The page table has one entry per logical page. Thus, its size equals the number of pages in the process's address space.
         - <p style = "color:orange">Page table stored in main memory</p> The page table is kept in main memory. This can add overhead when processes are swapped in or out
-    - <p style = "color:purple"> Advantages </p>
+    - Advantages
         - Eliminates External Fragmentation
         - Efficient Memory Utilization
         - Supports Virtual Memory
-    - <p style = "color:purple">Disadvantages </p>
-       
+    - Disadvantages
         - Internal Fragmentation
         - I/O Overhead During Page Faults
         - Complexity in Implementation
@@ -1405,7 +1393,7 @@ class Banker {
 
 - Virtual memory is a memory management technique used by operating systems to give the appearance of a large, continuous block of memory to applications, even if the physical memory (RAM) is limited. It allows larger applications to run on systems with less RAM.
 
-- <p style = "color:orange"> Objectives </p>
+- Objectives
     - To support multiprogramming , it allows more than one program to run at the same time.
     - A program doesn’t need to be fully loaded in memory to run. Only the needed parts are loaded.
     - Programs can be bigger than the physical memory available in the system.
@@ -1417,29 +1405,25 @@ class Banker {
     <img src = "./pic/virtualMemory.png" width = "500" height = "400" style = "border-radius: 15px;">
 </div>
 
-- <p style = "color:orange"> Types of Virtual Memory </p>
+- Types of Virtual Memory
     - Paging
     - Segmentation
 
-- <p style = "color:orange"> Demand Paging</p> The process of loading the page into memory on demand (whenever a page fault occurs) is known as demand paging.
+- Demand Paging : The process of loading the page into memory on demand (whenever a page fault occurs) is known as demand paging.
 
-- <p style = "color:orange"> Thrashing</p>
-   
+- Thrashing
     - Thrashing is a condition or a situation when the system is spending a major portion of its time servicing the page faults, but the actual processing done is very negligible.
     - Thrashing occurs in a computer system when the CPU spends more time swapping pages in and out of memory than executing actual processes. This happens when there is insufficient physical memory, causing frequent page faults and excessive paging activity. Thrashing reduces system performance and makes processes run very slowly.
 
-- <p style = "color:orange"> Page Replacement </p>
-    
+- Page Replacement
     - A page is copied to the main memory when its demand is made, or page fault occurs. There are various page replacement algorithms which are used to determine the pages which will be replaced.
-    - <p style = "color:orange"> First In First Out (FIFO) </p>
-       
+    - First In First Out (FIFO)
         - The first page to be used is the first page to be loaded into memory.
         - This is the simplest page replacement algorithm, but it is not the most efficient.
-    - <p style = "color:orange"> Least Recently Used (LRU) </p>
-       
+    - Least Recently Used (LRU)
         - The page that has been used the least is replaced first.
         - This algorithm is the most commonly used.
-    - <p style = "color:orange"> Optimal Page Replacement </p>
+    - Optimal Page Replacement
         - Optimal page replacement is a page replacement algorithm that aims to minimize the number of page faults and maximize the utilization of memory.
         - It uses a data structure called a page replacement policy to determine which pages to replace.
         - The page replacement policy is based on the page's age, frequency of use, and other factors.

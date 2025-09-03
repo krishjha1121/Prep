@@ -2762,6 +2762,4 @@ This setup implements **Command Query Responsibility Segregation (CQRS):**
 
 ---
 
-**Summary:**  
-Master-Slave architecture separates reads and writes for scalability, availability, and redundancy.  
-Replication keeps slaves updated, and CQRS pattern optimizes performance for high-traffic systems.
+**Summary:**
