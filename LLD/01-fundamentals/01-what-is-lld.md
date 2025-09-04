@@ -48,7 +48,7 @@ graph TD
 
 ## 🎨 Key Components of LLD (read oop first, you will find it in the same repo)
 
-### 1. Classes and Objects
+> ### 1. Classes and Objects
 
 ```java
 // Example: User class design
@@ -82,7 +82,7 @@ public class User {
 }
 ```
 
-### 2. Interfaces and Abstractions
+> ### 2. Interfaces and Abstractions
 
 ```java
 // Interface defining contract
@@ -114,7 +114,7 @@ public class CreditCardProcessor implements PaymentProcessor {
 }
 ```
 
-### 3. Class Relationships
+> ### 3. Class Relationships
 
 <div align = "center">
 
@@ -160,11 +160,11 @@ classDiagram
 
 ## 🛠️ LLD Artifacts
 
-### 1. Class Diagrams
+> ### 1. Class Diagrams
 
 Show the static structure of classes and their relationships.
 
-### 2. Sequence Diagrams
+> ### 2. Sequence Diagrams
 
 Illustrate how objects interact over time.
 
@@ -185,7 +185,7 @@ sequenceDiagram
     O-->>C: order confirmation
 ```
 
-### 3. State Diagrams
+> ### 3. State Diagrams
 
 Show the different states an object can be in.
 
@@ -208,29 +208,37 @@ stateDiagram-v2
 
 ## 🎯 Why is LLD Important?
 
-### 1. **Code Quality**
+> ### 1. **Code Quality**
 
 - Ensures clean, maintainable code
 - Reduces technical debt
 - Improves readability
 
-### 2. **Team Communication**
+> ### 2. **Team Communication**
 
 - Clear documentation for developers
 - Consistent understanding across team
 - Easier knowledge transfer
 
-### 3. **Risk Mitigation**
+> ### 3. **Risk Mitigation**
 
 - Identifies potential issues early
 - Reduces implementation bugs
 - Facilitates code reviews
 
-### 4. **Scalability**
+> ### 4. **Scalability**
 
 - Designs systems that can grow
 - Identifies bottlenecks early
 - Plans for future requirements
+
+> ### 5. **Maintainability**
+
+- A well-designed system is easy to read, debug, and extend. When components have clear responsibilities and clean interfaces, you can make changes without fear of breaking unrelated parts of the system.
+
+> ### 6. **Reusability**
+
+- When you design modules with well-thought-out responsibilities and abstractions, those modules can often be reused in different parts of your codebase or even across projects.
 
 ## 🚀 LLD Process Overview
 
@@ -252,7 +260,7 @@ flowchart TD
 
 </div>
 
-### Step-by-Step Process
+> ### Step-by-Step Process
 
 1. **Analyze Requirements**: Understand what needs to be built
 2. **Identify Entities**: Find the main objects/classes
@@ -266,14 +274,14 @@ flowchart TD
 
 Let's see how LLD applies to a shopping cart:
 
-### Requirements
+> ### Requirements
 
 - Users can add/remove items from cart
 - Calculate total with taxes and discounts
 - Support different payment methods
 - Handle inventory management
 
-### LLD Approach
+> ### LLD Approach
 
 ```java
 // Main entities identified
@@ -388,5 +396,3 @@ Low-Level Design is about creating detailed blueprints for software implementati
 The key is to think through the details before coding, apply proven principles and patterns, and create designs that teams can understand and implement successfully.
 
 ---
-
-[← Back to Fundamentals](./README.md) | [Next: Design Principles →](./02-design-principles.md)

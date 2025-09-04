@@ -15,6 +15,7 @@
 ## 📚 Types of UML Diagrams
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 mindmap
   root((UML Diagrams))
     Structural
@@ -36,76 +37,77 @@ mindmap
 
 ## 🏗️ Structural Diagrams
 
-### 1. Class Diagram
+> ### 1. Class Diagram
 
 **Most important for LLD** - Shows classes, their attributes, methods, and relationships.
 
+<div align = "center">
+
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 classDiagram
     class Vehicle {
-        <<abstract>>
-        -String licenseNumber
-        -String model
-        -int year
+        -licenseNumber
+        -model
+        -year
         +startEngine()
         +stopEngine()
-        +getDetails() String
+        +getDetails()
     }
 
     class Car {
-        -int numberOfDoors
-        -String fuelType
+        -numberOfDoors
+        -fuelType
         +openTrunk()
-        +closeTrunk()
     }
 
     class Motorcycle {
-        -boolean hasSidecar
+        -hasSidecar
         +wheelie()
     }
 
     class Engine {
-        -String type
-        -int horsepower
+        -type
+        -horsepower
         +start()
         +stop()
-        +getSpecs() String
+        #getSpecs()
     }
 
     class Owner {
-        -String name
-        -String licenseId
-        -Date licenseExpiry
-        +renewLicense()
-        +getOwnerInfo() String
+        -name
+        -licenseId
+        +getOwnerInfo()
     }
 
     Vehicle <|-- Car
     Vehicle <|-- Motorcycle
     Vehicle *-- Engine
-    Owner ||--o{ Vehicle : owns
-
-    note for Vehicle "Abstract base class\nfor all vehicles"
-    note for Engine "Composition relationship\nEngine cannot exist without Vehicle"
+    Owner --> Vehicle
 ```
+
+</div>
 
 #### Class Diagram Elements
 
 | Symbol          | Meaning        | Example                  |
 | --------------- | -------------- | ------------------------ |
-| `+`             | Public         | `+getName()`             |
-| `-`             | Private        | `-age: int`              |
-| `#`             | Protected      | `#calculateBonus()`      |
+| `+`             | Public         | `+start()`               |
+| `-`             | Private        | `-licenseId: int`        |
+| `#`             | Protected      | `#getSpecs()`            |
 | `~`             | Package        | `~helper()`              |
 | `{abstract}`    | Abstract class | `{abstract} Vehicle`     |
 | `<<interface>>` | Interface      | `<<interface>> Drawable` |
 | `{static}`      | Static member  | `{static} counter: int`  |
 
-### 2. Object Diagram
+> ### 2. Object Diagram
 
 Shows instances of classes at a specific moment in time.
 
+<div align = "center">
+
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 graph TD
     subgraph "Object Diagram - Online Shopping"
         A["customer1: Customer<br/>name = 'John Doe'<br/>email = 'john@email.com'"]
@@ -119,11 +121,16 @@ graph TD
     end
 ```
 
-### 3. Component Diagram
+</div>
+
+> ### 3. Component Diagram
 
 Shows how components are organized and their dependencies.
 
+<div align = "center">
+
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 graph TD
     subgraph "E-commerce System Components"
         A[User Interface]
@@ -143,24 +150,27 @@ graph TD
     end
 ```
 
+</div>
+
 ## 🎭 Behavioral Diagrams
 
-### 1. Use Case Diagram
+> ### 1. Use Case Diagram
 
 Shows system functionality from user's perspective.
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 graph LR
-    subgraph "Online Banking System"
+    subgraph Online_Banking_System
         Customer((Customer))
         Admin((Admin))
 
-        UC1[Login]
-        UC2[View Balance]
-        UC3[Transfer Money]
-        UC4[Pay Bills]
-        UC5[Generate Reports]
-        UC6[Manage Accounts]
+        UC1((Login))
+        UC2((View Balance))
+        UC3((Transfer Money))
+        UC4((Pay Bills))
+        UC5((Generate Reports))
+        UC6((Manage Accounts))
 
         Customer --> UC1
         Customer --> UC2
@@ -171,17 +181,18 @@ graph LR
         Admin --> UC5
         Admin --> UC6
 
-        UC2 -.-> UC1 : <<extends>>
-        UC3 -.-> UC1 : <<extends>>
-        UC4 -.-> UC1 : <<extends>>
+        UC2 -.-> UC1
+        UC3 -.-> UC1
+        UC4 -.-> UC1
     end
 ```
 
-### 2. Sequence Diagram
+> ### 2. Sequence Diagram
 
 Shows how objects interact over time.
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 sequenceDiagram
     participant U as User
     participant UI as UserInterface
@@ -211,11 +222,12 @@ sequenceDiagram
     end
 ```
 
-### 3. Activity Diagram
+> ### 3. Activity Diagram
 
 Shows workflow and business processes.
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 flowchart TD
     Start([Start]) --> Input[Enter Login Credentials]
     Input --> Validate{Valid Credentials?}
@@ -238,11 +250,12 @@ flowchart TD
     ManagerActions --> End
 ```
 
-### 4. State Machine Diagram
+> ### 4. State Machine Diagram
 
 Shows states of an object and transitions between states.
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 stateDiagram-v2
     [*] --> Draft
     Draft --> Submitted : submit()
@@ -269,51 +282,70 @@ stateDiagram-v2
 
 ## 🔗 Relationships in UML
 
-### 1. Association
+> ### 1. Association (Simple Association)
 
-General relationship between classes.
+- General relationship between classes.
+- Association represents a "uses-a" relationship between two classes where one class uses or interacts with the other.
+- Example : A `Car` has a`Driver`. Car class uses, or references `Driver` class.
+
+<div align = "center">
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 classDiagram
-    class Student {
+    class Car {
+        -driver: Driver
+        +Car(driver : Driver)
+        +drive(): void
+    }
+
+    class Driver {
         -name: String
-        -studentId: String
+        +Driver(name : String)
     }
 
-    class Course {
-        -courseCode: String
-        -courseName: String
-    }
-
-    Student --> Course : enrolls in
+    Car --> Driver : has-a
 ```
 
-### 2. Aggregation (Has-a)
+</div>
 
-"Part-of" relationship where parts can exist independently.
+> ### 2. Aggregation (Has-a)
+
+- "Part-of" relationship where parts can exist independently.
+- Aggregation represents a "has-a" relationship where one class (the whole) contains another class (the part), but the contained class can exist independently.
+- Example: A `Car` class has an `Engine` class but the Engine class can exist without the Car class.
+
+<div align = "center">
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 classDiagram
-    class Department {
-        -name: String
-        -location: String
+    class Car {
+        -model: String
+        -year: int
+        -engine : Engine
+    }
+    class Engine {
+        -type: String
+        -horsePower: int
     }
 
-    class Employee {
-        -name: String
-        -employeeId: String
-    }
-
-    Department o-- Employee : has
-
-    note for Department "Employees can exist\nwithout Department"
+    Car o-- Engine : has
 ```
 
-### 3. Composition (Part-of)
+</div>
 
-Strong ownership where parts cannot exist without the whole.
+> ### 3. Composition (Part-of)
+
+- Strong ownership where parts cannot exist without the whole.
+- Composition represents a strong "has-a" relationship where the part cannot exist without the whole. If the whole is destroyed, the parts are also destroyed.
+
+- Example: A `House` class is composed of `Room` class but the Room class can not exist without the House class.
+
+<div align = "center">
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 classDiagram
     class House {
         -address: String
@@ -330,11 +362,18 @@ classDiagram
     note for Room "Rooms cannot exist\nwithout House"
 ```
 
-### 4. Inheritance (Is-a)
+</div>
 
-Generalization/specialization relationship.
+> ### 4. Inheritance (Is-a)
+
+- Generalization/specialization relationship.
+- Inheritance (or Generalization) represents an "is-a" relationship where one class (subclass) inherits the attributes and methods of another class (superclass).
+- Example: A `Dog` class and a `Cat` class inherit from an `Animal` class, as both dogs and cats are animals.
+
+<div align = "center">
 
 ```mermaid
+%%{init: {'theme': 'default', 'layout': 'lr'}}%%
 classDiagram
     class Animal {
         <<abstract>>
@@ -359,6 +398,8 @@ classDiagram
     Animal <|-- Dog
     Animal <|-- Cat
 ```
+
+</div>
 
 ### 5. Realization/Implementation
 
