@@ -255,6 +255,7 @@ public class EmailService {
 ## 🏗️ Class Diagram After SRP
 
 ```mermaid
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Employee {
         -String name

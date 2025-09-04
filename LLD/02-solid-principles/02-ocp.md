@@ -20,7 +20,7 @@ mindmap
   root((OCP))
     Extension
       New features
-      Plugin architecture  
+      Plugin architecture
       Polymorphism
     Abstraction
       Interfaces
@@ -87,7 +87,7 @@ public class RegularCustomerDiscount implements DiscountStrategy {
     public double calculateDiscount(double amount) {
         return amount * 0.05; // 5% discount
     }
-    
+
     @Override
     public String getCustomerType() {
         return "REGULAR";
@@ -100,7 +100,7 @@ public class PremiumCustomerDiscount implements DiscountStrategy {
     public double calculateDiscount(double amount) {
         return amount * 0.10; // 10% discount
     }
-    
+
     @Override
     public String getCustomerType() {
         return "PREMIUM";
@@ -113,7 +113,7 @@ public class VipCustomerDiscount implements DiscountStrategy {
     public double calculateDiscount(double amount) {
         return amount * 0.15; // 15% discount
     }
-    
+
     @Override
     public String getCustomerType() {
         return "VIP";
@@ -127,7 +127,7 @@ public class VipCustomerDiscount implements DiscountStrategy {
 // ✅ GOOD: Calculator that works with any discount strategy
 public class DiscountCalculator {
     private Map<String, DiscountStrategy> strategies;
-    
+
     public DiscountCalculator() {
         this.strategies = new HashMap<>();
         // Register default strategies
@@ -135,11 +135,11 @@ public class DiscountCalculator {
         registerStrategy(new PremiumCustomerDiscount());
         registerStrategy(new VipCustomerDiscount());
     }
-    
+
     public void registerStrategy(DiscountStrategy strategy) {
         strategies.put(strategy.getCustomerType(), strategy);
     }
-    
+
     public double calculateDiscount(String customerType, double amount) {
         DiscountStrategy strategy = strategies.get(customerType);
         if (strategy == null) {
@@ -147,7 +147,7 @@ public class DiscountCalculator {
         }
         return strategy.calculateDiscount(amount);
     }
-    
+
     public Set<String> getSupportedCustomerTypes() {
         return strategies.keySet();
     }
@@ -165,7 +165,7 @@ public class GoldCustomerDiscount implements DiscountStrategy {
     public double calculateDiscount(double amount) {
         return amount * 0.20; // 20% discount
     }
-    
+
     @Override
     public String getCustomerType() {
         return "GOLD";
@@ -184,7 +184,7 @@ public class PlatinumCustomerDiscount implements DiscountStrategy {
         }
         return amount * 0.20; // 20% base discount
     }
-    
+
     @Override
     public String getCustomerType() {
         return "PLATINUM";
@@ -194,17 +194,17 @@ public class PlatinumCustomerDiscount implements DiscountStrategy {
 // ✅ NEW: Corporate customer with seasonal promotions
 public class CorporateCustomerDiscount implements DiscountStrategy {
     private boolean isHolidaySeason;
-    
+
     public CorporateCustomerDiscount(boolean isHolidaySeason) {
         this.isHolidaySeason = isHolidaySeason;
     }
-    
+
     @Override
     public double calculateDiscount(double amount) {
         double baseDiscount = amount * 0.18; // 18% base
         return isHolidaySeason ? baseDiscount * 1.5 : baseDiscount;
     }
-    
+
     @Override
     public String getCustomerType() {
         return "CORPORATE";
@@ -215,45 +215,46 @@ public class CorporateCustomerDiscount implements DiscountStrategy {
 ## 🏗️ Class Diagram After OCP
 
 ```mermaid
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px', 'lineHeight': '24px', 'nodeSpacing': 50, 'rankSpacing': 80 }}}%%
 classDiagram
     class DiscountStrategy {
         <<interface>>
-        +calculateDiscount(double amount) double
+        +calculateDiscount(amount: double) double
         +getCustomerType() String
     }
-    
+
     class DiscountCalculator {
-        -Map~String, DiscountStrategy~ strategies
-        +registerStrategy(DiscountStrategy)
-        +calculateDiscount(String, double) double
-        +getSupportedCustomerTypes() Set~String~
+        -strategies : Map<String, DiscountStrategy>
+        +registerStrategy(strategy: DiscountStrategy)
+        +calculateDiscount(customerType: String, amount: double) double
+        +getSupportedCustomerTypes() Set<String>
     }
-    
+
     class RegularCustomerDiscount {
-        +calculateDiscount(double) double
+        +calculateDiscount(amount: double) double
         +getCustomerType() String
     }
-    
+
     class PremiumCustomerDiscount {
-        +calculateDiscount(double) double
+        +calculateDiscount(amount: double) double
         +getCustomerType() String
     }
-    
+
     class VipCustomerDiscount {
-        +calculateDiscount(double) double
+        +calculateDiscount(amount: double) double
         +getCustomerType() String
     }
-    
+
     class GoldCustomerDiscount {
-        +calculateDiscount(double) double
+        +calculateDiscount(amount: double) double
         +getCustomerType() String
     }
-    
+
     class PlatinumCustomerDiscount {
-        +calculateDiscount(double) double
+        +calculateDiscount(amount: double) double
         +getCustomerType() String
     }
-    
+
     DiscountCalculator --> DiscountStrategy
     RegularCustomerDiscount ..|> DiscountStrategy
     PremiumCustomerDiscount ..|> DiscountStrategy
@@ -268,22 +269,22 @@ classDiagram
 public class ECommerceSystem {
     public static void main(String[] args) {
         DiscountCalculator calculator = new DiscountCalculator();
-        
+
         // Add new strategies without modifying existing code
         calculator.registerStrategy(new GoldCustomerDiscount());
         calculator.registerStrategy(new PlatinumCustomerDiscount());
         calculator.registerStrategy(new CorporateCustomerDiscount(true)); // Holiday season
-        
+
         // Use the calculator
         double amount = 1000.0;
-        
+
         System.out.println("Regular: $" + calculator.calculateDiscount("REGULAR", amount));
         System.out.println("Premium: $" + calculator.calculateDiscount("PREMIUM", amount));
         System.out.println("VIP: $" + calculator.calculateDiscount("VIP", amount));
         System.out.println("Gold: $" + calculator.calculateDiscount("GOLD", amount));
         System.out.println("Platinum: $" + calculator.calculateDiscount("PLATINUM", amount));
         System.out.println("Corporate: $" + calculator.calculateDiscount("CORPORATE", amount));
-        
+
         System.out.println("\nSupported customer types: " + calculator.getSupportedCustomerTypes());
     }
 }
@@ -324,9 +325,9 @@ public interface Shape {
 // Concrete implementations
 public class Circle implements Shape {
     private double radius;
-    
+
     public Circle(double radius) { this.radius = radius; }
-    
+
     @Override
     public double calculateArea() {
         return Math.PI * radius * radius;
@@ -335,12 +336,12 @@ public class Circle implements Shape {
 
 public class Rectangle implements Shape {
     private double width, height;
-    
+
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
-    
+
     @Override
     public double calculateArea() {
         return width * height;
@@ -350,12 +351,12 @@ public class Rectangle implements Shape {
 // ✅ NEW: Can add new shapes without modifying existing code
 public class Triangle implements Shape {
     private double base, height;
-    
+
     public Triangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
-    
+
     @Override
     public double calculateArea() {
         return 0.5 * base * height;
@@ -383,7 +384,7 @@ public class PaymentProcessor {
             // Credit card processing logic
             System.out.println("Processing credit card payment: $" + amount);
         } else if (paymentType.equals("PAYPAL")) {
-            // PayPal processing logic  
+            // PayPal processing logic
             System.out.println("Processing PayPal payment: $" + amount);
         } else if (paymentType.equals("CRYPTO")) { // ❌ NEW: Modification required
             // Cryptocurrency processing logic
@@ -407,22 +408,22 @@ public interface PaymentStrategy {
 public class CreditCardPayment implements PaymentStrategy {
     private String cardNumber;
     private String expiryDate;
-    
+
     public CreditCardPayment(String cardNumber, String expiryDate) {
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
     }
-    
+
     @Override
     public void processPayment(double amount) {
         // Credit card processing logic
         System.out.println("Processing credit card payment: $" + amount);
         System.out.println("Card ending in: " + cardNumber.substring(cardNumber.length() - 4));
     }
-    
+
     @Override
     public String getPaymentType() { return "CREDIT_CARD"; }
-    
+
     @Override
     public boolean isAvailable() {
         // Check if card is valid and not expired
@@ -432,18 +433,18 @@ public class CreditCardPayment implements PaymentStrategy {
 
 public class PayPalPayment implements PaymentStrategy {
     private String email;
-    
+
     public PayPalPayment(String email) { this.email = email; }
-    
+
     @Override
     public void processPayment(double amount) {
         System.out.println("Processing PayPal payment: $" + amount);
         System.out.println("PayPal account: " + email);
     }
-    
+
     @Override
     public String getPaymentType() { return "PAYPAL"; }
-    
+
     @Override
     public boolean isAvailable() { return true; }
 }
@@ -452,21 +453,21 @@ public class PayPalPayment implements PaymentStrategy {
 public class CryptocurrencyPayment implements PaymentStrategy {
     private String walletAddress;
     private String coinType;
-    
+
     public CryptocurrencyPayment(String walletAddress, String coinType) {
         this.walletAddress = walletAddress;
         this.coinType = coinType;
     }
-    
+
     @Override
     public void processPayment(double amount) {
         System.out.println("Processing " + coinType + " payment: $" + amount);
         System.out.println("Wallet: " + walletAddress);
     }
-    
+
     @Override
     public String getPaymentType() { return "CRYPTOCURRENCY"; }
-    
+
     @Override
     public boolean isAvailable() {
         // Check blockchain network status
@@ -477,28 +478,28 @@ public class CryptocurrencyPayment implements PaymentStrategy {
 // Payment processor using strategies
 public class PaymentProcessor {
     private Map<String, PaymentStrategy> strategies;
-    
+
     public PaymentProcessor() {
         this.strategies = new HashMap<>();
     }
-    
+
     public void registerPaymentMethod(PaymentStrategy strategy) {
         strategies.put(strategy.getPaymentType(), strategy);
     }
-    
+
     public void processPayment(String paymentType, double amount) {
         PaymentStrategy strategy = strategies.get(paymentType);
         if (strategy == null) {
             throw new IllegalArgumentException("Unsupported payment type: " + paymentType);
         }
-        
+
         if (!strategy.isAvailable()) {
             throw new RuntimeException("Payment method not available: " + paymentType);
         }
-        
+
         strategy.processPayment(amount);
     }
-    
+
     public List<String> getAvailablePaymentMethods() {
         return strategies.values().stream()
                         .filter(PaymentStrategy::isAvailable)
@@ -516,11 +517,11 @@ public class PaymentProcessor {
 // Context class that uses strategies
 public class TextFormatter {
     private FormattingStrategy strategy;
-    
+
     public void setFormattingStrategy(FormattingStrategy strategy) {
         this.strategy = strategy;
     }
-    
+
     public String format(String text) {
         return strategy.format(text);
     }
@@ -546,7 +547,7 @@ public class LowerCaseFormatter implements FormattingStrategy {
 ```java
 // Abstract base class defining the algorithm template
 public abstract class DataProcessor {
-    
+
     // Template method - defines the algorithm structure
     public final void processData(String data) {
         String cleanedData = cleanData(data);
@@ -554,7 +555,7 @@ public abstract class DataProcessor {
         String transformedData = transformData(validatedData);
         saveData(transformedData);
     }
-    
+
     // Steps that can be extended by subclasses
     protected abstract String cleanData(String data);
     protected abstract String validateData(String data);
@@ -592,18 +593,18 @@ public interface Plugin {
 // Plugin manager
 public class PluginManager {
     private List<Plugin> plugins = new ArrayList<>();
-    
+
     public void registerPlugin(Plugin plugin) {
         plugins.add(plugin);
         System.out.println("Registered plugin: " + plugin.getName());
     }
-    
+
     public void executePlugins() {
         plugins.stream()
                .filter(Plugin::isEnabled)
                .forEach(Plugin::execute);
     }
-    
+
     public List<Plugin> getPlugins() {
         return new ArrayList<>(plugins);
     }
@@ -650,11 +651,11 @@ public class SecurityScanPlugin implements Plugin {
 // ✅ Existing code remains stable when adding new features
 public class Logger {
     private List<LogHandler> handlers = new ArrayList<>();
-    
+
     public void addHandler(LogHandler handler) {
         handlers.add(handler);  // No modification to existing code
     }
-    
+
     public void log(String message) {
         handlers.forEach(handler -> handler.handle(message));
     }
@@ -688,7 +689,7 @@ public class ApplePayPayment implements PaymentStrategy {
     // Implementation
 }
 
-// Team B can work on new shipping methods  
+// Team B can work on new shipping methods
 public class DroneShipping implements ShippingStrategy {
     // Implementation
 }
@@ -765,11 +766,11 @@ public interface ReportFormat {
 
 public class ReportGenerator {
     private Map<String, ReportFormat> formats = new HashMap<>();
-    
+
     public void registerFormat(String type, ReportFormat format) {
         formats.put(type, format);
     }
-    
+
     public void generateReport(String type, List<Data> data, OutputStream output) {
         ReportFormat format = formats.get(type);
         if (format != null) {
@@ -799,7 +800,7 @@ public class NotificationService {
             System.out.println("Push notification sent to " + recipient + ": " + message);
         }
     }
-    
+
     public boolean isValidRecipient(String type, String recipient) {
         if (type.equals("EMAIL")) {
             return recipient.contains("@");
@@ -835,5 +836,3 @@ Remember: **Open for Extension, Closed for Modification!**
 The key is to identify the parts of your system that are likely to change and abstract them behind stable interfaces. Use design patterns like Strategy, Template Method, and Plugin architectures to achieve OCP compliance.
 
 ---
-
-[← Back: Single Responsibility Principle](./01-srp.md) | [Next: Liskov Substitution Principle →](./03-lsp.md)
