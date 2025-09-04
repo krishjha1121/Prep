@@ -41,68 +41,104 @@ mindmap
 
 **Most important for LLD** - Shows classes, their attributes, methods, and relationships.
 
-<div align = "center">
-
-```mermaid
-%%{init: {'theme': 'default'}}%%
-classDiagram
-    class Vehicle {
-        -licenseNumber
-        -model
-        -year
-        +startEngine()
-        +stopEngine()
-        +getDetails()
-    }
-
-    class Car {
-        -numberOfDoors
-        -fuelType
-        +openTrunk()
-    }
-
-    class Motorcycle {
-        -hasSidecar
-        +wheelie()
-    }
-
-    class Engine {
-        -type
-        -horsepower
-        +start()
-        +stop()
-        #getSpecs()
-    }
-
-    class Owner {
-        -name
-        -licenseId
-        +getOwnerInfo()
-    }
-
-    Vehicle <|-- Car
-    Vehicle <|-- Motorcycle
-    Vehicle *-- Engine
-    Owner --> Vehicle
-```
-
-</div>
-
 #### Class Diagram Elements
 
 | Symbol          | Meaning        | Example                  |
 | --------------- | -------------- | ------------------------ |
-| `+`             | Public         | `+start()`               |
-| `-`             | Private        | `-licenseId: int`        |
-| `#`             | Protected      | `#getSpecs()`            |
+| `+`             | Public         | `+play()`                |
+| `-`             | Private        | `-city: int`             |
+| `#`             | Protected      | `#specialMeow()`         |
 | `~`             | Package        | `~helper()`              |
 | `{abstract}`    | Abstract class | `{abstract} Vehicle`     |
 | `<<interface>>` | Interface      | `<<interface>> Drawable` |
 | `{static}`      | Static member  | `{static} counter: int`  |
 
+<div align = "center">
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+classDiagram
+    class Person {
+        - name : String
+        - age : int
+        - address : Address
+        - phone : Phone
+        + adoptPet(pet: Pet) : void
+    }
+
+    class Address {
+        - street : String
+        - city : String
+        - state : String
+        - zipCode : String
+    }
+
+    class Phone {
+        - phoneNumber : String
+        - phoneType : PhoneType
+    }
+
+    class PhoneType {
+        <<enumeration>>
+        HOME
+        WORK
+        MOBILE
+    }
+
+    class Pet {
+        <<interface>>
+        + play() : void
+        + specialMeow() : void
+    }
+
+    class Animal {
+        <<abstract>>
+        - name : String
+        - age : int
+        + eat() : void
+        + sleep() : void
+    }
+
+    class Dog {
+        - breed : String
+        + bark() : void
+        + play() : void
+        + specialMeow() : void
+    }
+
+    class Cat {
+        - furColor : String
+        + meow() : void
+        + play() : void
+        + specialMeow() : void
+    }
+
+    %% Relationships
+    Person --> Address
+    Person --> Phone
+    Phone --> PhoneType
+
+    Person --> Pet : adoptPet
+
+    Animal <|-- Dog
+    Animal <|-- Cat
+    Pet <|.. Dog
+    Pet <|.. Cat
+```
+
+</div>
+
+- The relationships between the classes are as follows:
+    - Inheritance: `Dog` and `Cat` inherit from `Animal`.
+    - Realization/Implementation: `Dog` and `Cat` implement the `Pet` interface.
+    - Aggregation: `Person` has an aggregation relationship with `Pet`, indicating that a person can have multiple pets.
+    - Composition:`Person` has a composition relationship with `Address`, indicating that an address cannot exist without a person.
+    - Association: `Person` has an association relationship with `Phone`, indicating that a person can have multiple phone numbers.
+      Dependency: `Phone` depends on the `PhoneType` enumeration for the `phoneType` attribute.
+
 > ### 2. Object Diagram
 
-Shows instances of classes at a specific moment in time.
+- Shows instances of classes at a specific moment in time.
 
 <div align = "center">
 
@@ -156,40 +192,54 @@ graph TD
 
 > ### 1. Use Case Diagram
 
-Shows system functionality from user's perspective.
+- Shows system functionality from user's perspective.
+- A Use Case Diagram is a visual representation of how different users (also called actors) interact with a system.
+- It’s like a bird’s-eye view of the system’s functionality without getting into any code.
+- It answers **"What can users do with this system?"**
 
 ```mermaid
-%%{init: {'theme': 'default'}}%%
-graph LR
-    subgraph Online_Banking_System
-        Customer((Customer))
-        Admin((Admin))
+%%{init: {'theme': 'default', 'flowchart': {'curve': 'linear'}}}%%
+flowchart LR
+  %% actors (outside the system boundary)
+  Customer[Customer]
+  Admin[Admin]
 
-        UC1((Login))
-        UC2((View Balance))
-        UC3((Transfer Money))
-        UC4((Pay Bills))
-        UC5((Generate Reports))
-        UC6((Manage Accounts))
+  %% system boundary (subgraph) with use cases as ovals
+  subgraph Online_Banking_System["Online Banking System"]
+    direction TB
+    UC1((Login))
+    UC2((View Balance))
+    UC3((Transfer Money))
+    UC4((Pay Bills))
+    UC5((Generate Reports))
+    UC6((Manage Accounts))
+  end
 
-        Customer --> UC1
-        Customer --> UC2
-        Customer --> UC3
-        Customer --> UC4
+  %% actor -> use case links
+  Customer --> UC1
+  Customer --> UC2
+  Customer --> UC3
+  Customer --> UC4
 
-        Admin --> UC1
-        Admin --> UC5
-        Admin --> UC6
+  Admin --> UC1
+  Admin --> UC5
+  Admin --> UC6
 
-        UC2 -.-> UC1
-        UC3 -.-> UC1
-        UC4 -.-> UC1
-    end
+  %% indicate "includes" (dotted arrows) — visually similar to UML <<include>>
+  UC2 -.-> UC1
+  UC3 -.-> UC1
+  UC4 -.-> UC1
+
 ```
 
 > ### 2. Sequence Diagram
 
-Shows how objects interact over time.
+- Shows how objects interact over time.
+- A sequence diagram is a type of UML (Unified Modeling Language) diagram that shows how objects in a system interact with each other, step by step.
+- It focuses on the order of messages exchanged between different components or actors to achieve a particular task or use case.
+- **"Who is doint what and when ? "**
+- A **Sequence Diagram** in UML is used to represent the flow of messages between different objects or components over time.
+- It shows **how objects interact** through different types of **messages**.
 
 ```mermaid
 %%{init: {'theme': 'default'}}%%
@@ -222,9 +272,157 @@ sequenceDiagram
     end
 ```
 
+### 🌏 Types of Messages in Sequence Diagrams :
+
+A message represents a communication between lifelines (objects/actors). Below are the commonly used UML message types with concise explanations and Mermaid examples.
+
+1. Synchronous Message (Call)
+
+- Meaning: Sender waits for the receiver to finish (blocking call).
+- Notation: Solid line with a filled arrowhead to the receiver, often followed by a reply.
+- Mermaid: Use `->>` for call and `-->>` for reply. You can show activation with `activate`/`deactivate`.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant C as Client
+    participant S as Service
+    participant R as Repository
+
+    C->>S: getOrder(id)
+    activate S
+    S->>R: fetchOrder(id)
+    activate R
+    R-->>S: Order
+    deactivate R
+    S-->>C: OrderDTO
+    deactivate S
+```
+
+2. Asynchronous Message (Signal)
+
+- Meaning: Sender does not wait (non-blocking); control returns immediately.
+- Notation: In UML, an open arrow. In Mermaid, use `-)` for async messages.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant UI as UI
+    participant Q as EventQueue
+    participant WL as WorkerListener
+
+    UI-)Q: enqueue(Job)
+    Q-)WL: dispatch(Job)
+    Note over UI,Q: UI continues without waiting
+```
+
+3. Reply / Return Message
+
+- Meaning: Response to a previous call.
+- Notation: Dashed line back to the caller.
+- Mermaid: `-->>` from callee to caller.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant A as API
+    participant Auth as AuthService
+
+    A->>Auth: authenticate(token)
+    Auth-->>A: AuthResult
+```
+
+4. Create Message
+
+- Meaning: Creates a new lifeline instance.
+- Notation: Arrow to the created lifeline’s head; the lifeline starts at that point.
+- Mermaid: Use `create participant` before the first message to it.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant F as Factory
+    participant O as Order
+    F->>O: init(customer, items)
+    Note over O: Lifeline starts here (created)
+```
+
+5. Destroy (Delete) Message
+
+- Meaning: Terminates a lifeline.
+- Notation: Message to an X at the end of the lifeline; no further messages after.
+- Mermaid: Use `destroy participant` (and optionally `--x` arrow for emphasis).
+
+```mermaid
+
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant Session
+
+    Session ->> Session: logout
+    destroy Session
+```
+
+6. Self Message (Recursive/Internal Call)
+
+- Meaning: An object sends a message to itself.
+- Notation: A U-shaped arrow back to the same lifeline.
+- Mermaid: Use `A->>A`.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant Calc as Calculator
+
+    Calc->>Calc: computeSubtotal(lines)
+    activate Calc
+    Calc->>Calc: applyDiscounts()
+    Calc-->>Calc: subtotal
+    deactivate Calc
+```
+
+7. Found Message
+
+- Meaning: Message with unknown sender (arrives from outside the system boundary).
+- Notation: Arrow originating from a filled circle to a lifeline (conceptual in UML).
+- Mermaid: Not directly supported; approximate by using a dedicated External participant.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant Ext as External
+    participant S as Service
+
+    Ext-->>S: incomingWebhook(payload)
+    Note over S: Found message (origin outside system)
+```
+
+8. Lost Message
+
+- Meaning: Message whose receiver is unknown or not modeled.
+- Notation: Arrow to a filled circle at the edge (conceptual in UML).
+- Mermaid: Not directly supported; approximate by sending to a placeholder participant.
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+sequenceDiagram
+    participant S as Service
+    participant Unknown as <unknown>
+
+    S-->>Unknown: notifyAll(event)
+    Note over S,Unknown: Lost message (receiver not modeled)
+```
+
+> Notes
+
+- Guarded/conditional flows (alt/opt), loops, and parallel blocks are interaction fragments, not message types, though they commonly wrap messages.
+- Activation bars represent time the receiver is active/processing; helpful but optional.
+
 > ### 3. Activity Diagram
 
-Shows workflow and business processes.
+- Shows workflow and business processes.
+
+<div align = "center">
 
 ```mermaid
 %%{init: {'theme': 'default'}}%%
@@ -250,9 +448,13 @@ flowchart TD
     ManagerActions --> End
 ```
 
+</div>
+
 > ### 4. State Machine Diagram
 
-Shows states of an object and transitions between states.
+- Shows states of an object and transitions between states.
+
+<div align = "center">
 
 ```mermaid
 %%{init: {'theme': 'default'}}%%
@@ -279,6 +481,8 @@ stateDiagram-v2
     Published --> Archived : archive()
     Archived --> [*]
 ```
+
+</div>
 
 ## 🔗 Relationships in UML
 
@@ -401,11 +605,16 @@ classDiagram
 
 </div>
 
-### 5. Realization/Implementation
+> ### 5. Realization/Implementation
 
-Implementation of interface by a class.
+- Implementation of interface by a class.
+- Realization or implementation represents a relationship between a class and an interface, where the class implements the methods declared in the interface.
+- Example: A `Rectangle` class and a `Circle` class implement the `Shape` interface, which declares a getArea() method.
+
+<div align = "center">
 
 ```mermaid
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Drawable {
         <<interface>>
@@ -432,11 +641,18 @@ classDiagram
     Drawable <|.. Rectangle
 ```
 
-### 6. Dependency
+</div>
 
-One class uses another class.
+> ### 6. Dependency
+
+- One class uses another class.
+- Dependency represents a "uses" relationship where a change in one class (the supplier) may affect the other class (the client).
+- Example: A `Customer` class uses an `Order` class to place order.
+
+<div align = "center">
 
 ```mermaid
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class OrderProcessor {
         +processOrder(order)
@@ -455,6 +671,8 @@ classDiagram
     OrderProcessor ..> Order : uses
 ```
 
+</div>
+
 ## 📊 Multiplicity Indicators
 
 | Notation      | Meaning         |
@@ -468,37 +686,42 @@ classDiagram
 
 ### Example with Multiplicity
 
+<div align = "center">
+
 ```mermaid
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Library {
-        -name: String
-        -address: String
+        - name : String
+        - address : String
     }
 
     class Book {
-        -isbn: String
-        -title: String
-        -author: String
+        - isbn : String
+        - title : String
+        - author : String
     }
 
     class Member {
-        -memberId: String
-        -name: String
+        - memberId : String
+        - name : String
     }
 
     class Loan {
-        -loanDate: Date
-        -dueDate: Date
-        -returned: boolean
+        - loanDate : Date
+        - dueDate : Date
+        - returned : boolean
     }
 
-    Library ||--o{ Book : contains
-    Member ||--o{ Loan : has
-    Book ||--o{ Loan : involved in
+    Library "1" o-- "*" Book : contains
+    Member "1" o-- "*" Loan : has
+    Book "1" o-- "*" Loan : involved_in
 
-    note right of Library : "One library has\nmany books"
-    note right of Member : "One member can have\nmultiple loans"
+    note for Library "One library has\nmany books"
+    note for Member "One member can have\nmultiple loans"
 ```
+
+</div>
 
 ## 🛠️ Practical UML Example: Order Management System
 
@@ -506,61 +729,64 @@ Let's design a complete order management system using various UML diagrams.
 
 ### Class Diagram
 
+<div align = "center">
+    
 ```mermaid
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Customer {
-        -customerId: String
-        -name: String
-        -email: String
-        -address: Address
-        +placeOrder(items)
-        +getOrderHistory()
-        +updateProfile()
+        - customerId : String
+        - name : String
+        - email : String
+        - address : Address
+        + placeOrder(items)
+        + getOrderHistory()
+        + updateProfile()
     }
 
     class Order {
-        -orderId: String
-        -orderDate: Date
-        -status: OrderStatus
-        -totalAmount: double
-        +addItem(product, quantity)
-        +removeItem(productId)
-        +calculateTotal()
-        +updateStatus(status)
+        - orderId : String
+        - orderDate : Date
+        - status : OrderStatus
+        - totalAmount : double
+        + addItem(product, quantity)
+        + removeItem(productId)
+        + calculateTotal()
+        + updateStatus(status)
     }
 
     class OrderItem {
-        -quantity: int
-        -unitPrice: double
-        +getSubtotal()
-        +updateQuantity(quantity)
+        - quantity : int
+        - unitPrice : double
+        + getSubtotal()
+        + updateQuantity(quantity)
     }
 
     class Product {
-        -productId: String
-        -name: String
-        -price: double
-        -stockQuantity: int
-        +updatePrice(price)
-        +updateStock(quantity)
-        +isAvailable()
+        - productId : String
+        - name : String
+        - price : double
+        - stockQuantity : int
+        + updatePrice(price)
+        + updateStock(quantity)
+        + isAvailable()
     }
 
     class Address {
-        -street: String
-        -city: String
-        -zipCode: String
-        -country: String
-        +getFullAddress()
+        - street : String
+        - city : String
+        - zipCode : String
+        - country : String
+        + getFullAddress()
     }
 
     class Payment {
-        -paymentId: String
-        -amount: double
-        -paymentDate: Date
-        -method: PaymentMethod
-        +processPayment()
-        +refund()
+        - paymentId : String
+        - amount : double
+        - paymentDate : Date
+        - method : PaymentMethod
+        + processPayment()
+        + refund()
     }
 
     class OrderStatus {
@@ -580,16 +806,19 @@ classDiagram
         CASH
     }
 
-    Customer ||--o{ Order : places
-    Customer ||-- Address : has
-    Order ||--o{ OrderItem : contains
-    Order ||--|| Payment : has
-    OrderItem }o--|| Product : refers to
+    Customer "1" o-- "*" Order : places
+    Customer "1" --> "1" Address : has
+    Order "1" o-- "*" OrderItem : contains
+    Order "1" --> "1" Payment : has
+    OrderItem "*" o-- "1" Product : refers_to
     Order --> OrderStatus
     Payment --> PaymentMethod
-```
 
-### Sequence Diagram: Order Processing
+````
+
+</div>
+
+> ### Sequence Diagram: Order Processing
 
 ```mermaid
 sequenceDiagram
@@ -631,9 +860,9 @@ sequenceDiagram
         OS-->>UI: paymentError(reason)
         UI-->>C: Payment Failed
     end
-```
+````
 
-### State Diagram: Order Lifecycle
+> ### State Diagram: Order Lifecycle
 
 ```mermaid
 stateDiagram-v2
@@ -663,7 +892,7 @@ stateDiagram-v2
 
 ## 🎯 Best Practices for UML
 
-### ✅ DO
+> ### ✅ DO
 
 1. **Keep it Simple**: Don't over-complicate diagrams
 2. **Focus on Key Relationships**: Show the most important relationships
@@ -672,7 +901,7 @@ stateDiagram-v2
 5. **Add Notes**: Include explanatory notes for complex parts
 6. **Version Control**: Keep diagrams updated with code changes
 
-### ❌ DON'T
+> ### ❌ DON'T
 
 1. **Don't Show Everything**: Avoid cluttered diagrams with every detail
 2. **Don't Skip Relationships**: Missing relationships can confuse readers
@@ -682,7 +911,7 @@ stateDiagram-v2
 
 ## 🔧 Tools for UML
 
-### Free Tools
+> ### Free Tools
 
 - **Draw.io (now diagrams.net)**: Web-based, simple to use
 - **PlantUML**: Text-based UML diagrams
@@ -690,7 +919,7 @@ stateDiagram-v2
 - **UMLet**: Simple UML tool
 - **ArgoUML**: Open source UML modeling tool
 
-### Commercial Tools
+> ### Commercial Tools
 
 - **Lucidchart**: Professional diagramming
 - **Visual Paradigm**: Comprehensive UML suite
@@ -700,30 +929,30 @@ stateDiagram-v2
 
 ## 📚 UML in Different Phases
 
-### 1. Requirements Analysis
+> ### 1. Requirements Analysis
 
 - **Use Case Diagrams**: Capture functional requirements
 - **Activity Diagrams**: Model business processes
 
-### 2. System Design
+> ### 2. System Design
 
 - **Class Diagrams**: Define system structure
 - **Component Diagrams**: Show system architecture
 - **Sequence Diagrams**: Design interactions
 
-### 3. Implementation
+> ### 3. Implementation
 
 - **Class Diagrams**: Code structure reference
 - **Object Diagrams**: Runtime instances
 
-### 4. Testing
+> ### 4. Testing
 
 - **State Diagrams**: Test state transitions
 - **Sequence Diagrams**: Test interaction scenarios
 
 ## 🎓 Practice Exercises
 
-### Exercise 1: Library Management System
+> ### Exercise 1: Library Management System
 
 Create UML diagrams for a library system with:
 
@@ -731,7 +960,7 @@ Create UML diagrams for a library system with:
 - Borrowing and returning processes
 - Late fee calculations
 
-### Exercise 2: ATM System
+> ### Exercise 2: ATM System
 
 Design UML diagrams for an ATM system including:
 
@@ -739,7 +968,7 @@ Design UML diagrams for an ATM system including:
 - Account operations (withdraw, deposit, balance inquiry)
 - Transaction processing
 
-### Exercise 3: Restaurant Ordering System
+> ### Exercise 3: Restaurant Ordering System
 
 Model a restaurant ordering system with:
 
@@ -769,5 +998,3 @@ Key takeaways:
 Remember: UML is a tool to help you design better systems, not an end in itself. Use it when it adds value to your development process!
 
 ---
-
-[← Back to Fundamentals](./README.md) | [Next: Class Relationships →](./04-class-relationships.md)
