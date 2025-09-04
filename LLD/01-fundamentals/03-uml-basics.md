@@ -15,7 +15,7 @@
 ## 📚 Types of UML Diagrams
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 mindmap
   root((UML Diagrams))
     Structural
@@ -44,7 +44,7 @@ mindmap
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Vehicle {
         -licenseNumber
@@ -107,7 +107,7 @@ Shows instances of classes at a specific moment in time.
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 graph TD
     subgraph "Object Diagram - Online Shopping"
         A["customer1: Customer<br/>name = 'John Doe'<br/>email = 'john@email.com'"]
@@ -130,7 +130,7 @@ Shows how components are organized and their dependencies.
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 graph TD
     subgraph "E-commerce System Components"
         A[User Interface]
@@ -159,7 +159,7 @@ graph TD
 Shows system functionality from user's perspective.
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 graph LR
     subgraph Online_Banking_System
         Customer((Customer))
@@ -192,7 +192,7 @@ graph LR
 Shows how objects interact over time.
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 sequenceDiagram
     participant U as User
     participant UI as UserInterface
@@ -227,7 +227,7 @@ sequenceDiagram
 Shows workflow and business processes.
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 flowchart TD
     Start([Start]) --> Input[Enter Login Credentials]
     Input --> Validate{Valid Credentials?}
@@ -255,7 +255,7 @@ flowchart TD
 Shows states of an object and transitions between states.
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 stateDiagram-v2
     [*] --> Draft
     Draft --> Submitted : submit()
@@ -291,7 +291,7 @@ stateDiagram-v2
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Car {
         -driver: Driver
@@ -318,7 +318,7 @@ classDiagram
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Car {
         -model: String
@@ -345,7 +345,7 @@ classDiagram
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class House {
         -address: String
@@ -373,7 +373,7 @@ classDiagram
 <div align = "center">
 
 ```mermaid
-%%{init: {'theme': 'default', 'layout': 'lr'}}%%
+%%{init: {'theme': 'default'}}%%
 classDiagram
     class Animal {
         <<abstract>>
