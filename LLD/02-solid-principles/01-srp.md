@@ -606,5 +606,3 @@ The Single Responsibility Principle is about creating **focused, cohesive classe
 Remember: **A class should have only one reason to change!**
 
 ---
-
-[← Back to SOLID Principles](./README.md) | [Next: Open/Closed Principle →](./02-ocp.md)
