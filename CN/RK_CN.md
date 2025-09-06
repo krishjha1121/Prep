@@ -1,9 +1,6 @@
-🧑‍💻 **Author:** RK ROY
+🧑‍💻 **Author:** RK ROY 899151
 
 # 🌐 Complete Computer Networks Notes
-
-> **Author:** RK  
-> **Version:** 1.0
 
 ## 📚 Table of Contents
 
@@ -25,6 +22,55 @@
 ---
 
 ## 🚀 Introduction to Computer Networks
+
+### Data Communication
+
+In short, **data** means raw facts or information — numbers, text, symbols, or observations — that by itself may not have meaning until it is processed or organized.
+
+👉 Example: 25, 30, 45 are data (just numbers). When you say they are "ages of students," it becomes meaningful information.
+
+**Data communications** are the exchange of data between two devices via some form of transmission medium such as a wire cable.
+
+<div align = "center">
+
+```mermaid
+flowchart LR
+    Sender[Sender]
+    RulesL[Rule 1:\nRule 2:\n...\nRule n:]
+    Message[Message]
+    RulesR[Rule 1:\nRule 2:\n...\nRule n:]
+    Receiver[Receiver]
+
+    Sender -- Medium --> Receiver
+    Sender -- Protocol --> RulesL
+    Receiver -- Protocol --> RulesR
+    Sender -- Message --> Message
+    Message -- Message --> Receiver
+```
+
+</div>
+
+#### Components of data communication
+
+- **Message:** The message is the information (data) to be communicated. Popular
+  forms of information include text, numbers, pictures, audio, and video.
+
+- **Sender:** The sender is the device that sends the data message. It can be computer,
+  workstation, telephone handset etc.
+
+- **Receiver:** The receiver is the device that receives the message. It can be a
+  commuter, workstation, telephone handset etc.
+
+- **Transmission medium:** The transmission medium is the physical path by which a
+  message travels from sender to receiver. Some examples of transmission media
+  include twisted-pair wire, coaxial cable, fiber-optics, and radio waves.
+
+- **Protocol:** A protocol is set of rules that govern data communications. It is like an
+  agreement between communicating devices. Without a protocol, two devices may
+  be connected but cannot communicate, just like a person cannot understand
+  Hindi who speaks only Nepali.
+
+A **communication protocol** is a system of rules that allows two or more entities of a communications system to transmit information.
 
 ### What is a Computer Network?
 
@@ -71,12 +117,61 @@ graph TD
 
 #### 🔗 Network Topologies
 
+> Ring Topology
+
+A **Ring Topology** is a type of network topology where each computer (node) is connected to exactly two other computers, forming a circular pathway for signals.  
+Data travels in one direction (or sometimes both, in a dual ring) until it reaches its destination.
+
+<div align = "center">
+
 ```mermaid
 graph LR
-    subgraph "Bus Topology"
-        A1 --- B1[Bus Cable] --- C1 --- D1
+    subgraph "Ring Topology"
+        J3 --- K3 --- L3 --- M3 --- J3
     end
+```
 
+</div>
+
+### 🔹 Characteristics
+
+- Each node is connected to two other nodes, forming a closed loop.
+- Data passes through each node until it reaches the destination.
+- Token-passing method is often used for data transmission.
+
+### ✅ Advantages
+
+1. **Equal Access** – Every node gets equal access to resources.
+2. **Reduced Collisions** – Token passing avoids packet collisions.
+3. **Easy Fault Isolation** – Easier to identify faults compared to bus topology.
+4. **Predictable Performance** – Good for high-traffic networks due to controlled data flow.
+5. **Simple Installation** – Adding or removing nodes can be easier than in bus topology.
+
+### ❌ Disadvantages
+
+1. **Failure Sensitivity** – If one node or link fails, the entire network can be disrupted.
+2. **Troubleshooting Complexity** – Locating the exact point of failure can still be time-consuming.
+3. **Latency Issues** – Data must pass through multiple nodes, causing delays in large networks.
+4. **Scalability Limits** – Adding more nodes increases data transmission time.
+5. **Costly** – Requires more cabling than bus topology.
+
+### 📌 Use Cases
+
+- LANs (Local Area Networks) in small to medium organizations.
+- Networks requiring predictable data transfer.
+- Early versions of **FDDI (Fiber Distributed Data Interface)** and **Token Ring Networks**.
+
+---
+
+> Star Topology
+
+A **Star Topology** is a type of network topology where all computers (nodes) are connected to a central device (hub, switch, or router).  
+The central device acts as a communication hub for data transmission.
+
+<div align = "center">
+
+```mermaid
+graph LR
     subgraph "Star Topology"
         E2[Hub/Switch]
         E2 --- F2
@@ -84,11 +179,83 @@ graph LR
         E2 --- H2
         E2 --- I2
     end
+```
 
-    subgraph "Ring Topology"
-        J3 --- K3 --- L3 --- M3 --- J3
+</div>
+
+### 🔹 Characteristics
+
+- Each node has a dedicated connection to the central hub/switch.
+- Data is sent from a node to the hub, which then forwards it to the destination node.
+- Commonly used in modern LANs.
+
+### ✅ Advantages
+
+1. **Easy to Install and Manage** – Simple setup compared to mesh or ring.
+2. **Centralized Management** – The hub/switch makes it easier to monitor and troubleshoot.
+3. **Failure Isolation** – If one node fails, it does not affect the rest of the network.
+4. **Scalable** – Easy to add or remove nodes without disrupting the network.
+5. **Efficient Performance** – High performance with dedicated connections.
+
+### ❌ Disadvantages
+
+1. **Central Point of Failure** – If the hub/switch fails, the entire network goes down.
+2. **Costly** – Requires more cabling compared to bus topology.
+3. **Dependency on Central Device** – Network performance depends on the hub/switch capacity.
+4. **Limited Distance** – The length of cables is limited, restricting network size.
+
+### 📌 Use Cases
+
+- Widely used in **LANs** (Local Area Networks).
+- Home networks using a router.
+- Office networks with centralized servers.
+
+---
+
+> 🚌 Bus Topology
+
+A **Bus Topology** is a network topology where all computers (nodes) are connected to a single central cable (called the **backbone**).  
+Data sent by any node travels along the backbone until it reaches the destination.
+
+<div align = "center">
+
+```mermaid
+graph LR
+    subgraph "Bus Topology"
+        A1 --- B1[Bus Cable] --- C1 --- D1
     end
 ```
+
+</div>
+
+### 🔹 Characteristics
+
+- All nodes share a common communication medium (the backbone cable).
+- Only one node can transmit at a time to avoid collisions.
+- Terminators are used at both ends of the cable to prevent signal reflection.
+
+### ✅ Advantages
+
+1. **Cost-Effective** – Requires less cabling compared to star or mesh.
+2. **Easy to Install** – Simple and straightforward setup.
+3. **Efficient for Small Networks** – Works well for limited number of nodes.
+4. **Less Cabling** – Only one backbone cable is required.
+
+### ❌ Disadvantages
+
+1. **Difficult Troubleshooting** – Faults are hard to detect.
+2. **Limited Cable Length** – Only supports a certain distance.
+3. **Performance Issues** – Network slows down as traffic increases.
+4. **Single Point of Failure** – If the backbone cable fails, the entire network goes down.
+5. **Collisions** – Higher chance of data collisions in larger networks.
+
+### 📌 Use Cases
+
+- Small LANs with limited number of devices.
+- Temporary networks for testing or training purposes.
+- Early versions of **Ethernet** networks.
+
+<div aling= "center">
 
 ---
 
