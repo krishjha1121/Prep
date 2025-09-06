@@ -13,6 +13,7 @@ Welcome to the fundamentals of Low-Level Design! This section covers the essenti
 ## 🎯 Learning Objectives
 
 After completing this section, you will understand:
+
 - What Low-Level Design means and why it's important
 - The difference between High-Level and Low-Level Design
 - Basic UML notation and diagrams
@@ -28,6 +29,3 @@ Start with [What is Low-Level Design?](./01-what-is-lld.md) and follow the seque
 - Basic understanding of Object-Oriented Programming
 - Familiarity with classes, objects, and inheritance
 - No prior design experience required!
-
----
-[← Back to Main](../README.md) | [Next: What is LLD? →](./01-what-is-lld.md)

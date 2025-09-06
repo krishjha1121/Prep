@@ -1,5 +1,7 @@
 # Todo --> fix the diagrams
 
+🧑‍💻 **Author:** RK ROY
+
 # UML Basics - Visual Modeling for System Design
 
 ## 🎯 Overview

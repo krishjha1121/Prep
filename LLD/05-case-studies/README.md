@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # 📋 Real-World Case Studies
 
 This section contains comprehensive case studies that demonstrate how to apply Low-Level Design principles and patterns to solve real-world problems. Each case study includes requirements analysis, design decisions, implementation, and explanations of the patterns used.
@@ -13,6 +15,7 @@ This section contains comprehensive case studies that demonstrate how to apply L
 ## 📚 Available Case Studies
 
 ### 🅿️ 1. Parking Lot System
+
 **Complexity**: Beginner to Intermediate  
 **Patterns Used**: Factory Method, Strategy, State, Observer  
 **Concepts**: OOP fundamentals, state management, payment processing
@@ -20,6 +23,7 @@ This section contains comprehensive case studies that demonstrate how to apply L
 [**View Case Study →**](./01-parking-lot/README.md)
 
 **What you'll learn:**
+
 - Vehicle type hierarchy design
 - Parking spot allocation strategies
 - Payment processing systems
@@ -35,6 +39,7 @@ graph LR
 ```
 
 ### 🏢 2. Elevator System
+
 **Complexity**: Intermediate to Advanced  
 **Patterns Used**: State, Command, Observer, Strategy  
 **Concepts**: State machines, concurrent processing, scheduling algorithms
@@ -42,6 +47,7 @@ graph LR
 [**View Case Study →**](./02-elevator-system/README.md)
 
 **What you'll learn:**
+
 - Complex state machine design
 - Command queuing and processing
 - Scheduling algorithms (FCFS, SCAN, LOOK)
@@ -59,6 +65,7 @@ stateDiagram-v2
 ```
 
 ### 💬 3. Chat Application
+
 **Complexity**: Intermediate  
 **Patterns Used**: Observer, Command, Mediator, Factory  
 **Concepts**: Real-time messaging, user management, message routing
@@ -66,6 +73,7 @@ stateDiagram-v2
 [**View Case Study →**](./03-chat-application/README.md)
 
 **What you'll learn:**
+
 - Message routing and delivery
 - User presence management
 - Group chat functionality
@@ -81,6 +89,7 @@ graph TD
 ```
 
 ### 📚 4. Library Management System
+
 **Complexity**: Beginner to Intermediate  
 **Patterns Used**: Repository, Factory, Template Method, Strategy  
 **Concepts**: CRUD operations, data modeling, business rules
@@ -88,6 +97,7 @@ graph TD
 [**View Case Study →**](./04-library-management/README.md)
 
 **What you'll learn:**
+
 - Book and member management
 - Borrowing and return workflows
 - Fine calculation strategies
@@ -95,6 +105,7 @@ graph TD
 - Data persistence patterns
 
 ### 🛒 5. E-commerce System
+
 **Complexity**: Advanced  
 **Patterns Used**: Strategy, Decorator, Observer, Factory, Command  
 **Concepts**: Complex business logic, payment processing, inventory management
@@ -102,6 +113,7 @@ graph TD
 [**View Case Study →**](./05-ecommerce-system/README.md)
 
 **What you'll learn:**
+
 - Product catalog management
 - Shopping cart functionality
 - Multiple payment methods
@@ -110,6 +122,7 @@ graph TD
 - Discount and promotion systems
 
 ### 📱 6. Social Media Feed
+
 **Complexity**: Advanced  
 **Patterns Used**: Observer, Strategy, Decorator, Composite  
 **Concepts**: Feed algorithms, content filtering, user interactions
@@ -117,6 +130,7 @@ graph TD
 [**View Case Study →**](./06-social-media-feed/README.md)
 
 **What you'll learn:**
+
 - Feed generation algorithms
 - Content filtering and ranking
 - User interaction tracking
@@ -124,6 +138,7 @@ graph TD
 - Performance optimization techniques
 
 ### 🎮 7. Online Gaming System
+
 **Complexity**: Expert  
 **Patterns Used**: State, Command, Observer, Flyweight, Prototype  
 **Concepts**: Real-time systems, performance optimization, scalability
@@ -131,6 +146,7 @@ graph TD
 [**View Case Study →**](./07-gaming-system/README.md)
 
 **What you'll learn:**
+
 - Game state management
 - Player action processing
 - Real-time multiplayer considerations
@@ -140,6 +156,7 @@ graph TD
 ## 🎯 Learning Path Recommendations
 
 ### 🔰 For Beginners
+
 Start with these case studies to build foundational understanding:
 
 1. **Library Management System** - Basic CRUD operations and business logic
@@ -147,6 +164,7 @@ Start with these case studies to build foundational understanding:
 3. **Chat Application** - Event-driven architecture basics
 
 ### 🚀 For Intermediate Developers
+
 Build upon fundamentals with more complex scenarios:
 
 1. **Elevator System** - Complex state machines and concurrency
@@ -154,6 +172,7 @@ Build upon fundamentals with more complex scenarios:
 3. **Social Media Feed** - Performance and scalability considerations
 
 ### 🏆 For Advanced Practitioners
+
 Tackle the most complex scenarios:
 
 1. **Online Gaming System** - Real-time systems and optimization
@@ -162,39 +181,44 @@ Tackle the most complex scenarios:
 
 ## 📊 Case Study Comparison
 
-| Case Study | Complexity | Patterns Count | Key Learning |
-|------------|------------|----------------|--------------|
-| Library Management | ⭐⭐ | 4 | CRUD, Basic Business Logic |
-| Parking Lot | ⭐⭐ | 5 | State Management, Payment Processing |
-| Chat Application | ⭐⭐⭐ | 6 | Real-time Communication, Event Handling |
-| Elevator System | ⭐⭐⭐⭐ | 7 | Complex State Machines, Concurrency |
-| E-commerce | ⭐⭐⭐⭐ | 8 | Advanced Business Logic, Multiple Integrations |
-| Social Media Feed | ⭐⭐⭐⭐⭐ | 6 | Performance Optimization, Scalability |
-| Gaming System | ⭐⭐⭐⭐⭐ | 9 | Real-time Systems, High Performance |
+| Case Study         | Complexity | Patterns Count | Key Learning                                   |
+| ------------------ | ---------- | -------------- | ---------------------------------------------- |
+| Library Management | ⭐⭐       | 4              | CRUD, Basic Business Logic                     |
+| Parking Lot        | ⭐⭐       | 5              | State Management, Payment Processing           |
+| Chat Application   | ⭐⭐⭐     | 6              | Real-time Communication, Event Handling        |
+| Elevator System    | ⭐⭐⭐⭐   | 7              | Complex State Machines, Concurrency            |
+| E-commerce         | ⭐⭐⭐⭐   | 8              | Advanced Business Logic, Multiple Integrations |
+| Social Media Feed  | ⭐⭐⭐⭐⭐ | 6              | Performance Optimization, Scalability          |
+| Gaming System      | ⭐⭐⭐⭐⭐ | 9              | Real-time Systems, High Performance            |
 
 ## 🛠️ How to Use These Case Studies
 
 ### 1. **Understand Requirements**
+
 - Read the problem statement carefully
 - Identify functional and non-functional requirements
 - Note any constraints or assumptions
 
 ### 2. **Analyze the Solution**
+
 - Study the class diagrams and relationships
 - Understand the design decisions made
 - Identify the patterns used and why
 
 ### 3. **Examine the Code**
+
 - Look at the implementation details
 - Understand how patterns are implemented in code
 - Note the trade-offs and alternatives
 
 ### 4. **Practice and Extend**
+
 - Implement the solution yourself
 - Add new features or modify existing ones
 - Try different approaches or patterns
 
 ### 5. **Review and Reflect**
+
 - Compare your solution with the provided one
 - Identify areas for improvement
 - Document lessons learned
@@ -210,14 +234,14 @@ graph TD
         E[Builder] --> F[E-commerce]
         G[Prototype] --> H[Gaming System]
     end
-    
+
     subgraph "Structural Patterns"
         I[Decorator] --> J[E-commerce]
         I --> K[Social Media]
         L[Composite] --> M[Social Media]
         N[Adapter] --> O[Multiple Systems]
     end
-    
+
     subgraph "Behavioral Patterns"
         P[Observer] --> Q[All Systems]
         R[Strategy] --> S[Multiple Systems]
@@ -241,6 +265,7 @@ graph TD
 ### Reusable Components
 
 Many components can be reused across different case studies:
+
 - Authentication and authorization systems
 - Notification services
 - Payment processing modules
@@ -250,11 +275,13 @@ Many components can be reused across different case studies:
 ## 📚 Additional Resources
 
 ### Books
+
 - "System Design Interview" by Alex Xu
 - "Designing Data-Intensive Applications" by Martin Kleppmann
 - "Clean Architecture" by Robert C. Martin
 
 ### Online Resources
+
 - High Scalability case studies
 - Engineering blogs from major tech companies
 - Open source project architectures
@@ -288,4 +315,5 @@ Remember: The goal is not just to understand the solution, but to learn the thin
 **Happy Designing! 🎉**
 
 ---
+
 [← Back to Main](../README.md) | [Next: Parking Lot System →](./01-parking-lot/README.md)

@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # What is Low-Level Design (LLD)?
 
 ## 🎯 Overview

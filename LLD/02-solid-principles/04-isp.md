@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # Interface Segregation Principle (ISP)
 
 ## 🎯 Definition

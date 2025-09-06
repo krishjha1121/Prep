@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # Single Responsibility Principle (SRP)
 
 ## 🎯 Definition

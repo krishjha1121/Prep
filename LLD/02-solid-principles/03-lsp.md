@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # Liskov Substitution Principle (LSP)
 
 ## 🎯 Definition

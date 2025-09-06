@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # Open/Closed Principle (OCP)
 
 ## 🎯 Definition
