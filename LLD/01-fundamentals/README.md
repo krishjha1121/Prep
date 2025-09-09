@@ -1,3 +1,5 @@
+🧑‍💻 **Author:** RK ROY
+
 # 🔰 Low-Level Design Fundamentals
 
 Welcome to the fundamentals of Low-Level Design! This section covers the essential concepts you need to understand before diving into design patterns and complex systems.
