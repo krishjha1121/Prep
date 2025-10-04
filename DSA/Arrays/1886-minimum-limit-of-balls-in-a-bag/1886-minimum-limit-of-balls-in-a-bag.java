@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     public int minimumSize(int[] nums, int maxOperations) {
         int n = nums.length;
@@ -8,8 +9,8 @@ class Solution {
             if (check(mid, nums, maxOperations)) {
                 ans = mid;
                 high = mid - 1;
-            }
-            else low = mid + 1;
+            } else
+                low = mid + 1;
         }
         return ans;
     }
@@ -18,7 +19,8 @@ class Solution {
         int n = arr.length;
         long count = 0;
         for (int i = 0; i < n; i++) {
-            if (count > k) return false;
+            if (count > k)
+                return false;
             count += (arr[i] - 1) / mid;
         }
         return count <= k;
