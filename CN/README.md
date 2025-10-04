@@ -370,9 +370,9 @@ What do u know about NAT ?
 > 4. Bandwidth-Delay Product
 
 - **Bandwidth**:-bandwidth in bits per second, refers to the number of
-  bits per second a channel, a link or even a network can transmit.
+  bits per second a channel, a link or even a network can transmit.or The maximum capacity of a network link to transfer data.
 - **Throughput**:-The throughput is a measure of how fast we can actuallysend data
-  through a network.
+  through a network.The actual rate of successful data delivery over a network.
 
 > ### Delay
 >
@@ -389,7 +389,7 @@ What do u know about NAT ?
   the source to the destination.
 - **transmission time**:-measures the time required for entire message to
   reach its destination.
-- **queuing time**:-Queuing timeis the time needed for each intermediate or end device
+- **queuing time**:-Queuing time is the time needed for each intermediate or end device
   to hold the message before it can be processed.
 - **Processing time**: the time required to process (eg. Error correction)
   the message at end device (receiver) or parts of message (eg. frames)
@@ -517,7 +517,8 @@ What do u know about NAT ?
 > Piggybacking ?
 >
 > - Piggybacking means sending an acknowledgement (ACK) along with data in the same frame instead of sending it separately because of to overcome overhead.
-
+> * Station A → Station B: sends a data frame.
+> * Station B receives it, but instead of sending an immediate ACK, it waits until it has data to send back.
 > What is HDLC?
 >
 > - HDLC (High-Level Data Link Control) is a bit-oriented data link layer protocol developed by ISO.
@@ -908,3 +909,123 @@ flowchart
 | Packet Broadcast | Broadcasts an ARP request asking "Who has this IP?"   | Broadcasts a RARP request asking "Who has this MAC?"  |
 | Response         | Device with that IP replies with its MAC address      | RARP server replies with the IP address               |
 | Current Use      | Still in use in LANs (IPv4)                           | Obsolete, replaced by BOOTP and DHCP                  |
+
+
+
+> ## SSL & TLS
+
+* Both SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols used to secure communication over the internet.
+
+| Feature            | SSL (Secure Sockets Layer)      | TLS (Transport Layer Security)        |
+|--------------------|---------------------------------|---------------------------------------|
+| Current Status     | Deprecated & insecure           | Actively used (TLS 1.2, TLS 1.3)      |
+| Security Level     | Weak (vulnerable to attacks)    | Stronger encryption & security        |
+| Versions           | SSL 2.0, SSL 3.0 (obsolete)     | TLS 1.0 → TLS 1.3 (latest, secure)    |
+| Usage Today        | Not used                       | Used in HTTPS, SMTP, IMAP, POP3, VPNs |
+| Certificate Naming | Often called "SSL Certificates"| Actually TLS certificates             |
+| Browser Support    | No modern browser supports SSL  | All modern browsers support TLS       |
+
+
+/// nat used for translate small set or private ip address to public adress through the router to access internate 
+when we directly assign the public ip to the device then its waste of the ip because ip are very less in the world so that we need to use public ip address 
+but in the era of the ipv6 we dont need the nat because the network is large enough 
+
+
+/// dhcp-> used to assign the ip address to the device
+we can assign the ip in two ways one is static which is assign by user itself other one is dynamicly, there is the high probabily that ip can conflict,here comes the dhcp server which assgin the ip address outomaticy to the device
+
+// firewall-> firewall is the system that is design  to prevent unauth access from intering a private network, i blocks the unauth msg and filterout them ,it builts the safty barrier between the private and public network
+
+
+# How HTTPS Works (Step by Step)
+
+---
+
+## 1. DNS & TCP Setup
+- Browser resolves domain → IP (via DNS).
+- Opens **TCP connection** to server on port **443**.
+
+---
+# TLS 1.3 Handshake (Step by Step)
+
+---
+
+## 🔹 Step 1: ClientHello
+- **Browser → Server** (in clear text)
+- Sends:
+  - Supported encryption methods (cipher suites)
+  - A random number (used for key generation)
+  - **SNI (Server Name Indication):** tells which website it wants (important when multiple sites share one IP).
+  - **ALPN (Application Layer Protocol Negotiation):** says which HTTP version it supports (HTTP/1.1, HTTP/2).
+
+---
+
+## 🔹 Step 2: ServerHello
+- **Server → Browser**
+- Chooses:
+  - One encryption method (cipher suite)
+  - Its own random number
+  - **Key share** (used for secure key exchange with Diffie–Hellman)
+
+---
+
+## 🔹 Step 3: Server Certificate & Proof
+- Server sends:
+  - **Certificate chain** (server certificate + intermediate certificates)
+  - **Digital signature** → proves it owns the certificate (private key)
+  - (Optional) **OCSP stapling** → proves certificate is not revoked
+
+---
+
+## 🔹 Step 4: Certificate Validation (Browser side)
+Browser checks:
+1. Certificate issued by a **trusted CA (Certificate Authority)**  
+2. Website name matches the certificate  
+3. Certificate is valid (not expired / revoked)  
+
+👉 If any check fails → **Browser shows a warning (Not Secure page)**
+
+---
+
+## 🔹 Step 5: Key Exchange & Secure Channel
+- Browser + Server combine their random numbers + key share
+- Generate the **same secret key**
+- Use it for:
+  - **Encryption** (data is private)
+  - **Integrity** (data not changed in transit)
+
+✅ Handshake complete → Now HTTP data is sent securely.
+
+
+## 3. Secure HTTP
+- All HTTP requests/responses encrypted with session keys.
+- Protects:
+  - Cookies
+  - Headers
+  - Body
+  - Paths & query strings
+- Note: **IP, port, and SNI hostname are still visible**.
+
+---
+
+## 4. Optimization
+- **Session Resumption**: reuse keys → faster handshake (1-RTT).
+- **0-RTT Data**: client sends data immediately (risk: replay attack).
+
+---
+
+## TLS 1.3 vs TLS 1.2
+| Feature            | TLS 1.2         | TLS 1.3 (modern) |
+|--------------------|-----------------|------------------|
+| Handshake round-trips | 2+ RTT          | 1 RTT (faster)   |
+| Forward secrecy    | Optional        | Mandatory (ECDHE)|
+| Cipher suites      | Many, some weak | Only strong (AES-GCM, ChaCha20) |
+| Encrypted handshake | Partial         | Almost all       |
+
+---
+
+## Why HTTPS Is Secure
+- 🔒 **Confidentiality** → Encryption (AES-GCM, ChaCha20).
+- ✅ **Integrity** → AEAD prevents tampering.
+- 🛡️ **Authentication** → Server proves identity via CA-issued certificates.
+- 🚫 Stops MITM (man-in-the-middle) attacks.
