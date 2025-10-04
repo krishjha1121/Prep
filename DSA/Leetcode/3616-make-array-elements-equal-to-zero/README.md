@@ -1,69 +1,54 @@
-<h2><a href="https://leetcode.com/problems/make-array-elements-equal-to-zero">3616. Make Array Elements Equal to Zero</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>.</p>
+## 3616. Make Array Elements Equal to Zero
 
-<p>Start by selecting a starting position <code>curr</code> such that <code>nums[curr] == 0</code>, and choose a movement <strong>direction</strong> of&nbsp;either left or right.</p>
+**Difficulty:** Easy
 
-<p>After that, you repeat the following process:</p>
+---
 
-<ul>
-	<li>If <code>curr</code> is out of the range <code>[0, n - 1]</code>, this process ends.</li>
-	<li>If <code>nums[curr] == 0</code>, move in the current direction by <strong>incrementing</strong> <code>curr</code> if you are moving right, or <strong>decrementing</strong> <code>curr</code> if you are moving left.</li>
-	<li>Else if <code>nums[curr] &gt; 0</code>:
-	<ul>
-		<li>Decrement <code>nums[curr]</code> by 1.</li>
-		<li><strong>Reverse</strong>&nbsp;your movement direction (left becomes right and vice versa).</li>
-		<li>Take a step in your new direction.</li>
-	</ul>
-	</li>
-</ul>
+You are given an integer array `nums`.
 
-<p>A selection of the initial position <code>curr</code> and movement direction is considered <strong>valid</strong> if every element in <code>nums</code> becomes 0 by the end of the process.</p>
+Start by selecting a starting position `curr` such that `nums[curr] == 0`, and choose a movement **direction** of either left or right.
 
-<p>Return the number of possible <strong>valid</strong> selections.</p>
+After that, you repeat the following process:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+- If `curr` is out of the range `[0, n - 1]`, this process ends.
+- If `nums[curr] == 0`, move in the current direction by **incrementing** `curr` if you are moving right, or **decrementing** `curr` if you are moving left.
+- Else if `nums[curr] > 0`:
+    - Decrement `nums[curr]` by 1.
+    - **Reverse** your movement direction (left becomes right and vice versa).
+    - Take a step in your new direction.
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [1,0,2,0,3]</span></p>
+A selection of the initial position `curr` and movement direction is considered **valid** if every element in `nums` becomes 0 by the end of the process.
 
-<p><strong>Output:</strong> <span class="example-io">2</span></p>
+Return the number of possible **valid** selections.
 
-<p><strong>Explanation:</strong></p>
+### Example 1:
 
-<p>The only possible valid selections are the following:</p>
+**Input:** `nums = [1,0,2,0,3]`
 
-<ul>
-	<li>Choose <code>curr = 3</code>, and a movement direction to the left.
+**Output:** `2`
 
-	<ul>
-		<li><code>[1,0,2,<strong><u>0</u></strong>,3] -&gt; [1,0,<strong><u>2</u></strong>,0,3] -&gt; [1,0,1,<strong><u>0</u></strong>,3] -&gt; [1,0,1,0,<strong><u>3</u></strong>] -&gt; [1,0,1,<strong><u>0</u></strong>,2] -&gt; [1,0,<strong><u>1</u></strong>,0,2] -&gt; [1,0,0,<strong><u>0</u></strong>,2] -&gt; [1,0,0,0,<strong><u>2</u></strong>] -&gt; [1,0,0,<strong><u>0</u></strong>,1] -&gt; [1,0,<strong><u>0</u></strong>,0,1] -&gt; [1,<strong><u>0</u></strong>,0,0,1] -&gt; [<strong><u>1</u></strong>,0,0,0,1] -&gt; [0,<strong><u>0</u></strong>,0,0,1] -&gt; [0,0,<strong><u>0</u></strong>,0,1] -&gt; [0,0,0,<strong><u>0</u></strong>,1] -&gt; [0,0,0,0,<strong><u>1</u></strong>] -&gt; [0,0,0,0,0]</code>.</li>
-	</ul>
-	</li>
-	<li>Choose <code>curr = 3</code>, and a movement direction to the right.
-	<ul>
-		<li><code>[1,0,2,<strong><u>0</u></strong>,3] -&gt; [1,0,2,0,<strong><u>3</u></strong>] -&gt; [1,0,2,<strong><u>0</u></strong>,2] -&gt; [1,0,<strong><u>2</u></strong>,0,2] -&gt; [1,0,1,<strong><u>0</u></strong>,2] -&gt; [1,0,1,0,<strong><u>2</u></strong>] -&gt; [1,0,1,<strong><u>0</u></strong>,1] -&gt; [1,0,<strong><u>1</u></strong>,0,1] -&gt; [1,0,0,<strong><u>0</u></strong>,1] -&gt; [1,0,0,0,<strong><u>1</u></strong>] -&gt; [1,0,0,<strong><u>0</u></strong>,0] -&gt; [1,0,<strong><u>0</u></strong>,0,0] -&gt; [1,<strong><u>0</u></strong>,0,0,0] -&gt; [<strong><u>1</u></strong>,0,0,0,0] -&gt; [0,0,0,0,0].</code></li>
-	</ul>
-	</li>
-</ul>
-</div>
+**Explanation:**
 
-<p><strong class="example">Example 2:</strong></p>
+The only possible valid selections are the following:
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [2,3,4,0,4,1,0]</span></p>
+- Choose `curr = 3`, and a movement direction to the left.
+    - `[1,0,2,0,3]` → `[1,0,2,0,3]` → `[1,0,1,0,3]` → `[1,0,1,0,3]` → `[1,0,1,0,2]` → `[1,0,1,0,2]` → `[1,0,0,0,2]` → `[1,0,0,0,2]` → `[1,0,0,0,1]` → `[1,0,0,0,1]` → `[1,0,0,0,1]` → `[1,0,0,0,1]` → `[0,0,0,0,1]` → `[0,0,0,0,1]` → `[0,0,0,0,1]` → `[0,0,0,0,1]` → `[0,0,0,0,0]`.
 
-<p><strong>Output:</strong> <span class="example-io">0</span></p>
+- Choose `curr = 3`, and a movement direction to the right.
+    - `[1,0,2,0,3]` → `[1,0,2,0,3]` → `[1,0,2,0,2]` → `[1,0,2,0,2]` → `[1,0,1,0,2]` → `[1,0,1,0,2]` → `[1,0,1,0,1]` → `[1,0,1,0,1]` → `[1,0,0,0,1]` → `[1,0,0,0,1]` → `[1,0,0,0,0]` → `[1,0,0,0,0]` → `[1,0,0,0,0]` → `[1,0,0,0,0]` → `[0,0,0,0,0]`.
 
-<p><strong>Explanation:</strong></p>
+### Example 2:
 
-<p>There are no possible valid selections.</p>
-</div>
+**Input:** `nums = [2,3,4,0,4,1,0]`
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+**Output:** `0`
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 100</code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
-	<li>There is at least one element <code>i</code> where <code>nums[i] == 0</code>.</li>
-</ul>
+**Explanation:**
+
+There are no possible valid selections.
+
+### Constraints:
+
+- `1 <= nums.length <= 100`
+- `0 <= nums[i] <= 100`
+- There is at least one element `i` where `nums[i] == 0`.

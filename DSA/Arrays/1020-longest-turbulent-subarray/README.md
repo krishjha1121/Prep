@@ -1,52 +1,43 @@
-<h2><a href="https://leetcode.com/problems/longest-turbulent-subarray">1020. Longest Turbulent Subarray</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>arr</code>, return <em>the length of a maximum size turbulent subarray of</em> <code>arr</code>.</p>
+## 1020. Longest Turbulent Subarray
 
-<p>A subarray is <strong>turbulent</strong> if the comparison sign flips between each adjacent pair of elements in the subarray.</p>
+**Difficulty:** Medium
 
-<p>More formally, a subarray <code>[arr[i], arr[i + 1], ..., arr[j]]</code> of <code>arr</code> is said to be turbulent if and only if:</p>
+---
 
-<ul>
-	<li>For <code>i &lt;= k &lt; j</code>:
+Given an integer array `arr`, return _the length of a maximum size turbulent subarray of_ `arr`.
 
-	<ul>
-		<li><code>arr[k] &gt; arr[k + 1]</code> when <code>k</code> is odd, and</li>
-		<li><code>arr[k] &lt; arr[k + 1]</code> when <code>k</code> is even.</li>
-	</ul>
-	</li>
-	<li>Or, for <code>i &lt;= k &lt; j</code>:
-	<ul>
-		<li><code>arr[k] &gt; arr[k + 1]</code> when <code>k</code> is even, and</li>
-		<li><code>arr[k] &lt; arr[k + 1]</code> when <code>k</code> is odd.</li>
-	</ul>
-	</li>
-</ul>
+A subarray is **turbulent** if the comparison sign flips between each adjacent pair of elements in the subarray.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+More formally, a subarray `[arr[i], arr[i + 1], ..., arr[j]]` of `arr` is said to be turbulent if and only if:
 
-<pre>
-<strong>Input:</strong> arr = [9,4,2,10,7,8,8,1,9]
-<strong>Output:</strong> 5
-<strong>Explanation:</strong> arr[1] &gt; arr[2] &lt; arr[3] &gt; arr[4] &lt; arr[5]
-</pre>
+- For `i <= k < j`:
+    - `arr[k] > arr[k + 1]` when `k` is odd, and
+    - `arr[k] < arr[k + 1]` when `k` is even.
+- Or, for `i <= k < j`:
+    - `arr[k] > arr[k + 1]` when `k` is even, and
+    - `arr[k] < arr[k + 1]` when `k` is odd.
 
-<p><strong class="example">Example 2:</strong></p>
+### Example 1:
 
-<pre>
-<strong>Input:</strong> arr = [4,8,12,16]
-<strong>Output:</strong> 2
-</pre>
+**Input:** `arr = [9,4,2,10,7,8,8,1,9]`
 
-<p><strong class="example">Example 3:</strong></p>
+**Output:** `5`
 
-<pre>
-<strong>Input:</strong> arr = [100]
-<strong>Output:</strong> 1
-</pre>
+**Explanation:** `arr[1] > arr[2] < arr[3] > arr[4] < arr[5]`
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+### Example 2:
 
-<ul>
-	<li><code>1 &lt;= arr.length &lt;= 4 * 10<sup>4</sup></code></li>
-	<li><code>0 &lt;= arr[i] &lt;= 10<sup>9</sup></code></li>
-</ul>
+**Input:** `arr = [4,8,12,16]`
+
+**Output:** `2`
+
+### Example 3:
+
+**Input:** `arr = [100]`
+
+**Output:** `1`
+
+### Constraints:
+
+- `1 <= arr.length <= 4 * 10^4`
+- `0 <= arr[i] <= 10^9`

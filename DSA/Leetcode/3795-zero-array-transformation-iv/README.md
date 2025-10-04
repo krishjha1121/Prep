@@ -1,109 +1,77 @@
-<h2><a href="https://leetcode.com/problems/zero-array-transformation-iv">3795. Zero Array Transformation IV</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code> and a 2D array <code>queries</code>, where <code>queries[i] = [l<sub>i</sub>, r<sub>i</sub>, val<sub>i</sub>]</code>.</p>
+## 3795. Zero Array Transformation IV
 
-<p>Each <code>queries[i]</code> represents the following action on <code>nums</code>:</p>
+**Difficulty:** Medium
 
-<ul>
-	<li>Select a <span data-keyword="subset">subset</span> of indices in the range <code>[l<sub>i</sub>, r<sub>i</sub>]</code> from <code>nums</code>.</li>
-	<li>Decrement the value at each selected index by <strong>exactly</strong> <code>val<sub>i</sub></code>.</li>
-</ul>
+---
 
-<p>A <strong>Zero Array</strong> is an array with all its elements equal to 0.</p>
+You are given an integer array `nums` of length `n` and a 2D array `queries`, where `queries[i] = [lᵢ, rᵢ, valᵢ]`.
 
-<p>Return the <strong>minimum</strong> possible <strong>non-negative</strong> value of <code>k</code>, such that after processing the first <code>k</code> queries in <strong>sequence</strong>, <code>nums</code> becomes a <strong>Zero Array</strong>. If no such <code>k</code> exists, return -1.</p>
+Each `queries[i]` represents the following action on `nums`:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+- Select a subset of indices in the range `[lᵢ, rᵢ]` from `nums`.
+- Decrement the value at each selected index by **exactly** `valᵢ`.
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [2,0,2], queries = [[0,2,1],[0,2,1],[1,1,3]]</span></p>
+A **Zero Array** is an array with all its elements equal to 0.
 
-<p><strong>Output:</strong> <span class="example-io">2</span></p>
+Return the **minimum** possible **non-negative** value of `k`, such that after processing the first `k` queries in **sequence**, `nums` becomes a **Zero Array**. If no such `k` exists, return -1.
 
-<p><strong>Explanation:</strong></p>
+### Example 1:
 
-<ul>
-	<li><strong>For query 0 (l = 0, r = 2, val = 1):</strong>
+**Input:** `nums = [2,0,2], queries = [[0,2,1],[0,2,1],[1,1,3]]`
 
-	<ul>
-		<li>Decrement the values at indices <code>[0, 2]</code> by 1.</li>
-		<li>The array will become <code>[1, 0, 1]</code>.</li>
-	</ul>
-	</li>
-	<li><strong>For query 1 (l = 0, r = 2, val = 1):</strong>
-	<ul>
-		<li>Decrement the values at indices <code>[0, 2]</code> by 1.</li>
-		<li>The array will become <code>[0, 0, 0]</code>, which is a Zero Array. Therefore, the minimum value of <code>k</code> is 2.</li>
-	</ul>
-	</li>
-</ul>
-</div>
+**Output:** `2`
 
-<p><strong class="example">Example 2:</strong></p>
+**Explanation:**
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [4,3,2,1], queries = [[1,3,2],[0,2,1]]</span></p>
+- **For query 0 (l = 0, r = 2, val = 1):**
+    - Decrement the values at indices `[0, 2]` by 1.
+    - The array will become `[1, 0, 1]`.
+- **For query 1 (l = 0, r = 2, val = 1):**
+    - Decrement the values at indices `[0, 2]` by 1.
+    - The array will become `[0, 0, 0]`, which is a Zero Array. Therefore, the minimum value of `k` is 2.
 
-<p><strong>Output:</strong> <span class="example-io">-1</span></p>
+### Example 2:
 
-<p><strong>Explanation:</strong></p>
+**Input:** `nums = [4,3,2,1], queries = [[1,3,2],[0,2,1]]`
 
-<p>It is impossible to make nums a Zero Array even after all the queries.</p>
-</div>
+**Output:** `-1`
 
-<p><strong class="example">Example 3:</strong></p>
+**Explanation:**
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [1,2,3,2,1], queries = [[0,1,1],[1,2,1],[2,3,2],[3,4,1],[4,4,1]]</span></p>
+It is impossible to make nums a Zero Array even after all the queries.
 
-<p><strong>Output:</strong> <span class="example-io">4</span></p>
+### Example 3:
 
-<p><strong>Explanation:</strong></p>
+**Input:** `nums = [1,2,3,2,1], queries = [[0,1,1],[1,2,1],[2,3,2],[3,4,1],[4,4,1]]`
 
-<ul>
-	<li><strong>For query 0 (l = 0, r = 1, val = 1):</strong>
+**Output:** `4`
 
-	<ul>
-		<li>Decrement the values at indices <code>[0, 1]</code> by <code><font face="monospace">1</font></code>.</li>
-		<li>The array will become <code>[0, 1, 3, 2, 1]</code>.</li>
-	</ul>
-	</li>
-	<li><strong>For query 1 (l = 1, r = 2, val = 1):</strong>
-	<ul>
-		<li>Decrement the values at indices <code>[1, 2]</code> by 1.</li>
-		<li>The array will become <code>[0, 0, 2, 2, 1]</code>.</li>
-	</ul>
-	</li>
-	<li><strong>For query 2 (l = 2, r = 3, val = 2):</strong>
-	<ul>
-		<li>Decrement the values at indices <code>[2, 3]</code> by 2.</li>
-		<li>The array will become <code>[0, 0, 0, 0, 1]</code>.</li>
-	</ul>
-	</li>
-	<li><strong>For query 3 (l = 3, r = 4, val = 1):</strong>
-	<ul>
-		<li>Decrement the value at index 4 by 1.</li>
-		<li>The array will become <code>[0, 0, 0, 0, 0]</code>. Therefore, the minimum value of <code>k</code> is 4.</li>
-	</ul>
-	</li>
-</ul>
-</div>
+**Explanation:**
 
-<p><strong class="example">Example 4:</strong></p>
+- **For query 0 (l = 0, r = 1, val = 1):**
+    - Decrement the values at indices `[0, 1]` by 1.
+    - The array will become `[0, 1, 3, 2, 1]`.
+- **For query 1 (l = 1, r = 2, val = 1):**
+    - Decrement the values at indices `[1, 2]` by 1.
+    - The array will become `[0, 0, 2, 2, 1]`.
+- **For query 2 (l = 2, r = 3, val = 2):**
+    - Decrement the values at indices `[2, 3]` by 2.
+    - The array will become `[0, 0, 0, 0, 1]`.
+- **For query 3 (l = 3, r = 4, val = 1):**
+    - Decrement the value at index 4 by 1.
+    - The array will become `[0, 0, 0, 0, 0]`. Therefore, the minimum value of `k` is 4.
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [1,2,3,2,6], queries = [[0,1,1],[0,2,1],[1,4,2],[4,4,4],[3,4,1],[4,4,5]]</span></p>
+### Example 4:
 
-<p><strong>Output:</strong> <span class="example-io">4</span></p>
-</div>
+**Input:** `nums = [1,2,3,2,6], queries = [[0,1,1],[0,2,1],[1,4,2],[4,4,4],[3,4,1],[4,4,5]]`
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+**Output:** `4`
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10</code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
-	<li><code>1 &lt;= queries.length &lt;= 1000</code></li>
-	<li><code>queries[i] = [l<sub>i</sub>, r<sub>i</sub>, val<sub>i</sub>]</code></li>
-	<li><code>0 &lt;= l<sub>i</sub> &lt;= r<sub>i</sub> &lt; nums.length</code></li>
-	<li><code>1 &lt;= val<sub>i</sub> &lt;= 10</code></li>
-</ul>
+### Constraints:
+
+- `1 <= nums.length <= 10`
+- `0 <= nums[i] <= 1000`
+- `1 <= queries.length <= 1000`
+- `queries[i] = [lᵢ, rᵢ, valᵢ]`
+- `0 <= lᵢ <= rᵢ < nums.length`
+- `1 <= valᵢ <= 10`

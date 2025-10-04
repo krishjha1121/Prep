@@ -6,6 +6,7 @@ export default defineConfig({
 	title: "Prep Notes",
 	description: "Complete CS Preparation - DSA, LLD, OS, DBMS, CN, SQL",
 	base: "/Prep/",
+	ignoreDeadLinks: true,
 
 	themeConfig: {
 		logo: "/logo.png", // Add a logo if you want
@@ -184,5 +185,6 @@ export default defineConfig({
 			light: "github-light",
 			dark: "github-dark",
 		},
+		html: true,
 	},
 });

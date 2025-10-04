@@ -1,88 +1,70 @@
-<h2><a href="https://leetcode.com/problems/count-special-triplets">3885. Count Special Triplets</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>.</p>
+## 3885. Count Special Triplets
 
-<p>A <strong>special triplet</strong> is defined as a triplet of indices <code>(i, j, k)</code> such that:</p>
+**Difficulty:** Medium
 
-<ul>
-	<li><code>0 &lt;= i &lt; j &lt; k &lt; n</code>, where <code>n = nums.length</code></li>
-	<li><code>nums[i] == nums[j] * 2</code></li>
-	<li><code>nums[k] == nums[j] * 2</code></li>
-</ul>
+---
 
-<p>Return the total number of <strong>special triplets</strong> in the array.</p>
+You are given an integer array `nums`.
 
-<p>Since the answer may be large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+A **special triplet** is defined as a triplet of indices `(i, j, k)` such that:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+- `0 <= i < j < k < n`, where `n = nums.length`
+- `nums[i] == nums[j] * 2`
+- `nums[k] == nums[j] * 2`
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [6,3,6]</span></p>
+Return the total number of **special triplets** in the array.
 
-<p><strong>Output:</strong> <span class="example-io">1</span></p>
+Since the answer may be large, return it **modulo** `10^9 + 7`.
 
-<p><strong>Explanation:</strong></p>
+### Example 1:
 
-<p>The only special triplet is <code>(i, j, k) = (0, 1, 2)</code>, where:</p>
+**Input:** `nums = [6,3,6]`
 
-<ul>
-	<li><code>nums[0] = 6</code>, <code>nums[1] = 3</code>, <code>nums[2] = 6</code></li>
-	<li><code>nums[0] = nums[1] * 2 = 3 * 2 = 6</code></li>
-	<li><code>nums[2] = nums[1] * 2 = 3 * 2 = 6</code></li>
-</ul>
-</div>
+**Output:** `1`
 
-<p><strong class="example">Example 2:</strong></p>
+**Explanation:**
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [0,1,0,0]</span></p>
+The only special triplet is `(i, j, k) = (0, 1, 2)`, where:
 
-<p><strong>Output:</strong> <span class="example-io">1</span></p>
+- `nums[0] = 6`, `nums[1] = 3`, `nums[2] = 6`
+- `nums[0] = nums[1] * 2 = 3 * 2 = 6`
+- `nums[2] = nums[1] * 2 = 3 * 2 = 6`
 
-<p><strong>Explanation:</strong></p>
+### Example 2:
 
-<p>The only special triplet is <code>(i, j, k) = (0, 2, 3)</code>, where:</p>
+**Input:** `nums = [0,1,0,0]`
 
-<ul>
-	<li><code>nums[0] = 0</code>, <code>nums[2] = 0</code>, <code>nums[3] = 0</code></li>
-	<li><code>nums[0] = nums[2] * 2 = 0 * 2 = 0</code></li>
-	<li><code>nums[3] = nums[2] * 2 = 0 * 2 = 0</code></li>
-</ul>
-</div>
+**Output:** `1`
 
-<p><strong class="example">Example 3:</strong></p>
+**Explanation:**
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [8,4,2,8,4]</span></p>
+The only special triplet is `(i, j, k) = (0, 2, 3)`, where:
 
-<p><strong>Output:</strong> <span class="example-io">2</span></p>
+- `nums[0] = 0`, `nums[2] = 0`, `nums[3] = 0`
+- `nums[0] = nums[2] * 2 = 0 * 2 = 0`
+- `nums[3] = nums[2] * 2 = 0 * 2 = 0`
 
-<p><strong>Explanation:</strong></p>
+### Example 3:
 
-<p>There are exactly two special triplets:</p>
+**Input:** `nums = [8,4,2,8,4]`
 
-<ul>
-	<li><code>(i, j, k) = (0, 1, 3)</code>
+**Output:** `2`
 
-	<ul>
-		<li><code>nums[0] = 8</code>, <code>nums[1] = 4</code>, <code>nums[3] = 8</code></li>
-		<li><code>nums[0] = nums[1] * 2 = 4 * 2 = 8</code></li>
-		<li><code>nums[3] = nums[1] * 2 = 4 * 2 = 8</code></li>
-	</ul>
-	</li>
-	<li><code>(i, j, k) = (1, 2, 4)</code>
-	<ul>
-		<li><code>nums[1] = 4</code>, <code>nums[2] = 2</code>, <code>nums[4] = 4</code></li>
-		<li><code>nums[1] = nums[2] * 2 = 2 * 2 = 4</code></li>
-		<li><code>nums[4] = nums[2] * 2 = 2 * 2 = 4</code></li>
-	</ul>
-	</li>
-</ul>
-</div>
+**Explanation:**
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+There are exactly two special triplets:
 
-<ul>
-	<li><code>3 &lt;= n == nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
-</ul>
+- `(i, j, k) = (0, 1, 3)`
+    - `nums[0] = 8`, `nums[1] = 4`, `nums[3] = 8`
+    - `nums[0] = nums[1] * 2 = 4 * 2 = 8`
+    - `nums[3] = nums[1] * 2 = 4 * 2 = 8`
+
+- `(i, j, k) = (1, 2, 4)`
+    - `nums[1] = 4`, `nums[2] = 2`, `nums[4] = 4`
+    - `nums[1] = nums[2] * 2 = 2 * 2 = 4`
+    - `nums[4] = nums[2] * 2 = 2 * 2 = 4`
+
+### Constraints:
+
+- `3 <= n == nums.length <= 10^5`
+- `0 <= nums[i] <= 10^5`

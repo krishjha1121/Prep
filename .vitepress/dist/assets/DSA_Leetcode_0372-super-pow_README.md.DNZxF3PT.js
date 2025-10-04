@@ -1,0 +1,7 @@
+import{_ as t,c as o,o as r,ag as s}from"./chunks/framework.DUDLMHYb.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"DSA/Leetcode/0372-super-pow/README.md","filePath":"DSA/Leetcode/0372-super-pow/README.md"}'),p={name:"DSA/Leetcode/0372-super-pow/README.md"};function n(a,e,l,c,d,i){return r(),o("div",null,[...e[0]||(e[0]=[s(`<h2><a href="https://leetcode.com/problems/super-pow">372. Super Pow</a></h2><h3>Medium</h3><hr><p>Your task is to calculate <code>a<sup>b</sup></code> mod <code>1337</code> where <code>a</code> is a positive integer and <code>b</code> is an extremely large positive integer given in the form of an array.</p><p> </p><p><strong class="example">Example 1:</strong></p><pre><strong>Input:</strong> a = 2, b = [3]
+<strong>Output:</strong> 8
+</pre><p><strong class="example">Example 2:</strong></p><pre><strong>Input:</strong> a = 2, b = [1,0]
+<strong>Output:</strong> 1024
+</pre><p><strong class="example">Example 3:</strong></p><pre><strong>Input:</strong> a = 1, b = [4,3,3,8,5,2]
+<strong>Output:</strong> 1
+</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 &lt;= a &lt;= 2<sup>31</sup> - 1</code></li><li><code>1 &lt;= b.length &lt;= 2000</code></li><li><code>0 &lt;= b[i] &lt;= 9</code></li><li><code>b</code> does not contain leading zeros.</li></ul>`,14)])])}const m=t(p,[["render",n]]);export{u as __pageData,m as default};

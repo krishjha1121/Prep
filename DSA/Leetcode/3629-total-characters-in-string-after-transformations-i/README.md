@@ -1,79 +1,63 @@
-<h2><a href="https://leetcode.com/problems/total-characters-in-string-after-transformations-i">3629. Total Characters in String After Transformations I</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>t</code>, representing the number of <strong>transformations</strong> to perform. In one <strong>transformation</strong>, every character in <code>s</code> is replaced according to the following rules:</p>
+## 3629. Total Characters in String After Transformations I
 
-<ul>
-	<li>If the character is <code>&#39;z&#39;</code>, replace it with the string <code>&quot;ab&quot;</code>.</li>
-	<li>Otherwise, replace it with the <strong>next</strong> character in the alphabet. For example, <code>&#39;a&#39;</code> is replaced with <code>&#39;b&#39;</code>, <code>&#39;b&#39;</code> is replaced with <code>&#39;c&#39;</code>, and so on.</li>
-</ul>
+**Difficulty:** Medium
 
-<p>Return the <strong>length</strong> of the resulting string after <strong>exactly</strong> <code>t</code> transformations.</p>
+---
 
-<p>Since the answer may be very large, return it <strong>modulo</strong><!-- notionvc: eb142f2b-b818-4064-8be5-e5a36b07557a --> <code>10<sup>9</sup> + 7</code>.</p>
+You are given a string `s` and an integer `t`, representing the number of **transformations** to perform. In one **transformation**, every character in `s` is replaced according to the following rules:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+- If the character is `'z'`, replace it with the string `"ab"`.
+- Otherwise, replace it with the **next** character in the alphabet. For example, `'a'` is replaced with `'b'`, `'b'` is replaced with `'c'`, and so on.
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">s = &quot;abcyy&quot;, t = 2</span></p>
+Return the **length** of the resulting string after **exactly** `t` transformations.
 
-<p><strong>Output:</strong> <span class="example-io">7</span></p>
+Since the answer may be very large, return it **modulo** `10^9 + 7`.
 
-<p><strong>Explanation:</strong></p>
+### Example 1:
 
-<ul>
-	<li><strong>First Transformation (t = 1)</strong>:
+**Input:** `s = "abcyy", t = 2`
 
-	<ul>
-		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code></li>
-		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
-		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code></li>
-		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code></li>
-		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code></li>
-		<li>String after the first transformation: <code>&quot;bcdzz&quot;</code></li>
-	</ul>
-	</li>
-	<li><strong>Second Transformation (t = 2)</strong>:
-	<ul>
-		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
-		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code></li>
-		<li><code>&#39;d&#39;</code> becomes <code>&#39;e&#39;</code></li>
-		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
-		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
-		<li>String after the second transformation: <code>&quot;cdeabab&quot;</code></li>
-	</ul>
-	</li>
-	<li><strong>Final Length of the string</strong>: The string is <code>&quot;cdeabab&quot;</code>, which has 7 characters.</li>
-</ul>
-</div>
+**Output:** `7`
 
-<p><strong class="example">Example 2:</strong></p>
+**Explanation:**
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">s = &quot;azbk&quot;, t = 1</span></p>
+- **First Transformation (t = 1)**:
+    - `'a'` becomes `'b'`
+    - `'b'` becomes `'c'`
+    - `'c'` becomes `'d'`
+    - `'y'` becomes `'z'`
+    - `'y'` becomes `'z'`
+    - String after the first transformation: `"bcdzz"`
 
-<p><strong>Output:</strong> <span class="example-io">5</span></p>
+- **Second Transformation (t = 2)**:
+    - `'b'` becomes `'c'`
+    - `'c'` becomes `'d'`
+    - `'d'` becomes `'e'`
+    - `'z'` becomes `"ab"`
+    - `'z'` becomes `"ab"`
+    - String after the second transformation: `"cdeabab"`
 
-<p><strong>Explanation:</strong></p>
+- **Final Length of the string**: The string is `"cdeabab"`, which has 7 characters.
 
-<ul>
-	<li><strong>First Transformation (t = 1)</strong>:
+### Example 2:
 
-	<ul>
-		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code></li>
-		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
-		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
-		<li><code>&#39;k&#39;</code> becomes <code>&#39;l&#39;</code></li>
-		<li>String after the first transformation: <code>&quot;babcl&quot;</code></li>
-	</ul>
-	</li>
-	<li><strong>Final Length of the string</strong>: The string is <code>&quot;babcl&quot;</code>, which has 5 characters.</li>
-</ul>
-</div>
+**Input:** `s = "azbk", t = 1`
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+**Output:** `5`
 
-<ul>
-	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>s</code> consists only of lowercase English letters.</li>
-	<li><code>1 &lt;= t &lt;= 10<sup>5</sup></code></li>
-</ul>
+**Explanation:**
+
+- **First Transformation (t = 1)**:
+    - `'a'` becomes `'b'`
+    - `'z'` becomes `"ab"`
+    - `'b'` becomes `'c'`
+    - `'k'` becomes `'l'`
+    - String after the first transformation: `"babcl"`
+
+- **Final Length of the string**: The string is `"babcl"`, which has 5 characters.
+
+### Constraints:
+
+- `1 <= s.length <= 10^5`
+- `s` consists only of lowercase English letters.
+- `1 <= t <= 10^5`
