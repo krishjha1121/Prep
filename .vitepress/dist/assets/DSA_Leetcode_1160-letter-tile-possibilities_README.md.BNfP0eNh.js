@@ -1,0 +1,8 @@
+import{_ as e,c as o,o as s,ag as n}from"./chunks/framework.DUDLMHYb.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"DSA/Leetcode/1160-letter-tile-possibilities/README.md","filePath":"DSA/Leetcode/1160-letter-tile-possibilities/README.md"}'),r={name:"DSA/Leetcode/1160-letter-tile-possibilities/README.md"};function i(l,t,p,u,a,c){return s(),o("div",null,[...t[0]||(t[0]=[n(`<h2><a href="https://leetcode.com/problems/letter-tile-possibilities">1160. Letter Tile Possibilities</a></h2><h3>Medium</h3><hr><p>You have <code>n</code>  <code>tiles</code>, where each tile has one letter <code>tiles[i]</code> printed on it.</p><p>Return <em>the number of possible non-empty sequences of letters</em> you can make using the letters printed on those <code>tiles</code>.</p><p> </p><p><strong class="example">Example 1:</strong></p><pre><strong>Input:</strong> tiles = &quot;AAB&quot;
+<strong>Output:</strong> 8
+<strong>Explanation: </strong>The possible sequences are &quot;A&quot;, &quot;B&quot;, &quot;AA&quot;, &quot;AB&quot;, &quot;BA&quot;, &quot;AAB&quot;, &quot;ABA&quot;, &quot;BAA&quot;.
+</pre><p><strong class="example">Example 2:</strong></p><pre><strong>Input:</strong> tiles = &quot;AAABBC&quot;
+<strong>Output:</strong> 188
+</pre><p><strong class="example">Example 3:</strong></p><pre><strong>Input:</strong> tiles = &quot;V&quot;
+<strong>Output:</strong> 1
+</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 &lt;= tiles.length &lt;= 7</code></li><li><code>tiles</code> consists of uppercase English letters.</li></ul>`,15)])])}const A=e(r,[["render",i]]);export{g as __pageData,A as default};
