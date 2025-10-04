@@ -1,0 +1,1641 @@
+.
+├── c++
+│   ├── pictures
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   └── 3.png
+│   └── readme.md
+├── CN
+│   ├── image.png
+│   ├── images
+│   │   ├── image-10.png
+│   │   ├── image-11.png
+│   │   ├── image-12.png
+│   │   ├── image-13.png
+│   │   ├── image-14.png
+│   │   ├── image-15.png
+│   │   ├── image-16.png
+│   │   ├── image-17.png
+│   │   ├── image-18.png
+│   │   ├── image-19.png
+│   │   ├── image-1.png
+│   │   ├── image-20.png
+│   │   ├── image-21.png
+│   │   ├── image-22.png
+│   │   ├── image-23.png
+│   │   ├── image-24.png
+│   │   ├── image-2.png
+│   │   ├── image-3.png
+│   │   ├── image-4.png
+│   │   ├── image-5.png
+│   │   ├── image-6.png
+│   │   ├── image-7.png
+│   │   ├── image-8.png
+│   │   ├── image-9.png
+│   │   └── image.png
+│   └── README.md
+├── DB
+│   ├── DBMS.pdf
+│   ├── Pictures
+│   │   ├── architecture.png
+│   │   ├── btree.png
+│   │   ├── ci.png
+│   │   ├── datapages.png
+│   │   ├── denseandsparse.png
+│   │   ├── disk.png
+│   │   ├── indexing.png
+│   │   ├── keys.png
+│   │   ├── many2many.png
+│   │   ├── many2one.png
+│   │   ├── one2many.png
+│   │   ├── one2one.png
+│   │   ├── pcs.png
+│   │   ├── pdi.png
+│   │   ├── primaryIndex.png
+│   │   ├── psi.png
+│   │   ├── singleMulti.png
+│   │   ├── si.png
+│   │   └── sm.png
+│   └── README.md
+├── DSA
+│   ├── Arrays
+│   │   ├── 0051-n-queens
+│   │   │   ├── 0051-n-queens.java
+│   │   │   └── README.md
+│   │   ├── 0073-set-matrix-zeroes
+│   │   │   ├── 0073-set-matrix-zeroes.java
+│   │   │   └── README.md
+│   │   ├── 0174-dungeon-game
+│   │   │   ├── 0174-dungeon-game.java
+│   │   │   └── README.md
+│   │   ├── 0179-largest-number
+│   │   │   ├── 0179-largest-number.java
+│   │   │   └── README.md
+│   │   ├── 0218-the-skyline-problem
+│   │   │   ├── 0218-the-skyline-problem.java
+│   │   │   └── README.md
+│   │   ├── 0239-sliding-window-maximum
+│   │   │   ├── 0239-sliding-window-maximum.java
+│   │   │   └── README.md
+│   │   ├── 0284-peeking-iterator
+│   │   │   ├── 0284-peeking-iterator.java
+│   │   │   └── README.md
+│   │   ├── 0318-maximum-product-of-word-lengths
+│   │   │   ├── 0318-maximum-product-of-word-lengths.java
+│   │   │   └── README.md
+│   │   ├── 0324-wiggle-sort-ii
+│   │   │   ├── 0324-wiggle-sort-ii.java
+│   │   │   └── README.md
+│   │   ├── 0327-count-of-range-sum
+│   │   │   ├── 0327-count-of-range-sum.java
+│   │   │   └── README.md
+│   │   ├── 0368-largest-divisible-subset
+│   │   │   ├── 0368-largest-divisible-subset.java
+│   │   │   └── README.md
+│   │   ├── 0396-rotate-function
+│   │   │   ├── 0396-rotate-function.java
+│   │   │   └── README.md
+│   │   ├── 0407-trapping-rain-water-ii
+│   │   │   ├── 0407-trapping-rain-water-ii.java
+│   │   │   └── README.md
+│   │   ├── 0413-arithmetic-slices
+│   │   │   ├── 0413-arithmetic-slices.java
+│   │   │   └── README.md
+│   │   ├── 0416-partition-equal-subset-sum
+│   │   │   ├── 0416-partition-equal-subset-sum.java
+│   │   │   └── README.md
+│   │   ├── 0417-pacific-atlantic-water-flow
+│   │   │   ├── 0417-pacific-atlantic-water-flow.java
+│   │   │   └── README.md
+│   │   ├── 0446-arithmetic-slices-ii-subsequence
+│   │   │   ├── 0446-arithmetic-slices-ii-subsequence.java
+│   │   │   └── README.md
+│   │   ├── 0453-minimum-moves-to-equal-array-elements
+│   │   │   ├── 0453-minimum-moves-to-equal-array-elements.java
+│   │   │   └── README.md
+│   │   ├── 0454-4sum-ii
+│   │   │   ├── 0454-4sum-ii.java
+│   │   │   └── README.md
+│   │   ├── 0462-minimum-moves-to-equal-array-elements-ii
+│   │   │   ├── 0462-minimum-moves-to-equal-array-elements-ii.java
+│   │   │   └── README.md
+│   │   ├── 0474-ones-and-zeroes
+│   │   │   ├── 0474-ones-and-zeroes.java
+│   │   │   └── README.md
+│   │   ├── 0480-sliding-window-median
+│   │   │   ├── 0480-sliding-window-median.java
+│   │   │   └── README.md
+│   │   ├── 0494-target-sum
+│   │   │   ├── 0494-target-sum.java
+│   │   │   └── README.md
+│   │   ├── 0524-longest-word-in-dictionary-through-deleting
+│   │   │   ├── 0524-longest-word-in-dictionary-through-deleting.java
+│   │   │   └── README.md
+│   │   ├── 0526-beautiful-arrangement
+│   │   │   ├── 0526-beautiful-arrangement.java
+│   │   │   └── README.md
+│   │   ├── 0539-minimum-time-difference
+│   │   │   ├── 0539-minimum-time-difference.java
+│   │   │   └── README.md
+│   │   ├── 0554-brick-wall
+│   │   │   ├── 0554-brick-wall.java
+│   │   │   └── README.md
+│   │   ├── 0565-array-nesting
+│   │   │   ├── 0565-array-nesting.java
+│   │   │   └── README.md
+│   │   ├── 0594-longest-harmonious-subsequence
+│   │   │   ├── 0594-longest-harmonious-subsequence.java
+│   │   │   └── README.md
+│   │   ├── 0689-maximum-sum-of-3-non-overlapping-subarrays
+│   │   │   ├── 0689-maximum-sum-of-3-non-overlapping-subarrays.java
+│   │   │   └── README.md
+│   │   ├── 0698-partition-to-k-equal-sum-subsets
+│   │   │   ├── 0698-partition-to-k-equal-sum-subsets.java
+│   │   │   └── README.md
+│   │   ├── 0699-falling-squares
+│   │   │   ├── 0699-falling-squares.java
+│   │   │   └── README.md
+│   │   ├── 0713-subarray-product-less-than-k
+│   │   │   ├── 0713-subarray-product-less-than-k.java
+│   │   │   └── README.md
+│   │   ├── 0729-my-calendar-i
+│   │   │   ├── 0729-my-calendar-i.java
+│   │   │   └── README.md
+│   │   ├── 0731-my-calendar-ii
+│   │   │   ├── 0731-my-calendar-ii.java
+│   │   │   └── README.md
+│   │   ├── 0739-daily-temperatures
+│   │   │   ├── 0739-daily-temperatures.java
+│   │   │   └── README.md
+│   │   ├── 0746-prefix-and-suffix-search
+│   │   │   ├── 0746-prefix-and-suffix-search.java
+│   │   │   └── README.md
+│   │   ├── 0759-set-intersection-size-at-least-two
+│   │   │   ├── 0759-set-intersection-size-at-least-two.java
+│   │   │   └── README.md
+│   │   ├── 0779-max-chunks-to-make-sorted-ii
+│   │   │   ├── 0779-max-chunks-to-make-sorted-ii.java
+│   │   │   └── README.md
+│   │   ├── 0780-max-chunks-to-make-sorted
+│   │   │   ├── 0780-max-chunks-to-make-sorted.java
+│   │   │   └── README.md
+│   │   ├── 0797-rabbits-in-forest
+│   │   │   ├── 0797-rabbits-in-forest.java
+│   │   │   └── README.md
+│   │   ├── 0819-minimum-swaps-to-make-sequences-increasing
+│   │   │   ├── 0819-minimum-swaps-to-make-sequences-increasing.java
+│   │   │   └── README.md
+│   │   ├── 0831-largest-sum-of-averages
+│   │   │   ├── 0831-largest-sum-of-averages.java
+│   │   │   └── README.md
+│   │   ├── 0835-linked-list-components
+│   │   │   ├── 0835-linked-list-components.java
+│   │   │   └── README.md
+│   │   ├── 0852-friends-of-appropriate-ages
+│   │   │   ├── 0852-friends-of-appropriate-ages.java
+│   │   │   └── README.md
+│   │   ├── 0854-making-a-large-island
+│   │   │   ├── 0854-making-a-large-island.java
+│   │   │   └── README.md
+│   │   ├── 0859-design-circular-deque
+│   │   │   ├── 0859-design-circular-deque.java
+│   │   │   └── README.md
+│   │   ├── 0860-design-circular-queue
+│   │   │   ├── 0860-design-circular-queue.java
+│   │   │   └── README.md
+│   │   ├── 0878-shifting-letters
+│   │   │   ├── 0878-shifting-letters.java
+│   │   │   └── README.md
+│   │   ├── 0892-shortest-subarray-with-sum-at-least-k
+│   │   │   ├── 0892-shortest-subarray-with-sum-at-least-k.java
+│   │   │   └── README.md
+│   │   ├── 0901-advantage-shuffle
+│   │   │   ├── 0901-advantage-shuffle.java
+│   │   │   └── README.md
+│   │   ├── 0905-length-of-longest-fibonacci-subsequence
+│   │   │   ├── 0905-length-of-longest-fibonacci-subsequence.java
+│   │   │   └── README.md
+│   │   ├── 0912-random-pick-with-weight
+│   │   │   ├── 0912-random-pick-with-weight.java
+│   │   │   └── README.md
+│   │   ├── 0925-construct-binary-tree-from-preorder-and-postorder-traversal
+│   │   │   ├── 0925-construct-binary-tree-from-preorder-and-postorder-traversal.java
+│   │   │   └── README.md
+│   │   ├── 0936-rle-iterator
+│   │   │   ├── 0936-rle-iterator.java
+│   │   │   └── README.md
+│   │   ├── 0945-snakes-and-ladders
+│   │   │   ├── 0945-snakes-and-ladders.java
+│   │   │   └── README.md
+│   │   ├── 0946-smallest-range-ii
+│   │   │   ├── 0946-smallest-range-ii.java
+│   │   │   └── README.md
+│   │   ├── 0952-word-subsets
+│   │   │   ├── 0952-word-subsets.java
+│   │   │   └── README.md
+│   │   ├── 0959-3sum-with-multiplicity
+│   │   │   ├── 0959-3sum-with-multiplicity.java
+│   │   │   └── README.md
+│   │   ├── 0989-largest-component-size-by-common-factor
+│   │   │   ├── 0989-largest-component-size-by-common-factor.java
+│   │   │   └── README.md
+│   │   ├── 0991-array-of-doubled-pairs
+│   │   │   ├── 0991-array-of-doubled-pairs.java
+│   │   │   └── README.md
+│   │   ├── 1000-delete-columns-to-make-sorted-iii
+│   │   │   ├── 1000-delete-columns-to-make-sorted-iii.java
+│   │   │   └── README.md
+│   │   ├── 1020-longest-turbulent-subarray
+│   │   │   ├── 1020-longest-turbulent-subarray.java
+│   │   │   └── README.md
+│   │   ├── 1025-minimum-cost-for-tickets
+│   │   │   ├── 1025-minimum-cost-for-tickets.java
+│   │   │   └── README.md
+│   │   ├── 1028-interval-list-intersections
+│   │   │   ├── 1028-interval-list-intersections.java
+│   │   │   └── README.md
+│   │   ├── 1032-satisfiability-of-equality-equations
+│   │   │   ├── 1032-satisfiability-of-equality-equations.java
+│   │   │   └── README.md
+│   │   ├── 1055-pairs-of-songs-with-total-durations-divisible-by-60
+│   │   │   ├── 1055-pairs-of-songs-with-total-durations-divisible-by-60.java
+│   │   │   └── README.md
+│   │   ├── 1063-best-sightseeing-pair
+│   │   │   ├── 1063-best-sightseeing-pair.java
+│   │   │   └── README.md
+│   │   ├── 1072-next-greater-node-in-linked-list
+│   │   │   ├── 1072-next-greater-node-in-linked-list.java
+│   │   │   └── README.md
+│   │   ├── 1095-two-city-scheduling
+│   │   │   ├── 1095-two-city-scheduling.java
+│   │   │   └── README.md
+│   │   ├── 1096-maximum-sum-of-two-non-overlapping-subarrays
+│   │   │   ├── 1096-maximum-sum-of-two-non-overlapping-subarrays.java
+│   │   │   └── README.md
+│   │   ├── 1140-distant-barcodes
+│   │   │   ├── 1140-distant-barcodes.java
+│   │   │   └── README.md
+│   │   ├── 1147-flip-columns-for-maximum-number-of-equal-rows
+│   │   │   ├── 1147-flip-columns-for-maximum-number-of-equal-rows.java
+│   │   │   └── README.md
+│   │   ├── 1169-largest-values-from-labels
+│   │   │   ├── 1169-largest-values-from-labels.java
+│   │   │   └── README.md
+│   │   ├── 1219-longest-well-performing-interval
+│   │   │   ├── 1219-longest-well-performing-interval.java
+│   │   │   └── README.md
+│   │   ├── 1227-number-of-equivalent-domino-pairs
+│   │   │   ├── 1227-number-of-equivalent-domino-pairs.java
+│   │   │   └── README.md
+│   │   ├── 1234-number-of-paths-with-max-score
+│   │   │   ├── 1234-number-of-paths-with-max-score.java
+│   │   │   └── README.md
+│   │   ├── 1256-rank-transform-of-an-array
+│   │   │   ├── 1256-rank-transform-of-an-array.java
+│   │   │   └── README.md
+│   │   ├── 1262-online-majority-element-in-subarray
+│   │   │   ├── 1262-online-majority-element-in-subarray.java
+│   │   │   └── README.md
+│   │   ├── 1293-three-consecutive-odds
+│   │   │   ├── 1293-three-consecutive-odds.java
+│   │   │   └── README.md
+│   │   ├── 1311-largest-magic-square
+│   │   │   ├── 1311-largest-magic-square.java
+│   │   │   └── README.md
+│   │   ├── 1331-path-with-maximum-gold
+│   │   │   ├── 1331-path-with-maximum-gold.cpp
+│   │   │   └── README.md
+│   │   ├── 1342-queens-that-can-attack-the-king
+│   │   │   ├── 1342-queens-that-can-attack-the-king.java
+│   │   │   └── README.md
+│   │   ├── 1350-remove-sub-folders-from-the-filesystem
+│   │   │   ├── 1350-remove-sub-folders-from-the-filesystem.java
+│   │   │   └── README.md
+│   │   ├── 1364-tuple-with-same-product
+│   │   │   ├── 1364-tuple-with-same-product.java
+│   │   │   └── README.md
+│   │   ├── 1396-count-servers-that-communicate
+│   │   │   ├── 1396-count-servers-that-communicate.java
+│   │   │   └── README.md
+│   │   ├── 1402-count-square-submatrices-with-all-ones
+│   │   │   ├── 1402-count-square-submatrices-with-all-ones.java
+│   │   │   └── README.md
+│   │   ├── 1409-minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix
+│   │   │   ├── 1409-minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix.java
+│   │   │   └── README.md
+│   │   ├── 1436-get-watched-videos-by-your-friends
+│   │   │   ├── 1436-get-watched-videos-by-your-friends.java
+│   │   │   └── README.md
+│   │   ├── 1445-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold
+│   │   │   ├── 1445-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold.java
+│   │   │   └── README.md
+│   │   ├── 1468-check-if-n-and-its-double-exist
+│   │   │   ├── 1468-check-if-n-and-its-double-exist.java
+│   │   │   └── README.md
+│   │   ├── 1477-product-of-the-last-k-numbers
+│   │   │   ├── 1477-product-of-the-last-k-numbers.java
+│   │   │   └── README.md
+│   │   ├── 1478-maximum-number-of-events-that-can-be-attended
+│   │   │   ├── 1478-maximum-number-of-events-that-can-be-attended.java
+│   │   │   └── README.md
+│   │   ├── 1483-rank-teams-by-votes
+│   │   │   ├── 1483-rank-teams-by-votes.java
+│   │   │   └── README.md
+│   │   ├── 1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid
+│   │   │   ├── 1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 1497-design-a-stack-with-increment-operation
+│   │   │   ├── 1497-design-a-stack-with-increment-operation.java
+│   │   │   └── README.md
+│   │   ├── 1510-find-lucky-integer-in-an-array
+│   │   │   ├── 1510-find-lucky-integer-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 1524-string-matching-in-an-array
+│   │   │   ├── 1524-string-matching-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 1538-maximum-points-you-can-obtain-from-cards
+│   │   │   ├── 1538-maximum-points-you-can-obtain-from-cards.java
+│   │   │   └── README.md
+│   │   ├── 1550-find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows
+│   │   │   ├── 1550-find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows.java
+│   │   │   └── README.md
+│   │   ├── 1562-people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list
+│   │   │   ├── 1562-people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list.java
+│   │   │   └── README.md
+│   │   ├── 1570-final-prices-with-a-special-discount-in-a-shop
+│   │   │   ├── 1570-final-prices-with-a-special-discount-in-a-shop.java
+│   │   │   └── README.md
+│   │   ├── 1573-find-two-non-overlapping-sub-arrays-each-with-target-sum
+│   │   │   ├── 1573-find-two-non-overlapping-sub-arrays-each-with-target-sum.java
+│   │   │   └── README.md
+│   │   ├── 1621-number-of-subsequences-that-satisfy-the-given-sum-condition
+│   │   │   ├── 1621-number-of-subsequences-that-satisfy-the-given-sum-condition.java
+│   │   │   └── README.md
+│   │   ├── 1628-count-submatrices-with-all-ones
+│   │   │   ├── 1628-count-submatrices-with-all-ones.java
+│   │   │   └── README.md
+│   │   ├── 1631-number-of-sub-arrays-with-odd-sum
+│   │   │   ├── 1631-number-of-sub-arrays-with-odd-sum.java
+│   │   │   └── README.md
+│   │   ├── 1656-count-good-triplets
+│   │   │   ├── 1656-count-good-triplets.java
+│   │   │   └── README.md
+│   │   ├── 1679-shortest-subarray-to-be-removed-to-make-array-sorted
+│   │   │   ├── 1679-shortest-subarray-to-be-removed-to-make-array-sorted.java
+│   │   │   └── README.md
+│   │   ├── 1694-make-sum-divisible-by-p
+│   │   │   ├── 1694-make-sum-divisible-by-p.java
+│   │   │   └── README.md
+│   │   ├── 1716-maximum-non-negative-product-in-a-matrix
+│   │   │   ├── 1716-maximum-non-negative-product-in-a-matrix.java
+│   │   │   └── README.md
+│   │   ├── 1744-number-of-ways-to-form-a-target-string-given-a-dictionary
+│   │   │   ├── 1744-number-of-ways-to-form-a-target-string-given-a-dictionary.java
+│   │   │   └── README.md
+│   │   ├── 1755-defuse-the-bomb
+│   │   │   ├── 1755-defuse-the-bomb.java
+│   │   │   └── README.md
+│   │   ├── 1766-minimum-number-of-removals-to-make-mountain-array
+│   │   │   ├── 1766-minimum-number-of-removals-to-make-mountain-array.java
+│   │   │   └── README.md
+│   │   ├── 1767-design-front-middle-back-queue
+│   │   │   ├── 1767-design-front-middle-back-queue.java
+│   │   │   └── README.md
+│   │   ├── 1772-create-sorted-array-through-instructions
+│   │   │   ├── 1772-create-sorted-array-through-instructions.java
+│   │   │   └── README.md
+│   │   ├── 1783-ways-to-make-a-fair-array
+│   │   │   ├── 1783-ways-to-make-a-fair-array.java
+│   │   │   └── README.md
+│   │   ├── 1798-max-number-of-k-sum-pairs
+│   │   │   ├── 1798-max-number-of-k-sum-pairs.java
+│   │   │   └── README.md
+│   │   ├── 1813-maximum-erasure-value
+│   │   │   ├── 1813-maximum-erasure-value.java
+│   │   │   └── README.md
+│   │   ├── 1819-construct-the-lexicographically-largest-valid-sequence
+│   │   │   ├── 1819-construct-the-lexicographically-largest-valid-sequence.java
+│   │   │   └── README.md
+│   │   ├── 1830-count-good-meals
+│   │   │   ├── 1830-count-good-meals.java
+│   │   │   └── README.md
+│   │   ├── 1849-maximum-absolute-sum-of-any-subarray
+│   │   │   ├── 1849-maximum-absolute-sum-of-any-subarray.java
+│   │   │   └── README.md
+│   │   ├── 1851-maximum-number-of-events-that-can-be-attended-ii
+│   │   │   ├── 1851-maximum-number-of-events-that-can-be-attended-ii.java
+│   │   │   └── README.md
+│   │   ├── 1874-form-array-by-concatenating-subarrays-of-another-array
+│   │   │   ├── 1874-form-array-by-concatenating-subarrays-of-another-array.java
+│   │   │   └── README.md
+│   │   ├── 1876-map-of-highest-peak
+│   │   │   ├── 1876-map-of-highest-peak.java
+│   │   │   └── README.md
+│   │   ├── 1878-check-if-array-is-sorted-and-rotated
+│   │   │   ├── 1878-check-if-array-is-sorted-and-rotated.java
+│   │   │   └── README.md
+│   │   ├── 1886-minimum-limit-of-balls-in-a-bag
+│   │   │   ├── 1886-minimum-limit-of-balls-in-a-bag.java
+│   │   │   └── README.md
+│   │   ├── 1895-minimum-number-of-operations-to-move-all-balls-to-each-box
+│   │   │   ├── 1895-minimum-number-of-operations-to-move-all-balls-to-each-box.java
+│   │   │   └── README.md
+│   │   ├── 1917-maximum-average-pass-ratio
+│   │   │   ├── 1917-maximum-average-pass-ratio.java
+│   │   │   └── README.md
+│   │   ├── 1923-sentence-similarity-iii
+│   │   │   ├── 1923-sentence-similarity-iii.java
+│   │   │   └── README.md
+│   │   ├── 1927-maximum-ascending-subarray-sum
+│   │   │   ├── 1927-maximum-ascending-subarray-sum.java
+│   │   │   └── README.md
+│   │   ├── 1930-maximum-number-of-consecutive-values-you-can-make
+│   │   │   ├── 1930-maximum-number-of-consecutive-values-you-can-make.java
+│   │   │   └── README.md
+│   │   ├── 1940-maximum-xor-for-each-query
+│   │   │   ├── 1940-maximum-xor-for-each-query.java
+│   │   │   └── README.md
+│   │   ├── 1946-minimum-absolute-sum-difference
+│   │   │   ├── 1946-minimum-absolute-sum-difference.java
+│   │   │   └── README.md
+│   │   ├── 1966-frequency-of-the-most-frequent-element
+│   │   │   ├── 1966-frequency-of-the-most-frequent-element.java
+│   │   │   └── README.md
+│   │   ├── 1972-rotating-the-box
+│   │   │   ├── 1972-rotating-the-box.java
+│   │   │   └── README.md
+│   │   ├── 1993-sum-of-all-subset-xor-totals
+│   │   │   ├── 1993-sum-of-all-subset-xor-totals.java
+│   │   │   └── README.md
+│   │   ├── 1995-finding-pairs-with-a-certain-sum
+│   │   │   ├── 1995-finding-pairs-with-a-certain-sum.java
+│   │   │   └── README.md
+│   │   ├── 2048-build-array-from-permutation
+│   │   │   ├── 2048-build-array-from-permutation.java
+│   │   │   └── README.md
+│   │   ├── 2054-the-number-of-the-smallest-unoccupied-chair
+│   │   │   ├── 2054-the-number-of-the-smallest-unoccupied-chair.java
+│   │   │   └── README.md
+│   │   ├── 2089-maximum-matrix-sum
+│   │   │   ├── 2089-maximum-matrix-sum.java
+│   │   │   └── README.md
+│   │   ├── 2104-operations-on-tree
+│   │   │   ├── 2104-operations-on-tree.java
+│   │   │   └── README.md
+│   │   ├── 2107-find-unique-binary-string
+│   │   │   ├── 2107-find-unique-binary-string.java
+│   │   │   └── README.md
+│   │   ├── 2145-grid-game
+│   │   │   ├── 2145-grid-game.java
+│   │   │   └── README.md
+│   │   ├── 2150-kth-smallest-product-of-two-sorted-arrays
+│   │   │   ├── 2150-kth-smallest-product-of-two-sorted-arrays.java
+│   │   │   └── README.md
+│   │   ├── 2160-minimum-operations-to-make-a-uni-value-grid
+│   │   │   ├── 2160-minimum-operations-to-make-a-uni-value-grid.java
+│   │   │   └── README.md
+│   │   ├── 2164-two-best-non-overlapping-events
+│   │   │   ├── 2164-two-best-non-overlapping-events.java
+│   │   │   └── README.md
+│   │   ├── 2170-count-number-of-maximum-bitwise-or-subsets
+│   │   │   ├── 2170-count-number-of-maximum-bitwise-or-subsets.java
+│   │   │   └── README.md
+│   │   ├── 2179-most-beautiful-item-for-each-query
+│   │   │   ├── 2179-most-beautiful-item-for-each-query.java
+│   │   │   └── README.md
+│   │   ├── 2180-maximum-number-of-tasks-you-can-assign
+│   │   │   ├── 2180-maximum-number-of-tasks-you-can-assign.java
+│   │   │   └── README.md
+│   │   ├── 2188-minimized-maximum-of-products-distributed-to-any-store
+│   │   │   ├── 2188-minimized-maximum-of-products-distributed-to-any-store.java
+│   │   │   └── README.md
+│   │   ├── 2204-find-subsequence-of-length-k-with-the-largest-sum
+│   │   │   ├── 2204-find-subsequence-of-length-k-with-the-largest-sum.java
+│   │   │   └── README.md
+│   │   ├── 2220-find-all-possible-recipes-from-given-supplies
+│   │   │   ├── 2220-find-all-possible-recipes-from-given-supplies.java
+│   │   │   └── README.md
+│   │   ├── 2228-watering-plants-ii
+│   │   │   ├── 2228-watering-plants-ii.java
+│   │   │   └── README.md
+│   │   ├── 2232-adding-spaces-to-a-string
+│   │   │   ├── 2232-adding-spaces-to-a-string.java
+│   │   │   └── README.md
+│   │   ├── 2237-longest-palindrome-by-concatenating-two-letter-words
+│   │   │   ├── 2237-longest-palindrome-by-concatenating-two-letter-words.java
+│   │   │   └── README.md
+│   │   ├── 2249-count-the-hidden-sequences
+│   │   │   ├── 2249-count-the-hidden-sequences.java
+│   │   │   └── README.md
+│   │   ├── 2262-solving-questions-with-brainpower
+│   │   │   ├── 2262-solving-questions-with-brainpower.java
+│   │   │   └── README.md
+│   │   ├── 2265-partition-array-according-to-given-pivot
+│   │   │   ├── 2265-partition-array-according-to-given-pivot.java
+│   │   │   └── README.md
+│   │   ├── 2277-count-equal-and-divisible-pairs-in-an-array
+│   │   │   ├── 2277-count-equal-and-divisible-pairs-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 2285-design-bitset
+│   │   │   ├── 2285-design-bitset.java
+│   │   │   └── README.md
+│   │   ├── 2292-counting-words-with-a-given-prefix
+│   │   │   ├── 2292-counting-words-with-a-given-prefix.java
+│   │   │   └── README.md
+│   │   ├── 2308-divide-array-into-equal-pairs
+│   │   │   ├── 2308-divide-array-into-equal-pairs.java
+│   │   │   └── README.md
+│   │   ├── 2320-find-all-k-distant-indices-in-an-array
+│   │   │   ├── 2320-find-all-k-distant-indices-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 2343-count-unguarded-cells-in-the-grid
+│   │   │   ├── 2343-count-unguarded-cells-in-the-grid.java
+│   │   │   └── README.md
+│   │   ├── 2356-largest-combination-with-bitwise-and-greater-than-zero
+│   │   │   ├── 2356-largest-combination-with-bitwise-and-greater-than-zero.java
+│   │   │   └── README.md
+│   │   ├── 2358-number-of-ways-to-split-array
+│   │   │   ├── 2358-number-of-ways-to-split-array.java
+│   │   │   └── README.md
+│   │   ├── 2362-minimum-rounds-to-complete-all-tasks
+│   │   │   ├── 2362-minimum-rounds-to-complete-all-tasks.java
+│   │   │   └── README.md
+│   │   ├── 2374-steps-to-make-array-non-decreasing
+│   │   │   ├── 2374-steps-to-make-array-non-decreasing.java
+│   │   │   └── README.md
+│   │   ├── 2375-minimum-obstacle-removal-to-reach-corner
+│   │   │   ├── 2375-minimum-obstacle-removal-to-reach-corner.java
+│   │   │   └── README.md
+│   │   ├── 2387-partition-array-such-that-maximum-difference-is-k
+│   │   │   ├── 2387-partition-array-such-that-maximum-difference-is-k.java
+│   │   │   └── README.md
+│   │   ├── 2388-replace-elements-in-an-array
+│   │   │   ├── 2388-replace-elements-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 2394-count-subarrays-with-score-less-than-k
+│   │   │   ├── 2394-count-subarrays-with-score-less-than-k.java
+│   │   │   └── README.md
+│   │   ├── 2448-count-number-of-bad-pairs
+│   │   │   ├── 2448-count-number-of-bad-pairs.java
+│   │   │   └── README.md
+│   │   ├── 2449-maximum-number-of-robots-within-budget
+│   │   │   ├── 2449-maximum-number-of-robots-within-budget.java
+│   │   │   └── README.md
+│   │   ├── 2465-shifting-letters-ii
+│   │   │   ├── 2465-shifting-letters-ii.java
+│   │   │   └── README.md
+│   │   ├── 2473-max-sum-of-a-pair-with-equal-sum-of-digits
+│   │   │   ├── 2473-max-sum-of-a-pair-with-equal-sum-of-digits.java
+│   │   │   └── README.md
+│   │   ├── 2478-longest-nice-subarray
+│   │   │   ├── 2478-longest-nice-subarray.java
+│   │   │   └── README.md
+│   │   ├── 2479-meeting-rooms-iii
+│   │   │   ├── 2479-meeting-rooms-iii.java
+│   │   │   └── README.md
+│   │   ├── 2494-sum-of-prefix-scores-of-strings
+│   │   │   ├── 2494-sum-of-prefix-scores-of-strings.java
+│   │   │   └── README.md
+│   │   ├── 2513-number-of-pairs-satisfying-inequality
+│   │   │   ├── 2513-number-of-pairs-satisfying-inequality.java
+│   │   │   └── README.md
+│   │   ├── 2527-count-subarrays-with-fixed-bounds
+│   │   │   ├── 2527-count-subarrays-with-fixed-bounds.java
+│   │   │   └── README.md
+│   │   ├── 2533-bitwise-xor-of-all-pairings
+│   │   │   ├── 2533-bitwise-xor-of-all-pairings.java
+│   │   │   └── README.md
+│   │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries
+│   │   │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries.java
+│   │   │   └── README.md
+│   │   ├── 2551-apply-operations-to-an-array
+│   │   │   ├── 2551-apply-operations-to-an-array.java
+│   │   │   └── README.md
+│   │   ├── 2552-maximum-sum-of-distinct-subarrays-with-length-k
+│   │   │   ├── 2552-maximum-sum-of-distinct-subarrays-with-length-k.java
+│   │   │   └── README.md
+│   │   ├── 2554-minimum-total-distance-traveled
+│   │   │   ├── 2554-minimum-total-distance-traveled.java
+│   │   │   └── README.md
+│   │   ├── 2564-most-profitable-path-in-a-tree
+│   │   │   ├── 2564-most-profitable-path-in-a-tree.java
+│   │   │   └── README.md
+│   │   ├── 2581-divide-players-into-teams-of-equal-skill
+│   │   │   ├── 2581-divide-players-into-teams-of-equal-skill.java
+│   │   │   └── README.md
+│   │   ├── 2586-longest-square-streak-in-an-array
+│   │   │   ├── 2586-longest-square-streak-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 2588-maximum-number-of-points-from-grid-queries
+│   │   │   ├── 2588-maximum-number-of-points-from-grid-queries.java
+│   │   │   └── README.md
+│   │   ├── 2591-frog-jump-ii
+│   │   │   ├── 2591-frog-jump-ii.java
+│   │   │   └── README.md
+│   │   ├── 2600-maximum-tastiness-of-candy-basket
+│   │   │   ├── 2600-maximum-tastiness-of-candy-basket.java
+│   │   │   └── README.md
+│   │   ├── 2601-number-of-great-partitions
+│   │   │   ├── 2601-number-of-great-partitions.java
+│   │   │   └── README.md
+│   │   ├── 2604-minimum-operations-to-make-array-equal-ii
+│   │   │   ├── 2604-minimum-operations-to-make-array-equal-ii.java
+│   │   │   └── README.md
+│   │   ├── 2616-maximal-score-after-applying-k-operations
+│   │   │   ├── 2616-maximal-score-after-applying-k-operations.java
+│   │   │   └── README.md
+│   │   ├── 2626-count-the-number-of-good-subarrays
+│   │   │   ├── 2626-count-the-number-of-good-subarrays.java
+│   │   │   └── README.md
+│   │   ├── 2640-maximum-number-of-integers-to-choose-from-a-range-i
+│   │   │   ├── 2640-maximum-number-of-integers-to-choose-from-a-range-i.java
+│   │   │   └── README.md
+│   │   ├── 2665-minimum-time-to-repair-cars
+│   │   │   ├── 2665-minimum-time-to-repair-cars.java
+│   │   │   └── README.md
+│   │   ├── 2681-put-marbles-in-bags
+│   │   │   ├── 2681-put-marbles-in-bags.java
+│   │   │   └── README.md
+│   │   ├── 2685-first-completely-painted-row-or-column
+│   │   │   ├── 2685-first-completely-painted-row-or-column.java
+│   │   │   └── README.md
+│   │   ├── 2691-count-vowel-strings-in-ranges
+│   │   │   ├── 2691-count-vowel-strings-in-ranges.java
+│   │   │   └── README.md
+│   │   ├── 2692-take-gifts-from-the-richest-pile
+│   │   │   ├── 2692-take-gifts-from-the-richest-pile.java
+│   │   │   └── README.md
+│   │   ├── 2695-find-score-of-an-array-after-marking-all-elements
+│   │   │   ├── 2695-find-score-of-an-array-after-marking-all-elements.java
+│   │   │   └── README.md
+│   │   ├── 2699-count-the-number-of-fair-pairs
+│   │   │   ├── 2699-count-the-number-of-fair-pairs.java
+│   │   │   └── README.md
+│   │   ├── 2707-merge-two-2d-arrays-by-summing-values
+│   │   │   ├── 2707-merge-two-2d-arrays-by-summing-values.java
+│   │   │   └── README.md
+│   │   ├── 2711-minimum-time-to-visit-a-cell-in-a-grid
+│   │   │   ├── 2711-minimum-time-to-visit-a-cell-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 2716-prime-subtraction-operation
+│   │   │   ├── 2716-prime-subtraction-operation.java
+│   │   │   └── README.md
+│   │   ├── 2755-extra-characters-in-a-string
+│   │   │   ├── 2755-extra-characters-in-a-string.java
+│   │   │   └── README.md
+│   │   ├── 2764-maximum-number-of-fish-in-a-grid
+│   │   │   ├── 2764-maximum-number-of-fish-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 2766-find-the-prefix-common-array-of-two-arrays
+│   │   │   ├── 2766-find-the-prefix-common-array-of-two-arrays.java
+│   │   │   └── README.md
+│   │   ├── 2792-neighboring-bitwise-xor
+│   │   │   ├── 2792-neighboring-bitwise-xor.java
+│   │   │   └── README.md
+│   │   ├── 2794-maximum-number-of-moves-in-a-grid
+│   │   │   ├── 2794-maximum-number-of-moves-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 2839-maximum-sum-queries
+│   │   │   ├── 2839-maximum-sum-queries.java
+│   │   │   └── README.md
+│   │   ├── 2845-find-the-value-of-the-partition
+│   │   │   ├── 2845-find-the-value-of-the-partition.java
+│   │   │   └── README.md
+│   │   ├── 2848-special-permutations
+│   │   │   ├── 2848-special-permutations.java
+│   │   │   └── README.md
+│   │   ├── 2856-count-complete-subarrays-in-an-array
+│   │   │   ├── 2856-count-complete-subarrays-in-an-array.java
+│   │   │   └── README.md
+│   │   ├── 2868-continuous-subarrays
+│   │   │   ├── 2868-continuous-subarrays.java
+│   │   │   └── README.md
+│   │   ├── 2872-largest-element-in-an-array-after-merge-operations
+│   │   │   ├── 2872-largest-element-in-an-array-after-merge-operations.java
+│   │   │   └── README.md
+│   │   ├── 2888-minimum-index-of-a-valid-split
+│   │   │   ├── 2888-minimum-index-of-a-valid-split.java
+│   │   │   └── README.md
+│   │   ├── 2891-maximum-beauty-of-an-array-after-applying-operation
+│   │   │   ├── 2891-maximum-beauty-of-an-array-after-applying-operation.java
+│   │   │   └── README.md
+│   │   ├── 2893-visit-array-positions-to-maximize-score
+│   │   │   ├── 2893-visit-array-positions-to-maximize-score.java
+│   │   │   └── README.md
+│   │   ├── 2915-count-of-interesting-subarrays
+│   │   │   ├── 2915-count-of-interesting-subarrays.java
+│   │   │   └── README.md
+│   │   ├── 3000-minimum-absolute-difference-between-elements-with-constraint
+│   │   │   ├── 3000-minimum-absolute-difference-between-elements-with-constraint.java
+│   │   │   └── README.md
+│   │   ├── 3142-longest-unequal-adjacent-groups-subsequence-ii
+│   │   │   ├── 3142-longest-unequal-adjacent-groups-subsequence-ii.java
+│   │   │   └── README.md
+│   │   ├── 3151-minimum-processing-time
+│   │   │   ├── 3151-minimum-processing-time.java
+│   │   │   └── README.md
+│   │   ├── 3152-maximum-value-of-an-ordered-triplet-ii
+│   │   │   ├── 3152-maximum-value-of-an-ordered-triplet-ii.java
+│   │   │   └── README.md
+│   │   ├── 3154-maximum-value-of-an-ordered-triplet-i
+│   │   │   ├── 3154-maximum-value-of-an-ordered-triplet-i.java
+│   │   │   └── README.md
+│   │   ├── 3171-minimum-equal-sum-of-two-arrays-after-replacing-zeros
+│   │   │   ├── 3171-minimum-equal-sum-of-two-arrays-after-replacing-zeros.java
+│   │   │   └── README.md
+│   │   ├── 3181-find-building-where-alice-and-bob-can-meet
+│   │   │   ├── 3181-find-building-where-alice-and-bob-can-meet.java
+│   │   │   └── README.md
+│   │   ├── 3194-find-words-containing-character
+│   │   │   ├── 3194-find-words-containing-character.java
+│   │   │   └── README.md
+│   │   ├── 3213-count-subarrays-where-max-element-appears-at-least-k-times
+│   │   │   ├── 3213-count-subarrays-where-max-element-appears-at-least-k-times.java
+│   │   │   └── README.md
+│   │   ├── 3219-make-lexicographically-smallest-array-by-swapping-elements
+│   │   │   ├── 3219-make-lexicographically-smallest-array-by-swapping-elements.java
+│   │   │   └── README.md
+│   │   ├── 3227-find-missing-and-repeated-values
+│   │   │   ├── 3227-find-missing-and-repeated-values.java
+│   │   │   └── README.md
+│   │   ├── 3241-divide-array-into-arrays-with-max-difference
+│   │   │   ├── 3241-divide-array-into-arrays-with-max-difference.java
+│   │   │   └── README.md
+│   │   ├── 3291-find-if-array-can-be-sorted
+│   │   │   ├── 3291-find-if-array-can-be-sorted.java
+│   │   │   └── README.md
+│   │   ├── 3307-find-the-maximum-sum-of-node-values
+│   │   │   ├── 3307-find-the-maximum-sum-of-node-values.java
+│   │   │   └── README.md
+│   │   ├── 3321-type-of-triangle
+│   │   │   ├── 3321-type-of-triangle.java
+│   │   │   └── README.md
+│   │   ├── 3329-find-the-length-of-the-longest-common-prefix
+│   │   │   ├── 3329-find-the-length-of-the-longest-common-prefix.java
+│   │   │   └── README.md
+│   │   ├── 3332-minimum-operations-to-exceed-threshold-value-ii
+│   │   │   ├── 3332-minimum-operations-to-exceed-threshold-value-ii.java
+│   │   │   └── README.md
+│   │   ├── 3348-minimum-cost-walk-in-weighted-graph
+│   │   │   ├── 3348-minimum-cost-walk-in-weighted-graph.java
+│   │   │   └── README.md
+│   │   ├── 3351-maximize-happiness-of-selected-children
+│   │   │   ├── 3351-maximize-happiness-of-selected-children.java
+│   │   │   └── README.md
+│   │   ├── 3372-longest-strictly-increasing-or-strictly-decreasing-subarray
+│   │   │   ├── 3372-longest-strictly-increasing-or-strictly-decreasing-subarray.java
+│   │   │   └── README.md
+│   │   ├── 3380-shortest-subarray-with-or-at-least-k-ii
+│   │   │   ├── 3380-shortest-subarray-with-or-at-least-k-ii.java
+│   │   │   └── README.md
+│   │   ├── 3427-special-array-ii
+│   │   │   ├── 3427-special-array-ii.java
+│   │   │   └── README.md
+│   │   ├── 3430-count-days-without-meetings
+│   │   │   ├── 3430-count-days-without-meetings.java
+│   │   │   └── README.md
+│   │   ├── 3434-find-the-number-of-distinct-colors-among-the-balls
+│   │   │   ├── 3434-find-the-number-of-distinct-colors-among-the-balls.cpp
+│   │   │   └── README.md
+│   │   ├── 3466-number-of-subarrays-with-and-value-of-k
+│   │   │   ├── 3466-number-of-subarrays-with-and-value-of-k.java
+│   │   │   └── README.md
+│   │   ├── 3475-minimum-operations-to-make-binary-array-elements-equal-to-one-i
+│   │   │   ├── 3475-minimum-operations-to-make-binary-array-elements-equal-to-one-i.java
+│   │   │   └── README.md
+│   │   ├── 3483-alternating-groups-ii
+│   │   │   ├── 3483-alternating-groups-ii.java
+│   │   │   └── README.md
+│   │   ├── 3555-final-array-state-after-k-multiplication-operations-i
+│   │   │   ├── 3555-final-array-state-after-k-multiplication-operations-i.java
+│   │   │   └── README.md
+│   │   ├── 3592-find-x-sum-of-all-k-long-subarrays-ii
+│   │   │   ├── 3592-find-x-sum-of-all-k-long-subarrays-ii.java
+│   │   │   └── README.md
+│   │   ├── 3621-minimum-operations-to-make-array-values-equal-to-k
+│   │   │   ├── 3621-minimum-operations-to-make-array-values-equal-to-k.java
+│   │   │   └── README.md
+│   │   ├── 3627-find-minimum-time-to-reach-last-room-i
+│   │   │   ├── 3627-find-minimum-time-to-reach-last-room-i.java
+│   │   │   └── README.md
+│   │   ├── 3628-find-minimum-time-to-reach-last-room-ii
+│   │   │   ├── 3628-find-minimum-time-to-reach-last-room-ii.java
+│   │   │   └── README.md
+│   │   ├── 3639-zero-array-transformation-i
+│   │   │   ├── 3639-zero-array-transformation-i.java
+│   │   │   └── README.md
+│   │   ├── 3649-minimum-time-to-break-locks-i
+│   │   │   ├── 3649-minimum-time-to-break-locks-i.java
+│   │   │   └── README.md
+│   │   ├── 3651-transformed-array
+│   │   │   ├── 3651-transformed-array.java
+│   │   │   └── README.md
+│   │   ├── 3653-maximum-subarray-sum-with-length-divisible-by-k
+│   │   │   ├── 3653-maximum-subarray-sum-with-length-divisible-by-k.java
+│   │   │   └── README.md
+│   │   ├── 3656-minimum-number-of-operations-to-make-elements-in-array-distinct
+│   │   │   ├── 3656-minimum-number-of-operations-to-make-elements-in-array-distinct.java
+│   │   │   └── README.md
+│   │   ├── 3657-check-if-grid-can-be-cut-into-sections
+│   │   │   ├── 3657-check-if-grid-can-be-cut-into-sections.java
+│   │   │   └── README.md
+│   │   ├── 3677-maximum-amount-of-money-robot-can-earn
+│   │   │   ├── 3677-maximum-amount-of-money-robot-can-earn.java
+│   │   │   └── README.md
+│   │   ├── 3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences
+│   │   │   ├── 3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences.java
+│   │   │   └── README.md
+│   │   ├── 3741-reschedule-meetings-for-maximum-free-time-ii
+│   │   │   ├── 3741-reschedule-meetings-for-maximum-free-time-ii.java
+│   │   │   └── README.md
+│   │   ├── 3743-reschedule-meetings-for-maximum-free-time-i
+│   │   │   ├── 3743-reschedule-meetings-for-maximum-free-time-i.java
+│   │   │   └── README.md
+│   │   ├── 3837-grid-teleportation-traversal
+│   │   │   ├── 3837-grid-teleportation-traversal.java
+│   │   │   └── README.md
+│   │   ├── 3853-minimum-weighted-subgraph-with-the-required-paths-ii
+│   │   │   ├── 3853-minimum-weighted-subgraph-with-the-required-paths-ii.java
+│   │   │   └── README.md
+│   │   ├── Easy
+│   │   │   ├── Check_if_array_Is_Sorted.java
+│   │   │   ├── Find_the_number_that_appears_once_and_the_other_numbers_twice.java
+│   │   │   ├── Largest_Element_In_The_Array.java
+│   │   │   ├── Left_Rotation_By_K_Places.java
+│   │   │   ├── Longest_Subarray_with_given_Sum_K.java
+│   │   │   ├── Missing_Number_In_an_Array.java
+│   │   │   ├── Move_All_Zeroes_To_End.java
+│   │   │   ├── Remove_Duplicates_From_Sorted_Array.java
+│   │   │   ├── Right_Rotation_By_K_Places.java
+│   │   │   ├── search_in_a_sorted_matrix.java
+│   │   │   ├── Second_Largest_and_Second_Smallest_Element.java
+│   │   │   └── Union_Of_Two_Sorted_Array.java
+│   │   ├── Hard
+│   │   │   ├── four_sum.java
+│   │   │   ├── inversion_count.java
+│   │   │   ├── majority_element_2.java
+│   │   │   ├── maximum_product_subarray.java
+│   │   │   ├── merge_overlapping_intervals.java
+│   │   │   ├── merge_two_sorted_array.java
+│   │   │   ├── reverse_pairs.java
+│   │   │   └── Three_Sum.java
+│   │   └── Medium
+│   │       ├── Best_Time_to_buy_and_Sell_Stock.java
+│   │       ├── count_number_of_subarray_with_sum_equal_to_k.java
+│   │       ├── Leaders_in_an_array.java
+│   │       ├── Longest_Consecutive_Sequence_In_an_array.java
+│   │       ├── Majority_Element.java
+│   │       ├── maximum_subarray_sum_in_an_array.java
+│   │       ├── next_permutation.java
+│   │       ├── rearrange_array_element_by_positive_and_negative.java
+│   │       ├── Rotate_matrix_90_degree_anti_clockwise.java
+│   │       ├── Rotate_matrix_90_degree_clockwise.java
+│   │       ├── set_matrices_to_zero.java
+│   │       ├── sort_an_array_of_0_1_2.java
+│   │       ├── spiral_matrix.java
+│   │       └── Two_Sum.java
+│   ├── BFS
+│   │   ├── 0104-maximum-depth-of-binary-tree
+│   │   │   ├── 0104-maximum-depth-of-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 0297-serialize-and-deserialize-binary-tree
+│   │   │   ├── 0297-serialize-and-deserialize-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 0310-minimum-height-trees
+│   │   │   ├── 0310-minimum-height-trees.java
+│   │   │   └── README.md
+│   │   ├── 0407-trapping-rain-water-ii
+│   │   │   ├── 0407-trapping-rain-water-ii.java
+│   │   │   └── README.md
+│   │   ├── 0417-pacific-atlantic-water-flow
+│   │   │   ├── 0417-pacific-atlantic-water-flow.java
+│   │   │   └── README.md
+│   │   ├── 0433-minimum-genetic-mutation
+│   │   │   ├── 0433-minimum-genetic-mutation.java
+│   │   │   └── README.md
+│   │   ├── 0449-serialize-and-deserialize-bst
+│   │   │   ├── 0449-serialize-and-deserialize-bst.java
+│   │   │   └── README.md
+│   │   ├── 0684-redundant-connection
+│   │   │   ├── 0684-redundant-connection.java
+│   │   │   └── README.md
+│   │   ├── 0854-making-a-large-island
+│   │   │   ├── 0854-making-a-large-island.java
+│   │   │   └── README.md
+│   │   ├── 0945-snakes-and-ladders
+│   │   │   ├── 0945-snakes-and-ladders.java
+│   │   │   └── README.md
+│   │   ├── 1218-lowest-common-ancestor-of-deepest-leaves
+│   │   │   ├── 1218-lowest-common-ancestor-of-deepest-leaves.java
+│   │   │   └── README.md
+│   │   ├── 1396-count-servers-that-communicate
+│   │   │   ├── 1396-count-servers-that-communicate.java
+│   │   │   └── README.md
+│   │   ├── 1409-minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix
+│   │   │   ├── 1409-minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix.java
+│   │   │   └── README.md
+│   │   ├── 1436-get-watched-videos-by-your-friends
+│   │   │   ├── 1436-get-watched-videos-by-your-friends.java
+│   │   │   └── README.md
+│   │   ├── 1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid
+│   │   │   ├── 1485-minimum-cost-to-make-at-least-one-valid-path-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 1558-course-schedule-iv
+│   │   │   ├── 1558-course-schedule-iv.java
+│   │   │   └── README.md
+│   │   ├── 1876-map-of-highest-peak
+│   │   │   ├── 1876-map-of-highest-peak.java
+│   │   │   └── README.md
+│   │   ├── 2104-operations-on-tree
+│   │   │   ├── 2104-operations-on-tree.java
+│   │   │   └── README.md
+│   │   ├── 2375-minimum-obstacle-removal-to-reach-corner
+│   │   │   ├── 2375-minimum-obstacle-removal-to-reach-corner.java
+│   │   │   └── README.md
+│   │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries
+│   │   │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries.java
+│   │   │   └── README.md
+│   │   ├── 2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level
+│   │   │   ├── 2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level.java
+│   │   │   └── README.md
+│   │   ├── 2564-most-profitable-path-in-a-tree
+│   │   │   ├── 2564-most-profitable-path-in-a-tree.java
+│   │   │   └── README.md
+│   │   ├── 2568-minimum-fuel-cost-to-report-to-the-capital
+│   │   │   ├── 2568-minimum-fuel-cost-to-report-to-the-capital.java
+│   │   │   └── README.md
+│   │   ├── 2583-divide-nodes-into-the-maximum-number-of-groups
+│   │   │   ├── 2583-divide-nodes-into-the-maximum-number-of-groups.java
+│   │   │   └── README.md
+│   │   ├── 2588-maximum-number-of-points-from-grid-queries
+│   │   │   ├── 2588-maximum-number-of-points-from-grid-queries.java
+│   │   │   └── README.md
+│   │   ├── 2646-kth-largest-sum-in-a-binary-tree
+│   │   │   ├── 2646-kth-largest-sum-in-a-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 2677-cousins-in-binary-tree-ii
+│   │   │   ├── 2677-cousins-in-binary-tree-ii.java
+│   │   │   └── README.md
+│   │   ├── 2711-minimum-time-to-visit-a-cell-in-a-grid
+│   │   │   ├── 2711-minimum-time-to-visit-a-cell-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 2764-maximum-number-of-fish-in-a-grid
+│   │   │   ├── 2764-maximum-number-of-fish-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 2793-count-the-number-of-complete-components
+│   │   │   ├── 2793-count-the-number-of-complete-components.java
+│   │   │   └── README.md
+│   │   ├── 3239-minimum-number-of-operations-to-make-x-and-y-equal
+│   │   │   ├── 3239-minimum-number-of-operations-to-make-x-and-y-equal.java
+│   │   │   └── README.md
+│   │   ├── 3439-find-minimum-diameter-after-merging-two-trees
+│   │   │   ├── 3439-find-minimum-diameter-after-merging-two-trees.cpp
+│   │   │   └── README.md
+│   │   ├── 3633-maximize-the-number-of-target-nodes-after-connecting-trees-i
+│   │   │   ├── 3633-maximize-the-number-of-target-nodes-after-connecting-trees-i.java
+│   │   │   └── README.md
+│   │   ├── 3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii
+│   │   │   ├── 3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii.java
+│   │   │   └── README.md
+│   │   └── 3837-grid-teleportation-traversal
+│   │       ├── 3837-grid-teleportation-traversal.java
+│   │       └── README.md
+│   ├── Binary Search
+│   │   ├── Agressive_cows.java
+│   │   ├── Binary_Search_to_find_target_in_sorted_array.java
+│   │   ├── Book_Allocation.java
+│   │   ├── Count_Occurrences_in_Sorted_Array.java
+│   │   ├── FInd_first_and_last_occurences_of_element.java
+│   │   ├── find_how_many_times_an_array_is_rotated.java
+│   │   ├── Find_Minimum_and_Maximum_in_Rotated_Sorted_Array.java
+│   │   ├── Find_peak_element.java
+│   │   ├── find_smallest_divisior.java
+│   │   ├── implementation_of_lower_bound.java
+│   │   ├── implementation_of_upper_bound.java
+│   │   ├── koko_eating_banana.java
+│   │   ├── Minimum_days_to_make_M_bouquets.java
+│   │   ├── min_weight_to_ship_package_within_d_days.java
+│   │   ├── Nth_root_of_a_number.java
+│   │   ├── search_insert_position.java
+│   │   ├── Single_element.java
+│   │   └── square_root_of_a_number.java
+│   ├── Design
+│   │   ├── 0173-binary-search-tree-iterator
+│   │   │   ├── 0173-binary-search-tree-iterator.java
+│   │   │   └── README.md
+│   │   ├── 0284-peeking-iterator
+│   │   │   ├── 0284-peeking-iterator.java
+│   │   │   └── README.md
+│   │   ├── 0297-serialize-and-deserialize-binary-tree
+│   │   │   ├── 0297-serialize-and-deserialize-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 0432-all-oone-data-structure
+│   │   │   ├── 0432-all-oone-data-structure.java
+│   │   │   └── README.md
+│   │   ├── 0449-serialize-and-deserialize-bst
+│   │   │   ├── 0449-serialize-and-deserialize-bst.java
+│   │   │   └── README.md
+│   │   ├── 0677-map-sum-pairs
+│   │   │   ├── 0677-map-sum-pairs.java
+│   │   │   └── README.md
+│   │   ├── 0729-my-calendar-i
+│   │   │   ├── 0729-my-calendar-i.java
+│   │   │   └── README.md
+│   │   ├── 0731-my-calendar-ii
+│   │   │   ├── 0731-my-calendar-ii.java
+│   │   │   └── README.md
+│   │   ├── 0746-prefix-and-suffix-search
+│   │   │   ├── 0746-prefix-and-suffix-search.java
+│   │   │   └── README.md
+│   │   ├── 0838-design-linked-list
+│   │   │   ├── 0838-design-linked-list.java
+│   │   │   └── README.md
+│   │   ├── 0859-design-circular-deque
+│   │   │   ├── 0859-design-circular-deque.java
+│   │   │   └── README.md
+│   │   ├── 0860-design-circular-queue
+│   │   │   ├── 0860-design-circular-queue.java
+│   │   │   └── README.md
+│   │   ├── 0936-rle-iterator
+│   │   │   ├── 0936-rle-iterator.java
+│   │   │   └── README.md
+│   │   ├── 0937-online-stock-span
+│   │   │   ├── 0937-online-stock-span.java
+│   │   │   └── README.md
+│   │   ├── 0969-number-of-recent-calls
+│   │   │   ├── 0969-number-of-recent-calls.java
+│   │   │   └── README.md
+│   │   ├── 1023-time-based-key-value-store
+│   │   │   ├── 1023-time-based-key-value-store.cpp
+│   │   │   └── README.md
+│   │   ├── 1262-online-majority-element-in-subarray
+│   │   │   ├── 1262-online-majority-element-in-subarray.java
+│   │   │   └── README.md
+│   │   ├── 1337-design-skiplist
+│   │   │   ├── 1337-design-skiplist.java
+│   │   │   └── README.md
+│   │   ├── 1387-find-elements-in-a-contaminated-binary-tree
+│   │   │   ├── 1387-find-elements-in-a-contaminated-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 1477-product-of-the-last-k-numbers
+│   │   │   ├── 1477-product-of-the-last-k-numbers.java
+│   │   │   └── README.md
+│   │   ├── 1497-design-a-stack-with-increment-operation
+│   │   │   ├── 1497-design-a-stack-with-increment-operation.java
+│   │   │   └── README.md
+│   │   ├── 1767-design-front-middle-back-queue
+│   │   │   ├── 1767-design-front-middle-back-queue.java
+│   │   │   └── README.md
+│   │   ├── 1905-design-authentication-manager
+│   │   │   ├── 1905-design-authentication-manager.java
+│   │   │   └── README.md
+│   │   ├── 1953-finding-mk-average
+│   │   │   ├── 1953-finding-mk-average.java
+│   │   │   └── README.md
+│   │   ├── 1995-finding-pairs-with-a-certain-sum
+│   │   │   ├── 1995-finding-pairs-with-a-certain-sum.java
+│   │   │   └── README.md
+│   │   ├── 2104-operations-on-tree
+│   │   │   ├── 2104-operations-on-tree.java
+│   │   │   └── README.md
+│   │   ├── 2161-stock-price-fluctuation
+│   │   │   ├── 2161-stock-price-fluctuation.java
+│   │   │   └── README.md
+│   │   ├── 2285-design-bitset
+│   │   │   ├── 2285-design-bitset.java
+│   │   │   └── README.md
+│   │   ├── 2389-design-a-text-editor
+│   │   │   ├── 2389-design-a-text-editor.java
+│   │   │   └── README.md
+│   │   ├── 2434-design-a-number-container-system
+│   │   │   ├── 2434-design-a-number-container-system.java
+│   │   │   └── README.md
+│   │   └── 2512-longest-uploaded-prefix
+│   │       ├── 2512-longest-uploaded-prefix.java
+│   │       └── README.md
+│   ├── DFS
+│   │   ├── 0104-maximum-depth-of-binary-tree
+│   │   │   ├── 0104-maximum-depth-of-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 0297-serialize-and-deserialize-binary-tree
+│   │   │   ├── 0297-serialize-and-deserialize-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 0310-minimum-height-trees
+│   │   │   ├── 0310-minimum-height-trees.java
+│   │   │   └── README.md
+│   │   ├── 0337-house-robber-iii
+│   │   │   ├── 0337-house-robber-iii.java
+│   │   │   └── README.md
+│   │   ├── 0386-lexicographical-numbers
+│   │   │   ├── 0386-lexicographical-numbers.java
+│   │   │   └── README.md
+│   │   ├── 0417-pacific-atlantic-water-flow
+│   │   │   ├── 0417-pacific-atlantic-water-flow.java
+│   │   │   └── README.md
+│   │   ├── 0449-serialize-and-deserialize-bst
+│   │   │   ├── 0449-serialize-and-deserialize-bst.java
+│   │   │   └── README.md
+│   │   ├── 0565-array-nesting
+│   │   │   ├── 0565-array-nesting.java
+│   │   │   └── README.md
+│   │   ├── 0669-trim-a-binary-search-tree
+│   │   │   ├── 0669-trim-a-binary-search-tree.java
+│   │   │   └── README.md
+│   │   ├── 0684-redundant-connection
+│   │   │   ├── 0684-redundant-connection.java
+│   │   │   └── README.md
+│   │   ├── 0854-making-a-large-island
+│   │   │   ├── 0854-making-a-large-island.java
+│   │   │   └── README.md
+│   │   ├── 0988-flip-equivalent-binary-trees
+│   │   │   ├── 0988-flip-equivalent-binary-trees.java
+│   │   │   └── README.md
+│   │   ├── 1093-recover-a-tree-from-preorder-traversal
+│   │   │   ├── 1093-recover-a-tree-from-preorder-traversal.java
+│   │   │   └── README.md
+│   │   ├── 1218-lowest-common-ancestor-of-deepest-leaves
+│   │   │   ├── 1218-lowest-common-ancestor-of-deepest-leaves.java
+│   │   │   └── README.md
+│   │   ├── 1350-remove-sub-folders-from-the-filesystem
+│   │   │   ├── 1350-remove-sub-folders-from-the-filesystem.java
+│   │   │   └── README.md
+│   │   ├── 1387-find-elements-in-a-contaminated-binary-tree
+│   │   │   ├── 1387-find-elements-in-a-contaminated-binary-tree.java
+│   │   │   └── README.md
+│   │   ├── 1396-count-servers-that-communicate
+│   │   │   ├── 1396-count-servers-that-communicate.java
+│   │   │   └── README.md
+│   │   ├── 1450-delete-leaves-with-a-given-value
+│   │   │   ├── 1450-delete-leaves-with-a-given-value.java
+│   │   │   └── README.md
+│   │   ├── 1558-course-schedule-iv
+│   │   │   ├── 1558-course-schedule-iv.java
+│   │   │   └── README.md
+│   │   ├── 1653-number-of-good-leaf-nodes-pairs
+│   │   │   ├── 1653-number-of-good-leaf-nodes-pairs.java
+│   │   │   └── README.md
+│   │   ├── 2104-operations-on-tree
+│   │   │   ├── 2104-operations-on-tree.java
+│   │   │   └── README.md
+│   │   ├── 2131-smallest-missing-genetic-value-in-each-subtree
+│   │   │   ├── 2131-smallest-missing-genetic-value-in-each-subtree.java
+│   │   │   └── README.md
+│   │   ├── 2201-valid-arrangement-of-pairs
+│   │   │   ├── 2201-valid-arrangement-of-pairs.java
+│   │   │   └── README.md
+│   │   ├── 2246-maximum-employees-to-be-invited-to-a-meeting
+│   │   │   ├── 2246-maximum-employees-to-be-invited-to-a-meeting.java
+│   │   │   └── README.md
+│   │   ├── 2438-find-closest-node-to-given-two-nodes
+│   │   │   ├── 2438-find-closest-node-to-given-two-nodes.java
+│   │   │   └── README.md
+│   │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries
+│   │   │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries.java
+│   │   │   └── README.md
+│   │   ├── 2564-most-profitable-path-in-a-tree
+│   │   │   ├── 2564-most-profitable-path-in-a-tree.java
+│   │   │   └── README.md
+│   │   ├── 2568-minimum-fuel-cost-to-report-to-the-capital
+│   │   │   ├── 2568-minimum-fuel-cost-to-report-to-the-capital.java
+│   │   │   └── README.md
+│   │   ├── 2677-cousins-in-binary-tree-ii
+│   │   │   ├── 2677-cousins-in-binary-tree-ii.java
+│   │   │   └── README.md
+│   │   ├── 2764-maximum-number-of-fish-in-a-grid
+│   │   │   ├── 2764-maximum-number-of-fish-in-a-grid.java
+│   │   │   └── README.md
+│   │   ├── 2793-count-the-number-of-complete-components
+│   │   │   ├── 2793-count-the-number-of-complete-components.java
+│   │   │   └── README.md
+│   │   ├── 3058-maximum-number-of-k-divisible-components
+│   │   │   ├── 3058-maximum-number-of-k-divisible-components.java
+│   │   │   └── README.md
+│   │   ├── 3439-find-minimum-diameter-after-merging-two-trees
+│   │   │   ├── 3439-find-minimum-diameter-after-merging-two-trees.cpp
+│   │   │   └── README.md
+│   │   ├── 3633-maximize-the-number-of-target-nodes-after-connecting-trees-i
+│   │   │   ├── 3633-maximize-the-number-of-target-nodes-after-connecting-trees-i.java
+│   │   │   └── README.md
+│   │   ├── 3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii
+│   │   │   ├── 3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii.java
+│   │   │   └── README.md
+│   │   ├── 3649-minimum-time-to-break-locks-i
+│   │   │   ├── 3649-minimum-time-to-break-locks-i.java
+│   │   │   └── README.md
+│   │   └── 3853-minimum-weighted-subgraph-with-the-required-paths-ii
+│   │       ├── 3853-minimum-weighted-subgraph-with-the-required-paths-ii.java
+│   │       └── README.md
+│   ├── DP_on_Tree
+│   │   ├── Binary_Lifting.java
+│   │   ├── Binary_Lifting_LCA.java
+│   │   ├── Distance_Queries.java
+│   │   ├── Euler_Tour_1.java
+│   │   ├── Euler_Tour_2.java
+│   │   ├── Kth_parent.java
+│   │   ├── parsa_humongous_tree.java
+│   │   ├── subordinates.java
+│   │   ├── Subtree_Queries.java
+│   │   ├── Tree_Distances_1.java
+│   │   ├── Tree_Distances_2.java
+│   │   └── Tree_Matching.java
+│   ├── Dynamic_programming
+│   │   ├── Cherry_pickup.java
+│   │   ├── coin_change_2.java
+│   │   ├── count_number_of_subset_whose_sum_equal_to_k.java
+│   │   ├── count_partition_with_given_difference_d.java
+│   │   ├── DP_ON_STOCKS
+│   │   │   ├── Best_time_to_buy_and_sell_stocks2.java
+│   │   │   ├── Best_time_to_buy_and_sell_stocks3.java
+│   │   │   ├── Best_time_to_buy_and_sell_stocks4.java
+│   │   │   ├── Best_time_to_buy_and_sell_stocks.java
+│   │   │   ├── buy_and_sell_stocks5_cooldown.java
+│   │   │   └── buy_and_sell_stock_with_transaction_fee.java
+│   │   ├── DP_ON_STRINGS
+│   │   │   ├── count_distinct_subsequences.java
+│   │   │   ├── edit_distance.java
+│   │   │   ├── length_of_longest_common_substring.java
+│   │   │   ├── longest_common_subsequence.java
+│   │   │   ├── longest_pallindromic_subsequences.java
+│   │   │   ├── Minimum_insertion_to_make_string_pallindrome.java
+│   │   │   ├── minimum_length_and_string_of_supersubsequence.java
+│   │   │   └── print_the_longest_common_subsequence.java
+│   │   ├── fibonacci.java
+│   │   ├── Frog_Jump_1.java
+│   │   ├── Frog_jump_with_k_distance.java
+│   │   ├── House_robber_2.java
+│   │   ├── LIS
+│   │   │   ├── Longes_bitonic_subsequence.java
+│   │   │   ├── Longest_increasing_subsequence.java
+│   │   │   ├── Longest_string_chain.java
+│   │   │   └── number_of_longest_increasing_subsequences.java
+│   │   ├── Longest_increasing_subsequences.java
+│   │   ├── Maximum_non_adjacent_sum.java
+│   │   ├── MCM_DP_Partition_DP
+│   │   │   ├── Burst_Balloons.java
+│   │   │   ├── Matrix_chain_Multiplication.java
+│   │   │   ├── Minimum_cost_to_cut_the_stick.java
+│   │   │   ├── pallindrome_partitioning_2.java
+│   │   │   └── Partition_array_for_maximum_sum.java
+│   │   ├── Minimum_coins.java
+│   │   ├── minimum_maximum_falling_path_sum.java
+│   │   ├── Minimum_Path_sum_in_grid.java
+│   │   ├── ninja_and_his_friends.java
+│   │   ├── Ninja_training.java
+│   │   ├── Partition_equal_subset_sum.java
+│   │   ├── partition_into_two_set_with_minimum_difference.java
+│   │   ├── print_all_longest_common_subsequences_of_string.java
+│   │   ├── Rod_cutting.java
+│   │   ├── Subset_sum_equal_to_target.java
+│   │   ├── Total_unique_path_2.java
+│   │   ├── Total_unique_path.java
+│   │   ├── Triangular_minimum_path_sum.java
+│   │   ├── unbound_knapsack.java
+│   │   └── zero_one_knapsack.java
+│   ├── GRAPH
+│   │   ├── BFS.java
+│   │   ├── bipartite_graph.java
+│   │   ├── bridges.java
+│   │   ├── Cycle_Printing.java
+│   │   ├── Detect_Cycle_in_a_graph.java
+│   │   ├── DFS.java
+│   │   ├── Flood_Fill_Algorithm.java
+│   │   ├── Graph_Bride.java
+│   │   ├── LCA.java
+│   │   ├── Number_of_distinct_islands.java
+│   │   ├── Number_of_Enclaves.java
+│   │   ├── Number_of_island.java
+│   │   ├── Number_of_provinces.java
+│   │   ├── Representation_of_undirected_graph.java
+│   │   ├── Rotten_Oranges.java
+│   │   ├── shortest_path_algorithm
+│   │   │   ├── BellManFord.java
+│   │   │   ├── Cheapest_filghts_within_k_stops.java
+│   │   │   ├── Dijkstra_algorithm.java
+│   │   │   ├── Minimum_operation_to_reach_at_end_by_multiplication.java
+│   │   │   ├── Network_delay_time.java
+│   │   │   ├── Number_of_ways_to_reach_n.java
+│   │   │   ├── Path_with_minimum_effort.java
+│   │   │   ├── print_the_shortest_path.java
+│   │   │   ├── shortest_distance_in_binary_maze.java
+│   │   │   ├── shortest_path_in_DAG.java
+│   │   │   ├── shortest_path_in_undirected_graph_having_unit_distance.java
+│   │   │   └── word_ladder.java
+│   │   ├── spanning_tree_and_disjoint_set
+│   │   │   ├── accounts_merge.java
+│   │   │   ├── Disjoint_set.java
+│   │   │   ├── Kruskals_Algorithm.java
+│   │   │   ├── Minimum_spanning_tree.java
+│   │   │   └── Number_of_operations_to_make_Network_connected.java
+│   │   ├── Surrounded_Region.java
+│   │   ├── Topological_sort
+│   │   │   ├── alien_dictionary.java
+│   │   │   ├── Course_Schedule_2.java
+│   │   │   ├── Course_Schedule.java
+│   │   │   ├── detect_cycle_in_directed_graph.java
+│   │   │   ├── find_eventual_safe_states.java
+│   │   │   └── topological_sort.java
+│   │   └── zero_one_matrix.java
+│   ├── Math
+│   ├── README.md
+│   ├── Recursion
+│   │   ├── combination_sum_1.java
+│   │   ├── combination_sum_2.java
+│   │   ├── combination_sum_3.java
+│   │   ├── Count_all_the_subsequences_whose_sum_equal_to_k.java
+│   │   ├── Generate_all_balanced_paranthesis.java
+│   │   ├── Generate_all_subsequences_whose_sum_equal_to_k.java
+│   │   ├── Generate_all_the_permutations.java
+│   │   ├── Generate_all_the_subsequences.java
+│   │   ├── N_QUEENS.java
+│   │   ├── palindrome_partitioning.java
+│   │   ├── subset_sum_1.java
+│   │   ├── subset_sum_2.java
+│   │   └── sudoku_solver.java
+│   ├── sliding window
+│   │   ├── count_distinct_element_in_evey_window_of_size_k.java
+│   │   ├── count_occurences_of_anagram_sliding_window.java
+│   │   ├── First_negative_number_in_every_window_of_size_k.java
+│   │   ├── fruit_into_baskets.java
+│   │   ├── longest_substring_without_repeating_characters.java
+│   │   ├── maximum_consecutive_ones3.java
+│   │   ├── Maximum_sum_subarray_of_size_k_sliding_window.java
+│   │   ├── smallest_distinct_window.java
+│   │   └── smallest_subarray_with_sum_gretater_than_x.java
+│   ├── Sorting
+│   │   ├── Bubble_Sort.java
+│   │   ├── Insertion_Sort.java
+│   │   ├── Merge_Sort.java
+│   │   ├── Quick_Sort.java
+│   │   └── Selection_Sort.java
+│   ├── String
+│   │   ├── KMP.java
+│   │   ├── pattern_searching_naive.java
+│   │   ├── RABIN_KARP.java
+│   │   ├── remove_outerMost_parenthesis.java
+│   │   ├── Reverse_words_in_a_string.java
+│   │   ├── String_Hashing.java
+│   │   └── Template.java
+│   └── TREE
+│       ├── 0104-maximum-depth-of-binary-tree
+│       │   ├── 0104-maximum-depth-of-binary-tree.java
+│       │   └── README.md
+│       ├── 0173-binary-search-tree-iterator
+│       │   ├── 0173-binary-search-tree-iterator.java
+│       │   └── README.md
+│       ├── 0297-serialize-and-deserialize-binary-tree
+│       │   ├── 0297-serialize-and-deserialize-binary-tree.java
+│       │   └── README.md
+│       ├── 0331-verify-preorder-serialization-of-a-binary-tree
+│       │   ├── 0331-verify-preorder-serialization-of-a-binary-tree.java
+│       │   └── README.md
+│       ├── 0337-house-robber-iii
+│       │   ├── 0337-house-robber-iii.java
+│       │   └── README.md
+│       ├── 0449-serialize-and-deserialize-bst
+│       │   ├── 0449-serialize-and-deserialize-bst.java
+│       │   └── README.md
+│       ├── 0925-construct-binary-tree-from-preorder-and-postorder-traversal
+│       │   ├── 0925-construct-binary-tree-from-preorder-and-postorder-traversal.java
+│       │   └── README.md
+│       ├── 0988-flip-equivalent-binary-trees
+│       │   ├── 0988-flip-equivalent-binary-trees.java
+│       │   └── README.md
+│       ├── 1040-maximum-binary-tree-ii
+│       │   ├── 1040-maximum-binary-tree-ii.java
+│       │   └── README.md
+│       ├── 1093-recover-a-tree-from-preorder-traversal
+│       │   ├── 1093-recover-a-tree-from-preorder-traversal.java
+│       │   └── README.md
+│       ├── 1218-lowest-common-ancestor-of-deepest-leaves
+│       │   ├── 1218-lowest-common-ancestor-of-deepest-leaves.java
+│       │   └── README.md
+│       ├── 1387-find-elements-in-a-contaminated-binary-tree
+│       │   ├── 1387-find-elements-in-a-contaminated-binary-tree.java
+│       │   └── README.md
+│       ├── 1450-delete-leaves-with-a-given-value
+│       │   ├── 1450-delete-leaves-with-a-given-value.java
+│       │   └── README.md
+│       ├── 1653-number-of-good-leaf-nodes-pairs
+│       │   ├── 1653-number-of-good-leaf-nodes-pairs.java
+│       │   └── README.md
+│       ├── 2104-operations-on-tree
+│       │   ├── 2104-operations-on-tree.java
+│       │   └── README.md
+│       ├── 2131-smallest-missing-genetic-value-in-each-subtree
+│       │   ├── 2131-smallest-missing-genetic-value-in-each-subtree.java
+│       │   └── README.md
+│       ├── 2545-height-of-binary-tree-after-subtree-removal-queries
+│       │   ├── 2545-height-of-binary-tree-after-subtree-removal-queries.java
+│       │   └── README.md
+│       ├── 2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level
+│       │   ├── 2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level.java
+│       │   └── README.md
+│       ├── 2564-most-profitable-path-in-a-tree
+│       │   ├── 2564-most-profitable-path-in-a-tree.java
+│       │   └── README.md
+│       ├── 2568-minimum-fuel-cost-to-report-to-the-capital
+│       │   ├── 2568-minimum-fuel-cost-to-report-to-the-capital.java
+│       │   └── README.md
+│       ├── 2646-kth-largest-sum-in-a-binary-tree
+│       │   ├── 2646-kth-largest-sum-in-a-binary-tree.java
+│       │   └── README.md
+│       ├── 2677-cousins-in-binary-tree-ii
+│       │   ├── 2677-cousins-in-binary-tree-ii.java
+│       │   └── README.md
+│       ├── 3058-maximum-number-of-k-divisible-components
+│       │   ├── 3058-maximum-number-of-k-divisible-components.java
+│       │   └── README.md
+│       ├── 3307-find-the-maximum-sum-of-node-values
+│       │   ├── 3307-find-the-maximum-sum-of-node-values.java
+│       │   └── README.md
+│       ├── 3439-find-minimum-diameter-after-merging-two-trees
+│       │   ├── 3439-find-minimum-diameter-after-merging-two-trees.cpp
+│       │   └── README.md
+│       ├── 3633-maximize-the-number-of-target-nodes-after-connecting-trees-i
+│       │   ├── 3633-maximize-the-number-of-target-nodes-after-connecting-trees-i.java
+│       │   └── README.md
+│       ├── 3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii
+│       │   ├── 3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii.java
+│       │   └── README.md
+│       ├── 3853-minimum-weighted-subgraph-with-the-required-paths-ii
+│       │   ├── 3853-minimum-weighted-subgraph-with-the-required-paths-ii.java
+│       │   └── README.md
+│       ├── BFS_level_wise_traversal.java
+│       ├── bottom_view_of_binary_tree.java
+│       ├── boundary_traversal_of_tree.java
+│       ├── check_if_two_trees_are_indentical.java
+│       ├── children_sum_property.java
+│       ├── construct_binary_tree_from_in_and_post_order.java
+│       ├── construct_binary_tree_from_pre_and_in_order.java
+│       ├── Diameter_of_tree.java
+│       ├── Height_Depth_of_tree.java
+│       ├── Height_of_Tree.java
+│       ├── Inorder_Traversal.java
+│       ├── Is_balanced_binary_tree.java
+│       ├── is_symmetric.java
+│       ├── left_right_view_of_binary_tree.java
+│       ├── lowest_common_ancestor.java
+│       ├── Maximum_path_sum.java
+│       ├── maximum_width_in_a_binary_tree.java
+│       ├── minimum_time_to_burn_binary_tree.java
+│       ├── Post_Order_Traversal.java
+│       ├── Pre_order_Traversal.java
+│       ├── print_all_the_nodes_at_a_distance_k.java
+│       ├── root_to_leaf_node.java
+│       ├── root_to_node_path.java
+│       ├── segment_tree
+│       │   ├── Dynamic_range_minimum_queries.java
+│       │   ├── Dynamic_range_sum_queries.java
+│       │   ├── Range_update_lazy_propagation_sum_update_seg_tree.cpp
+│       │   ├── Static_Range_minimum_queries.java
+│       │   └── Static_Range_sum_queries.java
+│       ├── top_view_of_binary_tree.java
+│       ├── tree_template.java
+│       ├── vertical_order_traversal.java
+│       └── zigzag_or_spiral_traversal.java
+├── Java with OOP
+│   ├── Exception Handling
+│   │   └── README.md
+│   ├── Garbage Collection
+│   │   └── README.md
+│   ├── MultiThreading
+│   │   └── README.md
+│   ├── OOP
+│   │   ├── Abstraction
+│   │   │   └── Abstraction.java
+│   │   ├── DynamicPolymorphism
+│   │   │   └── DynamicPolymorphism.java
+│   │   ├── Encapsulation
+│   │   │   └── Encapsulation.java
+│   │   ├── Inheritance
+│   │   │   └── Inheritance.java
+│   │   ├── README.md
+│   │   ├── StaticAndDynamicPolymorphism
+│   │   │   └── StaticAndDynamicPolymorphism.java
+│   │   └── StaticPolymorphism
+│   │       └── StaticPolymorphism.java
+│   └── Spring & SpringBoot
+│       └── README.md
+├── LLD
+│   ├── 01-fundamentals
+│   │   ├── 01-what-is-lld.md
+│   │   ├── 03-uml-basics.md
+│   │   └── README.md
+│   ├── 02-solid-principles
+│   │   ├── 01-srp.md
+│   │   ├── 02-ocp.md
+│   │   ├── 03-lsp.md
+│   │   ├── 04-isp.md
+│   │   ├── 05-dip.md
+│   │   └── README.md
+│   ├── 03-design-patterns
+│   │   ├── 01-singleton
+│   │   │   └── README.md
+│   │   ├── 02-factory
+│   │   │   └── README.md
+│   │   ├── 03-observer
+│   │   │   └── README.md
+│   │   ├── 04-strategy
+│   │   │   └── README.md
+│   │   ├── 05-command
+│   │   │   └── README.md
+│   │   ├── 06-decorator
+│   │   │   └── README.md
+│   │   ├── 07-builder
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 04-advanced-concepts
+│   │   └── README.md
+│   ├── 05-case-studies
+│   │   ├── 01-parking-lot
+│   │   │   └── README.md
+│   │   ├── 02-elevator-system
+│   │   ├── 03-chat-application
+│   │   ├── 04-library-management
+│   │   ├── 05-ecommerce-system
+│   │   ├── 06-social-media-feed
+│   │   ├── 07-gaming-system
+│   │   └── README.md
+│   ├── code-examples
+│   │   ├── cpp
+│   │   ├── java
+│   │   │   ├── case-studies
+│   │   │   │   ├── chat-application
+│   │   │   │   ├── ecommerce-system
+│   │   │   │   ├── elevator-system
+│   │   │   │   ├── gaming-system
+│   │   │   │   ├── library-management
+│   │   │   │   ├── parking-lot
+│   │   │   │   └── social-media-feed
+│   │   │   ├── design-patterns
+│   │   │   │   ├── behavioral
+│   │   │   │   │   ├── chain-of-responsibility
+│   │   │   │   │   ├── command
+│   │   │   │   │   ├── iterator
+│   │   │   │   │   ├── mediator
+│   │   │   │   │   ├── memento
+│   │   │   │   │   ├── observer
+│   │   │   │   │   ├── state
+│   │   │   │   │   ├── strategy
+│   │   │   │   │   ├── template-method
+│   │   │   │   │   └── visitor
+│   │   │   │   ├── creational
+│   │   │   │   │   ├── abstract-factory
+│   │   │   │   │   ├── builder
+│   │   │   │   │   ├── factory-method
+│   │   │   │   │   ├── prototype
+│   │   │   │   │   └── singleton
+│   │   │   │   └── structural
+│   │   │   │       ├── adapter
+│   │   │   │       ├── bridge
+│   │   │   │       ├── composite
+│   │   │   │       ├── decorator
+│   │   │   │       ├── facade
+│   │   │   │       ├── flyweight
+│   │   │   │       └── proxy
+│   │   │   ├── README.md
+│   │   │   ├── solid-principles
+│   │   │   │   ├── dip
+│   │   │   │   ├── isp
+│   │   │   │   ├── lsp
+│   │   │   │   ├── ocp
+│   │   │   │   └── srp
+│   │   │   │       ├── Employee.java
+│   │   │   │       ├── EmployeeRepository.java
+│   │   │   │       ├── SalaryCalculator.java
+│   │   │   │       └── SRPDemo.java
+│   │   │   └── utils
+│   │   ├── python
+│   │   └── typescript
+│   └── README.md
+├── OS
+│   ├── OS_Full_Notes.pdf
+│   ├── pic
+│   │   ├── batchOs.png
+│   │   ├── binarySemaphores.png
+│   │   ├── convoyEffect.png
+│   │   ├── dp1.png
+│   │   ├── fixedAndVariable.png
+│   │   ├── fork.png
+│   │   ├── memoryManagement.png
+│   │   ├── memoryManagementTechniques.png
+│   │   ├── os.png
+│   │   ├── PCB.png
+│   │   ├── peter.png
+│   │   ├── process.png
+│   │   ├── process_states.png
+│   │   ├── rag.png
+│   │   ├── semaphores.png
+│   │   ├── singleProcessOs.png
+│   │   ├── swapping.png
+│   │   ├── systemCall.png
+│   │   └── virtualMemory.png
+│   └── README.md
+├── README.md
+├── SQL
+│   ├── first.sql
+│   ├── README.md
+│   └── run_sql.sh
+└── temp.txt
+
+511 directories, 1128 files

@@ -10,6 +10,8 @@
 
 ---
 
+[Download Full Notes PDF](./DBMS.pdf)
+
 - <p style = "color:orange"> 📚 Data </p>
     
     - Data is a collections of raw, unorganized facts and details like numbers, text, images, and more.
@@ -422,7 +424,6 @@ In 1NF
             - When a table has a primary key that is made up of two or more columns, then all the columns(not included in the primary key) in that table should depend on the entire primary key and not on a part of it. If any column(which is not in the primary key) depends on a part of the primary key then we say we have Partial dependency in the table.
         - Example
 
-<div align = "center"> 
 Not in 2NF
 
 | StudentID | SubjectID | StudentName | SubjectName |
@@ -434,6 +435,8 @@ Not in 2NF
 Not in 2NF Because here lets say we have a primary key (studentId, SubjectId) then StudentName here is having a partial dependency as StudentName is only dependent on studentId but on SubjectId;
 
 In 2NF (split it into 3 tables)
+
+### Students Table
 
 | StudentID | StudentName |
 | --------- | ----------- |
@@ -2763,3 +2766,39 @@ This setup implements **Command Query Responsibility Segregation (CQRS):**
 ---
 
 **Summary:**
+
+## Topics Covered
+
+### Database Fundamentals
+
+- ER diagrams and relationships
+- Normalization (1NF, 2NF, 3NF, BCNF)
+- Keys (Primary, Foreign, Candidate)
+- Database architecture
+
+### Indexing
+
+- B-Trees and B+ Trees
+- Primary and secondary indexing
+- Dense and sparse indexing
+- Clustered vs non-clustered
+
+### Transactions
+
+- ACID properties
+- Concurrency control
+- Locking mechanisms
+- Deadlock handling
+
+### Query Optimization
+
+Understanding query execution and optimization techniques.
+
+## Visual References
+
+Check the `Pictures/` folder for detailed diagrams on:
+
+- Database architecture
+- Indexing structures
+- ER relationships
+- Transaction management
