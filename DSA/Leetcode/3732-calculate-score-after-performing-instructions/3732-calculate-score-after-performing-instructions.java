@@ -4,11 +4,15 @@ class Solution {
         int idx = 0;
         int vis[] = new int[values.length];
         while (true) {
-            if (vis[idx] == 1) break;
+            if (vis[idx] == 1)
+                break;
             vis[idx] = 1;
-            if (instructions[idx].equals("add")) res += values[idx++];
-            else idx += values[idx];
-            if (idx >= values.length || idx < 0) break;
+            if (instructions[idx].equals("add"))
+                res += values[idx++];
+            else
+                idx += values[idx];
+            if (idx >= values.length || idx < 0)
+                break;
         }
         return res;
     }

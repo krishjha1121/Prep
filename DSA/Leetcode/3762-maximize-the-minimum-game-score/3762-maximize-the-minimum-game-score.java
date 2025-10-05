@@ -8,21 +8,20 @@ class Solution {
             if (ok(mid, points, m)) {
                 ans = mid;
                 low = mid + 1;
-            }
-            else high = mid - 1;
+            } else
+                high = mid - 1;
         }
         return ans;
     }
     private boolean ok(long mid, int points[], int moves) {
         int n = points.length;
         long total = 0, sum = 0, skip = 0;
-        for(int i = 0; i < n && total <= moves; i++) {
+        for (int i = 0; i < n && total <= moves; i++) {
             long req = (mid + points[i] - 1) / points[i];
-            if(sum >= req) {
+            if (sum >= req) {
                 sum = 0;
                 skip++;
-            }
-            else {
+            } else {
                 long p = sum * points[i];
                 long ops = (((mid - p) + points[i] - 1) / points[i]);
                 total += 2 * ops - 1;

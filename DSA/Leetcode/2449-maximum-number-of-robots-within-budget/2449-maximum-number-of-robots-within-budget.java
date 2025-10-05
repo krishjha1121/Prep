@@ -7,8 +7,8 @@ class Solution {
             if (ok(mid, chargeTimes, runningCosts, budget)) {
                 ans = mid;
                 low = mid + 1;
-            }
-            else high = mid - 1;
+            } else
+                high = mid - 1;
         }
         return ans;
     }
@@ -25,10 +25,12 @@ class Solution {
             current_sum += runningCosts[i];
         }
         long current_budget = set.last() * 1L +  mid * 1L * current_sum;
-        if (current_budget <= budget) return true;
+        if (current_budget <= budget)
+            return true;
         for (int i = mid; i < n; i++) {
             int current = chargeTimes[i];
-            current_sum += runningCosts[i]; current_sum -= runningCosts[start];
+            current_sum += runningCosts[i];
+            current_sum -= runningCosts[start];
             map.put(current, map.getOrDefault(current, 0) + 1);
             map.put(chargeTimes[start], map.getOrDefault(chargeTimes[start], 0) -1);
             set.add(current);
@@ -38,7 +40,8 @@ class Solution {
             }
             start++;
             current_budget = set.last() * 1L + mid * (current_sum);
-            if (current_budget <= budget) return true;
+            if (current_budget <= budget)
+                return true;
         }
         return false;
     }

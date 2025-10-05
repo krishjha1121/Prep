@@ -4,10 +4,11 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         Stack<Integer> st = new Stack<>();
         int num = 1;
-        for(int i = 0; i <= n; i++){
+        for (int i = 0; i <= n; i++) {
             st.push(num++);
-            if(i == pattern.length() || pattern.charAt(i) == 'I'){
-                while(!st.isEmpty()) sb.append(st.pop()); 
+            if (i == pattern.length() || pattern.charAt(i) == 'I') {
+                while (!st.isEmpty())
+                    sb.append(st.pop());
             }
         }
         return sb.toString();

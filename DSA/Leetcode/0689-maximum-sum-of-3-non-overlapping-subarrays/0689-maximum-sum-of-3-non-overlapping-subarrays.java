@@ -13,18 +13,16 @@ class Solution {
         int[] left = new int[sums.length];
         int leftMaxIndex = 0;
         for (int i = 0; i < sums.length; i++) {
-            if (sums[i] > sums[leftMaxIndex]) {
+            if (sums[i] > sums[leftMaxIndex])
                 leftMaxIndex = i;
-            }
             left[i] = leftMaxIndex;
         }
 
         int[] right = new int[sums.length];
         int rightMaxIndex = sums.length - 1;
         for (int i = sums.length - 1; i >= 0; i--) {
-            if (sums[i] >= sums[rightMaxIndex]) {
+            if (sums[i] >= sums[rightMaxIndex])
                 rightMaxIndex = i;
-            }
             right[i] = rightMaxIndex;
         }
 

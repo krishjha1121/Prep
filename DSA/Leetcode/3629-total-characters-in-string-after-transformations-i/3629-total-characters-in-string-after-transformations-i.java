@@ -4,7 +4,8 @@ class Solution {
         int n = s.length();
         int res = 0;
         int freq[] = new int[26];
-        for (int i = 0; i < n; i++) freq[s.charAt(i) - 'a']++;
+        for (int i = 0; i < n; i++)
+            freq[s.charAt(i) - 'a']++;
         while (t-->0) {
             int zCount = freq[25];
             for (int i = 24; i >= 0; i--) {
@@ -16,7 +17,8 @@ class Solution {
                 freq[1] = (freq[1] + zCount) % MOD;
             }
         }
-        for (int ele : freq) res = (res + ele) % MOD;
+        for (int ele : freq)
+            res = (res + ele) % MOD;
         return res;
     }
 }

@@ -8,7 +8,6 @@ class Solution {
                     res.add(idx);
                     break;
                 }
-                
             }
             idx++;
         }

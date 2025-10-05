@@ -5,7 +5,8 @@ class Solution {
         int maxi = 1;
         for (int k = n; k >= 2; k--) {
             sums = new HashSet<>();
-            if (check(k, grid)) return k;
+            if (check(k, grid))
+                return k;
         }
         return 1;
     }
@@ -15,9 +16,13 @@ class Solution {
             for (int j = 0; j < m; j++) {
                 int r1 = i, c1 = j;
                 int r2 = r1 + len - 1, c2 = c1 + len - 1;
-                if (r2 >= n || c2 >= m) continue;
-                check_row(r1, c1, r2, c2, grid); check_col(r1, c1, r2, c2, grid); check_diagonal(r1, c1, r2, c2, grid);
-                if (sums.size() == 1) return true;
+                if (r2 >= n || c2 >= m)
+                    continue;
+                check_row(r1, c1, r2, c2, grid);
+                check_col(r1, c1, r2, c2, grid);
+                check_diagonal(r1, c1, r2, c2, grid);
+                if (sums.size() == 1)
+                    return true;
                 sums = new HashSet<>();
             }
         }
@@ -27,7 +32,8 @@ class Solution {
         int n = grid.length, m = grid[0].length;
         for (int i = r1; i <= r2; i++) {
             int sum = 0;
-            for (int j = c1; j <= c2; j++) sum += grid[i][j];
+            for (int j = c1; j <= c2; j++)
+                sum += grid[i][j];
             sums.add(sum);
         }
     }
@@ -35,7 +41,8 @@ class Solution {
         int n = grid.length, m = grid[0].length;
         for (int j = c1; j <= c2; j++) {
             int sum = 0;
-            for (int i = r1; i <= r2; i++) sum += grid[i][j];
+            for (int i = r1; i <= r2; i++)
+                sum += grid[i][j];
             sums.add(sum);
         }
     }
@@ -51,7 +58,8 @@ class Solution {
         sum += grid[r2][c2];
         sums.add(sum);
         sum = 0;
-        i = r1; j = c2;
+        i = r1;
+        j = c2;
         while (i != r2 && j != c1) {
             sum += grid[i][j];
             i++;

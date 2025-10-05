@@ -37,7 +37,8 @@ class Solution {
     public int[] maxPoints(int[][] grid, int[] queries) {
         int n = grid.length, m = grid[0].length;
         ArrayList<Pair> sorted_queries = new ArrayList<>();
-        for (int i = 0; i < queries.length; i++) sorted_queries.add(new Pair(queries[i], i));
+        for (int i = 0; i < queries.length; i++)
+            sorted_queries.add(new Pair(queries[i], i));
         Collections.sort(sorted_queries, new custom_sort());
         int res[] = new int[queries.length];
         PriorityQueue<Tuple> pq = new PriorityQueue<>(new custom_sort1());

@@ -1,20 +1,20 @@
 /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+    Definition for a binary tree node.
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode() {}
+       TreeNode(int val) { this.val = val; }
+       TreeNode(int val, TreeNode left, TreeNode right) {
+           this.val = val;
+           this.left = left;
+           this.right = right;
+       }
+    }
+*/
 class Solution {
-    private ArrayList<ArrayList<Integer>> adj;
+    private ArrayList<ArrayList<Integer >> adj;
     private int depth[];
     private ArrayList<Integer> tour;
     private int first[];
@@ -25,12 +25,15 @@ class Solution {
         tour = new ArrayList<>();
         first = new int[(int)(1e5 + 1)];
         last = new int[(int)(1e5 + 1)];
-        Arrays.fill(first, -1); Arrays.fill(last, -1);
+        Arrays.fill(first, -1);
+        Arrays.fill(last, -1);
 
         Euler_Dfs(root.val, 0);
         for (int i = 0; i < tour.size(); i++) {
-            if (first[tour.get(i)] == -1) first[tour.get(i)] = i;
-            else last[tour.get(i)] = i;
+            if (first[tour.get(i)] == -1)
+                first[tour.get(i)] = i;
+            else
+                last[tour.get(i)] = i;
         }
 
         int maxi_pref[] = new int[tour.size() + 1];
@@ -55,14 +58,16 @@ class Solution {
             int left = first[node];
             int right = last[node];
             int current_maxi = 0;
-            if (left - 1 >= 0) current_maxi = Math.max(current_maxi, maxi_pref[left - 1]);
-            if (right + 1 < tour.size()) current_maxi = Math.max(current_maxi, maxi_suff[right + 1]);
+            if (left - 1 >= 0)
+                current_maxi = Math.max(current_maxi, maxi_pref[left - 1]);
+            if (right + 1 < tour.size())
+                current_maxi = Math.max(current_maxi, maxi_suff[right + 1]);
             res[i] = current_maxi;
         }
         return res;
     }
 
-    private void Euler_Dfs(int u , int par) {
+    private void Euler_Dfs(int u, int par) {
         tour.add(u);
         for (int v : adj.get(u)) {
             if (v != par) {
@@ -75,7 +80,8 @@ class Solution {
 
     private void Build_Graph(TreeNode root) {
         adj = new ArrayList<>();
-        for (int i = 0; i <= (int)(1e5 + 1); i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= (int)(1e5 + 1); i++)
+            adj.add(new ArrayList<>());
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         while (q.size() > 0) {

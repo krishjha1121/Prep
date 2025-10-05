@@ -18,14 +18,15 @@ class MyCalendar {
         for (int i = 0; i < bookings.size(); i++) {
             int current_start = bookings.get(i).start;
             int current_end = bookings.get(i).end;
-            if (start < current_end && end > current_start) return false;
+            if (start < current_end && end > current_start)
+                return false;
         }
         bookings.add(new Pair(start, end));
         return true;
     }
 }
 /**
- * Your MyCalendar object will be instantiated and called as such:
- * MyCalendar obj = new MyCalendar();
- * boolean param_1 = obj.book(start,end);
- */
+    Your MyCalendar object will be instantiated and called as such:
+    MyCalendar obj = new MyCalendar();
+    boolean param_1 = obj.book(start,end);
+*/

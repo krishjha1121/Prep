@@ -6,7 +6,8 @@ class Solution {
     }
     private int solve(int arr[], int target) {
         int res = 0;
-        for (int ele : arr) res += Math.abs(target - ele);
+        for (int ele : arr)
+            res += Math.abs(target - ele);
         return res;
     }
 }

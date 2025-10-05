@@ -1,6 +1,6 @@
 class Solution {
     public int longestMonotonicSubarray(int[] nums) {
-        return Math.max(si(nums) , sd(nums));
+        return Math.max(si(nums), sd(nums));
     }
     public static int si(int arr[]) {
         int n = arr.length;
@@ -8,10 +8,13 @@ class Solution {
         for (int i = 0; i < n; i++) {
             count = 0;
             for (int j = i; j < n; j++) {
-                if (j == i) count++;
+                if (j == i)
+                    count++;
                 else {
-                    if(arr[j] > arr[j - 1]) count++;
-                    else break;
+                    if (arr[j] > arr[j - 1])
+                        count++;
+                    else
+                        break;
                 }
                 maxi = Math.max(maxi,  count);
             }
@@ -24,10 +27,13 @@ class Solution {
         for (int i = 0; i < n; i++) {
             count = 0;
             for (int j = i; j < n; j++) {
-                if (j == i) count++;
+                if (j == i)
+                    count++;
                 else {
-                    if(arr[j] < arr[j - 1]) count++;
-                    else break;
+                    if (arr[j] < arr[j - 1])
+                        count++;
+                    else
+                        break;
                 }
                 maxi = Math.max(maxi, count);
             }

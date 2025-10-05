@@ -1,5 +1,5 @@
 class Solution {
-    private ArrayList<ArrayList<Integer>> adj;
+    private ArrayList<ArrayList<Integer >> adj;
     private int parent[];
     private int time[];
     private class Pair {
@@ -28,7 +28,8 @@ class Solution {
     public int mostProfitablePath(int[][] edges, int bob, int[] amount) {
         int maxi = Integer.MIN_VALUE;
         adj = new ArrayList<>();
-        for (int i = 0; i <= (int)(1e5 + 1); i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= (int)(1e5 + 1); i++)
+            adj.add(new ArrayList<>());
         for (int current[] : edges) {
             int u = current[0];
             int v = current[1];
@@ -38,7 +39,7 @@ class Solution {
             maxi = Math.max(maxi, v);
         }
         int n = maxi;
-        parent= new int[n + 1];
+        parent = new int[n + 1];
         parent[0] = -1;
         fill_parent(0, -1, parent);
         time = new int[n + 1];
@@ -46,7 +47,8 @@ class Solution {
         fill_time(time, bob);
         ArrayList<Integer> leaf = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
-            if (adj.get(i).size() == 1) leaf.add(i); 
+            if (adj.get(i).size() == 1)
+                leaf.add(i);
         }
         int vis[] = new int[n + 1];
         int res[] = new int[n + 1];
@@ -62,20 +64,24 @@ class Solution {
             for (int v : adj.get(current_node)) {
                 if (vis[v] == 0) {
                     vis[v] = 1;
-                    if (current_time + 1 == time[v]) res[v] = res[current_node] + amount[v] / 2;
-                    else if(current_time + 1 < time[v] || time[v] == -1) res[v] = amount[v] + res[current_node];
-                    else res[v] = res[current_node];
-                    q.offer(new Pair(v, res[v] , current_time + 1));
+                    if (current_time + 1 == time[v])
+                        res[v] = res[current_node] + amount[v] / 2;
+                    else if (current_time + 1 < time[v] || time[v] == -1)
+                        res[v] = amount[v] + res[current_node];
+                    else
+                        res[v] = res[current_node];
+                    q.offer(new Pair(v, res[v], current_time + 1));
                 }
             }
         }
         int maxi_ans = Integer.MIN_VALUE;
         for (int i = 1; i <= n; i++) {
-            if (adj.get(i).size() == 1) maxi_ans = Math.max(maxi_ans, res[i]);
+            if (adj.get(i).size() == 1)
+                maxi_ans = Math.max(maxi_ans, res[i]);
         }
         return maxi_ans;
     }
-    private void fill_time(int time[] , int bob) {
+    private void fill_time(int time[], int bob) {
         int current_time = 0;
         time[bob] = current_time;
         int pos = bob;
@@ -84,11 +90,11 @@ class Solution {
             pos = parent[pos];
         }
     }
-    private void fill_parent(int u , int par, int parent[]) {
+    private void fill_parent(int u, int par, int parent[]) {
         for (int v : adj.get(u)) {
             if (v != par) {
                 parent[v] = u;
-                fill_parent(v, u , parent);
+                fill_parent(v, u, parent);
             }
         }
     }

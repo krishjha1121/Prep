@@ -6,7 +6,7 @@ class Solution {
             q.offer(i);
             ans += i;
         }
-        while (k-- >0) {
+        while (k-- > 0) {
             int v = q.poll();
             ans -= (v - (int) Math.sqrt(v));
             q.offer((int) Math.sqrt(v));

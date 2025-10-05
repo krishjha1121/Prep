@@ -1,7 +1,8 @@
 class Solution {
     public boolean sumOfNumberAndReverse(int num) {
         for (int i = num / 2; i <= num; i++) {
-            if (i + get(i) == num) return true;
+            if (i + get(i) == num)
+                return true;
         }
         return false;
     }

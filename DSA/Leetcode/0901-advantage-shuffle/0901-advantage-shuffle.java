@@ -14,12 +14,13 @@ class Solution {
             if (next != null) {
                 ans[i] = next;
                 map.put(next, map.getOrDefault(next, 0) -1);
-                if (map.getOrDefault(next, 0) == 0) set.remove(next);
-            }
-            else {
+                if (map.getOrDefault(next, 0) == 0)
+                    set.remove(next);
+            } else {
                 ans[i] = set.first();
                 map.put(set.first(), map.getOrDefault(set.first(), 0) -1);
-                if (map.getOrDefault(set.first(), 0) == 0) set.remove(set.first());
+                if (map.getOrDefault(set.first(), 0) == 0)
+                    set.remove(set.first());
             }
         }
         return ans;

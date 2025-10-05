@@ -2,9 +2,10 @@ class Solution {
     public List<Integer> solveQueries(int[] nums, int[] queries) {
         List<Integer> res = new ArrayList<>();
         int n = nums.length;
-        HashMap<Integer, TreeSet<Integer>> map = new HashMap<>();
+        HashMap<Integer, TreeSet<Integer >> map = new HashMap<>();
         for (int i = 0; i < n; i++) {
-            if (!map.containsKey(nums[i])) map.put(nums[i], new TreeSet<>());
+            if (!map.containsKey(nums[i]))
+                map.put(nums[i], new TreeSet<>());
             map.get(nums[i]).add(i);
         }
         for (int ele : queries) {
@@ -23,8 +24,10 @@ class Solution {
                 dist = Math.min(dist, new_dist);
                 dist = Math.min(dist, Math.abs(ele - current.lower(ele)));
             }
-            if (dist == Integer.MAX_VALUE / 10) res.add(-1);
-            else res.add(dist);
+            if (dist == Integer.MAX_VALUE / 10)
+                res.add(-1);
+            else
+                res.add(dist);
         }
         return res;
     }

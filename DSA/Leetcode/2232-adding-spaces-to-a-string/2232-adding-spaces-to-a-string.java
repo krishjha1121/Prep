@@ -10,8 +10,8 @@ class Solution {
                 current++;
                 res.append(" ");
                 res.append(ch);
-            }
-            else res.append(ch);
+            } else
+                res.append(ch);
         }
         return res.toString();
     }

@@ -23,13 +23,15 @@ class Solution {
             }
         }
         public int Leader(int u) {
-            if (parent[u] == u) return parent[u];
+            if (parent[u] == u)
+                return parent[u];
             return parent[u] = Leader(parent[u]);
         }
-        public void unite(int u , int v) {
+        public void unite(int u, int v) {
             u = Leader(u);
             v = Leader(v);
-            if (u == v) return;
+            if (u == v)
+                return;
             if (size[v] > size[u]) {
                 int temp = u;
                 u = v;
@@ -46,14 +48,14 @@ class Solution {
         int vis[][] = new int[n + 1][m + 1];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (vis[i][j] == 0 && grid[i][j] == 1) {
-                    BFS(i , j , vis, grid, dsu);
-                }
+                if (vis[i][j] == 0 && grid[i][j] == 1)
+                    BFS(i, j, vis, grid, dsu);
             }
         }
         int maxi = 0;
-        for (int i = 0; i <= n * m; i++) maxi = Math.max(maxi, dsu.size[dsu.Leader(i)]);
-        int dir[][] = {{-1, 0} , {1, 0} , {0, -1} , {0 , 1}};
+        for (int i = 0; i <= n * m; i++)
+            maxi = Math.max(maxi, dsu.size[dsu.Leader(i)]);
+        int dir[][] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (grid[i][j] == 0) {
@@ -67,7 +69,8 @@ class Solution {
                         }
                     }
                     int sum = 0;
-                    for (int ele : ids) sum += dsu.size[ele];
+                    for (int ele : ids)
+                        sum += dsu.size[ele];
                     sum++;
                     maxi = Math.max(maxi, sum);
                 }
@@ -78,7 +81,7 @@ class Solution {
     private void BFS(int row, int col, int vis[][], int grid[][], DSU dsu) {
         int n = grid.length;
         int m = grid[0].length;
-        int dir[][] = {{-1, 0} , {1, 0} , {0, 1} , {0, -1}};
+        int dir[][] = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
         Queue<Pair> q = new LinkedList<>();
         q.offer(new Pair(row, col));
         vis[row][col] = 1;

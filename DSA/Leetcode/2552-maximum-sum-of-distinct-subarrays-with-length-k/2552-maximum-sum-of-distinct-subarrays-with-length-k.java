@@ -7,15 +7,18 @@ class Solution {
             current_sum += nums[i];
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
         }
-        if (map.size() == k) maxi_sum = current_sum;
+        if (map.size() == k)
+            maxi_sum = current_sum;
         int start = 0;
         for (int i = k; i < n; i++) {
             current_sum += nums[i];
             current_sum -= nums[start];
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
             map.put(nums[start], map.getOrDefault(nums[start], 0) -1);
-            if (map.getOrDefault(nums[start], 0) == 0) map.remove(nums[start]);
-            if (map.size() == k) maxi_sum = Math.max(maxi_sum, current_sum);
+            if (map.getOrDefault(nums[start], 0) == 0)
+                map.remove(nums[start]);
+            if (map.size() == k)
+                maxi_sum = Math.max(maxi_sum, current_sum);
             start++;
         }
         return maxi_sum;

@@ -6,8 +6,9 @@ class Solution {
         dist2 = getDistance(edges, node2);
         int minDistance = Integer.MAX_VALUE, res = -1;
         for (int i = 0; i < edges.length; i++) {
-            if (dist1[i] == -1 || dist2[i] == -1) continue;
-            int dist= Math.max(dist1[i], dist2[i]);
+            if (dist1[i] == -1 || dist2[i] == -1)
+                continue;
+            int dist = Math.max(dist1[i], dist2[i]);
             if (dist < minDistance) {
                 res = i;
                 minDistance = dist;

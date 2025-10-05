@@ -2,9 +2,10 @@ class Solution {
     public int[] getMaximumXor(int[] nums, int k) {
         int n = nums.length;
         int x = (1 << k) - 1, y = 0;
-        for (int ele : nums) y ^= ele;
+        for (int ele : nums)
+            y ^= ele;
         int a = y;
-        for(int i = nums.length - 1; i >= 0; i--){
+        for (int i = nums.length - 1; i >= 0; i--) {
             a = nums[i];
             nums[i] = (x ^ y);
             y ^= a;

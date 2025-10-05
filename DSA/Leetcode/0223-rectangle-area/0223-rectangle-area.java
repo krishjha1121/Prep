@@ -24,7 +24,7 @@ class Solution {
                 int height = intersectY2 - intersectY1;
                 return width * height;
             }
-            return 0;  
+            return 0;
         }
         public static int getAreaBetween(Rectangle r1, Rectangle r2) {
             int areaR1 = r1.getArea();

@@ -9,8 +9,10 @@ class Solution {
         }
         for (int i = 0; i < n; i += part) {
             String current = t.substring(i, i + part);
-            if (map.getOrDefault(current, 0) > 0) map.put(current, map.getOrDefault(current, 0) -1);
-            else return false;
+            if (map.getOrDefault(current, 0) > 0)
+                map.put(current, map.getOrDefault(current, 0) -1);
+            else
+                return false;
         }
         return true;
     }

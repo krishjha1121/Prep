@@ -21,9 +21,8 @@ class Solution {
     public int[] maximumBeauty(int[][] items, int[] queries) {
         int n = items.length;
         ArrayList<Pair> res = new ArrayList<>();
-        for (int currItem[] : items) {
-            res.add(new Pair(currItem[0] , currItem[1]));
-        }
+        for (int currItem[] : items)
+            res.add(new Pair(currItem[0], currItem[1]));
         Collections.sort(res, new custom_sort());
         int maxBeautyPref[] = new int[n + 1];
         int maxi = Integer.MIN_VALUE;
@@ -33,9 +32,8 @@ class Solution {
         }
         int answer[] = new int[queries.length];
         int k = 0;
-        for (int current_query : queries) {
+        for (int current_query : queries)
             answer[k++] = binary_search(res, current_query, maxBeautyPref);
-        }
         return answer;
     }
 
@@ -46,7 +44,8 @@ class Solution {
         int high = n - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (res.get(mid).price > current_price) high = mid - 1;
+            if (res.get(mid).price > current_price)
+                high = mid - 1;
             else if (res.get(mid).price <= current_price) {
                 maxi = Math.max(maxi, maxBeautyPref[mid]);
                 low = mid + 1;

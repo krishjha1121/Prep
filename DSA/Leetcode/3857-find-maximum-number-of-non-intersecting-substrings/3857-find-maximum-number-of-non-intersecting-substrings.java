@@ -12,8 +12,8 @@ class Solution {
                     res++;
                     Arrays.fill(occurred, -1);
                 }
-            }
-            else occurred[ch - 'a'] = i;
+            } else
+                occurred[ch - 'a'] = i;
         }
         return res;
     }

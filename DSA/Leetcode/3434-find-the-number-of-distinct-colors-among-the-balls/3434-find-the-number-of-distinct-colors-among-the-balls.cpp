@@ -1,6 +1,6 @@
 class Solution {
-public:
-    vector<int> queryResults(int limit, vector<vector<int>>& queries) {
+  public:
+    vector<int> queryResults(int limit, vector<vector<int>> &queries) {
         vector<int> res;
         map<int, int> count;
         map<int, int> colours;
@@ -10,11 +10,11 @@ public:
             int color = queries[i][1];
             if (st.count(balloon)) {
                 count[colours[balloon]]--;
-                if(count[colours[balloon]] == 0) count.erase(colours[balloon]);
+                if (count[colours[balloon]] == 0)
+                    count.erase(colours[balloon]);
                 colours[balloon] = color;
                 count[color]++;
-            }
-            else {
+            } else {
                 st.insert(balloon);
                 colours[balloon] = color;
                 count[color]++;

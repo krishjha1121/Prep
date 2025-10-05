@@ -26,7 +26,8 @@ class Solution {
     private int solve(ArrayList<Tuple> res, Tuple current) {
         int curr_maxi = 0;
         for (Tuple x : res) {
-            if (x.end < current.start || x.start > current.end) continue;
+            if (x.end < current.start || x.start > current.end)
+                continue;
             curr_maxi = Math.max(curr_maxi, x.height);
         }
         current.height += curr_maxi;

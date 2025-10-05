@@ -7,7 +7,8 @@ class Solution {
             freq[ele]++;
         }
         for (int ele : set) {
-            if (freq[ele] % 2 == 1) return false;
+            if (freq[ele] % 2 == 1)
+                return false;
         }
         return true;
     }

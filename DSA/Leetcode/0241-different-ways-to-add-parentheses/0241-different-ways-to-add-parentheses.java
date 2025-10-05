@@ -1,8 +1,8 @@
 class Solution {
     public List<Integer> diffWaysToCompute(String expression) {
-	    return diffWaysToCompute(expression, new HashMap<>());
+        return diffWaysToCompute(expression, new HashMap<>());
     }
-    private List<Integer> diffWaysToCompute(String expression, Map<String, List<Integer>> map) {
+    private List<Integer> diffWaysToCompute(String expression, Map<String, List<Integer >> map) {
         if (map.containsKey(expression)) return map.get(expression);
         ArrayList<Integer> values = new ArrayList<Integer>();
         if (!hasOperator(expression))
@@ -16,21 +16,21 @@ class Solution {
                     for (int l : leftParts)
                         for (int r : rightParts)
                             switch (symbol) {
-                                case '+' -> values.add(l + r);
-                                case '-' -> values.add(l - r);
-                                case '*' -> values.add(l * r);
+                            case '+' -> values.add(l + r);
+                            case '-' -> values.add(l - r);
+                            case '*' -> values.add(l * r);
                             }
                 }
             }
-        return map.compute(expression, (k,v) -> values);
+        return map.compute(expression, (k, v) -> values);
     }
     private boolean hasOperator(String expression) {
         for (var i = 0; i < expression.length(); i++)
             switch (expression.charAt(i)) {
-                case '+', '-', '*' -> {
-                    return true;
+            case '+', '-', '*' -> {
+                        return true;
+                    }
                 }
-            }
         return false;
     }
 }

@@ -1,5 +1,5 @@
 class Solution {
-    private ArrayList<ArrayList<Integer>> adj;
+    private ArrayList<ArrayList<Integer >> adj;
     private int depth[];
     private long[] factorials;
     private long[] invFactorials;
@@ -10,7 +10,8 @@ class Solution {
         adj = new ArrayList<>();
         depth = new int[n + 1];
         dp = new int[n + 1][19];
-        for (int i = 0; i <= n + 1; i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= n + 1; i++)
+            adj.add(new ArrayList<>());
         for (int edge[] : edges) {
             int u = edge[0], v = edge[1];
             adj.get(u).add(v);
@@ -27,7 +28,8 @@ class Solution {
     }
     private void dfs(int u, int par) {
         dp[u][0] = par;
-        for (int i = 1; i < 19; i++) dp[u][i] = dp[dp[u][i - 1]][i - 1];
+        for (int i = 1; i < 19; i++)
+            dp[u][i] = dp[dp[u][i - 1]][i - 1];
         for (int v : adj.get(u)) {
             if (v != par) {
                 depth[v] = 1 + depth[u];
@@ -37,13 +39,15 @@ class Solution {
     }
     private int count_ways(int n) {
         long ans = 0;
-        for (int k = 1; k <= n; k += 2) ans = add(ans, nCk(n, k));
+        for (int k = 1; k <= n; k += 2)
+            ans = add(ans, nCk(n, k));
         return (int)(ans);
     }
     private int find_kth_parent(int u, int k) {
         int count = 0;
         while (k > 0) {
-            if (k % 2 == 1) u = dp[u][count];
+            if (k % 2 == 1)
+                u = dp[u][count];
             count++;
             k >>= 1;
         }
@@ -57,7 +61,8 @@ class Solution {
         }
         int diff = depth[v] - depth[u];
         v = find_kth_parent(v, diff);
-        if (u == v) return u;
+        if (u == v)
+            return u;
         for (int i = 18; i >= 0; i--) {
             if (dp[u][i] != dp[v][i]) {
                 u = dp[u][i];
@@ -66,8 +71,15 @@ class Solution {
         }
         return dp[u][0];
     }
-    private long mul(long a, long b) {return (long) ((long) ((a % mod) * 1L * (b % mod)) % mod);}
-    private long add(long a, long b) {a += b; if (a >= mod) a-= mod; return a;}
+    private long mul(long a, long b) {
+        return (long)((long)((a % mod) * 1L * (b % mod)) % mod);
+    }
+    private long add(long a, long b) {
+        a += b;
+        if (a >= mod)
+            a -= mod;
+        return a;
+    }
     private long nCk(int n, int k) {
         return mul(factorials[n], mul(invFactorials[k], invFactorials[n - k]));
     }
@@ -82,9 +94,11 @@ class Solution {
             invFactorials[i] = mul(invFactorials[i + 1], i + 1);
     }
     private long exp(long base, long exp) {
-        if (exp == 0) return 1;
+        if (exp == 0)
+            return 1;
         long half = exp(base, exp / 2);
-        if (exp % 2 == 0) return mul(half, half);
+        if (exp % 2 == 0)
+            return mul(half, half);
         return mul(half, mul(half, base));
     }
 }

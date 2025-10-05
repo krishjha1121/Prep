@@ -1,5 +1,5 @@
 class Solution {
-    private ArrayList<ArrayList<Pair>> Revadj;
+    private ArrayList<ArrayList<Pair >> Revadj;
     static class Pair {
         int node, weight;
         public Pair(int node, int weight) {
@@ -13,12 +13,14 @@ class Solution {
     }
     public int minMaxWeight(int n, int[][] edges, int threshold) {
         Revadj = new ArrayList<>();
-        for (int i = 0; i <= n + 1; i++) Revadj.add(new ArrayList<>());
+        for (int i = 0; i <= n + 1; i++)
+            Revadj.add(new ArrayList<>());
         for (int edge[] : edges) {
             int u = edge[0], v = edge[1], wt = edge[2];
             Revadj.get(v).add(new Pair(u, wt));
         }
-        if (check(n) == false) return -1;
+        if (check(n) == false)
+            return -1;
         int dist[] = new int[n + 1];
         Arrays.fill(dist, (int)(1e9));
         dist[0] = 0;
@@ -38,7 +40,8 @@ class Solution {
             }
         }
         int maxi = dist[0];
-        for (int i = 0; i < n; i++) maxi = Math.max(maxi, dist[i]);
+        for (int i = 0; i < n; i++)
+            maxi = Math.max(maxi, dist[i]);
         return maxi;
     }
     private boolean check(int n) {
@@ -52,7 +55,8 @@ class Solution {
         vis[u] = 1;
         for (int i = 0; i < Revadj.get(u).size(); i++) {
             int v = Revadj.get(u).get(i).node;
-            if (vis[v] == 0) dfs(v, vis, nodes);
+            if (vis[v] == 0)
+                dfs(v, vis, nodes);
         }
     }
 }

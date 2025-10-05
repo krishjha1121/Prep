@@ -9,13 +9,13 @@ class Solution {
             if (check(mid, mountainHeight, workerTimes)) {
                 ans = mid;
                 high = mid - 1;
-            }
-            else low = mid + 1;
+            } else
+                low = mid + 1;
         }
         return ans;
     }
 
-    static boolean check(long mid, int k , int arr[]) {
+    static boolean check(long mid, int k, int arr[]) {
         int n = arr.length;
         long total_height = 0;
         for (int i = 0; i < n; i++) {
@@ -27,7 +27,6 @@ class Solution {
                 x * (x + 1) / 2 <= mid / arr[i];
                 x * (x + 1) <= 2 * mid / arr[i];
                 arr[i] * (x * (x + 1) / 2) <= mid;
-
             */
             long low = 1;
             long high = k + 1;
@@ -38,8 +37,8 @@ class Solution {
                 if (compute <= mid) {
                     temp = x;
                     low = x + 1;
-                }
-                else high = x - 1;
+                } else
+                    high = x - 1;
             }
             total_height += high;
         }

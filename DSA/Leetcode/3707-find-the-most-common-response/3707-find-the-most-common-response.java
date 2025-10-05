@@ -1,5 +1,5 @@
 class Solution {
-    public String findCommonResponse(List<List<String>> responses) {
+    public String findCommonResponse(List<List<String >> responses) {
         int n = responses.size();
         ArrayList<String> res = new ArrayList<>();
         HashMap<String, Integer> map = new HashMap<>();
@@ -21,7 +21,8 @@ class Solution {
         for (Map.Entry<String, Integer> curr : map.entrySet()) {
             String key = curr.getKey();
             int val = curr.getValue();
-            if (val == maxi) res.add(key);
+            if (val == maxi)
+                res.add(key);
         }
         Collections.sort(res);
         return res.get(0);

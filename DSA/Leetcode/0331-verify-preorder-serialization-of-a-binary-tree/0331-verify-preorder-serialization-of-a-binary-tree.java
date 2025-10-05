@@ -3,9 +3,12 @@ class Solution {
         int count = 1;
         String nodes[] = preorder.split(",");
         for (String temp : nodes) {
-            if (count <= 0) return false;
-            if (temp.equals("#")) count--;
-            else count++;
+            if (count <= 0)
+                return false;
+            if (temp.equals("#"))
+                count--;
+            else
+                count++;
         }
         return count == 0;
     }

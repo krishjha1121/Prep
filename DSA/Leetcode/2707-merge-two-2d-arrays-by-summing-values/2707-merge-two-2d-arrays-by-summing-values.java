@@ -8,9 +8,8 @@ class Solution {
             map.put(current[0], map.getOrDefault(current[0], 0) + current[1]);
         }
         for (int current[] : nums2) {
-            if (!ids.contains(current[0])) {
+            if (!ids.contains(current[0]))
                 ids.add(current[0]);
-            }
             map.put(current[0], map.getOrDefault(current[0], 0) + current[1]);
         }
         int res[][] = new int[ids.size()][2];

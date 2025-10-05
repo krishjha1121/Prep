@@ -15,14 +15,16 @@ class Solution {
         @Override
         public int compare(Pair first, Pair second) {
             int op1 =  Integer.compare(first.ele, second.ele);
-            if (op1 != 0) return op1;
+            if (op1 != 0)
+                return op1;
             return Integer.compare(first.ind, second.ind);
         }
     }
     public int[] getFinalState(int[] nums, int k, int multiplier) {
         int n = nums.length;
         PriorityQueue<Pair> pq = new PriorityQueue<>(new custom_sort());
-        for (int i = 0; i < n; i++) pq.offer(new Pair(i, nums[i]));
+        for (int i = 0; i < n; i++)
+            pq.offer(new Pair(i, nums[i]));
         while (k-->0) {
             Pair current = pq.poll();
             current.ele = current.ele * multiplier;

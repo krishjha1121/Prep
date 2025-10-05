@@ -17,28 +17,31 @@ class FrontMiddleBackQueue {
     }
 
     public int popFront() {
-        if (dq.size() == 0) return - 1;
+        if (dq.size() == 0)
+            return - 1;
         return dq.remove(0);
     }
 
     public int popMiddle() {
-        if (dq.size() == 0) return -1;
+        if (dq.size() == 0)
+            return -1;
         return dq.remove((dq.size() - 1) / 2);
     }
 
     public int popBack() {
-        if (dq.size() == 0) return -1;
+        if (dq.size() == 0)
+            return -1;
         return dq.remove(dq.size() - 1);
     }
 }
 
 /**
- * Your FrontMiddleBackQueue object will be instantiated and called as such:
- * FrontMiddleBackQueue obj = new FrontMiddleBackQueue();
- * obj.pushFront(val);
- * obj.pushMiddle(val);
- * obj.pushBack(val);
- * int param_4 = obj.popFront();
- * int param_5 = obj.popMiddle();
- * int param_6 = obj.popBack();
- */
+    Your FrontMiddleBackQueue object will be instantiated and called as such:
+    FrontMiddleBackQueue obj = new FrontMiddleBackQueue();
+    obj.pushFront(val);
+    obj.pushMiddle(val);
+    obj.pushBack(val);
+    int param_4 = obj.popFront();
+    int param_5 = obj.popMiddle();
+    int param_6 = obj.popBack();
+*/

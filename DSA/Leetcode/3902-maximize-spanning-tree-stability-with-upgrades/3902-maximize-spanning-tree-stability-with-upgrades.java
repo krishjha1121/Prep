@@ -22,45 +22,44 @@ class Solution {
         ArrayList<Tuple> upgradeEdge = new ArrayList<>();
         int count = 0;
         int min = Integer.MAX_VALUE;
-        
+
         DSU dsu = new DSU(n + 1);
-        
+
         for (int i = 0; i < edges.length; i++) {
-            if (edges[i][3] == 0) 
+            if (edges[i][3] == 0)
                 upgradeEdge.add(new Tuple(edges[i][0], edges[i][1], edges[i][2]));
             else {
                 if (dsu.Leader(edges[i][0]) != dsu.Leader(edges[i][1])) {
                     dsu.unite(edges[i][0], edges[i][1]);
                     min = Math.min(min, edges[i][2]);
                     count++;
-                }
-                else 
+                } else
                     return -1;
             }
         }
 
         Collections.sort(upgradeEdge, new custom_sort());
         ArrayList<Integer> tempWeight = new ArrayList<>();
-        
+
         for (int i = 0; i < upgradeEdge.size(); i++) {
             int u = upgradeEdge.get(i).u, v = upgradeEdge.get(i).v, wt = upgradeEdge.get(i).weight;
-            if (count == n - 1) break;
+            if (count == n - 1)
+                break;
             if (dsu.Leader(u) != dsu.Leader(v)) {
                 dsu.unite(u, v);
                 count++;
                 tempWeight.add(wt);
             }
         }
-        if (count < n - 1) 
+        if (count < n - 1)
             return -1;
-        
+
         Collections.reverse(tempWeight);
         for (int i = 0; i < tempWeight.size(); i++) {
             if (k > 0) {
                 k--;
                 min = Math.min(min, 2 * tempWeight.get(i));
-            }
-            else 
+            } else
                 min = Math.min(min, tempWeight.get(i));
         }
         return min;

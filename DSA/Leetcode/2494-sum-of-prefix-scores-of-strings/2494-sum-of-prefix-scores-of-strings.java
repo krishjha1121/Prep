@@ -13,18 +13,18 @@ class Solution {
         int n = words.length;
         int[] ans = new int[n];
         TrieNode root = new TrieNode();
-        for(String w: words) {
+        for (String w : words) {
             TrieNode curr = root;
-            for(char c: w.toCharArray()) {
-                if(curr.children[c - 'a'] == null)
+            for (char c : w.toCharArray()) {
+                if (curr.children[c - 'a'] == null)
                     curr.children[c - 'a'] = new TrieNode();
                 curr = curr.children[c - 'a'];
                 curr.freq++;
             }
         }
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             TrieNode curr = root;
-            for(char c: words[i].toCharArray()) {
+            for (char c : words[i].toCharArray()) {
                 curr = curr.children[c - 'a'];
                 ans[i] += curr.freq;
             }

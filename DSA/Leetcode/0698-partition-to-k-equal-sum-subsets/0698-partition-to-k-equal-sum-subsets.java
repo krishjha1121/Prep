@@ -4,8 +4,10 @@ class Solution {
     public boolean canPartitionKSubsets(int[] nums, int k) {
         int n = nums.length, sum = 0;
         flag = 0;
-        for (int ele : nums) sum += ele;
-        if (sum % k != 0) return false;
+        for (int ele : nums)
+            sum += ele;
+        if (sum % k != 0)
+            return false;
         int target = sum / k;
         memo = new HashMap<>();
         Arrays.sort(nums);
@@ -13,9 +15,11 @@ class Solution {
         return solve(0, 0, nums, new boolean[n], k, target);
     }
     private boolean solve(int curIndex, int curSum, int[] nums, boolean[] visited, int k, int target) {
-        if (k == 1) return true; 
+        if (k == 1)
+            return true;
         String memoKey = curSum + "-" + k + "-" + java.util.Arrays.toString(visited);
-        if (memo.containsKey(memoKey)) return memo.get(memoKey);
+        if (memo.containsKey(memoKey))
+            return memo.get(memoKey);
         if (curSum == target) {
             boolean result = solve(0, 0, nums, visited, k - 1, target);
             memo.put(memoKey, result);
@@ -28,7 +32,7 @@ class Solution {
                     memo.put(memoKey, true);
                     return true;
                 }
-                visited[i] = false; 
+                visited[i] = false;
             }
         }
         memo.put(memoKey, false);

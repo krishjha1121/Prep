@@ -2,7 +2,7 @@ class Solution {
     private int mod = (int)(1e9 + 7);
     public int countGoodArrays(int n, int m, int k) {
         precompFacts();
-        long res = m * exp(m - 1, n - 1 - k) % mod * 1L * nCk(n - 1, n - 1 - k ) % mod;
+        long res = m * exp(m - 1, n - 1 - k) % mod * 1L * nCk(n - 1, n - 1 - k) % mod;
         return (int)(res);
     }
     private long fast_pow(long a, long p, long mod) {

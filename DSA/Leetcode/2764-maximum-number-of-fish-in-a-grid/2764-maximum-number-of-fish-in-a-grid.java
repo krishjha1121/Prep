@@ -15,7 +15,8 @@ class Solution {
         int maxi = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (grid[i][j] > 0) maxi = Math.max(maxi, dfs(i, j, grid));
+                if (grid[i][j] > 0)
+                    maxi = Math.max(maxi, dfs(i, j, grid));
             }
         }
         return maxi;

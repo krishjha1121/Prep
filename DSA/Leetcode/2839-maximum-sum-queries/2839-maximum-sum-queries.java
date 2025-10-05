@@ -21,25 +21,32 @@ class Solution {
                 index--;
             }
             var entry = tm.ceilingEntry(q2[i][1]);
-            if (entry == null) ans[q2[i][2]] = -1;
-            else ans[q2[i][2]] = entry.getValue();
+            if (entry == null)
+                ans[q2[i][2]] = -1;
+            else
+                ans[q2[i][2]] = entry.getValue();
         }
         return ans;
     }
 
     private void insert(TreeMap<Integer, Integer> tm, int x, int y) {
         int sum = x + y;
-        if (tm.containsKey(y) && tm.get(y) >= sum) return;
+        if (tm.containsKey(y) && tm.get(y) >= sum)
+            return;
         Integer higher = tm.higherKey(y);
-        if (higher != null && tm.get(higher) >= sum) return;
+        if (higher != null && tm.get(higher) >= sum)
+            return;
         Set<Integer> hs = new HashSet<>();
         Integer lower = tm.lowerKey(y);
         while (lower != null) {
-            if (tm.get(lower) <= sum) hs.add(lower);
-            else break;
+            if (tm.get(lower) <= sum)
+                hs.add(lower);
+            else
+                break;
             lower = tm.lowerKey(lower);
         }
-        for (int i : hs) tm.remove(i);
+        for (int i : hs)
+            tm.remove(i);
         tm.put(y, sum);
     }
 }

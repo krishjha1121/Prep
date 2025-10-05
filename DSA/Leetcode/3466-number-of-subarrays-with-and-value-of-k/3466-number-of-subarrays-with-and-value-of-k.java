@@ -10,7 +10,8 @@ class Solution {
             while (low <= high) {
                 int mid = low + (high - low) / 2;
                 int curr = compute_and_in_range(i, mid);
-                if(curr > k) low = mid + 1;
+                if (curr > k)
+                    low = mid + 1;
                 else if (curr <= k) {
                     ind1 = mid;
                     high = mid - 1;
@@ -24,10 +25,11 @@ class Solution {
                 if (curr >= k) {
                     low = mid + 1;
                     ind2 = mid;
-                }
-                else if (curr < k) high = mid - 1;
+                } else if (curr < k)
+                    high = mid - 1;
             }
-            if(ind1 != -1 && ind2 != -1) ans += (ind2 - ind1 + 1);
+            if (ind1 != -1 && ind2 != -1)
+                ans += (ind2 - ind1 + 1);
         }
         return ans;
     }
@@ -39,12 +41,15 @@ class Solution {
             for (int j = 0; j < 32; j++) {
                 int current_bit = ((current >> j) & 1);
                 if (i == 0) {
-                    if (current_bit > 0) pref[i][j] = 1;
-                    else pref[i][j] = 0;
-                }
-                else { 
-                    if (current_bit > 0) pref[i][j] += pref[i - 1][j] + 1;
-                    else pref[i][j] = pref[i - 1][j];
+                    if (current_bit > 0)
+                        pref[i][j] = 1;
+                    else
+                        pref[i][j] = 0;
+                } else {
+                    if (current_bit > 0)
+                        pref[i][j] += pref[i - 1][j] + 1;
+                    else
+                        pref[i][j] = pref[i - 1][j];
                 }
             }
         }
@@ -54,8 +59,10 @@ class Solution {
         int res = 0;
         for (int i = 0; i < 32; i++) {
             int count = pref[r][i];
-            if (l - 1 >= 0) count -= pref[l - 1][i];
-            if (count == r - l + 1) res |= (1 << i);
+            if (l - 1 >= 0)
+                count -= pref[l - 1][i];
+            if (count == r - l + 1)
+                res |= (1 << i);
         }
         return res;
     }

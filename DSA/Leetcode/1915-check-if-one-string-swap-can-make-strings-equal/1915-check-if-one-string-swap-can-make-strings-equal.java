@@ -10,7 +10,8 @@ class Solution {
                 set1.add(s1.charAt(i));
                 set2.add(s2.charAt(i));
             }
-            if (count > 2) return false;
+            if (count > 2)
+                return false;
         }
         return (count == 2 && set1.equals(set2) || count == 0);
     }

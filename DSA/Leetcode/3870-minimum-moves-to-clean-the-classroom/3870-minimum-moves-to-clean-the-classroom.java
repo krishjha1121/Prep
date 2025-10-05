@@ -25,17 +25,18 @@ class Solution {
                     start_row = i;
                     start_col = j;
                 }
-                if (grid[i][j] == 'L') count++;
+                if (grid[i][j] == 'L')
+                    count++;
             }
         }
-        if (count == 0) return 0;
+        if (count == 0)
+            return 0;
         Map<Integer, Integer> pos = new HashMap<>();
         int idx = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (grid[i][j] == 'L') {
+                if (grid[i][j] == 'L')
                     pos.put(i * m + j, idx++);
-                }
             }
         }
         Queue<Pair> q = new LinkedList<>();
@@ -49,16 +50,20 @@ class Solution {
             if (grid[curr_row][curr_col] == 'L') {
                 int curr_idx = pos.get(curr_row * m + curr_col);
                 curr_mask |= (1 << curr_idx);
-                if (curr_mask == Math.pow(2, count) - 1) return curr_moves;
+                if (curr_mask == Math.pow(2, count) - 1)
+                    return curr_moves;
             }
             int new_energy = 0;
-            if (grid[curr_row][curr_col] == 'R') new_energy = energy;
-            else new_energy = curr_energy;
+            if (grid[curr_row][curr_col] == 'R')
+                new_energy = energy;
+            else
+                new_energy = curr_energy;
             for (int dire[] : dir) {
                 int nrow = curr_row + dire[0];
                 int ncol = curr_col + dire[1];
                 if (nrow < n && nrow >= 0 && ncol < m && ncol >= 0 && grid[nrow][ncol] != 'X') {
-                    if (new_energy - 1 < 0) continue;
+                    if (new_energy - 1 < 0)
+                        continue;
                     if (vis[nrow][ncol][curr_mask][new_energy - 1] == 0) {
                         vis[nrow][ncol][curr_mask][new_energy - 1] = 1;
                         q.offer(new Pair(nrow, ncol, new_energy - 1, curr_mask, curr_moves + 1));

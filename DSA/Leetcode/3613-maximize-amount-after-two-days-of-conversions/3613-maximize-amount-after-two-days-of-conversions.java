@@ -11,9 +11,9 @@ class Solution {
             return "(" + currency + " " + rate + ")";
         }
     }
-    public static double maxAmount(String initialCurrency, List<List<String>> currencyPairsDay1, double[] conversionRatesDay1, List<List<String>> currencyPairsDay2, double[] conversionRatesDay2) {
-        Map<String, List<Pair>> g1 = buildGraph(currencyPairsDay1, conversionRatesDay1);
-        Map<String, List<Pair>> g2 = buildGraph(currencyPairsDay2, conversionRatesDay2);
+    public static double maxAmount(String initialCurrency, List<List<String >> currencyPairsDay1, double[] conversionRatesDay1, List<List<String >> currencyPairsDay2, double[] conversionRatesDay2) {
+        Map<String, List<Pair >> g1 = buildGraph(currencyPairsDay1, conversionRatesDay1);
+        Map<String, List<Pair >> g2 = buildGraph(currencyPairsDay2, conversionRatesDay2);
         Map<String, Double> current_maxi = new HashMap<>();
         dfs(initialCurrency, 1.0, g1, current_maxi);
         double maxi = 0.0;
@@ -27,8 +27,8 @@ class Solution {
         return maxi;
     }
 
-    private static Map<String, List<Pair>> buildGraph(List<List<String>> currencyPairs, double[] conversionRates) {
-        Map<String, List<Pair>> graph = new HashMap<>();
+    private static Map<String, List<Pair >> buildGraph(List<List<String >> currencyPairs, double[] conversionRates) {
+        Map<String, List<Pair >> graph = new HashMap<>();
         for (int i = 0; i < currencyPairs.size(); i++) {
             String source = currencyPairs.get(i).get(0);
             String target = currencyPairs.get(i).get(1);
@@ -41,11 +41,11 @@ class Solution {
         return graph;
     }
 
-    private static void dfs(String currency, double amount, Map<String, List<Pair>> graph, Map<String, Double> map) {
-        if (amount <= map.getOrDefault(currency, 0.0)) return;
+    private static void dfs(String currency, double amount, Map<String, List<Pair >> graph, Map<String, Double> map) {
+        if (amount <= map.getOrDefault(currency, 0.0))
+            return;
         map.put(currency, amount);
-        for (Pair v : graph.getOrDefault(currency, new ArrayList<>())) {
+        for (Pair v : graph.getOrDefault(currency, new ArrayList<>()))
             dfs(v.currency, amount * v.rate, graph, map);
-        }
     }
 }

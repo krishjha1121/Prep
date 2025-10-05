@@ -26,12 +26,10 @@ class Solution {
             char current = s.charAt(i);
             freq[current - 'a']++;
         }
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; i++)
             pq.offer(new Pair('a', freq[i]));
-        }
-        while (pq.size() > k) {
+        while (pq.size() > k)
             res += pq.poll().count;
-        }
         return res;
     }
 }

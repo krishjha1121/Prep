@@ -6,8 +6,10 @@ class Solution {
         return solve(x, y);
     }
     private int solve(int x, int y) {
-        if (x <= y) return y - x;
-        if (dp[x] != -1) return dp[x];
+        if (x <= y)
+            return y - x;
+        if (dp[x] != -1)
+            return dp[x];
         int res = Math.abs(x - y);
         res = Math.min(res, 1 + x % 5 + solve(x / 5, y));
         res = Math.min(res, 1 + x % 11 + solve(x / 11, y));

@@ -14,7 +14,6 @@ class Solution {
             return 0;
         if (dp[ind][swap] != -1)
             return dp[ind][swap];
-
         int mini = Integer.MAX_VALUE / 10;
         if (arr[ind] > prevA && brr[ind] > prevB)
             mini = Math.min(mini, 0 + solve(arr, brr, arr[ind], brr[ind], ind + 1, 0));

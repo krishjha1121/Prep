@@ -2,7 +2,7 @@ class Solution {
     public boolean checkEqualPartitions(int[] nums, long target) {
         int n = nums.length;
         int total = 1 << n;
-        for (int mask = 1; mask < total - 1; mask++) { 
+        for (int mask = 1; mask < total - 1; mask++) {
             long prod1 = 1;
             boolean valid = true;
             for (int i = 0; i < n; i++) {
@@ -14,7 +14,8 @@ class Solution {
                     }
                 }
             }
-            if (!valid || prod1 != target) continue;
+            if (!valid || prod1 != target)
+                continue;
             long prod2 = 1;
             for (int i = 0; i < n; i++) {
                 if ((mask & (1 << i)) == 0) {
@@ -25,7 +26,8 @@ class Solution {
                     }
                 }
             }
-            if (valid && prod2 == target) return true;
+            if (valid && prod2 == target)
+                return true;
         }
         return false;
     }

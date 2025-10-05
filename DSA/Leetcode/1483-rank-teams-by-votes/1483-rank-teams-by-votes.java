@@ -17,8 +17,10 @@ class Solution {
             temp1 = first.freq;
             temp2 = second.freq;
             for (int i = 0; i < 30; i++) {
-                if (temp1[i] == temp2[i]) continue;
-                if (temp1[i] > temp2[i]) return -1;
+                if (temp1[i] == temp2[i])
+                    continue;
+                if (temp1[i] > temp2[i])
+                    return -1;
                 return 1;
             }
             return Integer.compare(first.ch, second.ch);
@@ -40,10 +42,12 @@ class Solution {
             }
         }
         ArrayList<Pair> res = new ArrayList<>();
-        for (Character x : set) res.add(new Pair(x, score[x - 'A'], freq[x - 'A']));
+        for (Character x : set)
+            res.add(new Pair(x, score[x - 'A'], freq[x - 'A']));
         Collections.sort(res, new custom_sort());
         StringBuilder ans = new StringBuilder();
-        for (int i = 0; i < res.size(); i++) ans.append(res.get(i).ch);
+        for (int i = 0; i < res.size(); i++)
+            ans.append(res.get(i).ch);
         return ans.toString();
     }
 }

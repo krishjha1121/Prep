@@ -17,7 +17,8 @@ class Solution {
             }
         }
         for (int i = 0; i < n - 1; i++) {
-            if (nums[i] >= nums[i + 1]) return false;
+            if (nums[i] >= nums[i + 1])
+                return false;
         }
         return true;
     }
@@ -28,9 +29,8 @@ class Solution {
         for (int i = 2; i <= 1000; i++) {
             if (isprime[i] == 1) {
                 for (int j = i; j * i < 1000 + 1; j++) {
-                    if (isprime[j * i] == 1) {
+                    if (isprime[j * i] == 1)
                         isprime[j * i] = 0;
-                    }
                 }
             }
         }

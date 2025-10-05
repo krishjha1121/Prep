@@ -16,9 +16,12 @@ class Solution {
         int ans[] = new int[n];
         for (int i = n - 1; i >= 0; i--) {
             int current_ele = temperatures[i];
-            while (st.size() > 0 && st.peek().node <= current_ele) st.pop();
-            if (st.size() == 0) ans[i] = 0;
-            else ans[i] = st.peek().ind - i;
+            while (st.size() > 0 && st.peek().node <= current_ele)
+                st.pop();
+            if (st.size() == 0)
+                ans[i] = 0;
+            else
+                ans[i] = st.peek().ind - i;
             st.add(new Pair(current_ele, i));
         }
         return ans;

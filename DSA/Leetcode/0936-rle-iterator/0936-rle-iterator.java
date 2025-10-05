@@ -23,19 +23,18 @@ class RLEIterator {
             if (current.count > req) {
                 dq.addFirst(new Pair(current.count - req, current.node));
                 req = 0;
-            }
-            else {
+            } else
                 req -= current.count;
-            }
             last = current.node;
         }
-        if (req > 0) return -1;
+        if (req > 0)
+            return -1;
         return last;
     }
 }
 
 /**
- * Your RLEIterator object will be instantiated and called as such:
- * RLEIterator obj = new RLEIterator(encoding);
- * int param_1 = obj.next(n);
- */
+    Your RLEIterator object will be instantiated and called as such:
+    RLEIterator obj = new RLEIterator(encoding);
+    int param_1 = obj.next(n);
+*/
