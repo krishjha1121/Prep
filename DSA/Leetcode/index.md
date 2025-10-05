@@ -1,6 +1,6 @@
 # Leetcode
 
-#Leetcode Profile https://leetcode.com/u/RkRoy/
+### Leetcode Profile https://leetcode.com/u/RkRoy/
 
 ![Leetcode Stats](https://leetcard.jacoblin.cool/RkRoy?theme=dark&font=Ubuntu&ext=heatmap)
 
