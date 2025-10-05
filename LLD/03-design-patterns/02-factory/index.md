@@ -1488,4 +1488,4 @@ consoleLogger.log(Level.ERROR, "Something went wrong");
 
 ---
 
-[← Back: Singleton Pattern](../01-singleton/README.md) | [Next: Observer Pattern →](../03-observer/README.md)
+[← Back: Singleton Pattern](../01-singleton/) | [Next: Observer Pattern →](../03-observer/)

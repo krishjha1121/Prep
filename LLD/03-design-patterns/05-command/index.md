@@ -1355,4 +1355,4 @@ class TransactionalMacro implements Command {
 
 ---
 
-[← Back: Strategy Pattern](../04-strategy/README.md) | [Next: Decorator Pattern →](../06-decorator/README.md)
+[← Back: Strategy Pattern](../04-strategy/) | [Next: Decorator Pattern →](../06-decorator/)

@@ -1471,4 +1471,4 @@ class DecorationManager {
 
 ---
 
-[← Back: Command Pattern](../05-command/README.md) | [Next: Builder Pattern →](../07-builder/README.md)
+[← Back: Command Pattern](../05-command/) | [Next: Builder Pattern →](../07-builder/)
