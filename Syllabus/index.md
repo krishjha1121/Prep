@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-    name: 'BTech CS Syllabus NIT SILCAHR'
+    name: 'BTech CS Syllabus NIT SILCHAR'
     text: 'Complete CS Syllabus'
     tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
 
