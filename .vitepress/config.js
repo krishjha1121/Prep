@@ -24,6 +24,7 @@ export default withMermaid(
 
 			nav: [
 				{ text: "Home", link: "/" },
+				{ text: "Leetcode Solutions", link: "/DSA/Leetcode/" },
 				{
 					text: "Core CS",
 					items: [

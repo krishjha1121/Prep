@@ -11,7 +11,7 @@ hero:
           link: /DSA/
         - theme: alt
           text: View on GitHub
-          link: https://github.com/YOUR_USERNAME/Prep
+          link: https://github.com/raj8664/Prep
 
 features:
     - icon: 🎯
