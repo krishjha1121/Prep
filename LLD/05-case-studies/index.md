@@ -20,7 +20,7 @@ This section contains comprehensive case studies that demonstrate how to apply L
 **Patterns Used**: Factory Method, Strategy, State, Observer  
 **Concepts**: OOP fundamentals, state management, payment processing
 
-[**View Case Study →**](./01-parking-lot/README.md)
+[**View Case Study →**](./01-parking-lot/)
 
 **What you'll learn:**
 
@@ -44,7 +44,7 @@ graph LR
 **Patterns Used**: State, Command, Observer, Strategy  
 **Concepts**: State machines, concurrent processing, scheduling algorithms
 
-[**View Case Study →**](./02-elevator-system/README.md)
+[**View Case Study →**](./02-elevator-system/)
 
 **What you'll learn:**
 
@@ -70,7 +70,7 @@ stateDiagram-v2
 **Patterns Used**: Observer, Command, Mediator, Factory  
 **Concepts**: Real-time messaging, user management, message routing
 
-[**View Case Study →**](./03-chat-application/README.md)
+[**View Case Study →**](./03-chat-application/)
 
 **What you'll learn:**
 
@@ -94,7 +94,7 @@ graph TD
 **Patterns Used**: Repository, Factory, Template Method, Strategy  
 **Concepts**: CRUD operations, data modeling, business rules
 
-[**View Case Study →**](./04-library-management/README.md)
+[**View Case Study →**](./04-library-management/)
 
 **What you'll learn:**
 
@@ -110,7 +110,7 @@ graph TD
 **Patterns Used**: Strategy, Decorator, Observer, Factory, Command  
 **Concepts**: Complex business logic, payment processing, inventory management
 
-[**View Case Study →**](./05-ecommerce-system/README.md)
+[**View Case Study →**](./05-ecommerce-system/)
 
 **What you'll learn:**
 
@@ -127,7 +127,7 @@ graph TD
 **Patterns Used**: Observer, Strategy, Decorator, Composite  
 **Concepts**: Feed algorithms, content filtering, user interactions
 
-[**View Case Study →**](./06-social-media-feed/README.md)
+[**View Case Study →**](./06-social-media-feed/)
 
 **What you'll learn:**
 
@@ -143,7 +143,7 @@ graph TD
 **Patterns Used**: State, Command, Observer, Flyweight, Prototype  
 **Concepts**: Real-time systems, performance optimization, scalability
 
-[**View Case Study →**](./07-gaming-system/README.md)
+[**View Case Study →**](./07-gaming-system/)
 
 **What you'll learn:**
 
@@ -308,7 +308,7 @@ For each case study, ask yourself:
 
 ## 🚀 Getting Started
 
-Ready to dive into real-world system design? Start with the [Parking Lot System](./01-parking-lot/README.md) for a gentle introduction, or jump to any case study that interests you most!
+Ready to dive into real-world system design? Start with the [Parking Lot System](./01-parking-lot/) for a gentle introduction, or jump to any case study that interests you most!
 
 Remember: The goal is not just to understand the solution, but to learn the thinking process behind good system design.
 
@@ -316,4 +316,4 @@ Remember: The goal is not just to understand the solution, but to learn the thin
 
 ---
 
-[← Back to Main](../README.md) | [Next: Parking Lot System →](./01-parking-lot/README.md)
+[← Back to Main](../) | [Next: Parking Lot System →](./01-parking-lot/)

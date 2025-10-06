@@ -505,4 +505,4 @@ Remember: Advanced concepts should solve real problems, not add unnecessary comp
 
 ---
 
-[← Back to Main](../README.md) | [Next: Concurrency Patterns →](./01-concurrency-patterns.md)
+[← Back to Main](../) | [Next: Concurrency Patterns →](./01-concurrency-patterns.md)
