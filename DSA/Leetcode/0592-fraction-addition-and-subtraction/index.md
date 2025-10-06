@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/fraction-addition-and-subtraction">592. Fraction Addition and Subtraction</a></h2><h3>Medium</h3><hr><p>Given a string <code>expression</code> representing an expression of fraction addition and subtraction, return the calculation result in string format.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 592. Fraction Addition and Subtraction
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/fraction-addition-and-subtraction" target = "_blank">592. Fraction Addition and Subtraction</a></h2><h3>Medium</h3><hr><p>Given a string <code>expression</code> representing an expression of fraction addition and subtraction, return the calculation result in string format.</p>
 
 <p>The final result should be an <a href="https://en.wikipedia.org/wiki/Irreducible_fraction" target="_blank">irreducible fraction</a>. If your final result is an integer, change it to the format of a fraction that has a denominator <code>1</code>. So in this case, <code>2</code> should be converted to <code>2/1</code>.</p>
 

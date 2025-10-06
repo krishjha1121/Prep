@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/partition-to-k-equal-sum-subsets">698. Partition to K Equal Sum Subsets</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <code>true</code> if it is possible to divide this array into <code>k</code> non-empty subsets whose sums are all equal.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 698. Partition to K Equal Sum Subsets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/partition-to-k-equal-sum-subsets" target = "_blank">698. Partition to K Equal Sum Subsets</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <code>true</code> if it is possible to divide this array into <code>k</code> non-empty subsets whose sums are all equal.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>

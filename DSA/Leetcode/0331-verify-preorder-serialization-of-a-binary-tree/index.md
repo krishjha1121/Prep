@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree">331. Verify Preorder Serialization of a Binary Tree</a></h2><h3>Medium</h3><hr><p>One way to serialize a binary tree is to use <strong>preorder traversal</strong>. When we encounter a non-null node, we record the node&#39;s value. If it is a null node, we record using a sentinel value such as <code>&#39;#&#39;</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 331. Verify Preorder Serialization of a Binary Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree" target = "_blank">331. Verify Preorder Serialization of a Binary Tree</a></h2><h3>Medium</h3><hr><p>One way to serialize a binary tree is to use <strong>preorder traversal</strong>. When we encounter a non-null node, we record the node&#39;s value. If it is a null node, we record using a sentinel value such as <code>&#39;#&#39;</code>.</p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/03/12/pre-tree.jpg" style="width: 362px; height: 293px;" />
 <p>For example, the above binary tree can be serialized to the string <code>&quot;9,3,4,#,#,1,#,#,2,#,6,#,#&quot;</code>, where <code>&#39;#&#39;</code> represents a null node.</p>
 

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/super-pow">372. Super Pow</a></h2><h3>Medium</h3><hr><p>Your task is to calculate <code>a<sup>b</sup></code> mod <code>1337</code> where <code>a</code> is a positive integer and <code>b</code> is an extremely large positive integer given in the form of an array.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 372. Super Pow
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/super-pow" target = "_blank">372. Super Pow</a></h2><h3>Medium</h3><hr><p>Your task is to calculate <code>a<sup>b</sup></code> mod <code>1337</code> where <code>a</code> is a positive integer and <code>b</code> is an extremely large positive integer given in the form of an array.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>

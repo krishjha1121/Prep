@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/shuffle-an-array">384. Shuffle an Array</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, design an algorithm to randomly shuffle the array. All permutations of the array should be <strong>equally likely</strong> as a result of the shuffling.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 384. Shuffle an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/shuffle-an-array" target = "_blank">384. Shuffle an Array</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, design an algorithm to randomly shuffle the array. All permutations of the array should be <strong>equally likely</strong> as a result of the shuffling.</p>
 
 <p>Implement the <code>Solution</code> class:</p>
 

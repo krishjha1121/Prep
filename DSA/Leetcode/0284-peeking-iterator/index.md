@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/peeking-iterator">284. Peeking Iterator</a></h2><h3>Medium</h3><hr><p>Design an iterator that supports the <code>peek</code> operation on an existing iterator in addition to the <code>hasNext</code> and the <code>next</code> operations.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 284. Peeking Iterator
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/peeking-iterator" target = "_blank">284. Peeking Iterator</a></h2><h3>Medium</h3><hr><p>Design an iterator that supports the <code>peek</code> operation on an existing iterator in addition to the <code>hasNext</code> and the <code>next</code> operations.</p>
 
 <p>Implement the <code>PeekingIterator</code> class:</p>
 
@@ -79,4 +87,3 @@ class PeekingIterator implements Iterator<Integer> {
     }
 }
 ```
-

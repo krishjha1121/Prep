@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-product-of-word-lengths">318. Maximum Product of Word Lengths</a></h2><h3>Medium</h3><hr><p>Given a string array <code>words</code>, return <em>the maximum value of</em> <code>length(word[i]) * length(word[j])</code> <em>where the two words do not share common letters</em>. If no such two words exist, return <code>0</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 318. Maximum Product of Word Lengths
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-product-of-word-lengths" target = "_blank">318. Maximum Product of Word Lengths</a></h2><h3>Medium</h3><hr><p>Given a string array <code>words</code>, return <em>the maximum value of</em> <code>length(word[i]) * length(word[j])</code> <em>where the two words do not share common letters</em>. If no such two words exist, return <code>0</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/expression-add-operators">282. Expression Add Operators</a></h2><h3>Hard</h3><hr><p>Given a string <code>num</code> that contains only digits and an integer <code>target</code>, return <em><strong>all possibilities</strong> to insert the binary operators </em><code>&#39;+&#39;</code><em>, </em><code>&#39;-&#39;</code><em>, and/or </em><code>&#39;*&#39;</code><em> between the digits of </em><code>num</code><em> so that the resultant expression evaluates to the </em><code>target</code><em> value</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 282. Expression Add Operators
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/expression-add-operators" target = "_blank">282. Expression Add Operators</a></h2><h3>Hard</h3><hr><p>Given a string <code>num</code> that contains only digits and an integer <code>target</code>, return <em><strong>all possibilities</strong> to insert the binary operators </em><code>&#39;+&#39;</code><em>, </em><code>&#39;-&#39;</code><em>, and/or </em><code>&#39;*&#39;</code><em> between the digits of </em><code>num</code><em> so that the resultant expression evaluates to the </em><code>target</code><em> value</em>.</p>
 
 <p>Note that operands in the returned expressions <strong>should not</strong> contain leading zeros.</p>
 

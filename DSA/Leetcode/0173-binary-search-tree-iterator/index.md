@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/binary-search-tree-iterator">173. Binary Search Tree Iterator</a></h2><h3>Medium</h3><hr><p>Implement the <code>BSTIterator</code> class that represents an iterator over the <strong><a href="https://en.wikipedia.org/wiki/Tree_traversal#In-order_(LNR)" target="_blank">in-order traversal</a></strong> of a binary search tree (BST):</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 173. Binary Search Tree Iterator
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/binary-search-tree-iterator" target = "_blank">173. Binary Search Tree Iterator</a></h2><h3>Medium</h3><hr><p>Implement the <code>BSTIterator</code> class that represents an iterator over the <strong><a href="https://en.wikipedia.org/wiki/Tree_traversal#In-order_(LNR)" target="_blank">in-order traversal</a></strong> of a binary search tree (BST):</p>
 
 <ul>
 	<li><code>BSTIterator(TreeNode root)</code> Initializes an object of the <code>BSTIterator</code> class. The <code>root</code> of the BST is given as part of the constructor. The pointer should be initialized to a non-existent number smaller than any element in the BST.</li>

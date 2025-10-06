@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/map-sum-pairs">677. Map Sum Pairs</a></h2><h3>Medium</h3><hr><p>Design a map that allows you to do the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 677. Map Sum Pairs
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/map-sum-pairs" target = "_blank">677. Map Sum Pairs</a></h2><h3>Medium</h3><hr><p>Design a map that allows you to do the following:</p>
 
 <ul>
 	<li>Maps a string key to a given value.</li>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/wiggle-sort-ii/description/?envType=problem-list-v2&envId=sorting">324. Wiggle Sort II</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, reorder it such that <code>nums[0] &lt; nums[1] &gt; nums[2] &lt; nums[3]...</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 324. Wiggle Sort II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/wiggle-sort-ii/description/?envType=problem-list-v2&envId=sorting" target = "_blank">324. Wiggle Sort II</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, reorder it such that <code>nums[0] &lt; nums[1] &gt; nums[2] &lt; nums[3]...</code>.</p>
 
 <p>You may assume the input array always has a valid answer.</p>
 
@@ -56,4 +64,3 @@ class Solution {
     }
 }
 ```
-

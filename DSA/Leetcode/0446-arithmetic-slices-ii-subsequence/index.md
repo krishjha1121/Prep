@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/arithmetic-slices-ii-subsequence">446. Arithmetic Slices II - Subsequence</a></h2><h3>Hard</h3><hr><p>Given an integer array <code>nums</code>, return <em>the number of all the <strong>arithmetic subsequences</strong> of</em> <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 446. Arithmetic Slices II - Subsequence
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/arithmetic-slices-ii-subsequence" target = "_blank">446. Arithmetic Slices II - Subsequence</a></h2><h3>Hard</h3><hr><p>Given an integer array <code>nums</code>, return <em>the number of all the <strong>arithmetic subsequences</strong> of</em> <code>nums</code>.</p>
 
 <p>A sequence of numbers is called arithmetic if it consists of <strong>at least three elements</strong> and if the difference between any two consecutive elements is the same.</p>
 

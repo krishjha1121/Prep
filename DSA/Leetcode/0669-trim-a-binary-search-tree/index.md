@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/trim-a-binary-search-tree">669. Trim a Binary Search Tree</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a binary search tree and the lowest and highest boundaries as <code>low</code> and <code>high</code>, trim the tree so that all its elements lies in <code>[low, high]</code>. Trimming the tree should <strong>not</strong> change the relative structure of the elements that will remain in the tree (i.e., any node&#39;s descendant should remain a descendant). It can be proven that there is a <strong>unique answer</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 669. Trim a Binary Search Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/trim-a-binary-search-tree" target = "_blank">669. Trim a Binary Search Tree</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a binary search tree and the lowest and highest boundaries as <code>low</code> and <code>high</code>, trim the tree so that all its elements lies in <code>[low, high]</code>. Trimming the tree should <strong>not</strong> change the relative structure of the elements that will remain in the tree (i.e., any node&#39;s descendant should remain a descendant). It can be proven that there is a <strong>unique answer</strong>.</p>
 
 <p>Return <em>the root of the trimmed binary search tree</em>. Note that the root may change depending on the given bounds.</p>
 

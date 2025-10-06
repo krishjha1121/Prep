@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii">462. Minimum Moves to Equal Array Elements II</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code> of size <code>n</code>, return <em>the minimum number of moves required to make all array elements equal</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 462. Minimum Moves to Equal Array Elements II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii" target = "_blank">462. Minimum Moves to Equal Array Elements II</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code> of size <code>n</code>, return <em>the minimum number of moves required to make all array elements equal</em>.</p>
 
 <p>In one move, you can increment or decrement an element of the array by <code>1</code>.</p>
 

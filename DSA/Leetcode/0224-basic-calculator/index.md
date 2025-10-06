@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/basic-calculator">224. Basic Calculator</a></h2><h3>Hard</h3><hr><p>Given a string <code>s</code> representing a valid expression, implement a basic calculator to evaluate it, and return <em>the result of the evaluation</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 224. Basic Calculator
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/basic-calculator" target = "_blank">224. Basic Calculator</a></h2><h3>Hard</h3><hr><p>Given a string <code>s</code> representing a valid expression, implement a basic calculator to evaluate it, and return <em>the result of the evaluation</em>.</p>
 
 <p><strong>Note:</strong> You are <strong>not</strong> allowed to use any built-in function which evaluates strings as mathematical expressions, such as <code>eval()</code>.</p>
 

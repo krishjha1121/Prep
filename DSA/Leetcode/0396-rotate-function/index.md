@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rotate-function">396. Rotate Function</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 396. Rotate Function
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rotate-function" target = "_blank">396. Rotate Function</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code>.</p>
 
 <p>Assume <code>arr<sub>k</sub></code> to be an array obtained by rotating <code>nums</code> by <code>k</code> positions clock-wise. We define the <strong>rotation function</strong> <code>F</code> on <code>nums</code> as follow:</p>
 

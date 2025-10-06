@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/falling-squares">699. Falling Squares</a></h2><h3>Hard</h3><hr><p>There are several squares being dropped onto the X-axis of a 2D plane.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 699. Falling Squares
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/falling-squares" target = "_blank">699. Falling Squares</a></h2><h3>Hard</h3><hr><p>There are several squares being dropped onto the X-axis of a 2D plane.</p>
 
 <p>You are given a 2D integer array <code>positions</code> where <code>positions[i] = [left<sub>i</sub>, sideLength<sub>i</sub>]</code> represents the <code>i<sup>th</sup></code> square with a side length of <code>sideLength<sub>i</sub></code> that is dropped with its left edge aligned with X-coordinate <code>left<sub>i</sub></code>.</p>
 

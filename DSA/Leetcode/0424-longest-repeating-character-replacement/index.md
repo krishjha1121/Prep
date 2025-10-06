@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-repeating-character-replacement">424. Longest Repeating Character Replacement</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>k</code>. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most <code>k</code> times.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 424. Longest Repeating Character Replacement
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-repeating-character-replacement" target = "_blank">424. Longest Repeating Character Replacement</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>k</code>. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most <code>k</code> times.</p>
 
 <p>Return <em>the length of the longest substring containing the same letter you can get after performing the above operations</em>.</p>
 

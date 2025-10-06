@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/target-sum">494. Target Sum</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 494. Target Sum
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/target-sum" target = "_blank">494. Target Sum</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>target</code>.</p>
 
 <p>You want to build an <strong>expression</strong> out of nums by adding one of the symbols <code>&#39;+&#39;</code> and <code>&#39;-&#39;</code> before each integer in nums and then concatenate all the integers.</p>
 

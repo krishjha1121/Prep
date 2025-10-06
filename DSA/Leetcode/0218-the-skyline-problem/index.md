@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/the-skyline-problem">218. The Skyline Problem</a></h2><h3>Hard</h3><hr><p>A city&#39;s <strong>skyline</strong> is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Given the locations and heights of all the buildings, return <em>the <strong>skyline</strong> formed by these buildings collectively</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 218. The Skyline Problem
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/the-skyline-problem" target = "_blank">218. The Skyline Problem</a></h2><h3>Hard</h3><hr><p>A city&#39;s <strong>skyline</strong> is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Given the locations and heights of all the buildings, return <em>the <strong>skyline</strong> formed by these buildings collectively</em>.</p>
 
 <p>The geometric information of each building is given in the array <code>buildings</code> where <code>buildings[i] = [left<sub>i</sub>, right<sub>i</sub>, height<sub>i</sub>]</code>:</p>
 

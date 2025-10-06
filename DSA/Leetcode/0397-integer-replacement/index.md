@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/integer-replacement">397. Integer Replacement</a></h2><h3>Medium</h3><hr><p>Given a positive integer <code>n</code>,&nbsp;you can apply one of the following&nbsp;operations:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 397. Integer Replacement
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/integer-replacement" target = "_blank">397. Integer Replacement</a></h2><h3>Medium</h3><hr><p>Given a positive integer <code>n</code>,&nbsp;you can apply one of the following&nbsp;operations:</p>
 
 <ol>
 	<li>If <code>n</code> is even, replace <code>n</code> with <code>n / 2</code>.</li>

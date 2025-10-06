@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/palindrome-partitioning">131. Palindrome Partitioning</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, partition <code>s</code> such that every <span data-keyword="substring-nonempty">substring</span> of the partition is a <span data-keyword="palindrome-string"><strong>palindrome</strong></span>. Return <em>all possible palindrome partitioning of </em><code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 131. Palindrome Partitioning
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/palindrome-partitioning" target = "_blank">131. Palindrome Partitioning</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, partition <code>s</code> such that every <span data-keyword="substring-nonempty">substring</span> of the partition is a <span data-keyword="palindrome-string"><strong>palindrome</strong></span>. Return <em>all possible palindrome partitioning of </em><code>s</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>

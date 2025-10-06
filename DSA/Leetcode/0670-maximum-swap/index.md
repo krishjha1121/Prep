@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-swap">670. Maximum Swap</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>num</code>. You can swap two digits at most once to get the maximum valued number.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 670. Maximum Swap
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-swap" target = "_blank">670. Maximum Swap</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>num</code>. You can swap two digits at most once to get the maximum valued number.</p>
 
 <p>Return <em>the maximum valued number you can get</em>.</p>
 
