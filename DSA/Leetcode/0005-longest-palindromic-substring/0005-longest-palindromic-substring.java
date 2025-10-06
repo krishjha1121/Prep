@@ -1,10 +1,12 @@
 import java.math.BigInteger;
+import java.util.Random;
 class Solution {
     public String longestPalindrome(String s) {
         int n = s.length();
         for (int i = n; i >= 1; i--) {
             String res = check(s, i);
-            if (!res.equals("")) return res;
+            if (!res.equals(""))
+                return res;
         }
         String res = "";
         res += s.charAt(0);
@@ -21,7 +23,8 @@ class Solution {
                 long Hash2 = hash2.getHashbounds(n - (i + len), (n - (i + len) + len / 2 - 1));
                 if (Hash1 == Hash2) {
                     StringBuilder res = new StringBuilder();
-                    for (int j = i; j <= i + len - 1; j++) res.append(s.charAt(j));
+                    for (int j = i; j <= i + len - 1; j++)
+                        res.append(s.charAt(j));
                     return res.toString();
                 }
             }
@@ -34,16 +37,20 @@ class Solution {
         int n;
         static int muresiplier = 43;
         static final Random rnd = new Random();
-        static final int mod1 = BigInteger.valueOf((int) (1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
-        static final int mod2 = BigInteger.valueOf((int) (1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
+        static final int mod1 = BigInteger.valueOf((int)(1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
+        static final int mod2 = BigInteger.valueOf((int)(1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
         static final int invMuresiplier1 = BigInteger.valueOf(muresiplier).modInverse(BigInteger.valueOf(mod1)).intValue();
         static final int invMuresiplier2 = BigInteger.valueOf(muresiplier).modInverse(BigInteger.valueOf(mod2)).intValue();
         public Hashing(String s) {
             n = s.length();
-            hash1 = new long[n + 1]; hash2 = new long[n + 1];
-            inv1 = new long[n + 1]; inv2 = new long[n + 1];
-            inv1[0] = 1; inv2[0] = 1;
-            long p1 = 1; long p2 = 1;
+            hash1 = new long[n + 1];
+            hash2 = new long[n + 1];
+            inv1 = new long[n + 1];
+            inv2 = new long[n + 1];
+            inv1[0] = 1;
+            inv2[0] = 1;
+            long p1 = 1;
+            long p2 = 1;
             for (int i = 0; i < n; i++) {
                 hash1[i + 1] = (hash1[i] + s.charAt(i) * p1) % mod1;
                 p1 = p1 * muresiplier % mod1;

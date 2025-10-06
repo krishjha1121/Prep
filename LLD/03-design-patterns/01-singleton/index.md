@@ -510,4 +510,4 @@ public class Logger {
 
 ---
 
-[← Back to Design Patterns](../README.md) | [Next: Factory Pattern →](../02-factory/README.md)
+[← Back to Design Patterns](../) | [Next: Factory Pattern →](../02-factory/)

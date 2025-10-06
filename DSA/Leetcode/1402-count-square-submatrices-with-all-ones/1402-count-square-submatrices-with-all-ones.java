@@ -12,7 +12,8 @@ class Solution {
                     while (x2 < n && y2 < m) {
                         int req_area = (y2 - y1 + 1) * (x2 - x1 + 1);
                         int query = query(x1 + 1, y1 + 1, x2 + 1, y2 + 1);
-                        if (query == req_area) count++;
+                        if (query == req_area)
+                            count++;
                         x2++;
                         y2++;
                     }
@@ -28,9 +29,8 @@ class Solution {
         int n = matrix.length;
         int m = matrix[0].length;
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= m; j++) {
+            for (int j = 1; j <= m; j++)
                 prefix[i][j] = matrix[i - 1][j - 1] + prefix[i][j - 1] + prefix[i - 1][j] - prefix[i - 1][j - 1];
-            }
         }
     }
 }

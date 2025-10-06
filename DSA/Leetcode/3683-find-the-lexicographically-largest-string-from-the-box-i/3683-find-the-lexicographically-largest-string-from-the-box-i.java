@@ -3,7 +3,6 @@ import java.util.Collections;
 
 class Solution {
     private ArrayList<String> ans;
-
     public String answerString(String word, int numFriends) {
         int n = word.length();
         ans = new ArrayList<>();
@@ -14,9 +13,8 @@ class Solution {
         char ch = 'a';
         ArrayList<Integer> idx = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            if (word.charAt(i) > ch) {
+            if (word.charAt(i) > ch)
                 ch = word.charAt(i);
-            }
         }
         for (int i = 0; i < n; i++) {
             if (word.charAt(i) == ch)
@@ -40,9 +38,8 @@ class Solution {
             ans.add(res.toString());
         } else {
             int req = numFriends - count_prev - 1;
-            for (int i = n - 1 - req; i >= ind; i--) {
+            for (int i = n - 1 - req; i >= ind; i--)
                 res.append(word.charAt(i));
-            }
             ans.add(res.reverse().toString());
         }
     }

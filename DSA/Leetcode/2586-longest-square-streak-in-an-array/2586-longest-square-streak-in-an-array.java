@@ -17,13 +17,14 @@ class Solution {
                 if (set.contains(current)) {
                     count++;
                     current = current * 1L * current;
-                }
-                else break;
+                } else
+                    break;
             }
             maxi = Math.max(maxi, count);
         }
-        if (maxi == 1) return -1;
+        if (maxi == 1)
+            return -1;
         return maxi;
-        
+
     }
 }

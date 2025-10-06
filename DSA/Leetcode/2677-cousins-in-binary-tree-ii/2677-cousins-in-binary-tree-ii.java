@@ -1,18 +1,18 @@
 /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+    Definition for a binary tree node.
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode() {}
+       TreeNode(int val) { this.val = val; }
+       TreeNode(int val, TreeNode left, TreeNode right) {
+           this.val = val;
+           this.left = left;
+           this.right = right;
+       }
+    }
+*/
 class Solution {
     static class Pair {
         TreeNode current;
@@ -20,7 +20,7 @@ class Solution {
         int val;
         TreeNode parent;
         int child;
-        public Pair (TreeNode current, int level , int val, TreeNode parent, int child) {
+        public Pair(TreeNode current, int level, int val, TreeNode parent, int child) {
             this.current = current;
             this.level = level;
             this.val = val;
@@ -40,31 +40,33 @@ class Solution {
                 TreeNode curr = q.peek().current;
                 if (q.peek().current.left != null) {
                     q.offer(new Pair(q.peek().current.left, q.peek().level + 1, q.peek().current.left.val, q.peek().current, 0));
-                    if (q.peek().current.right != null) map.put(q.peek().current.left, q.peek().current.right.val);
-                    else map.put(q.peek().current.left, 0);
+                    if (q.peek().current.right != null)
+                        map.put(q.peek().current.left, q.peek().current.right.val);
+                    else
+                        map.put(q.peek().current.left, 0);
                 }
                 if (q.peek().current.right != null) {
                     q.offer(new Pair(q.peek().current.right, q.peek().level + 1, q.peek().current.right.val, q.peek().current, 1));
-                    if (q.peek().current.left != null) map.put(q.peek().current.right, q.peek().current.left.val);
-                    else map.put(q.peek().current.right, 0);
+                    if (q.peek().current.left != null)
+                        map.put(q.peek().current.right, q.peek().current.left.val);
+                    else
+                        map.put(q.peek().current.right, 0);
                 }
                 sum += q.peek().current.val;
                 q.poll();
             }
             level_sum.add(sum);
-        }     
+        }
         int current_level = 0;
         Queue<TreeNode> new_q = new LinkedList<>();
         new_q.offer(root);
         while (new_q.size() > 0) {
             int len = new_q.size();
             for (int i = 0; i < len; i++) {
-                if (new_q.peek().left != null) {
+                if (new_q.peek().left != null)
                     new_q.offer(new_q.peek().left);
-                }
-                if (new_q.peek().right != null) {
+                if (new_q.peek().right != null)
                     new_q.offer(new_q.peek().right);
-                }
                 if (current_level == 0) {
                     new_q.peek().val = 0;
                     new_q.poll();

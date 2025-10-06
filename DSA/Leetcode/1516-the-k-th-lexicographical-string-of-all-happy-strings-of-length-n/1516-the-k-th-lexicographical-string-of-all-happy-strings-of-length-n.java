@@ -4,7 +4,8 @@ class Solution {
         res = new ArrayList<>();
         solve(n, "");
         Collections.sort(res);
-        if (res.size() < k) return "";
+        if (res.size() < k)
+            return "";
         return res.get(k - 1);
     }
     private void solve(int n, String current) {
@@ -16,17 +17,14 @@ class Solution {
             solve(n, current + "a");
             solve(n, current + "b");
             solve(n, current + "c");
-        }
-        else {
+        } else {
             if (current.charAt(current.length() - 1) == 'a') {
                 solve(n, current + "b");
                 solve(n, current + "c");
-            }
-            else if (current.charAt(current.length() - 1) == 'b') {
+            } else if (current.charAt(current.length() - 1) == 'b') {
                 solve(n, current + "a");
                 solve(n, current + "c");
-            }
-            else if (current.charAt(current.length() - 1) == 'c') {
+            } else if (current.charAt(current.length() - 1) == 'c') {
                 solve(n, current + "a");
                 solve(n, current + "b");
             }

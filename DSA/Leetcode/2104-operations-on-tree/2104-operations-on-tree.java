@@ -1,17 +1,17 @@
 import java.util.*;
 class LockingTree {
-    private ArrayList<ArrayList<Integer>> adj;
+    private ArrayList<ArrayList<Integer >> adj;
     private int par[];
     private int map[];
     public LockingTree(int[] parent) {
         int n = parent.length;
-        par = new int[n + 1]; par[0] = -1;
+        par = new int[n + 1];
+        par[0] = -1;
         adj = new ArrayList<>();
         map = new int[n + 1];
         Arrays.fill(map, -1);
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             adj.add(new ArrayList<>());
-        }
         for (int i = 1; i < n; i++) {
             int p = par[i] = parent[i];
             adj.get(p).add(i);
@@ -21,7 +21,7 @@ class LockingTree {
         if (map[num] == -1) {
             map[num] = user;
             return true;
-        }   
+        }
         return false;
     }
     public boolean unlock(int num, int user) {
@@ -39,7 +39,8 @@ class LockingTree {
         return false;
     }
     private boolean check(int node, int user) {
-        if (map[node] != -1) return false;
+        if (map[node] != -1)
+            return false;
         int boolVal1[] = new int[1];
         int boolVal2[] = new int[1];
         checkDescendant(node, boolVal1);
@@ -76,16 +77,16 @@ class LockingTree {
             if (map[node] != -1) {
                 boolVal[0] = 0;
                 return;
-            } 
+            }
             node = par[node];
         }
     }
 }
 
 /**
- * Your LockingTree object will be instantiated and called as such:
- * LockingTree obj = new LockingTree(parent);
- * boolean param_1 = obj.lock(num,user);
- * boolean param_2 = obj.unlock(num,user);
- * boolean param_3 = obj.upgrade(num,user);
- */
+    Your LockingTree object will be instantiated and called as such:
+    LockingTree obj = new LockingTree(parent);
+    boolean param_1 = obj.lock(num,user);
+    boolean param_2 = obj.unlock(num,user);
+    boolean param_3 = obj.upgrade(num,user);
+*/

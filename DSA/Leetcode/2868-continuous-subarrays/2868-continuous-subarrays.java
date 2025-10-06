@@ -10,7 +10,8 @@ class Solution {
             map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
             while (left <= right && Math.abs(set.first() - set.last()) > 2) {
                 map.put(nums[left], map.get(nums[left]) - 1);
-                if (map.get(nums[left]) == 0) set.remove(nums[left]);
+                if (map.get(nums[left]) == 0)
+                    set.remove(nums[left]);
                 left++;
             }
             count += (right - left + 1);
@@ -25,42 +26,41 @@ class Solution {
         public static boolean getLocal() {
             try {
                 return System.getProperty("LOCAL") == null;
-            }catch(SecurityException e) {
+            } catch (SecurityException e) {
                 return false;
             }
         }
         public static <T> String ts(T t) {
-            if(t==null) {
+            if (t == null)
                 return "null";
-            }
-            if(t instanceof Iterable) {
+            if (t instanceof Iterable)
                 return ts((Iterable<?>) t);
-            }else if(t instanceof int[]) {
+            else if (t instanceof int[]) {
                 String s = Arrays.toString((int[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof long[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof long[]) {
                 String s = Arrays.toString((long[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof char[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof char[]) {
                 String s = Arrays.toString((char[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof double[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof double[]) {
                 String s = Arrays.toString((double[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof boolean[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof boolean[]) {
                 String s = Arrays.toString((boolean[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof Object[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof Object[])
                 return ts((Object[]) t);
-            }
             return t.toString();
         }
         private static <T> String ts(T[] arr) {
             StringBuilder ret = new StringBuilder();
             ret.append("{");
             boolean first = true;
-            for(T t: arr) {
-                if(!first) ret.append(", ");
+            for (T t : arr) {
+                if (!first)
+                    ret.append(", ");
                 first = false;
                 ret.append(ts(t));
             }
@@ -71,8 +71,9 @@ class Solution {
             StringBuilder ret = new StringBuilder();
             ret.append("{");
             boolean first = true;
-            for(T t: iter) {
-                if(!first) ret.append(", ");
+            for (T t : iter) {
+                if (!first)
+                    ret.append(", ");
                 first = false;
                 ret.append(ts(t));
             }
@@ -80,10 +81,11 @@ class Solution {
             return ret.toString();
         }
         public static void print(Object... o) {
-            if(LOCAL) {
-                System.out.print("Line #"+Thread.currentThread().getStackTrace()[2].getLineNumber()+": [");
-                for(int i = 0; i<o.length; i++) {
-                    if(i!=0) System.out.print(", ");
+            if (LOCAL) {
+                System.out.print("Line #" + Thread.currentThread().getStackTrace()[2].getLineNumber() + ": [");
+                for (int i = 0; i < o.length; i++) {
+                    if (i != 0)
+                        System.out.print(", ");
                     System.out.print(ts(o[i]));
                 }
                 System.out.println("]");

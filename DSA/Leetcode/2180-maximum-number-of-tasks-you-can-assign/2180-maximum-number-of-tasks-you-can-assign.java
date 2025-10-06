@@ -8,8 +8,8 @@ class Solution {
             if (ok(mid, tasks, workers, strength, pills)) {
                 ans = mid;
                 low = mid + 1;
-            }
-            else high = mid - 1;
+            } else
+                high = mid - 1;
         }
         return ans;
     }
@@ -32,10 +32,11 @@ class Solution {
                     map.remove(current_worker);
                     set.remove(current_worker);
                 }
-            }
-            else {
-                if (pills == 0) return false;
-                if (set.ceiling(current_task - strength) == null) return false;
+            } else {
+                if (pills == 0)
+                    return false;
+                if (set.ceiling(current_task - strength) == null)
+                    return false;
                 pills--;
                 int current_worker = set.ceiling(current_task - strength);
                 map.put(current_worker, map.getOrDefault(current_worker, 0) -1);

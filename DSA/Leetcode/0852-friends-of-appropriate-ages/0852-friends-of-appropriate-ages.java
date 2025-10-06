@@ -11,9 +11,11 @@ class Solution {
         for (int i = 0; i < n; i++) {
             int current = ages[i];
             int res = binarySearch(i, current, ages);
-            if (!map.containsKey(current)) map.put(current, res);
+            if (!map.containsKey(current))
+                map.put(current, res);
         }
-        for (int i = 0; i < n; i++) count += map.getOrDefault(ages[i], 0);
+        for (int i = 0; i < n; i++)
+            count += map.getOrDefault(ages[i], 0);
         return count;
     }
     private int binarySearch(int current_ind, int current, int ages[]) {
@@ -24,10 +26,11 @@ class Solution {
             if (ages[mid] <= current && ages[mid] > 0.5 * current + 7 && !(ages[mid] > 100 && current < 100)) {
                 ans = mid;
                 low = mid + 1;
-            }
-            else high = mid - 1;
+            } else
+                high = mid - 1;
         }
-        if (ans == -1) return 0;
+        if (ans == -1)
+            return 0;
         return ans - current_ind;
     }
 }

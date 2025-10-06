@@ -2,7 +2,7 @@ class Solution {
     public String[] divideString(String s, int k, char fill) {
         int n = s.length();
         String res[] = new String[n / k];
-        if (n % k != 0) 
+        if (n % k != 0)
             res = new String[n / k + 1];
         StringBuilder current = new StringBuilder();
         int idx = 0;
@@ -13,9 +13,9 @@ class Solution {
                 current = new StringBuilder();
             }
         }
-        while (current.toString().length() != k) 
+        while (current.toString().length() != k)
             current.append(fill);
-        if (idx < res.length) 
+        if (idx < res.length)
             res[idx++] = current.toString();
         return res;
     }

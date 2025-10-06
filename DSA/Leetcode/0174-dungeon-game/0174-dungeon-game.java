@@ -3,7 +3,7 @@ class Solution {
     public int calculateMinimumHP(int[][] arr) {
         int n = arr.length, m = arr[0].length;
         dp = new int[n + 1][m + 1];
-        for (int current[] : dp) 
+        for (int current[] : dp)
             Arrays.fill(current, (int)(1e9));
         dp[n][m - 1] = 1;
         dp[n - 1][m] = 1;

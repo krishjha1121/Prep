@@ -12,8 +12,10 @@ class Solution {
         long res = Long.MAX_VALUE;
         for (int i = 0; i < m; i++) {
             long first = 0, second = 0;
-            if (i != m - 1) first = pref1[m - 1] - pref1[i];
-            if (i != 0) second = pref2[i - 1];
+            if (i != m - 1)
+                first = pref1[m - 1] - pref1[i];
+            if (i != 0)
+                second = pref2[i - 1];
             res = Math.min(res, Math.max(first, second));
         }
         return res;

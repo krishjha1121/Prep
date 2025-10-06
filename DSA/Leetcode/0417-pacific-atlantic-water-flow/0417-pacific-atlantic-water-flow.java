@@ -10,7 +10,7 @@ class Solution {
             return "(" + row + " " + col + ")";
         }
     }
-    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+    public List<List<Integer >> pacificAtlantic(int[][] heights) {
         int n = heights.length, m = heights[0].length;
         int vis1[][] = new int[n + 1][m + 1];
         int vis2[][] = new int[n + 1][m + 1];
@@ -20,12 +20,13 @@ class Solution {
         for (int i = 0; i < n; i++) if (vis2[i][m - 1] == 0) bfs(i, m - 1, heights, vis2);
         for (int j = 0; j < m; j++) if (vis2[n - 1][j] == 0) bfs(n - 1, j, heights, vis2);
 
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer >> res = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (vis1[i][j] == 1 && vis2[i][j] == 1) {
                     List<Integer> temp = new ArrayList<>();
-                    temp.add(i); temp.add(j);
+                    temp.add(i);
+                    temp.add(j);
                     res.add(new ArrayList<>(temp));
                 }
             }

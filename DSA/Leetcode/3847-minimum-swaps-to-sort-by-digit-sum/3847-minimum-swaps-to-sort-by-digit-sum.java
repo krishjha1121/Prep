@@ -15,28 +15,30 @@ class Solution {
         @Override
         public int compare(Tuple first, Tuple second) {
             int op1 = Integer.compare(first.sum, second.sum);
-            if (op1 != 0) return op1;
+            if (op1 != 0)
+                return op1;
             return Integer.compare(first.ele, second.ele);
         }
     }
     public int minSwaps(int[] nums) {
         int n = nums.length;
         PriorityQueue<Tuple> pq = new PriorityQueue<>(new custom_sort());
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             pq.offer(new Tuple(nums[i], compute_sum(nums[i]), i));
-        }
         int count = 0, index = 0;
         int arr[] = new int[n];
         int loc[] = new int[n];
         while (pq.size() > 0) {
-            int curr_ele = pq.peek().ele, curr_sum = pq.peek().sum , curr_idx = pq.peek().idx;
+            int curr_ele = pq.peek().ele, curr_sum = pq.peek().sum, curr_idx = pq.peek().idx;
             arr[index++] = curr_idx;
             pq.poll();
         }
         int req[] = new int[n];
-        for (int i = 0; i < n; i++) req[i] = arr[i];
+        for (int i = 0; i < n; i++)
+            req[i] = arr[i];
         Arrays.sort(req);
-        for (int i = 0; i < n; i++) loc[arr[i]] = i;
+        for (int i = 0; i < n; i++)
+            loc[arr[i]] = i;
         for (int i = 0; i < n; i++) {
             if (arr[i] != req[i]) {
                 count++;

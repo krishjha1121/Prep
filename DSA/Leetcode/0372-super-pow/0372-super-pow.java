@@ -14,13 +14,14 @@ class Solution {
             if (p % 2 == 0) {
                 a = ((a % mod) * (a % mod)) % mod;
                 p /= 2;
-            }
-            else {
+            } else {
                 res = ((res % mod) * (a % mod)) % mod;
                 p--;
             }
         }
         return res;
     }
-    static long mul(long a, long b) {return (long) ((long) ((a % mod) * 1L * (b % mod)) % mod);}
+    static long mul(long a, long b) {
+        return (long)((long)((a % mod) * 1L * (b % mod)) % mod);
+    }
 }

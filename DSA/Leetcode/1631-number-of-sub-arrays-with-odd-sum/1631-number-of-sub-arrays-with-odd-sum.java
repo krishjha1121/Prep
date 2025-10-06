@@ -10,8 +10,7 @@ class Solution {
             if (sum % 2 == 0) {
                 even++;
                 res += odd;
-            }
-            else {
+            } else {
                 odd++;
                 res += even;
             }

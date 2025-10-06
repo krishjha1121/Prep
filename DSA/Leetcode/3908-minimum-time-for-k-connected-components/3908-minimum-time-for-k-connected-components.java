@@ -25,8 +25,9 @@ class Solution {
         public void merge(int u, int v) {
             u = Leader(u);
             v = Leader(v);
-            
-            if (u == v) return;
+
+            if (u == v)
+                return;
 
             if (size[v] > size[u]) {
                 int temp = u;
@@ -37,7 +38,8 @@ class Solution {
             size[u] += size[v];
         }
         public int Leader(int u) {
-            if (parent[u] == u) return u;
+            if (parent[u] == u)
+                return u;
             return parent[u] = Leader(parent[u]);
         }
     }
@@ -56,21 +58,21 @@ class Solution {
             if (ok(mid, k, n)) {
                 ans = mid;
                 high = mid - 1;
-            }
-            else low = mid + 1;
+            } else
+                low = mid + 1;
         }
         return ans;
     }
     private boolean ok(int target, int k, int n) {
         DSU dsu = new DSU(n);
         for (int i = 0; i < edges.size(); i++) {
-            if (edges.get(i).time <= target) 
+            if (edges.get(i).time <= target)
                 continue;
             dsu.merge(edges.get(i).u, edges.get(i).v);
         }
         int count = 0;
         for (int i = 0; i < n; i++) {
-            if (dsu.Leader(i) == i) 
+            if (dsu.Leader(i) == i)
                 count++;
         }
         return count >= k;

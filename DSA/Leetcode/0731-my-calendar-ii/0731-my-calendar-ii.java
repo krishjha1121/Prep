@@ -11,9 +11,11 @@ class MyCalendarTwo {
             cnt += count;
             if (cnt >= 3) {
                 bookings.put(start, bookings.get(start) - 1);
-                if (bookings.get(start) == 0) bookings.remove(start);
+                if (bookings.get(start) == 0)
+                    bookings.remove(start);
                 bookings.put(end, bookings.get(end) + 1);
-                if (bookings.get(end) == 0) bookings.remove(end);
+                if (bookings.get(end) == 0)
+                    bookings.remove(end);
                 return false;
             }
         }
@@ -22,7 +24,7 @@ class MyCalendarTwo {
 }
 
 /**
- * Your MyCalendarTwo object will be instantiated and called as such:
- * MyCalendarTwo obj = new MyCalendarTwo();
- * boolean param_1 = obj.book(start,end);
- */
+    Your MyCalendarTwo object will be instantiated and called as such:
+    MyCalendarTwo obj = new MyCalendarTwo();
+    boolean param_1 = obj.book(start,end);
+*/

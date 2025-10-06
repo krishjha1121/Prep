@@ -10,11 +10,14 @@ class Solution {
     public String largestNumber(int[] nums) {
         int n = nums.length;
         ArrayList<String> res = new ArrayList<>();
-        for (int ele : nums) res.add(String.valueOf(ele));
+        for (int ele : nums)
+            res.add(String.valueOf(ele));
         Collections.sort(res, new custom_sort());
-        if (res.size() > 0 && res.get(0).equals("0")) return "0";
+        if (res.size() > 0 && res.get(0).equals("0"))
+            return "0";
         String ans = "";
-        for (String temp : res) ans += temp;
+        for (String temp : res)
+            ans += temp;
         return ans;
     }
 }

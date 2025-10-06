@@ -3,8 +3,10 @@ class Solution {
         int n = nums.length;
         Comparator<Integer> comparator = new Comparator<Integer>() {
             public int compare(Integer a, Integer b) {
-                if(nums[a] != nums[b]) return Integer.compare(nums[a), nums[b]);
-                else return a - b;
+                if (nums[a] != nums[b])
+                    return Integer.compare(nums[a), nums[b]);
+                else
+                    return a - b;
             }
         };
         TreeSet<Integer> maxSet = new TreeSet<>(comparator.reversed());
@@ -14,17 +16,21 @@ class Solution {
         for (int i = 0; i < k; i++) {
             maxSet.add(i);
             minSet.add(maxSet.pollFirst());
-            if (minSet.size() > maxSet.size()) maxSet.add(minSet.pollFirst());
+            if (minSet.size() > maxSet.size())
+                maxSet.add(minSet.pollFirst());
         }
         res[current_idx++] = getMedian(minSet, maxSet, nums);
         int start = 0;
         for (int i = k; i < n; i++) {
-            if (minSet.contains(start)) minSet.remove(start);
-            if (maxSet.contains(start)) maxSet.remove(start);
+            if (minSet.contains(start))
+                minSet.remove(start);
+            if (maxSet.contains(start))
+                maxSet.remove(start);
             start++;
             maxSet.add(i);
             minSet.add(maxSet.pollFirst());
-            if (minSet.size() > maxSet.size()) maxSet.add(minSet.pollFirst());
+            if (minSet.size() > maxSet.size())
+                maxSet.add(minSet.pollFirst());
             res[current_idx++] = getMedian(minSet, maxSet, nums);
         }
         return res;

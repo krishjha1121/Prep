@@ -9,11 +9,12 @@ class Solution {
             if (curr == ' ') {
                 res.add(current);
                 current = "";
-            }
-            else current += curr;
+            } else
+                current += curr;
         }
         for (int i = 0; i < res.size(); i++) {
-            if (res.get(i).startsWith(target)) return i + 1;
+            if (res.get(i).startsWith(target))
+                return i + 1;
         }
         return -1;
     }

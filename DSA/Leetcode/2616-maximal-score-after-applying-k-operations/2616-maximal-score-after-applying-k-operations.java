@@ -13,16 +13,19 @@ class Solution {
     public static long maxKelements(int[] nums, int k) {
         int n = nums.length;
         PriorityQueue<Integer> pq = new PriorityQueue<>(new custom_sort());
-        for (int ele : nums) pq.offer(ele);
+        for (int ele : nums)
+            pq.offer(ele);
         long sum = 0;
         while (k > 0) {
             sum += pq.peek();
             int ele = pq.poll();
-            if (ele % 3 == 0) pq.offer(ele / 3);
-            else pq.offer((ele / 3) + 1);
-            k--;					
+            if (ele % 3 == 0)
+                pq.offer(ele / 3);
+            else
+                pq.offer((ele / 3) + 1);
+            k--;
         }
-        return sum;	
+        return sum;
     }
 }
 
@@ -30,9 +33,9 @@ public class Main {
     static Reader sc = new Reader();
     static PrintWriter out = new PrintWriter(System.out);
     static Debug dbg = new Debug();
-    static int mod = (int) (1000000007); //998244353 1000000007;
+    static int mod = (int)(1000000007);  //998244353 1000000007;
     static long hash_mod = 92233720368547753L;
-    static ArrayList<ArrayList<Integer>> adj;
+    static ArrayList<ArrayList<Integer >> adj;
 
     /***Code Starts From Here***/
     public static void main(String[] args) throws IOException {
@@ -46,12 +49,13 @@ public class Main {
     }
 
     public static void Attack() throws IOException {
-    	int n = sc.nextInt();
-    	int k = sc.nextInt();
-    	int arr[] = new int[n];
-    	for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
-    	Solution sol = new Solution();
-    	long res = sol.maxKelements(arr, k);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
+        Solution sol = new Solution();
+        long res = sol.maxKelements(arr, k);
         out.println(res);
     }
 
@@ -76,7 +80,8 @@ public class Main {
             byte[] buf = new byte[64];
             int cnt = 0, c;
             while ((c = read()) != -1) {
-                if (c == '\n') break;
+                if (c == '\n')
+                    break;
                 buf[cnt++] = (byte) c;
             }
             return new String(buf, 0, cnt);
@@ -84,66 +89,88 @@ public class Main {
         public int nextInt() throws IOException {
             int ret = 0;
             byte c = read();
-            while (c <= ' ') c = read();
+            while (c <= ' ')
+                c = read();
             boolean neg = (c == '-');
-            if (neg) c = read();
-            do {ret = ret * 10 + c - '0';}
-            while ((c = read()) >= '0' && c <= '9');
-            if (neg) return -ret;
+            if (neg)
+                c = read();
+            do {
+                ret = ret * 10 + c - '0';
+            } while ((c = read()) >= '0' && c <= '9');
+            if (neg)
+                return -ret;
             return ret;
         }
         public long nextLong() throws IOException {
             long ret = 0;
             byte c = read();
-            while (c <= ' ') c = read();
+            while (c <= ' ')
+                c = read();
             boolean neg = (c == '-');
-            if (neg) c = read();
-            do {ret = ret * 10L + c - '0';}
-            while ((c = read()) >= '0' && c <= '9');
-            if (neg) return -ret;
+            if (neg)
+                c = read();
+            do {
+                ret = ret * 10L + c - '0';
+            } while ((c = read()) >= '0' && c <= '9');
+            if (neg)
+                return -ret;
             return ret;
         }
         public double nextDouble() throws IOException {
             double ret = 0, div = 1;
             byte c = read();
-            while (c <= ' ') c = read();
+            while (c <= ' ')
+                c = read();
             boolean neg = (c == '-');
-            if (neg) c = read();
-            do {ret = ret * 10 + c - '0';}
-            while ((c = read()) >= '0' && c <= '9');
-            if (c == '.') while ((c = read()) >= '0' && c <= '9') ret += (c - '0') / (div *= 10);
-            if (neg) return -ret;
+            if (neg)
+                c = read();
+            do {
+                ret = ret * 10 + c - '0';
+            } while ((c = read()) >= '0' && c <= '9');
+            if (c == '.')
+                while ((c = read()) >= '0' && c <= '9')
+                    ret += (c - '0') / (div *= 10);
+            if (neg)
+                return -ret;
             return ret;
         }
         private void fillBuffer() throws IOException {
             bytesRead = din.read(buffer, bufferPointer = 0, BUFFER_SIZE);
-            if (bytesRead == -1) buffer[0] = -1;
+            if (bytesRead == -1)
+                buffer[0] = -1;
         }
         private byte read() throws IOException {
-            if (bufferPointer == bytesRead) fillBuffer();
+            if (bufferPointer == bytesRead)
+                fillBuffer();
             return buffer[bufferPointer++];
         }
         public String next() throws IOException {
             StringBuilder sb = new StringBuilder();
             byte c;
             while ((c = read()) <= ' ') ;
-            do {sb.append((char) c);}
-            while ((c = read()) > ' ');
+            do {
+                sb.append((char) c);
+            } while ((c = read()) > ' ');
             return sb.toString();
         }
         public int nextInt2() throws IOException {
             int ret = 0;
             byte c = read();
-            while (c <= ' ') c = read();
+            while (c <= ' ')
+                c = read();
             boolean neg = (c == '-');
-            if (neg) c = read();
-            do {ret = ret * 10 + c - '0';}
-            while ((c = read()) >= '0' && c <= '9');
-            if (neg) return -ret;
+            if (neg)
+                c = read();
+            do {
+                ret = ret * 10 + c - '0';
+            } while ((c = read()) >= '0' && c <= '9');
+            if (neg)
+                return -ret;
             return ret;
         }
         public void close() throws IOException {
-            if (din == null) return;
+            if (din == null)
+                return;
             din.close();
         }
     }
@@ -154,8 +181,7 @@ public class Main {
             if (p % 2 == 0) {
                 a = ((a % mod) * (a % mod)) % mod;
                 p /= 2;
-            }
-            else {
+            } else {
                 res = ((res % mod) * (a % mod)) % mod;
                 p--;
             }
@@ -163,9 +189,11 @@ public class Main {
         return res;
     }
     static long exp(long base, long exp) {
-        if (exp == 0) return 1;
+        if (exp == 0)
+            return 1;
         long half = exp(base, exp / 2);
-        if (exp % 2 == 0) return mul(half, half);
+        if (exp % 2 == 0)
+            return mul(half, half);
         return mul(half, mul(half, base));
     }
 
@@ -210,32 +238,75 @@ public class Main {
         }
     }
 
-    static long Div(long x, long y) {return mul(x, modinv(y));}
-    static long LCM(long a, long b) {return (a / GCD(a, b)) * b;}
-    static long modinv(long x) {return fast_pow(x, mod - 2, mod);}
-    static long add(long a, long b) {a += b; if (a >= mod) a-= mod; return a;}
-    static long mod(long a, long b) {long r = a % b;return r < 0 ? r + b : r;}    
-    static long GCD(long x, long y) {if(y == 0) return x;return GCD(y, x % y);}
-    static long sub(long x, long y) {long z = x - y; if (z < 0)  z += mod;return z;}
-    static long mul(long a, long b) {return (long) ((long) ((a % mod) * 1L * (b % mod)) % mod);}
-    public static void READING(){if(System.getProperty("ONLINE_JUDGE") == null){try{sc = new Reader("input.txt");out = new PrintWriter("output.txt");}catch (Exception e){}}}
-    public static void ERROR() {try {PrintStream fileOut = new PrintStream(new FileOutputStream("dbg.txt", false), true, "UTF-8");System.setErr(fileOut);} catch (FileNotFoundException | UnsupportedEncodingException e) {e.printStackTrace();}}
+    static long Div(long x, long y) {
+        return mul(x, modinv(y));
+    }
+    static long LCM(long a, long b) {
+        return (a / GCD(a, b)) * b;
+    }
+    static long modinv(long x) {
+        return fast_pow(x, mod - 2, mod);
+    }
+    static long add(long a, long b) {
+        a += b;
+        if (a >= mod)
+            a -= mod;
+        return a;
+    }
+    static long mod(long a, long b) {
+        long r = a % b;
+        return r < 0 ? r + b : r;
+    }
+    static long GCD(long x, long y) {
+        if (y == 0)
+            return x;
+        return GCD(y, x % y);
+    }
+    static long sub(long x, long y) {
+        long z = x - y;
+        if (z < 0)
+            z += mod;
+        return z;
+    }
+    static long mul(long a, long b) {
+        return (long)((long)((a % mod) * 1L * (b % mod)) % mod);
+    }
+    public static void READING() {
+        if (System.getProperty("ONLINE_JUDGE") == null) {
+            try {
+                sc = new Reader("input.txt");
+                out = new PrintWriter("output.txt");
+            } catch (Exception e) {}
+        }
+    }
+    public static void ERROR() {
+        try {
+            PrintStream fileOut = new PrintStream(new FileOutputStream("dbg.txt", false), true, "UTF-8");
+            System.setErr(fileOut);
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void sort(int[] arr) {
         //because Arrays.sort() uses quicksort which is dumb
         //Collections.sort() uses merge sort
         ArrayList<Integer> ls = new ArrayList<>();
-        for (Integer x : arr) ls.add(x);
+        for (Integer x : arr)
+            ls.add(x);
         Collections.sort(ls);
-        for (int i = 0; i < arr.length; i++) arr[i] = ls.get(i);
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = ls.get(i);
     }
     public static void sort(long[] arr) {
         //because Arrays.sort() uses quicksort which is dumb
         //Collections.sort() uses merge sort
         ArrayList<Long> ls = new ArrayList<>();
-        for (Long x : arr) ls.add(x);
+        for (Long x : arr)
+            ls.add(x);
         Collections.sort(ls);
-        for (int i = 0; i < arr.length; i++) arr[i] = ls.get(i);
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = ls.get(i);
     }
 
     static class Unique_Pair {
@@ -247,9 +318,11 @@ public class Main {
         }
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Unique_Pair current = (Unique_Pair) (o);
+            if (this == o)
+                return true;
+            if (o == null || getClass() != o.getClass())
+                return false;
+            Unique_Pair current = (Unique_Pair)(o);
             return first == current.first && second == current.second;
         }
         @Override
@@ -261,29 +334,38 @@ public class Main {
             return "(" + first + " " + second + ")";
         }
     }
-    
-    
+
+
     @SuppressWarnings("serial")
-    static class CountMap<T> extends TreeMap<T, Integer>{
+    static class CountMap<T> extends TreeMap<T, Integer> {
         CountMap() {}
-        CountMap(T[] arr) {this.putCM(arr);}
+        CountMap(T[] arr) {
+            this.putCM(arr);
+        }
         public Integer putCM(T key) {
-            if (super.containsKey(key)) return super.put(key, super.get(key) + 1);
-            else return super.put(key, 1);
+            if (super.containsKey(key))
+                return super.put(key, super.get(key) + 1);
+            else
+                return super.put(key, 1);
         }
         public Integer removeCM(T key) {
             Integer count = super.get(key);
-            if (count == null) return -1;
-            if (count == 1) return super.remove(key);
-            else  return super.put(key, super.get(key) - 1);
+            if (count == null)
+                return -1;
+            if (count == 1)
+                return super.remove(key);
+            else
+                return super.put(key, super.get(key) - 1);
         }
         public Integer getCM(T key) {
             Integer count = super.get(key);
-            if (count == null) return 0;
+            if (count == null)
+                return 0;
             return count;
         }
         public void putCM(T[] arr) {
-            for (T ele : arr) this.putCM(ele);
+            for (T ele : arr)
+                this.putCM(ele);
         }
     }
 
@@ -333,16 +415,20 @@ public class Main {
         int n;
         static int muresiplier = 43;
         static final Random rnd = new Random();
-        static final int mod1 = BigInteger.valueOf((int) (1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
-        static final int mod2 = BigInteger.valueOf((int) (1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
+        static final int mod1 = BigInteger.valueOf((int)(1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
+        static final int mod2 = BigInteger.valueOf((int)(1e9 + rnd.nextInt((int) 1e9))).nextProbablePrime().intValue();
         static final int invMuresiplier1 = BigInteger.valueOf(muresiplier).modInverse(BigInteger.valueOf(mod1)).intValue();
         static final int invMuresiplier2 = BigInteger.valueOf(muresiplier).modInverse(BigInteger.valueOf(mod2)).intValue();
         public Hashing(String s) {
             n = s.length();
-            hash1 = new long[n + 1]; hash2 = new long[n + 1];
-            inv1 = new long[n + 1]; inv2 = new long[n + 1];
-            inv1[0] = 1; inv2[0] = 1;
-            long p1 = 1; long p2 = 1;
+            hash1 = new long[n + 1];
+            hash2 = new long[n + 1];
+            inv1 = new long[n + 1];
+            inv2 = new long[n + 1];
+            inv1[0] = 1;
+            inv2[0] = 1;
+            long p1 = 1;
+            long p2 = 1;
             for (int i = 0; i < n; i++) {
                 hash1[i + 1] = (hash1[i] + s.charAt(i) * p1) % mod1;
                 p1 = p1 * muresiplier % mod1;
@@ -376,7 +462,8 @@ public class Main {
         public void insert(String word) {
             Node curr = root;
             for (char ch : word.toCharArray()) {
-                if (curr.children[ch - 'a'] == null) curr.children[ch - 'a'] = new Node();
+                if (curr.children[ch - 'a'] == null)
+                    curr.children[ch - 'a'] = new Node();
                 curr = curr.children[ch - 'a'];
             }
             curr.isEnd = true;
@@ -384,13 +471,14 @@ public class Main {
         public boolean find(String word) {
             Node curr = root;
             for (char ch : word.toCharArray()) {
-                if (curr.children[ch - 'a'] == null)  return false;
+                if (curr.children[ch - 'a'] == null)
+                    return false;
                 curr = curr.children[ch - 'a'];
             }
             return curr.isEnd;
         }
     }
-    
+
     static class MultiSet<T> {
         TreeMap<T, Integer> frequency;
         TreeSet<T> set;
@@ -414,7 +502,8 @@ public class Main {
             size++;
         }
         public void remove(T elem) {
-            if (!set.contains(elem)) return;
+            if (!set.contains(elem))
+                return;
             frequency.put(elem, frequency.get(elem) - 1);
             if (frequency.get(elem) == 0) {
                 set.remove(elem);
@@ -425,124 +514,164 @@ public class Main {
         public boolean contains(T elem) {
             return set.contains(elem);
         }
-        
+
         @Override
         public String toString() {
             String current = "(";
-            for(T ele : set) {
+            for (T ele : set) {
                 int freq = frequency.get(ele);
-                for(int i = 0; i < freq; i++) {
-                    if(current.length() == 1) current += ele;
-                    else current += "," + ele;
+                for (int i = 0; i < freq; i++) {
+                    if (current.length() == 1)
+                        current += ele;
+                    else
+                        current += "," + ele;
                 }
             }
             current += ")";
             return current;
         }
-        
+
         //Returns the count of the specified element in this muresiset
-        public int count(T element) {return frequency.getOrDefault(element, 0);}
+        public int count(T element) {
+            return frequency.getOrDefault(element, 0);
+        }
         // Returns the total number of elements in the muresiset (including duplicates)
-        public int size() {int size = 0; for(int count : frequency.values()) size += count; return size;}
+        public int size() {
+            int size = 0;
+            for (int count : frequency.values())
+                size += count;
+            return size;
+        }
         // Returns the smallest element in this muresiset greater than or equal to the given element, or null if there is no such element
-        public T ceiling(T element) {return frequency.ceilingKey(element);}
+        public T ceiling(T element) {
+            return frequency.ceilingKey(element);
+        }
         // Returns the greatest element in this muresiset less than or equal to the given element, or null if there is no such element
-        public T floor(T element) {return frequency.floorKey(element);}
+        public T floor(T element) {
+            return frequency.floorKey(element);
+        }
         // Returns the smallest element in this muresiset strictly greater than the given element, or null if there is no such element
-        public T higher(T element) {return frequency.higherKey(element);}
+        public T higher(T element) {
+            return frequency.higherKey(element);
+        }
         // Returns the greatest element in this muresiset strictly less than the given element, or null if there is no such element
-        public T lower(T element) { return frequency.lowerKey(element);}
+        public T lower(T element) {
+            return frequency.lowerKey(element);
+        }
     }
 
-    static class MultiTreeSet<E> { 
+    static class MultiTreeSet<E> {
         TreeMap<E, Integer> freqTreeMap = new TreeMap<E, Integer>();
         int size;
         public MultiTreeSet() {}
         public MultiTreeSet(Collection<? extends E> c) {
-            for (E element : c) add(element);
+            for (E element : c)
+                add(element);
         }
-        public int size() {return size;}
+        public int size() {
+            return size;
+        }
         public void add(E element) {
             Integer freq = freqTreeMap.get(element);
-            if(freq==null) freqTreeMap.put(element, 1);
-            else freqTreeMap.put(element,freq + 1);
+            if (freq == null)
+                freqTreeMap.put(element, 1);
+            else
+                freqTreeMap.put(element, freq + 1);
             ++size;
         }
         public void remove(E element) {
             Integer freq = freqTreeMap.get(element);
-            if(freq!=null) {
-                if(freq == 1) freqTreeMap.remove(element);
-                else freqTreeMap.put(element, freq-1);--size;
+            if (freq != null) {
+                if (freq == 1)
+                    freqTreeMap.remove(element);
+                else
+                    freqTreeMap.put(element, freq - 1);
+                --size;
             }
         }
         public int get(E element) {
             Integer freq = freqTreeMap.get(element);
-            if(freq == null) return 0;
+            if (freq == null)
+                return 0;
             return freq;
         }
-        public boolean contains(E element) {return get(element) > 0;}
-        @Override 
+        public boolean contains(E element) {
+            return get(element) > 0;
+        }
+        @Override
         public String toString() {
             String current = "( ";
-            for(E ele : freqTreeMap.keySet()){
+            for (E ele : freqTreeMap.keySet()) {
                 int freq = freqTreeMap.get(ele);
-                for(int i = 0; i < freq; i++){
+                for (int i = 0; i < freq; i++)
                     current += ele + " ";
-                }
             }
             current += ")";
             return current;
         }
-        public boolean isEmpty() {return size == 0;}
-        public E first() {return freqTreeMap.firstKey();}
-        public E last() {return freqTreeMap.lastKey();}
-        public E ceiling(E element) {return freqTreeMap.ceilingKey(element);}
-        public E floor(E element) {return freqTreeMap.floorKey(element);}
-        public E higher(E element) {return freqTreeMap.higherKey(element);}
-        public E lower(E element) {return freqTreeMap.lowerKey(element);}
+        public boolean isEmpty() {
+            return size == 0;
+        }
+        public E first() {
+            return freqTreeMap.firstKey();
+        }
+        public E last() {
+            return freqTreeMap.lastKey();
+        }
+        public E ceiling(E element) {
+            return freqTreeMap.ceilingKey(element);
+        }
+        public E floor(E element) {
+            return freqTreeMap.floorKey(element);
+        }
+        public E higher(E element) {
+            return freqTreeMap.higherKey(element);
+        }
+        public E lower(E element) {
+            return freqTreeMap.lowerKey(element);
+        }
     }
-    
+
     static class Debug {
         public static boolean LOCAL = getLocal();
         public static boolean getLocal() {
             try {
                 return System.getProperty("LOCAL") == null;
-            }catch(SecurityException e) {
+            } catch (SecurityException e) {
                 return false;
             }
         }
         public static <T> String ts(T t) {
-            if(t==null) {
+            if (t == null)
                 return "null";
-            }
-            if(t instanceof Iterable) {
+            if (t instanceof Iterable)
                 return ts((Iterable<?>) t);
-            }else if(t instanceof int[]) {
+            else if (t instanceof int[]) {
                 String s = Arrays.toString((int[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof long[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof long[]) {
                 String s = Arrays.toString((long[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof char[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof char[]) {
                 String s = Arrays.toString((char[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof double[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof double[]) {
                 String s = Arrays.toString((double[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof boolean[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof boolean[]) {
                 String s = Arrays.toString((boolean[]) t);
-                return "{"+s.substring(1, s.length()-1)+"}";
-            }else if(t instanceof Object[]) {
+                return "{" + s.substring(1, s.length() - 1) + "}";
+            } else if (t instanceof Object[])
                 return ts((Object[]) t);
-            }
             return t.toString();
         }
         private static <T> String ts(T[] arr) {
             StringBuilder ret = new StringBuilder();
             ret.append("{");
             boolean first = true;
-            for(T t: arr) {
-                if(!first) ret.append(", ");
+            for (T t : arr) {
+                if (!first)
+                    ret.append(", ");
                 first = false;
                 ret.append(ts(t));
             }
@@ -553,8 +682,9 @@ public class Main {
             StringBuilder ret = new StringBuilder();
             ret.append("{");
             boolean first = true;
-            for(T t: iter) {
-                if(!first) ret.append(", ");
+            for (T t : iter) {
+                if (!first)
+                    ret.append(", ");
                 first = false;
                 ret.append(ts(t));
             }
@@ -562,10 +692,11 @@ public class Main {
             return ret.toString();
         }
         public static void print(Object... o) {
-            if(LOCAL) {
-                System.err.print("Line #"+Thread.currentThread().getStackTrace()[2].getLineNumber()+": [");
-                for(int i = 0; i<o.length; i++) {
-                    if(i!=0) System.err.print(", ");
+            if (LOCAL) {
+                System.err.print("Line #" + Thread.currentThread().getStackTrace()[2].getLineNumber() + ": [");
+                for (int i = 0; i < o.length; i++) {
+                    if (i != 0)
+                        System.err.print(", ");
                     System.err.print(ts(o[i]));
                 }
                 System.err.println("]");

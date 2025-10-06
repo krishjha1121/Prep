@@ -10,7 +10,8 @@ class Solution {
         long res = 0;
         int start = n - 1;
         for (int i = 0; i < start; i++) {
-            while (i < start && arr[i] + arr[start] > sum) start--;
+            while (i < start && arr[i] + arr[start] > sum)
+                start--;
             res += start - i;
         }
         return res;

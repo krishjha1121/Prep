@@ -8,10 +8,12 @@ class Solution {
             for (int j = 0; j < m; j++) {
                 sum += Math.abs(matrix[i][j]);
                 neg = Math.min(neg, Math.abs(matrix[i][j]));
-                if (matrix[i][j] < 0) count++;
+                if (matrix[i][j] < 0)
+                    count++;
             }
         }
-        if (count % 2 == 1) return sum - neg * 2;
+        if (count % 2 == 1)
+            return sum - neg * 2;
         return sum;
     }
 }

@@ -1,7 +1,8 @@
 class Solution {
     public int maximumBeauty(int[] nums, int k) {
         int n = nums.length;
-        if (n == 1) return 1;
+        if (n == 1)
+            return 1;
         int freq[] = new int[(int)(1e6)];
         for (int i = 0; i < n; i++) {
             int current = nums[i];

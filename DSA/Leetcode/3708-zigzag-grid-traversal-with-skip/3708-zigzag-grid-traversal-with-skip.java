@@ -6,15 +6,16 @@ class Solution {
         for (int i = 0; i < n; i++) {
             if (i % 2 == 1) {
                 for (int j = m - 1; j >= 0; j--) {
-                    if (skipped == true) res.add(grid[i][j]);
+                    if (skipped == true)
+                        res.add(grid[i][j]);
                     skipped = !skipped;
                 }
-            }
-            else {
+            } else {
                 for (int j = 0; j < m; j++) {
-                    if (skipped == true) res.add(grid[i][j]);
+                    if (skipped == true)
+                        res.add(grid[i][j]);
                     skipped = !skipped;
-                }    
+                }
             }
         }
         return res;

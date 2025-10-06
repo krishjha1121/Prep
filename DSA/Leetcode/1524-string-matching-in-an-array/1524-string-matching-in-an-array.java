@@ -4,7 +4,8 @@ class Solution {
         List<String> res = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (i == j) continue;
+                if (i == j)
+                    continue;
                 if (check(words[j], words[i])) {
                     res.add(words[i]);
                     break;
@@ -15,11 +16,14 @@ class Solution {
     }
     private boolean check(String s, String t) {
         int n = s.length(), m = t.length();
-        if (m > n) return false;
+        if (m > n)
+            return false;
         for (int i = 0; i < n; i++) {
-            if (i + m - 1 >= n) break;
+            if (i + m - 1 >= n)
+                break;
             String current = s.substring(i, i + m);
-            if (current.equals(t)) return true;
+            if (current.equals(t))
+                return true;
         }
         return false;
     }

@@ -11,13 +11,15 @@ class Solution {
             }
         }
         public int find_parent(int u) {
-            if (parent[u] == u) return parent[u] = u;
+            if (parent[u] == u)
+                return parent[u] = u;
             return parent[u] = find_parent(parent[u]);
         }
-        public void unite(int u , int v) {
+        public void unite(int u, int v) {
             u = find_parent(u);
             v = find_parent(v);
-            if (u == v) return;
+            if (u == v)
+                return;
             if (size[v] > size[u]) {
                 int temp = u;
                 u = v;
@@ -34,7 +36,8 @@ class Solution {
             int u = equations[i].charAt(0) - 'a';
             int v = equations[i].charAt(3) - 'a';
             char current = equations[i].charAt(1);
-            if (current == '=') dsu.unite(u, v);
+            if (current == '=')
+                dsu.unite(u, v);
         }
         for (int i = 0; i < n; i++) {
             int u = equations[i].charAt(0) - 'a';
@@ -43,7 +46,8 @@ class Solution {
             if (current == '!') {
                 u = dsu.find_parent(u);
                 v = dsu.find_parent(v);
-                if (u == v) return false;
+                if (u == v)
+                    return false;
             }
         }
         return true;

@@ -1,7 +1,8 @@
 class Solution {
     public int numTilePossibilities(String tiles) {
         int[] freq = new int[26];
-        for (char c : tiles.toCharArray()) freq[c - 'A']++;
+        for (char c : tiles.toCharArray())
+            freq[c - 'A']++;
         return solve(freq);
     }
     private int solve(int[] freq) {

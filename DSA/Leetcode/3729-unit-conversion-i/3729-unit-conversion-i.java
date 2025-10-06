@@ -1,5 +1,5 @@
 class Solution {
-    private ArrayList<ArrayList<Pair>> adj;
+    private ArrayList<ArrayList<Pair >> adj;
     private long mod = (long)(1e9 + 7);
     static class Pair {
         int node;
@@ -22,7 +22,8 @@ class Solution {
     public int[] baseUnitConversions(int[][] conversions) {
         int n = conversions.length;
         adj = new ArrayList<>();
-        for (int i = 0; i <= n + 1; i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= n + 1; i++)
+            adj.add(new ArrayList<>());
         for (int current[] : conversions) {
             int u = current[0], v = current[1], wt = current[2];
             adj.get(u).add(new Pair(v, wt));
@@ -47,7 +48,8 @@ class Solution {
             }
         }
         int res[] = new int[n + 1];
-        for (int i = 0; i <= n; i++) res[i] = (int)(dp[i]);
+        for (int i = 0; i <= n; i++)
+            res[i] = (int)(dp[i]);
         return res;
     }
 }

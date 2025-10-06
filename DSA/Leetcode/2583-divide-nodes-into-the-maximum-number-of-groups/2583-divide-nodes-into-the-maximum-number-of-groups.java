@@ -1,15 +1,16 @@
 import java.util.*;
 
 class Solution {
-    private int[] color; 
-    private List<List<Integer>> adj;
-    private int n; 
+    private int[] color;
+    private List<List<Integer >> adj;
+    private int n;
     private boolean isBipartite(int node, int c, List<Integer> component) {
         color[node] = c;
         component.add(node);
         for (int nbr : adj.get(node)) {
-            if (color[nbr] == c) return false; 
-            if (color[nbr] == -1 && !isBipartite(nbr, 1 - c, component)) 
+            if (color[nbr] == c)
+                return false;
+            if (color[nbr] == -1 && !isBipartite(nbr, 1 - c, component))
                 return false;
         }
         return true;
@@ -40,20 +41,19 @@ class Solution {
         color = new int[n];
         Arrays.fill(color, -1);
         adj = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             adj.add(new ArrayList<>());
-        }
         for (int[] edge : edges) {
             int u = edge[0] - 1, v = edge[1] - 1;
             adj.get(u).add(v);
             adj.get(v).add(u);
         }
-        List<List<Integer>> components = new ArrayList<>();
+        List<List<Integer >> components = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             if (color[i] == -1) {
                 List<Integer> component = new ArrayList<>();
-                if (!isBipartite(i, 0, component)) 
-                    return -1; 
+                if (!isBipartite(i, 0, component))
+                    return -1;
                 components.add(component);
             }
         }

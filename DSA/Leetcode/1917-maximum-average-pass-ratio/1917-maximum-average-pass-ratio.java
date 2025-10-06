@@ -12,18 +12,18 @@ class Solution {
     static class sorting implements Comparator<Pair> {
         @Override
         public int compare(Pair first, Pair second) {
-            return Double.compare(second.delta , first.delta);
+            return Double.compare(second.delta, first.delta);
         }
     }
     public double maxAverageRatio(int[][] classes, int extraStudents) {
         PriorityQueue<Pair> pq = new PriorityQueue<>(new sorting());
-        for(int current[] : classes) {
+        for (int current[] : classes) {
             double pass = (double)current[0];
             double total = (double)current[1];
             double delta = (double)(pass + 1) / (double)(total + 1) - (double)(pass) / (double)(total);
-            pq.offer(new Pair(delta, pass, total)); 
+            pq.offer(new Pair(delta, pass, total));
         }
-        while(extraStudents > 0) {
+        while (extraStudents > 0) {
             double pass = pq.peek().pass;
             double total = pq.peek().total;
             double delta = pq.peek().delta;
@@ -36,7 +36,7 @@ class Solution {
         }
         double ans = 0;
         int total = pq.size();
-        while(!pq.isEmpty()) {
+        while (!pq.isEmpty()) {
             ans += (double)pq.peek().pass / (double)pq.peek().total;
             pq.poll();
         }

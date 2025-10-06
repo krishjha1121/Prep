@@ -10,16 +10,17 @@ class Solution {
                     i++;
                 }
                 result += sum * sign;
-            } 
-            else if (s.charAt(i) == '+') sign = 1;
-            else if (s.charAt(i) == '-') sign = -1;
+            } else if (s.charAt(i) == '+')
+                sign = 1;
+            else if (s.charAt(i) == '-')
+                sign = -1;
             else if (s.charAt(i) == '(') {
                 stack.push(result);
                 stack.push(sign);
                 result = 0;
                 sign = 1;
-            } 
-            else if (s.charAt(i) == ')') result = result * stack.pop() + stack.pop();
+            } else if (s.charAt(i) == ')')
+                result = result * stack.pop() + stack.pop();
         }
         return result;
     }

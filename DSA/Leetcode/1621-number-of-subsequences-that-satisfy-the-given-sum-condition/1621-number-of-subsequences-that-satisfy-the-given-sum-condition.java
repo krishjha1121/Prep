@@ -7,11 +7,10 @@ class Solution {
         for (int i = 1 ; i < n ; ++i)
             pows[i] = pows[i - 1] * 2 % mod;
         while (l <= r) {
-            if (nums[l] + nums[r] > target) {
+            if (nums[l] + nums[r] > target)
                 r--;
-            } else {
+            else
                 res = (res + pows[r - l++]) % mod;
-            }
         }
         return res;
     }

@@ -887,4 +887,4 @@ navigationSystem.compareStrategies(startLocation, endLocation)
 
 ---
 
-[← Back: Observer Pattern](../03-observer/README.md) | [Next: Command Pattern →](../05-command/README.md)
+[← Back: Observer Pattern](../03-observer/) | [Next: Command Pattern →](../05-command/)

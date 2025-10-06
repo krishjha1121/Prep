@@ -4,17 +4,20 @@ class Solution {
         int[] inDegree = new int[n];
         int[] chainLengths = new int[n];
         boolean[] visited = new boolean[n];
-        for (int fav : favorite) inDegree[fav]++;
+        for (int fav : favorite)
+            inDegree[fav]++;
         Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < n; ++i) {
-            if (inDegree[i] == 0) q.offer(i);
+            if (inDegree[i] == 0)
+                q.offer(i);
         }
         while (!q.isEmpty()) {
             int node = q.poll();
             visited[node] = true;
             int next = favorite[node];
             chainLengths[next] = chainLengths[node] + 1;
-            if (--inDegree[next] == 0) q.offer(next);
+            if (--inDegree[next] == 0)
+                q.offer(next);
         }
         int maxCycle = 0, totalChains = 0;
         for (int i = 0; i < n; ++i) {
@@ -25,8 +28,10 @@ class Solution {
                     current = favorite[current];
                     cycleLength++;
                 }
-                if (cycleLength == 2) totalChains += 2 + chainLengths[i] + chainLengths[favorite[i]];
-                else maxCycle = Math.max(maxCycle, cycleLength);
+                if (cycleLength == 2)
+                    totalChains += 2 + chainLengths[i] + chainLengths[favorite[i]];
+                else
+                    maxCycle = Math.max(maxCycle, cycleLength);
             }
         }
         return Math.max(maxCycle, totalChains);

@@ -1,5 +1,5 @@
 class ProductOfNumbers {
-    static ArrayList<Integer> res; 
+    static ArrayList<Integer> res;
     public ProductOfNumbers() {
         res = new ArrayList<>();
     }
@@ -18,8 +18,8 @@ class ProductOfNumbers {
 }
 
 /**
- * Your ProductOfNumbers object will be instantiated and called as such:
- * ProductOfNumbers obj = new ProductOfNumbers();
- * obj.add(num);
- * int param_2 = obj.getProduct(k);
- */
+    Your ProductOfNumbers object will be instantiated and called as such:
+    ProductOfNumbers obj = new ProductOfNumbers();
+    obj.add(num);
+    int param_2 = obj.getProduct(k);
+*/

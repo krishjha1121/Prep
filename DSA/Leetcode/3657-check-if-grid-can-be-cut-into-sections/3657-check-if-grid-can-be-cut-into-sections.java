@@ -11,7 +11,7 @@ class Solution {
         public String toString() {
             return "(" + start + " " + end + ")";
         }
-    } 
+    }
     static class custom_sort implements Comparator<int[]> {
         @Override
         public int compare(int[] first, int[] second) {
@@ -25,10 +25,12 @@ class Solution {
         for (int i = 0; i < len; i++) {
             int vl = arr[i][0], vr = arr[i][2];
             int hl = arr[i][1], hr = arr[i][3];
-            varr[i][0] = vl; varr[i][1] = Math.max(varr[i][1], vr);
-            harr[i][0] = hl; harr[i][1] = Math.max(harr[i][1], hr);
+            varr[i][0] = vl;
+            varr[i][1] = Math.max(varr[i][1], vr);
+            harr[i][0] = hl;
+            harr[i][1] = Math.max(harr[i][1], hr);
         }
-        
+
         Arrays.sort(varr, new custom_sort());
         Arrays.sort(harr, new custom_sort());
 
@@ -37,7 +39,8 @@ class Solution {
         merge(varr, vertical_merged);
         merge(harr, horizontal_merged);
 
-        if (vertical_merged.size() >= 3 || horizontal_merged.size() >= 3) return true;
+        if (vertical_merged.size() >= 3 || horizontal_merged.size() >= 3)
+            return true;
         return false;
     }
     private void merge(int arr[][], ArrayList<Pair> res) {

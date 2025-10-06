@@ -6,18 +6,22 @@ class Solution {
         return ans;
     }
     private boolean calc(int index, int[] ans, boolean[] visited, int n) {
-        if (index == ans.length) return true;
-        if (ans[index] != 0) return calc(index + 1, ans, visited, n);
+        if (index == ans.length)
+            return true;
+        if (ans[index] != 0)
+            return calc(index + 1, ans, visited, n);
         for (int i = n; i >= 1; i--) {
-            if (visited[i]) continue;
+            if (visited[i])
+                continue;
             visited[i] = true;
             ans[index] = i;
             if (i == 1) {
-                if (calc(index + 1, ans, visited, n)) return true;
-            } 
-            else if (index + i < ans.length && ans[index + i] == 0) {
+                if (calc(index + 1, ans, visited, n))
+                    return true;
+            } else if (index + i < ans.length && ans[index + i] == 0) {
                 ans[i + index] = i;
-                if (calc(index + 1, ans, visited, n)) return true;
+                if (calc(index + 1, ans, visited, n))
+                    return true;
                 ans[index + i] = 0;
             }
             ans[index] = 0;

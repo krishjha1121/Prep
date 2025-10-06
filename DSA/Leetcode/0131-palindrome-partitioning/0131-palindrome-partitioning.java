@@ -1,6 +1,6 @@
 class Solution {
-    private List<List<String>> res;
-    public List<List<String>> partition(String s) {
+    private List<List<String >> res;
+    public List<List<String >> partition(String s) {
         int n = s.length();
         res = new ArrayList<>();
         solve(0, s, new ArrayList<>());
@@ -21,11 +21,12 @@ class Solution {
             }
         }
     }
-    
+
     private boolean is_pallindrome(String s) {
         int low = 0, high = s.length() - 1;
         while (low <= high) {
-            if (s.charAt(low) != s.charAt(high)) return false;
+            if (s.charAt(low) != s.charAt(high))
+                return false;
             low++;
             high--;
         }

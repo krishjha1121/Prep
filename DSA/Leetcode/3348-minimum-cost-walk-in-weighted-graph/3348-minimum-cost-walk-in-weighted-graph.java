@@ -1,5 +1,5 @@
 class Solution {
-    private ArrayList<ArrayList<Pair>> adj;
+    private ArrayList<ArrayList<Pair >> adj;
     private HashMap<Integer, Integer> map;
     private ArrayList<Integer> nodes;
     private int vis[];
@@ -32,7 +32,7 @@ class Solution {
                 size[i] = 1;
             }
         }
-        public void merge(int u , int v) {
+        public void merge(int u, int v) {
             u = Leader(u);
             v = Leader(v);
             if (size[v] > size[u]) {
@@ -44,7 +44,8 @@ class Solution {
             size[u] += size[v];
         }
         public int Leader(int u) {
-            if (parent[u] == u) return parent[u] = u;
+            if (parent[u] == u)
+                return parent[u] = u;
             return parent[u] = Leader(parent[u]);
         }
     }
@@ -53,12 +54,14 @@ class Solution {
         nodes = new ArrayList<>();
         DSU dsu = new DSU(n + 1);
         adj = new ArrayList<>();
-        for (int i = 0; i <= n + 1; i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= n + 1; i++)
+            adj.add(new ArrayList<>());
         for (int current[] : edges) {
             int u = current[0];
             int v = current[1];
             int wt = current[2];
-            if (dsu.Leader(u) != dsu.Leader(v)) dsu.merge(u , v);
+            if (dsu.Leader(u) != dsu.Leader(v))
+                dsu.merge(u, v);
             adj.get(u).add(new Pair(v, wt));
             adj.get(v).add(new Pair(u, wt));
         }
@@ -70,13 +73,17 @@ class Solution {
                 ArrayList<Integer> temp = new ArrayList<>();
                 for (int j = 0; j < nodes.size(); j++) {
                     int u = nodes.get(j);
-                    for (int k = 0; k < adj.get(u).size(); k++) temp.add(adj.get(u).get(k).distance);
+                    for (int k = 0; k < adj.get(u).size(); k++)
+                        temp.add(adj.get(u).get(k).distance);
                 }
-                if (temp.size() == 0) continue;
+                if (temp.size() == 0)
+                    continue;
                 int and = temp.get(0);
-                for (int ele : temp) and &= ele;
-                if (and != -1) {
-                    for (int ele : nodes) map.put(ele, and);
+                for (int ele : temp)
+                    and &= ele;
+                if ( and != -1) {
+                    for (int ele : nodes)
+                        map.put(ele, and);
                 }
             }
         }
@@ -93,15 +100,16 @@ class Solution {
         }
         return res;
     }
-    private void dfs(int u , int par) {
+    private void dfs(int u, int par) {
         vis[u] = 1;
         nodes.add(u);
         for (int i = 0; i < adj.get(u).size(); i++) {
             int child = adj.get(u).get(i).node;
-            if (vis[child] == 0) dfs(child , u);
+            if (vis[child] == 0)
+                dfs(child, u);
         }
     }
-    private int min_dist(int n , int src, int dst) {
+    private int min_dist(int n, int src, int dst) {
         int dist[] = new int[n + 1];
         Arrays.fill(dist, (int)(1e9));
         PriorityQueue<Pair> pq = new PriorityQueue<>(new custom_sort());
@@ -124,7 +132,8 @@ class Solution {
                 }
             }
         }
-        if(dist[dst] == (int)(1e9)) return -1;
+        if (dist[dst] == (int)(1e9))
+            return -1;
         return dist[dst];
     }
 }

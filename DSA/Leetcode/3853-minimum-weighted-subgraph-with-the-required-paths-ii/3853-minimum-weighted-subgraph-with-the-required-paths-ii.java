@@ -10,7 +10,7 @@ class Solution {
             return "(" + node + " " + weight + ")";
         }
     }
-    private ArrayList<ArrayList<Pair>> adj;
+    private ArrayList<ArrayList<Pair >> adj;
     private int dp[][];
     private int depth[];
     private int vis[];
@@ -19,7 +19,8 @@ class Solution {
     public int[] minimumWeight(int[][] edges, int[][] queries) {
         int n = edges.length + 1;
         adj = new ArrayList<>();
-        for (int i = 0; i <= n + 1; i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= n + 1; i++)
+            adj.add(new ArrayList<>());
         for (int edge[] : edges) {
             int u = edge[0] + 1, v = edge[1] + 1, wt = edge[2];
             adj.get(u).add(new Pair(v, wt));
@@ -60,14 +61,15 @@ class Solution {
                     vis[child_node] = 1;
                     pref[child_node] = child_weight + curr_dist;
                     q.offer(child_node);
-                } 
+                }
             }
         }
     }
     private int find_kth_parent(int u, int k) {
         int count = 0;
         while (k > 0) {
-            if (k % 2 == 1) u = dp[u][count];
+            if (k % 2 == 1)
+                u = dp[u][count];
             count++;
             k >>= 1;
         }
@@ -81,7 +83,8 @@ class Solution {
         }
         int diff = depth[v] - depth[u];
         v = find_kth_parent(v, diff);
-        if (u == v) return u;
+        if (u == v)
+            return u;
         for (int i = 18; i >= 0; i--) {
             if (dp[u][i] != dp[v][i]) {
                 u = dp[u][i];
@@ -93,12 +96,13 @@ class Solution {
     private void dfs(int u, int par) {
         vis[u] = 1;
         dp[u][0] = par;
-        for (int i = 1; i < 19; i++) dp[u][i] = dp[dp[u][i - 1]][i - 1];
+        for (int i = 1; i < 19; i++)
+            dp[u][i] = dp[dp[u][i - 1]][i - 1];
         for (int i = 0; i < adj.get(u).size(); i++) {
             int v = adj.get(u).get(i).node;
             if (vis[v] == 0) {
                 depth[v] = 1 + depth[u];
-                dfs(v, u);                
+                dfs(v, u);
             }
         }
     }

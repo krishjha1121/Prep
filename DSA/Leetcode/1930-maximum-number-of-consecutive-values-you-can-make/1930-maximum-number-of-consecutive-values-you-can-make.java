@@ -5,7 +5,8 @@ class Solution {
         Arrays.sort(coins);
         int res = 1;
         for (int ele : coins) {
-            if (ele > res) break;
+            if (ele > res)
+                break;
             res += ele;
         }
         return res;

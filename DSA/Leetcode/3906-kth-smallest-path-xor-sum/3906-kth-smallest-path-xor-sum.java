@@ -1,15 +1,16 @@
 class Solution {
-    private ArrayList<ArrayList<Integer>> adj;
+    private ArrayList<ArrayList<Integer >> adj;
     private int pref[];
     private int val[];
-    private HashMap<Integer, ArrayList<Integer>> map; /*key, val --> for each key, what are the k's asked */
+    private HashMap<Integer, ArrayList<Integer >> map; /*key, val --> for each key, what are the k's asked */
     private HashMap<Pair, Integer> res; /* for each (key , val), what is my answer */
     private OrderStatisticSet[] node_set;
-    
+
     public int[] kthSmallest(int[] par, int[] vals, int[][] queries) {
         int n = par.length;
         adj = new ArrayList<>();
-        for (int i = 0; i <= n + 1; i++) adj.add(new ArrayList<>());
+        for (int i = 0; i <= n + 1; i++)
+            adj.add(new ArrayList<>());
         map = new HashMap<>();
         node_set = new OrderStatisticSet[n + 1];
         res = new HashMap<>();
@@ -21,11 +22,13 @@ class Solution {
             }
         }
         val = new int[n + 1];
-        for (int i = 0; i < n; i++) val[i + 1] = vals[i]; 
+        for (int i = 0; i < n; i++)
+            val[i + 1] = vals[i];
         build_pref(n);
         for (int i = 0; i < queries.length; i++) {
             int key = queries[i][0] + 1, val = queries[i][1];
-            if (!map.containsKey(key)) map.put(key, new ArrayList<>());
+            if (!map.containsKey(key))
+                map.put(key, new ArrayList<>());
             map.get(key).add(val);
         }
         dfs(1, -1);
@@ -44,17 +47,19 @@ class Solution {
             set.add(pref[u]);
             node_set[u] = set;
             ArrayList<Integer> ks = new ArrayList<>();
-            if (map.containsKey(u)) ks = map.get(u);
+            if (map.containsKey(u))
+                ks = map.get(u);
             for (int k : ks) {
-                if (set.size() < k) res.put(new Pair(u, k), -1);
-                else res.put(new Pair(u, k), find_kth_element(set, k));
+                if (set.size() < k)
+                    res.put(new Pair(u, k), -1);
+                else
+                    res.put(new Pair(u, k), find_kth_element(set, k));
             }
             return;
         }
         for (int v : adj.get(u)) {
-            if (v != par) {
+            if (v != par)
                 dfs(v, u);
-            }
         }
         OrderStatisticSet current_set = new OrderStatisticSet();
         current_set.add(pref[u]);
@@ -65,16 +70,18 @@ class Solution {
                     current_set = node_set[v];
                     node_set[v] = temp;
                 }
-                for (int ele : node_set[v].sortedList) {
+                for (int ele : node_set[v].sortedList)
                     current_set.add(ele);
-                }
             }
         }
         ArrayList<Integer> ks = new ArrayList<>();
-        if (map.containsKey(u)) ks = map.get(u);
+        if (map.containsKey(u))
+            ks = map.get(u);
         for (int k : ks) {
-            if (current_set.size() < k) res.put(new Pair(u, k), -1);
-            else res.put(new Pair(u, k), find_kth_element(current_set, k));
+            if (current_set.size() < k)
+                res.put(new Pair(u, k), -1);
+            else
+                res.put(new Pair(u, k), find_kth_element(current_set, k));
         }
         node_set[u] = current_set;
     }
@@ -111,8 +118,10 @@ class Solution {
         }
         @Override
         public boolean equals(Object obj) {
-            if (this == obj) return true;
-            if (obj == null || getClass() != obj.getClass()) return false;
+            if (this == obj)
+                return true;
+            if (obj == null || getClass() != obj.getClass())
+                return false;
             Pair current = (Pair)(obj);
             return current.key == key && current.val == val;
         }
@@ -131,14 +140,16 @@ class Solution {
         public boolean add(int x) {
             if (set.add(x)) {
                 int idx = Collections.binarySearch(sortedList, x);
-                if (idx < 0) idx = -idx - 1;
+                if (idx < 0)
+                    idx = -idx - 1;
                 sortedList.add(idx, x);
                 return true;
             }
             return false;
         }
         public Integer getKth(int k) {
-            if (k < 0 || k >= sortedList.size()) return null;
+            if (k < 0 || k >= sortedList.size())
+                return null;
             return sortedList.get(k);
         }
         public int size() {

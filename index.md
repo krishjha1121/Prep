@@ -11,7 +11,7 @@ hero:
           link: /DSA/
         - theme: alt
           text: View on GitHub
-          link: https://github.com/YOUR_USERNAME/Prep
+          link: https://github.com/raj8664/Prep
 
 features:
     - icon: 🎯
@@ -58,4 +58,4 @@ features:
 ## Contributing
 
 Found an error or want to add content? Contributions are welcome!  
-Visit the [GitHub repository](https://github.com/YOUR_USERNAME/Prep) to contribute.
+Visit the [GitHub repository](https://github.com/raj8664/Prep) to contribute.

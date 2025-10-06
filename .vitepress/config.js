@@ -24,6 +24,8 @@ export default withMermaid(
 
 			nav: [
 				{ text: "Home", link: "/" },
+				{ text: "Academics", link: "/Syllabus/" },
+				{ text: "Leetcode Solutions", link: "/DSA/Leetcode/" },
 				{
 					text: "Core CS",
 					items: [
@@ -43,6 +45,7 @@ export default withMermaid(
 				},
 				{ text: "LLD", link: "/LLD/" },
 				{ text: "GitHub", link: "https://github.com/raj8664/Prep" },
+				{ text: "Contributors", link: "/contributors/" },
 			],
 
 			sidebar: {

@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 class Solution {
-    private ArrayList<ArrayList<Integer>> adj1;
-    private ArrayList<ArrayList<Integer>> adj2;
+    private ArrayList<ArrayList<Integer >> adj1;
+    private ArrayList<ArrayList<Integer >> adj2;
     private int depth[];
     private int res[];
 

@@ -8,7 +8,7 @@ class Solution {
             if (num < minK || num > maxK) {
                 minFound = false;
                 maxFound = false;
-                start = i+1;
+                start = i + 1;
             }
             if (num == minK) {
                 minFound = true;
@@ -18,9 +18,8 @@ class Solution {
                 maxFound = true;
                 maxStart = i;
             }
-            if (minFound && maxFound) {
+            if (minFound && maxFound)
                 res += (Math.min(minStart, maxStart) - start + 1);
-            }
         }
         return res;
     }

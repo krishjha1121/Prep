@@ -22,7 +22,8 @@ class Solution {
         PriorityQueue<Pair> pq = new PriorityQueue<>(new custom_sort());
         PriorityQueue<Pair> pq1 = new PriorityQueue<>(new custom_sort());
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int ele : barcodes) map.put(ele, map.getOrDefault(ele, 0) + 1);
+        for (int ele : barcodes)
+            map.put(ele, map.getOrDefault(ele, 0) + 1);
         for (Map.Entry<Integer, Integer> curr : map.entrySet()) {
             int key = curr.getKey();
             int val = curr.getValue();
@@ -36,8 +37,10 @@ class Solution {
             int used = pq.peek().used;
             pq.poll();
             res[k++] = key;
-            if (pq1.size() > 0) pq.offer(pq1.poll());
-            if (freq - 1 > 0) pq1.offer(new Pair(key, freq - 1, 1));
+            if (pq1.size() > 0)
+                pq.offer(pq1.poll());
+            if (freq - 1 > 0)
+                pq1.offer(new Pair(key, freq - 1, 1));
         }
         return res;
     }

@@ -1,5 +1,5 @@
 class Solution {
-    public List<String> watchedVideosByFriends(List<List<String>> watchedVideos, int[][] friends, int id, int level) {
+    public List<String> watchedVideosByFriends(List<List<String >> watchedVideos, int[][] friends, int id, int level) {
         int n = friends.length;
         int vis[] = new int[n + 1];
         vis[id] = 1;
@@ -19,7 +19,8 @@ class Solution {
         }
         HashMap<String, Integer> map = new HashMap<>();
         for (int p : q) {
-            for (String v : watchedVideos.get(p)) map.put(v, map.getOrDefault(v, 0) + 1);
+            for (String v : watchedVideos.get(p))
+                map.put(v, map.getOrDefault(v, 0) + 1);
         }
         List<String> res = new ArrayList<>(map.keySet());
         res.sort((a, b) -> {

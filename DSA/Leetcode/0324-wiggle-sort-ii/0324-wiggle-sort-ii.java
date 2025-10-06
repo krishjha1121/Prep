@@ -8,7 +8,8 @@ class Solution {
     public void wiggleSort(int[] nums) {
         int n = nums.length;
         PriorityQueue<Integer> pq = new PriorityQueue<>(new custom_sort());
-        for (int ele : nums) pq.offer(ele);
+        for (int ele : nums)
+            pq.offer(ele);
         int ind = 1;
         while (ind < n) {
             nums[ind] = pq.poll();

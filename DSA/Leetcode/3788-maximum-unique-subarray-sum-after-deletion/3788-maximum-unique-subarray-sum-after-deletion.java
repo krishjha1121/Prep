@@ -4,7 +4,8 @@ class Solution {
         int res = 0;
         boolean flag = false;
         for (int ele : nums) {
-            if (ele >= 0) flag = true;
+            if (ele >= 0)
+                flag = true;
         }
         if (flag == false) {
             Arrays.sort(nums);

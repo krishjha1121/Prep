@@ -6,21 +6,19 @@ class Solution {
         int count = 0;
         for (int i = 0; i < n; i++) {
             char current = s.charAt(i);
-            if (current == prev && count == 2) {
+            if (current == prev && count == 2)
                 continue;
-            }
             if (current == prev && count == 0) {
                 count = 2;
                 res.append(current);
                 prev = current;
-            }
-            else {
+            } else {
                 res.append(current);
                 prev = current;
                 count = 0;
             }
         }
-        return res.toString();   
+        return res.toString();
     }
 
 }

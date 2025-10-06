@@ -20,7 +20,8 @@ class Solution {
             String to_check = "";
             for (int j = 0; j < current.length(); j++) {
                 to_check += current.charAt(j);
-                if (set.contains(to_check)) maxi = Math.max(maxi, to_check.length());
+                if (set.contains(to_check))
+                    maxi = Math.max(maxi, to_check.length());
             }
         }
         return maxi;

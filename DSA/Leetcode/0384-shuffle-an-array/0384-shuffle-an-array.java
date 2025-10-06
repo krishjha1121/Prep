@@ -14,16 +14,18 @@ class Solution {
     }
     public int[] shuffle() {
         ArrayList<Integer> temp = new ArrayList<>();
-        for (int ele : shuffled) temp.add(ele);
+        for (int ele : shuffled)
+            temp.add(ele);
         Collections.shuffle(temp);
-        for (int i = 0; i < temp.size(); i++) shuffled[i] = temp.get(i);
+        for (int i = 0; i < temp.size(); i++)
+            shuffled[i] = temp.get(i);
         return shuffled;
     }
 }
 
 /**
- * Your Solution object will be instantiated and called as such:
- * Solution obj = new Solution(nums);
- * int[] param_1 = obj.reset();
- * int[] param_2 = obj.shuffle();
- */
+    Your Solution object will be instantiated and called as such:
+    Solution obj = new Solution(nums);
+    int[] param_1 = obj.reset();
+    int[] param_2 = obj.shuffle();
+*/

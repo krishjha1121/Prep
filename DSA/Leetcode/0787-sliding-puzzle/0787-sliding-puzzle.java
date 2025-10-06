@@ -1,12 +1,14 @@
 class Solution {
     public int slidingPuzzle(int[][] board) {
-        int n = board.length , m = board[0].length;
+        int n = board.length, m = board[0].length;
         String target = "123450";
         StringBuilder start = new StringBuilder();
         for (int[] row : board) {
-            for (int num : row) start.append(num);
+            for (int num : row)
+                start.append(num);
         }
-        if (start.toString().equals(target)) return 0;
+        if (start.toString().equals(target))
+            return 0;
         Queue<String> queue = new LinkedList<>();
         Set<String> set = new HashSet<>();
         queue.offer(start.toString());
@@ -17,7 +19,8 @@ class Solution {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 String current = queue.poll();
-                if (current.equals(target)) return steps;
+                if (current.equals(target))
+                    return steps;
                 int zeroPos = current.indexOf('0');
                 for (int nextPos : directions[zeroPos]) {
                     StringBuilder current1 = new StringBuilder(current);

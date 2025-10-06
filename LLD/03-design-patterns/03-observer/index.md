@@ -2134,4 +2134,4 @@ class PriceAlert implements StockObserver {
 
 ---
 
-[← Back: Factory Pattern](../02-factory/README.md) | [Next: Strategy Pattern →](../04-strategy/README.md)
+[← Back: Factory Pattern](../02-factory/) | [Next: Strategy Pattern →](../04-strategy/)

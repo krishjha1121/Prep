@@ -1091,4 +1091,4 @@ Car car = new Car.Builder()
 
 ---
 
-[← Back: Decorator Pattern](../06-decorator/README.md) | [🏠 Back to Design Patterns](../README.md)
+[← Back: Decorator Pattern](../06-decorator/) | [🏠 Back to Design Patterns](../)

@@ -20,25 +20,27 @@ class Solution {
         int n = meetings.length;
         int m = meetings[0].length;
         ArrayList<Pair> res = new ArrayList<>();
-        for(int current[] : meetings) {
+        for (int current[] : meetings) {
             int start = current[0], end = current[1];
             res.add(new Pair(start, end));
         }
         Collections.sort(res, new sorting());
         int current = 1, total = 0;
-        for(int i = 0; i < res.size(); i++) {
-            if(i == 0) {
-                if(res.get(i).start != 1) {
+        for (int i = 0; i < res.size(); i++) {
+            if (i == 0) {
+                if (res.get(i).start != 1) {
                     total += res.get(i).start - current;
                     current = res.get(i).end;
                     continue;
                 }
             }
             int calc = res.get(i).start - current - 1;
-            if(calc > 0) total += calc;
+            if (calc > 0)
+                total += calc;
             current = Math.max(current, res.get(i).end);
         }
-        if(days - current > 0) total += days - current;
+        if (days - current > 0)
+            total += days - current;
         return total;
     }
 }
