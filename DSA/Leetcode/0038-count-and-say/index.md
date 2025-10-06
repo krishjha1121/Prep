@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-and-say">38. Count and Say</a></h2><h3>Medium</h3><hr><p>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 38. Count and Say
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-and-say" target = "_blank">38. Count and Say</a></h2><h3>Medium</h3><hr><p>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:</p>
 
 <ul>
 	<li><code>countAndSay(1) = &quot;1&quot;</code></li>
@@ -86,4 +94,3 @@ class Solution {
     }
 }
 ```
-

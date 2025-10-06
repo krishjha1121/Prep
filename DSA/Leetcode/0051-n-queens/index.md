@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/n-queens">51. N-Queens</a></h2><h3>Hard</h3><hr><p>The <strong>n-queens</strong> puzzle is the problem of placing <code>n</code> queens on an <code>n x n</code> chessboard such that no two queens attack each other.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 51. N-Queens
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/n-queens" target = "_blank">51. N-Queens</a></h2><h3>Hard</h3><hr><p>The <strong>n-queens</strong> puzzle is the problem of placing <code>n</code> queens on an <code>n x n</code> chessboard such that no two queens attack each other.</p>
 
 <p>Given an integer <code>n</code>, return <em>all distinct solutions to the <strong>n-queens puzzle</strong></em>. You may return the answer in <strong>any order</strong>.</p>
 

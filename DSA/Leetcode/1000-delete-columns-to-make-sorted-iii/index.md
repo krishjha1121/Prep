@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/delete-columns-to-make-sorted-iii">1000. Delete Columns to Make Sorted III</a></h2><h3>Hard</h3><hr><p>You are given an array of <code>n</code> strings <code>strs</code>, all of the same length.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## 🎒1000. Delete Columns to Make Sorted III
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/delete-columns-to-make-sorted-iii" target = "_blank">1000. Delete Columns to Make Sorted III</a></h2><h3>Hard</h3><hr><p>You are given an array of <code>n</code> strings <code>strs</code>, all of the same length.</p>
 
 <p>We may choose any deletion indices, and we delete all the characters in those indices for each string.</p>
 
