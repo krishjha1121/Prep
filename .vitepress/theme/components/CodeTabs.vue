@@ -4,8 +4,8 @@ import { ref } from 'vue'
 const props = defineProps({
   languages: {
     type: Array,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const activeTab = ref(0)
@@ -79,7 +79,7 @@ const activeTab = ref(0)
   background-color: var(--vp-c-bg);
 }
 
-.tab-panel :deep(div[class*="language-"]) {
+.tab-panel :deep(div[class*='language-']) {
   margin: 0;
   border-radius: 0;
   border: none;

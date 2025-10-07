@@ -1,5 +1,3 @@
-
-
 <div align = "center">
 <h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
 
@@ -33,10 +31,12 @@
 	<li><code>1 &lt;= s.length &lt;= 1000</code></li>
 	<li><code>s</code> consist of only digits and English letters.</li>
 </ul>
+
 <CodeTabs :languages="[
   { name: 'C++', slot: 'cpp' },
   { name: 'Java', slot: 'java' }
 ]">
+
 <template #java>
 
 ```java
@@ -116,7 +116,7 @@ class Solution {
 
 </template>
 
-<template #cpp> 
+<template #cpp>
 
 ```cpp
 #include <bits/stdc++.h>
@@ -253,5 +253,8 @@ int main() {
 
 
 ```
+
 </template>
+
 </CodeTabs>
+
