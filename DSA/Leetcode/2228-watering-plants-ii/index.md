@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/watering-plants-ii">2228. Watering Plants II</a></h2><h3>Medium</h3><hr><p>Alice and Bob want to water <code>n</code> plants in their garden. The plants are arranged in a row and are labeled from <code>0</code> to <code>n - 1</code> from left to right where the <code>i<sup>th</sup></code> plant is located at <code>x = i</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2228. Watering Plants II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/watering-plants-ii" target = "_blank">2228. Watering Plants II</a></h2><h3>Medium</h3><hr><p>Alice and Bob want to water <code>n</code> plants in their garden. The plants are arranged in a row and are labeled from <code>0</code> to <code>n - 1</code> from left to right where the <code>i<sup>th</sup></code> plant is located at <code>x = i</code>.</p>
 
 <p>Each plant needs a specific amount of water. Alice and Bob have a watering can each, <strong>initially full</strong>. They water the plants in the following way:</p>
 
@@ -59,6 +67,10 @@ So, the total number of times they have to refill is 0.
 	<li><code>max(plants[i]) &lt;= capacityA, capacityB &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumRefill(int[] plants, int capacityA, int capacityB) {
@@ -108,3 +120,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

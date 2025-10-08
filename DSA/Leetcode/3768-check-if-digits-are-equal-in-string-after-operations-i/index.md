@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-i">3768. Check If Digits Are Equal in String After Operations I</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of digits. Perform the following operation repeatedly until the string has <strong>exactly</strong> two digits:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3768. Check If Digits Are Equal in String After Operations I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-i" target = "_blank">3768. Check If Digits Are Equal in String After Operations I</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of digits. Perform the following operation repeatedly until the string has <strong>exactly</strong> two digits:</p>
 
 <ul>
 	<li>For each pair of consecutive digits in <code>s</code>, starting from the first digit, calculate a new digit as the sum of the two digits <strong>modulo</strong> 10.</li>
@@ -64,33 +72,63 @@
 	<li><code>s</code> consists of only digits.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
-    public boolean hasSameDigits(String s) {
-        int n = s.length();
-        ArrayList<Integer> res = new ArrayList<>();
-        for (int i = 0; i < n; i++)
-            res.add(s.charAt(i) - '0');
-        for (int k = 0; k < 1000; k++) {
-            if (res.size() <= 1)
-                return false;
-            if (check(res))
-                return true;
-            ArrayList<Integer> temp = new ArrayList<>();
-            for (int i = 0; i < res.size() - 1; i++)
-                temp.add((res.get(i) + res.get(i + 1)) % 10);
-            res.clear();
-            for (int ele : temp)
-                res.add(ele);
+    private long dp[][];
+    public long maxSum(int[][] grid, int[] limits, int k) {
+        int n = grid.length, m = grid[0].length;
+        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<ArrayList<Integer >> elements = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            ArrayList<Integer> r = new ArrayList<>();
+            for (int j = 0; j < m; j++)
+                r.add(grid[i][j]);
+            Collections.sort(r);
+            Collections.reverse(r);
+            ArrayList<Integer> r1 = new ArrayList<>();
+            for (int ele : r)
+                if (r1.size() < limits[i])
+                    r1.add(ele);
+            elements.add(new ArrayList<>(r1));
         }
-        return false;
+        for (ArrayList<Integer> x : elements)  for (int ele : x) arr.add(ele);
+        Collections.sort(arr);
+        Collections.reverse(arr);
+        long ans = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            if (k == 0)
+                break;
+            ans += arr.get(i);
+            k--;
+        }
+        return ans;
     }
-    private boolean check(ArrayList<Integer> arr) {
-        int n = arr.size();
-        for (int ele : arr)
-            if (ele != arr.get(0))
-                return false;
-        return true;
+    private long solve(int ind, int k, ArrayList<Integer> arr) {
+        if (ind >= arr.size())
+            return 0;
+        if (dp[ind][k] != -1)
+            return dp[ind][k];
+        long op1 = Integer.MIN_VALUE / 10, op2 = Integer.MIN_VALUE / 10;
+        if (k > 0)
+            op1 = arr.get(ind) + solve(ind + 1, k - 1, arr);
+        op2 = solve(ind + 1, k, arr);
+        return dp[ind][k] = Math.max(op1, op2);
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

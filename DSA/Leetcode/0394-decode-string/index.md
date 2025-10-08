@@ -46,6 +46,12 @@
 	<li>All the integers in <code>s</code> are in the range <code>[1, 300]</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public String decodeString(String s) {
@@ -86,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

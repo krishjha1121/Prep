@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three">1889. Check if Number is a Sum of Powers of Three</a></h2><h3>Medium</h3><hr><p>Given an integer <code>n</code>, return <code>true</code> <em>if it is possible to represent </em><code>n</code><em> as the sum of distinct powers of three.</em> Otherwise, return <code>false</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1889. Check if Number is a Sum of Powers of Three
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three" target = "_blank">1889. Check if Number is a Sum of Powers of Three</a></h2><h3>Medium</h3><hr><p>Given an integer <code>n</code>, return <code>true</code> <em>if it is possible to represent </em><code>n</code><em> as the sum of distinct powers of three.</em> Otherwise, return <code>false</code>.</p>
 
 <p>An integer <code>y</code> is a power of three if there exists an integer <code>x</code> such that <code>y == 3<sup>x</sup></code>.</p>
 
@@ -33,6 +41,10 @@
 	<li><code>1 &lt;= n &lt;= 10<sup>7</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean checkPowersOfThree(int n) {
@@ -45,3 +57,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

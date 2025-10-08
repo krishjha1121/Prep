@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sum-of-number-and-its-reverse">2541. Sum of Number and Its Reverse</a></h2><h3>Medium</h3><hr><p>Given a <strong>non-negative</strong> integer <code>num</code>, return <code>true</code><em> if </em><code>num</code><em> can be expressed as the sum of any <strong>non-negative</strong> integer and its reverse, or </em><code>false</code><em> otherwise.</em></p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2541. Sum of Number and Its Reverse
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sum-of-number-and-its-reverse" target = "_blank">2541. Sum of Number and Its Reverse</a></h2><h3>Medium</h3><hr><p>Given a <strong>non-negative</strong> integer <code>num</code>, return <code>true</code><em> if </em><code>num</code><em> can be expressed as the sum of any <strong>non-negative</strong> integer and its reverse, or </em><code>false</code><em> otherwise.</em></p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -32,6 +40,10 @@
 	<li><code>0 &lt;= num &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean sumOfNumberAndReverse(int num) {
@@ -51,3 +63,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

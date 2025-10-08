@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-fish-in-a-grid">2764. Maximum Number of Fish in a Grid</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> 2D matrix <code>grid</code> of size <code>m x n</code>, where <code>(r, c)</code> represents:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2764. Maximum Number of Fish in a Grid
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-fish-in-a-grid" target = "_blank">2764. Maximum Number of Fish in a Grid</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> 2D matrix <code>grid</code> of size <code>m x n</code>, where <code>(r, c)</code> represents:</p>
 
 <ul>
 	<li>A <strong>land</strong> cell if <code>grid[r][c] = 0</code>, or</li>
@@ -42,6 +50,10 @@
 	<li><code>1 &lt;= m, n &lt;= 10</code></li>
 	<li><code>0 &lt;= grid[i][j] &lt;= 10</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -93,3 +105,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -44,6 +44,13 @@
 	<li>Could you devise a constant space solution?</li>
 </ul>
 
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public void setZeroes(int[][] matrix) {
@@ -67,4 +74,17 @@ class Solution {
         }
     }
 }
+
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

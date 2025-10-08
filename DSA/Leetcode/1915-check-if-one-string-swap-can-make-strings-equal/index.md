@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal">1915. Check if One String Swap Can Make Strings Equal</a></h2><h3>Easy</h3><hr><p>You are given two strings <code>s1</code> and <code>s2</code> of equal length. A <strong>string swap</strong> is an operation where you choose two indices in a string (not necessarily different) and swap the characters at these indices.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1915. Check if One String Swap Can Make Strings Equal
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal" target = "_blank">1915. Check if One String Swap Can Make Strings Equal</a></h2><h3>Easy</h3><hr><p>You are given two strings <code>s1</code> and <code>s2</code> of equal length. A <strong>string swap</strong> is an operation where you choose two indices in a string (not necessarily different) and swap the characters at these indices.</p>
 
 <p>Return <code>true</code> <em>if it is possible to make both strings equal by performing <strong>at most one string swap </strong>on <strong>exactly one</strong> of the strings. </em>Otherwise, return <code>false</code>.</p>
 
@@ -36,6 +44,10 @@
 	<li><code>s1</code> and <code>s2</code> consist of only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean areAlmostEqual(String s1, String s2) {
@@ -56,3 +68,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

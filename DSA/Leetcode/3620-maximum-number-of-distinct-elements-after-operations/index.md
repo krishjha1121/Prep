@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-distinct-elements-after-operations">3620. Maximum Number of Distinct Elements After Operations</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3620. Maximum Number of Distinct Elements After Operations
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-distinct-elements-after-operations" target = "_blank">3620. Maximum Number of Distinct Elements After Operations</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p>
 
 <p>You are allowed to perform the following <strong>operation</strong> on each element of the array <strong>at most</strong> <em>once</em>:</p>
 
@@ -42,6 +50,10 @@
 	<li><code>0 &lt;= k &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxDistinctElements(int[] nums, int k) {
@@ -64,3 +76,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

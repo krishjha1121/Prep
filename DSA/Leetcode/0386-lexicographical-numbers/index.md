@@ -25,6 +25,12 @@
 	<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<Integer> lexicalOrder(int n) {
@@ -44,3 +50,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

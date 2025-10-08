@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-graph">3720. Minimize the Maximum Edge Weight of Graph</a></h2><h3>Medium</h3><hr><p>You are given two integers, <code>n</code> and <code>threshold</code>, as well as a <strong>directed</strong> weighted graph of <code>n</code> nodes numbered from 0 to <code>n - 1</code>. The graph is represented by a <strong>2D</strong> integer array <code>edges</code>, where <code>edges[i] = [A<sub>i</sub>, B<sub>i</sub>, W<sub>i</sub>]</code> indicates that there is an edge going from node <code>A<sub>i</sub></code> to node <code>B<sub>i</sub></code> with weight <code>W<sub>i</sub></code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3720. Minimize the Maximum Edge Weight of Graph
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-graph" target = "_blank">3720. Minimize the Maximum Edge Weight of Graph</a></h2><h3>Medium</h3><hr><p>You are given two integers, <code>n</code> and <code>threshold</code>, as well as a <strong>directed</strong> weighted graph of <code>n</code> nodes numbered from 0 to <code>n - 1</code>. The graph is represented by a <strong>2D</strong> integer array <code>edges</code>, where <code>edges[i] = [A<sub>i</sub>, B<sub>i</sub>, W<sub>i</sub>]</code> indicates that there is an edge going from node <code>A<sub>i</sub></code> to node <code>B<sub>i</sub></code> with weight <code>W<sub>i</sub></code>.</p>
 
 <p>You have to remove some edges from this graph (possibly <strong>none</strong>), so that it satisfies the following conditions:</p>
 
@@ -73,6 +81,10 @@
 	<li>There <strong>may be</strong> multiple edges between a pair of nodes, but they must have unique weights.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private ArrayList<ArrayList<Pair >> Revadj;
@@ -137,3 +149,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

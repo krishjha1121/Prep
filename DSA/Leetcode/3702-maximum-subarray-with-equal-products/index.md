@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-subarray-with-equal-products">3702. Maximum Subarray With Equal Products</a></h2><h3>Easy</h3><hr><p>You are given an array of <strong>positive</strong> integers <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3702. Maximum Subarray With Equal Products
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-subarray-with-equal-products" target = "_blank">3702. Maximum Subarray With Equal Products</a></h2><h3>Easy</h3><hr><p>You are given an array of <strong>positive</strong> integers <code>nums</code>.</p>
 
 <p>An array <code>arr</code> is called <strong>product equivalent</strong> if <code>prod(arr) == lcm(arr) * gcd(arr)</code>, where:</p>
 
@@ -57,6 +65,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxLength(int[] nums) {
@@ -84,3 +96,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

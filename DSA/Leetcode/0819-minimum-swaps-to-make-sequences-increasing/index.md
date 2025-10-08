@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing">819. Minimum Swaps To Make Sequences Increasing</a></h2><h3>Hard</h3><hr><p>You are given two integer arrays of the same length <code>nums1</code> and <code>nums2</code>. In one operation, you are allowed to swap <code>nums1[i]</code> with <code>nums2[i]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 819. Minimum Swaps To Make Sequences Increasing
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing" target = "_blank">819. Minimum Swaps To Make Sequences Increasing</a></h2><h3>Hard</h3><hr><p>You are given two integer arrays of the same length <code>nums1</code> and <code>nums2</code>. In one operation, you are allowed to swap <code>nums1[i]</code> with <code>nums2[i]</code>.</p>
 
 <ul>
 	<li>For example, if <code>nums1 = [1,2,3,<u>8</u>]</code>, and <code>nums2 = [5,6,7,<u>4</u>]</code>, you can swap the element at <code>i = 3</code> to obtain <code>nums1 = [1,2,3,4]</code> and <code>nums2 = [5,6,7,8]</code>.</li>
@@ -36,6 +44,8 @@ which are both strictly increasing.
 	<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 2 * 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -63,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

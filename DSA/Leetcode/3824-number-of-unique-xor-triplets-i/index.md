@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-unique-xor-triplets-i">3824. Number of Unique XOR Triplets I</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code>, where <code>nums</code> is a <strong><span data-keyword="permutation">permutation</span></strong> of the numbers in the range <code>[1, n]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3824. Number of Unique XOR Triplets I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-unique-xor-triplets-i" target = "_blank">3824. Number of Unique XOR Triplets I</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code>, where <code>nums</code> is a <strong><span data-keyword="permutation">permutation</span></strong> of the numbers in the range <code>[1, n]</code>.</p>
 
 <p>A <strong>XOR triplet</strong> is defined as the XOR of three elements <code>nums[i] XOR nums[j] XOR nums[k]</code> where <code>i &lt;= j &lt;= k</code>.</p>
 
@@ -56,6 +64,10 @@
 	<li><code>nums</code> is a permutation of integers from <code>1</code> to <code>n</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int uniqueXorTriplets(int[] nums) {
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

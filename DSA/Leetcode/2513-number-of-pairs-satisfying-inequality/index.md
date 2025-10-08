@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-pairs-satisfying-inequality">2513. Number of Pairs Satisfying Inequality</a></h2><h3>Hard</h3><hr><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, each of size <code>n</code>, and an integer <code>diff</code>. Find the number of <strong>pairs</strong> <code>(i, j)</code> such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2513. Number of Pairs Satisfying Inequality
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-pairs-satisfying-inequality" target = "_blank">2513. Number of Pairs Satisfying Inequality</a></h2><h3>Hard</h3><hr><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, each of size <code>n</code>, and an integer <code>diff</code>. Find the number of <strong>pairs</strong> <code>(i, j)</code> such that:</p>
 
 <ul>
 	<li><code>0 &lt;= i &lt; j &lt;= n - 1</code> <strong>and</strong></li>
@@ -39,6 +47,10 @@ Since there does not exist any pair that satisfies the conditions, we return 0.
 	<li><code>-10<sup>4</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>4</sup></code></li>
 	<li><code>-10<sup>4</sup> &lt;= diff &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -392,3 +404,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

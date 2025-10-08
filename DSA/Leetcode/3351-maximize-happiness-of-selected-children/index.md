@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximize-happiness-of-selected-children">3351. Maximize Happiness of Selected Children</a></h2><h3>Medium</h3><hr><p>You are given an array <code>happiness</code> of length <code>n</code>, and a <strong>positive</strong> integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3351. Maximize Happiness of Selected Children
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximize-happiness-of-selected-children" target = "_blank">3351. Maximize Happiness of Selected Children</a></h2><h3>Medium</h3><hr><p>You are given an array <code>happiness</code> of length <code>n</code>, and a <strong>positive</strong> integer <code>k</code>.</p>
 
 <p>There are <code>n</code> children standing in a queue, where the <code>i<sup>th</sup></code> child has <strong>happiness value</strong> <code>happiness[i]</code>. You want to select <code>k</code> children from these <code>n</code> children in <code>k</code> turns.</p>
 
@@ -48,6 +56,10 @@ The sum of the happiness values of the selected children is 5.
 	<li><code>1 &lt;= k &lt;= n</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -67,3 +79,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

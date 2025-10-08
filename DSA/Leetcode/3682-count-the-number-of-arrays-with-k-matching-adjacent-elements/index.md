@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-the-number-of-arrays-with-k-matching-adjacent-elements">3682. Count the Number of Arrays with K Matching Adjacent Elements</a></h2><h3>Hard</h3><hr><p>You are given three integers <code>n</code>, <code>m</code>, <code>k</code>. A <strong>good array</strong> <code>arr</code> of size <code>n</code> is defined as follows:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3682. Count the Number of Arrays with K Matching Adjacent Elements
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-the-number-of-arrays-with-k-matching-adjacent-elements" target = "_blank">3682. Count the Number of Arrays with K Matching Adjacent Elements</a></h2><h3>Hard</h3><hr><p>You are given three integers <code>n</code>, <code>m</code>, <code>k</code>. A <strong>good array</strong> <code>arr</code> of size <code>n</code> is defined as follows:</p>
 
 <ul>
 	<li>Each element in <code>arr</code> is in the <strong>inclusive</strong> range <code>[1, m]</code>.</li>
@@ -63,6 +71,10 @@
 	<li><code>0 &lt;= k &lt;= n - 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int mod = (int)(1e9 + 7);
@@ -112,3 +124,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

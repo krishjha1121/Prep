@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies">2220. Find All Possible Recipes from Given Supplies</a></h2><h3>Medium</h3><hr><p>You have information about <code>n</code> different recipes. You are given a string array <code>recipes</code> and a 2D string array <code>ingredients</code>. The <code>i<sup>th</sup></code> recipe has the name <code>recipes[i]</code>, and you can <strong>create</strong> it if you have <strong>all</strong> the needed ingredients from <code>ingredients[i]</code>. A recipe can also be an ingredient for <strong>other </strong>recipes, i.e., <code>ingredients[i]</code> may contain a string that is in <code>recipes</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2220. Find All Possible Recipes from Given Supplies
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies" target = "_blank">2220. Find All Possible Recipes from Given Supplies</a></h2><h3>Medium</h3><hr><p>You have information about <code>n</code> different recipes. You are given a string array <code>recipes</code> and a 2D string array <code>ingredients</code>. The <code>i<sup>th</sup></code> recipe has the name <code>recipes[i]</code>, and you can <strong>create</strong> it if you have <strong>all</strong> the needed ingredients from <code>ingredients[i]</code>. A recipe can also be an ingredient for <strong>other </strong>recipes, i.e., <code>ingredients[i]</code> may contain a string that is in <code>recipes</code>.</p>
 
 <p>You are also given a string array <code>supplies</code> containing all the ingredients that you initially have, and you have an infinite supply of all of them.</p>
 
@@ -50,6 +58,10 @@ We can create &quot;burger&quot; since we have the ingredient &quot;meat&quot; a
 	<li>Each <code>ingredients[i]</code> does not contain any duplicate values.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<String> findAllRecipes(String[] recipes, List<List<String >> ingredients, String[] supplies) {
@@ -82,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

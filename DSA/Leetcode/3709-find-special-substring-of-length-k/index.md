@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-special-substring-of-length-k">3709. Find Special Substring of Length K</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3709. Find Special Substring of Length K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-special-substring-of-length-k" target = "_blank">3709. Find Special Substring of Length K</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> and an integer <code>k</code>.</p>
 
 <p>Determine if there exists a <span data-keyword="substring-nonempty">substring</span> of length <strong>exactly</strong> <code>k</code> in <code>s</code> that satisfies the following conditions:</p>
 
@@ -50,6 +58,10 @@
 	<li><code>s</code> consists of lowercase English letters only.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean hasSpecialSubstring(String s, int k) {
@@ -87,3 +99,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

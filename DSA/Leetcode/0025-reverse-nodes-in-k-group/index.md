@@ -10,7 +10,7 @@
 
 <p><code>k</code> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <code>k</code> then left-out nodes, in the end, should remain as it is.</p>
 
-<p>You may not alter the values in the list&#39;s nodes, only nodes themselves may be changed.</p>
+<p>You may not alter the values in the list's nodes, only nodes themselves may be changed.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -32,12 +32,19 @@
 
 <ul>
 	<li>The number of nodes in the list is <code>n</code>.</li>
-	<li><code>1 &lt;= k &lt;= n &lt;= 5000</code></li>
-	<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
+	<li><code>1 <= k <= n <= 5000</code></li>
+	<li><code>0 <= Node.val <= 1000</code></li>
 </ul>
 
 <p>&nbsp;</p>
 <p><strong>Follow-up:</strong> Can you solve the problem in <code>O(1)</code> extra memory space?</p>
+
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
 
 ```java
 /**
@@ -86,3 +93,16 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>
+

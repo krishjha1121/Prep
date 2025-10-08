@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/resulting-string-after-adjacent-removals">3860. Resulting String After Adjacent Removals</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> consisting of lowercase English letters.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3860. Resulting String After Adjacent Removals
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/resulting-string-after-adjacent-removals" target = "_blank">3860. Resulting String After Adjacent Removals</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> consisting of lowercase English letters.</p>
 
 <p>You <strong>must</strong> repeatedly perform the following operation while the string <code>s</code> has <strong>at least</strong> two <strong>consecutive </strong>characters:</p>
 
@@ -66,6 +74,10 @@
 	<li><code>s</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String resultingString(String s) {
@@ -118,3 +130,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

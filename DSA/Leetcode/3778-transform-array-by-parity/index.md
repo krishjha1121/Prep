@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/transform-array-by-parity">3778. Transform Array by Parity</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>. Transform <code>nums</code> by performing the following operations in the <strong>exact</strong> order specified:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3778. Transform Array by Parity
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/transform-array-by-parity" target = "_blank">3778. Transform Array by Parity</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>. Transform <code>nums</code> by performing the following operations in the <strong>exact</strong> order specified:</p>
 
 <ol>
 	<li>Replace each even number with 0.</li>
@@ -47,6 +55,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] transformArray(int[] nums) {
@@ -63,3 +75,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

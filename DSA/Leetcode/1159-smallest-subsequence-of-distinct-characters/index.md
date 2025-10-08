@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/smallest-subsequence-of-distinct-characters">1159. Smallest Subsequence of Distinct Characters</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, return <em>the </em><span data-keyword="lexicographically-smaller-string"><em>lexicographically smallest</em></span> <span data-keyword="subsequence-string"><em>subsequence</em></span><em> of</em> <code>s</code> <em>that contains all the distinct characters of</em> <code>s</code> <em>exactly once</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1159. Smallest Subsequence of Distinct Characters
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/smallest-subsequence-of-distinct-characters" target = "_blank">1159. Smallest Subsequence of Distinct Characters</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, return <em>the </em><span data-keyword="lexicographically-smaller-string"><em>lexicographically smallest</em></span> <span data-keyword="subsequence-string"><em>subsequence</em></span><em> of</em> <code>s</code> <em>that contains all the distinct characters of</em> <code>s</code> <em>exactly once</em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -26,6 +34,10 @@
 <p>&nbsp;</p>
 <strong>Note:</strong> This question is the same as 316: <a href="https://leetcode.com/problems/remove-duplicate-letters/" target="_blank">https://leetcode.com/problems/remove-duplicate-letters/</a>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String smallestSubsequence(String s) {
@@ -51,3 +63,14 @@ class Solution {
 }
 ```
 
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

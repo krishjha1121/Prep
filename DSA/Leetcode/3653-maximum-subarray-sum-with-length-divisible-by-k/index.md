@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k">3653. Maximum Subarray Sum With Length Divisible by K</a></h2><h3>Medium</h3><hr><p>You are given an array of integers <code>nums</code> and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3653. Maximum Subarray Sum With Length Divisible by K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k" target = "_blank">3653. Maximum Subarray Sum With Length Divisible by K</a></h2><h3>Medium</h3><hr><p>You are given an array of integers <code>nums</code> and an integer <code>k</code>.</p>
 
 <p>Return the <strong>maximum</strong> sum of a <strong>non-empty subarray</strong> of <code>nums</code>, such that the size of the subarray is <strong>divisible</strong> by <code>k</code>.</p>
 
@@ -49,6 +57,10 @@
 	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maxSubarraySum(int[] nums, int k) {
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

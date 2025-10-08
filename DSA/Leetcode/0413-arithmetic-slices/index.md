@@ -40,6 +40,12 @@
 	<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numberOfArithmeticSlices(int[] nums) {
@@ -70,3 +76,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-servers-that-communicate">1396. Count Servers that Communicate</a></h2><h3>Medium</h3><hr><p>You are given a map of a server center, represented as a <code>m * n</code> integer matrix&nbsp;<code>grid</code>, where 1 means that on that cell there is a server and 0 means that it is no server. Two servers are said to communicate if they are on the same row or on the same column.<br />
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1396. Count Servers that Communicate
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-servers-that-communicate" target = "_blank">1396. Count Servers that Communicate</a></h2><h3>Medium</h3><hr><p>You are given a map of a server center, represented as a <code>m * n</code> integer matrix&nbsp;<code>grid</code>, where 1 means that on that cell there is a server and 0 means that it is no server. Two servers are said to communicate if they are on the same row or on the same column.<br />
 <br />
 Return the number of servers&nbsp;that communicate with any other server.</p>
 
@@ -43,6 +51,10 @@ Return the number of servers&nbsp;that communicate with any other server.</p>
 	<li><code>grid[i][j] == 0 or 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countServers(int[][] grid) {
@@ -72,3 +84,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

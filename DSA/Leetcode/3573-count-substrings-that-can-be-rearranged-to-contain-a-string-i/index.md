@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-substrings-that-can-be-rearranged-to-contain-a-string-i">3573. Count Substrings That Can Be Rearranged to Contain a String I</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>word1</code> and <code>word2</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3573. Count Substrings That Can Be Rearranged to Contain a String I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-substrings-that-can-be-rearranged-to-contain-a-string-i" target = "_blank">3573. Count Substrings That Can Be Rearranged to Contain a String I</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>word1</code> and <code>word2</code>.</p>
 
 <p>A string <code>x</code> is called <strong>valid</strong> if <code>x</code> can be rearranged to have <code>word2</code> as a <span data-keyword="string-prefix">prefix</span>.</p>
 
@@ -46,6 +54,10 @@
 	<li><code>word1</code> and <code>word2</code> consist only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long validSubstringCount(String s1, String s2) {
@@ -76,3 +88,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

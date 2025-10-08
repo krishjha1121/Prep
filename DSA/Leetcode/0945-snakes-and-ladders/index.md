@@ -1,3 +1,11 @@
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 937. Online Stock Span
+
+</h>
+</div>
+
 ## 945. Snakes and Ladders
 
 **Difficulty:** Medium
@@ -52,6 +60,8 @@ This is the lowest possible number of moves to reach the last square, so return 
 - `board[i][j]` is either `-1` or in the range `[1, n²]`
 - The squares labeled `1` and `n²` are not the starting points of any snake or ladder.
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int snakesAndLadders(int[][] board) {
@@ -84,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

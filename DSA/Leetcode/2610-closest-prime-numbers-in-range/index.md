@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/closest-prime-numbers-in-range">2610. Closest Prime Numbers in Range</a></h2><h3>Medium</h3><hr><p>Given two positive integers <code>left</code> and <code>right</code>, find the two integers <code>num1</code> and <code>num2</code> such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2610. Closest Prime Numbers in Range
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/closest-prime-numbers-in-range" target = "_blank">2610. Closest Prime Numbers in Range</a></h2><h3>Medium</h3><hr><p>Given two positive integers <code>left</code> and <code>right</code>, find the two integers <code>num1</code> and <code>num2</code> such that:</p>
 
 <ul>
 	<li><code>left &lt;= num1 &lt; num2 &lt;= right </code>.</li>
@@ -43,6 +51,10 @@ Since 11 is smaller than 17, we return the first pair.
 .spoilerbutton[value="Hide Message"] + .spoiler {padding:5px;}
 </style>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] closestPrimes(int left, int right) {
@@ -80,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

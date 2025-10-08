@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-index-of-a-valid-split">2888. Minimum Index of a Valid Split</a></h2><h3>Medium</h3><hr><p>An element <code>x</code> of an integer array <code>arr</code> of length <code>m</code> is <strong>dominant</strong> if <strong>more than half</strong> the elements of <code>arr</code> have a value of <code>x</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2888. Minimum Index of a Valid Split
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-index-of-a-valid-split" target = "_blank">2888. Minimum Index of a Valid Split</a></h2><h3>Medium</h3><hr><p>An element <code>x</code> of an integer array <code>arr</code> of length <code>m</code> is <strong>dominant</strong> if <strong>more than half</strong> the elements of <code>arr</code> have a value of <code>x</code>.</p>
 
 <p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> with one <strong>dominant</strong> element.</p>
 
@@ -53,6 +61,10 @@ It can be shown that index 4 is the minimum index of a valid split.</pre>
 	<li><code>nums</code> has exactly one dominant element.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumIndex(List<Integer> nums) {
@@ -72,3 +84,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

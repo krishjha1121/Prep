@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/finding-mk-average">1953. Finding MK Average</a></h2><h3>Hard</h3><hr><p>You are given two integers, <code>m</code> and <code>k</code>, and a stream of integers. You are tasked to implement a data structure that calculates the <strong>MKAverage</strong> for the stream.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1953. Finding MK Average
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/finding-mk-average" target = "_blank">1953. Finding MK Average</a></h2><h3>Hard</h3><hr><p>You are given two integers, <code>m</code> and <code>k</code>, and a stream of integers. You are tasked to implement a data structure that calculates the <strong>MKAverage</strong> for the stream.</p>
 
 <p>The <strong>MKAverage</strong> can be calculated using these steps:</p>
 
@@ -52,6 +60,10 @@ obj.calculateMKAverage(); // The last 3 elements are [5,5,5].
 	<li><code>1 &lt;= num &lt;= 10<sup>5</sup></code></li>
 	<li>At most <code>10<sup>5</sup></code> calls will be made to <code>addElement</code> and <code>calculateMKAverage</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class MKAverage {
@@ -107,7 +119,6 @@ class MKAverage {
         return res / (m - 2 * k);
     }
 }
-
 /**
     Your MKAverage object will be instantiated and called as such:
     MKAverage obj = new MKAverage(m, k);
@@ -115,3 +126,15 @@ class MKAverage {
     int param_2 = obj.calculateMKAverage();
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

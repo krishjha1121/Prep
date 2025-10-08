@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-good-meals">1830. Count Good Meals</a></h2><h3>Medium</h3><hr><p>A <strong>good meal</strong> is a meal that contains <strong>exactly two different food items</strong> with a sum of deliciousness equal to a power of two.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1830. Count Good Meals
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-good-meals" target = "_blank">1830. Count Good Meals</a></h2><h3>Medium</h3><hr><p>A <strong>good meal</strong> is a meal that contains <strong>exactly two different food items</strong> with a sum of deliciousness equal to a power of two.</p>
 
 <p>You can pick <strong>any</strong> two different foods to make a good meal.</p>
 
@@ -30,6 +38,10 @@ Their respective sums are 4, 8, 8, and 16, all of which are powers of 2.
 	<li><code>1 &lt;= deliciousness.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>0 &lt;= deliciousness[i] &lt;= 2<sup>20</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.Arrays;
@@ -67,3 +79,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

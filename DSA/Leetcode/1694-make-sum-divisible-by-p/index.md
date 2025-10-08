@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/make-sum-divisible-by-p">1694. Make Sum Divisible by P</a></h2><h3>Medium</h3><hr><p>Given an array of positive integers <code>nums</code>, remove the <strong>smallest</strong> subarray (possibly <strong>empty</strong>) such that the <strong>sum</strong> of the remaining elements is divisible by <code>p</code>. It is <strong>not</strong> allowed to remove the whole array.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1694. Make Sum Divisible by P
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/make-sum-divisible-by-p" target = "_blank">1694. Make Sum Divisible by P</a></h2><h3>Medium</h3><hr><p>Given an array of positive integers <code>nums</code>, remove the <strong>smallest</strong> subarray (possibly <strong>empty</strong>) such that the <strong>sum</strong> of the remaining elements is divisible by <code>p</code>. It is <strong>not</strong> allowed to remove the whole array.</p>
 
 <p>Return <em>the length of the smallest subarray that you need to remove, or </em><code>-1</code><em> if it&#39;s impossible</em>.</p>
 
@@ -38,6 +46,10 @@
 	<li><code>1 &lt;= p &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minSubarray(int[] nums, int p) {
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-lexicographically-largest-string-from-the-box-i">3683. Find the Lexicographically Largest String From the Box I</a></h2><h3>Medium</h3><hr><p>You are given a string <code>word</code>, and an integer <code>numFriends</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3683. Find the Lexicographically Largest String From the Box I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-lexicographically-largest-string-from-the-box-i" target = "_blank">3683. Find the Lexicographically Largest String From the Box I</a></h2><h3>Medium</h3><hr><p>You are given a string <code>word</code>, and an integer <code>numFriends</code>.</p>
 
 <p>Alice is organizing a game for her <code>numFriends</code> friends. There are multiple rounds in the game, where in each round:</p>
 
@@ -49,6 +57,10 @@
 	<li><code>1 &lt;= numFriends &lt;= word.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,3 +109,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

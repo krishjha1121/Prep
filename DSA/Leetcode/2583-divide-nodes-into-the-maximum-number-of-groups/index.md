@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/divide-nodes-into-the-maximum-number-of-groups">2583. Divide Nodes Into the Maximum Number of Groups</a></h2><h3>Hard</h3><hr><p>You are given a positive integer <code>n</code> representing the number of nodes in an <strong>undirected</strong> graph. The nodes are labeled from <code>1</code> to <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2583. Divide Nodes Into the Maximum Number of Groups
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/divide-nodes-into-the-maximum-number-of-groups" target = "_blank">2583. Divide Nodes Into the Maximum Number of Groups</a></h2><h3>Hard</h3><hr><p>You are given a positive integer <code>n</code> representing the number of nodes in an <strong>undirected</strong> graph. The nodes are labeled from <code>1</code> to <code>n</code>.</p>
 
 <p>You are also given a 2D integer array <code>edges</code>, where <code>edges[i] = [a<sub>i, </sub>b<sub>i</sub>]</code> indicates that there is a <strong>bidirectional</strong> edge between nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code>. <strong>Notice</strong> that the given graph may be disconnected.</p>
 
@@ -46,6 +54,10 @@ It can be shown that no grouping is possible.
 	<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
 	<li>There is at most one edge between any pair of vertices.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.*;
@@ -115,3 +127,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

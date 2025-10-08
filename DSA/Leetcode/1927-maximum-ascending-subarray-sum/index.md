@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-ascending-subarray-sum">1927. Maximum Ascending Subarray Sum</a></h2><h3>Easy</h3><hr><p>Given an array of positive integers <code>nums</code>, return the <em>maximum possible sum of an <strong>ascending</strong> subarray in </em><code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1927. Maximum Ascending Subarray Sum
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-ascending-subarray-sum" target = "_blank">1927. Maximum Ascending Subarray Sum</a></h2><h3>Easy</h3><hr><p>Given an array of positive integers <code>nums</code>, return the <em>maximum possible sum of an <strong>ascending</strong> subarray in </em><code>nums</code>.</p>
 
 <p>A subarray is defined as a contiguous sequence of numbers in an array.</p>
 
@@ -37,6 +45,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxAscendingSum(int[] nums) {
@@ -55,3 +67,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

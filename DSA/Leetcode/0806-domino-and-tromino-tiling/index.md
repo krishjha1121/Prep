@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/domino-and-tromino-tiling">806. Domino and Tromino Tiling</a></h2><h3>Medium</h3><hr><p>You have two types of tiles: a <code>2 x 1</code> domino shape and a tromino shape. You may rotate these shapes.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 806. Domino and Tromino Tiling
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/domino-and-tromino-tiling" target = "_blank">806. Domino and Tromino Tiling</a></h2><h3>Medium</h3><hr><p>You have two types of tiles: a <code>2 x 1</code> domino shape and a tromino shape. You may rotate these shapes.</p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino.jpg" style="width: 362px; height: 195px;" />
 <p>Given an integer n, return <em>the number of ways to tile an</em> <code>2 x n</code> <em>board</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
 
@@ -27,6 +35,8 @@
 	<li><code>1 &lt;= n &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     static int mod = (int)(1e9 + 7);
@@ -41,3 +51,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

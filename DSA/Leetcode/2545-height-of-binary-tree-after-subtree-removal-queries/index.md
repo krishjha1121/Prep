@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/height-of-binary-tree-after-subtree-removal-queries">2545. Height of Binary Tree After Subtree Removal Queries</a></h2><h3>Hard</h3><hr><p>You are given the <code>root</code> of a <strong>binary tree</strong> with <code>n</code> nodes. Each node is assigned a unique value from <code>1</code> to <code>n</code>. You are also given an array <code>queries</code> of size <code>m</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2545. Height of Binary Tree After Subtree Removal Queries
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/height-of-binary-tree-after-subtree-removal-queries" target = "_blank">2545. Height of Binary Tree After Subtree Removal Queries</a></h2><h3>Hard</h3><hr><p>You are given the <code>root</code> of a <strong>binary tree</strong> with <code>n</code> nodes. Each node is assigned a unique value from <code>1</code> to <code>n</code>. You are also given an array <code>queries</code> of size <code>m</code>.</p>
 
 <p>You have to perform <code>m</code> <strong>independent</strong> queries on the tree where in the <code>i<sup>th</sup></code> query you do the following:</p>
 
@@ -50,6 +58,9 @@ The height of the tree is 2 (The path 1 -&gt; 3 -&gt; 2).
 	<li><code>1 &lt;= queries[i] &lt;= n</code></li>
 	<li><code>queries[i] != root.val</code></li>
 </ul>
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -160,3 +171,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

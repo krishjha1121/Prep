@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences">3714. Maximum and Minimum Sums of at Most Size K Subsequences</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and a positive integer <code>k</code>. Return the sum of the <strong>maximum</strong> and <strong>minimum</strong> elements of all <strong><span data-keyword="subsequence-sequence-nonempty">subsequences</span></strong> of <code>nums</code> with <strong>at most</strong> <code>k</code> elements.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3714. Maximum and Minimum Sums of at Most Size K Subsequences
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences" target = "_blank">3714. Maximum and Minimum Sums of at Most Size K Subsequences</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and a positive integer <code>k</code>. Return the sum of the <strong>maximum</strong> and <strong>minimum</strong> elements of all <strong><span data-keyword="subsequence-sequence-nonempty">subsequences</span></strong> of <code>nums</code> with <strong>at most</strong> <code>k</code> elements.</p>
 
 <p>Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
 
@@ -103,6 +111,10 @@
 	<li><code><font face="monospace">1 &lt;= k &lt;= min(70, nums.length)</font></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -162,3 +174,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

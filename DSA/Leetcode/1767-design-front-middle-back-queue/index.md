@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-front-middle-back-queue">1767. Design Front Middle Back Queue</a></h2><h3>Medium</h3><hr><p>Design a queue that supports <code>push</code> and <code>pop</code> operations in the front, middle, and back.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1767. Design Front Middle Back Queue
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-front-middle-back-queue" target = "_blank">1767. Design Front Middle Back Queue</a></h2><h3>Medium</h3><hr><p>Design a queue that supports <code>push</code> and <code>pop</code> operations in the front, middle, and back.</p>
 
 <p>Implement the <code>FrontMiddleBack</code> class:</p>
 
@@ -50,6 +58,10 @@ q.popFront();     // return -1 -&gt; [] (The queue is empty)
 	<li>At most&nbsp;<code>1000</code>&nbsp;calls will be made to&nbsp;<code>pushFront</code>,&nbsp;<code>pushMiddle</code>,&nbsp;<code>pushBack</code>, <code>popFront</code>, <code>popMiddle</code>, and <code>popBack</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class FrontMiddleBackQueue {
     private ArrayList<Integer> dq;
@@ -87,7 +99,6 @@ class FrontMiddleBackQueue {
         return dq.remove(dq.size() - 1);
     }
 }
-
 /**
     Your FrontMiddleBackQueue object will be instantiated and called as such:
     FrontMiddleBackQueue obj = new FrontMiddleBackQueue();
@@ -99,3 +110,15 @@ class FrontMiddleBackQueue {
     int param_6 = obj.popBack();
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

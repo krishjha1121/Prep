@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-sum-with-at-most-k-elements">3764. Maximum Sum With at Most K Elements</a></h2><h3>Medium</h3><hr><p data-pm-slice="1 3 []">You are given a 2D integer matrix <code>grid</code> of size <code>n x m</code>, an integer array <code>limits</code> of length <code>n</code>, and an integer <code>k</code>. The task is to find the <strong>maximum sum</strong> of <strong>at most</strong> <code>k</code> elements from the matrix <code>grid</code> such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3764. Maximum Sum With at Most K Elements
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-sum-with-at-most-k-elements" target = "_blank">3764. Maximum Sum With at Most K Elements</a></h2><h3>Medium</h3><hr><p data-pm-slice="1 3 []">You are given a 2D integer matrix <code>grid</code> of size <code>n x m</code>, an integer array <code>limits</code> of length <code>n</code>, and an integer <code>k</code>. The task is to find the <strong>maximum sum</strong> of <strong>at most</strong> <code>k</code> elements from the matrix <code>grid</code> such that:</p>
 
 <ul data-spread="false">
 	<li>
@@ -52,6 +60,10 @@
 	<li><code>0 &lt;= k &lt;= min(n * m, sum(limits))</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private long dp[][];
@@ -96,3 +108,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

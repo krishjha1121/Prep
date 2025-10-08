@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-ii">3332. Minimum Operations to Exceed Threshold Value II</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3332. Minimum Operations to Exceed Threshold Value II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-ii" target = "_blank">3332. Minimum Operations to Exceed Threshold Value II</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, and an integer <code>k</code>.</p>
 
 <p>In one operation, you will:</p>
 
@@ -46,6 +54,10 @@ It can be shown that 4 is the minimum number of operations needed so that all el
 	<li>The input is generated such that an answer always exists. That is, there exists some sequence of operations after which all elements of the array are greater than or equal to <code>k</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minOperations(int[] nums, int k) {
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

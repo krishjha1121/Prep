@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k">2552. Maximum Sum of Distinct Subarrays With Length K</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. Find the maximum subarray sum of all the subarrays of <code>nums</code> that meet the following conditions:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2552. Maximum Sum of Distinct Subarrays With Length K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k" target = "_blank">2552. Maximum Sum of Distinct Subarrays With Length K</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. Find the maximum subarray sum of all the subarrays of <code>nums</code> that meet the following conditions:</p>
 
 <ul>
 	<li>The length of the subarray is <code>k</code>, and</li>
@@ -42,6 +50,10 @@ We return 0 because no subarrays meet the conditions.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maximumSubarraySum(int[] nums, int k) {
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/coupon-code-validator">3934. Coupon Code Validator</a></h2><h3>Easy</h3><hr><p>You are given three arrays of length <code>n</code> that describe the properties of <code>n</code> coupons: <code>code</code>, <code>businessLine</code>, and <code>isActive</code>. The <code>i<sup>th</sup> </code>coupon has:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3934. Coupon Code Validator
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/coupon-code-validator" target = "_blank">3934. Coupon Code Validator</a></h2><h3>Easy</h3><hr><p>You are given three arrays of length <code>n</code> that describe the properties of <code>n</code> coupons: <code>code</code>, <code>businessLine</code>, and <code>isActive</code>. The <code>i<sup>th</sup> </code>coupon has:</p>
 
 <ul>
 	<li><code>code[i]</code>: a <strong>string</strong> representing the coupon identifier.</li>
@@ -61,6 +69,10 @@
 	<li><code>isActive[i]</code> is either <code>true</code> or <code>false</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.ArrayList;
 import java.util.Collections;
@@ -117,3 +129,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

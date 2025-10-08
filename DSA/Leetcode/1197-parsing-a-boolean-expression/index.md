@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/parsing-a-boolean-expression">1197. Parsing A Boolean Expression</a></h2><h3>Hard</h3><hr><p>A <strong>boolean expression</strong> is an expression that evaluates to either <code>true</code> or <code>false</code>. It can be in one of the following shapes:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1197. Parsing A Boolean Expression
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/parsing-a-boolean-expression" target = "_blank">1197. Parsing A Boolean Expression</a></h2><h3>Hard</h3><hr><p>A <strong>boolean expression</strong> is an expression that evaluates to either <code>true</code> or <code>false</code>. It can be in one of the following shapes:</p>
 
 <ul>
 	<li><code>&#39;t&#39;</code> that evaluates to <code>true</code>.</li>
@@ -49,6 +57,10 @@ Then, evaluate !(f) --&gt; NOT false --&gt; true. We return true.
 	<li><code>1 &lt;= expression.length &lt;= 2 * 10<sup>4</sup></code></li>
 	<li>expression[i] is one following characters: <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;&amp;&#39;</code>, <code>&#39;|&#39;</code>, <code>&#39;!&#39;</code>, <code>&#39;t&#39;</code>, <code>&#39;f&#39;</code>, and <code>&#39;,&#39;</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -107,3 +119,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

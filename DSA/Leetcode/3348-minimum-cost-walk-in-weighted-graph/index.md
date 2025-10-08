@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph">3348. Minimum Cost Walk in Weighted Graph</a></h2><h3>Hard</h3><hr><p>There is an undirected weighted graph with <code>n</code> vertices labeled from <code>0</code> to <code>n - 1</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3348. Minimum Cost Walk in Weighted Graph
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph" target = "_blank">3348. Minimum Cost Walk in Weighted Graph</a></h2><h3>Hard</h3><hr><p>There is an undirected weighted graph with <code>n</code> vertices labeled from <code>0</code> to <code>n - 1</code>.</p>
 
 <p>You are given the integer <code>n</code> and an array <code>edges</code>, where <code>edges[i] = [u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>]</code> indicates that there is an edge between vertices <code>u<sub>i</sub></code> and <code>v<sub>i</sub></code> with a weight of <code>w<sub>i</sub></code>.</p>
 
@@ -52,6 +60,10 @@
 	<li><code>0 &lt;= s<sub>i</sub>, t<sub>i</sub> &lt;= n - 1</code></li>
 	<li><code>s<sub>i</sub> !=&nbsp;t<sub>i</sub></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -194,3 +206,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

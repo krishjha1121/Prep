@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/defuse-the-bomb">1755. Defuse the Bomb</a></h2><h3>Easy</h3><hr><p>You have a bomb to defuse, and your time is running out! Your informer will provide you with a <strong>circular</strong> array <code>code</code>&nbsp;of length of <code>n</code>&nbsp;and a key <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1755. Defuse the Bomb
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/defuse-the-bomb" target = "_blank">1755. Defuse the Bomb</a></h2><h3>Easy</h3><hr><p>You have a bomb to defuse, and your time is running out! Your informer will provide you with a <strong>circular</strong> array <code>code</code>&nbsp;of length of <code>n</code>&nbsp;and a key <code>k</code>.</p>
 
 <p>To decrypt the code, you must replace every number. All the numbers are replaced <strong>simultaneously</strong>.</p>
 
@@ -47,6 +55,10 @@
 	<li><code>-(n - 1) &lt;= k &lt;= n - 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] decrypt(int[] arr, int k) {
@@ -73,3 +85,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/cousins-in-binary-tree-ii">2677. Cousins in Binary Tree II</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a binary tree, replace the value of each node in the tree with the <strong>sum of all its cousins&#39; values</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2677. Cousins in Binary Tree II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/cousins-in-binary-tree-ii" target = "_blank">2677. Cousins in Binary Tree II</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a binary tree, replace the value of each node in the tree with the <strong>sum of all its cousins&#39; values</strong>.</p>
 
 <p>Two nodes of a binary tree are <strong>cousins</strong> if they have the same depth with different parents.</p>
 
@@ -39,6 +47,10 @@
 	<li>The number of nodes in the tree is in the range <code>[1, 10<sup>5</sup>]</code>.</li>
 	<li><code>1 &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -129,3 +141,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

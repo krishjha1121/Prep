@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros">3171. Minimum Equal Sum of Two Arrays After Replacing Zeros</a></h2><h3>Medium</h3><hr><p>You are given two arrays <code>nums1</code> and <code>nums2</code> consisting of positive integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3171. Minimum Equal Sum of Two Arrays After Replacing Zeros
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros" target = "_blank">3171. Minimum Equal Sum of Two Arrays After Replacing Zeros</a></h2><h3>Medium</h3><hr><p>You are given two arrays <code>nums1</code> and <code>nums2</code> consisting of positive integers.</p>
 
 <p>You have to replace <strong>all</strong> the <code>0</code>&#39;s in both arrays with <strong>strictly</strong> positive integers such that the sum of elements of both arrays becomes <strong>equal</strong>.</p>
 
@@ -31,6 +39,10 @@ Both arrays have an equal sum of 12. It can be shown that it is the minimum sum 
 	<li><code>1 &lt;= nums1.length, nums2.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

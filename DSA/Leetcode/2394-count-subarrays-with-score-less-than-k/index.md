@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-subarrays-with-score-less-than-k">2394. Count Subarrays With Score Less Than K</a></h2><h3>Hard</h3><hr><p>The <strong>score</strong> of an array is defined as the <strong>product</strong> of its sum and its length.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2394. Count Subarrays With Score Less Than K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-subarrays-with-score-less-than-k" target = "_blank">2394. Count Subarrays With Score Less Than K</a></h2><h3>Hard</h3><hr><p>The <strong>score</strong> of an array is defined as the <strong>product</strong> of its sum and its length.</p>
 
 <ul>
 	<li>For example, the score of <code>[1, 2, 3, 4, 5]</code> is <code>(1 + 2 + 3 + 4 + 5) * 5 = 75</code>.</li>
@@ -44,6 +52,10 @@ Thus, there are 5 subarrays having scores less than 5.
 	<li><code>1 &lt;= k &lt;= 10<sup>15</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long countSubarrays(int[] nums, long k) {
@@ -58,3 +70,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

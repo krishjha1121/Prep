@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-lucky-integer-in-an-array">1510. Find Lucky Integer in an Array</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>arr</code>, a <strong>lucky integer</strong> is an integer that has a frequency in the array equal to its value.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1510. Find Lucky Integer in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-lucky-integer-in-an-array" target = "_blank">1510. Find Lucky Integer in an Array</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>arr</code>, a <strong>lucky integer</strong> is an integer that has a frequency in the array equal to its value.</p>
 
 <p>Return <em>the largest <strong>lucky integer</strong> in the array</em>. If there is no <strong>lucky integer</strong> return <code>-1</code>.</p>
 
@@ -35,6 +43,10 @@
 	<li><code>1 &lt;= arr[i] &lt;= 500</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int findLucky(int[] arr) {
@@ -46,7 +58,20 @@ class Solution {
         for (int ele : arr)
             if (freq[ele] == ele)
                 maxi = Math.max(maxi, ele);
+
         return maxi;
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

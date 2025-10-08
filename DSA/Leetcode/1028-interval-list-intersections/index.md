@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/interval-list-intersections">1028. Interval List Intersections</a></h2><h3>Medium</h3><hr><p>You are given two lists of closed intervals, <code>firstList</code> and <code>secondList</code>, where <code>firstList[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> and <code>secondList[j] = [start<sub>j</sub>, end<sub>j</sub>]</code>. Each list of intervals is pairwise <strong>disjoint</strong> and in <strong>sorted order</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1028. Interval List Intersections
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/interval-list-intersections" target = "_blank">1028. Interval List Intersections</a></h2><h3>Medium</h3><hr><p>You are given two lists of closed intervals, <code>firstList</code> and <code>secondList</code>, where <code>firstList[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> and <code>secondList[j] = [start<sub>j</sub>, end<sub>j</sub>]</code>. Each list of intervals is pairwise <strong>disjoint</strong> and in <strong>sorted order</strong>.</p>
 
 <p>Return <em>the intersection of these two interval lists</em>.</p>
 
@@ -33,6 +41,10 @@
 	<li><code>end<sub>j</sub> &lt; start<sub>j+1</sub></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[][] intervalIntersection(int[][] arr, int[][] brr) {
@@ -51,3 +63,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

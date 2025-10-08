@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/remove-nodes-from-linked-list">2573. Remove Nodes From Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a linked list.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2573. Remove Nodes From Linked List
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/remove-nodes-from-linked-list" target = "_blank">2573. Remove Nodes From Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a linked list.</p>
 
 <p>Remove every node which has a node with a greater value anywhere to the right side of it.</p>
 <p>Return <em>the </em><code>head</code><em> of the modified linked list.</em></p>
@@ -30,6 +38,10 @@
 	<li>The number of the nodes in the given list is in the range <code>[1, 10<sup>5</sup>]</code>.</li>
 	<li><code>1 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -79,3 +91,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

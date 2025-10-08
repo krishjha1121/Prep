@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/time-based-key-value-store">1023. Time Based Key-Value Store</a></h2><h3>Medium</h3><hr><p>Design a time-based key-value data structure that can store multiple values for the same key at different time stamps and retrieve the key&#39;s value at a certain timestamp.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1023. Time Based Key-Value Store
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/time-based-key-value-store" target = "_blank">1023. Time Based Key-Value Store</a></h2><h3>Medium</h3><hr><p>Design a time-based key-value data structure that can store multiple values for the same key at different time stamps and retrieve the key&#39;s value at a certain timestamp.</p>
 
 <p>Implement the <code>TimeMap</code> class:</p>
 
@@ -39,8 +47,11 @@ timeMap.get(&quot;foo&quot;, 5);         // return &quot;bar2&quot;
 	<li>At most <code>2 * 10<sup>5</sup></code> calls will be made to <code>set</code> and <code>get</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #cpp>
+
 ```cpp
-// Same Solution in java is giving TLE;
 class TimeMap {
   private:
     struct Pair {
@@ -70,3 +81,15 @@ class TimeMap {
     }
 };
 ```
+
+</template>
+
+<template #java>
+
+```java
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/apply-operations-to-an-array">2551. Apply Operations to an Array</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>nums</code> of size <code>n</code> consisting of <strong>non-negative</strong> integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2551. Apply Operations to an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/apply-operations-to-an-array" target = "_blank">2551. Apply Operations to an Array</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>nums</code> of size <code>n</code> consisting of <strong>non-negative</strong> integers.</p>
 
 <p>You need to apply <code>n - 1</code> operations to this array where, in the <code>i<sup>th</sup></code> operation (<strong>0-indexed</strong>), you will apply the following on the <code>i<sup>th</sup></code> element of <code>nums</code>:</p>
 
@@ -47,6 +55,10 @@ After that, we shift the 0&#39;s to the end, which gives the array [1,4,2,0,0,0]
 	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] applyOperations(int[] nums) {
@@ -74,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

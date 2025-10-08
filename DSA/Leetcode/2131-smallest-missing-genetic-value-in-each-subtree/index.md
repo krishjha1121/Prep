@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/smallest-missing-genetic-value-in-each-subtree">2131. Smallest Missing Genetic Value in Each Subtree</a></h2><h3>Hard</h3><hr><p>There is a <strong>family tree</strong> rooted at <code>0</code> consisting of <code>n</code> nodes numbered <code>0</code> to <code>n - 1</code>. You are given a <strong>0-indexed</strong> integer array <code>parents</code>, where <code>parents[i]</code> is the parent for node <code>i</code>. Since node <code>0</code> is the <strong>root</strong>, <code>parents[0] == -1</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2131. Smallest Missing Genetic Value in Each Subtree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/smallest-missing-genetic-value-in-each-subtree" target = "_blank">2131. Smallest Missing Genetic Value in Each Subtree</a></h2><h3>Hard</h3><hr><p>There is a <strong>family tree</strong> rooted at <code>0</code> consisting of <code>n</code> nodes numbered <code>0</code> to <code>n - 1</code>. You are given a <strong>0-indexed</strong> integer array <code>parents</code>, where <code>parents[i]</code> is the parent for node <code>i</code>. Since node <code>0</code> is the <strong>root</strong>, <code>parents[0] == -1</code>.</p>
 
 <p>There are <code>10<sup>5</sup></code> genetic values, each represented by an integer in the <strong>inclusive</strong> range <code>[1, 10<sup>5</sup>]</code>. You are given a <strong>0-indexed</strong> integer array <code>nums</code>, where <code>nums[i]</code> is a <strong>distinct </strong>genetic value for node <code>i</code>.</p>
 
@@ -53,6 +61,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 	<li>Each <code>nums[i]</code> is distinct.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class SegmentTree {
@@ -146,5 +158,16 @@ public class Solution {
         return fans;
     }
 }
-
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

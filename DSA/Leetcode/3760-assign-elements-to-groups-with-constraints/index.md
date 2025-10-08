@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/assign-elements-to-groups-with-constraints">3760. Assign Elements to Groups with Constraints</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>groups</code>, where <code>groups[i]</code> represents the size of the <code>i<sup>th</sup></code> group. You are also given an integer array <code>elements</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3760. Assign Elements to Groups with Constraints
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/assign-elements-to-groups-with-constraints" target = "_blank">3760. Assign Elements to Groups with Constraints</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>groups</code>, where <code>groups[i]</code> represents the size of the <code>i<sup>th</sup></code> group. You are also given an integer array <code>elements</code>.</p>
 
 <p>Your task is to assign <strong>one</strong> element to each group based on the following rules:</p>
 
@@ -67,6 +75,10 @@
 	<li><code>1 &lt;= elements[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] assignElements(int[] groups, int[] elements) {
@@ -101,3 +113,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

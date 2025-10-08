@@ -42,6 +42,12 @@
 	<li><code>words[i]</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxProduct(String[] words) {
@@ -70,3 +76,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

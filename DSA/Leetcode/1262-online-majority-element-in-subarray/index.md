@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/online-majority-element-in-subarray">1262. Online Majority Element In Subarray</a></h2><h3>Hard</h3><hr><p>Design a data structure that efficiently finds the <strong>majority element</strong> of a given subarray.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1262. Online Majority Element In Subarray
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/online-majority-element-in-subarray" target = "_blank">1262. Online Majority Element In Subarray</a></h2><h3>Hard</h3><hr><p>Design a data structure that efficiently finds the <strong>majority element</strong> of a given subarray.</p>
 
 <p>The <strong>majority element</strong> of a subarray is an element that occurs <code>threshold</code> times or more in the subarray.</p>
 
@@ -37,6 +45,10 @@ majorityChecker.query(2, 3, 2); // return 2
 	<li><code>2 * threshold &gt; right - left + 1</code></li>
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>query</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.ArrayList;
@@ -108,3 +120,15 @@ class MajorityChecker {
     int param_1 = obj.query(left,right,threshold);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

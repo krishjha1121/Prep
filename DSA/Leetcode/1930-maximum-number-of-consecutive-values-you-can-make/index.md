@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-consecutive-values-you-can-make">1930. Maximum Number of Consecutive Values You Can Make</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>coins</code> of length <code>n</code> which represents the <code>n</code> coins that you own. The value of the <code>i<sup>th</sup></code> coin is <code>coins[i]</code>. You can <strong>make</strong> some value <code>x</code> if you can choose some of your <code>n</code> coins such that their values sum up to <code>x</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1930. Maximum Number of Consecutive Values You Can Make
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-consecutive-values-you-can-make" target = "_blank">1930. Maximum Number of Consecutive Values You Can Make</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>coins</code> of length <code>n</code> which represents the <code>n</code> coins that you own. The value of the <code>i<sup>th</sup></code> coin is <code>coins[i]</code>. You can <strong>make</strong> some value <code>x</code> if you can choose some of your <code>n</code> coins such that their values sum up to <code>x</code>.</p>
 
 <p>Return the <em>maximum number of consecutive integer values that you <strong>can</strong> <strong>make</strong> with your coins <strong>starting</strong> from and <strong>including</strong> </em><code>0</code>.</p>
 
@@ -46,6 +54,10 @@ You can make 8 consecutive integer values starting from 0.</pre>
 	<li><code>1 &lt;= coins[i] &lt;= 4 * 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -62,3 +74,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

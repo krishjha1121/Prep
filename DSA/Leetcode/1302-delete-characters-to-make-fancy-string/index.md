@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/delete-characters-to-make-fancy-string">1302. Delete Characters to Make Fancy String</a></h2><h3>Easy</h3><hr><p>A <strong>fancy string</strong> is a string where no <strong>three</strong> <strong>consecutive</strong> characters are equal.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1302. Delete Characters to Make Fancy String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/delete-characters-to-make-fancy-string" target = "_blank">1302. Delete Characters to Make Fancy String</a></h2><h3>Easy</h3><hr><p>A <strong>fancy string</strong> is a string where no <strong>three</strong> <strong>consecutive</strong> characters are equal.</p>
 
 <p>Given a string <code>s</code>, delete the <strong>minimum</strong> possible number of characters from <code>s</code> to make it <strong>fancy</strong>.</p>
 
@@ -42,6 +50,10 @@ No three consecutive characters are equal, so return &quot;aabaa&quot;.
 	<li><code>s</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String makeFancyString(String s) {
@@ -65,6 +77,17 @@ class Solution {
         }
         return res.toString();
     }
-
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

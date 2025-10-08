@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/construct-smallest-number-from-di-string">2456. Construct Smallest Number From DI String</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> string <code>pattern</code> of length <code>n</code> consisting of the characters <code>&#39;I&#39;</code> meaning <strong>increasing</strong> and <code>&#39;D&#39;</code> meaning <strong>decreasing</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2456. Construct Smallest Number From DI String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/construct-smallest-number-from-di-string" target = "_blank">2456. Construct Smallest Number From DI String</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> string <code>pattern</code> of length <code>n</code> consisting of the characters <code>&#39;I&#39;</code> meaning <strong>increasing</strong> and <code>&#39;D&#39;</code> meaning <strong>decreasing</strong>.</p>
 
 <p>A <strong>0-indexed</strong> string <code>num</code> of length <code>n + 1</code> is created using the following conditions:</p>
 
@@ -41,6 +49,10 @@ It can be proven that &quot;4321&quot; is the smallest possible num that meets t
 	<li><code>pattern</code> consists of only the letters <code>&#39;I&#39;</code> and <code>&#39;D&#39;</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String smallestNumber(String pattern) {
@@ -59,3 +71,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

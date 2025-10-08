@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/counting-words-with-a-given-prefix">2292. Counting Words With a Given Prefix</a></h2><h3>Easy</h3><hr><p>You are given an array of strings <code>words</code> and a string <code>pref</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2292. Counting Words With a Given Prefix
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/counting-words-with-a-given-prefix" target = "_blank">2292. Counting Words With a Given Prefix</a></h2><h3>Easy</h3><hr><p>You are given an array of strings <code>words</code> and a string <code>pref</code>.</p>
 
 <p>Return <em>the number of strings in </em><code>words</code><em> that contain </em><code>pref</code><em> as a <strong>prefix</strong></em>.</p>
 
@@ -30,6 +38,10 @@
 	<li><code>words[i]</code> and <code>pref</code> consist of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int prefixCount(String[] words, String pref) {
@@ -43,3 +55,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

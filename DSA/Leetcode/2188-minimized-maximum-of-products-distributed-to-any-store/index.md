@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store">2188. Minimized Maximum of Products Distributed to Any Store</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>n</code> indicating there are <code>n</code> specialty retail stores. There are <code>m</code> product types of varying amounts, which are given as a <strong>0-indexed</strong> integer array <code>quantities</code>, where <code>quantities[i]</code> represents the number of products of the <code>i<sup>th</sup></code> product type.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2188. Minimized Maximum of Products Distributed to Any Store
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store" target = "_blank">2188. Minimized Maximum of Products Distributed to Any Store</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>n</code> indicating there are <code>n</code> specialty retail stores. There are <code>m</code> product types of varying amounts, which are given as a <strong>0-indexed</strong> integer array <code>quantities</code>, where <code>quantities[i]</code> represents the number of products of the <code>i<sup>th</sup></code> product type.</p>
 
 <p>You need to distribute <strong>all products</strong> to the retail stores following these rules:</p>
 
@@ -52,6 +60,10 @@ The maximum number of products given to any store is max(100000) = 100000.
 	<li><code>1 &lt;= quantities[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimizedMaximum(int n, int[] quantities) {
@@ -81,3 +93,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/fruits-into-baskets-ii">3790. Fruits Into Baskets II</a></h2><h3>Easy</h3><hr><p>You are given two arrays of integers, <code>fruits</code> and <code>baskets</code>, each of length <code>n</code>, where <code>fruits[i]</code> represents the <strong>quantity</strong> of the <code>i<sup>th</sup></code> type of fruit, and <code>baskets[j]</code> represents the <strong>capacity</strong> of the <code>j<sup>th</sup></code> basket.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3790. Fruits Into Baskets II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/fruits-into-baskets-ii" target = "_blank">3790. Fruits Into Baskets II</a></h2><h3>Easy</h3><hr><p>You are given two arrays of integers, <code>fruits</code> and <code>baskets</code>, each of length <code>n</code>, where <code>fruits[i]</code> represents the <strong>quantity</strong> of the <code>i<sup>th</sup></code> type of fruit, and <code>baskets[j]</code> represents the <strong>capacity</strong> of the <code>j<sup>th</sup></code> basket.</p>
 
 <p>From left to right, place the fruits according to these rules:</p>
 
@@ -56,6 +64,10 @@
 	<li><code>1 &lt;= fruits[i], baskets[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numOfUnplacedFruits(int[] fruits, int[] baskets) {
@@ -83,3 +95,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

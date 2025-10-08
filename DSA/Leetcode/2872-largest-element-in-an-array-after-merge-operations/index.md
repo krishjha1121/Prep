@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/largest-element-in-an-array-after-merge-operations">2872. Largest Element in an Array after Merge Operations</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>nums</code> consisting of positive integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2872. Largest Element in an Array after Merge Operations
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/largest-element-in-an-array-after-merge-operations" target = "_blank">2872. Largest Element in an Array after Merge Operations</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>nums</code> consisting of positive integers.</p>
 
 <p>You can do the following operation on the array <strong>any</strong> number of times:</p>
 
@@ -40,6 +48,10 @@ There is only one element in the final array, which is 11.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maxArrayValue(int[] nums) {
@@ -55,3 +67,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

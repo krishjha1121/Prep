@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-of-interesting-subarrays">2915. Count of Interesting Subarrays</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, an integer <code>modulo</code>, and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2915. Count of Interesting Subarrays
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-of-interesting-subarrays" target = "_blank">2915. Count of Interesting Subarrays</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, an integer <code>modulo</code>, and an integer <code>k</code>.</p>
 
 <p>Your task is to find the count of subarrays that are <strong>interesting</strong>.</p>
 
@@ -54,6 +62,10 @@ It can be shown that there are no other interesting subarrays. So, the answer is
 	<li><code>0 &lt;= k &lt; modulo</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long countInterestingSubarrays(List<Integer> nums, int modulo, int k) {
@@ -82,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

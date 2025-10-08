@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted">1679. Shortest Subarray to be Removed to Make Array Sorted</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>arr</code>, remove a subarray (can be empty) from <code>arr</code> such that the remaining elements in <code>arr</code> are <strong>non-decreasing</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1679. Shortest Subarray to be Removed to Make Array Sorted
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted" target = "_blank">1679. Shortest Subarray to be Removed to Make Array Sorted</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>arr</code>, remove a subarray (can be empty) from <code>arr</code> such that the remaining elements in <code>arr</code> are <strong>non-decreasing</strong>.</p>
 
 <p>Return <em>the length of the shortest subarray to remove</em>.</p>
 
@@ -38,6 +46,10 @@ Another correct solution is to remove the subarray [3,10,4].
 	<li><code>0 &lt;= arr[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int findLengthOfShortestSubarray(int[] arr) {
@@ -62,3 +74,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

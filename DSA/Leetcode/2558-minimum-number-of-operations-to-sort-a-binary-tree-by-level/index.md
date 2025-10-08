@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level">2558. Minimum Number of Operations to Sort a Binary Tree by Level</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree with <strong>unique values</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2558. Minimum Number of Operations to Sort a Binary Tree by Level
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level" target = "_blank">2558. Minimum Number of Operations to Sort a Binary Tree by Level</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree with <strong>unique values</strong>.</p>
 
 <p>In one operation, you can choose any two nodes <strong>at the same level</strong> and swap their values.</p>
 
@@ -49,6 +57,10 @@ It can be proven that 3 is the minimum number of operations needed.
 	<li><code>1 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
 	<li>All the values of the tree are <strong>unique</strong>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -116,3 +128,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

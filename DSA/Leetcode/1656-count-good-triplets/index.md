@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-good-triplets">1656. Count Good Triplets</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>arr</code>, and three integers&nbsp;<code>a</code>,&nbsp;<code>b</code>&nbsp;and&nbsp;<code>c</code>. You need to find the number of good triplets.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1656. Count Good Triplets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-good-triplets" target = "_blank">1656. Count Good Triplets</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>arr</code>, and three integers&nbsp;<code>a</code>,&nbsp;<code>b</code>&nbsp;and&nbsp;<code>c</code>. You need to find the number of good triplets.</p>
 
 <p>A triplet <code>(arr[i], arr[j], arr[k])</code>&nbsp;is <strong>good</strong> if the following conditions are true:</p>
 
@@ -39,6 +47,10 @@
 	<li><code>0 &lt;= a, b, c &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countGoodTriplets(int[] arr, int a, int b, int c) {
@@ -57,3 +69,14 @@ class Solution {
 }
 ```
 
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

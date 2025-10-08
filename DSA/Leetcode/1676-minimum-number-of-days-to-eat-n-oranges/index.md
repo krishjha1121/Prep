@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges">1676. Minimum Number of Days to Eat N Oranges</a></h2><h3>Hard</h3><hr><p>There are <code>n</code> oranges in the kitchen and you decided to eat some of these oranges every day as follows:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1676. Minimum Number of Days to Eat N Oranges
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges" target = "_blank">1676. Minimum Number of Days to Eat N Oranges</a></h2><h3>Hard</h3><hr><p>There are <code>n</code> oranges in the kitchen and you decided to eat some of these oranges every day as follows:</p>
 
 <ul>
 	<li>Eat one orange.</li>
@@ -43,6 +51,10 @@ You need at least 3 days to eat the 6 oranges.
 	<li><code>1 &lt;= n &lt;= 2 * 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.HashMap;
 
@@ -65,3 +77,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

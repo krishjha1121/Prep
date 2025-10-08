@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rank-transform-of-an-array">1256. Rank Transform of an Array</a></h2><h3>Easy</h3><hr><p>Given an array of integers&nbsp;<code>arr</code>, replace each element with its rank.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1256. Rank Transform of an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rank-transform-of-an-array" target = "_blank">1256. Rank Transform of an Array</a></h2><h3>Easy</h3><hr><p>Given an array of integers&nbsp;<code>arr</code>, replace each element with its rank.</p>
 
 <p>The rank represents how large the element is. The rank has the following rules:</p>
 
@@ -39,6 +47,10 @@
 	<li><code>-10<sup>9</sup>&nbsp;&lt;= arr[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] arrayRankTransform(int[] arr) {
@@ -66,3 +78,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

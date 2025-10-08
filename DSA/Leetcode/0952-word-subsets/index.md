@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/word-subsets">952. Word Subsets</a></h2><h3>Medium</h3><hr><p>You are given two string arrays <code>words1</code> and <code>words2</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 952. Word Subsets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/word-subsets" target = "_blank">952. Word Subsets</a></h2><h3>Medium</h3><hr><p>You are given two string arrays <code>words1</code> and <code>words2</code>.</p>
 
 <p>A string <code>b</code> is a <strong>subset</strong> of string <code>a</code> if every letter in <code>b</code> occurs in <code>a</code> including multiplicity.</p>
 
@@ -35,6 +43,8 @@
 	<li>All the strings of <code>words1</code> are <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public List<String> wordSubsets(String[] words1, String[] words2) {
@@ -64,3 +74,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

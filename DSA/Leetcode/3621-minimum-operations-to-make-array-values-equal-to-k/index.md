@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-array-values-equal-to-k">3621. Minimum Operations to Make Array Values Equal to K</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3621. Minimum Operations to Make Array Values Equal to K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-array-values-equal-to-k" target = "_blank">3621. Minimum Operations to Make Array Values Equal to K</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p>
 
 <p>An integer <code>h</code> is called <strong>valid</strong> if all values in the array that are <strong>strictly greater</strong> than <code>h</code> are <em>identical</em>.</p>
 
@@ -59,6 +67,10 @@
 	<li><code>1 &lt;= k &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minOperations(int[] nums, int k) {
@@ -76,3 +88,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

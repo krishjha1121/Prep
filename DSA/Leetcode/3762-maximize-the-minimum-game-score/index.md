@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximize-the-minimum-game-score">3762. Maximize the Minimum Game Score</a></h2><h3>Hard</h3><hr><p>You are given an array <code>points</code> of size <code>n</code> and an integer <code>m</code>. There is another array <code>gameScore</code> of size <code>n</code>, where <code>gameScore[i]</code> represents the score achieved at the <code>i<sup>th</sup></code> game. Initially, <code>gameScore[i] == 0</code> for all <code>i</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3762. Maximize the Minimum Game Score
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximize-the-minimum-game-score" target = "_blank">3762. Maximize the Minimum Game Score</a></h2><h3>Hard</h3><hr><p>You are given an array <code>points</code> of size <code>n</code> and an integer <code>m</code>. There is another array <code>gameScore</code> of size <code>n</code>, where <code>gameScore[i]</code> represents the score achieved at the <code>i<sup>th</sup></code> game. Initially, <code>gameScore[i] == 0</code> for all <code>i</code>.</p>
 
 <p>You start at index -1, which is outside the array (before the first position at index 0). You can make <strong>at most</strong> <code>m</code> moves. In each move, you can either:</p>
 
@@ -114,6 +122,10 @@
 	<li><code>1 &lt;= m &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maxScore(int[] points, int m) {
@@ -151,3 +163,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -63,6 +63,10 @@ There is only one worker in this example, so the answer is `workerTimes[0] + wor
 - `1 <= workerTimes.length <= 10^4`
 - `1 <= workerTimes[i] <= 10^6`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long minNumberOfSeconds(int mountainHeight, int[] workerTimes) {
@@ -112,3 +116,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

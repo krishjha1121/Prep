@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-sum-queries">2839. Maximum Sum Queries</a></h2><h3>Hard</h3><hr><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, each of length <code>n</code>, and a <strong>1-indexed 2D array</strong> <code>queries</code> where <code>queries[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2839. Maximum Sum Queries
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-sum-queries" target = "_blank">2839. Maximum Sum Queries</a></h2><h3>Hard</h3><hr><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, each of length <code>n</code>, and a <strong>1-indexed 2D array</strong> <code>queries</code> where <code>queries[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>.</p>
 
 <p>For the <code>i<sup>th</sup></code> query, find the <strong>maximum value</strong> of <code>nums1[j] + nums2[j]</code> among all indices <code>j</code> <code>(0 &lt;= j &lt; n)</code>, where <code>nums1[j] &gt;= x<sub>i</sub></code> and <code>nums2[j] &gt;= y<sub>i</sub></code>, or <strong>-1</strong> if there is no <code>j</code> satisfying the constraints.</p>
 
@@ -51,6 +59,10 @@ Therefore, we return&nbsp;<code node="[object Object]">[6,10,7]</code>.
 	<li><code>1 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] maximumSumQueries(int[] nums1, int[] nums2, int[][] queries) {
@@ -82,7 +94,6 @@ class Solution {
         }
         return ans;
     }
-
     private void insert(TreeMap<Integer, Integer> tm, int x, int y) {
         int sum = x + y;
         if (tm.containsKey(y) && tm.get(y) >= sum)
@@ -105,3 +116,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

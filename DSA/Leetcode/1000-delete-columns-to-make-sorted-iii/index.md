@@ -1,7 +1,7 @@
 <div align = "center">
 <h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
 
-## 🎒1000. Delete Columns to Make Sorted III
+## ⌨ 1000. Delete Columns to Make Sorted III
 
 </h>
 </div>
@@ -54,6 +54,8 @@ Note that strs[0] &gt; strs[1] - the array strs is not necessarily in lexicograp
 	<li>&nbsp;</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int minDeletionSize(String[] strs) {
@@ -80,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

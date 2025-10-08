@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-tastiness-of-candy-basket">2600. Maximum Tastiness of Candy Basket</a></h2><h3>Medium</h3><hr><p>You are given an array of positive integers <code>price</code> where <code>price[i]</code> denotes the price of the <code>i<sup>th</sup></code> candy and a positive integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2600. Maximum Tastiness of Candy Basket
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-tastiness-of-candy-basket" target = "_blank">2600. Maximum Tastiness of Candy Basket</a></h2><h3>Medium</h3><hr><p>You are given an array of positive integers <code>price</code> where <code>price[i]</code> denotes the price of the <code>i<sup>th</sup></code> candy and a positive integer <code>k</code>.</p>
 
 <p>The store sells baskets of <code>k</code> <strong>distinct</strong> candies. The <strong>tastiness</strong> of a candy basket is the smallest absolute difference of the <strong>prices</strong> of any two candies in the basket.</p>
 
@@ -41,6 +49,10 @@ It can be proven that 2 is the maximum tastiness that can be achieved.
 	<li><code>1 &lt;= price[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -74,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

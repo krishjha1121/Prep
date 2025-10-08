@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-binary-tree-ii">1040. Maximum Binary Tree II</a></h2><h3>Medium</h3><hr><p>A <strong>maximum tree</strong> is a tree where every node has a value greater than any other value in its subtree.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1040. Maximum Binary Tree II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-binary-tree-ii" target = "_blank">1040. Maximum Binary Tree II</a></h2><h3>Medium</h3><hr><p>A <strong>maximum tree</strong> is a tree where every node has a value greater than any other value in its subtree.</p>
 
 <p>You are given the <code>root</code> of a maximum binary tree and an integer <code>val</code>.</p>
 
@@ -53,6 +61,10 @@
 	<li><code>1 &lt;= val &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 /**
     Definition for a binary tree node.
@@ -80,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

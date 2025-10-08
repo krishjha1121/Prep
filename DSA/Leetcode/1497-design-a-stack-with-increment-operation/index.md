@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-a-stack-with-increment-operation">1497. Design a Stack With Increment Operation</a></h2><h3>Medium</h3><hr><p>Design a stack that supports increment operations on its elements.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1497. Design a Stack With Increment Operation
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-a-stack-with-increment-operation" target = "_blank">1497. Design a Stack With Increment Operation</a></h2><h3>Medium</h3><hr><p>Design a stack that supports increment operations on its elements.</p>
 
 <p>Implement the <code>CustomStack</code> class:</p>
 
@@ -43,6 +51,10 @@ stk.pop();                            // return -1 --&gt; Stack is empty return 
 	<li>At most <code>1000</code> calls will be made to each method of <code>increment</code>, <code>push</code> and <code>pop</code> each separately.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class CustomStack {
     static int max;
@@ -74,7 +86,6 @@ class CustomStack {
             arr[i] += val;
     }
 }
-
 /**
     Your CustomStack object will be instantiated and called as such:
     CustomStack obj = new CustomStack(maxSize);
@@ -83,3 +94,15 @@ class CustomStack {
     obj.increment(k,val);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

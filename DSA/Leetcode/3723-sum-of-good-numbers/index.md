@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sum-of-good-numbers">3723. Sum of Good Numbers</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>nums</code> and an integer <code>k</code>, an element <code>nums[i]</code> is considered <strong>good</strong> if it is <strong>strictly</strong> greater than the elements at indices <code>i - k</code> and <code>i + k</code> (if those indices exist). If neither of these indices <em>exists</em>, <code>nums[i]</code> is still considered <strong>good</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3723. Sum of Good Numbers
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sum-of-good-numbers" target = "_blank">3723. Sum of Good Numbers</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>nums</code> and an integer <code>k</code>, an element <code>nums[i]</code> is considered <strong>good</strong> if it is <strong>strictly</strong> greater than the elements at indices <code>i - k</code> and <code>i + k</code> (if those indices exist). If neither of these indices <em>exists</em>, <code>nums[i]</code> is still considered <strong>good</strong>.</p>
 
 <p>Return the <strong>sum</strong> of all the <strong>good</strong> elements in the array.</p>
 
@@ -36,6 +44,10 @@
 	<li><code>1 &lt;= k &lt;= floor(nums.length / 2)</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int sumOfGoodNumbers(int[] nums, int k) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

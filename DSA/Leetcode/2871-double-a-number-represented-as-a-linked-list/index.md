@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/double-a-number-represented-as-a-linked-list">2871. Double a Number Represented as a Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a <strong>non-empty</strong> linked list representing a non-negative integer without leading zeroes.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2871. Double a Number Represented as a Linked List
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/double-a-number-represented-as-a-linked-list" target = "_blank">2871. Double a Number Represented as a Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a <strong>non-empty</strong> linked list representing a non-negative integer without leading zeroes.</p>
 
 <p>Return <em>the </em><code>head</code><em> of the linked list after <strong>doubling</strong> it</em>.</p>
 
@@ -27,6 +35,10 @@
 	<li><font face="monospace"><code>0 &lt;= Node.val &lt;= 9</code></font></li>
 	<li>The input is generated such that the list represents a number that does not have leading zeros, except the number <code>0</code> itself.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -84,3 +96,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/substring-matching-pattern">3684. Substring Matching Pattern</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> and a pattern string <code>p</code>, where <code>p</code> contains <strong>exactly one</strong> <code>&#39;*&#39;</code> character.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3684. Substring Matching Pattern
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/substring-matching-pattern" target = "_blank">3684. Substring Matching Pattern</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> and a pattern string <code>p</code>, where <code>p</code> contains <strong>exactly one</strong> <code>&#39;*&#39;</code> character.</p>
 
 <p>The <code>&#39;*&#39;</code> in <code>p</code> can be replaced with any sequence of zero or more characters.</p>
 
@@ -53,6 +61,10 @@
 	<li><code>p</code> contains only lowercase English letters and exactly one <code>&#39;*&#39;</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean hasMatch(String s, String p) {
@@ -67,3 +79,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/partition-array-such-that-maximum-difference-is-k">2387. Partition Array Such That Maximum Difference Is K</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. You may partition <code>nums</code> into one or more <strong>subsequences</strong> such that each element in <code>nums</code> appears in <strong>exactly</strong> one of the subsequences.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2387. Partition Array Such That Maximum Difference Is K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/partition-array-such-that-maximum-difference-is-k" target = "_blank">2387. Partition Array Such That Maximum Difference Is K</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. You may partition <code>nums</code> into one or more <strong>subsequences</strong> such that each element in <code>nums</code> appears in <strong>exactly</strong> one of the subsequences.</p>
 
 <p>Return <em>the <strong>minimum </strong>number of subsequences needed such that the difference between the maximum and minimum values in each subsequence is <strong>at most</strong> </em><code>k</code><em>.</em></p>
 
@@ -51,6 +59,10 @@ Since three subsequences were created, we return 3. It can be shown that 3 is th
 	<li><code>0 &lt;= k &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int partitionArray(int[] nums, int k) {
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

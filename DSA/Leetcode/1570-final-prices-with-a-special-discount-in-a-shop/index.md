@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop">1570. Final Prices With a Special Discount in a Shop</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of the <code>i<sup>th</sup></code> item in a shop.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1570. Final Prices With a Special Discount in a Shop
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop" target = "_blank">1570. Final Prices With a Special Discount in a Shop</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of the <code>i<sup>th</sup></code> item in a shop.</p>
 
 <p>There is a special discount for items in the shop. If you buy the <code>i<sup>th</sup></code> item, then you will receive a discount equivalent to <code>prices[j]</code> where <code>j</code> is the minimum index such that <code>j &gt; i</code> and <code>prices[j] &lt;= prices[i]</code>. Otherwise, you will not receive any discount at all.</p>
 
@@ -40,6 +48,10 @@ For items 3 and 4 you will not receive any discount at all.
 	<li><code>1 &lt;= prices[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] finalPrices(int[] prices) {
@@ -59,4 +71,17 @@ class Solution {
         return res;
     }
 }
+
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

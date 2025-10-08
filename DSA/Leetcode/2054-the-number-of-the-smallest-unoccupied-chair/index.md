@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair">2054. The Number of the Smallest Unoccupied Chair</a></h2><h3>Medium</h3><hr><p>There is a party where <code>n</code> friends numbered from <code>0</code> to <code>n - 1</code> are attending. There is an <strong>infinite</strong> number of chairs in this party that are numbered from <code>0</code> to <code>infinity</code>. When a friend arrives at the party, they sit on the unoccupied chair with the <strong>smallest number</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2054. The Number of the Smallest Unoccupied Chair
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair" target = "_blank">2054. The Number of the Smallest Unoccupied Chair</a></h2><h3>Medium</h3><hr><p>There is a party where <code>n</code> friends numbered from <code>0</code> to <code>n - 1</code> are attending. There is an <strong>infinite</strong> number of chairs in this party that are numbered from <code>0</code> to <code>infinity</code>. When a friend arrives at the party, they sit on the unoccupied chair with the <strong>smallest number</strong>.</p>
 
 <ul>
 	<li>For example, if chairs <code>0</code>, <code>1</code>, and <code>5</code> are occupied when a friend comes, they will sit on chair number <code>2</code>.</li>
@@ -52,6 +60,10 @@ Since friend 0 sat on chair 2, we return 2.
 	<li>Each <code>arrival<sub>i</sub></code> time is <strong>distinct</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int smallestChair(int[][] times, int targetFriend) {
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

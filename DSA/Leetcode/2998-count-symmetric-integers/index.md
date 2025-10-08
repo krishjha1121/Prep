@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-symmetric-integers">2998.   Count Symmetric Integers</a></h2><h3>Easy</h3><hr><p>You are given two positive integers <code>low</code> and <code>high</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2998.Count Symmetric Integers
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-symmetric-integers" target = "_blank">2998.Count Symmetric Integers</a></h2><h3>Easy</h3><hr><p>You are given two positive integers <code>low</code> and <code>high</code>.</p>
 
 <p>An integer <code>x</code> consisting of <code>2 * n</code> digits is <strong>symmetric</strong> if the sum of the first <code>n</code> digits of <code>x</code> is equal to the sum of the last <code>n</code> digits of <code>x</code>. Numbers with an odd number of digits are never symmetric.</p>
 
@@ -27,6 +35,10 @@
 <ul>
 	<li><code>1 &lt;= low &lt;= high &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -65,3 +77,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

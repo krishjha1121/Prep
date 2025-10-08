@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-all-k-distant-indices-in-an-array">2320. Find All K-Distant Indices in an Array</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and two integers <code>key</code> and <code>k</code>. A <strong>k-distant index</strong> is an index <code>i</code> of <code>nums</code> for which there exists at least one index <code>j</code> such that <code>|i - j| &lt;= k</code> and <code>nums[j] == key</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2320. Find All K-Distant Indices in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-all-k-distant-indices-in-an-array" target = "_blank">2320. Find All K-Distant Indices in an Array</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and two integers <code>key</code> and <code>k</code>. A <strong>k-distant index</strong> is an index <code>i</code> of <code>nums</code> for which there exists at least one index <code>j</code> such that <code>|i - j| &lt;= k</code> and <code>nums[j] == key</code>.</p>
 
 <p>Return <em>a list of all k-distant indices sorted in <strong>increasing order</strong></em>.</p>
 
@@ -38,6 +46,10 @@ Hence, we return [0,1,2,3,4].
 	<li><code>1 &lt;= k &lt;= nums.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<Integer> findKDistantIndices(int[] nums, int key, int k) {
@@ -56,3 +68,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

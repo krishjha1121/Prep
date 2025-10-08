@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n">1516. The k-th Lexicographical String of All Happy Strings of Length n</a></h2><h3>Medium</h3><hr><p>A <strong>happy string</strong> is a string that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1516. The k-th Lexicographical String of All Happy Strings of Length n
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n" target = "_blank">1516. The k-th Lexicographical String of All Happy Strings of Length n</a></h2><h3>Medium</h3><hr><p>A <strong>happy string</strong> is a string that:</p>
 
 <ul>
 	<li>consists only of letters of the set <code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code>.</li>
@@ -44,6 +52,10 @@
 	<li><code>1 &lt;= k &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private ArrayList<String> res;
@@ -79,3 +91,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

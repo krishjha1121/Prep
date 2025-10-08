@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/making-a-large-island">854. Making A Large Island</a></h2><h3>Hard</h3><hr><p>You are given an <code>n x n</code> binary matrix <code>grid</code>. You are allowed to change <strong>at most one</strong> <code>0</code> to be <code>1</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 854. Making A Large Island
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/making-a-large-island" target = "_blank">854. Making A Large Island</a></h2><h3>Hard</h3><hr><p>You are given an <code>n x n</code> binary matrix <code>grid</code>. You are allowed to change <strong>at most one</strong> <code>0</code> to be <code>1</code>.</p>
 
 <p>Return <em>the size of the largest <strong>island</strong> in</em> <code>grid</code> <em>after applying this operation</em>.</p>
 
@@ -37,6 +45,8 @@
 	<li><code>1 &lt;= n &lt;= 500</code></li>
 	<li><code>grid[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
 
 ```java
 class Solution {
@@ -145,3 +155,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

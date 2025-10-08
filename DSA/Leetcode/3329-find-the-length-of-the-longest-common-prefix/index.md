@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix">3329. Find the Length of the Longest Common Prefix</a></h2><h3>Medium</h3><hr><p>You are given two arrays with <strong>positive</strong> integers <code>arr1</code> and <code>arr2</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3329. Find the Length of the Longest Common Prefix
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix" target = "_blank">3329. Find the Length of the Longest Common Prefix</a></h2><h3>Medium</h3><hr><p>You are given two arrays with <strong>positive</strong> integers <code>arr1</code> and <code>arr2</code>.</p>
 
 <p>A <strong>prefix</strong> of a positive integer is an integer formed by one or more of its digits, starting from its <strong>leftmost</strong> digit. For example, <code>123</code> is a prefix of the integer <code>12345</code>, while <code>234</code> is <strong>not</strong>.</p>
 
@@ -38,6 +46,10 @@ Note that common prefixes between elements of the same array do not count.
 	<li><code>1 &lt;= arr1[i], arr2[i] &lt;= 10<sup>8</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int longestCommonPrefix(int[] arr1, int[] arr2) {
@@ -53,7 +65,6 @@ class Solution {
                 set.add(to_put);
             }
         }
-
         int maxi = 0;
         for (int i = 0; i < m; i++) {
             String current = "";
@@ -69,3 +80,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

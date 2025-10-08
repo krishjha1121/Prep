@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-paths-with-the-given-xor-value">3659. Count Paths With the Given XOR Value</a></h2><h3>Medium</h3><hr><p>You are given a 2D integer array <code>grid</code> with size <code>m x n</code>. You are also given an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3659. Count Paths With the Given XOR Value
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-paths-with-the-given-xor-value" target = "_blank">3659. Count Paths With the Given XOR Value</a></h2><h3>Medium</h3><hr><p>You are given a 2D integer array <code>grid</code> with size <code>m x n</code>. You are also given an integer <code>k</code>.</p>
 
 <p>Your task is to calculate the number of paths you can take from the top-left cell <code>(0, 0)</code> to the bottom-right cell <code>(m - 1, n - 1)</code> satisfying the following <strong>constraints</strong>:</p>
 
@@ -68,6 +76,10 @@
 	<li><code>0 &lt;= k &lt; 16</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int mod = (int)(1e9 + 7);
@@ -95,3 +107,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

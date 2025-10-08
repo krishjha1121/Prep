@@ -58,22 +58,29 @@ bSTIterator.hasNext(); // return False
 	<li>Could you implement <code>next()</code> and <code>hasNext()</code> to run in average <code>O(1)</code> time and use&nbsp;<code>O(h)</code> memory, where <code>h</code> is the height of the tree?</li>
 </ul>
 
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+    Definition for a binary tree node.
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode() {}
+       TreeNode(int val) { this.val = val; }
+       TreeNode(int val, TreeNode left, TreeNode right) {
+           this.val = val;
+           this.left = left;
+           this.right = right;
+       }
+    }
+*/
 class BSTIterator {
     private ArrayList<Integer> nodes;
     private int current_pointer = 0;
@@ -85,11 +92,13 @@ class BSTIterator {
         return nodes.get(current_pointer++);
     }
     public boolean hasNext() {
-        if (current_pointer >= nodes.size()) return false;
+        if (current_pointer >= nodes.size())
+            return false;
         return true;
     }
     private void Inorder(TreeNode root) {
-        if (root == null) return;
+        if (root == null)
+            return;
         Inorder(root.left);
         nodes.add(root.val);
         Inorder(root.right);
@@ -97,9 +106,21 @@ class BSTIterator {
 }
 
 /**
- * Your BSTIterator object will be instantiated and called as such:
- * BSTIterator obj = new BSTIterator(root);
- * int param_1 = obj.next();
- * boolean param_2 = obj.hasNext();
- */
+    Your BSTIterator object will be instantiated and called as such:
+    BSTIterator obj = new BSTIterator(root);
+    int param_1 = obj.next();
+    boolean param_2 = obj.hasNext();
+*/
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets">2170. Count Number of Maximum Bitwise-OR Subsets</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, find the <strong>maximum</strong> possible <strong>bitwise OR</strong> of a subset of <code>nums</code> and return <em>the <strong>number of different non-empty subsets</strong> with the maximum bitwise OR</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2170. Count Number of Maximum Bitwise-OR Subsets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets" target = "_blank">2170. Count Number of Maximum Bitwise-OR Subsets</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, find the <strong>maximum</strong> possible <strong>bitwise OR</strong> of a subset of <code>nums</code> and return <em>the <strong>number of different non-empty subsets</strong> with the maximum bitwise OR</em>.</p>
 
 <p>An array <code>a</code> is a <strong>subset</strong> of an array <code>b</code> if <code>a</code> can be obtained from <code>b</code> by deleting some (possibly zero) elements of <code>b</code>. Two subsets are considered <strong>different</strong> if the indices of the elements chosen are different.</p>
 
@@ -44,6 +52,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private ArrayList<ArrayList<Integer >> res;
@@ -81,3 +93,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

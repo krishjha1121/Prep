@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-ways-to-build-good-strings">2562. Count Ways To Build Good Strings</a></h2><h3>Medium</h3><hr><p>Given the integers <code>zero</code>, <code>one</code>, <code>low</code>, and <code>high</code>, we can construct a string by starting with an empty string, and then at each step perform either of the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2562. Count Ways To Build Good Strings
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-ways-to-build-good-strings" target = "_blank">2562. Count Ways To Build Good Strings</a></h2><h3>Medium</h3><hr><p>Given the integers <code>zero</code>, <code>one</code>, <code>low</code>, and <code>high</code>, we can construct a string by starting with an empty string, and then at each step perform either of the following:</p>
 
 <ul>
 	<li>Append the character <code>&#39;0&#39;</code> <code>zero</code> times.</li>
@@ -39,6 +47,10 @@ All binary strings from &quot;000&quot; to &quot;111&quot; are good strings in t
 	<li><code>1 &lt;= zero, one &lt;= low</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countGoodStrings(int low, int high, int zero, int one) {
@@ -57,4 +69,17 @@ class Solution {
         return sum;
     }
 }
+
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-unequal-adjacent-groups-subsequence-ii">3142. Longest Unequal Adjacent Groups Subsequence II</a></h2><h3>Medium</h3><hr><p>You are given a string array <code>words</code>, and an array <code>groups</code>, both arrays having length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3142. Longest Unequal Adjacent Groups Subsequence II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-unequal-adjacent-groups-subsequence-ii" target = "_blank">3142. Longest Unequal Adjacent Groups Subsequence II</a></h2><h3>Medium</h3><hr><p>You are given a string array <code>words</code>, and an array <code>groups</code>, both arrays having length <code>n</code>.</p>
 
 <p>The <strong>hamming distance</strong> between two strings of equal length is the number of positions at which the corresponding characters are <strong>different</strong>.</p>
 
@@ -71,6 +79,10 @@
 	<li><code>words[i]</code> consists of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private List<String> ans;
@@ -133,3 +145,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

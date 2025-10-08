@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/check-if-n-and-its-double-exist">1468. Check If N and Its Double Exist</a></h2><h3>Easy</h3><hr><p>Given an array <code>arr</code> of integers, check if there exist two indices <code>i</code> and <code>j</code> such that :</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1468. Check If N and Its Double Exist
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/check-if-n-and-its-double-exist" target = "_blank">1468. Check If N and Its Double Exist</a></h2><h3>Easy</h3><hr><p>Given an array <code>arr</code> of integers, check if there exist two indices <code>i</code> and <code>j</code> such that :</p>
 
 <ul>
 	<li><code>i != j</code></li>
@@ -31,6 +39,10 @@
 	<li><code>-10<sup>3</sup> &lt;= arr[i] &lt;= 10<sup>3</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean checkIfExist(int[] arr) {
@@ -48,3 +60,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/flip-equivalent-binary-trees">988. Flip Equivalent Binary Trees</a></h2><h3>Medium</h3><hr><p>For a binary tree <strong>T</strong>, we can define a <strong>flip operation</strong> as follows: choose any node, and swap the left and right child subtrees.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 988. Flip Equivalent Binary Trees
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/flip-equivalent-binary-trees" target = "_blank">988. Flip Equivalent Binary Trees</a></h2><h3>Medium</h3><hr><p>For a binary tree <strong>T</strong>, we can define a <strong>flip operation</strong> as follows: choose any node, and swap the left and right child subtrees.</p>
 
 <p>A binary tree <strong>X</strong>&nbsp;is <em>flip equivalent</em> to a binary tree <strong>Y</strong> if and only if we can make <strong>X</strong> equal to <strong>Y</strong> after some number of flip operations.</p>
 
@@ -35,6 +43,8 @@
 	<li>Each tree will have <strong>unique node values</strong> in the range <code>[0, 99]</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 /**
     Definition for a binary tree node.
@@ -63,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

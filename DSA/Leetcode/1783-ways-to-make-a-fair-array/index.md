@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/ways-to-make-a-fair-array">1783. Ways to Make a Fair Array</a></h2><h3>Medium</h3><hr><p>You are given an integer array&nbsp;<code>nums</code>. You can choose <strong>exactly one</strong> index (<strong>0-indexed</strong>) and remove the element. Notice that the index of the elements may change after the removal.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1783. Ways to Make a Fair Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/ways-to-make-a-fair-array" target = "_blank">1783. Ways to Make a Fair Array</a></h2><h3>Medium</h3><hr><p>You are given an integer array&nbsp;<code>nums</code>. You can choose <strong>exactly one</strong> index (<strong>0-indexed</strong>) and remove the element. Notice that the index of the elements may change after the removal.</p>
 
 <p>For example, if <code>nums = [6,1,7,4,1]</code>:</p>
 
@@ -49,6 +57,10 @@ There is 1 index that you can remove to make nums fair.
 	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -105,3 +117,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

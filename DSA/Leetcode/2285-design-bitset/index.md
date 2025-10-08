@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-bitset">2285. Design Bitset</a></h2><h3>Medium</h3><hr><p>A <strong>Bitset</strong> is a data structure that compactly stores bits.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2285. Design Bitset
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-bitset" target = "_blank">2285. Design Bitset</a></h2><h3>Medium</h3><hr><p>A <strong>Bitset</strong> is a data structure that compactly stores bits.</p>
 
 <p>Implement the <code>Bitset</code> class:</p>
 
@@ -47,6 +55,10 @@ bs.toString(); // return &quot;01010&quot;, which is the composition of bitset.
 	<li>At least one call will be made to <code>all</code>, <code>one</code>, <code>count</code>, or <code>toString</code>.</li>
 	<li>At most <code>5</code> calls will be made to <code>toString</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.HashSet;
@@ -106,7 +118,6 @@ class Bitset {
         return res.toString();
     }
 }
-
 /**
     Your Bitset object will be instantiated and called as such:
     Bitset obj = new Bitset(size);
@@ -119,3 +130,15 @@ class Bitset {
     String param_7 = obj.toString();
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-k-th-character-in-string-game-ii">3601. Find the K-th Character in String Game II</a></h2><h3>Hard</h3><hr><p>Alice and Bob are playing a game. Initially, Alice has a string <code>word = &quot;a&quot;</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3601. Find the K-th Character in String Game II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-k-th-character-in-string-game-ii" target = "_blank">3601. Find the K-th Character in String Game II</a></h2><h3>Hard</h3><hr><p>Alice and Bob are playing a game. Initially, Alice has a string <code>word = &quot;a&quot;</code>.</p>
 
 <p>You are given a <strong>positive</strong> integer <code>k</code>. You are also given an integer array <code>operations</code>, where <code>operations[i]</code> represents the <strong>type</strong> of the <code>i<sup>th</sup></code> operation.</p>
 
@@ -61,17 +69,42 @@
 	<li>The input is generated such that <code>word</code> has <strong>at least</strong> <code>k</code> characters after all operations.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
-    public char kthCharacter(long k, int[] arr) {
-        int res = 0, c = 0, idx = 0;
-        k--;
-        while (idx < arr.length && k > 0) {
-            c += ((int)(k & 1) & arr[idx]);
-            k >>= 1;
-            idx++;
+    public char kthCharacter(int k) {
+        StringBuilder current = new StringBuilder();
+        current.append("a");
+        while (true) {
+            if (current.length() >= k)
+                break;
+            StringBuilder newString = new StringBuilder();
+            String tempCurrent = current.toString();
+            for (int i = 0; i < tempCurrent.length(); i++) {
+                char c = tempCurrent.charAt(i);
+                if (c == 'z')
+                    newString.append('a');
+                else
+                    newString.append((char)(c + 1));
+            }
+            current.append(newString);
         }
-        return (char)((c % 26) + 'a');
+        return current.toString().charAt(k - 1);
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

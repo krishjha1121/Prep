@@ -1,3 +1,11 @@
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ Minimum Limit of Balls in a Bag
+
+</h>
+</div>
+
 ## 1886. Minimum Limit of Balls in a Bag
 
 **Difficulty:** Medium
@@ -48,6 +56,10 @@ The bag with the most number of balls has 2 balls, so your penalty is 2, and you
 - `1 <= nums.length <= 10^5`
 - `1 <= maxOperations, nums[i] <= 10^9`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumSize(int[] nums, int maxOperations) {
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

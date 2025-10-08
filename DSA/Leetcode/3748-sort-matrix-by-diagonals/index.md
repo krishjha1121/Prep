@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sort-matrix-by-diagonals">3748. Sort Matrix by Diagonals</a></h2><h3>Medium</h3><hr><p>You are given an <code>n x n</code> square matrix of integers <code>grid</code>. Return the matrix such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3748. Sort Matrix by Diagonals
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sort-matrix-by-diagonals" target = "_blank">3748. Sort Matrix by Diagonals</a></h2><h3>Medium</h3><hr><p>You are given an <code>n x n</code> square matrix of integers <code>grid</code>. Return the matrix such that:</p>
 
 <ul>
 	<li>The diagonals in the <strong>bottom-left triangle</strong> (including the middle diagonal) are sorted in <strong>non-increasing order</strong>.</li>
@@ -67,6 +75,10 @@
 	<li><code>-10<sup>5</sup> &lt;= grid[i][j] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[][] sortMatrix(int[][] grid) {
@@ -105,3 +117,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

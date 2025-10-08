@@ -45,6 +45,13 @@
 	<li>Every number and running calculation will fit in a signed 32-bit integer.</li>
 </ul>
 
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public static int calculate(String s) {
@@ -74,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

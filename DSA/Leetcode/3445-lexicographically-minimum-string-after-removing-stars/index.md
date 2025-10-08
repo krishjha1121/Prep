@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/lexicographically-minimum-string-after-removing-stars">3445. Lexicographically Minimum String After Removing Stars</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code>. It may contain any number of <code>&#39;*&#39;</code> characters. Your task is to remove all <code>&#39;*&#39;</code> characters.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3445. Lexicographically Minimum String After Removing Stars
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/lexicographically-minimum-string-after-removing-stars" target = "_blank">3445. Lexicographically Minimum String After Removing Stars</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code>. It may contain any number of <code>&#39;*&#39;</code> characters. Your task is to remove all <code>&#39;*&#39;</code> characters.</p>
 
 <p>While there is a <code>&#39;*&#39;</code>, do the following operation:</p>
 
@@ -42,6 +50,10 @@
 	<li>The input is generated such that it is possible to delete all <code>&#39;*&#39;</code> characters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String clearStars(String s) {
@@ -58,7 +70,6 @@ class Solution {
                 pq.poll();
             }
         }
-
         String ans = "";
         for (int i = 0; i < n; i++) {
             if (!deleted.contains(i) && s.charAt(i) != '*')
@@ -87,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

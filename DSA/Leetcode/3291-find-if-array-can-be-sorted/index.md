@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-if-array-can-be-sorted">3291. Find if Array Can Be Sorted</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array of <strong>positive</strong> integers <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3291. Find if Array Can Be Sorted
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-if-array-can-be-sorted" target = "_blank">3291. Find if Array Can Be Sorted</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array of <strong>positive</strong> integers <code>nums</code>.</p>
 
 <p>In one <strong>operation</strong>, you can swap any two <strong>adjacent</strong> elements if they have the <strong>same</strong> number of <span data-keyword="set-bit">set bits</span>. You are allowed to do this operation <strong>any</strong> number of times (<strong>including zero</strong>).</p>
 
@@ -44,6 +52,10 @@ Note that there may be other sequences of operations which also sort the array.
 	<li><code>1 &lt;= nums[i] &lt;= 2<sup>8</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean canSortArray(int[] nums) {
@@ -68,8 +80,6 @@ class Solution {
         }
         return flag;
     }
-
-
     private static int count(int n) {
         if (n == 0)
             return 0;
@@ -77,3 +87,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer">1529. Max Difference You Can Get From Changing an Integer</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>num</code>. You will apply the following steps to <code>num</code> <strong>two</strong> separate times:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1529. Max Difference You Can Get From Changing an Integer
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer" target = "_blank">1529. Max Difference You Can Get From Changing an Integer</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>num</code>. You will apply the following steps to <code>num</code> <strong>two</strong> separate times:</p>
 
 <ul>
 	<li>Pick a digit <code>x (0 &lt;= x &lt;= 9)</code>.</li>
@@ -39,6 +47,10 @@ We have now a = 9 and b = 1 and max difference = 8
 <ul>
 	<li><code>1 &lt;= num &lt;= 10<sup>8</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -81,5 +93,16 @@ class Solution {
         return maxi - mini;
     }
 }
-
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

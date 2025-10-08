@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sliding-puzzle">787. Sliding Puzzle</a></h2><h3>Hard</h3><hr><p>On an <code>2 x 3</code> board, there are five tiles labeled from <code>1</code> to <code>5</code>, and an empty square represented by <code>0</code>. A <strong>move</strong> consists of choosing <code>0</code> and a 4-directionally adjacent number and swapping it.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 787. Sliding Puzzle
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sliding-puzzle" target = "_blank">787. Sliding Puzzle</a></h2><h3>Hard</h3><hr><p>On an <code>2 x 3</code> board, there are five tiles labeled from <code>1</code> to <code>5</code>, and an empty square represented by <code>0</code>. A <strong>move</strong> consists of choosing <code>0</code> and a 4-directionally adjacent number and swapping it.</p>
 
 <p>The state of the board is solved if and only if the board is <code>[[1,2,3],[4,5,0]]</code>.</p>
 
@@ -46,6 +54,8 @@ After move 5: [[1,2,3],[4,5,0]]
 	<li>Each value <code>board[i][j]</code> is <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int slidingPuzzle(int[][] board) {
@@ -88,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

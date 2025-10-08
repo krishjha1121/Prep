@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/swap-for-longest-repeated-character-substring">1261. Swap For Longest Repeated Character Substring</a></h2><h3>Medium</h3><hr><p>You are given a string <code>text</code>. You can swap two of the characters in the <code>text</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1261. Swap For Longest Repeated Character Substring
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/swap-for-longest-repeated-character-substring" target = "_blank">1261. Swap For Longest Repeated Character Substring</a></h2><h3>Medium</h3><hr><p>You are given a string <code>text</code>. You can swap two of the characters in the <code>text</code>.</p>
 
 <p>Return <em>the length of the longest substring with repeated characters</em>.</p>
 
@@ -34,6 +42,10 @@
 	<li><code>1 &lt;= text.length &lt;= 2 * 10<sup>4</sup></code></li>
 	<li><code>text</code> consist of lowercase English characters only.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -95,3 +107,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

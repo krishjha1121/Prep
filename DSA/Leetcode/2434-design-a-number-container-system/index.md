@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-a-number-container-system">2434. Design a Number Container System</a></h2><h3>Medium</h3><hr><p>Design a number container system that can do the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2434. Design a Number Container System
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-a-number-container-system" target = "_blank">2434. Design a Number Container System</a></h2><h3>Medium</h3><hr><p>Design a number container system that can do the following:</p>
 
 <ul>
 	<li><strong>Insert </strong>or <strong>Replace</strong> a number at the given index in the system.</li>
@@ -43,6 +51,10 @@ nc.find(10); // Number 10 is at the indices 2, 3, and 5. The smallest index that
 	<li>At most <code>10<sup>5</sup></code> calls will be made <strong>in total</strong> to <code>change</code> and <code>find</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class NumberContainers {
     private HashMap<Integer, TreeSet<Integer >> map;
@@ -78,7 +90,6 @@ class NumberContainers {
         return -1;
     }
 }
-
 /**
     Your NumberContainers object will be instantiated and called as such:
     NumberContainers obj = new NumberContainers();
@@ -86,3 +97,15 @@ class NumberContainers {
     int param_2 = obj.find(number);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

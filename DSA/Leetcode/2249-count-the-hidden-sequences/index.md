@@ -1,3 +1,11 @@
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2249. Count the Hidden Sequences
+
+</h>
+</div>
+
 ## 2249. Count the Hidden Sequences
 
 **Difficulty:** Medium
@@ -58,6 +66,10 @@ Thus, we return 4.
 - `-10^5 <= differences[i] <= 10^5`
 - `-10^5 <= lower <= upper <= 10^5`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numberOfArrays(int[] arr, int lower, int upper) {
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

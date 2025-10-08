@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/frog-jump-ii">2591. Frog Jump II</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>stones</code> sorted in <strong>strictly increasing order</strong> representing the positions of stones in a river.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2591. Frog Jump II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/frog-jump-ii" target = "_blank">2591. Frog Jump II</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>stones</code> sorted in <strong>strictly increasing order</strong> representing the positions of stones in a river.</p>
 
 <p>A frog, initially on the first stone, wants to travel to the last stone and then return to the first stone. However, it can jump to any stone <strong>at most once</strong>.</p>
 
@@ -43,6 +51,10 @@ It can be shown that this is the minimum achievable cost.
 	<li><code>stones[0] == 0</code></li>
 	<li><code>stones</code> is sorted in a strictly increasing order.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -106,3 +118,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

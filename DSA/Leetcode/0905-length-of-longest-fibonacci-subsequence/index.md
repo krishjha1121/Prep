@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/length-of-longest-fibonacci-subsequence">905. Length of Longest Fibonacci Subsequence</a></h2><h3>Medium</h3><hr><p>A sequence <code>x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub></code> is <em>Fibonacci-like</em> if:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 905. Length of Longest Fibonacci Subsequence
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/length-of-longest-fibonacci-subsequence" target = "_blank">905. Length of Longest Fibonacci Subsequence</a></h2><h3>Medium</h3><hr><p>A sequence <code>x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub></code> is <em>Fibonacci-like</em> if:</p>
 
 <ul>
 	<li><code>n &gt;= 3</code></li>
@@ -31,6 +39,8 @@
 	<li><code>3 &lt;= arr.length &lt;= 1000</code></li>
 	<li><code>1 &lt;= arr[i] &lt; arr[i + 1] &lt;= 10<sup>9</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
 
 ```java
 class Solution {
@@ -86,3 +96,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

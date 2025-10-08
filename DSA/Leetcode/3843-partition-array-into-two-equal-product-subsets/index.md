@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/partition-array-into-two-equal-product-subsets">3843. Partition Array into Two Equal Product Subsets</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> containing <strong>distinct</strong> positive integers and an integer <code>target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3843. Partition Array into Two Equal Product Subsets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/partition-array-into-two-equal-product-subsets" target = "_blank">3843. Partition Array into Two Equal Product Subsets</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> containing <strong>distinct</strong> positive integers and an integer <code>target</code>.</p>
 
 <p>Determine if you can partition <code>nums</code> into two <strong>non-empty</strong> <strong>disjoint</strong> <strong>subsets</strong>, with each element belonging to <strong>exactly one</strong> subset, such that the product of the elements in each subset is equal to <code>target</code>.</p>
 
@@ -34,6 +42,10 @@ A <strong>subset</strong> of an array is a selection of elements of the array.
 	<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
 	<li>All elements of <code>nums</code> are <strong>distinct</strong>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

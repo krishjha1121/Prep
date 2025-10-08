@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation">2891. Maximum Beauty of an Array After Applying Operation</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>nums</code> and a <strong>non-negative</strong> integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2891. Maximum Beauty of an Array After Applying Operation
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation" target = "_blank">2891. Maximum Beauty of an Array After Applying Operation</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>nums</code> and a <strong>non-negative</strong> integer <code>k</code>.</p>
 
 <p>In one operation, you can do the following:</p>
 
@@ -45,6 +53,10 @@ The beauty of the array nums is 4 (whole array).
 	<li><code>0 &lt;= nums[i], k &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maximumBeauty(int[] nums, int k) {
@@ -66,3 +78,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

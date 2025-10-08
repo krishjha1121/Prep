@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-ii">3741. Reschedule Meetings for Maximum Free Time II</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>eventTime</code> denoting the duration of an event. You are also given two integer arrays <code>startTime</code> and <code>endTime</code>, each of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3741. Reschedule Meetings for Maximum Free Time II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-ii" target = "_blank">3741. Reschedule Meetings for Maximum Free Time II</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>eventTime</code> denoting the duration of an event. You are also given two integer arrays <code>startTime</code> and <code>endTime</code>, each of length <code>n</code>.</p>
 
 <p>These represent the start and end times of <code>n</code> <strong>non-overlapping</strong> meetings that occur during the event between time <code>t = 0</code> and time <code>t = eventTime</code>, where the <code>i<sup>th</sup></code> meeting occurs during the time <code>[startTime[i], endTime[i]].</code></p>
 
@@ -76,6 +84,10 @@
 	<li><code>endTime[i] &lt;= startTime[i + 1]</code> where <code>i</code> lies in the range <code>[0, n - 2]</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxFreeTime(int eventTime, int[] startTime, int[] endTime) {
@@ -102,3 +114,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

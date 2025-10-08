@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/meeting-rooms-iii">2479. Meeting Rooms III</a></h2><h3>Hard</h3><hr><p>You are given an integer <code>n</code>. There are <code>n</code> rooms numbered from <code>0</code> to <code>n - 1</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2479. Meeting Rooms III
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/meeting-rooms-iii" target = "_blank">2479. Meeting Rooms III</a></h2><h3>Hard</h3><hr><p>You are given an integer <code>n</code>. There are <code>n</code> rooms numbered from <code>0</code> to <code>n - 1</code>.</p>
 
 <p>You are given a 2D integer array <code>meetings</code> where <code>meetings[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> means that a meeting will be held during the <strong>half-closed</strong> time interval <code>[start<sub>i</sub>, end<sub>i</sub>)</code>. All the values of <code>start<sub>i</sub></code> are <strong>unique</strong>.</p>
 
@@ -57,6 +65,10 @@ Room 0 held 1 meeting while rooms 1 and 2 each held 2 meetings, so we return 1.
 	<li>All the values of <code>start<sub>i</sub></code> are <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int mostBooked(int n, int[][] meetings) {
@@ -97,3 +109,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-deletions-to-make-string-k-special">3360. Minimum Deletions to Make String K-Special</a></h2><h3>Medium</h3><hr><p>You are given a string <code>word</code> and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3360. Minimum Deletions to Make String K-Special
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-deletions-to-make-string-k-special" target = "_blank">3360. Minimum Deletions to Make String K-Special</a></h2><h3>Medium</h3><hr><p>You are given a string <code>word</code> and an integer <code>k</code>.</p>
 
 <p>We consider <code>word</code> to be <strong>k-special</strong> if <code>|freq(word[i]) - freq(word[j])| &lt;= k</code> for all indices <code>i</code> and <code>j</code> in the string.</p>
 
@@ -46,6 +54,10 @@
 	<li><code>word</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #cpp>
+
 ```cpp
 class Solution {
   public:
@@ -68,3 +80,15 @@ class Solution {
     }
 };
 ```
+
+</template>
+
+<template #java>
+
+```java
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

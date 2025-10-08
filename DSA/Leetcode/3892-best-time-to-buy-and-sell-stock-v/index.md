@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v">3892. Best Time to Buy and Sell Stock V</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a stock in dollars on the <code>i<sup>th</sup></code> day, and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3892. Best Time to Buy and Sell Stock V
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v" target = "_blank">3892. Best Time to Buy and Sell Stock V</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a stock in dollars on the <code>i<sup>th</sup></code> day, and an integer <code>k</code>.</p>
 
 <p>You are allowed to make at most <code>k</code> transactions, where each transaction can be either of the following:</p>
 
@@ -58,6 +66,10 @@ We can make $36 of profit through 3 transactions:
 	<li><code>1 &lt;= k &lt;= prices.length / 2</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private long dp[][][][];
@@ -104,3 +116,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

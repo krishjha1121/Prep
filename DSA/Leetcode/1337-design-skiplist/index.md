@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-skiplist">1337. Design Skiplist</a></h2><h3>Hard</h3><hr><p>Design a <strong>Skiplist</strong> without using any built-in libraries.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1337. Design Skiplist
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-skiplist" target = "_blank">1337. Design Skiplist</a></h2><h3>Hard</h3><hr><p>Design a <strong>Skiplist</strong> without using any built-in libraries.</p>
 
 <p>A <strong>skiplist</strong> is a data structure that takes <code>O(log(n))</code> time to add, erase and search. Comparing with treap and red-black tree which has the same function and performance, the code length of Skiplist can be comparatively short and the idea behind Skiplists is just simple linked lists.</p>
 
@@ -52,6 +60,10 @@ skiplist.search(1); // return False, 1 has already been erased.</pre>
 	<li>At most <code>5 * 10<sup>4</sup></code> calls will be made to <code>search</code>, <code>add</code>, and <code>erase</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Skiplist {
     private TreeSet<Integer> set;
@@ -83,7 +95,6 @@ class Skiplist {
         return true;
     }
 }
-
 /**
     Your Skiplist object will be instantiated and called as such:
     Skiplist obj = new Skiplist();
@@ -92,3 +103,15 @@ class Skiplist {
     boolean param_3 = obj.erase(num);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

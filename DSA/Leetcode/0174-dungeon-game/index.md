@@ -44,6 +44,13 @@
 	<li><code>-1000 &lt;= dungeon[i][j] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     private int dp[][];
@@ -64,3 +71,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

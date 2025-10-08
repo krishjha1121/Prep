@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays">1096. Maximum Sum of Two Non-Overlapping Subarrays</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code> and two integers <code>firstLen</code> and <code>secondLen</code>, return <em>the maximum sum of elements in two non-overlapping <strong>subarrays</strong> with lengths </em><code>firstLen</code><em> and </em><code>secondLen</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1096. Maximum Sum of Two Non-Overlapping Subarrays
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays" target = "_blank">1096. Maximum Sum of Two Non-Overlapping Subarrays</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code> and two integers <code>firstLen</code> and <code>secondLen</code>, return <em>the maximum sum of elements in two non-overlapping <strong>subarrays</strong> with lengths </em><code>firstLen</code><em> and </em><code>secondLen</code>.</p>
 
 <p>The array with length <code>firstLen</code> could occur before or after the array with length <code>secondLen</code>, but they have to be non-overlapping.</p>
 
@@ -39,6 +47,10 @@
 	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxSumTwoNoOverlap(int[] nums, int firstLen, int secondLen) {
@@ -72,3 +84,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

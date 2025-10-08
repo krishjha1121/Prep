@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/construct-string-with-repeat-limit">2300. Construct String With Repeat Limit</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>repeatLimit</code>. Construct a new string <code>repeatLimitedString</code> using the characters of <code>s</code> such that no letter appears <strong>more than</strong> <code>repeatLimit</code> times <strong>in a row</strong>. You do <strong>not</strong> have to use all characters from <code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2300. Construct String With Repeat Limit
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/construct-string-with-repeat-limit" target = "_blank">2300. Construct String With Repeat Limit</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>repeatLimit</code>. Construct a new string <code>repeatLimitedString</code> using the characters of <code>s</code> such that no letter appears <strong>more than</strong> <code>repeatLimit</code> times <strong>in a row</strong>. You do <strong>not</strong> have to use all characters from <code>s</code>.</p>
 
 <p>Return <em>the <strong>lexicographically largest</strong> </em><code>repeatLimitedString</code> <em>possible</em>.</p>
 
@@ -40,6 +48,10 @@ Note that the string &quot;bbabaaa&quot; is lexicographically larger but the let
 	<li><code>s</code> consists of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String repeatLimitedString(String s, int repeatLimit) {
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

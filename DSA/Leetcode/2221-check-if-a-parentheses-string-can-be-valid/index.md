@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid">2221. Check if a Parentheses String Can Be Valid</a></h2><h3>Medium</h3><hr><p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>. It is valid if <strong>any</strong> of the following conditions is <strong>true</strong>:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2221. Check if a Parentheses String Can Be Valid
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid" target = "_blank">2221. Check if a Parentheses String Can Be Valid</a></h2><h3>Medium</h3><hr><p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>. It is valid if <strong>any</strong> of the following conditions is <strong>true</strong>:</p>
 
 <ul>
 	<li>It is <code>()</code>.</li>
@@ -51,6 +59,10 @@ Changing s[0] to either &#39;(&#39; or &#39;)&#39; will not make s valid.
 	<li><code>locked[i]</code> is either <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean canBeValid(String s, String locked) {
@@ -81,3 +93,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

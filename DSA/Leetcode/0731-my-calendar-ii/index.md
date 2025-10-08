@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/my-calendar-ii">731. My Calendar II</a></h2><h3>Medium</h3><hr><p>You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a <strong>triple booking</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 731. My Calendar II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/my-calendar-ii" target = "_blank">731. My Calendar II</a></h2><h3>Medium</h3><hr><p>You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a <strong>triple booking</strong>.</p>
 
 <p>A <strong>triple booking</strong> happens when three events have some non-empty intersection (i.e., some moment is common to all the three events.).</p>
 
@@ -39,6 +47,8 @@ myCalendarTwo.book(25, 55); // return True, The event can be booked, as the time
 	<li>At most <code>1000</code> calls will be made to <code>book</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class MyCalendarTwo {
     private TreeMap<Integer, Integer> bookings;
@@ -71,3 +81,15 @@ class MyCalendarTwo {
     boolean param_1 = obj.book(start,end);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

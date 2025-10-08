@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-square-submatrices-with-all-ones">1402. Count Square Submatrices with All Ones</a></h2><h3>Medium</h3><hr><p>Given a <code>m * n</code> matrix of ones and zeros, return how many <strong>square</strong> submatrices have all ones.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1402. Count Square Submatrices with All Ones
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-square-submatrices-with-all-ones" target = "_blank">1402. Count Square Submatrices with All Ones</a></h2><h3>Medium</h3><hr><p>Given a <code>m * n</code> matrix of ones and zeros, return how many <strong>square</strong> submatrices have all ones.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -43,6 +51,10 @@ Total number of squares = 6 + 1 = <b>7</b>.
 	<li><code>0 &lt;= arr[i][j] &lt;= 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static int prefix[][];
@@ -81,3 +93,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

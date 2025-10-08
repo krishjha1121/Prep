@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-well-performing-interval">1219. Longest Well-Performing Interval</a></h2><h3>Medium</h3><hr><p>We are given <code>hours</code>, a list of the number of hours worked per day for a given employee.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1219. Longest Well-Performing Interval
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-well-performing-interval" target = "_blank">1219. Longest Well-Performing Interval</a></h2><h3>Medium</h3><hr><p>We are given <code>hours</code>, a list of the number of hours worked per day for a given employee.</p>
 
 <p>A day is considered to be a <em>tiring day</em> if and only if the number of hours worked is (strictly) greater than <code>8</code>.</p>
 
@@ -30,6 +38,10 @@
 	<li><code>0 &lt;= hours[i] &lt;= 16</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int longestWPI(int[] hours) {
@@ -52,3 +64,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring">1423. Maximum Number of Occurrences of a Substring</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, return the maximum number of occurrences of <strong>any</strong> substring under the following rules:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1423. Maximum Number of Occurrences of a Substring
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring" target = "_blank">1423. Maximum Number of Occurrences of a Substring</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, return the maximum number of occurrences of <strong>any</strong> substring under the following rules:</p>
 
 <ul>
 	<li>The number of unique characters in the substring must be less than or equal to <code>maxLetters</code>.</li>
@@ -33,6 +41,10 @@ It satisfies the conditions, 2 unique letters and size 3 (between minSize and ma
 	<li><code>s</code> consists of only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private HashMap<String, Integer> map;
@@ -63,3 +75,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

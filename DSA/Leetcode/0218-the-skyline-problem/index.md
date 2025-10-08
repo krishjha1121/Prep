@@ -50,6 +50,13 @@ Figure B shows the skyline formed by those buildings. The red points in figure B
 	<li><code>buildings</code> is sorted by <code>left<sub>i</sub></code> in&nbsp;non-decreasing order.</li>
 </ul>
 
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<List<Integer >> getSkyline(int[][] buildings) {
@@ -77,5 +84,16 @@ class Solution {
         return res;
     }
 }
-
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

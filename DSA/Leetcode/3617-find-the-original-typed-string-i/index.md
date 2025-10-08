@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-original-typed-string-i">3617. Find the Original Typed String I</a></h2><h3>Easy</h3><hr><p>Alice is attempting to type a specific string on her computer. However, she tends to be clumsy and <strong>may</strong> press a key for too long, resulting in a character being typed <strong>multiple</strong> times.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3617. Find the Original Typed String I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-original-typed-string-i" target = "_blank">3617. Find the Original Typed String I</a></h2><h3>Easy</h3><hr><p>Alice is attempting to type a specific string on her computer. However, she tends to be clumsy and <strong>may</strong> press a key for too long, resulting in a character being typed <strong>multiple</strong> times.</p>
 
 <p>Although Alice tried to focus on her typing, she is aware that she may still have done this <strong>at most</strong> <em>once</em>.</p>
 
@@ -47,6 +55,10 @@
 	<li><code>word</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int possibleStringCount(String word) {
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

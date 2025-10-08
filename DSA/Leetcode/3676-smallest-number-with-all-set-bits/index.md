@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/smallest-number-with-all-set-bits">3676. Smallest Number With All Set Bits</a></h2><h3>Easy</h3><hr><p>You are given a <em>positive</em> number <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3676. Smallest Number With All Set Bits
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/smallest-number-with-all-set-bits" target = "_blank">3676. Smallest Number With All Set Bits</a></h2><h3>Easy</h3><hr><p>You are given a <em>positive</em> number <code>n</code>.</p>
 
 <p>Return the <strong>smallest</strong> number <code>x</code> <strong>greater than</strong> or <strong>equal to</strong> <code>n</code>, such that the binary representation of <code>x</code> contains only <strong>set</strong> bits.</p>
 
@@ -48,6 +56,10 @@
 	<li><code>1 &lt;= n &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int smallestNumber(int n) {
@@ -61,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

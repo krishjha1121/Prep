@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sum-of-prefix-scores-of-strings">2494. Sum of Prefix Scores of Strings</a></h2><h3>Hard</h3><hr><p>You are given an array <code>words</code> of size <code>n</code> consisting of <strong>non-empty</strong> strings.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2494. Sum of Prefix Scores of Strings
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sum-of-prefix-scores-of-strings" target = "_blank">2494. Sum of Prefix Scores of Strings</a></h2><h3>Hard</h3><hr><p>You are given an array <code>words</code> of size <code>n</code> consisting of <strong>non-empty</strong> strings.</p>
 
 <p>We define the <strong>score</strong> of a string <code>word</code> as the <strong>number</strong> of strings <code>words[i]</code> such that <code>word</code> is a <strong>prefix</strong> of <code>words[i]</code>.</p>
 
@@ -50,6 +58,10 @@ Each prefix has a score of one, so the total is answer[0] = 1 + 1 + 1 + 1 = 4.
 	<li><code>words[i]</code> consists of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class TrieNode {
     public int freq;
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

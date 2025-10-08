@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows">1147. Flip Columns For Maximum Number of Equal Rows</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> binary matrix <code>matrix</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1147. Flip Columns For Maximum Number of Equal Rows
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows" target = "_blank">1147. Flip Columns For Maximum Number of Equal Rows</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> binary matrix <code>matrix</code>.</p>
 
 <p>You can choose any number of columns in the matrix and flip every cell in that column (i.e., Change the value of the cell from <code>0</code> to <code>1</code> or vice versa).</p>
 
@@ -39,6 +47,10 @@
 	<li><code>matrix[i][j]</code> is either&nbsp;<code>0</code> or <code>1</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxEqualRowsAfterFlips(int[][] matrix) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

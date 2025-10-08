@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/smallest-palindromic-rearrangement-i">3812. Smallest Palindromic Rearrangement I</a></h2><h3>Medium</h3><hr><p>You are given a <strong><span data-keyword="palindrome-string">palindromic</span></strong> string <code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3812. Smallest Palindromic Rearrangement I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/smallest-palindromic-rearrangement-i" target = "_blank">3812. Smallest Palindromic Rearrangement I</a></h2><h3>Medium</h3><hr><p>You are given a <strong><span data-keyword="palindrome-string">palindromic</span></strong> string <code>s</code>.</p>
 
 <p>Return the <strong><span data-keyword="lexicographically-smaller-string">lexicographically smallest</span></strong> palindromic <span data-keyword="permutation-string">permutation</span> of <code>s</code>.</p>
 
@@ -48,6 +56,10 @@
 	<li><code>s</code> is guaranteed to be palindromic.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String smallestPalindrome(String s) {
@@ -89,3 +101,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

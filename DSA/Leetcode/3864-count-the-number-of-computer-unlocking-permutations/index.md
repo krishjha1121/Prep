@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations">3864. Count the Number of Computer Unlocking Permutations</a></h2><h3>Medium</h3><hr><p>You are given an array <code>complexity</code> of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3864. Count the Number of Computer Unlocking Permutations
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations" target = "_blank">3864. Count the Number of Computer Unlocking Permutations</a></h2><h3>Medium</h3><hr><p>You are given an array <code>complexity</code> of length <code>n</code>.</p>
 
 <p>There are <code>n</code> <strong>locked</strong> computers in a room with labels from 0 to <code>n - 1</code>, each with its own <strong>unique</strong> password. The password of the computer <code>i</code> has a complexity <code>complexity[i]</code>.</p>
 
@@ -67,6 +75,10 @@
 	<li><code>1 &lt;= complexity[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int mod = (int)(1e9 + 7);
@@ -82,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments">3018. Make String a Subsequence Using Cyclic Increments</a></h2><h3>Medium</h3><hr><p>You are given two <strong>0-indexed</strong> strings <code>str1</code> and <code>str2</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3018. Make String a Subsequence Using Cyclic Increments
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments" target = "_blank">3018. Make String a Subsequence Using Cyclic Increments</a></h2><h3>Medium</h3><hr><p>You are given two <strong>0-indexed</strong> strings <code>str1</code> and <code>str2</code>.</p>
 
 <p>In an operation, you select a <strong>set</strong> of indices in <code>str1</code>, and for each index <code>i</code> in the set, increment <code>str1[i]</code> to the next character <strong>cyclically</strong>. That is <code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code>, <code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code>, and so on, and <code>&#39;z&#39;</code> becomes <code>&#39;a&#39;</code>.</p>
 
@@ -43,6 +51,10 @@ Therefore, false is returned.</pre>
 	<li><code>str1</code> and <code>str2</code> consist of only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean canMakeSubsequence(String str1, String str2) {
@@ -59,3 +71,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

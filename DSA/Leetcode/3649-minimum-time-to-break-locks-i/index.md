@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-time-to-break-locks-i">3649. Minimum Time to Break Locks I</a></h2><h3>Medium</h3><hr><p>Bob is stuck in a dungeon and must break <code>n</code> locks, each requiring some amount of <strong>energy</strong> to break. The required energy for each lock is stored in an array called <code>strength</code> where <code>strength[i]</code> indicates the energy needed to break the <code>i<sup>th</sup></code> lock.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3649. Minimum Time to Break Locks I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-time-to-break-locks-i" target = "_blank">3649. Minimum Time to Break Locks I</a></h2><h3>Medium</h3><hr><p>Bob is stuck in a dungeon and must break <code>n</code> locks, each requiring some amount of <strong>energy</strong> to break. The required energy for each lock is stored in an array called <code>strength</code> where <code>strength[i]</code> indicates the energy needed to break the <code>i<sup>th</sup></code> lock.</p>
 
 <p>To break a lock, Bob uses a sword with the following characteristics:</p>
 
@@ -150,6 +158,10 @@
 	<li><code>1 &lt;= strength[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.ArrayList;
 import java.util.Collections;
@@ -209,3 +221,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

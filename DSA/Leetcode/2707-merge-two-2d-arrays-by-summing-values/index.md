@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values">2707. Merge Two 2D Arrays by Summing Values</a></h2><h3>Easy</h3><hr><p>You are given two <strong>2D</strong> integer arrays <code>nums1</code> and <code>nums2.</code></p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2707. Merge Two 2D Arrays by Summing Values
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values" target = "_blank">2707. Merge Two 2D Arrays by Summing Values</a></h2><h3>Easy</h3><hr><p>You are given two <strong>2D</strong> integer arrays <code>nums1</code> and <code>nums2.</code></p>
 
 <ul>
 	<li><code>nums1[i] = [id<sub>i</sub>, val<sub>i</sub>]</code>&nbsp;indicate that the number with the id <code>id<sub>i</sub></code> has a value equal to <code>val<sub>i</sub></code>.</li>
@@ -47,6 +55,9 @@
 	<li>Both arrays contain unique ids.</li>
 	<li>Both arrays are in&nbsp;strictly ascending order by id.</li>
 </ul>
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -75,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

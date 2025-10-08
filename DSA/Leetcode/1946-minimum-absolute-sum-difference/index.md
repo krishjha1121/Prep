@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-absolute-sum-difference">1946. Minimum Absolute Sum Difference</a></h2><h3>Medium</h3><hr><p>You are given two positive integer arrays <code>nums1</code> and <code>nums2</code>, both of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1946. Minimum Absolute Sum Difference
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-absolute-sum-difference" target = "_blank">1946. Minimum Absolute Sum Difference</a></h2><h3>Medium</h3><hr><p>You are given two positive integer arrays <code>nums1</code> and <code>nums2</code>, both of length <code>n</code>.</p>
 
 <p>The <strong>absolute sum difference</strong> of arrays <code>nums1</code> and <code>nums2</code> is defined as the <strong>sum</strong> of <code>|nums1[i] - nums2[i]|</code> for each <code>0 &lt;= i &lt; n</code> (<strong>0-indexed</strong>).</p>
 
@@ -53,6 +61,10 @@ This yields an absolute sum difference of <code>|10-9| + |10-3| + |4-5| + |4-1| 
 	<li><code>1 &lt;= nums1[i], nums2[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private static int mod = (int)(1e9 + 7);
@@ -85,3 +97,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

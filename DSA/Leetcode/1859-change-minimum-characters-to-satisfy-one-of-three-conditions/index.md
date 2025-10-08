@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/change-minimum-characters-to-satisfy-one-of-three-conditions">1859. Change Minimum Characters to Satisfy One of Three Conditions</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>a</code> and <code>b</code> that consist of lowercase letters. In one operation, you can change any character in <code>a</code> or <code>b</code> to <strong>any lowercase letter</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1859. Change Minimum Characters to Satisfy One of Three Conditions
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/change-minimum-characters-to-satisfy-one-of-three-conditions" target = "_blank">1859. Change Minimum Characters to Satisfy One of Three Conditions</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>a</code> and <code>b</code> that consist of lowercase letters. In one operation, you can change any character in <code>a</code> or <code>b</code> to <strong>any lowercase letter</strong>.</p>
 
 <p>Your goal is to satisfy <strong>one</strong> of the following three conditions:</p>
 
@@ -39,6 +47,10 @@ The best way was done in 2 operations (either condition 1 or condition 3).
 	<li><code>a</code> and <code>b</code> consist only of lowercase letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minCharacters(String a, String b) {
@@ -76,3 +88,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

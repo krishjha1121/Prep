@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i">3522. Find the Power of K-Size Subarrays I</a></h2><h3>Medium</h3><hr><p>You are given an array of integers <code>nums</code> of length <code>n</code> and a <em>positive</em> integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3522. Find the Power of K-Size Subarrays I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i" target = "_blank">3522. Find the Power of K-Size Subarrays I</a></h2><h3>Medium</h3><hr><p>You are given an array of integers <code>nums</code> of length <code>n</code> and a <em>positive</em> integer <code>k</code>.</p>
 
 <p>The <strong>power</strong> of an array is defined as:</p>
 
@@ -57,6 +65,10 @@
 	<li><code>1 &lt;= k &lt;= n</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] resultsArray(int[] nums, int k) {
@@ -80,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

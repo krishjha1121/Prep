@@ -40,6 +40,12 @@
 	<li>All the integers in <code>nums</code> are <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 public class Solution {
     public List<Integer> largestDivisibleSubset(int[] nums) {
@@ -73,3 +79,15 @@ public class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

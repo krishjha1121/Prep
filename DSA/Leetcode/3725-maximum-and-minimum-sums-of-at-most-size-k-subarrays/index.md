@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subarrays">3725. Maximum and Minimum Sums of at Most Size K Subarrays</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>. Return the sum of the <strong>maximum</strong> and <strong>minimum</strong> elements of all <span data-keyword="subarray-nonempty">subarrays</span> with <strong>at most</strong> <code>k</code> elements.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3725. Maximum and Minimum Sums of at Most Size K Subarrays
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subarrays" target = "_blank">3725. Maximum and Minimum Sums of at Most Size K Subarrays</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>. Return the sum of the <strong>maximum</strong> and <strong>minimum</strong> elements of all <span data-keyword="subarray-nonempty">subarrays</span> with <strong>at most</strong> <code>k</code> elements.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -132,6 +140,10 @@
 	<li><code>-10<sup>6</sup> &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long minMaxSubarraySum(int[] nums, int k) {
@@ -211,3 +223,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

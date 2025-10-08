@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/shift-distance-between-two-strings">3591. Shift Distance Between Two Strings</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>s</code> and <code>t</code> of the same length, and two integer arrays <code>nextCost</code> and <code>previousCost</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3591. Shift Distance Between Two Strings
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/shift-distance-between-two-strings" target = "_blank">3591. Shift Distance Between Two Strings</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>s</code> and <code>t</code> of the same length, and two integer arrays <code>nextCost</code> and <code>previousCost</code>.</p>
 
 <p>In one operation, you can pick any index <code>i</code> of <code>s</code>, and perform <strong>either one</strong> of the following actions:</p>
 
@@ -56,6 +64,10 @@
 	<li><code>0 &lt;= nextCost[i], previousCost[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long shiftDistance(String s, String t, int[] nextCost, int[] previousCost) {
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

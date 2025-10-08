@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/form-array-by-concatenating-subarrays-of-another-array">1874. Form Array by Concatenating Subarrays of Another Array</a></h2><h3>Medium</h3><hr><p>You are given a 2D integer array <code>groups</code> of length <code>n</code>. You are also given an integer array <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1874. Form Array by Concatenating Subarrays of Another Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/form-array-by-concatenating-subarrays-of-another-array" target = "_blank">1874. Form Array by Concatenating Subarrays of Another Array</a></h2><h3>Medium</h3><hr><p>You are given a 2D integer array <code>groups</code> of length <code>n</code>. You are also given an integer array <code>nums</code>.</p>
 
 <p>You are asked if you can choose <code>n</code> <strong>disjoint </strong>subarrays from the array <code>nums</code> such that the <code>i<sup>th</sup></code> subarray is equal to <code>groups[i]</code> (<b>0-indexed</b>), and if <code>i &gt; 0</code>, the <code>(i-1)<sup>th</sup></code> subarray appears <strong>before</strong> the <code>i<sup>th</sup></code> subarray in <code>nums</code> (i.e. the subarrays must be in the same order as <code>groups</code>).</p>
 
@@ -44,6 +52,10 @@ They share a common elements nums[4] (0-indexed).
 	<li><code>1 &lt;= nums.length &lt;= 10<sup>3</sup></code></li>
 	<li><code>-10<sup>7</sup> &lt;= groups[i][j], nums[k] &lt;= 10<sup>7</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -92,3 +104,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-largest-group">1500. Count Largest Group</a></h2><h3>Easy</h3><hr><p>You are given an integer <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1500. Count Largest Group
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-largest-group" target = "_blank">1500. Count Largest Group</a></h2><h3>Easy</h3><hr><p>You are given an integer <code>n</code>.</p>
 
 <p>Each number from <code>1</code> to <code>n</code> is grouped according to the sum of its digits.</p>
 
@@ -30,6 +38,10 @@ There are 4 groups with largest size.
 	<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countLargestGroup(int n) {
@@ -55,3 +67,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

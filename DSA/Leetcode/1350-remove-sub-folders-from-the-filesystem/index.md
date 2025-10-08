@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/remove-sub-folders-from-the-filesystem">1350. Remove Sub-Folders from the Filesystem</a></h2><h3>Medium</h3><hr><p>Given a list of folders <code>folder</code>, return <em>the folders after removing all <strong>sub-folders</strong> in those folders</em>. You may return the answer in <strong>any order</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1350. Remove Sub-Folders from the Filesystem
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/remove-sub-folders-from-the-filesystem" target = "_blank">1350. Remove Sub-Folders from the Filesystem</a></h2><h3>Medium</h3><hr><p>Given a list of folders <code>folder</code>, return <em>the folders after removing all <strong>sub-folders</strong> in those folders</em>. You may return the answer in <strong>any order</strong>.</p>
 
 <p>If a <code>folder[i]</code> is located within another <code>folder[j]</code>, it is called a <strong>sub-folder</strong> of it. A sub-folder of <code>folder[j]</code> must start with <code>folder[j]</code>, followed by a <code>&quot;/&quot;</code>. For example, <code>&quot;/a/b&quot;</code> is a sub-folder of <code>&quot;/a&quot;</code>, but <code>&quot;/b&quot;</code> is not a sub-folder of <code>&quot;/a/b/c&quot;</code>.</p>
 
@@ -43,6 +51,10 @@
 	<li>Each folder name is <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class custom_sort implements Comparator<String> {
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

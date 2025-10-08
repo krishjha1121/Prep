@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/alternating-groups-ii">3483. Alternating Groups II</a></h2><h3>Medium</h3><hr><p>There is a circle of red and blue tiles. You are given an array of integers <code>colors</code> and an integer <code>k</code>. The color of tile <code>i</code> is represented by <code>colors[i]</code>:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3483. Alternating Groups II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/alternating-groups-ii" target = "_blank">3483. Alternating Groups II</a></h2><h3>Medium</h3><hr><p>There is a circle of red and blue tiles. You are given an array of integers <code>colors</code> and an integer <code>k</code>. The color of tile <code>i</code> is represented by <code>colors[i]</code>:</p>
 
 <ul>
 	<li><code>colors[i] == 0</code> means that tile <code>i</code> is <strong>red</strong>.</li>
@@ -65,6 +73,10 @@
 	<li><code>3 &lt;= k &lt;= colors.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numberOfAlternatingGroups(int[] colors, int k) {
@@ -78,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

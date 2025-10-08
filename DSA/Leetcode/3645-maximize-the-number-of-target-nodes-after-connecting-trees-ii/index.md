@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii">3645. Maximize the Number of Target Nodes After Connecting Trees II</a></h2><h3>Hard</h3><hr><p>There exist two <strong>undirected </strong>trees with <code>n</code> and <code>m</code> nodes, labeled from <code>[0, n - 1]</code> and <code>[0, m - 1]</code>, respectively.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3645. Maximize the Number of Target Nodes After Connecting Trees II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii" target = "_blank">3645. Maximize the Number of Target Nodes After Connecting Trees II</a></h2><h3>Hard</h3><hr><p>There exist two <strong>undirected </strong>trees with <code>n</code> and <code>m</code> nodes, labeled from <code>[0, n - 1]</code> and <code>[0, m - 1]</code>, respectively.</p>
 
 <p>You are given two 2D integer arrays <code>edges1</code> and <code>edges2</code> of lengths <code>n - 1</code> and <code>m - 1</code>, respectively, where <code>edges1[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that there is an edge between nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code> in the first tree and <code>edges2[i] = [u<sub>i</sub>, v<sub>i</sub>]</code> indicates that there is an edge between nodes <code>u<sub>i</sub></code> and <code>v<sub>i</sub></code> in the second tree.</p>
 
@@ -53,6 +61,10 @@
 	<li><code>0 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt; m</code></li>
 	<li>The input is generated such that <code>edges1</code> and <code>edges2</code> represent valid trees.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.ArrayDeque;
@@ -110,3 +122,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

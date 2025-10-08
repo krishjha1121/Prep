@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-number-of-copy-arrays">3785. Find the Number of Copy Arrays</a></h2><h3>Medium</h3><hr><p>You are given an array <code>original</code> of length <code>n</code> and a 2D array <code>bounds</code> of length <code>n x 2</code>, where <code>bounds[i] = [u<sub>i</sub>, v<sub>i</sub>]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3785. Find the Number of Copy Arrays
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-number-of-copy-arrays" target = "_blank">3785. Find the Number of Copy Arrays</a></h2><h3>Medium</h3><hr><p>You are given an array <code>original</code> of length <code>n</code> and a 2D array <code>bounds</code> of length <code>n x 2</code>, where <code>bounds[i] = [u<sub>i</sub>, v<sub>i</sub>]</code>.</p>
 
 <p>You need to find the number of <strong>possible</strong> arrays <code>copy</code> of length <code>n</code> such that:</p>
 
@@ -69,6 +77,10 @@
 	<li><code>1 &lt;= bounds[i][0] &lt;= bounds[i][1] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static public int countArrays(int[] original, int[][] bounds) {
@@ -84,3 +96,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

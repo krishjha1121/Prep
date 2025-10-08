@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/path-with-maximum-gold">1331. Path with Maximum Gold</a></h2><h3>Medium</h3><hr><p>In a gold mine <code>grid</code> of size <code>m x n</code>, each cell in this mine has an integer representing the amount of gold in that cell, <code>0</code> if it is empty.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1331. Path with Maximum Gold
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/path-with-maximum-gold" target = "_blank">1331. Path with Maximum Gold</a></h2><h3>Medium</h3><hr><p>In a gold mine <code>grid</code> of size <code>m x n</code>, each cell in this mine has an integer representing the amount of gold in that cell, <code>0</code> if it is empty.</p>
 
 <p>Return the maximum amount of gold you can collect under the conditions:</p>
 
@@ -48,6 +56,10 @@ Path to get the maximum gold, 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; 7.
 	<li>There are at most <strong>25 </strong>cells containing gold.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #cpp>
+
 ```cpp
 class Solution {
   public:
@@ -84,3 +96,15 @@ class Solution {
     }
 };
 ```
+
+</template>
+
+<template #java>
+
+```java
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

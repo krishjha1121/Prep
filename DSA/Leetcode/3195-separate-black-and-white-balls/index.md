@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/separate-black-and-white-balls">3195. Separate Black and White Balls</a></h2><h3>Medium</h3><hr><p>There are <code>n</code> balls on a table, each ball has a color black or white.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3195. Separate Black and White Balls
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/separate-black-and-white-balls" target = "_blank">3195. Separate Black and White Balls</a></h2><h3>Medium</h3><hr><p>There are <code>n</code> balls on a table, each ball has a color black or white.</p>
 
 <p>You are given a <strong>0-indexed</strong> binary string <code>s</code> of length <code>n</code>, where <code>1</code> and <code>0</code> represent black and white balls, respectively.</p>
 
@@ -43,6 +51,10 @@ It can be proven that the minimum number of steps needed is 2.
 	<li><code>s[i]</code> is either <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long minimumSteps(String s) {
@@ -58,3 +70,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

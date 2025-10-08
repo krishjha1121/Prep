@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/type-of-triangle">3321. Type of Triangle</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>3</code> which can form the sides of a triangle.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3321. Type of Triangle
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/type-of-triangle" target = "_blank">3321. Type of Triangle</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>3</code> which can form the sides of a triangle.</p>
 
 <ul>
 	<li>A triangle is called <strong>equilateral</strong> if it has all sides of equal length.</li>
@@ -38,6 +46,10 @@ As all the sides are of different lengths, it will form a scalene triangle.
 	<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String triangleType(int[] nums) {
@@ -54,3 +66,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

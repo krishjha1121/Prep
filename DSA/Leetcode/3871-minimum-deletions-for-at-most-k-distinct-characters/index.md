@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-deletions-for-at-most-k-distinct-characters">3871. Minimum Deletions for At Most K Distinct Characters</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of lowercase English letters, and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3871. Minimum Deletions for At Most K Distinct Characters
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-deletions-for-at-most-k-distinct-characters" target = "_blank">3871. Minimum Deletions for At Most K Distinct Characters</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of lowercase English letters, and an integer <code>k</code>.</p>
 
 <p>Your task is to delete some (possibly none) of the characters in the string so that the number of <strong>distinct</strong> characters in the resulting string is <strong>at most</strong> <code>k</code>.</p>
 
@@ -63,6 +71,10 @@
 
 <p> </p>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -100,3 +112,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/map-of-highest-peak">1876. Map of Highest Peak</a></h2><h3>Medium</h3><hr><p>You are given an integer matrix <code>isWater</code> of size <code>m x n</code> that represents a map of <strong>land</strong> and <strong>water</strong> cells.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1876. Map of Highest Peak
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/map-of-highest-peak" target = "_blank">1876. Map of Highest Peak</a></h2><h3>Medium</h3><hr><p>You are given an integer matrix <code>isWater</code> of size <code>m x n</code> that represents a map of <strong>land</strong> and <strong>water</strong> cells.</p>
 
 <ul>
 	<li>If <code>isWater[i][j] == 0</code>, cell <code>(i, j)</code> is a <strong>land</strong> cell.</li>
@@ -54,6 +62,10 @@ Any height assignment that has a maximum height of 2 while still meeting the rul
 <p>&nbsp;</p>
 <p><strong>Note:</strong> This question is the same as 542: <a href="https://leetcode.com/problems/01-matrix/description/" target="_blank">https://leetcode.com/problems/01-matrix/</a></p>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[][] highestPeak(int[][] isWater) {
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

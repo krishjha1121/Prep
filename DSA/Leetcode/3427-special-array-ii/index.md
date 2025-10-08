@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/special-array-ii">3427. Special Array II</a></h2><h3>Medium</h3><hr><p>An array is considered <strong>special</strong> if every pair of its adjacent elements contains two numbers with different parity.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3427. Special Array II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/special-array-ii" target = "_blank">3427. Special Array II</a></h2><h3>Medium</h3><hr><p>An array is considered <strong>special</strong> if every pair of its adjacent elements contains two numbers with different parity.</p>
 
 <p>You are given an array of integer <code>nums</code> and a 2D integer matrix <code>queries</code>, where for <code>queries[i] = [from<sub>i</sub>, to<sub>i</sub>]</code> your task is to check that <span data-keyword="subarray">subarray</span> <code>nums[from<sub>i</sub>..to<sub>i</sub>]</code> is <strong>special</strong> or not.</p>
 
@@ -43,6 +51,10 @@
 	<li><code>0 &lt;= queries[i][0] &lt;= queries[i][1] &lt;= nums.length - 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean[] isArraySpecial(int[] nums, int[][] queries) {
@@ -51,7 +63,6 @@ class Solution {
         int[] prefix = new int[n];
         for (int i = 1; i < n; i++)
             prefix[i] = prefix[i - 1] + (ans[i] ? 1 : 0);
-
         boolean[] results = new boolean[queries.length];
         for (int i = 0; i < queries.length; i++) {
             int u = queries[i][0];
@@ -65,7 +76,6 @@ class Solution {
             }
         }
         return results;
-
     }
 
     public static boolean[] compute(int[] nums) {
@@ -77,3 +87,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

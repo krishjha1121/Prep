@@ -64,6 +64,10 @@ It can be shown that 9 is the maximum achievable sum of values.
 - `0 <= edges[i][0], edges[i][1] <= n - 1`
 - The input is generated such that `edges` represent a valid tree.
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maximumValueSum(int[] nums, int k, int[][] edges) {
@@ -86,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-xor-for-each-query">1940. Maximum XOR for Each Query</a></h2><h3>Medium</h3><hr><p>You are given a <strong>sorted</strong> array <code>nums</code> of <code>n</code> non-negative integers and an integer <code>maximumBit</code>. You want to perform the following query <code>n</code> <strong>times</strong>:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1940. Maximum XOR for Each Query
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-xor-for-each-query" target = "_blank">1940. Maximum XOR for Each Query</a></h2><h3>Medium</h3><hr><p>You are given a <strong>sorted</strong> array <code>nums</code> of <code>n</code> non-negative integers and an integer <code>maximumBit</code>. You want to perform the following query <code>n</code> <strong>times</strong>:</p>
 
 <ol>
 	<li>Find a non-negative integer <code>k &lt; 2<sup>maximumBit</sup></code> such that <code>nums[0] XOR nums[1] XOR ... XOR nums[nums.length-1] XOR k</code> is <strong>maximized</strong>. <code>k</code> is the answer to the <code>i<sup>th</sup></code> query.</li>
@@ -50,6 +58,10 @@
 	<li><code>nums</code>​​​ is sorted in <strong>ascending</strong> order.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] getMaximumXor(int[] nums, int k) {
@@ -72,3 +84,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

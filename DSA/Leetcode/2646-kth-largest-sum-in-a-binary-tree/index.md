@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/kth-largest-sum-in-a-binary-tree">2646. Kth Largest Sum in a Binary Tree</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree and a positive integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2646. Kth Largest Sum in a Binary Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/kth-largest-sum-in-a-binary-tree" target = "_blank">2646. Kth Largest Sum in a Binary Tree</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree and a positive integer <code>k</code>.</p>
 
 <p>The <strong>level sum</strong> in the tree is the sum of the values of the nodes that are on the <strong>same</strong> level.</p>
 
@@ -37,6 +45,10 @@ The 2<sup>nd</sup> largest level sum is 13.
 	<li><code>1 &lt;= Node.val &lt;= 10<sup>6</sup></code></li>
 	<li><code>1 &lt;= k &lt;= n</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -78,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -36,6 +36,8 @@ We could have also taken [2, 1], but an answer of [1, 3, 5] would be lexicograph
 	<li><code>1 &lt;= k &lt;= floor(nums.length / 3)</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int[] maxSumOfThreeSubarrays(int[] nums, int k) {
@@ -79,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

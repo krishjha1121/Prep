@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/letter-tile-possibilities">1160. Letter Tile Possibilities</a></h2><h3>Medium</h3><hr><p>You have <code>n</code>&nbsp;&nbsp;<code>tiles</code>, where each tile has one letter <code>tiles[i]</code> printed on it.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1160. Letter Tile Possibilities
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/letter-tile-possibilities" target = "_blank">1160. Letter Tile Possibilities</a></h2><h3>Medium</h3><hr><p>You have <code>n</code>&nbsp;&nbsp;<code>tiles</code>, where each tile has one letter <code>tiles[i]</code> printed on it.</p>
 
 <p>Return <em>the number of possible non-empty sequences of letters</em> you can make using the letters printed on those <code>tiles</code>.</p>
 
@@ -33,6 +41,10 @@
 	<li><code>tiles</code> consists of uppercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numTilePossibilities(String tiles) {
@@ -54,3 +66,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

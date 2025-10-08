@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold">1445. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>arr</code> and two integers <code>k</code> and <code>threshold</code>, return <em>the number of sub-arrays of size </em><code>k</code><em> and average greater than or equal to </em><code>threshold</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1445. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold" target = "_blank">1445. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>arr</code> and two integers <code>k</code> and <code>threshold</code>, return <em>the number of sub-arrays of size </em><code>k</code><em> and average greater than or equal to </em><code>threshold</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -27,6 +35,10 @@
 	<li><code>0 &lt;= threshold &lt;= 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numOfSubarrays(int[] arr, int k, int threshold) {
@@ -48,3 +60,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

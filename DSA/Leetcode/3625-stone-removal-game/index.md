@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/stone-removal-game">3625. Stone Removal Game</a></h2><h3>Easy</h3><hr><p>Alice and Bob are playing a game where they take turns removing stones from a pile, with <em>Alice going first</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3625. Stone Removal Game
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/stone-removal-game" target = "_blank">3625. Stone Removal Game</a></h2><h3>Easy</h3><hr><p>Alice and Bob are playing a game where they take turns removing stones from a pile, with <em>Alice going first</em>.</p>
 
 <ul>
 	<li>Alice starts by removing <strong>exactly</strong> 10 stones on her first turn.</li>
@@ -46,6 +54,10 @@
 	<li><code>1 &lt;= n &lt;= 50</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean canAliceWin(int n) {
@@ -65,3 +77,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

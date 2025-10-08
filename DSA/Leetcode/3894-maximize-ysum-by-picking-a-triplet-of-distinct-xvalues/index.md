@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximize-ysum-by-picking-a-triplet-of-distinct-xvalues">3894. Maximize Y‑Sum by Picking a Triplet of Distinct X‑Values</a></h2><h3>Medium</h3><hr><p>You are given two integer arrays <code>x</code> and <code>y</code>, each of length <code>n</code>. You must choose three <strong>distinct</strong> indices <code>i</code>, <code>j</code>, and <code>k</code> such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3894. Maximize Y‑Sum by Picking a Triplet of Distinct X‑Values
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximize-ysum-by-picking-a-triplet-of-distinct-xvalues" target = "_blank">3894. Maximize Y‑Sum by Picking a Triplet of Distinct X‑Values</a></h2><h3>Medium</h3><hr><p>You are given two integer arrays <code>x</code> and <code>y</code>, each of length <code>n</code>. You must choose three <strong>distinct</strong> indices <code>i</code>, <code>j</code>, and <code>k</code> such that:</p>
 
 <ul>
 	<li><code>x[i] != x[j]</code></li>
@@ -49,6 +57,10 @@
 	<li><code>1 &lt;= x[i], y[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxSumDistinctTriplet(int[] x, int[] y) {
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

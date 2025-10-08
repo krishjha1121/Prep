@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements">2695. Find Score of an Array After Marking All Elements</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> consisting of positive integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2695. Find Score of an Array After Marking All Elements
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements" target = "_blank">2695. Find Score of an Array After Marking All Elements</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> consisting of positive integers.</p>
 
 <p>Starting with <code>score = 0</code>, apply the following algorithm:</p>
 
@@ -44,6 +52,10 @@ Our score is 1 + 2 + 2 = 5.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -85,3 +97,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-total-number-of-colored-cells">2649. Count Total Number of Colored Cells</a></h2><h3>Medium</h3><hr><p>There exists an infinitely large two-dimensional grid of uncolored unit cells. You are given a positive integer <code>n</code>, indicating that you must do the following routine for <code>n</code> minutes:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2646. Kth Largest Sum in a Binary Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-total-number-of-colored-cells" target = "_blank">2649. Count Total Number of Colored Cells</a></h2><h3>Medium</h3><hr><p>There exists an infinitely large two-dimensional grid of uncolored unit cells. You are given a positive integer <code>n</code>, indicating that you must do the following routine for <code>n</code> minutes:</p>
 
 <ul>
 	<li>At the first minute, color <strong>any</strong> arbitrary unit cell blue.</li>
@@ -33,6 +41,10 @@
 	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long coloredCells(int n) {
@@ -45,3 +57,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

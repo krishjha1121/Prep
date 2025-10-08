@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/prefix-and-suffix-search">746. Prefix and Suffix Search</a></h2><h3>Hard</h3><hr><p>Design a special dictionary that searches the words in it by a prefix and a suffix.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 746. Prefix and Suffix Search
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/prefix-and-suffix-search" target = "_blank">746. Prefix and Suffix Search</a></h2><h3>Hard</h3><hr><p>Design a special dictionary that searches the words in it by a prefix and a suffix.</p>
 
 <p>Implement the <code>WordFilter</code> class:</p>
 
@@ -32,6 +40,8 @@ wordFilter.f(&quot;a&quot;, &quot;e&quot;); // return 0, because the word at ind
 	<li>At most <code>10<sup>4</sup></code> calls will be made to the function <code>f</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class WordFilter {
     private HashMap<String, Integer> map;
@@ -58,3 +68,15 @@ class WordFilter {
     int param_1 = obj.f(pref,suff);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

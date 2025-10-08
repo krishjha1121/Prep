@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/product-of-the-last-k-numbers">1477. Product of the Last K Numbers</a></h2><h3>Medium</h3><hr><p>Design an algorithm that accepts a stream of integers and retrieves the product of the last <code>k</code> integers of the stream.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1477. Product of the Last K Numbers
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/product-of-the-last-k-numbers" target = "_blank">1477. Product of the Last K Numbers</a></h2><h3>Medium</h3><hr><p>Design an algorithm that accepts a stream of integers and retrieves the product of the last <code>k</code> integers of the stream.</p>
 
 <p>Implement the <code>ProductOfNumbers</code> class:</p>
 
@@ -48,6 +56,10 @@ productOfNumbers.getProduct(2); // return 32. The product of the last 2 numbers 
 <p>&nbsp;</p>
 <strong>Follow-up: </strong>Can you implement <strong>both</strong> <code>GetProduct</code> and <code>Add</code> to work in <code>O(1)</code> time complexity instead of <code>O(k)</code> time complexity?
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class ProductOfNumbers {
     static ArrayList<Integer> res;
@@ -67,7 +79,6 @@ class ProductOfNumbers {
         return sum;
     }
 }
-
 /**
     Your ProductOfNumbers object will be instantiated and called as such:
     ProductOfNumbers obj = new ProductOfNumbers();
@@ -76,3 +87,14 @@ class ProductOfNumbers {
 */
 ```
 
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

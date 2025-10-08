@@ -43,6 +43,12 @@ Window position                Max
 	<li><code>1 &lt;= k &lt;= nums.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
@@ -69,3 +75,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

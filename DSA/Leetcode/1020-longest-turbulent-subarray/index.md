@@ -2,7 +2,7 @@
 
 <a href = "https://leetcode.com/problems/longest-turbulent-subarray/description/" target = "_blank">
 
-## 1020. Longest Turbulent Subarray
+## ⌨ 020. Longest Turbulent Subarray
 
 </a>
 
@@ -50,6 +50,8 @@ More formally, a subarray `[arr[i], arr[i + 1], ..., arr[j]]` of `arr` is said t
 - `1 <= arr.length <= 4 * 10^4`
 - `0 <= arr[i] <= 10^9`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int maxTurbulenceSize(int[] arr) {
@@ -84,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

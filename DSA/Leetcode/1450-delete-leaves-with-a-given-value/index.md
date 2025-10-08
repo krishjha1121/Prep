@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/delete-leaves-with-a-given-value">1450. Delete Leaves With a Given Value</a></h2><h3>Medium</h3><hr><p>Given a binary tree <code>root</code> and an integer <code>target</code>, delete all the <strong>leaf nodes</strong> with value <code>target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1450. Delete Leaves With a Given Value
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/delete-leaves-with-a-given-value" target = "_blank">1450. Delete Leaves With a Given Value</a></h2><h3>Medium</h3><hr><p>Given a binary tree <code>root</code> and an integer <code>target</code>, delete all the <strong>leaf nodes</strong> with value <code>target</code>.</p>
 
 <p>Note that once you delete a leaf node with value <code>target</code><strong>, </strong>if its parent node becomes a leaf node and has the value <code>target</code>, it should also be deleted (you need to continue doing that until you cannot).</p>
 
@@ -41,6 +49,10 @@ After removing, new nodes become leaf nodes with value (target = 2) (Picture in 
 	<li><code>1 &lt;= Node.val, target &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 /**
     Definition for a binary tree node.
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

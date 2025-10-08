@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet">3181. Find Building Where Alice and Bob Can Meet</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>heights</code> of positive integers, where <code>heights[i]</code> represents the height of the <code>i<sup>th</sup></code> building.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3181. Find Building Where Alice and Bob Can Meet
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet" target = "_blank">3181. Find Building Where Alice and Bob Can Meet</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> array <code>heights</code> of positive integers, where <code>heights[i]</code> represents the height of the <code>i<sup>th</sup></code> building.</p>
 
 <p>If a person is in building <code>i</code>, they can move to any other building <code>j</code> if and only if <code>i &lt; j</code> and <code>heights[i] &lt; heights[j]</code>.</p>
 
@@ -46,6 +54,10 @@ For ans[i] == -1, It can be shown that there is no building where Alice and Bob 
 	<li><code>queries[i] = [a<sub>i</sub>, b<sub>i</sub>]</code></li>
 	<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt;= heights.length - 1</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -95,3 +107,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

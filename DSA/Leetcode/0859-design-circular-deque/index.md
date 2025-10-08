@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-circular-deque">859. Design Circular Deque</a></h2><h3>Medium</h3><hr><p>Design your implementation of the circular double-ended queue (deque).</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 859. Design Circular Deque
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-circular-deque" target = "_blank">859. Design Circular Deque</a></h2><h3>Medium</h3><hr><p>Design your implementation of the circular double-ended queue (deque).</p>
 
 <p>Implement the <code>MyCircularDeque</code> class:</p>
 
@@ -45,6 +53,8 @@ myCircularDeque.getFront();     // return 4
 	<li><code>0 &lt;= value &lt;= 1000</code></li>
 	<li>At most <code>2000</code> calls will be made to <code>insertFront</code>, <code>insertLast</code>, <code>deleteFront</code>, <code>deleteLast</code>, <code>getFront</code>, <code>getRear</code>, <code>isEmpty</code>, <code>isFull</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
 
 ```java
 class MyCircularDeque {
@@ -108,3 +118,15 @@ class MyCircularDeque {
     boolean param_8 = obj.isFull();
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

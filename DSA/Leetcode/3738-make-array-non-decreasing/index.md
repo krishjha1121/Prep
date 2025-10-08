@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/make-array-non-decreasing">3738. Make Array Non-decreasing</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>. In one operation, you can select a <span data-keyword="subarray-nonempty">subarray</span> and replace it with a single element equal to its <strong>maximum</strong> value.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3738. Make Array Non-decreasing
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/make-array-non-decreasing" target = "_blank">3738. Make Array Non-decreasing</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>. In one operation, you can select a <span data-keyword="subarray-nonempty">subarray</span> and replace it with a single element equal to its <strong>maximum</strong> value.</p>
 
 <p>Return the <strong>maximum possible size</strong> of the array after performing zero or more operations such that the resulting array is <strong>non-decreasing</strong>.</p>
 
@@ -42,6 +50,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 2 * 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maximumPossibleSize(int[] nums) {
@@ -73,3 +85,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

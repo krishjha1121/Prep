@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i">2640. Maximum Number of Integers to Choose From a Range I</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>banned</code> and two integers <code>n</code> and <code>maxSum</code>. You are choosing some number of integers following the below rules:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2640. Maximum Number of Integers to Choose From a Range I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i" target = "_blank">2640. Maximum Number of Integers to Choose From a Range I</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>banned</code> and two integers <code>n</code> and <code>maxSum</code>. You are choosing some number of integers following the below rules:</p>
 
 <ul>
 	<li>The chosen integers have to be in the range <code>[1, n]</code>.</li>
@@ -44,6 +52,9 @@ They are from the range [1, 7], all did not appear in banned, and their sum is 2
 	<li><code>1 &lt;= banned[i], n &lt;= 10<sup>4</sup></code></li>
 	<li><code>1 &lt;= maxSum &lt;= 10<sup>9</sup></code></li>
 </ul>
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -63,3 +74,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

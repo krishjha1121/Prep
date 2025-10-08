@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/calculate-score-after-performing-instructions">3732. Calculate Score After Performing Instructions</a></h2><h3>Medium</h3><hr><p>You are given two arrays, <code>instructions</code> and <code>values</code>, both of size <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3732. Calculate Score After Performing Instructions
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/calculate-score-after-performing-instructions" target = "_blank">3732. Calculate Score After Performing Instructions</a></h2><h3>Medium</h3><hr><p>You are given two arrays, <code>instructions</code> and <code>values</code>, both of size <code>n</code>.</p>
 
 <p>You need to simulate a process based on the following rules:</p>
 
@@ -92,6 +100,10 @@
 	<li><code>-10<sup>5</sup> &lt;= values[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long calculateScore(String[] instructions, int[] values) {
@@ -113,3 +125,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

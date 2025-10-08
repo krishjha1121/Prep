@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-absolute-difference-between-elements-with-constraint">3000. Minimum Absolute Difference Between Elements With Constraint</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>x</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3000. Minimum Absolute Difference Between Elements With Constraint
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-absolute-difference-between-elements-with-constraint" target = "_blank">3000. Minimum Absolute Difference Between Elements With Constraint</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>x</code>.</p>
 
 <p>Find the <strong>minimum absolute difference</strong> between two elements in the array that are at least <code>x</code> indices apart.</p>
 
@@ -46,6 +54,10 @@ It can be shown that 3 is the optimal answer.
 	<li><code>0 &lt;= x &lt; nums.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -82,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>
