@@ -12,7 +12,7 @@ Leetcode Solutions
 
 # LeetCode Topics
 
-## Tree
+## 🌳 Tree
 
 |                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -46,7 +46,7 @@ Leetcode Solutions
 | [3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii](./3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii) |
 | [3853-minimum-weighted-subgraph-with-the-required-paths-ii](./3853-minimum-weighted-subgraph-with-the-required-paths-ii)                   |
 
-## Depth-First Search
+## 🛠️ Depth-First Search
 
 |                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -88,7 +88,7 @@ Leetcode Solutions
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)                                                                 |
 | [3853-minimum-weighted-subgraph-with-the-required-paths-ii](./3853-minimum-weighted-subgraph-with-the-required-paths-ii)                   |
 
-## Binary Tree
+## 🌲 Binary Tree
 
 |                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -112,7 +112,7 @@ Leetcode Solutions
 | [2646-kth-largest-sum-in-a-binary-tree](./2646-kth-largest-sum-in-a-binary-tree)                                                       |
 | [2677-cousins-in-binary-tree-ii](./2677-cousins-in-binary-tree-ii)                                                                     |
 
-## Array
+## 🎞️ Array
 
 |                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -385,7 +385,7 @@ Leetcode Solutions
 | [3837-grid-teleportation-traversal](./3837-grid-teleportation-traversal)                                                                                                   |
 | [3853-minimum-weighted-subgraph-with-the-required-paths-ii](./3853-minimum-weighted-subgraph-with-the-required-paths-ii)                                                   |
 
-## Breadth-First Search
+## 🔍 Breadth-First Search
 
 |                                                                                                                                                |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -426,7 +426,7 @@ Leetcode Solutions
 | [3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii](./3645-maximize-the-number-of-target-nodes-after-connecting-trees-ii)     |
 | [3837-grid-teleportation-traversal](./3837-grid-teleportation-traversal)                                                                       |
 
-## Math
+## ➗ Math
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -480,7 +480,7 @@ Leetcode Solutions
 | [3754-maximum-manhattan-distance-after-k-changes](./3754-maximum-manhattan-distance-after-k-changes)                                     |
 | [3817-maximum-containers-on-a-ship](./3817-maximum-containers-on-a-ship)                                                                 |
 
-## String
+## 🔤 String
 
 |                                                                                                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -591,7 +591,7 @@ Leetcode Solutions
 | [3753-maximum-difference-between-even-and-odd-frequency-i](./3753-maximum-difference-between-even-and-odd-frequency-i)                                         |
 | [3754-maximum-manhattan-distance-after-k-changes](./3754-maximum-manhattan-distance-after-k-changes)                                                           |
 
-## Sorting
+## 🔀 Sorting
 
 |                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -660,7 +660,7 @@ Leetcode Solutions
 | [3657-check-if-grid-can-be-cut-into-sections](./3657-check-if-grid-can-be-cut-into-sections)                                           |
 | [3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences](./3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences)         |
 
-## Design
+## 🏗️ Design
 
 |                                                                                                        |
 | ------------------------------------------------------------------------------------------------------ |
@@ -696,7 +696,7 @@ Leetcode Solutions
 | [2434-design-a-number-container-system](./2434-design-a-number-container-system)                       |
 | [2512-longest-uploaded-prefix](./2512-longest-uploaded-prefix)                                         |
 
-## Binary Search Tree
+## 🎋 Binary Search Tree
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -748,7 +748,7 @@ Leetcode Solutions
 | [3427-special-array-ii](./3427-special-array-ii)                                                                                         |
 | [3466-number-of-subarrays-with-and-value-of-k](./3466-number-of-subarrays-with-and-value-of-k)                                           |
 
-## Hash Table
+## 🏓 Hash Table
 
 |                                                                                                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -859,7 +859,7 @@ Leetcode Solutions
 | [3754-maximum-manhattan-distance-after-k-changes](./3754-maximum-manhattan-distance-after-k-changes)                                                           |
 | [3837-grid-teleportation-traversal](./3837-grid-teleportation-traversal)                                                                                       |
 
-## Trie
+## 🎄 Trie
 
 |                                                                                                          |
 | -------------------------------------------------------------------------------------------------------- |
@@ -871,7 +871,7 @@ Leetcode Solutions
 | [2755-extra-characters-in-a-string](./2755-extra-characters-in-a-string)                                 |
 | [3329-find-the-length-of-the-longest-common-prefix](./3329-find-the-length-of-the-longest-common-prefix) |
 
-## Linked List
+## 🔗 Linked List
 
 |                                                                                                          |
 | -------------------------------------------------------------------------------------------------------- |
@@ -891,7 +891,7 @@ Leetcode Solutions
 | [2573-remove-nodes-from-linked-list](./2573-remove-nodes-from-linked-list)                               |
 | [2871-double-a-number-represented-as-a-linked-list](./2871-double-a-number-represented-as-a-linked-list) |
 
-## Queue
+## 📝 Queue
 
 |                                                                                                                                                |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -908,7 +908,7 @@ Leetcode Solutions
 | [2868-continuous-subarrays](./2868-continuous-subarrays)                                                                                       |
 | [3475-minimum-operations-to-make-binary-array-elements-equal-to-one-i](./3475-minimum-operations-to-make-binary-array-elements-equal-to-one-i) |
 
-## Counting
+## 🔄 Counting
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -943,7 +943,7 @@ Leetcode Solutions
 | [3753-maximum-difference-between-even-and-odd-frequency-i](./3753-maximum-difference-between-even-and-odd-frequency-i)                   |
 | [3754-maximum-manhattan-distance-after-k-changes](./3754-maximum-manhattan-distance-after-k-changes)                                     |
 
-## Dynamic Programming
+## 🉐 Dynamic Programming
 
 |                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1009,7 +1009,7 @@ Leetcode Solutions
 | [3677-maximum-amount-of-money-robot-can-earn](./3677-maximum-amount-of-money-robot-can-earn)                                           |
 | [3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences](./3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences)         |
 
-## Stack
+## 🥁 Stack
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1045,7 +1045,7 @@ Leetcode Solutions
 | [3445-lexicographically-minimum-string-after-removing-stars](./3445-lexicographically-minimum-string-after-removing-stars)               |
 | [3447-clear-digits](./3447-clear-digits)                                                                                                 |
 
-## Matrix
+## 🔺 Matrix
 
 |                                                                                                                                                |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1085,7 +1085,7 @@ Leetcode Solutions
 | [3677-maximum-amount-of-money-robot-can-earn](./3677-maximum-amount-of-money-robot-can-earn)                                                   |
 | [3837-grid-teleportation-traversal](./3837-grid-teleportation-traversal)                                                                       |
 
-## Monotonic Stack
+## 🥢 Monotonic Stack
 
 |                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------ |
@@ -1104,7 +1104,7 @@ Leetcode Solutions
 | [2839-maximum-sum-queries](./2839-maximum-sum-queries)                                                                   |
 | [3181-find-building-where-alice-and-bob-can-meet](./3181-find-building-where-alice-and-bob-can-meet)                     |
 
-## Simulation
+## 🕵️‍♂️ Simulation
 
 |                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------- |
@@ -1132,7 +1132,7 @@ Leetcode Solutions
 | [3600-find-the-k-th-character-in-string-game-i](./3600-find-the-k-th-character-in-string-game-i)                           |
 | [3651-transformed-array](./3651-transformed-array)                                                                         |
 
-## Doubly-Linked List
+## 🔗 Doubly-Linked List
 
 |                                                                            |
 | -------------------------------------------------------------------------- |
@@ -1140,7 +1140,7 @@ Leetcode Solutions
 | [1905-design-authentication-manager](./1905-design-authentication-manager) |
 | [2389-design-a-text-editor](./2389-design-a-text-editor)                   |
 
-## Sliding Window
+## 🪟 Sliding Window
 
 |                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1186,7 +1186,7 @@ Leetcode Solutions
 | [3592-find-x-sum-of-all-k-long-subarrays-ii](./3592-find-x-sum-of-all-k-long-subarrays-ii)                                                                                 |
 | [3743-reschedule-meetings-for-maximum-free-time-i](./3743-reschedule-meetings-for-maximum-free-time-i)                                                                     |
 
-## Iterator
+## 👈 Iterator
 
 |                                                                        |
 | ---------------------------------------------------------------------- |
@@ -1194,7 +1194,7 @@ Leetcode Solutions
 | [0284-peeking-iterator](./0284-peeking-iterator)                       |
 | [0936-rle-iterator](./0936-rle-iterator)                               |
 
-## Greedy
+## 💪 Greedy
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1256,7 +1256,7 @@ Leetcode Solutions
 | [3741-reschedule-meetings-for-maximum-free-time-ii](./3741-reschedule-meetings-for-maximum-free-time-ii)                                 |
 | [3743-reschedule-meetings-for-maximum-free-time-i](./3743-reschedule-meetings-for-maximum-free-time-i)                                   |
 
-## Data Stream
+## 🔯 Data Stream
 
 |                                                                              |
 | ---------------------------------------------------------------------------- |
@@ -1267,7 +1267,7 @@ Leetcode Solutions
 | [1953-finding-mk-average](./1953-finding-mk-average)                         |
 | [2161-stock-price-fluctuation](./2161-stock-price-fluctuation)               |
 
-## Recursion
+## ➿ Recursion
 
 |                                                                                                    |
 | -------------------------------------------------------------------------------------------------- |
@@ -1283,7 +1283,7 @@ Leetcode Solutions
 | [3600-find-the-k-th-character-in-string-game-i](./3600-find-the-k-th-character-in-string-game-i)   |
 | [3601-find-the-k-th-character-in-string-game-ii](./3601-find-the-k-th-character-in-string-game-ii) |
 
-## Memoization
+## 👨‍🎨 Memoization
 
 |                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------- |
@@ -1294,14 +1294,14 @@ Leetcode Solutions
 | [2395-longest-binary-subsequence-less-than-or-equal-to-k](./2395-longest-binary-subsequence-less-than-or-equal-to-k) |
 | [3239-minimum-number-of-operations-to-make-x-and-y-equal](./3239-minimum-number-of-operations-to-make-x-and-y-equal) |
 
-## Rolling Hash
+## 🧻 Rolling Hash
 
 |                                                                                          |
 | ---------------------------------------------------------------------------------------- |
 | [0214-shortest-palindrome](./0214-shortest-palindrome)                                   |
 | [2275-find-substring-with-given-hash-value](./2275-find-substring-with-given-hash-value) |
 
-## String Matching
+## 🧉 String Matching
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1312,14 +1312,14 @@ Leetcode Solutions
 | [1874-form-array-by-concatenating-subarrays-of-another-array](./1874-form-array-by-concatenating-subarrays-of-another-array)             |
 | [2292-counting-words-with-a-given-prefix](./2292-counting-words-with-a-given-prefix)                                                     |
 
-## Hash Function
+## 🪪 Hash Function
 
 |                                                                                          |
 | ---------------------------------------------------------------------------------------- |
 | [0214-shortest-palindrome](./0214-shortest-palindrome)                                   |
 | [2275-find-substring-with-given-hash-value](./2275-find-substring-with-given-hash-value) |
 
-## Two Pointers
+## 🫰 Two Pointers
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1356,7 +1356,7 @@ Leetcode Solutions
 | [3195-separate-black-and-white-balls](./3195-separate-black-and-white-balls)                                                             |
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](./3683-find-the-lexicographically-largest-string-from-the-box-i)         |
 
-## Segment Tree
+## 👺 Segment Tree
 
 |                                                                                                      |
 | ---------------------------------------------------------------------------------------------------- |
@@ -1373,7 +1373,7 @@ Leetcode Solutions
 | [3181-find-building-where-alice-and-bob-can-meet](./3181-find-building-where-alice-and-bob-can-meet) |
 | [3466-number-of-subarrays-with-and-value-of-k](./3466-number-of-subarrays-with-and-value-of-k)       |
 
-## Ordered Set
+## 🤍 Ordered Set
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1392,7 +1392,7 @@ Leetcode Solutions
 | [2868-continuous-subarrays](./2868-continuous-subarrays)                                                                                 |
 | [3000-minimum-absolute-difference-between-elements-with-constraint](./3000-minimum-absolute-difference-between-elements-with-constraint) |
 
-## Backtracking
+## 🔙 Backtracking
 
 |                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1414,7 +1414,7 @@ Leetcode Solutions
 | [2456-construct-smallest-number-from-di-string](./2456-construct-smallest-number-from-di-string)                                                 |
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)                                                                       |
 
-## Prefix Sum
+## 🌗 Prefix Sum
 
 |                                                                                                                                                |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1449,7 +1449,7 @@ Leetcode Solutions
 | [3639-zero-array-transformation-i](./3639-zero-array-transformation-i)                                                                         |
 | [3653-maximum-subarray-sum-with-length-divisible-by-k](./3653-maximum-subarray-sum-with-length-divisible-by-k)                                 |
 
-## Divide and Conquer
+## 💠 Divide and Conquer
 
 |                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1461,7 +1461,7 @@ Leetcode Solutions
 | [1772-create-sorted-array-through-instructions](./1772-create-sorted-array-through-instructions)                                       |
 | [2513-number-of-pairs-satisfying-inequality](./2513-number-of-pairs-satisfying-inequality)                                             |
 
-## Heap (Priority Queue)
+## 💗 Heap (Priority Queue)
 
 |                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -1505,7 +1505,7 @@ Leetcode Solutions
 | [3627-find-minimum-time-to-reach-last-room-i](./3627-find-minimum-time-to-reach-last-room-i)                                 |
 | [3628-find-minimum-time-to-reach-last-room-ii](./3628-find-minimum-time-to-reach-last-room-ii)                               |
 
-## Union Find
+## 🙌 Union Find
 
 |                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1524,7 +1524,7 @@ Leetcode Solutions
 | [3219-make-lexicographically-smallest-array-by-swapping-elements](./3219-make-lexicographically-smallest-array-by-swapping-elements) |
 | [3348-minimum-cost-walk-in-weighted-graph](./3348-minimum-cost-walk-in-weighted-graph)                                               |
 
-## Binary Indexed Tree
+## 🌴 Binary Indexed Tree
 
 |                                                                                                      |
 | ---------------------------------------------------------------------------------------------------- |
@@ -1537,20 +1537,20 @@ Leetcode Solutions
 | [2839-maximum-sum-queries](./2839-maximum-sum-queries)                                               |
 | [3181-find-building-where-alice-and-bob-can-meet](./3181-find-building-where-alice-and-bob-can-meet) |
 
-## Geometry
+## 🤒 Geometry
 
 |                                              |
 | -------------------------------------------- |
 | [0223-rectangle-area](./0223-rectangle-area) |
 
-## Randomized
+## ☔ Randomized
 
 |                                                                |
 | -------------------------------------------------------------- |
 | [0384-shuffle-an-array](./0384-shuffle-an-array)               |
 | [0912-random-pick-with-weight](./0912-random-pick-with-weight) |
 
-## Bit Manipulation
+## 🖥️ Bit Manipulation
 
 |                                                                                                                                                |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1582,7 +1582,7 @@ Leetcode Solutions
 | [3601-find-the-k-th-character-in-string-game-ii](./3601-find-the-k-th-character-in-string-game-ii)                                             |
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)                                                                     |
 
-## Enumeration
+## 🖱️ Enumeration
 
 |                                                                                                                                  |
 | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -1598,7 +1598,7 @@ Leetcode Solutions
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](./3683-find-the-lexicographically-largest-string-from-the-box-i) |
 | [3741-reschedule-meetings-for-maximum-free-time-ii](./3741-reschedule-meetings-for-maximum-free-time-ii)                         |
 
-## Monotonic Queue
+## 🔳 Monotonic Queue
 
 |                                                                                              |
 | -------------------------------------------------------------------------------------------- |
@@ -1609,7 +1609,7 @@ Leetcode Solutions
 | [2527-count-subarrays-with-fixed-bounds](./2527-count-subarrays-with-fixed-bounds)           |
 | [2868-continuous-subarrays](./2868-continuous-subarrays)                                     |
 
-## Graph
+## 🗺️ Graph
 
 |                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -1638,7 +1638,7 @@ Leetcode Solutions
 | [3627-find-minimum-time-to-reach-last-room-i](./3627-find-minimum-time-to-reach-last-room-i)                                 |
 | [3628-find-minimum-time-to-reach-last-room-ii](./3628-find-minimum-time-to-reach-last-room-ii)                               |
 
-## Topological Sort
+## 🏅 Topological Sort
 
 |                                                                                                            |
 | ---------------------------------------------------------------------------------------------------------- |
@@ -1648,7 +1648,7 @@ Leetcode Solutions
 | [2220-find-all-possible-recipes-from-given-supplies](./2220-find-all-possible-recipes-from-given-supplies) |
 | [2246-maximum-employees-to-be-invited-to-a-meeting](./2246-maximum-employees-to-be-invited-to-a-meeting)   |
 
-## Shortest Path
+## 🚩 Shortest Path
 
 |                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -1661,7 +1661,7 @@ Leetcode Solutions
 | [3627-find-minimum-time-to-reach-last-room-i](./3627-find-minimum-time-to-reach-last-room-i)                                 |
 | [3628-find-minimum-time-to-reach-last-room-ii](./3628-find-minimum-time-to-reach-last-room-ii)                               |
 
-## Number Theory
+## 💯 Number Theory
 
 |                                                                                                |
 | ---------------------------------------------------------------------------------------------- |
@@ -1670,7 +1670,7 @@ Leetcode Solutions
 | [2610-closest-prime-numbers-in-range](./2610-closest-prime-numbers-in-range)                   |
 | [2716-prime-subtraction-operation](./2716-prime-subtraction-operation)                         |
 
-## Bitmask
+## 🙁 Bitmask
 
 |                                                                                  |
 | -------------------------------------------------------------------------------- |
@@ -1679,7 +1679,7 @@ Leetcode Solutions
 | [2848-special-permutations](./2848-special-permutations)                         |
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)       |
 
-## Merge Sort
+## 🥹 Merge Sort
 
 |                                                                                                  |
 | ------------------------------------------------------------------------------------------------ |
@@ -1687,7 +1687,7 @@ Leetcode Solutions
 | [1772-create-sorted-array-through-instructions](./1772-create-sorted-array-through-instructions) |
 | [2513-number-of-pairs-satisfying-inequality](./2513-number-of-pairs-satisfying-inequality)       |
 
-## Database
+## 🗄️ Database
 
 |                                                                                        |
 | -------------------------------------------------------------------------------------- |
@@ -1696,31 +1696,31 @@ Leetcode Solutions
 | [1801-average-time-of-process-per-machine](./1801-average-time-of-process-per-machine) |
 | [1811-fix-names-in-a-table](./1811-fix-names-in-a-table)                               |
 
-## Eulerian Circuit
+## 🎪 Eulerian Circuit
 
 |                                                                      |
 | -------------------------------------------------------------------- |
 | [2201-valid-arrangement-of-pairs](./2201-valid-arrangement-of-pairs) |
 
-## Line Sweep
+## 🫥 Line Sweep
 
 |                                                        |
 | ------------------------------------------------------ |
 | [0218-the-skyline-problem](./0218-the-skyline-problem) |
 
-## Quickselect
+## 🕵️‍♀️ Quickselect
 
 |                                              |
 | -------------------------------------------- |
 | [0324-wiggle-sort-ii](./0324-wiggle-sort-ii) |
 
-## Brainteaser
+## 😛 Brainteaser
 
 |                                                                        |
 | ---------------------------------------------------------------------- |
 | [2533-bitwise-xor-of-all-pairings](./2533-bitwise-xor-of-all-pairings) |
 
-## Combinatorics
+## 🕎 Combinatorics
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
