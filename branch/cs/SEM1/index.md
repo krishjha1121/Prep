@@ -3,8 +3,8 @@
 # 📘 SEM 1 Resources Hub
 
 <div align="center" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-  <img src="https://img.shields.io/badge/📚_Subjects-6-blue?style=for-the-badge&logo=bookstack" alt="Subjects Badge" />
-  <img src="https://img.shields.io/badge/🧪_Labs-4-green?style=for-the-badge&logo=flask" alt="Labs Badge" />
+  <img src="https://img.shields.io/badge/📚_Subjects-5-blue?style=for-the-badge&logo=bookstack" alt="Subjects Badge" />
+  <img src="https://img.shields.io/badge/🧪_Labs-3-green?style=for-the-badge&logo=flask" alt="Labs Badge" />
   <img src="https://img.shields.io/badge/📝_PYQs-Mid%2FEnd-orange?style=for-the-badge&logo=googledocs" alt="PYQs Badge" />
 </div>
 

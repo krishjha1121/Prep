@@ -1,108 +1,129 @@
-# 📘 SEM2 — Subjects · Labs · PYQs
+<div align="center">
 
-> A neat, quick-access hub for SEM2 resources — subjects, lab lists and previous year questions.
+# 📘 SEM 2 Resources Hub
 
-<p align="center">
-  <img alt="badge-subjects" src="https://img.shields.io/badge/Subjects-5-blue?style=for-the-badge" />
-  <img alt="badge-labs" src="https://img.shields.io/badge/Labs-3-green?style=for-the-badge" />
-  <img alt="badge-pyqs" src="https://img.shields.io/badge/PYQs-Mid%2FEnd-orange?style=for-the-badge" />
-</p>
+<div align="center" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+  <img src="https://img.shields.io/badge/📚_Subjects-5-blue?style=for-the-badge&logo=bookstack" alt="Subjects Badge" />
+  <img src="https://img.shields.io/badge/🧪_Labs-3-green?style=for-the-badge&logo=flask" alt="Labs Badge" />
+  <img src="https://img.shields.io/badge/📝_PYQs-Mid%2FEnd-orange?style=for-the-badge&logo=googledocs" alt="PYQs Badge" />
+</div>
+
+</div>
+
+<div align="center">
+
+## 🧭 Quick Navigation
+
+</div>
+
+<div align = "center">
+
+<table align = "center">
+<tr>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/📚-SUBJECTS-6366F1?style=flat-square&labelColor=312E81" alt="Subjects"/><br/>
+<sub>Core & elective courses</sub><br/>
+<a href="#📚-subjects"><b>Explore →</b></a>
+</td>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/🧪-LABS-10B981?style=flat-square&labelColor=065F46" alt="Labs"/><br/>
+<sub>Practical sessions</sub><br/>
+<a href="#🧪-labs"><b>Explore →</b></a>
+</td>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/📖-PYQS-F59E0B?style=flat-square&labelColor=92400E" alt="PYQs"/><br/>
+<sub>Previous year papers</sub><br/>
+<a href="#📖-pyqs"><b>Explore →</b></a>
+</td>
+</tr>
+</table>
+</div>
 
 ---
 
-## Quick nav
+<div align="center">
 
-| Subjects | Labs | PYQs |
-|---:|:---:|:---:|
-| 🔖 [Subjects](#subjects) — core SEM2 list | 🧪 [Labs](#labs) — sessions & focus | 📚 [PYQs](#pyqs-previous-year-questions) — Midsem / Endsem |
+## 📚 Subjects
 
----
+_Core SEM1 curriculum — Click to explore_
 
-## Subjects
-<a name="subjects"></a>
-<details>
-<summary><strong>Click to expand Subjects</strong> — SEM2 subjects</summary>
+</div>
 
-Here are the SEM2 subjects (click a subject to open its folder README):
+<details open>
+<summary><b>🔽 View All Subjects</b></summary>
 
-- � [�📁 EE101: Basic Electrical Engineering](./EE101/README.md)
-- � [�📁 HS101: Communicative English](./HS101/README.md)
-- 🔗 [📁 MA102: Mathematics II](./MA102/README.md)
-- 🔗 [📁 ME101: Engineering Mechanics](./ME101/README.md)
-- 🔗 [📁 PH101: Physics](./PH101/README.md)
+<div align="center">
 
-**Quick tips**
+|  Code   | Subject                          |      Resources      |
+| :-----: | :------------------------------- | :-----------------: |
+| `EE101` | **Basic Electrical Engineering** | [📂 Open](./EE101/) |
+| `HS101` | **Communicative English**        | [📂 Open](./HS101/) |
+| `MA102` | **Mathematics 2**                | [📂 Open](./MA102/) |
+| `ME101` | **Engineering Mechanics**        | [📂 Open](./ME101/) |
+| `PH101` | **Physics**                      | [📂 Open](./PH101/) |
 
-- Add lecture notes and solved examples inside `branch/cs/SEM2/<Subject>/`.
-- Keep PYQs under `PYQs/<Subject>/` for consistent linking.
+</div>
 
 </details>
 
 ---
 
-## Labs
-<a name="labs"></a>
-<details>
-<summary><strong>Click to expand Labs</strong> — lab folders for SEM2</summary>
+<div align="center">
 
-The SEM2 labs (as shown in your attachment):
+## 🧪 Labs
 
-- 📁 CE101: Engineering Graphics & Design
-- 📁 EE121: Basic Electrical Engineering Laboratory
-- 📁 PH111: Physics Laboratory
+_Hands-on practical sessions_
 
-**Notes**
+</div>
 
-- If these folders don't exist yet in the repo, I can create them and add a placeholder README in each (recommended).
-- To link lab manuals or experiment PDFs here, place files under `branch/cs/SEM2/labs/<LabFolder>/` and I'll add direct links.
+<details open>
+<summary><b>🔽 View All Labs</b></summary>
 
-</details>
+<div align="center">
 
----
+| Lab Code | Laboratory                           |      Resources      |
+| :------: | :----------------------------------- | :-----------------: |
+| `CE101`  | **Engineering Graphics & Design**    | [📂 Open](./CE101/) |
+| `EE121`  | **Basic Electrical Engineering Lab** | [📂 Open](./EE121/) |
+| `PH111`  | **Physics Lab**                      | [📂 Open](./PH111/) |
 
-## PYQs (Previous Year Questions)
-<a name="pyqs-previous-year-questions"></a>
-<details>
-<summary><strong>Click to expand PYQs</strong> — organized Midsem & Endsem</summary>
-
-Organize PYQs by subject under `PYQs/<Subject>/` with filenames like `Subject_Mid_YYYY.pdf` or `Subject_End_YYYY.pdf`.
-
-<details>
-<summary><em>Midsem</em></summary>
-
-- Example: `PYQs/EE101/EE101_Mid_2024.pdf`
-- Example: `PYQs/MA102/MA102_Mid_2023.pdf`
-
-</details>
-
-<details>
-<summary><em>Endsem</em></summary>
-
-- Example: `PYQs/EE101/EE101_End_2024.pdf`
-- Example: `PYQs/PH101/PH101_End_2023.pdf`
-
-</details>
-
-**Add links** — when you add PDFs to the repository I can insert direct links here.
+</div>
 
 </details>
 
 ---
 
-## Resources & Checklist
+<div align="center">
 
-- [ ] Add real PYQ PDFs under `PYQs/` (one folder per subject)
-- [ ] Add lab manuals / sample code under `branch/cs/SEM2/` (e.g., `labs/`, `code/`)
-- [ ] Add short README files inside each subject folder explaining naming conventions
+## 📖 PYQs
 
----
+_Previous Year Questions — Your exam prep toolkit_
 
-## How to contribute
+</div>
 
-- To add a PYQ: create `PYQs/<Subject>/` and name files like `Subject_Mid_YYYY.pdf`.
-- To link a PDF here, paste a relative link (e.g., `[EE101 Mid 2024](./PYQs/EE101/EE101_Mid_2024.pdf)`).
-- If you want me to create the lab folders and placeholders now, say "create lab folders" and I'll add them.
+<details open>
+<summary><b>🔽 About PYQs</b></summary>
 
----
+### 📍 Where to find PYQs?
 
-*Want a different style (visual cards, subject pages with images, or autogenerated index pages)? Tell me which and I’ll implement it.*
+PYQs have been distributed to individual **subject** for better organization. Each subject maintains its own collection of:
+
+<div align="center">
+
+📝 **Midsem Papers** • 📝 **Endsem Papers** • 📝 **Minor Exams**
+
+</div>
+
+### 🎯 Quick Access
+
+Navigate to any subject using the [📚 Subjects section ↑](#📚-subjects) to access its dedicated PYQ collection.
+
+</details>
+
+<div align="center">
+
+### ⭐ Star [this](https://github.com/raj8664/Prep) repo if you found it helpful!
+
+![GitHub Stars](https://img.shields.io/github/stars/raj8664/Prep?style=social)
+
+</div>

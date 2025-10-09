@@ -12,6 +12,9 @@ hero:
         - theme: alt
           text: View on GitHub
           link: https://github.com/raj8664/Prep
+        - theme: alt
+          text: Online Compiler
+          link: https://prep-compiler.vercel.app/
 
 features:
     - icon: 🎯
