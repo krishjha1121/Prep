@@ -3,7 +3,7 @@ layout: home
 hero:
     name: 'BTech Civil Syllabus NIT SILCHAR'
     text: 'Complete Civil Engineering Syllabus'
-    tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
+    tagline: Building the world one beam at a time — while battling soil, structures, and stress.
 
 features:
     - icon: 🎯

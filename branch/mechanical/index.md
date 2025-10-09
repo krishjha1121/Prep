@@ -3,7 +3,7 @@ layout: home
 hero:
     name: 'BTech Mechanical Engineering Syllabus NIT SILCHAR'
     text: 'Complete Mechanical Engineering Syllabus'
-    tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
+    tagline: Moving parts, moving deadlines, and a love story with machines.
 
 features:
     - icon: 🎯

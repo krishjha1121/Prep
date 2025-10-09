@@ -3,46 +3,46 @@ layout: home
 hero:
     name: 'BTech CS Syllabus NIT SILCHAR'
     text: 'Complete CS Syllabus'
-    tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
+    tagline: Where “Hello World” begins and debugging never ends. From logic gates to leetcode, the saga of sleepless nights.
 
 features:
     - icon: 🎯
       title: SEM 1
-      details: Comprehensive DSA problems from LeetCode with solutions in Java and C++. Organized by topics and difficulty.
+      details: The semester where every CS student questions life choices.
       link: /branch/cs/SEM1/
 
     - icon: 🏗️
       title: SEM 2
-      details: SOLID principles, design patterns, and real-world case studies with complete implementations.
+      details: The vibe’s a bit off — not hitting that stylish note yet.
       link: /branch/cs/SEM2/
 
     - icon: 💻
       title: SEM 3
-      details: Complete OS concepts with detailed notes and diagrams covering processes, memory, and more.
+      details: Where recursion meets regret.
       link: /branch/cs/SEM3/
 
     - icon: 🗄️
       title: SEM 4
-      details: DBMS fundamentals, SQL queries, normalization, indexing, and optimization techniques.
+      details: Algorithms, and Theory of Computation — brain vs brainfry edition.
       link: /branch/cs/SEM4/
 
     - icon: 🌐
       title: SEM 5
-      details: Network layers, protocols, TCP/IP, HTTP, and networking concepts with visual diagrams.
+      details: When “process synchronization” becomes your new nightmare.
       link: /branch/cs/SEM5/
 
     - icon: ☕
       title: SEM 6
-      details: Object-oriented programming concepts, Java fundamentals, multithreading, and exception handling.
+      details: Where logic meets language
       link: /branch/cs/SEM6/
 
     - icon: ⚡
       title: SEM 7
-      details: C++ concepts, STL, pointers, memory management, and problem-solving techniques.
+      details: Making chatbots that can cry with you.
       link: /branch/cs/SEM7/
 
     - icon: 📊
       title: SEM 8
-      details: SQL queries, database operations, and practical examples for interview preparation.
+      details: Projects, internships, and placement panic mode ON.
       link: /branch/cs/SEM8/
 ---

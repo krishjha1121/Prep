@@ -3,7 +3,7 @@ layout: home
 hero:
     name: 'BTech EIE Syllabus NIT SILCHAR'
     text: 'Complete EIE Syllabus'
-    tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
+    tagline: The art of measuring everything — except your marks.
 
 features:
     - icon: 🎯

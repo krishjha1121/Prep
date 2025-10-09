@@ -3,7 +3,7 @@ layout: home
 hero:
     name: 'BTech ECE Syllabus NIT SILCHAR'
     text: 'Complete ECE Syllabus'
-    tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
+    tagline: Where every signal has noise — and every lab has chaos.
 
 features:
     - icon: 🎯

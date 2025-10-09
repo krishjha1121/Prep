@@ -3,7 +3,7 @@ layout: home
 hero:
     name: 'BTech Electrical Engineering Syllabus NIT SILCHAR'
     text: 'Complete Electrical Engineering Syllabus'
-    tagline: DataStructures, Algorithms, MicroProcessors, Operating Systems, Databases, Networks & More
+    tagline: Because resistance is futile. Circuits, machines, and voltage-induced trauma await.
 
 features:
     - icon: 🎯
