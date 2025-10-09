@@ -1,0 +1,17 @@
+{
+	"buildCommand": "npm run docs:build",
+	"outputDirectory": ".vitepress/dist",
+	"routes": [
+		{
+			"src": "/assets/(.*)",
+			"dest": "/assets/$1"
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "/index.html"
+		}
+	]
+}
