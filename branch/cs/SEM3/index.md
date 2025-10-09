@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📘 SEM 2 Resources Hub
+# 📘 SEM 3 Resources Hub
 
 <div align="center" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
   <img src="https://img.shields.io/badge/📚_Subjects-5-blue?style=for-the-badge&logo=bookstack" alt="Subjects Badge" />

@@ -7,7 +7,7 @@ export default withMermaid(
 	defineConfig({
 		title: "Prep Notes",
 		description: "Complete CS Preparation - DSA, LLD, OS, DBMS, CN, SQL",
-		base: "/Prep/",
+		base: process.env.VERCEL ? "/" : "/Prep/",
 		ignoreDeadLinks: true,
 
 		mermaid: {
