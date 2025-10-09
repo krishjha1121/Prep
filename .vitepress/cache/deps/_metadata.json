@@ -1,100 +1,79 @@
 {
-  "hash": "9d2b9b2c",
+  "hash": "d7ba7964",
   "configHash": "22845c10",
-  "lockfileHash": "78491e54",
-  "browserHash": "907f917b",
+  "lockfileHash": "c4340837",
+  "browserHash": "1ab03972",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "036d0d5d",
+      "fileHash": "8d4ada8d",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "86680cd0",
+      "fileHash": "ab0dcf57",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "6577a3c8",
+      "fileHash": "ed2fec7a",
       "needsInterop": false
     },
     "@braintree/sanitize-url": {
       "src": "../../../node_modules/@braintree/sanitize-url/dist/index.js",
       "file": "@braintree_sanitize-url.js",
-      "fileHash": "6524eb5b",
+      "fileHash": "fa9b5dca",
       "needsInterop": true
     },
     "dayjs": {
       "src": "../../../node_modules/dayjs/dayjs.min.js",
       "file": "dayjs.js",
-      "fileHash": "7dfcd1a0",
+      "fileHash": "14d179fe",
       "needsInterop": true
     },
     "debug": {
       "src": "../../../node_modules/debug/src/browser.js",
       "file": "debug.js",
-      "fileHash": "71059874",
+      "fileHash": "b6d22d89",
       "needsInterop": true
     },
     "cytoscape-cose-bilkent": {
       "src": "../../../node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js",
       "file": "cytoscape-cose-bilkent.js",
-      "fileHash": "b6b922a7",
+      "fileHash": "3a164bda",
       "needsInterop": true
     },
     "cytoscape": {
       "src": "../../../node_modules/cytoscape/dist/cytoscape.esm.mjs",
       "file": "cytoscape.js",
-      "fileHash": "d157a0a0",
+      "fileHash": "c2d02648",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "f66244ea",
+      "fileHash": "d331b102",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "581d679b",
+      "fileHash": "38346529",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "35d1f00d",
-      "needsInterop": false
-    },
-    "dayjs/plugin/isoWeek.js": {
-      "src": "../../../node_modules/dayjs/esm/plugin/isoWeek/index.js",
-      "file": "dayjs_plugin_isoWeek__js.js",
-      "fileHash": "eac1a9b2",
-      "needsInterop": false
-    },
-    "dayjs/plugin/customParseFormat.js": {
-      "src": "../../../node_modules/dayjs/esm/plugin/customParseFormat/index.js",
-      "file": "dayjs_plugin_customParseFormat__js.js",
-      "fileHash": "19cda3c6",
-      "needsInterop": false
-    },
-    "dayjs/plugin/advancedFormat.js": {
-      "src": "../../../node_modules/dayjs/esm/plugin/advancedFormat/index.js",
-      "file": "dayjs_plugin_advancedFormat__js.js",
-      "fileHash": "021a51cd",
+      "fileHash": "b4752bf7",
       "needsInterop": false
     }
   },
   "chunks": {
     "chunk-QKXXKPGR": {
       "file": "chunk-QKXXKPGR.js"
-    },
-    "chunk-QNAROPK2": {
-      "file": "chunk-QNAROPK2.js"
     },
     "chunk-XV6CE6JT": {
       "file": "chunk-XV6CE6JT.js"

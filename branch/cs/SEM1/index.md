@@ -1,87 +1,130 @@
-# 📘 SEM1 — Subjects · Labs · PYQs
+<div align="center">
 
-> A neat, quick-access hub for SEM1 resources — subjects, lab lists and previous year questions.
+# 📘 SEM 1 Resources Hub
 
-<p align="center">
-  <img alt="badge-subjects" src="https://img.shields.io/badge/Subjects-6-blue?style=for-the-badge" />
-  <img alt="badge-labs" src="https://img.shields.io/badge/Labs-4-green?style=for-the-badge" />
-  <img alt="badge-pyqs" src="https://img.shields.io/badge/PYQs-Mid%2FEnd-orange?style=for-the-badge" />
-</p>
+<div align="center" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+  <img src="https://img.shields.io/badge/📚_Subjects-6-blue?style=for-the-badge&logo=bookstack" alt="Subjects Badge" />
+  <img src="https://img.shields.io/badge/🧪_Labs-4-green?style=for-the-badge&logo=flask" alt="Labs Badge" />
+  <img src="https://img.shields.io/badge/📝_PYQs-Mid%2FEnd-orange?style=for-the-badge&logo=googledocs" alt="PYQs Badge" />
+</div>
+
+</div>
+
+<div align="center">
+
+## 🧭 Quick Navigation
+
+</div>
+
+<div align = "center">
+
+<table align = "center">
+<tr>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/📚-SUBJECTS-6366F1?style=flat-square&labelColor=312E81" alt="Subjects"/><br/>
+<sub>Core & elective courses</sub><br/>
+<a href="#📚-subjects"><b>Explore →</b></a>
+</td>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/🧪-LABS-10B981?style=flat-square&labelColor=065F46" alt="Labs"/><br/>
+<sub>Practical sessions</sub><br/>
+<a href="#🧪-labs"><b>Explore →</b></a>
+</td>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/📖-PYQS-F59E0B?style=flat-square&labelColor=92400E" alt="PYQs"/><br/>
+<sub>Previous year papers</sub><br/>
+<a href="#📖-pyqs"><b>Explore →</b></a>
+</td>
+</tr>
+</table>
+</div>
 
 ---
 
-## Quick nav
+<div align="center">
 
-| Subjects | Labs | PYQs |
-|---:|:---:|:---:|
-| 🔖 [Subjects](#subjects) — core & electives | 🧪 [Labs](#labs) — sessions & focus | 📚 [PYQs](#pyqs-previous-year-questions) — Midsem / Endsem |
+## 📚 Subjects
 
----
+_Core SEM1 curriculum — Click to explore_
 
-## Subjects
-<a name="subjects"></a>
-<details>
-<summary><strong>Click to expand Subjects</strong> — core SEM1 list</summary>
+</div>
 
-Here are the SEM1 subjects (click a subject to open its folder README):
+<details open>
+<summary><b>🔽 View All Subjects</b></summary>
 
-- 🔗 [📁 CE102: Environmental Science & Engineering](./CE102/README.md)
-- 🔗 [📁 CH101: Chemistry](./CH101/README.md)
-- 🔗 [📁 CS101: Introduction to Programming](./CS101/README.md)
-- 🔗 [📁 EC101: Basic Electronics](./EC101/README.md)
-- 🔗 [📁 MA101: Mathematics I](./MA101/README.md)
+<div align="center">
 
-**Quick tips**
+|  Code   | Subject                                 |      Resources      |
+| :-----: | :-------------------------------------- | :-----------------: |
+| `CE102` | **Environmental Science & Engineering** | [📂 Open](./CE102/) |
+| `CH101` | **Chemistry**                           | [📂 Open](./CH101/) |
+| `CS101` | **Introduction to Programming**         | [📂 Open](./CS101/) |
+| `EC101` | **Basic Electronics**                   | [📂 Open](./EC101/) |
+| `MA101` | **Mathematics I**                       | [📂 Open](./MA101/) |
 
-- The links above open the subject `README.md` in each folder. From there you can add files or Drive links and keep an index.
-- If you prefer the links point to a different file (for example `index.md` inside each folder), tell me and I will adjust the target paths.
+</div>
 
 </details>
 
 ---
 
-## Labs
-<a name="labs"></a>
-<details>
-<summary><strong>Click to expand Labs</strong> — typical practicals & quick lab links</summary>
+<div align="center">
 
-**SEM1 lab sessions**
+## 🧪 Labs
 
-- 🔗 📁 [CH111: Chemistry Lab](./CH101/README.md)
-- 🔗 📁 [CS111: Introduction to Programming Lab](./CS111/README.md)
-- 🔗 📁 [EC111: Basic Electronics Lab](./EC101/README.md)
+_Hands-on practical sessions_
 
-**Lab resource ideas**
+</div>
 
-- Keep lab manuals as PDFs in `branch/cs/SEM1/labs/` or `branch/cs/SEM1/LabNotes/`.
-- Add sample datasets or input files used in lab exercises.
+<details open>
+<summary><b>🔽 View All Labs</b></summary>
+
+<div align="center">
+
+| Lab Code | Laboratory                          |      Resources      |
+| :------: | :---------------------------------- | :-----------------: |
+| `CH111`  | **Chemistry Lab**                   | [📂 Open](./CH101/) |
+| `CS111`  | **Introduction to Programming Lab** | [📂 Open](./CS111/) |
+| `EC111`  | **Basic Electronics Lab**           | [📂 Open](./EC101/) |
+
+</div>
 
 </details>
 
 ---
 
-## PYQs (Previous Year Questions)
+<div align="center">
 
-> NOTE: The PYQs section has been moved to each subject's README so every subject can maintain its own Midsem / Endsem / Minors files. Use the subject links in the "Subjects" section above to open a subject and add PYQs there (each subject README now contains a PYQs collapsible area).
+## 📖 PYQs
 
-If you need a central index for PYQs later, I can add one that aggregates per-subject entries automatically.
+_Previous Year Questions — Your exam prep toolkit_
 
----
+</div>
 
-## Resources & Checklist
+<details open>
+<summary><b>🔽 About PYQs</b></summary>
 
-- [ ] Add real PYQ PDFs under `PYQs/` (one folder per subject)
-- [ ] Add lab manuals / sample code under `branch/cs/SEM1/` (e.g., `labs/`, `code/`)
-- [ ] Add short README files inside each subject folder explaining naming conventions
+### 📍 Where to find PYQs?
 
----
+PYQs have been distributed to individual **subject** for better organization. Each subject maintains its own collection of:
 
-## How to contribute
+<div align="center">
 
-- To add a PYQ: create `PYQs/<Subject>/` and name files like `Subject_Mid_YYYY.pdf`.
-- To link a PDF here, paste a relative link (e.g., `[Programming Mid 2024](./PYQs/Programming/Programming_Mid_2024.pdf)`).
-- If you want, say "scan and populate" and I'll search the repo for PDFs and insert direct links.
+📝 **Midsem Papers** • 📝 **Endsem Papers** • 📝 **Minor Exams**
 
----
+</div>
 
-*If you'd like a different look (cards, images, or a small index page per subject) I can add that — tell me which style you prefer.*
+### 🎯 Quick Access
+
+Navigate to any subject using the [📚 Subjects section ↑](#📚-subjects) to access its dedicated PYQ collection.
+
+</details>
+
+<div align="center">
+
+### ⭐ Star [this](https://github.com/raj8664/Prep) repo if you found it helpful!
+
+![GitHub Stars](https://img.shields.io/github/stars/raj8664/Prep?style=social)
+
+</div>
+
