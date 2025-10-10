@@ -1005,6 +1005,7 @@ Leetcode Solutions
 | [3142-longest-unequal-adjacent-groups-subsequence-ii](./3142-longest-unequal-adjacent-groups-subsequence-ii)                           |
 | [3239-minimum-number-of-operations-to-make-x-and-y-equal](./3239-minimum-number-of-operations-to-make-x-and-y-equal)                   |
 | [3307-find-the-maximum-sum-of-node-values](./3307-find-the-maximum-sum-of-node-values)                                                 |
+| [3383-taking-maximum-energy-from-the-mystic-dungeon](./3383-taking-maximum-energy-from-the-mystic-dungeon/)                            |
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)                                                             |
 | [3677-maximum-amount-of-money-robot-can-earn](./3677-maximum-amount-of-money-robot-can-earn)                                           |
 | [3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences](./3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences)         |
@@ -1720,7 +1721,7 @@ Leetcode Solutions
 | ---------------------------------------------------------------------- |
 | [2533-bitwise-xor-of-all-pairings](./2533-bitwise-xor-of-all-pairings) |
 
-## 🕎 Combinatorics
+## 📸 niceCombinatorics
 
 |                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
