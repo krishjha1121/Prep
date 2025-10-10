@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum">1631. Number of Sub-arrays With Odd Sum</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>arr</code>, return <em>the number of subarrays with an <strong>odd</strong> sum</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1631. Number of Sub-arrays With Odd Sum
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum" target = "_blank">1631. Number of Sub-arrays With Odd Sum</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>arr</code>, return <em>the number of subarrays with an <strong>odd</strong> sum</em>.</p>
 
 <p>Since the answer can be very large, return it modulo <code>10<sup>9</sup> + 7</code>.</p>
 
@@ -38,6 +46,10 @@ All sub-arrays have even sum and the answer is 0.
 	<li><code>1 &lt;= arr[i] &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int mod = (int)(1e9 + 7);
@@ -61,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

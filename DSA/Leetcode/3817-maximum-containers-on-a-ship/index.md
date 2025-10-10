@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-containers-on-a-ship">3817. Maximum Containers on a Ship</a></h2><h3>Easy</h3><hr><p>You are given a positive integer <code>n</code> representing an <code>n x n</code> cargo deck on a ship. Each cell on the deck can hold one container with a weight of <strong>exactly</strong> <code>w</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3817. Maximum Containers on a Ship
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-containers-on-a-ship" target = "_blank">3817. Maximum Containers on a Ship</a></h2><h3>Easy</h3><hr><p>You are given a positive integer <code>n</code> representing an <code>n x n</code> cargo deck on a ship. Each cell on the deck can hold one container with a weight of <strong>exactly</strong> <code>w</code>.</p>
 
 <p>However, the total weight of all containers, if loaded onto the deck, must not exceed the ship&#39;s maximum weight capacity, <code>maxWeight</code>.</p>
 
@@ -38,6 +46,10 @@
 	<li><code>1 &lt;= maxWeight &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxContainers(int n, int w, int maxWeight) {
@@ -53,3 +65,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

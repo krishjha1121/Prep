@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/lexicographically-smallest-equivalent-string">1058. Lexicographically Smallest Equivalent String</a></h2><h3>Medium</h3><hr><p>You are given two strings of the same length <code>s1</code> and <code>s2</code> and a string <code>baseStr</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1058. Lexicographically Smallest Equivalent String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/lexicographically-smallest-equivalent-string" target = "_blank">1058. Lexicographically Smallest Equivalent String</a></h2><h3>Medium</h3><hr><p>You are given two strings of the same length <code>s1</code> and <code>s2</code> and a string <code>baseStr</code>.</p>
 
 <p>We say <code>s1[i]</code> and <code>s2[i]</code> are equivalent characters.</p>
 
@@ -55,6 +63,10 @@ So only the second letter &#39;o&#39; in baseStr is changed to &#39;d&#39;, the 
 	<li><code>s1</code>, <code>s2</code>, and <code>baseStr</code> consist of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String smallestEquivalentString(String s1, String s2, String baseStr) {
@@ -85,3 +97,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

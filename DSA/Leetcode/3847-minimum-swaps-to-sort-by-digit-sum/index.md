@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-swaps-to-sort-by-digit-sum">3847. Minimum Swaps to Sort by Digit Sum</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> of <strong>distinct</strong> positive integers. You need to sort the array in <strong>increasing</strong> order based on the sum of the digits of each number. If two numbers have the same digit sum, the <strong>smaller</strong> number appears first in the sorted order.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3847. Minimum Swaps to Sort by Digit Sum
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-swaps-to-sort-by-digit-sum" target = "_blank">3847. Minimum Swaps to Sort by Digit Sum</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> of <strong>distinct</strong> positive integers. You need to sort the array in <strong>increasing</strong> order based on the sum of the digits of each number. If two numbers have the same digit sum, the <strong>smaller</strong> number appears first in the sorted order.</p>
 
 <p>Return the <strong>minimum</strong> number of swaps required to rearrange <code>nums</code> into this sorted order.</p>
 
@@ -61,6 +69,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 	<li><code>nums</code> consists of <strong>distinct</strong> positive integers.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -127,3 +139,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

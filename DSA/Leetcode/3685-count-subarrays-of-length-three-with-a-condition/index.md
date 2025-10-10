@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition">3685. Count Subarrays of Length Three With a Condition</a></h2><h3>Easy</h3><hr><p>Given an integer array <code>nums</code>, return the number of subarrays<em> </em>of length 3 such that the sum of the first and third numbers equals <em>exactly</em> half of the second number.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3685. Count Subarrays of Length Three With a Condition
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition" target = "_blank">3685. Count Subarrays of Length Three With a Condition</a></h2><h3>Easy</h3><hr><p>Given an integer array <code>nums</code>, return the number of subarrays<em> </em>of length 3 such that the sum of the first and third numbers equals <em>exactly</em> half of the second number.</p>
 
 <p>A <strong>subarray</strong> is a contiguous <b>non-empty</b> sequence of elements within an array.</p>
 
@@ -35,6 +43,10 @@
 	<li><code><font face="monospace">-100 &lt;= nums[i] &lt;= 100</font></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countSubarrays(int[] nums) {
@@ -50,3 +62,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

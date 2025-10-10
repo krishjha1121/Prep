@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-good-leaf-nodes-pairs">1653. Number of Good Leaf Nodes Pairs</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree and an integer <code>distance</code>. A pair of two different <strong>leaf</strong> nodes of a binary tree is said to be good if the length of <strong>the shortest path</strong> between them is less than or equal to <code>distance</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1653. Number of Good Leaf Nodes Pairs
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-good-leaf-nodes-pairs" target = "_blank">1653. Number of Good Leaf Nodes Pairs</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree and an integer <code>distance</code>. A pair of two different <strong>leaf</strong> nodes of a binary tree is said to be good if the length of <strong>the shortest path</strong> between them is less than or equal to <code>distance</code>.</p>
 
 <p>Return <em>the number of good leaf node pairs</em> in the tree.</p>
 
@@ -35,6 +43,10 @@
 	<li><code>1 &lt;= Node.val &lt;= 100</code></li>
 	<li><code>1 &lt;= distance &lt;= 10</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -157,3 +169,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

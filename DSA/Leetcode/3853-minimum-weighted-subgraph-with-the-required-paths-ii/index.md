@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths-ii">3853. Minimum Weighted Subgraph With the Required Paths II</a></h2><h3>Hard</h3><hr><p>You are given an <strong>undirected weighted</strong> tree with <code data-end="51" data-start="48">n</code> nodes, numbered from <code data-end="75" data-start="72">0</code> to <code data-end="86" data-start="79">n - 1</code>. It is represented by a 2D integer array <code data-end="129" data-start="122">edges</code> of length <code data-end="147" data-start="140">n - 1</code>, where <code data-end="185" data-start="160">edges[i] = [u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>]</code> indicates that there is an edge between nodes <code data-end="236" data-start="232">u<sub>i</sub></code> and <code data-end="245" data-start="241">v<sub>i</sub></code> with weight <code data-end="262" data-start="258">w<sub>i</sub></code>.​</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3853. Minimum Weighted Subgraph With the Required Paths II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths-ii" target = "_blank">3853. Minimum Weighted Subgraph With the Required Paths II</a></h2><h3>Hard</h3><hr><p>You are given an <strong>undirected weighted</strong> tree with <code data-end="51" data-start="48">n</code> nodes, numbered from <code data-end="75" data-start="72">0</code> to <code data-end="86" data-start="79">n - 1</code>. It is represented by a 2D integer array <code data-end="129" data-start="122">edges</code> of length <code data-end="147" data-start="140">n - 1</code>, where <code data-end="185" data-start="160">edges[i] = [u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>]</code> indicates that there is an edge between nodes <code data-end="236" data-start="232">u<sub>i</sub></code> and <code data-end="245" data-start="241">v<sub>i</sub></code> with weight <code data-end="262" data-start="258">w<sub>i</sub></code>.​</p>
 
 <p>Additionally, you are given a 2D integer array <code data-end="56" data-start="47">queries</code>, where <code data-end="105" data-start="69">queries[j] = [src1<sub>j</sub>, src2<sub>j</sub>, dest<sub>j</sub>]</code>.</p>
 
@@ -62,6 +70,10 @@
 	<li>The input is generated such that <code>edges</code> represents a valid tree.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -98,7 +110,6 @@ class Solution {
         pref = new int[n + 1];
         build_pref(n);
         res = new int[queries.length];
-        System.out.println(Arrays.toString(pref));
         for (int i = 0; i < queries.length; i++) {
             int src1 = queries[i][0] + 1, src2 = queries[i][1] + 1, dest = queries[i][2] + 1;
             int lca1 = lca(src1, dest), lca2 = lca(src2, dest), lca3 = lca(src1, src2);
@@ -173,3 +184,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/uncommon-words-from-two-sentences">920. Uncommon Words from Two Sentences</a></h2><h3>Easy</h3><hr><p>A <strong>sentence</strong> is a string of single-space separated words where each word consists only of lowercase letters.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 920. Uncommon Words from Two Sentences
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/uncommon-words-from-two-sentences" target = "_blank">920. Uncommon Words from Two Sentences</a></h2><h3>Easy</h3><hr><p>A <strong>sentence</strong> is a string of single-space separated words where each word consists only of lowercase letters.</p>
 
 <p>A word is <strong>uncommon</strong> if it appears exactly once in one of the sentences, and <strong>does not appear</strong> in the other sentence.</p>
 
@@ -34,6 +42,8 @@
 	<li><code>s1</code> and <code>s2</code> do not have leading or trailing spaces.</li>
 	<li>All the words in <code>s1</code> and <code>s2</code> are separated by a single space.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
 
 ```java
 class Solution {
@@ -87,3 +97,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

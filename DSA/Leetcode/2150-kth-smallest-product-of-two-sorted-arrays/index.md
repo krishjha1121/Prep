@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays">2150. Kth Smallest Product of Two Sorted Arrays</a></h2><h3>Hard</h3><hr>Given two <strong>sorted 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code> as well as an integer <code>k</code>, return <em>the </em><code>k<sup>th</sup></code><em> (<strong>1-based</strong>) smallest product of </em><code>nums1[i] * nums2[j]</code><em> where </em><code>0 &lt;= i &lt; nums1.length</code><em> and </em><code>0 &lt;= j &lt; nums2.length</code>.
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2150. Kth Smallest Product of Two Sorted Arrays
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays" target = "_blank">2150. Kth Smallest Product of Two Sorted Arrays</a></h2><h3>Hard</h3><hr>Given two <strong>sorted 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code> as well as an integer <code>k</code>, return <em>the </em><code>k<sup>th</sup></code><em> (<strong>1-based</strong>) smallest product of </em><code>nums1[i] * nums2[j]</code><em> where </em><code>0 &lt;= i &lt; nums1.length</code><em> and </em><code>0 &lt;= j &lt; nums2.length</code>.
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -48,6 +56,10 @@ The 3<sup>rd</sup> smallest product is -6.
 	<li><code>nums1</code> and <code>nums2</code> are sorted.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long kthSmallestProduct(int[] nums1, int[] nums2, long k) {
@@ -96,3 +108,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

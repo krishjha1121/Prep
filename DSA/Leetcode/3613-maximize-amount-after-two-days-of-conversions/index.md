@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximize-amount-after-two-days-of-conversions">3613. Maximize Amount After Two Days of Conversions</a></h2><h3>Medium</h3><hr><p>You are given a string <code>initialCurrency</code>, and you start with <code>1.0</code> of <code>initialCurrency</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3613. Maximize Amount After Two Days of Conversions
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximize-amount-after-two-days-of-conversions" target = "_blank">3613. Maximize Amount After Two Days of Conversions</a></h2><h3>Medium</h3><hr><p>You are given a string <code>initialCurrency</code>, and you start with <code>1.0</code> of <code>initialCurrency</code>.</p>
 
 <p>You are also given four arrays with currency pairs (strings) and rates (real numbers):</p>
 
@@ -85,6 +93,10 @@
 	<li>The input is generated such that there are no contradictions or cycles in the conversion graphs for either day.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -138,3 +150,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

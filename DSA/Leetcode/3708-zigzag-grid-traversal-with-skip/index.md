@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/zigzag-grid-traversal-with-skip">3708. Zigzag Grid Traversal With Skip</a></h2><h3>Easy</h3><hr><p>You are given an <code>m x n</code> 2D array <code>grid</code> of <strong>positive</strong> integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3708. Zigzag Grid Traversal With Skip
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/zigzag-grid-traversal-with-skip" target = "_blank">3708. Zigzag Grid Traversal With Skip</a></h2><h3>Easy</h3><hr><p>You are given an <code>m x n</code> 2D array <code>grid</code> of <strong>positive</strong> integers.</p>
 
 <p>Your task is to traverse <code>grid</code> in a <strong>zigzag</strong> pattern while skipping every <strong>alternate</strong> cell.</p>
 
@@ -61,6 +69,10 @@
 	<li><code>1 &lt;= grid[i][j] &lt;= 2500</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<Integer> zigzagTraversal(int[][] grid) {
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

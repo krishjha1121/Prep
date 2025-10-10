@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-ii">3592. Find X-Sum of All K-Long Subarrays II</a></h2><h3>Hard</h3><hr><p>You are given an array <code>nums</code> of <code>n</code> integers and two integers <code>k</code> and <code>x</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3592. Find X-Sum of All K-Long Subarrays II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-ii" target = "_blank">3592. Find X-Sum of All K-Long Subarrays II</a></h2><h3>Hard</h3><hr><p>You are given an array <code>nums</code> of <code>n</code> integers and two integers <code>k</code> and <code>x</code>.</p>
 
 <p>The <strong>x-sum</strong> of an array is calculated by the following procedure:</p>
 
@@ -50,6 +58,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 	<li><code>1 &lt;= x &lt;= k &lt;= nums.length</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -190,3 +202,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

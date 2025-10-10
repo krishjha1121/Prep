@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimize-the-maximum-adjacent-element-difference">3658. Minimize the Maximum Adjacent Element Difference</a></h2><h3>Hard</h3><hr><p>You are given an array of integers <code>nums</code>. Some values in <code>nums</code> are <strong>missing</strong> and are denoted by -1.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3658. Minimize the Maximum Adjacent Element Difference
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimize-the-maximum-adjacent-element-difference" target = "_blank">3658. Minimize the Maximum Adjacent Element Difference</a></h2><h3>Hard</h3><hr><p>You are given an array of integers <code>nums</code>. Some values in <code>nums</code> are <strong>missing</strong> and are denoted by -1.</p>
 
 <p>You can choose a pair of <strong>positive</strong> integers <code>(x, y)</code> <strong>exactly once</strong> and replace each&nbsp;<strong>missing</strong> element with <em>either</em> <code>x</code> or <code>y</code>.</p>
 
@@ -59,6 +67,10 @@
 	<li><code>2 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>nums[i]</code> is either -1 or in the range <code>[1, 10<sup>9</sup>]</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -127,3 +139,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

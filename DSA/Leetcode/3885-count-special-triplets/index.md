@@ -69,9 +69,12 @@ There are exactly two special triplets:
 - `3 <= n == nums.length <= 10^5`
 - `0 <= nums[i] <= 10^5`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.HashMap;
-
 class Solution {
     private int mod = (int)(1e9 + 7);
     public int specialTriplets(int[] nums) {
@@ -97,3 +100,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

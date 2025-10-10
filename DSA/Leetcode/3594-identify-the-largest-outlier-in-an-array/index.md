@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/identify-the-largest-outlier-in-an-array">3594. Identify the Largest Outlier in an Array</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>. This array contains <code>n</code> elements, where <strong>exactly</strong> <code>n - 2</code> elements are <strong>special</strong><strong> numbers</strong>. One of the remaining <strong>two</strong> elements is the <em>sum</em> of these <strong>special numbers</strong>, and the other is an <strong>outlier</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3594. Identify the Largest Outlier in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/identify-the-largest-outlier-in-an-array" target = "_blank">3594. Identify the Largest Outlier in an Array</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>. This array contains <code>n</code> elements, where <strong>exactly</strong> <code>n - 2</code> elements are <strong>special</strong><strong> numbers</strong>. One of the remaining <strong>two</strong> elements is the <em>sum</em> of these <strong>special numbers</strong>, and the other is an <strong>outlier</strong>.</p>
 
 <p>An <strong>outlier</strong> is defined as a number that is <em>neither</em> one of the original special numbers <em>nor</em> the element representing the sum of those numbers.</p>
 
@@ -52,6 +60,10 @@
 	<li>The input is generated such that at least <strong>one</strong> potential outlier exists in <code>nums</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int getLargestOutlier(int[] nums) {
@@ -74,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

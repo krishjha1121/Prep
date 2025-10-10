@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-product-of-first-and-last-elements-of-a-subsequence">3755. Maximum Product of First and Last Elements of a Subsequence</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>m</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3755. Maximum Product of First and Last Elements of a Subsequence
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-product-of-first-and-last-elements-of-a-subsequence" target = "_blank">3755. Maximum Product of First and Last Elements of a Subsequence</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>m</code>.</p>
 
 <p>Return the <strong>maximum</strong> product of the first and last elements of any <strong><span data-keyword="subsequence-array">subsequence</span></strong> of <code>nums</code> of size <code>m</code>.</p>
 
@@ -48,6 +56,10 @@
 	<li><code>1 &lt;= m &lt;= nums.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maximumProduct(int[] nums, int m) {
@@ -89,3 +101,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

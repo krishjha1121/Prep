@@ -48,6 +48,12 @@ So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
 	<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxRotateFunction(int[] nums) {
@@ -71,3 +77,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

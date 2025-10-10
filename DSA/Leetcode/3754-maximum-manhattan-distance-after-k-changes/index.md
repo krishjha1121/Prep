@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-manhattan-distance-after-k-changes">3754. Maximum Manhattan Distance After K Changes</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> consisting of the characters <code>&#39;N&#39;</code>, <code>&#39;S&#39;</code>, <code>&#39;E&#39;</code>, and <code>&#39;W&#39;</code>, where <code>s[i]</code> indicates movements in an infinite grid:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3754. Maximum Manhattan Distance After K Changes
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-manhattan-distance-after-k-changes" target = "_blank">3754. Maximum Manhattan Distance After K Changes</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> consisting of the characters <code>&#39;N&#39;</code>, <code>&#39;S&#39;</code>, <code>&#39;E&#39;</code>, and <code>&#39;W&#39;</code>, where <code>s[i]</code> indicates movements in an infinite grid:</p>
 
 <ul>
 	<li><code>&#39;N&#39;</code> : Move north by 1 unit.</li>
@@ -86,25 +94,43 @@ The <strong>Manhattan Distance</strong> between two cells <code>(x<sub>i</sub>, 
 	<li><code>s</code> consists of only <code>&#39;N&#39;</code>, <code>&#39;S&#39;</code>, <code>&#39;E&#39;</code>, and <code>&#39;W&#39;</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
-    public int maxDistance(String s, int k) {
-        int ans = 0;
-        char[][] dir = new char[][] {{'N', 'E'}, {'N', 'W'}, {'S', 'E'}, {'S', 'W'}};
-        for (char[] d : dir) {
-            for (int i = 0, curr = 0, t = k; i < s.length(); ++i) {
-                if (s.charAt(i) == d[0] || s.charAt(i) == d[1]) {
-                    if (t > 0) {
-                        t--;
-                        curr++;
-                    } else
-                        curr--;
-                } else
-                    curr++;
-                ans = Math.max(ans, curr);
-            }
+    public int maxDifference(String s) {
+        int n = s.length();
+        int freq[] = new int[26];
+        for (int i = 0; i < n; i++)
+            freq[s.charAt(i) - 'a']++;
+        ArrayList<Integer> even = new ArrayList<>();
+        ArrayList<Integer> odd = new ArrayList<>();
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] % 2 == 0 && freq[i] != 0)
+                even.add(freq[i]);
+            else
+                odd.add(freq[i]);
         }
-        return ans;
+        int maxi = Integer.MIN_VALUE;
+        for (int i = 0; i < odd.size(); i++) {
+            for (int j = 0; j < even.size(); j++)
+                maxi = Math.max(maxi, odd.get(i) - even.get(j));
+        }
+        return maxi;
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

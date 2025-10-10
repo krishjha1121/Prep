@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/largest-component-size-by-common-factor">989. Largest Component Size by Common Factor</a></h2><h3>Hard</h3><hr><p>You are given an integer array of unique positive integers <code>nums</code>. Consider the following graph:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 989. Largest Component Size by Common Factor
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/largest-component-size-by-common-factor" target = "_blank">989. Largest Component Size by Common Factor</a></h2><h3>Hard</h3><hr><p>You are given an integer array of unique positive integers <code>nums</code>. Consider the following graph:</p>
 
 <ul>
 	<li>There are <code>nums.length</code> nodes, labeled <code>nums[0]</code> to <code>nums[nums.length - 1]</code>,</li>
@@ -37,6 +45,8 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 	<li>All the values of <code>nums</code> are <strong>unique</strong>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
 
 ```java
 class Solution {
@@ -112,3 +122,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

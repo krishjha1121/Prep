@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-x-and-y-equal">3239. Minimum Number of Operations to Make X and Y Equal</a></h2><h3>Medium</h3><hr><p>You are given two positive integers <code>x</code> and <code>y</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3239. Minimum Number of Operations to Make X and Y Equal
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-x-and-y-equal" target = "_blank">3239. Minimum Number of Operations to Make X and Y Equal</a></h2><h3>Medium</h3><hr><p>You are given two positive integers <code>x</code> and <code>y</code>.</p>
 
 <p>In one operation, you can do one of the four following operations:</p>
 
@@ -58,6 +66,10 @@ It can be shown that 5 is the minimum number of operations required to make 25 e
 	<li><code>1 &lt;= x, y &lt;= 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int dp[];
@@ -80,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

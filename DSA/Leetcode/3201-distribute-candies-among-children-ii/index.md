@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/distribute-candies-among-children-ii">3201. Distribute Candies Among Children II</a></h2><h3>Medium</h3><hr><p>You are given two positive integers <code>n</code> and <code>limit</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3201. Distribute Candies Among Children II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/distribute-candies-among-children-ii" target = "_blank">3201. Distribute Candies Among Children II</a></h2><h3>Medium</h3><hr><p>You are given two positive integers <code>n</code> and <code>limit</code>.</p>
 
 <p>Return <em>the <strong>total number</strong> of ways to distribute </em><code>n</code> <em>candies among </em><code>3</code><em> children such that no child gets more than </em><code>limit</code><em> candies.</em></p>
 
@@ -27,6 +35,10 @@
 	<li><code>1 &lt;= limit &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long distributeCandies(int n, int limit) {
@@ -39,3 +51,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

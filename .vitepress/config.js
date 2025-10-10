@@ -7,7 +7,7 @@ export default withMermaid(
 	defineConfig({
 		title: "Prep Notes",
 		description: "Complete CS Preparation - DSA, LLD, OS, DBMS, CN, SQL",
-		base: "/Prep/",
+		base: process.env.VERCEL ? "/" : "/Prep/",
 		ignoreDeadLinks: true,
 
 		mermaid: {
@@ -24,7 +24,7 @@ export default withMermaid(
 
 			nav: [
 				{ text: "Home", link: "/" },
-				{ text: "Academics", link: "/Syllabus/" },
+				{ text: "Academics", link: "/branch/" },
 				{ text: "Leetcode Solutions", link: "/DSA/Leetcode/" },
 				{
 					text: "Core CS",

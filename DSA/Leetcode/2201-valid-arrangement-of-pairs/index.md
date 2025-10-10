@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/valid-arrangement-of-pairs">2201. Valid Arrangement of Pairs</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> 2D integer array <code>pairs</code> where <code>pairs[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>. An arrangement of <code>pairs</code> is <strong>valid</strong> if for every index <code>i</code> where <code>1 &lt;= i &lt; pairs.length</code>, we have <code>end<sub>i-1</sub> == start<sub>i</sub></code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2201. Valid Arrangement of Pairs
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/valid-arrangement-of-pairs" target = "_blank">2201. Valid Arrangement of Pairs</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> 2D integer array <code>pairs</code> where <code>pairs[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>. An arrangement of <code>pairs</code> is <strong>valid</strong> if for every index <code>i</code> where <code>1 &lt;= i &lt; pairs.length</code>, we have <code>end<sub>i-1</sub> == start<sub>i</sub></code>.</p>
 
 <p>Return <em><strong>any</strong> valid arrangement of </em><code>pairs</code>.</p>
 
@@ -52,6 +60,10 @@ end<sub>1</sub> = 1 == 1 = start<sub>2</sub>
 	<li>There <strong>exists</strong> a valid arrangement of <code>pairs</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[][] validArrangement(int[][] pairs) {
@@ -93,3 +105,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-minimum-log-transportation-cost">3879. Find Minimum Log Transportation Cost</a></h2><h3>Easy</h3><hr><p>You are given integers <code>n</code>, <code>m</code>, and <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3879. Find Minimum Log Transportation Cost
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-minimum-log-transportation-cost" target = "_blank">3879. Find Minimum Log Transportation Cost</a></h2><h3>Easy</h3><hr><p>You are given integers <code>n</code>, <code>m</code>, and <code>k</code>.</p>
 
 <p>There are two logs of lengths <code>n</code> and <code>m</code> units, which need to be transported in three trucks where each truck can carry one log with length <strong>at most</strong> <code>k</code> units.</p>
 
@@ -40,6 +48,10 @@
 	<li>The input is generated such that it is always possible to transport the logs.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long minCuttingCost(int n, int m, int k) {
@@ -51,3 +63,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

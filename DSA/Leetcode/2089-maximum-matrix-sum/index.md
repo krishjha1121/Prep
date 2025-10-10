@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-matrix-sum">2089. Maximum Matrix Sum</a></h2><h3>Medium</h3><hr><p>You are given an <code>n x n</code> integer <code>matrix</code>. You can do the following operation <strong>any</strong> number of times:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2089. Maximum Matrix Sum
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-matrix-sum" target = "_blank">2089. Maximum Matrix Sum</a></h2><h3>Medium</h3><hr><p>You are given an <code>n x n</code> integer <code>matrix</code>. You can do the following operation <strong>any</strong> number of times:</p>
 
 <ul>
 	<li>Choose any two <strong>adjacent</strong> elements of <code>matrix</code> and <strong>multiply</strong> each of them by <code>-1</code>.</li>
@@ -37,6 +45,10 @@
 	<li><code>-10<sup>5</sup> &lt;= matrix[i][j] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maxMatrixSum(int[][] matrix) {
@@ -58,3 +70,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-happy-string">1304. Longest Happy String</a></h2><h3>Medium</h3><hr><p>A string <code>s</code> is called <strong>happy</strong> if it satisfies the following conditions:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1304. Longest Happy String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-happy-string" target = "_blank">1304. Longest Happy String</a></h2><h3>Medium</h3><hr><p>A string <code>s</code> is called <strong>happy</strong> if it satisfies the following conditions:</p>
 
 <ul>
 	<li><code>s</code> only contains the letters <code>&#39;a&#39;</code>, <code>&#39;b&#39;</code>, and <code>&#39;c&#39;</code>.</li>
@@ -36,6 +44,10 @@
 	<li><code>0 &lt;= a, b, c &lt;= 100</code></li>
 	<li><code>a + b + c &gt; 0</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -171,3 +183,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

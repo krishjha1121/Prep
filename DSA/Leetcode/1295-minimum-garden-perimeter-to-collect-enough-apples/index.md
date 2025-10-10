@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-garden-perimeter-to-collect-enough-apples">1295. Minimum Garden Perimeter to Collect Enough Apples</a></h2><h3>Medium</h3><hr><p>In a garden represented as an infinite 2D grid, there is an apple tree planted at <strong>every</strong> integer coordinate. The apple tree planted at an integer coordinate <code>(i, j)</code> has <code>|i| + |j|</code> apples growing on it.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1295. Minimum Garden Perimeter to Collect Enough Apples
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-garden-perimeter-to-collect-enough-apples" target = "_blank">1295. Minimum Garden Perimeter to Collect Enough Apples</a></h2><h3>Medium</h3><hr><p>In a garden represented as an infinite 2D grid, there is an apple tree planted at <strong>every</strong> integer coordinate. The apple tree planted at an integer coordinate <code>(i, j)</code> has <code>|i| + |j|</code> apples growing on it.</p>
 
 <p>You will buy an axis-aligned <strong>square plot</strong> of land that is centered at <code>(0, 0)</code>.</p>
 
@@ -43,6 +51,10 @@ The perimeter is 2 * 4 = 8.
 	<li><code>1 &lt;= neededApples &lt;= 10<sup>15</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long minimumPerimeter(long neededApples) {
@@ -66,3 +78,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-substring-with-given-hash-value">2275. Find Substring With Given Hash Value</a></h2><h3>Hard</h3><hr><p>The hash of a <strong>0-indexed</strong> string <code>s</code> of length <code>k</code>, given integers <code>p</code> and <code>m</code>, is computed using the following function:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2275. Find Substring With Given Hash Value
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-substring-with-given-hash-value" target = "_blank">2275. Find Substring With Given Hash Value</a></h2><h3>Hard</h3><hr><p>The hash of a <strong>0-indexed</strong> string <code>s</code> of length <code>k</code>, given integers <code>p</code> and <code>m</code>, is computed using the following function:</p>
 
 <ul>
 	<li><code>hash(s, p, m) = (val(s[0]) * p<sup>0</sup> + val(s[1]) * p<sup>1</sup> + ... + val(s[k-1]) * p<sup>k-1</sup>) mod m</code>.</li>
@@ -44,6 +52,10 @@ Note that &quot;bxz&quot; also has a hash of 32 but it appears later than &quot;
 	<li>The test cases are generated such that an answer always <strong>exists</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String subStrHash(String s, int power, int modulo, int k, int hashValue) {
@@ -66,3 +78,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

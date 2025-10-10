@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-recolors-to-get-k-consecutive-black-blocks">2463. Minimum Recolors to Get K Consecutive Black Blocks</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> string <code>blocks</code> of length <code>n</code>, where <code>blocks[i]</code> is either <code>&#39;W&#39;</code> or <code>&#39;B&#39;</code>, representing the color of the <code>i<sup>th</sup></code> block. The characters <code>&#39;W&#39;</code> and <code>&#39;B&#39;</code> denote the colors white and black, respectively.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2463. Minimum Recolors to Get K Consecutive Black Blocks
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-recolors-to-get-k-consecutive-black-blocks" target = "_blank">2463. Minimum Recolors to Get K Consecutive Black Blocks</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> string <code>blocks</code> of length <code>n</code>, where <code>blocks[i]</code> is either <code>&#39;W&#39;</code> or <code>&#39;B&#39;</code>, representing the color of the <code>i<sup>th</sup></code> block. The characters <code>&#39;W&#39;</code> and <code>&#39;B&#39;</code> denote the colors white and black, respectively.</p>
 
 <p>You are also given an integer <code>k</code>, which is the desired number of <strong>consecutive</strong> black blocks.</p>
 
@@ -39,29 +47,37 @@ Therefore, we return 0.
 	<li><code>1 &lt;= k &lt;= n</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
-    public int minimumRecolors(String blocks, int k) {
-        int n = blocks.length();
-        int ans = Integer.MAX_VALUE, count = 0;
-        for (int i = 0; i < k; i++) {
-            char current = blocks.charAt(i);
-            if (current == 'W')
-                count++;
+    public String smallestNumber(String pattern) {
+        int n = pattern.length();
+        StringBuilder sb = new StringBuilder();
+        Stack<Integer> st = new Stack<>();
+        int num = 1;
+        for (int i = 0; i <= n; i++) {
+            st.push(num++);
+            if (i == pattern.length() || pattern.charAt(i) == 'I') {
+                while (!st.isEmpty())
+                    sb.append(st.pop());
+            }
         }
-        int start = 0;
-        ans = Math.min(ans, count);
-        for (int i = k; i < n; i++) {
-            char prev = blocks.charAt(start);
-            char current = blocks.charAt(i);
-            if (prev == 'W')
-                count--;
-            if (current == 'W')
-                count++;
-            ans = Math.min(ans, count);
-            start++;
-        }
-        return ans;
+        return sb.toString();
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

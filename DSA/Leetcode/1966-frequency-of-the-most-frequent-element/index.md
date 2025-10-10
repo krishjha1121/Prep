@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/frequency-of-the-most-frequent-element">1966. Frequency of the Most Frequent Element</a></h2><h3>Medium</h3><hr><p>The <strong>frequency</strong> of an element is the number of times it occurs in an array.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1966. Frequency of the Most Frequent Element
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/frequency-of-the-most-frequent-element" target = "_blank">1966. Frequency of the Most Frequent Element</a></h2><h3>Medium</h3><hr><p>The <strong>frequency</strong> of an element is the number of times it occurs in an array.</p>
 
 <p>You are given an integer array <code>nums</code> and an integer <code>k</code>. In one operation, you can choose an index of <code>nums</code> and increment the element at that index by <code>1</code>.</p>
 
@@ -40,6 +48,10 @@ Explanation:</strong> Increment the first element three times and the second ele
 	<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxFrequency(int[] nums, int k) {
@@ -80,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

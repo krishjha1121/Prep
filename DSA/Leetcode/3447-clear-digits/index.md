@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/clear-digits">3447. Clear Digits</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3447. Clear Digits
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/clear-digits" target = "_blank">3447. Clear Digits</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code>.</p>
 
 <p>Your task is to remove <strong>all</strong> digits by doing this operation repeatedly:</p>
 
@@ -44,6 +52,10 @@
 	<li>The input is generated such that it is possible to delete all digits.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String clearDigits(String s) {
@@ -67,3 +79,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

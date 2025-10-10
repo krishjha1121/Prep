@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/operations-on-tree">2104. Operations on Tree</a></h2><h3>Medium</h3><hr><p>You are given a tree with <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code> in the form of a parent array <code>parent</code> where <code>parent[i]</code> is the parent of the <code>i<sup>th</sup></code> node. The root of the tree is node <code>0</code>, so <code>parent[0] = -1</code> since it has no parent. You want to design a data structure that allows users to lock, unlock, and upgrade nodes in the tree.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2104. Operations on Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/operations-on-tree" target = "_blank">2104. Operations on Tree</a></h2><h3>Medium</h3><hr><p>You are given a tree with <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code> in the form of a parent array <code>parent</code> where <code>parent[i]</code> is the parent of the <code>i<sup>th</sup></code> node. The root of the tree is node <code>0</code>, so <code>parent[0] = -1</code> since it has no parent. You want to design a data structure that allows users to lock, unlock, and upgrade nodes in the tree.</p>
 
 <p>The data structure should support the following functions:</p>
 
@@ -62,8 +70,13 @@ lockingTree.lock(0, 1); // return false because node 0 is already locked.
 	<li>At most <code>2000</code> calls <strong>in total</strong> will be made to <code>lock</code>, <code>unlock</code>, and <code>upgrade</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.*;
+
 class LockingTree {
     private ArrayList<ArrayList<Integer >> adj;
     private int par[];
@@ -147,7 +160,6 @@ class LockingTree {
         }
     }
 }
-
 /**
     Your LockingTree object will be instantiated and called as such:
     LockingTree obj = new LockingTree(parent);
@@ -156,3 +168,15 @@ class LockingTree {
     boolean param_3 = obj.upgrade(num,user);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

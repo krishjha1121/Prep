@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rotating-the-box">1972. Rotating the Box</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> matrix of characters <code>box</code> representing a side-view of a box. Each cell of the box is one of the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1972. Rotating the Box
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rotating-the-box" target = "_blank">1972. Rotating the Box</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> matrix of characters <code>box</code> representing a side-view of a box. Each cell of the box is one of the following:</p>
 
 <ul>
 	<li>A stone <code>&#39;#&#39;</code></li>
@@ -63,6 +71,10 @@
 	<li><code>box[i][j]</code> is either <code>&#39;#&#39;</code>, <code>&#39;*&#39;</code>, or <code>&#39;.&#39;</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public char[][] rotateTheBox(char[][] box) {
@@ -96,3 +108,14 @@ class Solution {
 }
 ```
 
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

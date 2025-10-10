@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-complete-subarrays-in-an-array">2856. Count Complete Subarrays in an Array</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> consisting of <strong>positive</strong> integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2856. Count Complete Subarrays in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-complete-subarrays-in-an-array" target = "_blank">2856. Count Complete Subarrays in an Array</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> consisting of <strong>positive</strong> integers.</p>
 
 <p>We call a subarray of an array <strong>complete</strong> if the following condition is satisfied:</p>
 
@@ -35,6 +43,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 2000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countCompleteSubarrays(int[] nums) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

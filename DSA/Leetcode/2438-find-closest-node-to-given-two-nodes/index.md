@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-closest-node-to-given-two-nodes">2438. Find Closest Node to Given Two Nodes</a></h2><h3>Medium</h3><hr><p>You are given a <strong>directed</strong> graph of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>, where each node has <strong>at most one</strong> outgoing edge.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2438. Find Closest Node to Given Two Nodes
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-closest-node-to-given-two-nodes" target = "_blank">2438. Find Closest Node to Given Two Nodes</a></h2><h3>Medium</h3><hr><p>You are given a <strong>directed</strong> graph of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>, where each node has <strong>at most one</strong> outgoing edge.</p>
 
 <p>The graph is represented with a given <strong>0-indexed</strong> array <code>edges</code> of size <code>n</code>, indicating that there is a directed edge from node <code>i</code> to node <code>edges[i]</code>. If there is no outgoing edge from <code>i</code>, then <code>edges[i] == -1</code>.</p>
 
@@ -38,6 +46,10 @@ The maximum of those two distances is 2. It can be proven that we cannot get a n
 	<li><code>0 &lt;= node1, node2 &lt; n</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int dist1[];
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-kth-bit-in-nth-binary-string">1667. Find Kth Bit in Nth Binary String</a></h2><h3>Medium</h3><hr><p>Given two positive integers <code>n</code> and <code>k</code>, the binary string <code>S<sub>n</sub></code> is formed as follows:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1667. Find Kth Bit in Nth Binary String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-kth-bit-in-nth-binary-string" target = "_blank">1667. Find Kth Bit in Nth Binary String</a></h2><h3>Medium</h3><hr><p>Given two positive integers <code>n</code> and <code>k</code>, the binary string <code>S<sub>n</sub></code> is formed as follows:</p>
 
 <ul>
 	<li><code>S<sub>1</sub> = &quot;0&quot;</code></li>
@@ -45,6 +53,10 @@ The 11<sup>th</sup> bit is &quot;1&quot;.
 	<li><code>1 &lt;= k &lt;= 2<sup>n</sup> - 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public char findKthBit(int n, int k) {
@@ -78,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

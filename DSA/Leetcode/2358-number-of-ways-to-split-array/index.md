@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-ways-to-split-array">2358. Number of Ways to Split Array</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2358. Number of Ways to Split Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-ways-to-split-array" target = "_blank">2358. Number of Ways to Split Array</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code>.</p>
 
 <p><code>nums</code> contains a <strong>valid split</strong> at index <code>i</code> if the following are true:</p>
 
@@ -42,6 +50,10 @@ There are two valid splits in nums:
 	<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int waysToSplitArray(int[] nums) {
@@ -67,3 +79,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

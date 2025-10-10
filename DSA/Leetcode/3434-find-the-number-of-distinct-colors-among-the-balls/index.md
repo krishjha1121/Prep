@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-number-of-distinct-colors-among-the-balls">3434. Find the Number of Distinct Colors Among the Balls</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>limit</code> and a 2D array <code>queries</code> of size <code>n x 2</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3434. Find the Number of Distinct Colors Among the Balls
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-number-of-distinct-colors-among-the-balls" target = "_blank">3434. Find the Number of Distinct Colors Among the Balls</a></h2><h3>Medium</h3><hr><p>You are given an integer <code>limit</code> and a 2D array <code>queries</code> of size <code>n x 2</code>.</p>
 
 <p>There are <code>limit + 1</code> balls with <strong>distinct</strong> labels in the range <code>[0, limit]</code>. Initially, all balls are uncolored. For every query in <code>queries</code> that is of the form <code>[x, y]</code>, you mark ball <code>x</code> with the color <code>y</code>. After each query, you need to find the number of <strong>distinct</strong> colors among the balls.</p>
 
@@ -57,6 +65,10 @@
 	<li><code>1 &lt;= queries[i][1] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #cpp>
+
 ```cpp
 class Solution {
   public:
@@ -85,3 +97,15 @@ class Solution {
     }
 };
 ```
+
+</template>
+
+<template #java>
+
+```java
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -54,6 +54,10 @@ Return the **minimum** possible **non-negative** value of `k`, such that after p
 - `0 <= lᵢ <= rᵢ < nums.length`
 - `1 <= valᵢ <= 5`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minZeroArray(int[] nums, int[][] queries) {
@@ -98,3 +102,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

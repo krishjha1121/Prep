@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/take-gifts-from-the-richest-pile">2692. Take Gifts From the Richest Pile</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>gifts</code> denoting the number of gifts in various piles. Every second, you do the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2692. Take Gifts From the Richest Pile
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/take-gifts-from-the-richest-pile" target = "_blank">2692. Take Gifts From the Richest Pile</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>gifts</code> denoting the number of gifts in various piles. Every second, you do the following:</p>
 
 <ul>
 	<li>Choose the pile with the maximum number of gifts.</li>
@@ -43,6 +51,10 @@ So, the total gifts remaining are 4.
 	<li><code>1 &lt;= k &lt;= 10<sup>3</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long pickGifts(int[] gifts, int k) {
@@ -61,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

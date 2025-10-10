@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree">2493. Reverse Odd Levels of Binary Tree</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a <strong>perfect</strong> binary tree, reverse the node values at each <strong>odd</strong> level of the tree.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2493. Reverse Odd Levels of Binary Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree" target = "_blank">2493. Reverse Odd Levels of Binary Tree</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a <strong>perfect</strong> binary tree, reverse the node values at each <strong>odd</strong> level of the tree.</p>
 
 <ul>
 	<li>For example, suppose the node values at level 3 are <code>[2,1,3,4,7,11,29,18]</code>, then it should become <code>[18,29,11,7,4,3,1,2]</code>.</li>
@@ -49,6 +57,10 @@ The nodes at level 3 were 1, 1, 1, 1, 2, 2, 2, 2, and are 2, 2, 2, 2, 1, 1, 1, 1
 	<li><code>0 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
 	<li><code>root</code> is a <strong>perfect</strong> binary tree.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -123,3 +135,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

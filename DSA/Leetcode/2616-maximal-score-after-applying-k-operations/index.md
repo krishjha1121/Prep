@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximal-score-after-applying-k-operations">2616. Maximal Score After Applying K Operations</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>k</code>. You have a <strong>starting score</strong> of <code>0</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2616. Maximal Score After Applying K Operations
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximal-score-after-applying-k-operations" target = "_blank">2616. Maximal Score After Applying K Operations</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>k</code>. You have a <strong>starting score</strong> of <code>0</code>.</p>
 
 <p>In one <strong>operation</strong>:</p>
 
@@ -41,7 +49,16 @@ The final score is 10 + 4 + 3 = 17.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
+import java.util.*;
+import java.io.*;
+import java.math.*;
+import static java.lang.Math.*;
+
 class Solution {
     static class custom_sort implements Comparator<Integer> {
         @Override
@@ -67,5 +84,16 @@ class Solution {
         return sum;
     }
 }
-
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements">3219. Make Lexicographically Smallest Array by Swapping Elements</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array of <strong>positive</strong> integers <code>nums</code> and a <strong>positive</strong> integer <code>limit</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3219. Make Lexicographically Smallest Array by Swapping Elements
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements" target = "_blank">3219. Make Lexicographically Smallest Array by Swapping Elements</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> array of <strong>positive</strong> integers <code>nums</code> and a <strong>positive</strong> integer <code>limit</code>.</p>
 
 <p>In one operation, you can choose any two indices <code>i</code> and <code>j</code> and swap <code>nums[i]</code> and <code>nums[j]</code> <strong>if</strong> <code>|nums[i] - nums[j]| &lt;= limit</code>.</p>
 
@@ -48,6 +56,10 @@ We cannot obtain a lexicographically smaller array by applying any more operatio
 	<li><code>1 &lt;= limit &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] lexicographicallySmallestArray(int[] nums, int limit) {
@@ -78,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

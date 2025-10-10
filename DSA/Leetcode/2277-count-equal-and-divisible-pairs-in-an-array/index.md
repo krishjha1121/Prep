@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-equal-and-divisible-pairs-in-an-array">2277. Count Equal and Divisible Pairs in an Array</a></h2><h3>Easy</h3><hr>Given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> and an integer <code>k</code>, return <em>the <strong>number of pairs</strong></em> <code>(i, j)</code> <em>where</em> <code>0 &lt;= i &lt; j &lt; n</code>, <em>such that</em> <code>nums[i] == nums[j]</code> <em>and</em> <code>(i * j)</code> <em>is divisible by</em> <code>k</code>.
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2277. Count Equal and Divisible Pairs in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-equal-and-divisible-pairs-in-an-array" target = "_blank">2277. Count Equal and Divisible Pairs in an Array</a></h2><h3>Easy</h3><hr>Given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> and an integer <code>k</code>, return <em>the <strong>number of pairs</strong></em> <code>(i, j)</code> <em>where</em> <code>0 &lt;= i &lt; j &lt; n</code>, <em>such that</em> <code>nums[i] == nums[j]</code> <em>and</em> <code>(i * j)</code> <em>is divisible by</em> <code>k</code>.
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -29,6 +37,10 @@ There are 4 pairs that meet all the requirements:
 	<li><code>1 &lt;= nums[i], k &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countPairs(int[] nums, int k) {
@@ -44,3 +56,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

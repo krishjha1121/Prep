@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-points-from-grid-queries">2588. Maximum Number of Points From Grid Queries</a></h2><h3>Hard</h3><hr><p>You are given an <code>m x n</code> integer matrix <code>grid</code> and an array <code>queries</code> of size <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2588. Maximum Number of Points From Grid Queries
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-points-from-grid-queries" target = "_blank">2588. Maximum Number of Points From Grid Queries</a></h2><h3>Hard</h3><hr><p>You are given an <code>m x n</code> integer matrix <code>grid</code> and an array <code>queries</code> of size <code>k</code>.</p>
 
 <p>Find an array <code>answer</code> of size <code>k</code> such that for each integer <code>queries[i]</code> you start in the <strong>top left</strong> cell of the matrix and repeat the following process:</p>
 
@@ -39,6 +47,10 @@
 	<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>
 	<li><code>1 &lt;= grid[i][j], queries[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -113,3 +125,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

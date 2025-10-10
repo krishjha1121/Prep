@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii">3380. Shortest Subarray With OR at Least K II</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> of <strong>non-negative</strong> integers and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3380. Shortest Subarray With OR at Least K II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii" target = "_blank">3380. Shortest Subarray With OR at Least K II</a></h2><h3>Medium</h3><hr><p>You are given an array <code>nums</code> of <strong>non-negative</strong> integers and an integer <code>k</code>.</p>
 
 <p>An array is called <strong>special</strong> if the bitwise <code>OR</code> of all of its elements is <strong>at least</strong> <code>k</code>.</p>
 
@@ -50,6 +58,10 @@
 	<li><code>0 &lt;= k &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumSubarrayLength(int[] nums, int k) {
@@ -90,3 +102,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

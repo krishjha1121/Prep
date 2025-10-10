@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-number-of-bad-pairs">2448. Count Number of Bad Pairs</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>. A pair of indices <code>(i, j)</code> is a <strong>bad pair</strong> if <code>i &lt; j</code> and <code>j - i != nums[j] - nums[i]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2448. Count Number of Bad Pairs
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-number-of-bad-pairs" target = "_blank">2448. Count Number of Bad Pairs</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>. A pair of indices <code>(i, j)</code> is a <strong>bad pair</strong> if <code>i &lt; j</code> and <code>j - i != nums[j] - nums[i]</code>.</p>
 
 <p>Return<em> the total number of <strong>bad pairs</strong> in </em><code>nums</code>.</p>
 
@@ -32,6 +40,10 @@ There are a total of 5 bad pairs, so we return 5.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long countBadPairs(int[] nums) {
@@ -50,3 +62,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees">3439. Find Minimum Diameter After Merging Two Trees</a></h2><h3>Hard</h3><hr><p>There exist two <strong>undirected </strong>trees with <code>n</code> and <code>m</code> nodes, numbered from <code>0</code> to <code>n - 1</code> and from <code>0</code> to <code>m - 1</code>, respectively. You are given two 2D integer arrays <code>edges1</code> and <code>edges2</code> of lengths <code>n - 1</code> and <code>m - 1</code>, respectively, where <code>edges1[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that there is an edge between nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code> in the first tree and <code>edges2[i] = [u<sub>i</sub>, v<sub>i</sub>]</code> indicates that there is an edge between nodes <code>u<sub>i</sub></code> and <code>v<sub>i</sub></code> in the second tree.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3439. Find Minimum Diameter After Merging Two Trees
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees" target = "_blank">3439. Find Minimum Diameter After Merging Two Trees</a></h2><h3>Hard</h3><hr><p>There exist two <strong>undirected </strong>trees with <code>n</code> and <code>m</code> nodes, numbered from <code>0</code> to <code>n - 1</code> and from <code>0</code> to <code>m - 1</code>, respectively. You are given two 2D integer arrays <code>edges1</code> and <code>edges2</code> of lengths <code>n - 1</code> and <code>m - 1</code>, respectively, where <code>edges1[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that there is an edge between nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code> in the first tree and <code>edges2[i] = [u<sub>i</sub>, v<sub>i</sub>]</code> indicates that there is an edge between nodes <code>u<sub>i</sub></code> and <code>v<sub>i</sub></code> in the second tree.</p>
 
 <p>You must connect one node from the first tree with another node from the second tree with an edge.</p>
 
@@ -46,10 +54,13 @@
 	<li>The input is generated such that <code>edges1</code> and <code>edges2</code> represent valid trees.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #cpp>
+
 ```cpp
 class Solution {
   public:
-    // why the same solution in java is giving tle; ????
     int minimumDiameterAfterMerge(vector<vector<int>> &edges1,
                                   vector<vector<int>> &edges2) {
         vector<vector<int>> adj1(100007);
@@ -124,3 +135,15 @@ class Solution {
     }
 };
 ```
+
+</template>
+
+<template #java>
+
+```java
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

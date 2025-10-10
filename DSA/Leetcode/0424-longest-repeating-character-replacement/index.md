@@ -37,6 +37,10 @@ There may exists other ways to achieve this answer too.</pre>
 	<li><code>0 &lt;= k &lt;= s.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public static int characterReplacement(String s, int k) {
@@ -85,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

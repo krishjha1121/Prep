@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid">1485. Minimum Cost to Make at Least One Valid Path in a Grid</a></h2><h3>Hard</h3><hr><p>Given an <code>m x n</code> grid. Each cell of the grid has a sign pointing to the next cell you should visit if you are currently in this cell. The sign of <code>grid[i][j]</code> can be:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1485. Minimum Cost to Make at Least One Valid Path in a Grid
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid" target = "_blank">1485. Minimum Cost to Make at Least One Valid Path in a Grid</a></h2><h3>Hard</h3><hr><p>Given an <code>m x n</code> grid. Each cell of the grid has a sign pointing to the next cell you should visit if you are currently in this cell. The sign of <code>grid[i][j]</code> can be:</p>
 
 <ul>
 	<li><code>1</code> which means go to the cell to the right. (i.e go from <code>grid[i][j]</code> to <code>grid[i][j + 1]</code>)</li>
@@ -50,6 +58,10 @@ The total cost = 3.
 	<li><code>1 &lt;= m, n &lt;= 100</code></li>
 	<li><code>1 &lt;= grid[i][j] &lt;= 4</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -140,3 +152,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

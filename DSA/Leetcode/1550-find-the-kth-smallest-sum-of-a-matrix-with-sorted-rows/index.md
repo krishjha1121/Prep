@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows">1550. Find the Kth Smallest Sum of a Matrix With Sorted Rows</a></h2><h3>Hard</h3><hr><p>You are given an <code>m x n</code> matrix <code>mat</code> that has its rows sorted in non-decreasing order and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1550. Find the Kth Smallest Sum of a Matrix With Sorted Rows
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows" target = "_blank">1550. Find the Kth Smallest Sum of a Matrix With Sorted Rows</a></h2><h3>Hard</h3><hr><p>You are given an <code>m x n</code> matrix <code>mat</code> that has its rows sorted in non-decreasing order and an integer <code>k</code>.</p>
 
 <p>You are allowed to choose <strong>exactly one element</strong> from each row to form an array.</p>
 
@@ -41,6 +49,10 @@
 	<li><code>1 &lt;= k &lt;= min(200, n<sup>m</sup>)</code></li>
 	<li><code>mat[i]</code> is a non-decreasing array.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.ArrayList;
@@ -88,3 +100,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

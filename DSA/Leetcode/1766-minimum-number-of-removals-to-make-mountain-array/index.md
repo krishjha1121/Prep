@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array">1766. Minimum Number of Removals to Make Mountain Array</a></h2><h3>Hard</h3><hr><p>You may recall that an array <code>arr</code> is a <strong>mountain array</strong> if and only if:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1766. Minimum Number of Removals to Make Mountain Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array" target = "_blank">1766. Minimum Number of Removals to Make Mountain Array</a></h2><h3>Hard</h3><hr><p>You may recall that an array <code>arr</code> is a <strong>mountain array</strong> if and only if:</p>
 
 <ul>
 	<li><code>arr.length &gt;= 3</code></li>
@@ -38,13 +46,16 @@
 	<li>It is guaranteed that you can make a mountain array out of <code>nums</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumMountainRemovals(int[] nums) {
         int n = nums.length;
         return n - solve(nums);
     }
-
     public static int solve(int arr[]) {
         int n = arr.length;
         int dp1[] = new int[n + 1];
@@ -72,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum">2204. Find Subsequence of Length K With the Largest Sum</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. You want to find a <strong>subsequence </strong>of <code>nums</code> of length <code>k</code> that has the <strong>largest</strong> sum.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2204. Find Subsequence of Length K With the Largest Sum
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum" target = "_blank">2204. Find Subsequence of Length K With the Largest Sum</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. You want to find a <strong>subsequence </strong>of <code>nums</code> of length <code>k</code> that has the <strong>largest</strong> sum.</p>
 
 <p>Return<em> </em><em><strong>any</strong> such subsequence as an integer array of length </em><code>k</code>.</p>
 
@@ -41,6 +49,10 @@ Another possible subsequence is [4, 3].
 	<li><code>1 &lt;= k &lt;= nums.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class custom_sort implements Comparator<Integer> {
@@ -74,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

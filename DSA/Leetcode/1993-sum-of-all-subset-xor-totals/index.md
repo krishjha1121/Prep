@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sum-of-all-subset-xor-totals">1993. Sum of All Subset XOR Totals</a></h2><h3>Easy</h3><hr><p>The <strong>XOR total</strong> of an array is defined as the bitwise <code>XOR</code> of<strong> all its elements</strong>, or <code>0</code> if the array is<strong> empty</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1993. Sum of All Subset XOR Totals
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sum-of-all-subset-xor-totals" target = "_blank">1993. Sum of All Subset XOR Totals</a></h2><h3>Easy</h3><hr><p>The <strong>XOR total</strong> of an array is defined as the bitwise <code>XOR</code> of<strong> all its elements</strong>, or <code>0</code> if the array is<strong> empty</strong>.</p>
 
 <ul>
 	<li>For example, the <strong>XOR total</strong> of the array <code>[2,5,6]</code> is <code>2 XOR 5 XOR 6 = 1</code>.</li>
@@ -57,6 +65,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 20</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int subsetXORSum(int[] nums) {
@@ -79,3 +91,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

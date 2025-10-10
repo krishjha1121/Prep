@@ -52,6 +52,10 @@ A **subset** of an array is a selection of elements (possibly none) of the array
 - `queries[i].length == 2`
 - `0 <= lᵢ <= rᵢ < nums.length`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean isZeroArray(int[] nums, int[][] queries) {
@@ -74,3 +78,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

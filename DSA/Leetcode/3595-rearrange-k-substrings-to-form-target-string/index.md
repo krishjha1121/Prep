@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rearrange-k-substrings-to-form-target-string">3595. Rearrange K Substrings to Form Target String</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>s</code> and <code>t</code>, both of which are anagrams of each other, and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3595. Rearrange K Substrings to Form Target String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rearrange-k-substrings-to-form-target-string" target = "_blank">3595. Rearrange K Substrings to Form Target String</a></h2><h3>Medium</h3><hr><p>You are given two strings <code>s</code> and <code>t</code>, both of which are anagrams of each other, and an integer <code>k</code>.</p>
 
 <p>Your task is to determine whether it is possible to split the string <code>s</code> into <code>k</code> equal-sized substrings, rearrange the substrings, and concatenate them in <em>any order</em> to create a new string that matches the given string <code>t</code>.</p>
 
@@ -65,6 +73,10 @@
 	<li>The input is generated such that<!-- notionvc: 53e485fc-71ce-4032-aed1-f712dd3822ba --> <code>s</code> and <code>t</code> are anagrams of each other.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean isPossibleToRearrange(String s, String t, int k) {
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

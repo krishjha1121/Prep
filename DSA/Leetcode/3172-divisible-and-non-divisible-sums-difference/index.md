@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/divisible-and-non-divisible-sums-difference">3172. Divisible and Non-divisible Sums Difference</a></h2><h3>Easy</h3><hr><p>You are given positive integers <code>n</code> and <code>m</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3172. Divisible and Non-divisible Sums Difference
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/divisible-and-non-divisible-sums-difference" target = "_blank">3172. Divisible and Non-divisible Sums Difference</a></h2><h3>Easy</h3><hr><p>You are given positive integers <code>n</code> and <code>m</code>.</p>
 
 <p>Define two integers as follows:</p>
 
@@ -50,6 +58,10 @@ We return 0 - 15 = -15 as the answer.
 	<li><code>1 &lt;= n, m &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int differenceOfSums(int n, int m) {
@@ -64,3 +76,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

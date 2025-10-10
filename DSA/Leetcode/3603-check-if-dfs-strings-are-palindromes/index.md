@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/check-if-dfs-strings-are-palindromes">3603. Check if DFS Strings Are Palindromes</a></h2><h3>Hard</h3><hr><p>You are given a tree rooted at node 0, consisting of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The tree is represented by an array <code>parent</code> of size <code>n</code>, where <code>parent[i]</code> is the parent of node <code>i</code>. Since node 0 is the root, <code>parent[0] == -1</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3603. Check if DFS Strings Are Palindromes
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/check-if-dfs-strings-are-palindromes" target = "_blank">3603. Check if DFS Strings Are Palindromes</a></h2><h3>Hard</h3><hr><p>You are given a tree rooted at node 0, consisting of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The tree is represented by an array <code>parent</code> of size <code>n</code>, where <code>parent[i]</code> is the parent of node <code>i</code>. Since node 0 is the root, <code>parent[0] == -1</code>.</p>
 
 <p>You are also given a string <code>s</code> of length <code>n</code>, where <code>s[i]</code> is the character assigned to node <code>i</code>.</p>
 
@@ -66,11 +74,15 @@
 	<li><code>s</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private long base = 911;
     private long mod = 1000000007L;
-    private ArrayList<ArrayList<Integer >> adj;
+    private ArrayList<ArrayList<Integer>> adj;
     private long forwardHash[];
     private long reverseHash[];
     private int len[];
@@ -78,14 +90,13 @@ class Solution {
     public boolean[] findAnswer(int[] parent, String s) {
         int n = parent.length;
         adj = new ArrayList<>();
-        for (int i = 0; i <= n + 1; i++)
-            adj.add(new ArrayList<>());
-        for (int i = 0; i < n; i++) {
-            if (parent[i] != -1)
+        for (int i = 0; i <= n + 1; i++) adj.add(new ArrayList<>());
+        for(int i = 0; i < n; i++) {
+            if(parent[i] != -1){
                 adj.get(parent[i]).add(i);
+            }
         }
-        for (ArrayList<Integer> curr : adj)
-            Collections.sort(curr);
+        for (ArrayList<Integer> curr : adj) Collections.sort(curr);
 
         pow = new long[n + 1];
         forwardHash = new long[n];
@@ -93,17 +104,14 @@ class Solution {
         len = new int[n];
 
         pow[0] = 1;
-        for (int i = 1; i <= n; i++)
-            pow[i] = (pow[i - 1] * base) % mod;
+        for(int i = 1; i <= n; i++) pow[i] = (pow[i - 1] * base) % mod;
 
         dfs(0, s);
 
         boolean[] answer = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            if (forwardHash[i] == reverseHash[i])
-                answer[i] = true;
-            else
-                answer[i] = false;
+        for(int i = 0; i < n; i++) {
+            if (forwardHash[i] == reverseHash[i]) answer[i] = true;
+            else answer[i] = false;
         }
         return answer;
     }
@@ -111,7 +119,7 @@ class Solution {
     public void dfs(int u, String s) {
         len[u] = 1;
         forwardHash[u] = 0;
-        for (int v : adj.get(u)) {
+        for(int v : adj.get(u)) {
             dfs(v, s);
             forwardHash[u] = (forwardHash[u] * pow[len[v]] + forwardHash[v]) % mod;
             len[u] += len[v];
@@ -127,3 +135,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

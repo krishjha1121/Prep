@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/unique-length-3-palindromic-subsequences">2059. Unique Length-3 Palindromic Subsequences</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, return <em>the number of <strong>unique palindromes of length three</strong> that are a <strong>subsequence</strong> of </em><code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2059. Unique Length-3 Palindromic Subsequences
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/unique-length-3-palindromic-subsequences" target = "_blank">2059. Unique Length-3 Palindromic Subsequences</a></h2><h3>Medium</h3><hr><p>Given a string <code>s</code>, return <em>the number of <strong>unique palindromes of length three</strong> that are a <strong>subsequence</strong> of </em><code>s</code>.</p>
 
 <p>Note that even if there are multiple ways to obtain the same subsequence, it is still only counted <strong>once</strong>.</p>
 
@@ -50,6 +58,10 @@
 	<li><code>s</code> consists of only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countPalindromicSubsequence(String s) {
@@ -68,3 +80,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal">925. Construct Binary Tree from Preorder and Postorder Traversal</a></h2><h3>Medium</h3><hr><p>Given two integer arrays, <code>preorder</code> and <code>postorder</code> where <code>preorder</code> is the preorder traversal of a binary tree of <strong>distinct</strong> values and <code>postorder</code> is the postorder traversal of the same tree, reconstruct and return <em>the binary tree</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 925. Construct Binary Tree from Preorder and Postorder Traversal
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal" target = "_blank">925. Construct Binary Tree from Preorder and Postorder Traversal</a></h2><h3>Medium</h3><hr><p>Given two integer arrays, <code>preorder</code> and <code>postorder</code> where <code>preorder</code> is the preorder traversal of a binary tree of <strong>distinct</strong> values and <code>postorder</code> is the postorder traversal of the same tree, reconstruct and return <em>the binary tree</em>.</p>
 
 <p>If there exist multiple answers, you can <strong>return any</strong> of them.</p>
 
@@ -30,6 +38,8 @@
 	<li>It is guaranteed that <code>preorder</code> and <code>postorder</code> are the preorder traversal and postorder traversal of the same binary tree.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public TreeNode constructFromPrePost(int[] pre, int[] post) {
@@ -57,3 +67,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

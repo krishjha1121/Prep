@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-array-sum-divisible-by-k">3846. Minimum Operations to Make Array Sum Divisible by K</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. You can perform the following operation any number of times:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3846. Minimum Operations to Make Array Sum Divisible by K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-array-sum-divisible-by-k" target = "_blank">3846. Minimum Operations to Make Array Sum Divisible by K</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>k</code>. You can perform the following operation any number of times:</p>
 
 <ul>
 	<li>Select an index <code>i</code> and replace <code>nums[i]</code> with <code>nums[i] - 1</code>.</li>
@@ -60,6 +68,10 @@
 	<li><code>1 &lt;= k &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minOperations(int[] nums, int k) {
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

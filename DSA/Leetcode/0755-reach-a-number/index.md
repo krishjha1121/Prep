@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/reach-a-number">755. Reach a Number</a></h2><h3>Medium</h3><hr><p>You are standing at position <code>0</code> on an infinite number line. There is a destination at position <code>target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 755. Reach a Number
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/reach-a-number" target = "_blank">755. Reach a Number</a></h2><h3>Medium</h3><hr><p>You are standing at position <code>0</code> on an infinite number line. There is a destination at position <code>target</code>.</p>
 
 <p>You can make some number of moves <code>numMoves</code> so that:</p>
 
@@ -39,6 +47,8 @@ On the 2<sup>nd</sup> move, we step from 1 to 3 (2 steps).
 	<li><code>target != 0</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int reachNumber(int target) {
@@ -53,3 +63,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

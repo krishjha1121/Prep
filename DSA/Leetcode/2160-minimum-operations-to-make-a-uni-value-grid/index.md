@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-a-uni-value-grid">2160. Minimum Operations to Make a Uni-Value Grid</a></h2><h3>Medium</h3><hr><p>You are given a 2D integer <code>grid</code> of size <code>m x n</code> and an integer <code>x</code>. In one operation, you can <strong>add</strong> <code>x</code> to or <strong>subtract</strong> <code>x</code> from any element in the <code>grid</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2160. Minimum Operations to Make a Uni-Value Grid
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-a-uni-value-grid" target = "_blank">2160. Minimum Operations to Make a Uni-Value Grid</a></h2><h3>Medium</h3><hr><p>You are given a 2D integer <code>grid</code> of size <code>m x n</code> and an integer <code>x</code>. In one operation, you can <strong>add</strong> <code>x</code> to or <strong>subtract</strong> <code>x</code> from any element in the <code>grid</code>.</p>
 
 <p>A <strong>uni-value grid</strong> is a grid where all the elements of it are equal.</p>
 
@@ -44,6 +52,10 @@ A total of 4 operations were used.
 	<li><code>1 &lt;= x, grid[i][j] &lt;= 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minOperations(int[][] grid, int x) {
@@ -76,3 +88,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

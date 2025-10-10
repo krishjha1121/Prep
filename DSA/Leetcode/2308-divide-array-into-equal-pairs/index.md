@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/divide-array-into-equal-pairs">2308. Divide Array Into Equal Pairs</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> consisting of <code>2 * n</code> integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2308. Divide Array Into Equal Pairs
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/divide-array-into-equal-pairs" target = "_blank">2308. Divide Array Into Equal Pairs</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> consisting of <code>2 * n</code> integers.</p>
 
 <p>You need to divide <code>nums</code> into <code>n</code> pairs such that:</p>
 
@@ -38,6 +46,10 @@ There is no way to divide nums into 4 / 2 = 2 pairs such that the pairs satisfy 
 	<li><code>1 &lt;= nums[i] &lt;= 500</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean divideArray(int[] nums) {
@@ -55,3 +67,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

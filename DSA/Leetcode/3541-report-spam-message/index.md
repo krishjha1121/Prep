@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/report-spam-message">3541. Report Spam Message</a></h2><h3>Medium</h3><hr><p>You are given an array of strings <code>message</code> and an array of strings <code>bannedWords</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3541. Report Spam Message
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/report-spam-message" target = "_blank">3541. Report Spam Message</a></h2><h3>Medium</h3><hr><p>You are given an array of strings <code>message</code> and an array of strings <code>bannedWords</code>.</p>
 
 <p>An array of words is considered <strong>spam</strong> if there are <strong>at least</strong> two words in it that <b>exactly</b> match any word in <code>bannedWords</code>.</p>
 
@@ -38,6 +46,10 @@
 	<li><code>message[i]</code> and <code>bannedWords[i]</code> consist only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean reportSpam(String[] message, String[] bannedWords) {
@@ -54,3 +66,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

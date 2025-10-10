@@ -76,6 +76,10 @@ It is impossible to make nums a Zero Array even after all the queries.
 - `0 <= lᵢ <= rᵢ < nums.length`
 - `1 <= valᵢ <= 10`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minZeroArray(int[] nums, int[][] queries) {
@@ -148,3 +152,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

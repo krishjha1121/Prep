@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray">3372. Longest Strictly Increasing or Strictly Decreasing Subarray</a></h2><h3>Easy</h3><hr><p>You are given an array of integers <code>nums</code>. Return <em>the length of the <strong>longest</strong> <span data-keyword="subarray-nonempty">subarray</span> of </em><code>nums</code><em> which is either <strong><span data-keyword="strictly-increasing-array">strictly increasing</span></strong> or <strong><span data-keyword="strictly-decreasing-array">strictly decreasing</span></strong></em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3372. Longest Strictly Increasing or Strictly Decreasing Subarray
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray" target = "_blank">3372. Longest Strictly Increasing or Strictly Decreasing Subarray</a></h2><h3>Easy</h3><hr><p>You are given an array of integers <code>nums</code>. Return <em>the length of the <strong>longest</strong> <span data-keyword="subarray-nonempty">subarray</span> of </em><code>nums</code><em> which is either <strong><span data-keyword="strictly-increasing-array">strictly increasing</span></strong> or <strong><span data-keyword="strictly-decreasing-array">strictly decreasing</span></strong></em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -57,6 +65,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 50</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int longestMonotonicSubarray(int[] nums) {
@@ -102,3 +114,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

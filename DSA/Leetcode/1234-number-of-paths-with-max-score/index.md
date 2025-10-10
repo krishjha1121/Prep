@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-paths-with-max-score">1234. Number of Paths with Max Score</a></h2><h3>Hard</h3><hr><p>You are given a square <code>board</code>&nbsp;of characters. You can move on the board starting at the bottom right square marked with the character&nbsp;<code>&#39;S&#39;</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1234. Number of Paths with Max Score
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-paths-with-max-score" target = "_blank">1234. Number of Paths with Max Score</a></h2><h3>Hard</h3><hr><p>You are given a square <code>board</code>&nbsp;of characters. You can move on the board starting at the bottom right square marked with the character&nbsp;<code>&#39;S&#39;</code>.</p>
 
 <p>You need&nbsp;to reach the top left square marked with the character <code>&#39;E&#39;</code>. The rest of the squares are labeled either with a numeric character&nbsp;<code>1, 2, ..., 9</code> or with an obstacle <code>&#39;X&#39;</code>. In one move you can go up, left or up-left (diagonally) only if there is no obstacle there.</p>
 
@@ -23,6 +31,10 @@
 <ul>
 	<li><code>2 &lt;= board.length == board[i].length &lt;= 100</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.Arrays;
@@ -75,3 +87,14 @@ class Solution {
 }
 ```
 
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

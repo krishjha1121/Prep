@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/eat-pizzas">3779. Eat Pizzas!</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>pizzas</code> of size <code>n</code>, where <code>pizzas[i]</code> represents the weight of the <code>i<sup>th</sup></code> pizza. Every day, you eat <strong>exactly</strong> 4 pizzas. Due to your incredible metabolism, when you eat pizzas of weights <code>W</code>, <code>X</code>, <code>Y</code>, and <code>Z</code>, where <code>W &lt;= X &lt;= Y &lt;= Z</code>, you gain the weight of only 1 pizza!</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3779. Eat Pizzas!
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/eat-pizzas" target = "_blank">3779. Eat Pizzas!</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>pizzas</code> of size <code>n</code>, where <code>pizzas[i]</code> represents the weight of the <code>i<sup>th</sup></code> pizza. Every day, you eat <strong>exactly</strong> 4 pizzas. Due to your incredible metabolism, when you eat pizzas of weights <code>W</code>, <code>X</code>, <code>Y</code>, and <code>Z</code>, where <code>W &lt;= X &lt;= Y &lt;= Z</code>, you gain the weight of only 1 pizza!</p>
 
 <ul>
 	<li>On <strong><span style="box-sizing: border-box; margin: 0px; padding: 0px;">odd-numbered</span></strong> days <strong>(1-indexed)</strong>, you gain a weight of <code>Z</code>.</li>
@@ -53,24 +61,35 @@
 	<li><code>n</code> is a multiple of 4.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
-    public long maxWeight(int[] pizzas) {
-        Arrays.sort(pizzas);
-        long res = 0L;
-        int l = 0, r = pizzas.length - 1;
-        int count = pizzas.length / 8 + (pizzas.length / 4) % 2;
-        for (int i = 0; i < count; i++) {
-            res += (long) pizzas[r];
-            r--;
-            l += 3;
+    public int[] transformArray(int[] nums) {
+        int n = nums.length;
+        int res[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (nums[i] % 2 == 0)
+                res[i] = 0;
+            else
+                res[i] = 1;
         }
-        while (l < r) {
-            res += (long) pizzas[r - 1];
-            r -= 2;
-            l += 2;
-        }
+        Arrays.sort(res);
         return res;
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

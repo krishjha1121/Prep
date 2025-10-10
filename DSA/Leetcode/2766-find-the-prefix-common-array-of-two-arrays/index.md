@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays">2766. Find the Prefix Common Array of Two Arrays</a></h2><h3>Medium</h3><hr><p>You are given two <strong>0-indexed </strong>integer<strong> </strong>permutations <code>A</code> and <code>B</code> of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2766. Find the Prefix Common Array of Two Arrays
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays" target = "_blank">2766. Find the Prefix Common Array of Two Arrays</a></h2><h3>Medium</h3><hr><p>You are given two <strong>0-indexed </strong>integer<strong> </strong>permutations <code>A</code> and <code>B</code> of length <code>n</code>.</p>
 
 <p>A <strong>prefix common array</strong> of <code>A</code> and <code>B</code> is an array <code>C</code> such that <code>C[i]</code> is equal to the count of numbers that are present at or before the index <code>i</code> in both <code>A</code> and <code>B</code>.</p>
 
@@ -37,6 +45,10 @@ At i = 2: 1, 2, and 3 are common in A and B, so C[2] = 3.
 	<li><code>It is guaranteed that A and B are both a permutation of n integers.</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] findThePrefixCommonArray(int[] A, int[] B) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

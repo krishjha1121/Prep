@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-most-common-response">3707. Find the Most Common Response</a></h2><h3>Medium</h3><hr><p>You are given a 2D string array <code>responses</code> where each <code>responses[i]</code> is an array of strings representing survey responses from the <code>i<sup>th</sup></code> day.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3707. Find the Most Common Response
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-most-common-response" target = "_blank">3707. Find the Most Common Response</a></h2><h3>Medium</h3><hr><p>You are given a 2D string array <code>responses</code> where each <code>responses[i]</code> is an array of strings representing survey responses from the <code>i<sup>th</sup></code> day.</p>
 
 <p>Return the <strong>most common</strong> response across all days after removing <strong>duplicate</strong> responses within each <code>responses[i]</code>. If there is a tie, return the <em>lexicographically smallest</em> response.</p>
 A string <code>a</code> is <strong>lexicographically smaller</strong> than a string <code>b</code> if in the first position where <code>a</code> and <code>b</code> differ, string <code>a</code> has a letter that appears earlier in the alphabet than the corresponding letter in <code>b</code>.<br />
@@ -46,6 +54,10 @@ If the first <code>min(a.length, b.length)</code> characters do not differ, then
 	<li><code>responses[i][j]</code> consists of only lowercase English letters</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String findCommonResponse(List<List<String >> responses) {
@@ -78,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

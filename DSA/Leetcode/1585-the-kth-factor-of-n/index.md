@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/the-kth-factor-of-n">1585. The kth Factor of n</a></h2><h3>Medium</h3><hr><p>You are given two positive integers <code>n</code> and <code>k</code>. A factor of an integer <code>n</code> is defined as an integer <code>i</code> where <code>n % i == 0</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1585. The kth Factor of n
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/the-kth-factor-of-n" target = "_blank">1585. The kth Factor of n</a></h2><h3>Medium</h3><hr><p>You are given two positive integers <code>n</code> and <code>k</code>. A factor of an integer <code>n</code> is defined as an integer <code>i</code> where <code>n % i == 0</code>.</p>
 
 <p>Consider a list of all factors of <code>n</code> sorted in <strong>ascending order</strong>, return <em>the </em><code>k<sup>th</sup></code><em> factor</em> in this list or return <code>-1</code> if <code>n</code> has less than <code>k</code> factors.</p>
 
@@ -39,6 +47,10 @@
 
 <p>Could you solve this problem in less than O(n) complexity?</p>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int kthFactor(int n, int k) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

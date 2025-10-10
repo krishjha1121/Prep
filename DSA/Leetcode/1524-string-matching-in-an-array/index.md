@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/string-matching-in-an-array">1524. String Matching in an Array</a></h2><h3>Easy</h3><hr><p>Given an array of string <code>words</code>, return <em>all strings in </em><code>words</code><em> that is a <strong>substring</strong> of another word</em>. You can return the answer in <strong>any order</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1524. String Matching in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/string-matching-in-an-array" target = "_blank">1524. String Matching in an Array</a></h2><h3>Easy</h3><hr><p>Given an array of string <code>words</code>, return <em>all strings in </em><code>words</code><em> that is a <strong>substring</strong> of another word</em>. You can return the answer in <strong>any order</strong>.</p>
 
 <p>A <strong>substring</strong> is a contiguous sequence of characters within a string</p>
 
@@ -38,6 +46,10 @@
 	<li>All the strings of <code>words</code> are <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<String> stringMatching(String[] words) {
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

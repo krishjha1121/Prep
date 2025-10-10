@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-length-of-string-after-operations">3455. Minimum Length of String After Operations</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3455. Minimum Length of String After Operations
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-length-of-string-after-operations" target = "_blank">3455. Minimum Length of String After Operations</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code>.</p>
 
 <p>You can perform the following process on <code>s</code> <strong>any</strong> number of times:</p>
 
@@ -46,6 +54,10 @@ We cannot perform any operations, so we return the length of the original string
 	<li><code>s</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumLength(String s) {
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-a-text-editor">2389. Design a Text Editor</a></h2><h3>Hard</h3><hr><p>Design a text editor with a cursor that can do the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2389. Design a Text Editor
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-a-text-editor" target = "_blank">2389. Design a Text Editor</a></h2><h3>Hard</h3><hr><p>Design a text editor with a cursor that can do the following:</p>
 
 <ul>
 	<li><strong>Add</strong> text to where the cursor is.</li>
@@ -66,6 +74,10 @@ textEditor.cursorRight(6); // return &quot;practi&quot;
 <p>&nbsp;</p>
 <p><strong>Follow-up:</strong> Could you find a solution with time complexity of <code>O(k)</code> per call?</p>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class TextEditor {
     private StringBuffer current_text;
@@ -101,7 +113,6 @@ class TextEditor {
         return current_text.substring(Math.max(0, current_cursor - 10), current_cursor);
     }
 }
-
 /**
     Your TextEditor object will be instantiated and called as such:
     TextEditor obj = new TextEditor();
@@ -111,3 +122,15 @@ class TextEditor {
     String param_4 = obj.cursorRight(k);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

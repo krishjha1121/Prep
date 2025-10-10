@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/closest-equal-element-queries">3750. Closest Equal Element Queries</a></h2><h3>Medium</h3><hr><p>You are given a <strong>circular</strong> array <code>nums</code> and an array <code>queries</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3750. Closest Equal Element Queries
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/closest-equal-element-queries" target = "_blank">3750. Closest Equal Element Queries</a></h2><h3>Medium</h3><hr><p>You are given a <strong>circular</strong> array <code>nums</code> and an array <code>queries</code>.</p>
 
 <p>For each query <code>i</code>, you have to find the following:</p>
 
@@ -46,6 +54,10 @@
 	<li><code>0 &lt;= queries[i] &lt; nums.length</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<Integer> solveQueries(int[] nums, int[] queries) {
@@ -82,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

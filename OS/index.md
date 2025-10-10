@@ -1049,7 +1049,7 @@ int main() {
         - It enables that the resources that are unused by one application can be used for other applications.
     - Better performance
 
-<div align = "center"> <h1 style = "color:purple"> 🔐 Deadlock </h1> </div>
+## 🔐 Deadlock
 
                             +--------+       wait for       +--------+
                             |  P1    | -------------------> |  R2    |

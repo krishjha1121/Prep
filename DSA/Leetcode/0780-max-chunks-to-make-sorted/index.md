@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/max-chunks-to-make-sorted">780. Max Chunks To Make Sorted</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>arr</code> of length <code>n</code> that represents a permutation of the integers in the range <code>[0, n - 1]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 780. Max Chunks To Make Sorted
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/max-chunks-to-make-sorted" target = "_blank">780. Max Chunks To Make Sorted</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>arr</code> of length <code>n</code> that represents a permutation of the integers in the range <code>[0, n - 1]</code>.</p>
 
 <p>We split <code>arr</code> into some number of <strong>chunks</strong> (i.e., partitions), and individually sort each chunk. After concatenating them, the result should equal the sorted array.</p>
 
@@ -35,6 +43,8 @@ However, splitting into [1, 0], [2], [3], [4] is the highest number of chunks po
 	<li>All the elements of <code>arr</code> are <strong>unique</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int maxChunksToSorted(int[] arr) {
@@ -48,4 +58,17 @@ class Solution {
         return count;
     }
 }
+
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-elements-in-array-distinct">3656. Minimum Number of Operations to Make Elements in Array Distinct</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>. You need to ensure that the elements in the array are <strong>distinct</strong>. To achieve this, you can perform the following operation any number of times:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3656. Minimum Number of Operations to Make Elements in Array Distinct
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-elements-in-array-distinct" target = "_blank">3656. Minimum Number of Operations to Make Elements in Array Distinct</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>. You need to ensure that the elements in the array are <strong>distinct</strong>. To achieve this, you can perform the following operation any number of times:</p>
 
 <ul>
 	<li>Remove 3 elements from the beginning of the array. If the array has fewer than 3 elements, remove all remaining elements.</li>
@@ -61,6 +69,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int freq[];
@@ -95,3 +107,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

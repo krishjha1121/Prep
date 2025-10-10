@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-maximum-number-of-non-intersecting-substrings">3857. Find Maximum Number of Non Intersecting Substrings</a></h2><h3>Medium</h3><hr><p>You are given a string <code>word</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3857. Find Maximum Number of Non Intersecting Substrings
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-maximum-number-of-non-intersecting-substrings" target = "_blank">3857. Find Maximum Number of Non Intersecting Substrings</a></h2><h3>Medium</h3><hr><p>You are given a string <code>word</code>.</p>
 
 <p>Return the <strong>maximum</strong> number of non-intersecting <strong>substrings</strong> of word that are at <strong>least</strong> four characters long and start and end with the same letter.</p>
 
@@ -37,6 +45,10 @@
 	<li><code>word</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxSubstrings(String s) {
@@ -59,3 +71,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

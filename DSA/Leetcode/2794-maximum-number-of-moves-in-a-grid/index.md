@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-moves-in-a-grid">2794. Maximum Number of Moves in a Grid</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> <code>m x n</code> matrix <code>grid</code> consisting of <strong>positive</strong> integers.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2794. Maximum Number of Moves in a Grid
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-number-of-moves-in-a-grid" target = "_blank">2794. Maximum Number of Moves in a Grid</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> <code>m x n</code> matrix <code>grid</code> consisting of <strong>positive</strong> integers.</p>
 
 <p>You can start at <strong>any</strong> cell in the first column of the matrix, and traverse the grid in the following way:</p>
 
@@ -40,6 +48,10 @@ It can be shown that it is the maximum number of moves that can be made.</pre>
 	<li><code>1 &lt;= grid[i][j] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int dp[][];
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

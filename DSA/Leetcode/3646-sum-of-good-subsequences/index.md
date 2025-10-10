@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/sum-of-good-subsequences">3646. Sum of Good Subsequences</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code>. A <strong>good subsequence</strong> is defined as a subsequence of <code>nums</code> where the absolute difference between any <strong>two</strong> consecutive elements in the subsequence is <strong>exactly</strong> 1.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3646. Sum of Good Subsequences
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/sum-of-good-subsequences" target = "_blank">3646. Sum of Good Subsequences</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code>. A <strong>good subsequence</strong> is defined as a subsequence of <code>nums</code> where the absolute difference between any <strong>two</strong> consecutive elements in the subsequence is <strong>exactly</strong> 1.</p>
 
 <p>A <strong>subsequence</strong> is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.</p>
 
@@ -47,6 +55,10 @@
 	<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int mod = (int)(1e9 + 7);
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

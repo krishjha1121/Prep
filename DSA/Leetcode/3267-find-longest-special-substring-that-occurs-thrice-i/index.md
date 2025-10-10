@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i">3267. Find Longest Special Substring That Occurs Thrice I</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> that consists of lowercase English letters.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3267. Find Longest Special Substring That Occurs Thrice I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i" target = "_blank">3267. Find Longest Special Substring That Occurs Thrice I</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> that consists of lowercase English letters.</p>
 
 <p>A string is called <strong>special</strong> if it is made up of only a single character. For example, the string <code>&quot;abc&quot;</code> is not special, whereas the strings <code>&quot;ddd&quot;</code>, <code>&quot;zz&quot;</code>, and <code>&quot;f&quot;</code> are special.</p>
 
@@ -41,6 +49,10 @@ It can be shown that the maximum length achievable is 1.
 	<li><code>s</code> consists of only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maximumLength(String s) {
@@ -64,3 +76,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

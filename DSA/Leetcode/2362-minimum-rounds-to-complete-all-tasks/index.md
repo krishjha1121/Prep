@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks">2362. Minimum Rounds to Complete All Tasks</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>tasks</code>, where <code>tasks[i]</code> represents the difficulty level of a task. In each round, you can complete either 2 or 3 tasks of the <strong>same difficulty level</strong>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2362. Minimum Rounds to Complete All Tasks
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks" target = "_blank">2362. Minimum Rounds to Complete All Tasks</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>tasks</code>, where <code>tasks[i]</code> represents the difficulty level of a task. In each round, you can complete either 2 or 3 tasks of the <strong>same difficulty level</strong>.</p>
 
 <p>Return <em>the <strong>minimum</strong> rounds required to complete all the tasks, or </em><code>-1</code><em> if it is not possible to complete all the tasks.</em></p>
 
@@ -35,6 +43,10 @@ It can be shown that all the tasks cannot be completed in fewer than 4 rounds, s
 <p>&nbsp;</p>
 <p><strong>Note:</strong> This question is the same as <a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/description/" target="_blank">2870: Minimum Number of Operations to Make Array Empty.</a></p>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.HashMap;
 import java.util.Map;
@@ -62,3 +74,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

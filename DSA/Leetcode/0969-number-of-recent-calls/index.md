@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-recent-calls">969. Number of Recent Calls</a></h2><h3>Easy</h3><hr><p>You have a <code>RecentCounter</code> class which counts the number of recent requests within a certain time frame.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 969. Number of Recent Calls
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-recent-calls" target = "_blank">969. Number of Recent Calls</a></h2><h3>Easy</h3><hr><p>You have a <code>RecentCounter</code> class which counts the number of recent requests within a certain time frame.</p>
 
 <p>Implement the <code>RecentCounter</code> class:</p>
 
@@ -36,6 +44,8 @@ recentCounter.ping(3002);  // requests = [1, <u>100</u>, <u>3001</u>, <u>3002</u
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>ping</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class RecentCounter {
     private Queue<Integer> q;
@@ -50,10 +60,21 @@ class RecentCounter {
 
     }
 }
-
 /**
     Your RecentCounter object will be instantiated and called as such:
     RecentCounter obj = new RecentCounter();
     int param_1 = obj.ping(t);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

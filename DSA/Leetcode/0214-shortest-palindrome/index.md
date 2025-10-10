@@ -26,6 +26,13 @@
 	<li><code>s</code> consists of lowercase English letters only.</li>
 </ul>
 
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 import java.math.BigInteger;
 class Solution {
@@ -106,4 +113,17 @@ class Solution {
         }
     }
 }
+
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

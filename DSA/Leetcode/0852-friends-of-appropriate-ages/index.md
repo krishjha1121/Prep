@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/friends-of-appropriate-ages">852. Friends Of Appropriate Ages</a></h2><h3>Medium</h3><hr><p>There are <code>n</code> persons on a social media website. You are given an integer array <code>ages</code> where <code>ages[i]</code> is the age of the <code>i<sup>th</sup></code> person.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 852. Friends Of Appropriate Ages
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/friends-of-appropriate-ages" target = "_blank">852. Friends Of Appropriate Ages</a></h2><h3>Medium</h3><hr><p>There are <code>n</code> persons on a social media website. You are given an integer array <code>ages</code> where <code>ages[i]</code> is the age of the <code>i<sup>th</sup></code> person.</p>
 
 <p>A Person <code>x</code> will not send a friend request to a person <code>y</code> (<code>x != y</code>) if any of the following conditions is true:</p>
 
@@ -48,6 +56,8 @@
 	<li><code>1 &lt;= ages[i] &lt;= 120</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int numFriendRequests(int[] ages) {
@@ -86,3 +96,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

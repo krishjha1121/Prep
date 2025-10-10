@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/put-marbles-in-bags">2681. Put Marbles in Bags</a></h2><h3>Hard</h3><hr><p>You have <code>k</code> bags. You are given a <strong>0-indexed</strong> integer array <code>weights</code> where <code>weights[i]</code> is the weight of the <code>i<sup>th</sup></code> marble. You are also given the integer <code>k.</code></p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2681. Put Marbles in Bags
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/put-marbles-in-bags" target = "_blank">2681. Put Marbles in Bags</a></h2><h3>Hard</h3><hr><p>You have <code>k</code> bags. You are given a <strong>0-indexed</strong> integer array <code>weights</code> where <code>weights[i]</code> is the weight of the <code>i<sup>th</sup></code> marble. You are also given the integer <code>k.</code></p>
 
 <p>Divide the marbles into the <code>k</code> bags according to the following rules:</p>
 
@@ -41,6 +49,10 @@ Since both the maximal and minimal score are the same, we return 0.
 	<li><code>1 &lt;= weights[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long putMarbles(int[] weights, int k) {
@@ -58,3 +70,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

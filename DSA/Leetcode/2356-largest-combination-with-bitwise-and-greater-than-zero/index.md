@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/largest-combination-with-bitwise-and-greater-than-zero">2356. Largest Combination With Bitwise AND Greater Than Zero</a></h2><h3>Medium</h3><hr><p>The <strong>bitwise AND</strong> of an array <code>nums</code> is the bitwise AND of all integers in <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2356. Largest Combination With Bitwise AND Greater Than Zero
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/largest-combination-with-bitwise-and-greater-than-zero" target = "_blank">2356. Largest Combination With Bitwise AND Greater Than Zero</a></h2><h3>Medium</h3><hr><p>The <strong>bitwise AND</strong> of an array <code>nums</code> is the bitwise AND of all integers in <code>nums</code>.</p>
 
 <ul>
 	<li>For example, for <code>nums = [1, 5, 3]</code>, the bitwise AND is equal to <code>1 &amp; 5 &amp; 3 = 1</code>.</li>
@@ -39,6 +47,10 @@ The size of the combination is 2, so we return 2.
 	<li><code>1 &lt;= candidates[i] &lt;= 10<sup>7</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int largestCombination(int[] arr) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

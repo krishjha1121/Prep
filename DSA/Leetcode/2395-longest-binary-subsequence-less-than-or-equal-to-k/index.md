@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-binary-subsequence-less-than-or-equal-to-k">2395. Longest Binary Subsequence Less Than or Equal to K</a></h2><h3>Medium</h3><hr><p>You are given a binary string <code>s</code> and a positive integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2395. Longest Binary Subsequence Less Than or Equal to K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-binary-subsequence-less-than-or-equal-to-k" target = "_blank">2395. Longest Binary Subsequence Less Than or Equal to K</a></h2><h3>Medium</h3><hr><p>You are given a binary string <code>s</code> and a positive integer <code>k</code>.</p>
 
 <p>Return <em>the length of the <strong>longest</strong> subsequence of </em><code>s</code><em> that makes up a <strong>binary</strong> number less than or equal to</em> <code>k</code>.</p>
 
@@ -39,6 +47,10 @@ The length of this subsequence is 6, so 6 is returned.
 	<li><code>1 &lt;= k &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

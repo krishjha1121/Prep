@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful">3174. Minimum Number of Changes to Make Binary String Beautiful</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> binary string <code>s</code> having an even length.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3174. Minimum Number of Changes to Make Binary String Beautiful
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful" target = "_blank">3174. Minimum Number of Changes to Make Binary String Beautiful</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> binary string <code>s</code> having an even length.</p>
 
 <p>A string is <strong>beautiful</strong> if it&#39;s possible to partition it into one or more substrings such that:</p>
 
@@ -49,6 +57,10 @@ It can be proven that 1 is the minimum number of changes needed to make the stri
 	<li><code>s[i]</code> is either <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minChanges(String s) {
@@ -61,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

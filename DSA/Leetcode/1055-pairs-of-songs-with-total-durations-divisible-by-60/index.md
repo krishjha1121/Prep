@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/?envType=problem-list-v2&envId=counting">1055. Pairs of Songs With Total Durations Divisible by 60</a></h2><h3>Medium</h3><hr><p>You are given a list of songs where the <code>i<sup>th</sup></code> song has a duration of <code>time[i]</code> seconds.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1055. Pairs of Songs With Total Durations Divisible by 60
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/?envType=problem-list-v2&envId=counting" target = "_blank">1055. Pairs of Songs With Total Durations Divisible by 60</a></h2><h3>Medium</h3><hr><p>You are given a list of songs where the <code>i<sup>th</sup></code> song has a duration of <code>time[i]</code> seconds.</p>
 
 <p>Return <em>the number of pairs of songs for which their total duration in seconds is divisible by</em> <code>60</code>. Formally, we want the number of indices <code>i</code>, <code>j</code> such that <code>i &lt; j</code> with <code>(time[i] + time[j]) % 60 == 0</code>.</p>
 
@@ -30,6 +38,10 @@
 	<li><code>1 &lt;= time[i] &lt;= 500</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numPairsDivisibleBy60(int[] time) {
@@ -47,3 +59,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

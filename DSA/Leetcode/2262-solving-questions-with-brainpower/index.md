@@ -1,3 +1,11 @@
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2262. Solving Questions With Brainpower
+
+</h>
+</div>
+
 ## 2262. Solving Questions With Brainpower
 
 **Difficulty:** Medium
@@ -49,6 +57,10 @@ Total points earned: 2 + 5 = 7. There is no other way to earn 7 or more points.
 - `questions[i].length == 2`
 - `1 <= pointsᵢ, brainpowerᵢ <= 10^5`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private long dp[];
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

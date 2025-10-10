@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-minimum-time-to-reach-last-room-ii">3628. Find Minimum Time to Reach Last Room II</a></h2><h3>Medium</h3><hr><p>There is a dungeon with <code>n x m</code> rooms arranged as a grid.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3628. Find Minimum Time to Reach Last Room II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-minimum-time-to-reach-last-room-ii" target = "_blank">3628. Find Minimum Time to Reach Last Room II</a></h2><h3>Medium</h3><hr><p>There is a dungeon with <code>n x m</code> rooms arranged as a grid.</p>
 
 <p>You are given a 2D array <code>moveTime</code> of size <code>n x m</code>, where <code>moveTime[i][j]</code> represents the <strong>minimum</strong> time in seconds when you can <strong>start moving</strong> to that room. You start from the room <code>(0, 0)</code> at time <code>t = 0</code> and can move to an <strong>adjacent</strong> room. Moving between <strong>adjacent</strong> rooms takes one second for one move and two seconds for the next, <strong>alternating</strong> between the two.</p>
 
@@ -60,6 +68,10 @@
 	<li><code>0 &lt;= moveTime[i][j] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minTimeToReach(int[][] moveTime) {
@@ -102,3 +114,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

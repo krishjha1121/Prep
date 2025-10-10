@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-k-th-character-in-string-game-i">3600. Find the K-th Character in String Game I</a></h2><h3>Easy</h3><hr><p>Alice and Bob are playing a game. Initially, Alice has a string <code>word = &quot;a&quot;</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3600. Find the K-th Character in String Game I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-k-th-character-in-string-game-i" target = "_blank">3600. Find the K-th Character in String Game I</a></h2><h3>Easy</h3><hr><p>Alice and Bob are playing a game. Initially, Alice has a string <code>word = &quot;a&quot;</code>.</p>
 
 <p>You are given a <strong>positive</strong> integer <code>k</code>.</p>
 
@@ -48,6 +56,10 @@
 	<li><code>1 &lt;= k &lt;= 500</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public char kthCharacter(int k) {
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

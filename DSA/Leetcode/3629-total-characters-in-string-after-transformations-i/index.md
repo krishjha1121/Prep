@@ -62,6 +62,10 @@ Since the answer may be very large, return it **modulo** `10^9 + 7`.
 - `s` consists only of lowercase English letters.
 - `1 <= t <= 10^5`
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static int MOD = (int)(1e9 + 7);
@@ -88,3 +92,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

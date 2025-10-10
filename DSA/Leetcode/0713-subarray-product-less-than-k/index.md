@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/subarray-product-less-than-k">713. Subarray Product Less Than K</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>nums</code> and an integer <code>k</code>, return <em>the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than </em><code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 713. Subarray Product Less Than K
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/subarray-product-less-than-k" target = "_blank">713. Subarray Product Less Than K</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>nums</code> and an integer <code>k</code>, return <em>the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than </em><code>k</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -27,6 +35,8 @@ Note that [10, 5, 2] is not included as the product of 100 is not strictly less 
 	<li><code>0 &lt;= k &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
@@ -44,3 +54,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

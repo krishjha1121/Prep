@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-authentication-manager">1905. Design Authentication Manager</a></h2><h3>Medium</h3><hr><p>There is an authentication system that works with authentication tokens. For each session, the user will receive a new authentication token that will expire <code>timeToLive</code> seconds after the <code>currentTime</code>. If the token is renewed, the expiry time will be <b>extended</b> to expire <code>timeToLive</code> seconds after the (potentially different) <code>currentTime</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1905. Design Authentication Manager
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/design-authentication-manager" target = "_blank">1905. Design Authentication Manager</a></h2><h3>Medium</h3><hr><p>There is an authentication system that works with authentication tokens. For each session, the user will receive a new authentication token that will expire <code>timeToLive</code> seconds after the <code>currentTime</code>. If the token is renewed, the expiry time will be <b>extended</b> to expire <code>timeToLive</code> seconds after the (potentially different) <code>currentTime</code>.</p>
 
 <p>Implement the <code>AuthenticationManager</code> class:</p>
 
@@ -46,6 +54,10 @@ authenticationManager.<code>countUnexpiredTokens</code>(15); // The token with t
 	<li>At most <code>2000</code> calls will be made to all functions combined.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class AuthenticationManager {
     private static HashMap<String, Integer> map;
@@ -74,7 +86,6 @@ class AuthenticationManager {
         return count;
     }
 }
-
 /**
     Your AuthenticationManager object will be instantiated and called as such:
     AuthenticationManager obj = new AuthenticationManager(timeToLive);
@@ -83,3 +94,15 @@ class AuthenticationManager {
     int param_3 = obj.countUnexpiredTokens(currentTime);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

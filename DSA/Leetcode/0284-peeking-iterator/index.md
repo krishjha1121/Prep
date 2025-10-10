@@ -51,6 +51,12 @@ peekingIterator.hasNext(); // return False
 <p>&nbsp;</p>
 <strong>Follow up:</strong> How would you extend your design to be generic and work with all types, not just integer?
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
+
 ```java
 import java.util.Iterator;
 
@@ -87,3 +93,15 @@ class PeekingIterator implements Iterator<Integer> {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

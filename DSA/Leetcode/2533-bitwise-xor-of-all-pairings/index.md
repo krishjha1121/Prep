@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/bitwise-xor-of-all-pairings">2533. Bitwise XOR of All Pairings</a></h2><h3>Medium</h3><hr><p>You are given two <strong>0-indexed</strong> arrays, <code>nums1</code> and <code>nums2</code>, consisting of non-negative integers. There exists another array, <code>nums3</code>, which contains the bitwise XOR of <strong>all pairings</strong> of integers between <code>nums1</code> and <code>nums2</code> (every integer in <code>nums1</code> is paired with every integer in <code>nums2</code> <strong>exactly once</strong>).</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2533. Bitwise XOR of All Pairings
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/bitwise-xor-of-all-pairings" target = "_blank">2533. Bitwise XOR of All Pairings</a></h2><h3>Medium</h3><hr><p>You are given two <strong>0-indexed</strong> arrays, <code>nums1</code> and <code>nums2</code>, consisting of non-negative integers. There exists another array, <code>nums3</code>, which contains the bitwise XOR of <strong>all pairings</strong> of integers between <code>nums1</code> and <code>nums2</code> (every integer in <code>nums1</code> is paired with every integer in <code>nums2</code> <strong>exactly once</strong>).</p>
 
 <p>Return<em> the <strong>bitwise XOR</strong> of all integers in </em><code>nums3</code>.</p>
 
@@ -33,6 +41,10 @@ Thus, one possible nums3 array is [2,5,1,6].
 	<li><code>0 &lt;= nums1[i], nums2[j] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int xorAllNums(int[] nums1, int[] nums2) {
@@ -49,3 +61,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

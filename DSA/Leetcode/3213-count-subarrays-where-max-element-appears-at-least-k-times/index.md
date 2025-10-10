@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times">3213. Count Subarrays Where Max Element Appears at Least K Times</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3213. Count Subarrays Where Max Element Appears at Least K Times
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times" target = "_blank">3213. Count Subarrays Where Max Element Appears at Least K Times</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>.</p>
 
 <p>Return <em>the number of subarrays where the <strong>maximum</strong> element of </em><code>nums</code><em> appears <strong>at least</strong> </em><code>k</code><em> times in that subarray.</em></p>
 
@@ -30,6 +38,10 @@
 	<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long countSubarrays(int[] nums, int k) {
@@ -49,3 +61,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/visit-array-positions-to-maximize-score">2893. Visit Array Positions to Maximize Score</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and a positive integer <code>x</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2893. Visit Array Positions to Maximize Score
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/visit-array-positions-to-maximize-score" target = "_blank">2893. Visit Array Positions to Maximize Score</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and a positive integer <code>x</code>.</p>
 
 <p>You are <strong>initially</strong> at position <code>0</code> in the array and you can visit other positions according to the following rules:</p>
 
@@ -40,6 +48,10 @@ The total score is: 2 + 4 + 6 + 8 = 20.
 	<li><code>1 &lt;= nums[i], x &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

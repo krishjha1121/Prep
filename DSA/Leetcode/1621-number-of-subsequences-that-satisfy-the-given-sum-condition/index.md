@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition">1621. Number of Subsequences That Satisfy the Given Sum Condition</a></h2><h3>Medium</h3><hr><p>You are given an array of integers <code>nums</code> and an integer <code>target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1621. Number of Subsequences That Satisfy the Given Sum Condition
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition" target = "_blank">1621. Number of Subsequences That Satisfy the Given Sum Condition</a></h2><h3>Medium</h3><hr><p>You are given an array of integers <code>nums</code> and an integer <code>target</code>.</p>
 
 <p>Return <em>the number of <strong>non-empty</strong> subsequences of </em><code>nums</code><em> such that the sum of the minimum and maximum element on it is less or equal to </em><code>target</code>. Since the answer may be too large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
 
@@ -42,6 +50,10 @@ Number of valid subsequences (63 - 2 = 61).
 	<li><code>1 &lt;= target &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numSubseq(int[] nums, int target) {
@@ -61,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

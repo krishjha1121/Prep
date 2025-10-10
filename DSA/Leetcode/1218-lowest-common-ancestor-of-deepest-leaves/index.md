@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves">1218. Lowest Common Ancestor of Deepest Leaves</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a binary tree, return <em>the lowest common ancestor of its deepest leaves</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1218. Lowest Common Ancestor of Deepest Leaves
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves" target = "_blank">1218. Lowest Common Ancestor of Deepest Leaves</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a binary tree, return <em>the lowest common ancestor of its deepest leaves</em>.</p>
 
 <p>Recall that:</p>
 
@@ -45,6 +53,10 @@ Note that nodes 6, 0, and 8 are also leaf nodes, but the depth of them is 2, but
 
 <p>&nbsp;</p>
 <p><strong>Note:</strong> This question is the same as 865: <a href="https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/" target="_blank">https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/</a></p>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -180,3 +192,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

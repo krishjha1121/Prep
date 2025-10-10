@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/three-consecutive-odds">1293. Three Consecutive Odds</a></h2><h3>Easy</h3><hr>Given an integer array <code>arr</code>, return <code>true</code>&nbsp;if there are three consecutive odd numbers in the array. Otherwise, return&nbsp;<code>false</code>.
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1293. Three Consecutive Odds
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/three-consecutive-odds" target = "_blank">1293. Three Consecutive Odds</a></h2><h3>Easy</h3><hr>Given an integer array <code>arr</code>, return <code>true</code>&nbsp;if there are three consecutive odd numbers in the array. Otherwise, return&nbsp;<code>false</code>.
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -24,6 +32,10 @@
 	<li><code>1 &lt;= arr[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean threeConsecutiveOdds(int[] arr) {
@@ -36,3 +48,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

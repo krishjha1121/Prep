@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/grid-teleportation-traversal">3837. Grid Teleportation Traversal</a></h2><h3>Medium</h3><hr><p>You are given a 2D character grid <code>matrix</code> of size <code>m x n</code>, represented as an array of strings, where <code>matrix[i][j]</code> represents the cell at the intersection of the <code>i<sup>th</sup></code> row and <code>j<sup>th</sup></code> column. Each cell is one of the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3837. Grid Teleportation Traversal
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/grid-teleportation-traversal" target = "_blank">3837. Grid Teleportation Traversal</a></h2><h3>Medium</h3><hr><p>You are given a 2D character grid <code>matrix</code> of size <code>m x n</code>, represented as an array of strings, where <code>matrix[i][j]</code> represents the cell at the intersection of the <code>i<sup>th</sup></code> row and <code>j<sup>th</sup></code> column. Each cell is one of the following:</p>
 
 <ul>
 	<li><code>&#39;.&#39;</code> representing an empty cell.</li>
@@ -52,6 +60,10 @@
 	<li><code>matrix[i][j]</code> is either <code>&#39;#&#39;</code>, <code>&#39;.&#39;</code>, or an uppercase English letter.</li>
 	<li><code>matrix[0][0]</code> is not an obstacle.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.ArrayList;
@@ -114,7 +126,6 @@ class Solution {
                 map.get(arr[i][j]).add(new Pair(i, j));
             }
         }
-
         PriorityQueue<State> pq = new PriorityQueue<>(new customSort());
         pq.offer(new State(0, 0, 0, new int[26]));
         int dist[][] = new int[n][m];
@@ -126,7 +137,6 @@ class Solution {
             int currRow = pq.peek().row, currCol = pq.peek().col, currMove = pq.peek().move;
             int currFreq[] = pq.peek().freq;
             pq.poll();
-
             if (arr[currRow][currCol] != '.') {
                 if (currFreq[arr[currRow][currCol] - 'A'] == 0) {
                     int newFreq[] = new int[26];
@@ -142,7 +152,6 @@ class Solution {
                     }
                 }
             }
-
             for (int dire[] : dir) {
                 int newRow = currRow + dire[0], newCol = currCol + dire[1];
                 if (newRow < 0 || newRow >= n || newCol < 0 || newCol >= m || arr[newRow][newCol] == '#')
@@ -159,3 +168,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

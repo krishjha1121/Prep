@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-unique-subarray-sum-after-deletion">3788. Maximum Unique Subarray Sum After Deletion</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3788. Maximum Unique Subarray Sum After Deletion
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-unique-subarray-sum-after-deletion" target = "_blank">3788. Maximum Unique Subarray Sum After Deletion</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>.</p>
 
 <p>You are allowed to delete any number of elements from <code>nums</code> without making it <strong>empty</strong>. After performing the deletions, select a <span data-keyword="subarray-nonempty">subarray</span> of <code>nums</code> such that:</p>
 
@@ -54,6 +62,10 @@
 	<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxSum(int[] nums) {
@@ -79,3 +91,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

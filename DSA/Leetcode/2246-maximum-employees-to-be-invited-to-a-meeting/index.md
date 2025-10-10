@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting">2246. Maximum Employees to Be Invited to a Meeting</a></h2><h3>Hard</h3><hr><p>A company is organizing a meeting and has a list of <code>n</code> employees, waiting to be invited. They have arranged for a large <strong>circular</strong> table, capable of seating <strong>any number</strong> of employees.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2246. Maximum Employees to Be Invited to a Meeting
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting" target = "_blank">2246. Maximum Employees to Be Invited to a Meeting</a></h2><h3>Hard</h3><hr><p>A company is organizing a meeting and has a list of <code>n</code> employees, waiting to be invited. They have arranged for a large <strong>circular</strong> table, capable of seating <strong>any number</strong> of employees.</p>
 
 <p>The employees are numbered from <code>0</code> to <code>n - 1</code>. Each employee has a <strong>favorite</strong> person and they will attend the meeting <strong>only if</strong> they can sit next to their favorite person at the table. The favorite person of an employee is <strong>not</strong> themself.</p>
 
@@ -53,6 +61,10 @@ The maximum number of employees that can be invited to the meeting is 4.
 	<li><code>favorite[i] != i</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maximumInvitations(int[] favorite) {
@@ -94,3 +106,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

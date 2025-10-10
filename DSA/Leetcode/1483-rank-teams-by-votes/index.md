@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rank-teams-by-votes">1483. Rank Teams by Votes</a></h2><h3>Medium</h3><hr><p>In a special ranking system, each voter gives a rank from highest to lowest to all teams participating in the competition.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1483. Rank Teams by Votes
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rank-teams-by-votes" target = "_blank">1483. Rank Teams by Votes</a></h2><h3>Medium</h3><hr><p>In a special ranking system, each voter gives a rank from highest to lowest to all teams participating in the competition.</p>
 
 <p>The ordering of teams is decided by who received the most position-one votes. If two or more teams tie in the first position, we consider the second position to resolve the conflict, if they tie again, we continue this process until the ties are resolved. If two or more teams are still tied after considering all positions, we rank them alphabetically based on their team letter.</p>
 
@@ -47,6 +55,10 @@ X is the winner due to the tie-breaking rule. X has the same votes as W for the 
 	<li>All characters of <code>votes[i]</code> are unique.</li>
 	<li>All the characters that occur in <code>votes[0]</code> <strong>also occur</strong> in <code>votes[j]</code> where <code>1 &lt;= j &lt; votes.length</code>.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -103,3 +115,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

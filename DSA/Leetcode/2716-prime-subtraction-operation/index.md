@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/prime-subtraction-operation">2716. Prime Subtraction Operation</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2716. Prime Subtraction Operation
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/prime-subtraction-operation" target = "_blank">2716. Prime Subtraction Operation</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code>.</p>
 
 <p>You can perform the following operation as many times as you want:</p>
 
@@ -43,6 +51,10 @@ After the second operation, nums is sorted in strictly increasing order, so the 
 	<li><code><font face="monospace">nums.length == n</font></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int isprime[];
@@ -68,7 +80,6 @@ class Solution {
         }
         return true;
     }
-
     private void sieve() {
         Arrays.fill(isprime, 1);
         isprime[0] = isprime[1] = 0;
@@ -83,3 +94,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

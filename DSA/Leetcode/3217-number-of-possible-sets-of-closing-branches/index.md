@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-possible-sets-of-closing-branches">3217. Number of Possible Sets of Closing Branches</a></h2><h3>Hard</h3><hr><p>There is a company with <code>n</code> branches across the country, some of which are connected by roads. Initially, all branches are reachable from each other by traveling some roads.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3217. Number of Possible Sets of Closing Branches
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-possible-sets-of-closing-branches" target = "_blank">3217. Number of Possible Sets of Closing Branches</a></h2><h3>Hard</h3><hr><p>There is a company with <code>n</code> branches across the country, some of which are connected by roads. Initially, all branches are reachable from each other by traveling some roads.</p>
 
 <p>The company has realized that they are spending an excessive amount of time traveling between their branches. As a result, they have decided to close down some of these branches (<strong>possibly none</strong>). However, they want to ensure that the remaining branches have a distance of at most <code>maxDistance</code> from each other.</p>
 
@@ -67,6 +75,10 @@ It can be proven, that there are only 2 possible sets of closing branches.
 	<li><code>1 &lt;= w<sub>i</sub> &lt;= 1000</code></li>
 	<li>All branches are reachable from each other by traveling some roads.</li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.ArrayList;
@@ -254,3 +266,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

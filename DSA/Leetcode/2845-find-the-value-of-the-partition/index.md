@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-the-value-of-the-partition">2845. Find the Value of the Partition</a></h2><h3>Medium</h3><hr><p>You are given a <strong>positive</strong> integer array <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2845. Find the Value of the Partition
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-the-value-of-the-partition" target = "_blank">2845. Find the Value of the Partition</a></h2><h3>Medium</h3><hr><p>You are given a <strong>positive</strong> integer array <code>nums</code>.</p>
 
 <p>Partition <code>nums</code> into two arrays,&nbsp;<code>nums1</code> and <code>nums2</code>, such that:</p>
 
@@ -47,6 +55,10 @@ It can be proven that 9 is the minimum value out of all partitions.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -61,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

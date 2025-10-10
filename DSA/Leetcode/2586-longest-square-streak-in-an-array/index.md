@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-square-streak-in-an-array">2586. Longest Square Streak in an Array</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>. A subsequence of <code>nums</code> is called a <strong>square streak</strong> if:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2586. Longest Square Streak in an Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-square-streak-in-an-array" target = "_blank">2586. Longest Square Streak in an Array</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>. A subsequence of <code>nums</code> is called a <strong>square streak</strong> if:</p>
 
 <ul>
 	<li>The length of the subsequence is at least <code>2</code>, and</li>
@@ -38,6 +46,10 @@ It can be shown that every subsequence of length 4 is not a square streak.
 	<li><code>2 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int longestSquareStreak(int[] nums) {
@@ -66,6 +78,19 @@ class Solution {
         if (maxi == 1)
             return -1;
         return maxi;
+
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

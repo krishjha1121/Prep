@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii">3152. Maximum Value of an Ordered Triplet II</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3152. Maximum Value of an Ordered Triplet II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii" target = "_blank">3152. Maximum Value of an Ordered Triplet II</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>.</p>
 
 <p>Return <em><strong>the maximum value over all triplets of indices</strong></em> <code>(i, j, k)</code> <em>such that</em> <code>i &lt; j &lt; k</code><em>. </em>If all such triplets have a negative value, return <code>0</code>.</p>
 
@@ -39,6 +47,10 @@ It can be shown that there are no ordered triplets of indices with a value great
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long maximumTripletValue(int[] nums) {
@@ -66,3 +78,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

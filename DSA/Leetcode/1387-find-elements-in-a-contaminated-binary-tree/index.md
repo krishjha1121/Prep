@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree">1387. Find Elements in a Contaminated Binary Tree</a></h2><h3>Medium</h3><hr><p>Given a binary tree with the following rules:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1387. Find Elements in a Contaminated Binary Tree
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree" target = "_blank">1387. Find Elements in a Contaminated Binary Tree</a></h2><h3>Medium</h3><hr><p>Given a binary tree with the following rules:</p>
 
 <ol>
 	<li><code>root.val == 0</code></li>
@@ -74,6 +82,10 @@ findElements.find(5); // return True
 	<li><code>0 &lt;= target &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 /**
     Definition for a binary tree node.
@@ -127,10 +139,21 @@ class FindElements {
         return set.contains(target);
     }
 }
-
 /**
     Your FindElements object will be instantiated and called as such:
     FindElements obj = new FindElements(root);
     boolean param_1 = obj.find(target);
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

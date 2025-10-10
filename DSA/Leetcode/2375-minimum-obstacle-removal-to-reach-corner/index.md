@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner">2375. Minimum Obstacle Removal to Reach Corner</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> 2D integer array <code>grid</code> of size <code>m x n</code>. Each cell has one of two values:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2375. Minimum Obstacle Removal to Reach Corner
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner" target = "_blank">2375. Minimum Obstacle Removal to Reach Corner</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed</strong> 2D integer array <code>grid</code> of size <code>m x n</code>. Each cell has one of two values:</p>
 
 <ul>
 	<li><code>0</code> represents an <strong>empty</strong> cell,</li>
@@ -39,6 +47,10 @@ Note that there may be other ways to remove 2 obstacles to create a path.
 	<li><code>grid[i][j]</code> is either <code>0</code> <strong>or</strong> <code>1</code>.</li>
 	<li><code>grid[0][0] == grid[m - 1][n - 1] == 0</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -83,3 +95,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

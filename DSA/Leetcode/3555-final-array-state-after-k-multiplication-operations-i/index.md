@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i">3555. Final Array State After K Multiplication Operations I</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>, an integer <code>k</code>, and an integer <code>multiplier</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3555. Final Array State After K Multiplication Operations I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i" target = "_blank">3555. Final Array State After K Multiplication Operations I</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code>, an integer <code>k</code>, and an integer <code>multiplier</code>.</p>
 
 <p>You need to perform <code>k</code> operations on <code>nums</code>. In each operation:</p>
 
@@ -90,6 +98,10 @@
 	<li><code>1 &lt;= multiplier &lt;= 5</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -132,3 +144,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-words-containing-character">3194. Find Words Containing Character</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> array of strings <code>words</code> and a character <code>x</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3194. Find Words Containing Character
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-words-containing-character" target = "_blank">3194. Find Words Containing Character</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> array of strings <code>words</code> and a character <code>x</code>.</p>
 
 <p>Return <em>an <strong>array of indices</strong> representing the words that contain the character </em><code>x</code>.</p>
 
@@ -39,6 +47,10 @@
 	<li><code>words[i]</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public List<Integer> findWordsContaining(String[] words, char x) {
@@ -57,3 +69,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

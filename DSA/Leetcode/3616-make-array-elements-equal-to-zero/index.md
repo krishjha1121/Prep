@@ -53,6 +53,10 @@ There are no possible valid selections.
 - `0 <= nums[i] <= 100`
 - There is at least one element `i` where `nums[i] == 0`.
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int countValidSelections(int[] nums) {
@@ -79,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

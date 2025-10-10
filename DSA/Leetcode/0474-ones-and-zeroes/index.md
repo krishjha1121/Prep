@@ -41,6 +41,8 @@ Other valid but smaller subsets include {&quot;0001&quot;, &quot;1&quot;} and {&
 	<li><code>1 &lt;= m, n &lt;= 100</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int findMaxForm(String[] strs, int zero, int one) {
@@ -72,3 +74,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

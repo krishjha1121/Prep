@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/create-sorted-array-through-instructions">1772. Create Sorted Array through Instructions</a></h2><h3>Hard</h3><hr><p>Given an integer array <code>instructions</code>, you are asked to create a sorted array from the elements in <code>instructions</code>. You start with an empty container <code>nums</code>. For each element from <strong>left to right</strong> in <code>instructions</code>, insert it into <code>nums</code>. The <strong>cost</strong> of each insertion is the <b>minimum</b> of the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1772. Create Sorted Array through Instructions
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/create-sorted-array-through-instructions" target = "_blank">1772. Create Sorted Array through Instructions</a></h2><h3>Hard</h3><hr><p>Given an integer array <code>instructions</code>, you are asked to create a sorted array from the elements in <code>instructions</code>. You start with an empty container <code>nums</code>. For each element from <strong>left to right</strong> in <code>instructions</code>, insert it into <code>nums</code>. The <strong>cost</strong> of each insertion is the <b>minimum</b> of the following:</p>
 
 <ul>
 	<li>The number of elements currently in <code>nums</code> that are <strong>strictly less than</strong> <code>instructions[i]</code>.</li>
@@ -62,6 +70,10 @@ The total cost is 0 + 0 + 0 + 0 + 1 + 0 + 1 + 0 + 2 = 4.
 	<li><code>1 &lt;= instructions.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>1 &lt;= instructions[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -414,3 +426,14 @@ class Solution {
 }
 ```
 
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

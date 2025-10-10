@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-unique-xor-triplets-ii">3820. Number of Unique XOR Triplets II</a></h2><h3>Medium</h3><hr><p data-end="261" data-start="147">You are given an integer array <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3820. Number of Unique XOR Triplets II
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-unique-xor-triplets-ii" target = "_blank">3820. Number of Unique XOR Triplets II</a></h2><h3>Medium</h3><hr><p data-end="261" data-start="147">You are given an integer array <code>nums</code>.</p>
 
 <p>A <strong>XOR triplet</strong> is defined as the XOR of three elements <code>nums[i] XOR nums[j] XOR nums[k]</code> where <code>i &lt;= j &lt;= k</code>.</p>
 
@@ -46,6 +54,10 @@
 	<li><code><font face="monospace">1 &lt;= nums[i] &lt;= 1500</font></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int uniqueXorTriplets(int[] nums) {
@@ -76,3 +88,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

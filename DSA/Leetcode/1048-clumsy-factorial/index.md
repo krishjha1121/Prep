@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/clumsy-factorial">1048. Clumsy Factorial</a></h2><h3>Medium</h3><hr><p>The <strong>factorial</strong> of a positive integer <code>n</code> is the product of all positive integers less than or equal to <code>n</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1048. Clumsy Factorial
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/clumsy-factorial" target = "_blank">1048. Clumsy Factorial</a></h2><h3>Medium</h3><hr><p>The <strong>factorial</strong> of a positive integer <code>n</code> is the product of all positive integers less than or equal to <code>n</code>.</p>
 
 <ul>
 	<li>For example, <code>factorial(10) = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1</code>.</li>
@@ -40,6 +48,10 @@
 	<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int clumsy(int n) {
@@ -74,3 +86,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

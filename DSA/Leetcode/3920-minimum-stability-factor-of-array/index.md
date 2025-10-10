@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-stability-factor-of-array">3920. Minimum Stability Factor of Array</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>maxC</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3920. Minimum Stability Factor of Array
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-stability-factor-of-array" target = "_blank">3920. Minimum Stability Factor of Array</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>maxC</code>.</p>
 
 <p>A <strong><span data-keyword="subarray">subarray</span></strong> is called <strong>stable</strong> if the <em>highest common factor (HCF)</em> of all its elements is <strong>greater than or equal to</strong> 2.</p>
 
@@ -78,6 +86,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 	<li><code>0 &lt;= maxC &lt;= n</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -173,3 +185,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

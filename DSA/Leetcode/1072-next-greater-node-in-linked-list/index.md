@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/next-greater-node-in-linked-list">1072. Next Greater Node In Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a linked list with <code>n</code> nodes.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1072. Next Greater Node In Linked List
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/next-greater-node-in-linked-list" target = "_blank">1072. Next Greater Node In Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a linked list with <code>n</code> nodes.</p>
 
 <p>For each node in the list, find the value of the <strong>next greater node</strong>. That is, for each node, find the value of the first node that is next to it and has a <strong>strictly larger</strong> value than it.</p>
 
@@ -27,6 +35,10 @@
 	<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
 	<li><code>1 &lt;= Node.val &lt;= 10<sup>9</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 /**
@@ -63,3 +75,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

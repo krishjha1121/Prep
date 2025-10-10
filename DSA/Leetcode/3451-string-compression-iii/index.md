@@ -43,6 +43,10 @@ Initially, `comp = ""`. Apply the operation 3 times, choosing `"aaaaaaaaa"`, `"a
 - `1 <= word.length <= 2 * 10^5`
 - `word` consists only of lowercase English letters.
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String compressedString(String word) {
@@ -69,3 +73,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

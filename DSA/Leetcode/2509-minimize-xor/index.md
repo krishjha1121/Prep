@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimize-xor">2509. Minimize XOR</a></h2><h3>Medium</h3><hr><p>Given two positive integers <code>num1</code> and <code>num2</code>, find the positive integer <code>x</code> such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2509. Minimize XOR
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimize-xor" target = "_blank">2509. Minimize XOR</a></h2><h3>Medium</h3><hr><p>Given two positive integers <code>num1</code> and <code>num2</code>, find the positive integer <code>x</code> such that:</p>
 
 <ul>
 	<li><code>x</code> has the same number of set bits as <code>num2</code>, and</li>
@@ -39,6 +47,10 @@ The integer <strong>3</strong> has the same number of set bits as num2, and the 
 	<li><code>1 &lt;= num1, num2 &lt;= 10<sup>9</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimizeXor(int num1, int num2) {
@@ -70,3 +82,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

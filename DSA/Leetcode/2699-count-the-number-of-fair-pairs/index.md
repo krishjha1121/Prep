@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/count-the-number-of-fair-pairs">2699. Count the Number of Fair Pairs</a></h2><h3>Medium</h3><hr><p>Given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>n</code> and two integers <code>lower</code> and <code>upper</code>, return <em>the number of fair pairs</em>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2699. Count the Number of Fair Pairs
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/count-the-number-of-fair-pairs" target = "_blank">2699. Count the Number of Fair Pairs</a></h2><h3>Medium</h3><hr><p>Given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>n</code> and two integers <code>lower</code> and <code>upper</code>, return <em>the number of fair pairs</em>.</p>
 
 <p>A pair <code>(i, j)</code> is <b>fair </b>if:</p>
 
@@ -34,6 +42,10 @@
 	<li><code><font face="monospace">-10<sup>9</sup>&nbsp;&lt;= lower &lt;= upper &lt;= 10<sup>9</sup></font></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long countFairPairs(int[] nums, int lower, int upper) {
@@ -55,3 +67,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/longest-palindromic-subsequence-after-at-most-k-operations">3786. Longest Palindromic Subsequence After at Most K Operations</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3786. Longest Palindromic Subsequence After at Most K Operations
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/longest-palindromic-subsequence-after-at-most-k-operations" target = "_blank">3786. Longest Palindromic Subsequence After at Most K Operations</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code> and an integer <code>k</code>.</p>
 
 <p>In one operation, you can replace the character at any position with the next or previous letter in the alphabet (wrapping around so that <code>&#39;a&#39;</code> is after <code>&#39;z&#39;</code>). For example, replacing <code>&#39;a&#39;</code> with the next letter results in <code>&#39;b&#39;</code>, and replacing <code>&#39;a&#39;</code> with the previous letter results in <code>&#39;z&#39;</code>. Similarly, replacing <code>&#39;z&#39;</code> with the next letter results in <code>&#39;a&#39;</code>, and replacing <code>&#39;z&#39;</code> with the previous letter results in <code>&#39;y&#39;</code>.</p>
 
@@ -49,6 +57,10 @@
 	<li><code>s</code> consists of only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static public int longestPalindromicSubsequence(String s, int k) {
@@ -86,3 +98,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

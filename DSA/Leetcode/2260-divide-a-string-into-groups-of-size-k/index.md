@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/divide-a-string-into-groups-of-size-k">2260. Divide a String Into Groups of Size k</a></h2><h3>Easy</h3><hr><p>A string <code>s</code> can be partitioned into groups of size <code>k</code> using the following procedure:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2260. Divide a String Into Groups of Size k
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/divide-a-string-into-groups-of-size-k" target = "_blank">2260. Divide a String Into Groups of Size k</a></h2><h3>Easy</h3><hr><p>A string <code>s</code> can be partitioned into groups of size <code>k</code> using the following procedure:</p>
 
 <ul>
 	<li>The first group consists of the first <code>k</code> characters of the string, the second group consists of the next <code>k</code> characters of the string, and so on. Each element can be a part of <strong>exactly one</strong> group.</li>
@@ -44,6 +52,10 @@ Thus, the 4 groups formed are &quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;,
 	<li><code>fill</code> is a lowercase English letter.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public String[] divideString(String s, int k, char fill) {
@@ -68,3 +80,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

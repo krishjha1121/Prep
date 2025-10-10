@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/largest-values-from-labels">1169. Largest Values From Labels</a></h2><h3>Medium</h3><hr><p>You are given <code>n</code> item&#39;s value and label as two integer arrays <code>values</code> and <code>labels</code>. You are also given two integers <code>numWanted</code> and <code>useLimit</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1169. Largest Values From Labels
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/largest-values-from-labels" target = "_blank">1169. Largest Values From Labels</a></h2><h3>Medium</h3><hr><p>You are given <code>n</code> item&#39;s value and label as two integer arrays <code>values</code> and <code>labels</code>. You are also given two integers <code>numWanted</code> and <code>useLimit</code>.</p>
 
 <p>Your task is to find a subset of items with the <strong>maximum sum</strong> of their values such that:</p>
 
@@ -56,6 +64,10 @@
 	<li><code>1 &lt;= numWanted, useLimit &lt;= n</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     static class Pair {
@@ -97,3 +109,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

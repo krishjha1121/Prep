@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-division-operations-to-make-array-non-decreasing">3607. Minimum Division Operations to Make Array Non Decreasing</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3603. Check if DFS Strings Are Palindromes
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-division-operations-to-make-array-non-decreasing" target = "_blank">3607. Minimum Division Operations to Make Array Non Decreasing</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code>.</p>
 
 <p>Any <strong>positive</strong> divisor of a natural number <code>x</code> that is <strong>strictly less</strong> than <code>x</code> is called a <strong>proper divisor</strong> of <code>x</code>. For example, 2 is a <em>proper divisor</em> of 4, while 6 is not a <em>proper divisor</em> of 6.</p>
 
@@ -45,6 +53,10 @@
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minOperations(int[] nums) {
@@ -79,3 +91,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

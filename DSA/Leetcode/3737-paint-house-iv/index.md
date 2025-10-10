@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/paint-house-iv">3737. Paint House IV</a></h2><h3>Medium</h3><hr><p>You are given an <strong>even</strong> integer <code>n</code> representing the number of houses arranged in a straight line, and a 2D array <code>cost</code> of size <code>n x 3</code>, where <code>cost[i][j]</code> represents the cost of painting house <code>i</code> with color <code>j + 1</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3737. Paint House IV
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/paint-house-iv" target = "_blank">3737. Paint House IV</a></h2><h3>Medium</h3><hr><p>You are given an <strong>even</strong> integer <code>n</code> representing the number of houses arranged in a straight line, and a 2D array <code>cost</code> of size <code>n x 3</code>, where <code>cost[i][j]</code> represents the cost of painting house <code>i</code> with color <code>j + 1</code>.</p>
 
 <p>The houses will look <strong>beautiful</strong> if they satisfy the following conditions:</p>
 
@@ -62,6 +70,10 @@
 	<li><code>0 &lt;= cost[i][j] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private long dp[][][][];
@@ -102,3 +114,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

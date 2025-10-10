@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rearrange-words-in-a-sentence">1561. Rearrange Words in a Sentence</a></h2><h3>Medium</h3><hr><p>Given a sentence&nbsp;<code>text</code> (A&nbsp;<em>sentence</em>&nbsp;is a string of space-separated words) in the following format:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1561. Rearrange Words in a Sentence
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rearrange-words-in-a-sentence" target = "_blank">1561. Rearrange Words in a Sentence</a></h2><h3>Medium</h3><hr><p>Given a sentence&nbsp;<code>text</code> (A&nbsp;<em>sentence</em>&nbsp;is a string of space-separated words) in the following format:</p>
 
 <ul>
 	<li>First letter is in upper case.</li>
@@ -46,6 +54,10 @@ Output is ordered by length and the new first word starts with capital letter.
 	<li><code>text</code> begins with a capital letter and then contains lowercase letters and single space between words.</li>
 	<li><code>1 &lt;= text.length &lt;= 10^5</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 import java.util.ArrayList;
@@ -115,3 +127,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

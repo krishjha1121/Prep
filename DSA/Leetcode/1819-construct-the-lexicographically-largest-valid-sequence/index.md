@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence">1819. Construct the Lexicographically Largest Valid Sequence</a></h2><h3>Medium</h3><hr><p>Given an integer <code>n</code>, find a sequence that satisfies all of the following:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1819. Construct the Lexicographically Largest Valid Sequence
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence" target = "_blank">1819. Construct the Lexicographically Largest Valid Sequence</a></h2><h3>Medium</h3><hr><p>Given an integer <code>n</code>, find a sequence that satisfies all of the following:</p>
 
 <ul>
 	<li>The integer <code>1</code> occurs once in the sequence.</li>
@@ -35,6 +43,10 @@
 	<li><code>1 &lt;= n &lt;= 20</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] constructDistancedSequence(int n) {
@@ -69,3 +81,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

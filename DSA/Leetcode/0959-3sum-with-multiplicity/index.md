@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/3sum-with-multiplicity">959. 3Sum With Multiplicity</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>arr</code>, and an integer <code>target</code>, return the number of tuples <code>i, j, k</code> such that <code>i &lt; j &lt; k</code> and <code>arr[i] + arr[j] + arr[k] == target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 959. 3Sum With Multiplicity
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/3sum-with-multiplicity" target = "_blank">959. 3Sum With Multiplicity</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>arr</code>, and an integer <code>target</code>, return the number of tuples <code>i, j, k</code> such that <code>i &lt; j &lt; k</code> and <code>arr[i] + arr[j] + arr[k] == target</code>.</p>
 
 <p>As the answer can be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
 
@@ -43,6 +51,8 @@ and two 2s from [2,2,2,2] in 6 ways.
 	<li><code>0 &lt;= arr[i] &lt;= 100</code></li>
 	<li><code>0 &lt;= target &lt;= 300</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
 
 ```java
 class Solution {
@@ -152,3 +162,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

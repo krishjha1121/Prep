@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/find-mirror-score-of-a-string/">3634. Find Mirror Score of a String</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3634. Find Mirror Score of a String
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/find-mirror-score-of-a-string/" target = "_blank">3634. Find Mirror Score of a String</a></h2><h3>Medium</h3><hr><p>You are given a string <code>s</code>.</p>
 
 <p>We define the <strong>mirror</strong> of a letter in the English alphabet as its corresponding letter when the alphabet is reversed. For example, the mirror of <code>&#39;a&#39;</code> is <code>&#39;z&#39;</code>, and the mirror of <code>&#39;y&#39;</code> is <code>&#39;b&#39;</code>.</p>
 
@@ -53,6 +61,10 @@
 	<li><code>s</code> consists only of lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public long calculateScore(String s) {
@@ -72,3 +84,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

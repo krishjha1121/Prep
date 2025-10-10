@@ -28,24 +28,32 @@
 
 <ul>
 	<li>The number of nodes in the list is in the range <code>[0, 500]</code>.</li>
-	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
-	<li><code>0 &lt;= k &lt;= 2 * 10<sup>9</sup></code></li>
+	<li><code>-100 <= Node.val <= 100</code></li>
+	<li><code>0 <= k <= 2 * 10<sup>9</sup></code></li>
 </ul>
+
+<CodeTabs :languages="[
+  { name: 'C++', slot: 'cpp' },
+  { name: 'Java', slot: 'java' }
+]">
+
+<template #java>
 
 ```java
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+    Definition for singly-linked list.
+    public class ListNode {
+       int val;
+       ListNode next;
+       ListNode() {}
+       ListNode(int val) { this.val = val; }
+       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+*/
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        if (head == null) return null;
+        if (head == null)
+            return null;
         ArrayList<Integer> nodes = new ArrayList<>();
         ListNode temp = head;
         while (temp != null) {
@@ -55,7 +63,7 @@ class Solution {
         k = k % nodes.size();
         reverse(nodes, 0, nodes.size() - k - 1);
         reverse(nodes, nodes.size() - k, nodes.size() - 1);
-        reverse(nodes, 0 , nodes.size() - 1);
+        reverse(nodes, 0, nodes.size() - 1);
         ListNode root = null;
         for (int i = 0; i < nodes.size(); i++) {
             int current = nodes.get(i);
@@ -65,9 +73,11 @@ class Solution {
     }
     private ListNode insert(ListNode head, int data) {
         ListNode new_node = new ListNode(data);
-        if (head == null) return new ListNode(data);
+        if (head == null)
+            return new ListNode(data);
         ListNode temp = head;
-        while (temp.next != null) temp = temp.next;
+        while (temp.next != null)
+            temp = temp.next;
         temp.next = new_node;
         new_node.next = null;
         return head;
@@ -75,8 +85,22 @@ class Solution {
     private void reverse(ArrayList<Integer> res, int low, int high) {
         while (low < high) {
             Collections.swap(res, low, high);
-            low++; high--;
+            low++;
+            high--;
         }
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>
+

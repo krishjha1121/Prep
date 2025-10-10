@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/partition-array-according-to-given-pivot">2265. Partition Array According to Given Pivot</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>pivot</code>. Rearrange <code>nums</code> such that the following conditions are satisfied:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2265. Partition Array According to Given Pivot
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/partition-array-according-to-given-pivot" target = "_blank">2265. Partition Array According to Given Pivot</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and an integer <code>pivot</code>. Rearrange <code>nums</code> such that the following conditions are satisfied:</p>
 
 <ul>
 	<li>Every element less than <code>pivot</code> appears <strong>before</strong> every element greater than <code>pivot</code>.</li>
@@ -44,6 +52,10 @@ The relative ordering of the elements less than and greater than pivot is also m
 	<li><code>pivot</code> equals to an element of <code>nums</code>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
@@ -65,3 +77,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-white-tiles-after-covering-with-carpets">2311. Minimum White Tiles After Covering With Carpets</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed binary</strong> string <code>floor</code>, which represents the colors of tiles on a floor:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2311. Minimum White Tiles After Covering With Carpets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-white-tiles-after-covering-with-carpets" target = "_blank">2311. Minimum White Tiles After Covering With Carpets</a></h2><h3>Hard</h3><hr><p>You are given a <strong>0-indexed binary</strong> string <code>floor</code>, which represents the colors of tiles on a floor:</p>
 
 <ul>
 	<li><code>floor[i] = &#39;0&#39;</code> denotes that the <code>i<sup>th</sup></code> tile of the floor is colored <strong>black</strong>.</li>
@@ -39,6 +47,10 @@ Note that the carpets are able to overlap one another.
 	<li><code>1 &lt;= numCarpets &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.Arrays;
 
@@ -77,3 +89,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

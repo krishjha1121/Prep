@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-positive-sum-subarray">3644. Minimum Positive Sum Subarray </a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and <strong>two</strong> integers <code>l</code> and <code>r</code>. Your task is to find the <strong>minimum</strong> sum of a <strong>subarray</strong> whose size is between <code>l</code> and <code>r</code> (inclusive) and whose sum is greater than 0.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3644. Minimum Positive Sum Subarray
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-positive-sum-subarray" target = "_blank">3644. Minimum Positive Sum Subarray </a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> and <strong>two</strong> integers <code>l</code> and <code>r</code>. Your task is to find the <strong>minimum</strong> sum of a <strong>subarray</strong> whose size is between <code>l</code> and <code>r</code> (inclusive) and whose sum is greater than 0.</p>
 
 <p>Return the <strong>minimum</strong> sum of such a subarray. If no such subarray exists, return -1.</p>
 
@@ -59,6 +67,10 @@
 	<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minimumSumSubarray(List<Integer> nums, int l, int r) {
@@ -89,3 +101,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

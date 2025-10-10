@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/transform-array-to-all-equal-elements">3876. Transform Array to All Equal Elements</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of size <code>n</code> containing only <code>1</code> and <code>-1</code>, and an integer <code>k</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3876. Transform Array to All Equal Elements
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/transform-array-to-all-equal-elements" target = "_blank">3876. Transform Array to All Equal Elements</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of size <code>n</code> containing only <code>1</code> and <code>-1</code>, and an integer <code>k</code>.</p>
 
 <p>You can perform the following operation at most <code>k</code> times:</p>
 
@@ -51,6 +59,10 @@
 	<li><code>1 &lt;= k &lt;= n</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean canMakeEqual(int[] nums, int k) {
@@ -96,3 +108,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

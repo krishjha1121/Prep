@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i">3753. Maximum Difference Between Even and Odd Frequency I</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of lowercase English letters. Your task is to find the <strong>maximum</strong> difference between the frequency of <strong>two</strong> characters in the string such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3753. Maximum Difference Between Even and Odd Frequency I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i" target = "_blank">3753. Maximum Difference Between Even and Odd Frequency I</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of lowercase English letters. Your task is to find the <strong>maximum</strong> difference between the frequency of <strong>two</strong> characters in the string such that:</p>
 
 <ul>
 	<li>One of the characters has an <strong>even frequency</strong> in the string.</li>
@@ -47,6 +55,10 @@
 	<li><code>s</code> contains at least one character with an odd frequency and one with an even frequency.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int maxDifference(String s) {
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

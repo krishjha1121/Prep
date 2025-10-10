@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/distant-barcodes">1140. Distant Barcodes</a></h2><h3>Medium</h3><hr><p>In a warehouse, there is a row of barcodes, where the <code>i<sup>th</sup></code> barcode is <code>barcodes[i]</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1140. Distant Barcodes
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/distant-barcodes" target = "_blank">1140. Distant Barcodes</a></h2><h3>Medium</h3><hr><p>In a warehouse, there is a row of barcodes, where the <code>i<sup>th</sup></code> barcode is <code>barcodes[i]</code>.</p>
 
 <p>Rearrange the barcodes so that no two adjacent barcodes are equal. You may return any answer, and it is guaranteed an answer exists.</p>
 
@@ -17,6 +25,10 @@
 	<li><code>1 &lt;= barcodes.length &lt;= 10000</code></li>
 	<li><code>1 &lt;= barcodes[i] &lt;= 10000</code></li>
 </ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
 
 ```java
 class Solution {
@@ -67,3 +79,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/stock-price-fluctuation">2161. Stock Price Fluctuation </a></h2><h3>Medium</h3><hr><p>You are given a stream of <strong>records</strong> about a particular stock. Each record contains a <strong>timestamp</strong> and the corresponding <strong>price</strong> of the stock at that timestamp.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 2161. Stock Price Fluctuation
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/stock-price-fluctuation" target = "_blank">2161. Stock Price Fluctuation </a></h2><h3>Medium</h3><hr><p>You are given a stream of <strong>records</strong> about a particular stock. Each record contains a <strong>timestamp</strong> and the corresponding <strong>price</strong> of the stock at that timestamp.</p>
 
 <p>Unfortunately due to the volatile nature of the stock market, the records do not come in order. Even worse, some records may be incorrect. Another record with the same timestamp may appear later in the stream <strong>correcting</strong> the price of the previous wrong record.</p>
 
@@ -53,6 +61,10 @@ stockPrice.minimum();     // return 2, the minimum price is 2 at timestamp 4.
 	<li><code>current</code>, <code>maximum</code>, and <code>minimum</code> will be called <strong>only after</strong> <code>update</code> has been called <strong>at least once</strong>.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 import java.util.HashMap;
 import java.util.TreeSet;
@@ -100,7 +112,6 @@ class StockPrice {
         return set.first();
     }
 }
-
 /**
     Your StockPrice object will be instantiated and called as such:
     StockPrice obj = new StockPrice();
@@ -110,3 +121,15 @@ class StockPrice {
     int param_4 = obj.minimum();
 */
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

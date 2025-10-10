@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rabbits-in-forest">797. Rabbits in Forest</a></h2><h3>Medium</h3><hr><p>There is a forest with an unknown number of rabbits. We asked n rabbits <strong>&quot;How many rabbits have the same color as you?&quot;</strong> and collected the answers in an integer array <code>answers</code> where <code>answers[i]</code> is the answer of the <code>i<sup>th</sup></code> rabbit.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 797. Rabbits in Forest
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/rabbits-in-forest" target = "_blank">797. Rabbits in Forest</a></h2><h3>Medium</h3><hr><p>There is a forest with an unknown number of rabbits. We asked n rabbits <strong>&quot;How many rabbits have the same color as you?&quot;</strong> and collected the answers in an integer array <code>answers</code> where <code>answers[i]</code> is the answer of the <code>i<sup>th</sup></code> rabbit.</p>
 
 <p>Given the array <code>answers</code>, return <em>the minimum number of rabbits that could be in the forest</em>.</p>
 
@@ -31,6 +39,8 @@ The smallest possible number of rabbits in the forest is therefore 5: 3 that ans
 	<li><code>0 &lt;= answers[i] &lt; 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]"> <template #java>
+
 ```java
 class Solution {
     public int numRabbits(int[] answers) {
@@ -53,3 +63,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

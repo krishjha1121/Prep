@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/maximum-amount-of-money-robot-can-earn">3677. Maximum Amount of Money Robot Can Earn</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> grid. A robot starts at the top-left corner of the grid <code>(0, 0)</code> and wants to reach the bottom-right corner <code>(m - 1, n - 1)</code>. The robot can move either right or down at any point in time.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3677. Maximum Amount of Money Robot Can Earn
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-amount-of-money-robot-can-earn" target = "_blank">3677. Maximum Amount of Money Robot Can Earn</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> grid. A robot starts at the top-left corner of the grid <code>(0, 0)</code> and wants to reach the bottom-right corner <code>(m - 1, n - 1)</code>. The robot can move either right or down at any point in time.</p>
 
 <p>The grid contains a value <code>coins[i][j]</code> in each cell:</p>
 
@@ -63,6 +71,10 @@
 	<li><code>-1000 &lt;= coins[i][j] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     private int dp[][][];
@@ -103,3 +115,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

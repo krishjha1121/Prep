@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary">1744. Number of Ways to Form a Target String Given a Dictionary</a></h2><h3>Hard</h3><hr><p>You are given a list of strings of the <strong>same length</strong> <code>words</code> and a string <code>target</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1744. Number of Ways to Form a Target String Given a Dictionary
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary" target = "_blank">1744. Number of Ways to Form a Target String Given a Dictionary</a></h2><h3>Hard</h3><hr><p>You are given a list of strings of the <strong>same length</strong> <code>words</code> and a string <code>target</code>.</p>
 
 <p>Your task is to form <code>target</code> using the given <code>words</code> under the following rules:</p>
 
@@ -51,6 +59,10 @@
 	<li><code>words[i]</code> and <code>target</code> contain only lowercase English letters.</li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int numWays(String[] words, String target) {
@@ -71,3 +83,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

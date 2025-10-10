@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/equal-sum-grid-partition-i">3849. Equal Sum Grid Partition I</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> matrix <code>grid</code> of positive integers. Your task is to determine if it is possible to make <strong>either one horizontal or one vertical cut</strong> on the grid such that:</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3849. Equal Sum Grid Partition I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/equal-sum-grid-partition-i" target = "_blank">3849. Equal Sum Grid Partition I</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> matrix <code>grid</code> of positive integers. Your task is to determine if it is possible to make <strong>either one horizontal or one vertical cut</strong> on the grid such that:</p>
 
 <ul>
 	<li>Each of the two resulting sections formed by the cut is <strong>non-empty</strong>.</li>
@@ -44,6 +52,10 @@
 	<li><code>1 &lt;= grid[i][j] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public boolean canPartitionGrid(int[][] grid) {
@@ -78,3 +90,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-cost-for-tickets">1025. Minimum Cost For Tickets</a></h2><h3>Medium</h3><hr><p>You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array <code>days</code>. Each day is an integer from <code>1</code> to <code>365</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1025. Minimum Cost For Tickets
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-cost-for-tickets" target = "_blank">1025. Minimum Cost For Tickets</a></h2><h3>Medium</h3><hr><p>You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array <code>days</code>. Each day is an integer from <code>1</code> to <code>365</code>.</p>
 
 <p>Train tickets are sold in <strong>three different ways</strong>:</p>
 
@@ -51,6 +59,10 @@ In total, you spent $17 and covered all the days of your travel.
 	<li><code>1 &lt;= costs[i] &lt;= 1000</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int mincostTickets(int[] days, int[] costs) {
@@ -68,3 +80,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-binary-array-elements-equal-to-one-i">3475. Minimum Operations to Make Binary Array Elements Equal to One I</a></h2><h3>Medium</h3><hr><p>You are given a <span data-keyword="binary-array">binary array</span> <code>nums</code>.</p>
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 3475. Minimum Operations to Make Binary Array Elements Equal to One I
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/minimum-operations-to-make-binary-array-elements-equal-to-one-i" target = "_blank">3475. Minimum Operations to Make Binary Array Elements Equal to One I</a></h2><h3>Medium</h3><hr><p>You are given a <span data-keyword="binary-array">binary array</span> <code>nums</code>.</p>
 
 <p>You can do the following operation on the array <strong>any</strong> number of times (possibly zero):</p>
 
@@ -47,6 +55,10 @@ It is impossible to make all elements equal to 1.</p>
 	<li><code>0 &lt;= nums[i] &lt;= 1</code></li>
 </ul>
 
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
 ```java
 class Solution {
     public int minOperations(int[] nums) {
@@ -75,3 +87,15 @@ class Solution {
     }
 }
 ```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>
