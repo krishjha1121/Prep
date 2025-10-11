@@ -1,18 +1,18 @@
-<div align = "center">
-
 # 📚 Prep - Computer Science Study Resources
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://raj8664.github.io/Prep)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](contribution.md)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Forks](https://img.shields.io/github/forks/RAJ8664/Prep)](https://github.com/RAJ8664/Prep/network)
-[![Stars](https://img.shields.io/github/stars/RAJ8664/Prep)](https://github.com/RAJ8664/Prep/stargazers)
-![GitHub contributors](https://img.shields.io/github/contributors/RAJ8664/Prep)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/RAJ8664/Prep)
+<p align="center">
+  <a href="https://raj8664.github.io/Prep"><img src="https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen" alt="GitHub Pages"></a>
+  <a href="contribution.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions Welcome"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+  <a href="https://github.com/RAJ8664/Prep/network"><img src="https://img.shields.io/github/forks/RAJ8664/Prep" alt="Forks"></a>
+  <a href="https://github.com/RAJ8664/Prep/stargazers"><img src="https://img.shields.io/github/stars/RAJ8664/Prep" alt="Stars"></a>
+  <img src="https://img.shields.io/github/contributors/RAJ8664/Prep" alt="GitHub contributors">
+  <img src="https://img.shields.io/github/commit-activity/m/RAJ8664/Prep" alt="GitHub commit activity">
+</p>
 
+<p align="center">
 A comprehensive, well-organized collection of notes, code implementations, solutions, and study materials for various computer science subjects. This repository serves as a one-stop resource for students, professionals, and anyone preparing for technical interviews, exams, or looking to strengthen their CS fundamentals.
-
-</div>
+</p>
 
 ## 🌐 Live Website
 
@@ -37,7 +37,6 @@ The content is continuously updated and improved based on community feedback and
 ## 📁 Repository Structure
 
 ```
-
 Prep/
 ├── DSA/                   # Data Structures and Algorithms along with LeetCode Solutions
 │   └── LeetCode/
@@ -83,8 +82,6 @@ Special thanks to:
 - **GitHub**: [@RAJ8664](https://github.com/RAJ8664)
 - **Project Link**: [https://github.com/RAJ8664/Prep](https://github.com/RAJ8664/Prep)
 - **Website**: [https://raj8664.github.io/Prep](https://raj8664.github.io/Prep)
-
-</div>
 
 ## 📄 License
 
