@@ -1006,6 +1006,7 @@ Leetcode Solutions
 | [3239-minimum-number-of-operations-to-make-x-and-y-equal](./3239-minimum-number-of-operations-to-make-x-and-y-equal)                   |
 | [3307-find-the-maximum-sum-of-node-values](./3307-find-the-maximum-sum-of-node-values)                                                 |
 | [3383-taking-maximum-energy-from-the-mystic-dungeon](./3383-taking-maximum-energy-from-the-mystic-dungeon/)                            |
+| [3437-maximum-total-damage-with-spell-casting](./3437-maximum-total-damage-with-spell-casting)                                         |
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)                                                             |
 | [3677-maximum-amount-of-money-robot-can-earn](./3677-maximum-amount-of-money-robot-can-earn)                                           |
 | [3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences](./3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences)         |
