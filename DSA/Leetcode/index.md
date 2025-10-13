@@ -384,6 +384,7 @@ Leetcode Solutions
 | [3743-reschedule-meetings-for-maximum-free-time-i](./3743-reschedule-meetings-for-maximum-free-time-i)                                                                     |
 | [3837-grid-teleportation-traversal](./3837-grid-teleportation-traversal)                                                                                                   |
 | [3853-minimum-weighted-subgraph-with-the-required-paths-ii](./3853-minimum-weighted-subgraph-with-the-required-paths-ii)                                                   |
+| [4003-longest-fibonacci-subarray](./4003-longest-fibonacci-subarray/)                                                                                                      |
 
 ## 🔍 Breadth-First Search
 
@@ -590,6 +591,8 @@ Leetcode Solutions
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](./3683-find-the-lexicographically-largest-string-from-the-box-i)                               |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](./3753-maximum-difference-between-even-and-odd-frequency-i)                                         |
 | [3754-maximum-manhattan-distance-after-k-changes](./3754-maximum-manhattan-distance-after-k-changes)                                                           |
+| [4052-equal-score-substrings](./4052-equal-score-substring/)                                                                                                   |
+| [4055-longest-balanced-substring-i](./4055-longest-balanced-substring-i/)                                                                                      |
 
 ## 🔀 Sorting
 
@@ -695,6 +698,7 @@ Leetcode Solutions
 | [2389-design-a-text-editor](./2389-design-a-text-editor)                                               |
 | [2434-design-a-number-container-system](./2434-design-a-number-container-system)                       |
 | [2512-longest-uploaded-prefix](./2512-longest-uploaded-prefix)                                         |
+| [4059-design-exam-scores-tracker](./4059-design-exam-scores-tracker/)                                  |
 
 ## 🎋 Binary Search Tree
 
