@@ -57,7 +57,7 @@ _Core SEM 3 curriculum — Click to explore_
 |  Code   | Subject                                  |      Resources      |
 | :-----: | :--------------------------------------- | :-----------------: |
 | `CS201` | **Data Structures**                      | [📂 Open](./CS201/) |
-| `CS202` | **Discrete Sttructures**                 | [📂 Open](./CS202/) |
+| `CS202` | **Discrete Structures**                  | [📂 Open](./CS202/) |
 | `EC221` | **Electronic Circuit and Switching**     | [📂 Open](./EC221/) |
 | `EE210` | **Microprocessors and Microcontrollers** | [📂 Open](./EE210/) |
 | `MA201` | **Mathematics-III**                      | [📂 Open](./MA201/) |
