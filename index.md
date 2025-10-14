@@ -56,6 +56,11 @@ features:
       title: SQL
       details: SQL queries, database operations, and practical examples for interview preparation.
       link: /SQL/
+
+    - icon: 💻
+      title: Interview Prep 
+      details: First-hand interview experiences and role-specific questions shared by candidates from particular companies, with practical preparation tips.
+      link: /Interview/
 ---
 
 ## Contributing
