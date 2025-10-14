@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📘 SEM 3 Resources Hub
+# 📘 SEM 3 Resource Hub
 
 <div align="center" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
   <img src="https://img.shields.io/badge/📚_Subjects-5-blue?style=for-the-badge&logo=bookstack" alt="Subjects Badge" />
@@ -45,7 +45,7 @@
 
 ## 📚 Subjects
 
-_Core SEM1 curriculum — Click to explore_
+_Core SEM 3 curriculum — Click to explore_
 
 </div>
 
@@ -54,13 +54,13 @@ _Core SEM1 curriculum — Click to explore_
 
 <div align="center">
 
-|  Code   | Subject                          |      Resources      |
-| :-----: | :------------------------------- | :-----------------: |
-| `EE101` | **Basic Electrical Engineering** | [📂 Open](./EE101/) |
-| `HS101` | **Communicative English**        | [📂 Open](./HS101/) |
-| `MA102` | **Mathematics 2**                | [📂 Open](./MA102/) |
-| `ME101` | **Engineering Mechanics**        | [📂 Open](./ME101/) |
-| `PH101` | **Physics**                      | [📂 Open](./PH101/) |
+|  Code   | Subject                                  |      Resources      |
+| :-----: | :--------------------------------------- | :-----------------: |
+| `CS201` | **Data Structures**                      | [📂 Open](./CS201/) |
+| `CS202` | **Discrete Structures**                  | [📂 Open](./CS202/) |
+| `EC221` | **Electronic Circuit and Switching**     | [📂 Open](./EC221/) |
+| `EE210` | **Microprocessors and Microcontrollers** | [📂 Open](./EE210/) |
+| `MA201` | **Mathematics-III**                      | [📂 Open](./MA201/) |
 
 </div>
 
@@ -81,11 +81,11 @@ _Hands-on practical sessions_
 
 <div align="center">
 
-| Lab Code | Laboratory                           |      Resources      |
-| :------: | :----------------------------------- | :-----------------: |
-| `CE101`  | **Engineering Graphics & Design**    | [📂 Open](./CE101/) |
-| `EE121`  | **Basic Electrical Engineering Lab** | [📂 Open](./EE121/) |
-| `PH111`  | **Physics Lab**                      | [📂 Open](./PH111/) |
+| Lab Code | Laboratory                                          |      Resources      |
+| :------: | :-------------------------------------------------- | :-----------------: |
+| `CS203`  | **Data Structure Laboratory**                       | [📂 Open](./CS203/) |
+| `EC222`  | **Electronic Circuit and Switching Laboratory**     | [📂 Open](./EC222/) |
+| `EE223`  | **Microprocessors and Microcontrollers Laboratory** | [📂 Open](./EE223/) |
 
 </div>
 

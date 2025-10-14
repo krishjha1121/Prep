@@ -31,9 +31,9 @@ Meet the brilliant minds who make this project possible. From coding wizards to 
   <h3>Nikhil Sahani</h3>
   <p>Front-End Developer | UI/UX Designer</p>
   <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
-    <a href="https://github.com/priyasharma" target="_blank">🐙 GitHub</a>
-    <a href="https://leetcode.com/priyasharma" target="_blank">💻 LeetCode</a>
-    <a href="https://www.hackerrank.com/priyasharma" target="_blank">🏅 HackerRank</a>
+    <a href="" target="_blank">🐙 GitHub</a>
+    <a href="" target="_blank">💻 LeetCode</a>
+    <a href="" target="_blank">🏅 HackerRank</a>
   </div>
 </div>
 
@@ -42,9 +42,9 @@ Meet the brilliant minds who make this project possible. From coding wizards to 
   <h3>Anil Kumar</h3>
   <p>Back-End Developer | Open Source Contributor</p>
   <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
-    <a href="https://github.com/amitkumar" target="_blank">🐙 GitHub</a>
-    <a href="https://leetcode.com/amitkumar" target="_blank">💻 LeetCode</a>
-    <a href="https://www.codechef.com/users/amitkumar" target="_blank">🍴 CodeChef</a>
+    <a href="" target="_blank">🐙 GitHub</a>
+    <a href="" target="_blank">💻 LeetCode</a>
+    <a href="" target="_blank">🍴 CodeChef</a>
   </div>
 </div>
 
@@ -53,9 +53,9 @@ Meet the brilliant minds who make this project possible. From coding wizards to 
   <h3>Kanika Punia</h3>
   <p>Back-End Developer | Open Source Contributor</p>
   <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
-    <a href="https://github.com/amitkumar" target="_blank">🐙 GitHub</a>
-    <a href="https://leetcode.com/amitkumar" target="_blank">💻 LeetCode</a>
-    <a href="https://www.codechef.com/users/amitkumar" target="_blank">🍴 CodeChef</a>
+    <a href="" target="_blank">🐙 GitHub</a>
+    <a href="" target="_blank">💻 LeetCode</a>
+    <a href="" target="_blank">🍴 CodeChef</a>
   </div>
 </div>
 
