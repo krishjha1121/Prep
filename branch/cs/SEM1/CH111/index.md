@@ -1,12 +1,12 @@
 <div align = "center" style="color:orange">
 
-## 🛼 EE121 — Basic Electrical Engineering Laboratory
+## 🏷️ CH111 — Chemistry Laboratory
 
 </div>
 
 <div align = "center">
-    
-- Basic Electrical Engineering Laboratory (EE121) focuses on the design, analysis, and implementation of electrical circuits and systems.
+
+- Chemistry Laboratory (CH111) focuses on the study of chemical processes, reactions, and properties of chemical compounds.
 
 </div>
 
@@ -65,6 +65,6 @@ Add your Google Drive share link to the table above following the existing forma
 
 **Need help?** Open an issue or contact the maintainers
 
-[← Back to SEM2](../)
+[← Back to SEM1](../)
 
 </div>

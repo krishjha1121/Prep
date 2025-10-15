@@ -83,9 +83,9 @@ _Hands-on practical sessions_
 
 | Lab Code | Laboratory                          |      Resources      |
 | :------: | :---------------------------------- | :-----------------: |
-| `CH111`  | **Chemistry Lab**                   | [📂 Open](./CH101/) |
+| `CH111`  | **Chemistry Lab**                   | [📂 Open](./CH111/) |
 | `CS111`  | **Introduction to Programming Lab** | [📂 Open](./CS111/) |
-| `EC111`  | **Basic Electronics Lab**           | [📂 Open](./EC101/) |
+| `EC111`  | **Basic Electronics Lab**           | [📂 Open](./EC111/) |
 
 </div>
 
