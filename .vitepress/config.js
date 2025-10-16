@@ -192,8 +192,12 @@ export default withMermaid(
 			},
 			html: true,
 			config: (md) => {
-				// Enable KaTeX math rendering
-				md.use(markdownItKatex);
+				md.use(markdownItKatex, {
+					output: "html",
+					throwOnError: false,
+					errorColor: " #cc0000",
+					copy_tex: false,
+				});
 			},
 		},
 	}),
