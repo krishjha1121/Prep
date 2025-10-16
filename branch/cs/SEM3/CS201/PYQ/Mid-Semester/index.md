@@ -4,15 +4,21 @@
 
 <CodeTabs :languages="[
   { name: '2024-SEP', slot: '2024-SEP' },
+    {name : '2024-Paper-2', slot : '2024-Paper-2'},
 ]">
 
 <template #2024-SEP>
 
-<div align="center">
-  <h6> Answer all questions (Total Marks = 30, Duration = 1 hour)</h6>
-</div>
+<details style="margin-bottom: 5px; margin-top : 10px; border: 1px solid #ccc; border-radius: 5px; padding: 8px;">
+  <summary style="font-weight: bold; cursor: pointer; font-size: 1rem;">Click to view the Question Paper</summary>
+  <div align="center" style="margin-top: 10px;">
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760624953/Screenshot_16-Oct_19-58-30_16725_maspju.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+  </div>
+</details>
 
-<table border="1" style="width: 100%; border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse; border-color:none">
   <thead>
     <tr>
       <th>Question</th>
@@ -94,13 +100,91 @@ void fun(struct node *start) {
         <code>push2(int x) -> pushes x to the second stack.</code>,<br>
         <code>pop1() -> pops and element from first stack and return the popped element.</code>,<br>
         <code>pop2() -> pops and element from second stack and return the popped element.</code>.<br>
-        Write an <strong>algorithms</strong> to implement the <code>push()</code> and <code>pop()</code> operations for <code>twoStack</code>.
+        Write an <strong>algorithm</strong> to implement the <code>push()</code> and <code>pop()</code> operations for <code>twoStack</code>.
       </td>
       <td>4</td>
       <td>CO3</td>
     </tr>
   </tbody>
 </table>
+</template>
+
+<template #2024-Paper-2>
+
+<details style="margin-bottom: 5px; margin-top : 10px; border: 1px solid #ccc; border-radius: 5px; padding: 8px;">
+  <summary style="font-weight: bold; cursor: pointer; font-size: 1rem;">Click to view the Question Paper</summary>
+  <div align="center" style="margin-top: 10px;">
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760625145/Screenshot_16-Oct_20-02-05_6423_lgnjdd.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+  </div>
+</details>
+
+<table  style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Details</th>
+      <th>Marks</th>
+      <th>CO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1(a)</strong></td>
+      <td>What is an Abstract Data Type? Give an example.</td>
+      <td>2</td>
+      <td>CO-1</td>
+    </tr>
+    <tr>
+      <td><strong>1(b)</strong></td>
+      <td>The order of growth of the running time of an algorithm is represented through asymptotic notations. <br> Define <code> <em>O-notation</em> </code>, <code> <em>θ-notation</em> </code>, <code> <em>Ω-notation</em> </code>.</td>
+      <td>3</td>
+      <td>CO-1</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td>Implement a <strong> stack </strong> using a singly linked list L. The operations <code> PUSH </code> and <code> POP </code> should still take <code> <em>O(1)</em> </code> time.</td>
+      <td>5</td>
+      <td>CO-2</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td>Write a psuedocode or function to <code> delete </code> a node which is two node ahead of n<sup>th</sup> node in a singly link list. The position is provided by the value/data of the node. <strong> [Note: You are allowed to use only one extra pointer other than the head/start.] </strong> </td>
+      <td>5</td>
+      <td>CO-2, CO-3</td>
+    </tr>
+    <tr>
+      <td><strong>4</strong></td>
+      <td>Write a psuedocode or function to create a <code> double ended queue. </code> </td>
+      <td>5</td>
+      <td>CO-2</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td>Consider the following arithmetic infix expression Q:<br><br><code>Q : 7 * (8 - 3) + 12/4 - (2 † 3)</code><br><br>Show the simulation of the algorithm to transform Q into its equivalent postfix expression P. And then evaluate the expression P.</td>
+      <td>5</td>
+      <td>CO-3</td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td>
+      <td>Find the <code> time-complexity </code> of the algorithm given below:<br>
+        <pre>for j ← 2 to length [A] do
+    key ← A[j]
+    i ← j - 1
+    while i > 0 and A[i] > key do
+        A[i + 1] ← A[i]
+        i ← i - 1
+    end while
+    A[i + 1] ← key
+end for</pre>
+      </td>
+      <td>5</td>
+      <td>CO-4</td>
+    </tr>
+  </tbody>
+</table>
 
 </template>
+
 </CodeTabs>
