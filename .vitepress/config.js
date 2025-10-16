@@ -1,3 +1,4 @@
+import markdownItKatex from "markdown-it-katex";
 import path from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vitepress";
@@ -190,6 +191,10 @@ export default withMermaid(
 				dark: "github-dark",
 			},
 			html: true,
+			config: (md) => {
+				// Enable KaTeX math rendering
+				md.use(markdownItKatex);
+			},
 		},
 	}),
 );
