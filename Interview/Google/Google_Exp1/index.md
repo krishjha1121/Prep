@@ -1,6 +1,8 @@
 # 💼 Interview Experience – Google STEP Intern 2024
 
----
+--- 
+**Type:** On-Campus Opportunity  
+**Role:** Step Intership
 
 ## 🧩 Rounds
 
