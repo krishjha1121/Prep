@@ -15,7 +15,7 @@
     <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760624953/Screenshot_16-Oct_19-58-30_16725_maspju.png" 
          alt="Question Paper" 
          style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
-  </div>
+</div>
 </details>
 
 <table style="width: 100%; border-collapse: collapse; border-color:none">
@@ -118,7 +118,7 @@ void fun(struct node *start) {
     <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760625145/Screenshot_16-Oct_20-02-05_6423_lgnjdd.png" 
          alt="Question Paper" 
          style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
-  </div>
+</div>
 </details>
 
 <table  style="width: 100%; border-collapse: collapse;">
