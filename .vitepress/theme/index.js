@@ -1,10 +1,14 @@
+// .vitepress/theme/index.js
 import DefaultTheme from "vitepress/theme";
 import CodeTabs from "./components/CodeTabs.vue";
+import ElectricCard from "./components/ElectricCard.vue";
 
 export default {
-	extends: DefaultTheme,
-	enhanceApp({ app }) {
-		// Register global components
-		app.component("CodeTabs", CodeTabs);
-	},
+  ...DefaultTheme,
+  enhanceApp({ app }) {
+    app.component("CodeTabs", CodeTabs);
+    app.component("ElectricCard", ElectricCard);
+
+    
+  },
 };
