@@ -542,9 +542,10 @@ What do u know about NAT ?
 > Piggybacking ?
 >
 > - Piggybacking means sending an acknowledgement (ACK) along with data in the same frame instead of sending it separately because of to overcome overhead.
+>
 > * Station A → Station B: sends a data frame.
 > * Station B receives it, but instead of sending an immediate ACK, it waits until it has data to send back.
-> What is HDLC?
+>   What is HDLC?
 >
 > - HDLC (High-Level Data Link Control) is a bit-oriented data link layer protocol developed by ISO.
 > - Provides reliable and efficient communication over both synchronous and asynchronous links.
@@ -946,7 +947,7 @@ flowchart
   _ These policies are applied to prevent congestion before it happens.
   _ In these mechanisms, congestion control is handled by either source or
   destination. 2. Closed Loop Congestion Control \* These mechanisms try to overcome congestion after it happens
-<<<<<<< HEAD:CN/README.md
+  <<<<<<< HEAD:CN/README.md
 
 ## ARP v/s RARP
 
@@ -961,124 +962,128 @@ flowchart
 | Response         | Device with that IP replies with its MAC address      | RARP server replies with the IP address               |
 | Current Use      | Still in use in LANs (IPv4)                           | Obsolete, replaced by BOOTP and DHCP                  |
 
-
-
 > ## SSL & TLS
 
-* Both SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols used to secure communication over the internet.
+- Both SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols used to secure communication over the internet.
 
 | Feature            | SSL (Secure Sockets Layer)      | TLS (Transport Layer Security)        |
-|--------------------|---------------------------------|---------------------------------------|
+| ------------------ | ------------------------------- | ------------------------------------- |
 | Current Status     | Deprecated & insecure           | Actively used (TLS 1.2, TLS 1.3)      |
 | Security Level     | Weak (vulnerable to attacks)    | Stronger encryption & security        |
 | Versions           | SSL 2.0, SSL 3.0 (obsolete)     | TLS 1.0 → TLS 1.3 (latest, secure)    |
-| Usage Today        | Not used                       | Used in HTTPS, SMTP, IMAP, POP3, VPNs |
-| Certificate Naming | Often called "SSL Certificates"| Actually TLS certificates             |
+| Usage Today        | Not used                        | Used in HTTPS, SMTP, IMAP, POP3, VPNs |
+| Certificate Naming | Often called "SSL Certificates" | Actually TLS certificates             |
 | Browser Support    | No modern browser supports SSL  | All modern browsers support TLS       |
 
-
-/// nat used for translate small set or private ip address to public adress through the router to access internate 
-when we directly assign the public ip to the device then its waste of the ip because ip are very less in the world so that we need to use public ip address 
-but in the era of the ipv6 we dont need the nat because the network is large enough 
-
+/// nat used for translate small set or private ip address to public adress through the router to access internate
+when we directly assign the public ip to the device then its waste of the ip because ip are very less in the world so that we need to use public ip address
+but in the era of the ipv6 we dont need the nat because the network is large enough
 
 /// dhcp-> used to assign the ip address to the device
 we can assign the ip in two ways one is static which is assign by user itself other one is dynamicly, there is the high probabily that ip can conflict,here comes the dhcp server which assgin the ip address outomaticy to the device
 
-// firewall-> firewall is the system that is design  to prevent unauth access from intering a private network, i blocks the unauth msg and filterout them ,it builts the safty barrier between the private and public network
-
+// firewall-> firewall is the system that is design to prevent unauth access from intering a private network, i blocks the unauth msg and filterout them ,it builts the safty barrier between the private and public network
 
 # How HTTPS Works (Step by Step)
 
 ---
 
 ## 1. DNS & TCP Setup
+
 - Browser resolves domain → IP (via DNS).
 - Opens **TCP connection** to server on port **443**.
 
 ---
+
 # TLS 1.3 Handshake (Step by Step)
 
 ---
 
 ## 🔹 Step 1: ClientHello
+
 - **Browser → Server** (in clear text)
 - Sends:
-  - Supported encryption methods (cipher suites)
-  - A random number (used for key generation)
-  - **SNI (Server Name Indication):** tells which website it wants (important when multiple sites share one IP).
-  - **ALPN (Application Layer Protocol Negotiation):** says which HTTP version it supports (HTTP/1.1, HTTP/2).
+    - Supported encryption methods (cipher suites)
+    - A random number (used for key generation)
+    - **SNI (Server Name Indication):** tells which website it wants (important when multiple sites share one IP).
+    - **ALPN (Application Layer Protocol Negotiation):** says which HTTP version it supports (HTTP/1.1, HTTP/2).
 
 ---
 
 ## 🔹 Step 2: ServerHello
+
 - **Server → Browser**
 - Chooses:
-  - One encryption method (cipher suite)
-  - Its own random number
-  - **Key share** (used for secure key exchange with Diffie–Hellman)
+    - One encryption method (cipher suite)
+    - Its own random number
+    - **Key share** (used for secure key exchange with Diffie–Hellman)
 
 ---
 
 ## 🔹 Step 3: Server Certificate & Proof
+
 - Server sends:
-  - **Certificate chain** (server certificate + intermediate certificates)
-  - **Digital signature** → proves it owns the certificate (private key)
-  - (Optional) **OCSP stapling** → proves certificate is not revoked
+    - **Certificate chain** (server certificate + intermediate certificates)
+    - **Digital signature** → proves it owns the certificate (private key)
+    - (Optional) **OCSP stapling** → proves certificate is not revoked
 
 ---
 
 ## 🔹 Step 4: Certificate Validation (Browser side)
+
 Browser checks:
-1. Certificate issued by a **trusted CA (Certificate Authority)**  
-2. Website name matches the certificate  
-3. Certificate is valid (not expired / revoked)  
+
+1. Certificate issued by a **trusted CA (Certificate Authority)**
+2. Website name matches the certificate
+3. Certificate is valid (not expired / revoked)
 
 👉 If any check fails → **Browser shows a warning (Not Secure page)**
 
 ---
 
 ## 🔹 Step 5: Key Exchange & Secure Channel
+
 - Browser + Server combine their random numbers + key share
 - Generate the **same secret key**
 - Use it for:
-  - **Encryption** (data is private)
-  - **Integrity** (data not changed in transit)
+    - **Encryption** (data is private)
+    - **Integrity** (data not changed in transit)
 
 ✅ Handshake complete → Now HTTP data is sent securely.
 
-
 ## 3. Secure HTTP
+
 - All HTTP requests/responses encrypted with session keys.
 - Protects:
-  - Cookies
-  - Headers
-  - Body
-  - Paths & query strings
+    - Cookies
+    - Headers
+    - Body
+    - Paths & query strings
 - Note: **IP, port, and SNI hostname are still visible**.
 
 ---
 
 ## 4. Optimization
+
 - **Session Resumption**: reuse keys → faster handshake (1-RTT).
 - **0-RTT Data**: client sends data immediately (risk: replay attack).
 
 ---
 
 ## TLS 1.3 vs TLS 1.2
-| Feature            | TLS 1.2         | TLS 1.3 (modern) |
-|--------------------|-----------------|------------------|
-| Handshake round-trips | 2+ RTT          | 1 RTT (faster)   |
-| Forward secrecy    | Optional        | Mandatory (ECDHE)|
-| Cipher suites      | Many, some weak | Only strong (AES-GCM, ChaCha20) |
-| Encrypted handshake | Partial         | Almost all       |
+
+| Feature               | TLS 1.2         | TLS 1.3 (modern)                |
+| --------------------- | --------------- | ------------------------------- |
+| Handshake round-trips | 2+ RTT          | 1 RTT (faster)                  |
+| Forward secrecy       | Optional        | Mandatory (ECDHE)               |
+| Cipher suites         | Many, some weak | Only strong (AES-GCM, ChaCha20) |
+| Encrypted handshake   | Partial         | Almost all                      |
 
 ---
 
 ## Why HTTPS Is Secure
+
 - 🔒 **Confidentiality** → Encryption (AES-GCM, ChaCha20).
 - ✅ **Integrity** → AEAD prevents tampering.
 - 🛡️ **Authentication** → Server proves identity via CA-issued certificates.
 - 🚫 Stops MITM (man-in-the-middle) attacks.
-=======
->>>>>>> 0d3cec32a3fad82a70b555f15c2889a624d935b5:CN/index.md

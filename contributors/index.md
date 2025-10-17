@@ -35,7 +35,7 @@
 
 <ElectricCard
   badge="Maintainer"
-  image="./images/raj-cse.jpg"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/raj-cse_oqnehg.jpg"
   title="Raj Roy"
   role="Lead Developer"
   description="Founder and Vue expert."
@@ -48,7 +48,7 @@
 
 <ElectricCard
   badge="Contributor"
-  image="./images/kanika.png"   
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699084/kanika_a0irao.png"   
   title="Kanika punia"
   role="Lead Developer"
   description="Founder and Vue expert."
@@ -61,7 +61,7 @@
 
 <ElectricCard
   badge="Contributor"
-  image="./images/nikhil.jpg"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
   title="Nikhil sahani"
   role="Lead Developer"
   description="Founder and Vue expert."
@@ -74,7 +74,7 @@
 
 <ElectricCard
   badge="Contributor"
-  image="./images/anil.jpg"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699086/anil_sjtzyd.jpg"
   title="Anil Kumar"
   role=" Developer "
   description="Building tomorrow’s technology!"
