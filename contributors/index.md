@@ -11,8 +11,8 @@
 
   /* Shrink ElectricCard size on mobile */
   .main-card {
-    width: 280px !important;
-    height: 350px !important;
+    width: 300px !important;
+    height: 400px !important;
   }
 
   /* Optional: smaller text & padding for better fit */
@@ -37,12 +37,15 @@
   badge="Maintainer"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/raj-cse_oqnehg.jpg"
   title="Raj Roy"
-  role="Lead Developer"
-  description="Founder and Vue expert."
+  role="Computer Science Engineer"
+  description="Just a Techie"
   :links='[
-    { "label": "GitHub", "url": "https://github.com/john" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/john" },
-    { "label": "Leetcode", "url": "mailto:john@example.com" }
+    { "label": "GitHub", "url": "https://github.com/raj8664" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/royraj20/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/RkRoy/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/CipherSphinx_Raj"},
+    { "label": "Reddit", "url": "https://www.reddit.com/user/Ok-Environment3492" },
+    { "label" : "monkeytype", "url" : "https://monkeytype.com/profile/Raj_Roy_1"} 
   ]'
 />
 
