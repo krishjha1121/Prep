@@ -19,6 +19,7 @@
 </details>
 
 <table style="width: 100%; border-collapse: collapse; border-color:none">
+  <caption>All questions are compulsory.</caption>
   <thead>
     <tr>
       <th>Question</th>
@@ -121,6 +122,7 @@ void fun(struct node *start) {
 </details>
 
 <table  style="width: 100%; border-collapse: collapse;">
+  <caption>All questions are compulsory.</caption>
   <thead>
     <tr>
       <th>Question</th>
