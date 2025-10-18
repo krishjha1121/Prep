@@ -21,32 +21,40 @@ export default withMermaid(
 		},
 
 		themeConfig: {
-			logo: "/logo.png", // Add a logo if you want
+			logo: "",
 
 			nav: [
-				{ text: "Home", link: "/" },
-				{ text: "Academics", link: "/branch/" },
-				{ text: "Leetcode Solutions", link: "/DSA/Leetcode/" },
+				{ text: "🏠 Home", link: "/" },
+				{ text: "🎓 Academics", link: "/branch/" },
 				{
-					text: "Core CS",
+					text: '<img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760785019/icons8-leetcode-96_mmv1f2.png" style="width:16px;height:16px;display:inline;margin-right:4px;vertical-align:text-top;">Leetcode Solutions',
+					link: "/DSA/Leetcode/",
+				},
+				{
+					text: "📚 Core CS",
 					items: [
-						{ text: "DSA", link: "/DSA/" },
-						{ text: "Operating System", link: "/OS/" },
-						{ text: "Database", link: "/DB/" },
-						{ text: "Computer Networks", link: "/CN/" },
-						{ text: "SQL", link: "/SQL/" },
+						{ text: "⚡ DSA", link: "/DSA/" },
+						{ text: "💻 Operating System", link: "/OS/" },
+						{ text: "📂 Database", link: "/DB/" },
+						{ text: "🌐 Computer Networks", link: "/CN/" },
+						{ text: "🧮 SQL", link: "/SQL/" },
 					],
 				},
 				{
-					text: "Programming",
+					text: "💻 Programming",
 					items: [
-						{ text: "C++", link: "/c++/" },
-						{ text: "Java & OOP", link: "/Java%20with%20OOP/" },
+						{
+							text: '<img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760784601/icons8-c_-96_thpbq1.png" style="width:16px;height:16px;display:inline;margin-right:4px;vertical-align:text-top;">C++',
+							link: "/c++/",
+						},
+						{
+							text: '<img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760784845/icons8-java-96_lwbywj.png" style="width:16px;height:16px;display:inline;margin-right:4px;vertical-align:text-top;">Java & OOP',
+							link: "/Java%20with%20OOP/",
+						},
 					],
 				},
-				{ text: "LLD", link: "/LLD/" },
-				{ text: "GitHub", link: "https://github.com/raj8664/Prep" },
-				{ text: "Contributors", link: "/contributors/" },
+				{ text: "🛠 LLD", link: "/LLD/" },
+				{ text: "👥 Contributors", link: "/contributors/" },
 			],
 
 			sidebar: {
@@ -175,7 +183,11 @@ export default withMermaid(
 			},
 
 			socialLinks: [
-				{ icon: "github", link: "https://github.com/raj8664/Prep" },
+				{
+					text: "github",
+					icon: "github",
+					link: "https://github.com/raj8664/Prep",
+				},
 			],
 
 			footer: {
