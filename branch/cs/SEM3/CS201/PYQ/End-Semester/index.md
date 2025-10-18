@@ -4,6 +4,8 @@
 
 <CodeTabs :languages="[
   { name: '2024-July-Supplementary', slot: '2024-July-Supplementary' },
+  { name : '2023-Nov-Dec', slot : '2023-Nov-Dec'},
+  { name : '2022-Dec', slot : '2022-Dec'},
 ]">
 
 <template #2024-July-Supplementary>
@@ -138,6 +140,118 @@
     </tr>
   </tbody>
 </table>
+
+</template>
+
+<template #2023-Nov-Dec>
+
+<details style="margin-bottom: 5px; margin-top : 10px; border: 1px solid #ccc; border-radius: 5px; padding: 8px;">
+  <summary style="font-weight: bold; cursor: pointer; font-size: 1rem;">Click to view the Question Paper</summary>
+  <div align="center" style="margin-top: 10px;">
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760779286/Screenshot_18-Oct_14-51-03_13073_u67iys.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+</div>
+</details>
+
+<table style="width: 100%; border-collapse: collapse; border-color:none">
+<caption>Answer any 5 Questions</caption>
+  <thead>
+    <tr>
+      <th>Q No.</th>
+      <th>Question</th>
+      <th>Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. (a)</td>
+      <td>Write a program or algorithm to perform insertion in a <strong>binary search tree</strong>.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>(b)</td>
+      <td>Given a few predefined functions for stack: <code>create()</code>, <code>push()</code>, <code>pop()</code>, <code>peek()</code>. Write a program or algorithm to implement a queue using these given functions.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Given a priority queue using a <strong>max heap</strong>. Write a program to implement the following functions:<br>
+      (a) <code>Insert(p)</code> where the new element is having a priority of <strong>p</strong>.<br>
+      (b) <code>Increase(i,p)</code>, which increases the priority of <strong>i</strong> by <strong>p</strong>.<br>
+      (c) <code>Decrease(i,p)</code>, which decreases the priority of <strong>i</strong> by <strong>p</strong>.</td>
+      <td>2+4+4=10</td>
+    </tr>
+    <tr>
+      <td>3. (a)</td>
+      <td>Given an expressions <em>exp</em>. Write a program or algorithm to check whether the <em>exp</em> is a balanced parenthesis or not.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>(b)</td>
+      <td>What is the time and space complexity of the following program?<br>
+      <code>int foo(int n)</code><br>
+      <code>{</code><br>
+      <code>&nbsp;&nbsp;if(n==0||n==1)</code><br>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;return n;</code><br>
+      <code>&nbsp;&nbsp;return foo(n-1)+foo(n-2);</code><br>
+      <code>}</code></td>
+      <td>3+2=5</td>
+    </tr>
+    <tr>
+      <td>4. (a)</td>
+      <td>Given a singly linked list. Write a program to perform <strong>k times circular right rotation</strong> on a singly linked list.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>(b)</td>
+      <td>Write an algorithm to implement <code>quick sort</code>. Discuss the time and space complexity of this sorting algorithm.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>5. (a)</td>
+      <td>Explain the <code>full binary tree</code> and <code>complete binary tree</code> with suitable examples. How many nodes will a complete binary tree with <strong>27 nodes</strong> have in the last level? What will be the height of the tree?</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>(b)</td>
+      <td>Construct a binary tree whose nodes in <strong>inorder</strong> and <strong>preorder</strong> traversal are given as follows:<br>
+      <strong>Inorder:</strong> 10, 15, 17, 18, 20, 25, 30, 35, 38, 40, 50<br>
+      <strong>Preorder:</strong> 20, 15, 10, 18, 17, 30, 25, 40, 35, 38, 50</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>6. (a)</td>
+      <td>What are <code>B-trees</code>? Draw a B-tree of order <strong>3</strong> for the following sequence of keys:<br>
+      <strong>3, 5, 11, 10, 9, 8, 2, 6, 12</strong>.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>(b)</td>
+      <td>Construct the <code>AVL Tree</code> for the given sequence of nodes: <strong>10, 15, 9, 12, 13, 79, 45, 36, 22</strong>. Analyze the time and space complexity of <strong>AVL Tree operations</strong>.</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+</template>
+
+<template #2022-Dec>
+
+<details style="margin-bottom: 5px; margin-top : 10px; border: 1px solid #ccc; border-radius: 5px; padding: 8px;">
+  <summary style="font-weight: bold; cursor: pointer; font-size: 1rem;">Click to view the Question Paper</summary>
+  <div align="center" style="margin-top: 10px;">
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760779716/Screenshot_18-Oct_14-58-16_26330_ctq1cw.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760779732/Screenshot_18-Oct_14-58-36_5188_vx1mte.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760779756/Screenshot_18-Oct_14-58-54_23238_okxqzw.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+</div>
+</details>
 
 </template>
 

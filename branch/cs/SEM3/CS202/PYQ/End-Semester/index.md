@@ -4,6 +4,8 @@
 
 <CodeTabs :languages="[
   { name: '2024-July-Supplementary', slot: '2024-July-Supplementary' },
+  { name : '2023-Nov-Dec', slot : '2023-Nov-Dec'},
+  { name : '2022-Dec', slot : '2022-Dec'},
 ]">
 
 <template #2024-July-Supplementary>
@@ -160,6 +162,173 @@
     </tr>
   </tbody>
 </table>
+</template>
+
+<template #2023-Nov-Dec>
+
+<details style="margin-bottom: 5px; margin-top : 10px; border: 1px solid #ccc; border-radius: 5px; padding: 8px;">
+  <summary style="font-weight: bold; cursor: pointer; font-size: 1rem;">Click to view the Question Paper</summary>
+  <div align="center" style="margin-top: 10px;">
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760772970/Screenshot_18-Oct_13-05-48_5557_zotasu.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+</div>
+</details>
+
+<table style="width: 100%; border-collapse: collapse; border-color:none">
+    <caption>Q1-Q4 are compulsory. Choose Q5 OR Q6</caption>
+  <thead>
+    <tr>
+      <th>Q No.</th>
+      <th>Question</th>
+      <th>Marks</th>
+      <th>CO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Difference between<br>
+      a) <strong>Vacuous and Trivial proof</strong><br>
+      b) <strong>Fields and Rings</strong><br>
+      c) <strong>Monoid and Semi-group</strong><br>
+      d) <strong>Symmetric and anti-symmetric relation</strong><br>
+      e) <strong>Equivalence Relations and Partial Orderings set</strong></td>
+      <td>2<br>2<br>2<br>2<br>2</td>
+      <td>CO5<br>CO2<br>CO2<br>CO2<br>CO2</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>a) Determine whether <code>{1,3,6,9,12})</code> is a lattice.<br>
+      b) Give a poset that has a maximal element but no minimal element.<br>
+      c) Define a well-ordered set?<br>
+      d) Suppose that two people play a game taking turns removing one, two, three, or four stones at a time from a pile that begins with <strong>17 stones</strong>. The person who removes the last stone wins the game. Show that the first player can win the game no matter what the second player does.</td>
+      <td>2<br>2<br>2<br>4</td>
+      <td>CO2<br>CO2<br>CO2<br>CO5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>a) Find a <code>recurrence relation</code>J for the number of bit strings of length <strong>n</strong> that do not contain three consecutive <strong>0s</strong>.<br>
+      b) What are the initial conditions?<br>
+      c) How many bit strings of length seven do not contain three consecutive <strong>0s</strong>?</td>
+      <td>4<br><br>2<br>4</td>
+      <td>CO3<br><br>CO3<br>CO3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>a) Prove that there are infinitely many primes<br>
+      b) Prove that if <strong>n</strong> is a non negative integers. Then <code>∑ⁿₖ₌₀ (ⁿₖ) = 0</code><br>
+      c) How many strings of length five lowercase letters of the English alphabet contain at least two consonants? Repetition allowed.<br>
+      Determine True/False<br>
+      d) Surjective functions are invertible?<br>
+      e) Composition of a function are Commutative?</td>
+      <td>3<br>2<br>3<br><br>1<br>1</td>
+      <td>CO5<br>CO5<br>CO3<br><br>CO2<br>CO2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>a) How many ways are there to assign five different jobs to four different employees if every employee is assigned at least one job?<br>
+      b) How many paths are there from <code>A(0,0)</code> to <code>C(7,7)</code> in the grid that allows only the top move and right move, with a constrain that the right move is not allowed when the y-coordinate is <strong>2</strong>?</td>
+      <td>4<br><br>6</td>
+      <td>CO3<br><br>CO3</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;"><strong>OR</strong></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>a) How many solutions does <code>x₁ + x₂ + x₃ = 11</code> have, where <code>x₁, x₂,</code> and <code>x₃</code> are nonnegative integers with <code>x₁ ≤ 3, x₂ ≤ 4,</code> and <code>x₃ ≤ 6</code><br>
+      b) How many different strings can be made from the letters <strong>COFFEE</strong>, using some or all of the letters?</td>
+      <td>4<br><br>6</td>
+      <td>CO3<br><br>CO3</td>
+    </tr>
+  </tbody>
+</table>
+
+</template>
+
+<template #2022-Dec>
+
+<details style="margin-bottom: 5px; margin-top : 10px; border: 1px solid #ccc; border-radius: 5px; padding: 8px;">
+  <summary style="font-weight: bold; cursor: pointer; font-size: 1rem;">Click to view the Question Paper</summary>
+  <div align="center" style="margin-top: 10px;">
+    <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760779889/Screenshot_18-Oct_15-01-06_10580_xylmw7.png" 
+         alt="Question Paper" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" />
+</div>
+</details>
+
+<table>
+    <caption>Q1-Q4 are compulsory. Choose Q5 OR Q6</caption>
+  <thead>
+    <tr>
+      <th>Q No.</th>
+      <th>Question</th>
+      <th>Marks</th>
+      <th>CO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>(a) How many ways are there to put five different employees into three indistinguishable offices when each office can contain any number of employees?<br>
+      (b) Proof that if <code>n</code> is a non-negative, then <code>C(2n,n) = ∑ᵏₖ₌₀ C(n,k)²</code><br>
+      (c) Difference between Ring and Field along with an example for each?</td>
+      <td>5<br><br>2<br>3</td>
+      <td>CO3<br><br>CO3<br>CO2</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>(a) What relevant conclusion or conclusions can be drawn from "If I take the day off, it either rains or snows." "I took Tuesday off or I took Thursday off." "It was sunny on Tuesday." "It did not snow on Thursday." ? Explain the rules of inference used to obtain each conclusion from the premises.<br>
+      (b) Prove that if <code>n</code> is a perfect square, then <code>n + 2</code> is not a perfect square.<br>
+      (c) Show that at least four of any 22 days must fall on the same day of the week.</td>
+      <td>3<br><br>3<br>4</td>
+      <td>CO1<br><br>CO5<br>CO5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>(a) Given the poset <code>({2, 4, 6, 9, 12, 18, 27, 36, 48, 60, 72}, |)</code>.<br>
+      i) Find the minimal elements.<br>
+      ii) Is there a greatest element?<br>
+      iii) Find the least upper bound of <code>{2, 9}</code>, if it exists?<br>
+      (b) For each of these relations on the set <code>{1, 2, 3, 4}</code>, decide whether it is reflexive, whether it is symmetric, whether it is antisymmetric, and whether it is transitive.<br>
+      i) <code>{(2, 4), (4, 2)}</code><br>
+      ii) <code>{(3, 4)}</code><br>
+      iii) <code>{(1, 1), (2, 2), (3, 3), (4, 4)}</code><br>
+      (c) Define Equivalence Relations, Partial Orderings, and Linearly ordered set?<br>
+      (d) What is a conjecture?</td>
+      <td>1<br>1<br>1<br><br><br><br>1<br>1<br>1<br>3<br>1</td>
+      <td>CO2<br><br><br><br>CO2<br><br><br><br><br>CO2<br>CO5</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>(a) How many diagonal avoiding paths are there from <code>A(0,0)</code> to <code>C(5,5)</code> in the grid if only top move and right move are allowed?<br>
+      (b) How many paths are there from <code>A(0,0)</code> to <code>C(7,7)</code> in the grid that allows only top move and right move, with a constrain that right move is not allowed when y-coordinate is <code>1?</code><br>
+      (c) Show that if <code>n</code> is an integer greater than 1, then <code>n</code> can be written as the product of primes.<br>
+      (d) Difference between vacuous proof and trivial proof?</td>
+      <td>2<br><br>4<br><br><br>2<br><br>2</td>
+      <td>CO3<br><br>CO3<br><br><br>CO5<br><br>CO5</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>(a) A computer system considers a string of decimal digits a valid codeword if it contains an even number of 0 digits. For instance, <code>1230407896</code> is valid, whereas <code>120987045608</code> is not valid. Let <code>aₙ</code> be the number of valid n-digit codewords. Find a recurrence relation for <code>aₙ</code>.<br>
+      (b) How many ways are there to assign four different courses to three different students if every student is assigned at least one subject?</td>
+      <td>6<br><br><br>4</td>
+      <td>CO3<br><br><br>CO3</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center;">OR</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>(a) How many solutions are there to the equation <code>x₁ + x₂ + x₃ + x₄ + x₅ = 21</code>, where <code>xᵢ, i = 1, 2, 3, 4, 5</code> is a nonnegative integer such that <code>0 ≤ x₁ ≤ 3, 0 ≤ x₂ <= 4</code> and <code>x₃ ≥ 15?</code><br>
+      (b) Given a set <code>{b₁, b₂, b₃, b₄}</code>, how many derangement are possible?</td>
+      <td>6<br><br><br>4</td>
+      <td>CO3<br><br><br>CO3</td>
+    </tr>
+  </tbody>
+</table>
+
 </template>
 
 </CodeTabs>
