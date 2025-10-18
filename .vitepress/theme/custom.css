@@ -1,0 +1,519 @@
+html {
+	scroll-behavior: smooth;
+}
+
+/* ===========================
+   Navigation Bar Animations
+   =========================== */
+
+.VPNav {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo Animation */
+.VPNavBarTitle .logo {
+	transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.VPNavBarTitle:hover .logo {
+	transform: scale(1.08) rotate(5deg);
+}
+
+/* Nav Links with Ripple Effect */
+.VPNavBarMenuLink {
+	position: relative;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	overflow: hidden;
+}
+
+.VPNavBarMenuLink::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.05);
+	transform: translate(-50%, -50%);
+	transition:
+		width 0.6s,
+		height 0.6s;
+}
+
+.dark .VPNavBarMenuLink::before {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.VPNavBarMenuLink:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+/* Underline Animation */
+.VPNavBarMenuLink::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: currentColor;
+	transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPNavBarMenuLink:hover::after {
+	width: 100%;
+}
+
+/* ===========================
+   Sidebar Animations
+   =========================== */
+
+.VPSidebarItem.is-active > .item > .link {
+	transform: translateX(4px);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPSidebarItem > .item > .link {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Shimmer Effect on Hover */
+.VPSidebarItem > .item > .link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: left 0.5s;
+}
+
+.dark .VPSidebarItem > .item > .link::before {
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.VPSidebarItem > .item > .link:hover::before {
+	left: 100%;
+}
+
+.VPSidebarItem > .item > .link:hover {
+	transform: translateX(4px);
+}
+
+/* ===========================
+   Content Area Animations
+   =========================== */
+
+.vp-doc {
+	animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Headings with Slide Animation */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+	animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc h2 {
+	position: relative;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated underline for h2 */
+.vp-doc h2::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 60px;
+	height: 2px;
+	background: currentColor;
+	opacity: 0.3;
+	transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc h2:hover::after {
+	width: 120px;
+}
+
+/* Links with Underline Animation */
+.vp-doc a {
+	position: relative;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc a::after {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: currentColor;
+	transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc a:hover::after {
+	width: 100%;
+}
+
+/* ===========================
+   Code Blocks with Elevation
+   =========================== */
+
+.vp-code-group {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-code-group:hover {
+	transform: translateY(-2px);
+}
+
+div[class*='language-'] {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+div[class*='language-']:hover {
+	transform: translateY(-1px);
+}
+
+/* Inline Code */
+.vp-doc :not(pre) > code {
+	transition: all 0.2s ease;
+}
+
+.vp-doc :not(pre) > code:hover {
+	transform: scale(1.02);
+}
+
+/* Copy Button */
+.vp-copy-code-button {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-copy-code-button:hover {
+	transform: scale(1.05);
+}
+
+/* ===========================
+   Buttons with Ripple Animation
+   =========================== */
+
+.VPButton {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.VPButton::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	transform: translate(-50%, -50%);
+	transition:
+		width 0.6s,
+		height 0.6s;
+}
+
+.VPButton:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+.VPButton:hover {
+	transform: translateY(-2px);
+}
+
+/* ===========================
+   Custom Containers (Admonitions)
+   =========================== */
+
+.vp-doc .tip,
+.vp-doc .warning,
+.vp-doc .danger,
+.vp-doc .info {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc .tip:hover,
+.vp-doc .warning:hover,
+.vp-doc .danger:hover,
+.vp-doc .info:hover {
+	transform: translateX(4px);
+}
+
+/* ===========================
+   Home/Landing Page Animations
+   =========================== */
+
+.VPHome {
+	animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPHero .name {
+	animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.VPHero .text {
+	animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.VPHero .tagline {
+	animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+/* Feature Cards with Elevation */
+.VPFeature {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Shimmer effect on feature cards */
+.VPFeature::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: left 0.6s;
+}
+
+.dark .VPFeature::before {
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.VPFeature:hover::before {
+	left: 100%;
+}
+
+.VPFeature:hover {
+	transform: translateY(-8px) scale(1.02);
+}
+
+/* ===========================
+   Table Animations
+   =========================== */
+
+.vp-doc table {
+	animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc tr {
+	transition: all 0.2s ease;
+}
+
+.vp-doc tr:hover {
+	transform: scale(1.01);
+}
+
+/* ===========================
+   Search Box Animation
+   =========================== */
+
+.VPLocalSearchBox {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPLocalSearchBox:focus-within {
+	transform: scale(1.02);
+}
+
+/* ===========================
+   Keyframe Animations
+   =========================== */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Scroll Reveal Animation for Content */
+.vp-doc > * {
+	animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===========================
+   Badge Animation
+   =========================== */
+
+.vp-badge {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-badge:hover {
+	transform: scale(1.05);
+}
+
+/* ===========================
+   Blockquotes Animation
+   =========================== */
+
+.vp-doc blockquote {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc blockquote:hover {
+	transform: translateX(4px);
+}
+
+/* ===========================
+   Image Hover Effects
+   =========================== */
+
+.vp-doc img {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc img:hover {
+	transform: scale(1.02);
+}
+
+/* ===========================
+   List Items Animation
+   =========================== */
+
+.vp-doc ul li {
+	animation: fadeInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vp-doc ol li {
+	animation: fadeInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+
+@media (max-width: 768px) {
+	.VPFeature:hover {
+		transform: translateY(-4px) scale(1.01);
+	}
+}
+
+/* ===========================
+   Loading State Animation
+   =========================== */
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.loading {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ===========================
+   Stagger Animation for Multiple Items
+   =========================== */
+
+.vp-doc > *:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.vp-doc > *:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.vp-doc > *:nth-child(3) {
+	animation-delay: 0.2s;
+}
+
+.vp-doc > *:nth-child(4) {
+	animation-delay: 0.3s;
+}
+
+.vp-doc > *:nth-child(5) {
+	animation-delay: 0.4s;
+}
+
+/* ===========================
+   Smooth Transitions
+   =========================== */
+
+* {
+	transition-property: transform, opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
