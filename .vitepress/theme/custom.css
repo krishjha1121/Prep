@@ -446,3 +446,17 @@ div[class*='language-']:hover {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
+.vp-doc .footer {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	padding: 3rem 2rem;
+}
+
+.vp-doc .footer-message {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.vp-doc .footer-copyright {
+	opacity: 0.9;
+}

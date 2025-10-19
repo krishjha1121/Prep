@@ -189,11 +189,6 @@ export default withMermaid(
 					link: "https://github.com/raj8664/Prep",
 				},
 			],
-
-			footer: {
-				message: "CS Preparation Notes",
-				copyright: "Made with ❤ for learning",
-			},
 		},
 
 		markdown: {
