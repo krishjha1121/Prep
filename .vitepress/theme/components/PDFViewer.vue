@@ -349,23 +349,6 @@ const clearSearch = () => {
             </a>
 
             <button
-              class="btn-icon"
-              @click="toggleFullscreen"
-              title="Fullscreen"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M8 3H3v5M16 3h5v5M3 16v5h5M16 16h5v5"></path>
-              </svg>
-            </button>
-
-            <button
               class="btn-icon btn-close"
               @click="closeModal"
               title="Close"
