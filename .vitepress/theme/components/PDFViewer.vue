@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
   resources: {
@@ -11,6 +11,9 @@ const props = defineProps({
 
 const showModal = ref(false)
 const currentPdf = ref(null)
+const searchQuery = ref('')
+const sortBy = ref('default') // default, name, recent
+const viewMode = ref('table') // table or grid
 
 const openPdf = (resource) => {
   currentPdf.value = resource
@@ -31,29 +34,158 @@ const getEmbedUrl = (fileId) => {
 const getDownloadUrl = (fileId) => {
   return `https://drive.google.com/uc?export=download&id=${fileId}`
 }
+
+const filteredResources = computed(() => {
+  let filtered = [...props.resources]
+
+  // Search filter
+  if (searchQuery.value) {
+    filtered = filtered.filter((resource) =>
+      resource.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+    )
+  }
+
+  // Sort
+  if (sortBy.value === 'name') {
+    filtered.sort((a, b) => a.name.localeCompare(b.name))
+  }
+
+  return filtered
+})
+
+const clearSearch = () => {
+  searchQuery.value = ''
+}
 </script>
 
 <template>
-  <table class="resources-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Resource</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(resource, index) in resources" :key="index">
-        <td>{{ index + 1 }}</td>
-        <td>{{ resource.name }}</td>
-        <td>
-          <div class="action-buttons">
-            <button
-              class="btn btn-view"
-              @click="openPdf(resource)"
-              title="View PDF"
+  <div class="resources-wrapper">
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <svg
+          class="search-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search resources..."
+          class="search-input"
+        />
+        <button v-if="searchQuery" @click="clearSearch" class="clear-btn">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="toolbar-actions">
+        <select v-model="sortBy" class="sort-select">
+          <option value="default">Default Order</option>
+          <option value="name">Sort by Name</option>
+        </select>
+
+        <div class="view-toggle">
+          <button
+            :class="['view-btn', { active: viewMode === 'table' }]"
+            @click="viewMode = 'table'"
+            title="Table view"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
             >
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+          </button>
+          <button
+            :class="['view-btn', { active: viewMode === 'grid' }]"
+            @click="viewMode = 'grid'"
+            title="Grid view"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div v-if="filteredResources.length === 0" class="empty-state">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <p>No resources found</p>
+    </div>
+
+    <!-- Table View -->
+    <table
+      v-if="viewMode === 'table' && filteredResources.length > 0"
+      class="resources-table"
+    >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Resource</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="(resource, index) in filteredResources"
+          :key="index"
+          class="table-row"
+        >
+          <td>{{ index + 1 }}</td>
+          <td>
+            <div class="resource-name">
               <svg
+                class="file-icon"
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
@@ -61,36 +193,133 @@ const getDownloadUrl = (fileId) => {
                 stroke="currentColor"
                 stroke-width="2"
               >
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                ></path>
+                <polyline points="13 2 13 9 20 9"></polyline>
               </svg>
-              View
-            </button>
-            <a
-              :href="getDownloadUrl(resource.fileId)"
-              class="btn btn-download"
-              download
-              title="Download PDF"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
+              {{ resource.name }}
+            </div>
+          </td>
+          <td>
+            <div class="action-buttons">
+              <button
+                class="btn btn-view"
+                @click="openPdf(resource)"
+                title="View PDF"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download
-            </a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                View
+              </button>
+              <a
+                :href="getDownloadUrl(resource.fileId)"
+                class="btn btn-download"
+                download
+                title="Download PDF"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Grid View -->
+    <div
+      v-if="viewMode === 'grid' && filteredResources.length > 0"
+      class="resources-grid"
+    >
+      <div
+        v-for="(resource, index) in filteredResources"
+        :key="index"
+        class="grid-card"
+      >
+        <div class="card-header">
+          <div class="card-number">{{ index + 1 }}</div>
+          <svg
+            class="card-icon"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+            ></path>
+            <polyline points="13 2 13 9 20 9"></polyline>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ resource.name }}</h4>
+        </div>
+        <div class="card-actions">
+          <button
+            class="btn btn-view"
+            @click="openPdf(resource)"
+            title="View PDF"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            View
+          </button>
+          <a
+            :href="getDownloadUrl(resource.fileId)"
+            class="btn btn-download"
+            download
+            title="Download PDF"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal -->
   <Transition name="modal">
@@ -118,6 +347,24 @@ const getDownloadUrl = (fileId) => {
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
             </a>
+
+            <button
+              class="btn-icon"
+              @click="toggleFullscreen"
+              title="Fullscreen"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M8 3H3v5M16 3h5v5M3 16v5h5M16 16h5v5"></path>
+              </svg>
+            </button>
+
             <button
               class="btn-icon btn-close"
               @click="closeModal"
@@ -151,17 +398,156 @@ const getDownloadUrl = (fileId) => {
 </template>
 
 <style scoped>
+.resources-wrapper {
+  margin: 16px 0;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--vp-c-text-3);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 36px 8px 36px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
+}
+
+.clear-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: var(--vp-c-text-3);
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-btn:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sort-select:hover {
+  border-color: var(--vp-c-brand);
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
+}
+
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.view-btn {
+  padding: 8px 12px;
+  border: none;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-btn:not(:last-child) {
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.view-btn:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.view-btn.active {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--vp-c-text-3);
+}
+
+.empty-state svg {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Table View */
 .resources-table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid var(--vp-c-divider);
   overflow: hidden;
-  margin: 16px 0;
-  display: table;
-}
-
-.resources-table :deep(*) {
-  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .resources-table thead {
@@ -170,7 +556,7 @@ const getDownloadUrl = (fileId) => {
 }
 
 .resources-table th {
-  padding: 12px 16px;
+  padding: 8px 16px;
   text-align: left;
   font-weight: 600;
   color: var(--vp-c-text-1);
@@ -188,7 +574,7 @@ const getDownloadUrl = (fileId) => {
 }
 
 .resources-table td {
-  padding: 12px 16px;
+  padding: 6px 16px;
   border-top: 1px solid var(--vp-c-divider);
   color: var(--vp-c-text-2);
 }
@@ -199,17 +585,163 @@ const getDownloadUrl = (fileId) => {
   color: var(--vp-c-text-1);
 }
 
-.resources-table tbody tr {
-  transition: background 0.3s ease;
+.table-row {
+  transition: background 0.2s ease;
+  animation: slideIn 0.3s ease forwards;
+  opacity: 0;
 }
 
-.resources-table tbody tr:hover {
+.table-row:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.table-row:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.table-row:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.table-row:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.table-row:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.table-row:nth-child(n + 6) {
+  animation-delay: 0.3s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-row:hover {
   background: var(--vp-c-bg-soft);
 }
 
-.action-buttons {
+.resource-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-icon {
+  color: var(--vp-c-brand);
+  flex-shrink: 0;
+}
+
+/* Grid View */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.grid-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--vp-c-bg);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.grid-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.grid-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.grid-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.grid-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.grid-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.grid-card:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.grid-card:nth-child(n + 7) {
+  animation-delay: 0.35s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid-card:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-number {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.card-icon {
+  color: var(--vp-c-text-3);
+}
+
+.card-body {
+  margin-bottom: 16px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  line-height: 1.5;
+}
+
+.card-actions {
   display: flex;
   gap: 8px;
+}
+
+.card-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 6px;
   justify-content: center;
 }
 
@@ -217,10 +749,10 @@ const getDownloadUrl = (fileId) => {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -352,5 +884,25 @@ const getDownloadUrl = (fileId) => {
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
   transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+
+  .toolbar-actions {
+    justify-content: space-between;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
