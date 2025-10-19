@@ -14,12 +14,12 @@
 
 <div align="center">
 
-|  #  | Resource                              |                                            Access                                             |
-| :-: | :------------------------------------ | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                          | [📥 Open](https://drive.google.com/file/d/1UMJ5uDmKo1HglaZaQYZzWFyvKyu4qE6N/view?usp=sharing) |
-|  2  | **Numerical Analysis**                | [📥 Open](https://drive.google.com/file/d/1ZZ1LMR86MkSMoY4ROMfX-c95aYDkLgdR/view?usp=sharing) |
-|  3  | **Numerical Analysis Tutorial Sheet** | [📥 Open](https://drive.google.com/file/d/18uvFsDspaiJiUyCuAHOCqDfOy15eR6NM/view?usp=sharing) |
-|  4  | **Multiple Integrals**                |      [📥 Open](https://drive.google.com/drive/folders/1X44EIEn7jEuGHr-_pzdshTqMzNb2J-bh)      |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '1UMJ5uDmKo1HglaZaQYZzWFyvKyu4qE6N' },
+  { name: 'Numerical Analysis', fileId: '1ZZ1LMR86MkSMoY4ROMfX-c95aYDkLgdR' },
+  { name: 'Numerical Analysis Tutorial Sheet', fileId: '18uvFsDspaiJiUyCuAHOCqDfOy15eR6NM' },
+  { name: 'Multiple Integrals', fileId: '1X44EIEn7jEuGHr-_pzdshTqMzNb2J-bh' }
+]" />
 
 </div>
 

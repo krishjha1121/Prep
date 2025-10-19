@@ -16,11 +16,11 @@
 
 <div align="center">
 
-|  #  | Resource                                                  |                                            Access                                             |
-| :-: | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                                              | [📥 Open](https://drive.google.com/file/d/1yhj7GXfMX0GzoNsesO_M2wWs7UCPijZO/view?usp=sharing) |
-|  2  | **Data Structures and Algorithms - Narasimha Karumanchi** | [📥 Open](https://drive.google.com/file/d/19aKUhj01Tka7bN5iJ5Cy4zwRFFTk8HOi/view?usp=sharing) |
-|  3  | **Introduction to Algorithms - 3rd Edition**              | [📥 Open](https://drive.google.com/file/d/19cRlTPNd1jdm5NUeTeDrbOM-sJsxC8Si/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '1yhj7GXfMX0GzoNsesO_M2wWs7UCPijZO' },
+  { name: 'Data Structures and Algorithms - Narasimha Karumanchi', fileId: '19aKUhj01Tka7bN5iJ5Cy4zwRFFTk8HOi' },
+  { name: 'Introduction to Algorithms - 3rd Edition', fileId: '19cRlTPNd1jdm5NUeTeDrbOM-sJsxC8Si' }
+]" />
 
 </div>
 

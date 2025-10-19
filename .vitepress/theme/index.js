@@ -2,6 +2,7 @@
 import DefaultTheme from "vitepress/theme";
 import CodeTabs from "./components/CodeTabs.vue";
 import ElectricCard from "./components/ElectricCard.vue";
+import PDFViewer from "./components/PDFViewer.vue";
 import "./custom.css";
 
 export default {
@@ -9,5 +10,6 @@ export default {
 	enhanceApp({ app }) {
 		app.component("CodeTabs", CodeTabs);
 		app.component("ElectricCard", ElectricCard);
+		app.component("PDFViewer", PDFViewer);
 	},
 };

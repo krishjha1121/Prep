@@ -16,29 +16,29 @@
 
 <div align="center">
 
-|  #  | Resource                                                                 |                                            Access                                             |
-| :-: | :----------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                                                             | [📥 Open](https://drive.google.com/file/d/14qmrj6XvuLB0pmbngra9_vApf31YCTsp/view?usp=sharing) |
-|  2  | **Advanced Engineering Mathtmatics-Erwin Kreyszig**                      | [📥 Open](https://drive.google.com/file/d/1NB5ABqwykmNrQIiVq6NzZxZeKA218isP/view?usp=sharing) |
-|  3  | **Higher Eigineering Mathematics-BS Grewal**                             | [📥 Open](https://drive.google.com/file/d/1EhloC13mznEsHNeypubv_cpaVQC3Mn9F/view?usp=sharing) |
-|  4  | **Formation of PDE**                                                     | [📥 Open](https://drive.google.com/file/d/1JaXcubveBE9IFIt3DWcH32YwN5vI1egk/view?usp=sharing) |
-|  5  | **Solution of PDE**                                                      | [📥 Open](https://drive.google.com/file/d/1LCxSMR8R310tLPOJOoa2GSqn4spaNWgz/view?usp=sharing) |
-|  6  | **Solution by Charpit's Method**                                         | [📥 Open](https://drive.google.com/file/d/1WZngMcajlXrvR9dBfFb36sQoFIy0kouR/view?usp=sharing) |
-|  7  | **Solution of PDE in Special Forms**                                     | [📥 Open](https://drive.google.com/file/d/1Zl7XPTGFAgj7sA1Y-uhPNQdPtP8LNXGr/view?usp=sharing) |
-|  8  | **Solution of PDE, Homogeneous linear equation with const coefficients** | [📥 Open](https://drive.google.com/file/d/1c56GJ_MAZlBhg7RY9KhlF69B0Xjyq_6T/view?usp=sharing) |
-|  9  | **Solution of PDE, Homogeneous linear PDE**                              | [📥 Open](https://drive.google.com/file/d/1mr-7VvsZHbkyi70mKFOnR6ou4dK_-UtE/view?usp=sharing) |
-| 10  | **Solution of PDE, Non-Homogeneous linear PDE**                          | [📥 Open](https://drive.google.com/file/d/1qLM5N8RsGaBezbZhIYthpup42z7s6Kry/view?usp=sharing) |
-| 11  | **IVP, BVP and solution by method of separation of variables**           | [📥 Open](https://drive.google.com/file/d/1s1LeaNBq0bjGMsDufZ_zkKYUkQSVobWX/view?usp=sharing) |
-| 12  | **Heat Equations and their Solutions**                                   | [📥 Open](https://drive.google.com/file/d/1tRH0o_G_EaNB63yDd05FDp85GRzLoNfY/view?usp=sharing) |
-| 13  | **One dimensional Wave Equations and their Solutions**                   | [📥 Open](https://drive.google.com/file/d/1AW-taa9lrombu9pMefX841a_vUB1xJhs/view?usp=sharing) |
-| 14  | **Two Dimensional Wave Equations and their Solutions**                   | [📥 Open](https://drive.google.com/file/d/1BC0ssLIM3R1_fIM1wiI6qZJT0Mn2iM_v/view?usp=sharing) |
-| 15  | **Fourier Transform**                                                    | [📥 Open](https://drive.google.com/file/d/1dDBjXE1o-SbPyhoaSDj5cM-YM1PGl37G/view?usp=sharing) |
-| 16  | **Probability 1**                                                        | [📥 Open](https://drive.google.com/file/d/1fH1T2VP3iP0y89Xn1Sw5qabLMdE3x8Rk/view?usp=sharing) |
-| 17  | **Probability & Statistics**                                             | [📥 Open](https://drive.google.com/file/d/1KVlGAYwEPia0qTkBepQ9FSG7emPO3dfN/view?usp=sharing) |
-| 18  | **Binomial Distribution**                                                | [📥 Open](https://drive.google.com/file/d/1fEDTewrerE3e4UD8XmRn0TFZyvkvnCK0/view?usp=sharing) |
-| 19  | **Correlation Analysis**                                                 | [📥 Open](https://drive.google.com/file/d/1_xQJsRGsKA0mFxSBG-73eoCpHiKw99Hw/view?usp=sharing) |
-| 20  | **Curve Fitting & Method of Least Squares**                              | [📥 Open](https://drive.google.com/file/d/1pZfSmomkSVCSbIfBwcUR4x2dCcbljDhT/view?usp=sharing) |
-| 21  | **Regression Analysis**                                                  | [📥 Open](https://drive.google.com/file/d/1a8CLKYoD4xrHDW0t_YTySphleQtEStO3/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '14qmrj6XvuLB0pmbngra9_vApf31YCTsp' },
+  { name: 'Advanced Engineering Mathtmatics-Erwin Kreyszig', fileId: '1NB5ABqwykmNrQIiVq6NzZxZeKA218isP' },
+  { name: 'Higher Eigineering Mathematics-BS Grewal', fileId: '1EhloC13mznEsHNeypubv_cpaVQC3Mn9F' },
+  { name: 'Formation of PDE', fileId: '1JaXcubveBE9IFIt3DWcH32YwN5vI1egk' },
+  { name: 'Solution of PDE', fileId: '1LCxSMR8R310tLPOJOoa2GSqn4spaNWgz' },
+  { name: 'Solution by Charpit\'s Method', fileId: '1WZngMcajlXrvR9dBfFb36sQoFIy0kouR' },
+  { name: 'Solution of PDE in Special Forms', fileId: '1Zl7XPTGFAgj7sA1Y-uhPNQdPtP8LNXGr' },
+  { name: 'Solution of PDE, Homogeneous linear equation with const coefficients', fileId: '1c56GJ_MAZlBhg7RY9KhlF69B0Xjyq_6T' },
+  { name: 'Solution of PDE, Homogeneous linear PDE', fileId: '1mr-7VvsZHbkyi70mKFOnR6ou4dK_-UtE' },
+  { name: 'Solution of PDE, Non-Homogeneous linear PDE', fileId: '1qLM5N8RsGaBezbZhIYthpup42z7s6Kry' },
+  { name: 'IVP, BVP and solution by method of separation of variables', fileId: '1s1LeaNBq0bjGMsDufZ_zkKYUkQSVobWX' },
+  { name: 'Heat Equations and their Solutions', fileId: '1tRH0o_G_EaNB63yDd05FDp85GRzLoNfY' },
+  { name: 'One dimensional Wave Equations and their Solutions', fileId: '1AW-taa9lrombu9pMefX841a_vUB1xJhs' },
+  { name: 'Two Dimensional Wave Equations and their Solutions', fileId: '1BC0ssLIM3R1_fIM1wiI6qZJT0Mn2iM_v' },
+  { name: 'Fourier Transform', fileId: '1dDBjXE1o-SbPyhoaSDj5cM-YM1PGl37G' },
+  { name: 'Probability 1', fileId: '1fH1T2VP3iP0y89Xn1Sw5qabLMdE3x8Rk' },
+  { name: 'Probability & Statistics', fileId: '1KVlGAYwEPia0qTkBepQ9FSG7emPO3dfN' },
+  { name: 'Binomial Distribution', fileId: '1fEDTewrerE3e4UD8XmRn0TFZyvkvnCK0' },
+  { name: 'Correlation Analysis', fileId: '1_xQJsRGsKA0mFxSBG-73eoCpHiKw99Hw' },
+  { name: 'Curve Fitting & Method of Least Squares', fileId: '1pZfSmomkSVCSbIfBwcUR4x2dCcbljDhT' },
+  { name: 'Regression Analysis', fileId: '1a8CLKYoD4xrHDW0t_YTySphleQtEStO3' }
+]" />
 
 </div>
 

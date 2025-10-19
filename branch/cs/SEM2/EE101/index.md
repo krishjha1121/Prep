@@ -16,22 +16,22 @@
 
 <div align="center">
 
-|  #  | Resource                                           |                                            Access                                             |
-| :-: | :------------------------------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                                       | [📥 Open](https://drive.google.com/file/d/1iMh9KWzZtnO4eG5mByMUfRpswuUCwqJA/view?usp=sharing) |
-|  2  | **Maximum Power Transfer Theorem for AC circuits** | [📥 Open](https://drive.google.com/file/d/1NOJt7fGqRIqQPzJXSlMJ4xCqLHDZ5hS3/view?usp=sharing) |
-|  3  | **Two Wattmeter Method**                           | [📥 Open](https://drive.google.com/file/d/1N-oaB7bQZyZdzln9JHcy0b0lFZnw4Y9Q/view?usp=sharing) |
-|  4  | **Safety and Grounding**                           | [📥 Open](https://drive.google.com/file/d/1N57LLk7CpCYyoN_KCrhYyqr36tsVHfLP/view?usp=sharing) |
-|  5  | **Home Electrical Safety Tips**                    | [📥 Open](https://drive.google.com/file/d/1N4jiYaRIMxEA08qGlMGKQcdKi4OyXLH6/view?usp=sharing) |
-|  6  | **Numericals in PolyPhase Systems**                | [📥 Open](https://drive.google.com/file/d/1MyqGDoVL4UYTupNFrw74aoQNJF3XiHMK/view?usp=sharing) |
-|  7  | **Three Phase Systems**                            | [📥 Open](https://drive.google.com/file/d/1sXuKym_VTFHmtKSmX7DeyfbxfcUsDT8C/view?usp=sharing) |
-|  8  | **Types of DC Generator**                          | [📥 Open](https://drive.google.com/file/d/1NR6Bl72SDs2pwP4d1y_2gD73vV9ADkjx/view?usp=sharing) |
-|  9  | **Electromagnetism**                               | [📥 Open](https://drive.google.com/file/d/1MsMM0SNU-x-NldZ9kRcZUe8yaEQ6dJpb/view?usp=sharing) |
-| 10  | **Transformers**                                   | [📥 Open](https://drive.google.com/file/d/1u4m6G1MQPMqgtdaSKeBjyZZ-8sSf7RSH/view?usp=sharing) |
-| 11  | **Induction Motors**                               | [📥 Open](https://drive.google.com/file/d/1CrRFRI0wsWJz_Q-zrCkh92vmAPyB1U6F/view?usp=sharing) |
-| 12  | **DC Generator**                                   | [📥 Open](https://drive.google.com/file/d/1rmfhC5Y1jE8yOqgjKDO7cVC5xpe0xIP8/view?usp=sharing) |
-| 13  | **EMF Equations**                                  | [📥 Open](https://drive.google.com/file/d/1kgTa6jRI9GFN7HLgFRMKq5M2OrXb7Qlt/view?usp=sharing) |
-| 14  | **Electrical Machines**                            | [📥 Open](https://drive.google.com/file/d/1T9zvfYf03myjnlibPe7AS0diPRjnbKzG/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '1iMh9KWzZtnO4eG5mByMUfRpswuUCwqJA' },
+  { name: 'Maximum Power Transfer Theorem for AC circuits', fileId: '1NOJt7fGqRIqQPzJXSlMJ4xCqLHDZ5hS3' },
+  { name: 'Two Wattmeter Method', fileId: '1N-oaB7bQZyZdzln9JHcy0b0lFZnw4eY9Q' },
+  { name: 'Safety and Grounding', fileId: '1N57LLk7CpCYyoN_KCrhYyqr36tsVHfLP' },
+  { name: 'Home Electrical Safety Tips', fileId: '1N4jiYaRIMxEA08qGlMGKQcdKi4OyXLH6' },
+  { name: 'Numericals in PolyPhase Systems', fileId: '1MyqGDoVL4UYTupNFrw74aoQNJF3XiHMK' },
+  { name: 'Three Phase Systems', fileId: '1sXuKym_VTFHmtKSmX7DeyfbxfcUsDT8C' },
+  { name: 'Types of DC Generator', fileId: '1NR6Bl72SDs2pwP4d1y_2gD73vV9ADkjx' },
+  { name: 'Electromagnetism', fileId: '1MsMM0SNU-x-NldZ9kRcZUe8yaEQ6dJpb' },
+  { name: 'Transformers', fileId: '1u4m6G1MQPMqgtdaSKeBjyZZ-8sSf7RSH' },
+  { name: 'Induction Motors', fileId: '1CrRFRI0wsWJz_Q-zrCkh92vmAPyB1U6F' },
+  { name: 'DC Generator', fileId: '1rmfhC5Y1jE8yOqgjKDO7cVC5xpe0xIP8' },
+  { name: 'EMF Equations', fileId: '1kgTa6jRI9GFN7HLgFRMKq5M2OrXb7Qlt' },
+  { name: 'Electrical Machines', fileId: '1T9zvfYf03myjnlibPe7AS0diPRjnbKzG' }
+]" />
 
 </div>
 

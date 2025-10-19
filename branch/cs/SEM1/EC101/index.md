@@ -12,21 +12,21 @@
 
 ## 📚 Available Resources
 
-<div align = "center">
+<div align="center">
 
-|   # | File name                                                                    | Link                                                                                         |
-| --: | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-|   1 | Basic electronics questions.pdf                                              | [📥 Open](https://drive.google.com/open?id=1mBMkfp1pwys58IrLsvEJY88x54_IBq-O&usp=drive_copy) |
-|   2 | BJT Applications.pdf                                                         | [📥 Open](https://drive.google.com/open?id=10krTXLJ3s2yRXtKEwokul2xWzx-hVXUY&usp=drive_copy) |
-|   3 | BJT Structure and Operation.pdf                                              | [📥 Open](https://drive.google.com/open?id=1BjXIa9F0zInJANRZcdINV-0Bm7MKHOvj&usp=drive_copy) |
-|   4 | BJT.pdf                                                                      | [📥 Open](https://drive.google.com/open?id=12714me6ZdAFklvZYd_yG32u-q1BZSjO5&usp=drive_copy) |
-|   5 | Boylestad_Robert_Nashlesky_Louis - Electronic devices and circuit theory.pdf | [📥 Open](https://drive.google.com/open?id=1TEt9wFT1cLQKvIe2WawgvuWob8-r41DP&usp=drive_copy) |
-|   6 | Digital device Bangla.pdf                                                    | [📥 Open](https://drive.google.com/open?id=1QI_HP2rw28lKjzz0W00D3UkR20KsUr1f&usp=drive_copy) |
-|   7 | EC Assignment 2019.pdf                                                       | [📥 Open](https://drive.google.com/open?id=1wDQ7Sy2qY68lX95MANva4_qupWmXXe9O&usp=drive_copy) |
-|   8 | EC LAB INPUT OUTPUT CHARACTERISTICS OF COMMON EMITTER TRANSISTOR.pdf         | [📥 Open](https://drive.google.com/open?id=1HqmJwnUW4BTqYcgr2hGkMjEaxlE9NlO2&usp=drive_copy) |
-|   9 | EC.pdf                                                                       | [📥 Open](https://drive.google.com/open?id=1A2QXyihsuEdXjcifPi-_adB-hxDd99dR&usp=drive_copy) |
-|  10 | Intro&Diodes.pdf                                                             | [📥 Open](https://drive.google.com/open?id=1zmSZ40tBK2eRaYSV9fD_HLP8LT6TQn33&usp=drive_copy) |
-|  11 | Semiconductor Bangla.pdf                                                     | [📥 Open](https://drive.google.com/open?id=10Qxr6kmdFN9id2e7FGowmFQqz8hOfveI&usp=drive_copy) |
+<PDFViewer :resources="[
+  { name: 'Basic electronics questions', fileId: '1mBMkfp1pwys58IrLsvEJY88x54_IBq-O' },
+  { name: 'BJT Applications', fileId: '10krTXLJ3s2yRXtKEwokul2xWzx-hVXUY' },
+  { name: 'BJT Structure and Operation', fileId: '1BjXIa9F0zInJANRZcdINV-0Bm7MKHOvj' },
+  { name: 'BJT', fileId: '12714me6ZdAFklvZYd_yG32u-q1BZSjO5' },
+  { name: 'Electronic devices and circuit theory - Boylestad_Robert_Nashlesky_Louis', fileId: '1TEt9wFT1cLQKvIe2WawgvuWob8-r41DP' },
+  { name: 'Digital device Bangla', fileId: '1QI_HP2rw28lKjzz0W00D3UkR20KsUr1f' },
+  { name: 'EC Assignment 2019', fileId: '1wDQ7Sy2qY68lX95MANva4_qupWmXXe9O' },
+  { name: 'EC LAB INPUT OUTPUT CHARACTERISTICS OF COMMON EMITTER TRANSISTOR', fileId: '1HqmJwnUW4BTqYcgr2hGkMjEaxlE9NlO2' },
+  { name: 'EC', fileId: '1A2QXyihsuEdXjcifPi-_adB-hxDd99dR' },
+  { name: 'Intro & Diodes', fileId: '1zmSZ40tBK2eRaYSV9fD_HLP8LT6TQn33' },
+  { name: 'Semiconductor Bangla', fileId: '10Qxr6kmdFN9id2e7FGowmFQqz8hOfveI' }
+]" />
 
 </div>
 

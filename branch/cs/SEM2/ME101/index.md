@@ -15,15 +15,15 @@
 
 <div align="center">
 
-|  #  | Resource                    |                                            Access                                             |
-| :-: | :-------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **All Basics**              | [📥 Open](https://drive.google.com/file/d/1L0RysNPpoFf9-_JLHo5D8U-Ix6VCl1bZ/view?usp=sharing) |
-|  2  | **Momentum and Collisions** | [📥 Open](https://drive.google.com/file/d/1F6jheMw1CHaikBudD0AAGCfBTEHz7kkf/view?usp=sharing) |
-|  3  | **Kinematics**              | [📥 Open](https://drive.google.com/file/d/1TVrRXUz6_NVFpJxXbUQ8MbYI-6FD5CGe/view?usp=sharing) |
-|  4  | **Syllabus**                | [📥 Open](https://drive.google.com/file/d/1Hwi4P1rFBjZzhLeKoQ-T6IrBCuvuNHLL/view?usp=sharing) |
-|  5  | **Projectile**              | [📥 Open](https://drive.google.com/file/d/1mW17qYkOtQyetxFHo3lRUoFG8AYmvgH0/view?usp=sharing) |
-|  6  | **Rotational Dynamics**     | [📥 Open](https://drive.google.com/file/d/1ZgMRuuyyW5VYBRmX9Zgw3n4i5AaaGNva/view?usp=sharing) |
-|  7  | **Assignment**              | [📥 Open](https://drive.google.com/file/d/1b-4rkZMNrbxsgya3oabijjityycIKFCV/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'All Basics', fileId: '1L0RysNPpoFf9-_JLHo5D8U-Ix6VCl1bZ' },
+  { name: 'Momentum and Collisions', fileId: '1F6jheMw1CHaikBudD0AAGCfBTEHz7kkf' },
+  { name: 'Kinematics', fileId: '1TVrRXUz6_NVFpJxXbUQ8MbYI-6FD5CGe' },
+  { name: 'Syllabus', fileId: '1Hwi4P1rFBjZzhLeKoQ-T6IrBCuvuNHLL' },
+  { name: 'Projectile', fileId: '1mW17qYkOtQyetxFHo3lRUoFG8AYmvgH0' },
+  { name: 'Rotational Dynamics', fileId: '1ZgMRuuyyW5VYBRmX9Zgw3n4i5AaaGNva' },
+  { name: 'Assignment', fileId: '1b-4rkZMNrbxsgya3oabijjityycIKFCV' }
+]" />
 
 </div>
 

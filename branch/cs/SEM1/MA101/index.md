@@ -12,22 +12,22 @@
 
 ## 📚 Available Resources
 
-<div align = "center">
+<div align="center">
 
-|   # | File name                                                                                                          | Link                                                                                         |
-| --: | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
-|   1 | Laplace transform-1.pdf                                                                                            | [📥 Open](https://drive.google.com/open?id=1jjXXcaDShLhjeI1A5NePl5QDTVpNnN9O&usp=drive_copy) |
-|   2 | Mathematics Complex Number.PDF                                                                                     | [📥 Open](https://drive.google.com/open?id=1V3Qa4Fmm02I8fOPigu45u65rOyR-onA7&usp=drive_copy) |
-|   3 | Mathematics Notes I- Sequence and Series* Asymptotes* B.Tech. Ist Year (CSE Ist Sem).pdf                           | [📥 Open](https://drive.google.com/open?id=1ZuhZXHluTkh71oogbI0BMft6zuXxTCBF&usp=drive_copy) |
-|   4 | Mathematics Notes II- Successive Derivatives (B.Tech. Ist Year CSE Ist Sem).pdf                                    | [📥 Open](https://drive.google.com/open?id=1LDYHtEhK0dQjiuWQzU31BliUBX2F1POd&usp=drive_copy) |
-|   5 | Mathematics Notes III- Center and Circle of Curvature\_ Beta and Gamma Function (B.Tech. Ist year CSE Ist Sem).pdf | [📥 Open](https://drive.google.com/open?id=1js8vodg5T7cUbLU5dwc5j13wm3pYJjYh&usp=drive_copy) |
-|   6 | Mathematics Notes IV- Exact Differential Equations (B.Tech. Ist Year CSE Ist Sem).pdf                              | [📥 Open](https://drive.google.com/open?id=1ZkLZ81tUDD7N7jOkAd9mMsjCeUU5d-cs&usp=drive_copy) |
-|   7 | Mathematics.pdf                                                                                                    | [📥 Open](https://drive.google.com/open?id=1umfbif5nAwHd9PKd41D8i0K8GlPPQhRO&usp=drive_copy) |
-|   8 | [Erwin_Kreyszig]_Advanced_Engineering_Mathematics_(BookFi.org).pdf                                                 | [📥 Open](https://drive.google.com/open?id=1ausVcWPHFNY4kVwBz2xOrC470reD-xwa&usp=drive_copy) |
-|   9 | Cicle_Of_Curvature_Asymptotes_tutorial.pdf                                                                         | [📥 Open](https://drive.google.com/open?id=1WWLKsAOD6rTSNVJnrHM7ykFUzS65zLC7&usp=drive_copy) |
-|  10 | complex_r.pdf                                                                                                      | [📥 Open](https://drive.google.com/open?id=1KpBzC15dSld8JFkdH6WPY_gDvFzwWeiP&usp=drive_copy) |
-|  11 | Maths Notes ....pdf                                                                                                | [📥 Open](https://drive.google.com/open?id=1KrmX3beN5HvYiy7-hi2VG8eaOrNb-zK8&usp=drive_copy) |
-|  12 | numerical.pdf                                                                                                      | [📥 Open](https://drive.google.com/open?id=1hbPPn0mVx5XIFjRn1W2S1onTtEWg5kQw&usp=drive_copy) |
+<PDFViewer :resources="[
+  { name: 'Laplace transform-1', fileId: '1jjXXcaDShLhjeI1A5NePl5QDTVpNnN9O' },
+  { name: 'Mathematics Complex Number', fileId: '1V3Qa4Fmm02I8fOPigu45u65rOyR-onA7' },
+  { name: 'Mathematics Notes I - Sequence and Series, Asymptotes', fileId: '1ZuhZXHluTkh71oogbI0BMft6zuXxTCBF' },
+  { name: 'Mathematics Notes II - Successive Derivatives', fileId: '1LDYHtEhK0dQjiuWQzU31BliUBX2F1POd' },
+  { name: 'Mathematics Notes III - Center and Circle of Curvature, Beta and Gamma Function', fileId: '1js8vodg5T7cUbLU5dwc5j13wm3pYJjYh' },
+  { name: 'Mathematics Notes IV - Exact Differential Equations', fileId: '1ZkLZ81tUDD7N7jOkAd9mMsjCeUU5d-cs' },
+  { name: 'Mathematics', fileId: '1umfbif5nAwHd9PKd41D8i0K8GlPPQhRO' },
+  { name: 'Advanced Engineering Mathematics - Erwin Kreyszig', fileId: '1ausVcWPHFNY4kVwBz2xOrC470reD-xwa' },
+  { name: 'Circle Of Curvature Asymptotes tutorial', fileId: '1WWLKsAOD6rTSNVJnrHM7ykFUzS65zLC7' },
+  { name: 'complex_r', fileId: '1KpBzC15dSld8JFkdH6WPY_gDvFzwWeiP' },
+  { name: 'Maths Notes', fileId: '1KrmX3beN5HvYiy7-hi2VG8eaOrNb-zK8' },
+  { name: 'numerical', fileId: '1hbPPn0mVx5XIFjRn1W2S1onTtEWg5kQw' }
+]" />
 
 </div>
 

@@ -16,18 +16,18 @@
 
 <div align="center">
 
-|  #  | Resource                                     |                                            Access                                             |
-| :-: | :------------------------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                                 | [📥 Open](https://drive.google.com/file/d/1-abd1kEcvn4wKk66hSpt9tng0gI2XPiU/view?usp=sharing) |
-|  2  | **Detailed 8085 Instructions**               | [📥 Open](https://drive.google.com/file/d/1lg_4st1LruujvNxpBopPGaMG3VfYB6M7/view?usp=sharing) |
-|  3  | **Opcode of 8085**                           | [📥 Open](https://drive.google.com/file/d/18IVI0RjZTzIbKw8tb1yxK5b45_LjtcJH/view?usp=sharing) |
-|  4  | **Microprocessor(Ramesh Gaonkar)**           | [📥 Open](https://drive.google.com/file/d/1KGoh4KZ723ph8iqYOLbPoAGJcdR2-6WZ/view?usp=sharing) |
-|  5  | **Solution Manual Microprocessor(Ramesh)**   | [📥 Open](https://drive.google.com/file/d/1mVH2zHlPggTadSV1kGo807lvLZCpjwBv/view?usp=sharing) |
-|  6  | **Assignment 1**                             | [📥 Open](https://drive.google.com/file/d/1TRquWdM7A4LApAg3IEgjqDol9fRRDJmX/view?usp=sharing) |
-|  7  | **Architecture of 8086**                     | [📥 Open](https://drive.google.com/file/d/1a-Evby18D1O1evyumqNgareYZ-JzgcJh/view?usp=sharing) |
-|  8  | **MicroController**                          | [📥 Open](https://drive.google.com/file/d/1iUkT7DhwM-KoJY1kKsbTQ0qEMT7dUpB2/view?usp=sharing) |
-|  9  | **Peripheral devices and their interfacing** | [📥 Open](https://drive.google.com/file/d/1-kxFTfQGGzydjjVZ6L7rpahhVLN9w_mV/view?usp=sharing) |
-| 10  | **8085 Programming**                         | [📥 Open](https://drive.google.com/file/d/1hTDbJ2nvdvGgBObJGkJEcpuEfljtUaas/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '1-abd1kEcvn4wKk66hSpt9tng0gI2XPiU' },
+  { name: 'Detailed 8085 Instructions', fileId: '1lg_4st1LruujvNxpBopPGaMG3VfYB6M7' },
+  { name: 'Opcode of 8085', fileId: '18IVI0RjZTzIbKw8tb1yxK5b45_LjtcJH' },
+  { name: 'Microprocessor(Ramesh Gaonkar)', fileId: '1KGoh4KZ723ph8iqYOLbPoAGJcdR2-6WZ' },
+  { name: 'Solution Manual Microprocessor(Ramesh)', fileId: '1mVH2zHlPggTadSV1kGo807lvLZCpjwBv' },
+  { name: 'Assignment 1', fileId: '1TRquWdM7A4LApAg3IEgjqDol9fRRDJmX' },
+  { name: 'Architecture of 8086', fileId: '1a-Evby18D1O1evyumqNgareYZ-JzgcJh' },
+  { name: 'MicroController', fileId: '1iUkT7DhwM-KoJY1kKsbTQ0qEMT7dUpB2' },
+  { name: 'Peripheral devices and their interfacing', fileId: '1-kxFTfQGGzydjjVZ6L7rpahhVLN9w_mV' },
+  { name: '8085 Programming', fileId: '1hTDbJ2nvdvGgBObJGkJEcpuEfljtUaas' }
+]" />
 
 </div>
 

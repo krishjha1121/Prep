@@ -16,17 +16,17 @@
 
 <div align="center">
 
-| # | Resource                             |                                            Access                                            |
-|:-:|:-------------------------------------|:--------------------------------------------------------------------------------------------:|
-| 1 | **CE Notes Ch 1 - 3**                | [📥 Open](https://drive.google.com/open?id=1cI_jx4cSGFSNubHWlGd7zUmEA98kfboB&usp=drive_copy) |
-| 2 | **Complete Note**                    | [📥 Open](https://drive.google.com/open?id=1pAOUle1FFF_JU4pCW4VRYTgz_dpnRpea&usp=drive_copy) |
-| 3 | **Environment Book upto Midsem**     | [📥 Open](https://drive.google.com/open?id=1SWbuWa9B960UOyPvAkS1yODOF-iQu2n8&usp=drive_copy) |
-| 4 | **Environmental Studies**            | [📥 Open](https://drive.google.com/open?id=1RVh8nxW4nJjfDHCI1Ovq6eNh3OG82wLH&usp=drive_copy) |
-| 5 | **EVS Mid Sem Assignment Questions** | [📥 Open](https://drive.google.com/open?id=1ZhAHxJ21eq3bJQiGDNnqUNn1LxEYZ2TQ&usp=drive_copy) |
-| 6 | **EVS Midsem Notes**                 | [📥 Open](https://drive.google.com/open?id=16ur3gBBCXG3rHnWx4tZlARje-Ir86Dfr&usp=drive_copy) |
-| 7 | **EVS Notes**                        | [📥 Open](https://drive.google.com/open?id=1U_P0NimsFT6PsyILPUPM024MWnGkjSwx&usp=drive_copy) |
-| 8 | **EVS**                              | [📥 Open](https://drive.google.com/open?id=1N4CQon5aFLqSNPwXTsmHhD1rJbAkQz59&usp=drive_copy) |
-| 9 | **Starting**                         | [📥 Open](https://drive.google.com/open?id=1U0F_VLkGUnyGFy5OMSYbYH7FY3GNV-Yp&usp=drive_copy) |
+<PDFViewer :resources="[
+  { name: 'CE Notes Ch 1 - 3', fileId: '1cI_jx4cSGFSNubHWlGd7zUmEA98kfboB' },
+  { name: 'Complete Note', fileId: '1pAOUle1FFF_JU4pCW4VRYTgz_dpnRpea' },
+  { name: 'Environment Book upto Midsem', fileId: '1SWbuWa9B960UOyPvAkS1yODOF-iQu2n8' },
+  { name: 'Environmental Studies', fileId: '1RVh8nxW4nJjfDHCI1Ovq6eNh3OG82wLH' },
+  { name: 'EVS Mid Sem Assignment Questions', fileId: '1ZhAHxJ21eq3bJQiGDNnqUNn1LxEYZ2TQ' },
+  { name: 'EVS Midsem Notes', fileId: '16ur3gBBCXG3rHnWx4tZlARje-Ir86Dfr' },
+  { name: 'EVS Notes', fileId: '1U_P0NimsFT6PsyILPUPM024MWnGkjSwx' },
+  { name: 'EVS', fileId: '1N4CQon5aFLqSNPwXTsmHhD1rJbAkQz59' },
+  { name: 'Starting', fileId: '1U0F_VLkGUnyGFy5OMSYbYH7FY3GNV-Yp' }
+]" />
 
 </div>
 

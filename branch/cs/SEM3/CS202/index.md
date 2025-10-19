@@ -16,10 +16,10 @@
 
 <div align="center">
 
-|  #  | Resource                          |                                            Access                                             |
-| :-: | :-------------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                      | [📥 Open](https://drive.google.com/file/d/1t3vTkikrRGMes3DhQXW9fC55CiNwqGiX/view?usp=sharing) |
-|  2  | **Discrete Mathematics by Rosen** | [📥 Open](https://drive.google.com/file/d/1bI2LeX2RhcSg1xgZtz_ADcm6789WULGU/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '1t3vTkikrRGMes3DhQXW9fC55CiNwqGiX' },
+  { name: 'Discrete Mathematics by Rosen', fileId: '1bI2LeX2RhcSg1xgZtz_ADcm6789WULGU' }
+]" />
 
 </div>
 

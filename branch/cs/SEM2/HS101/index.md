@@ -14,16 +14,16 @@
 
 <div align="center">
 
-|  #  | Resource                                     |                                            Access                                             |
-| :-: | :------------------------------------------- | :-------------------------------------------------------------------------------------------: |
-|  1  | **Syllabus**                                 | [📥 Open](https://drive.google.com/file/d/1zOcO3nA3YKqAjplmcRzjnhK2I7rDKb9M/view?usp=sharing) |
-|  2  | **One Word Substitutions**                   | [📥 Open](https://drive.google.com/file/d/19uYNwODLWtDmFTEtfVW-yb28O-BjbrdO/view?usp=sharing) |
-|  3  | **Secret Life of Walter Mitty**              | [📥 Open](https://drive.google.com/file/d/12PZl_qRTcWAOG82_OE9BLJDX4B689NIe/view?usp=sharing) |
-|  4  | **Report Writing**                           | [📥 Open](https://drive.google.com/file/d/1BCyhGB8l5DYkPAsbpJGYFsvuoxJyJObB/view?usp=sharing) |
-|  5  | **Poster Presentation**                      | [📥 Open](https://drive.google.com/file/d/1B-_SMMXX-YHkHUG7qBHvjSXwR0XHIfaI/view?usp=sharing) |
-|  6  | **Precis Writing**                           | [📥 Open](https://drive.google.com/file/d/1kCy7iWoBR6wiqUm-Cdujz4mUTK_6EEP8/view?usp=sharing) |
-|  7  | **Report Writing Example**                   | [📥 Open](https://drive.google.com/file/d/1m3gp5p0wNZY8qF4zrnZnJMhbfsfjSazl/view?usp=sharing) |
-|  8  | **Knowledge Swaraj an Indian S&T Manifesto** | [📥 Open](https://drive.google.com/file/d/17PjCxaE6o5Y3XGkxrxg7mIoZCRw09F8G/view?usp=sharing) |
+<PDFViewer :resources="[
+  { name: 'Syllabus', fileId: '1zOcO3nA3YKqAjplmcRzjnhK2I7rDKb9M' },
+  { name: 'One Word Substitutions', fileId: '19uYNwODLWtDmFTEtfVW-yb28O-BjbrdO' },
+  { name: 'Secret Life of Walter Mitty', fileId: '12PZl_qRTcWAOG82_OE9BLJDX4B689NIe' },
+  { name: 'Report Writing', fileId: '1BCyhGB8l5DYkPAsbpJGYFsvuoxJyJObB' },
+  { name: 'Poster Presentation', fileId: '1B-_SMMXX-YHkHUG7qBHvjSXwR0XHIfaI' },
+  { name: 'Precis Writing', fileId: '1kCy7iWoBR6wiqUm-Cdujz4mUTK_6EEP8' },
+  { name: 'Report Writing Example', fileId: '1m3gp5p0wNZY8qF4zrnZnJMhbfsfjSazl' },
+  { name: 'Knowledge Swaraj an Indian S&T Manifesto', fileId: '17PjCxaE6o5Y3XGkxrxg7mIoZCRw09F8G' }
+]" />
 
 </div>
 
