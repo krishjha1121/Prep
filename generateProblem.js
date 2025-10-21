@@ -16,9 +16,12 @@ async function main() {
 			problems[id] = { slug, difficulty };
 		});
 
-		if (!fs.existsSync("./data")) fs.mkdirSync("./data");
+		if (!fs.existsSync("./public/data")) fs.mkdirSync("./public/data");
 
-		fs.writeFileSync("./data/problems.json", JSON.stringify(problems, null, 2));
+		fs.writeFileSync(
+			"./public/data/problems.json",
+			JSON.stringify(problems, null, 2),
+		);
 		console.log("✅ problems.json generated successfully!");
 	} catch (err) {
 		console.error("❌ Failed to generate problems.json:", err);
