@@ -17,7 +17,6 @@ async function loadMarkdown() {
     }
     if (!res.ok) throw new Error(`fetch failed: ${res.status}`)
     const text = await res.text()
-    console.log(text)
     parseMarkdown(text)
   } catch (e) {
     console.error(
@@ -40,23 +39,38 @@ function extractProblemNumber(link) {
   return null
 }
 
-async function fetchDifficulty(problemNumber, title) {
+async function fetchDifficulty(problemIdentifier) {
   try {
-    const res = await fetch(
-      `https://prep-psi-eight.vercel.app/api/fetchDifficulty?titleSlug=${problemNumber}`,
-    )
+    const match = problemIdentifier.match(/^(\d+)-/)
+    if (!match) return 'medium' // fallback if format is wrong
 
-    if (res.ok) {
-      const data = await res.json()
-      return data.difficulty || 'medium'
-    }
-  } catch (e) {
-    console.warn(`Could not fetch difficulty for ${problemNumber}:`, e)
+    const problemNumber = parseInt(match[1], 10)
+
+    // Fetch local problems.json
+    const data = await fetch('/Prep/data/problems.json').then((r) => r.json())
+
+    const problem = data[problemNumber] // now works even if input had leading zeros
+
+    // console.log(problem.difficulty)
+    return problem?.difficulty || 'medium'
+  } catch (err) {
+    console.warn(`Could not fetch difficulty for ${problemIdentifier}:`, err)
+    return 'medium'
   }
-  return 'medium'
 }
 
-function parseMarkdown(mdText) {
+async function fetchAllProblemsData() {
+  try {
+    const res = await fetch('/Prep/data/problems.json')
+    return await res.json()
+  } catch (err) {
+    console.warn('Could not fetch problems.json:', err)
+    return {}
+  }
+}
+
+async function parseMarkdown(mdText) {
+  const data = await fetchAllProblemsData()
   const sections = mdText.split(/^##\s+/m).slice(1)
   const result = {}
 
@@ -67,43 +81,31 @@ function parseMarkdown(mdText) {
 
     for (const line of lines.slice(1)) {
       const m = line.match(/\[([^\]]+)\]\(([^)]+)\)/)
-      if (m) {
-        const name = m[1].trim()
-        const link = m[2].trim()
+      if (!m) continue
 
-        let difficulty = 'medium'
-        const lname = name.toLowerCase()
+      const name = m[1].trim()
+      const link = m[2].trim()
+      let difficulty = 'medium'
+      const lname = name.toLowerCase()
 
-        console.log(name)
-        if (lname.includes('easy') || lname.match(/\beasy\b/i)) {
-          difficulty = 'easy'
-        } else if (lname.includes('hard') || lname.match(/\bhard\b/i)) {
-          difficulty = 'hard'
-        } else {
-          const problemNum = extractProblemNumber(link)
-          console.log(problemNum)
-          if (problemNum) {
-            const numInt = parseInt(problemNum)
-            if (numInt <= 500) {
-              difficulty =
-                numInt % 3 === 0 ? 'hard' : numInt % 3 === 1 ? 'easy' : 'medium'
-            } else if (numInt <= 1000) {
-              difficulty =
-                numInt % 3 === 0 ? 'easy' : numInt % 3 === 1 ? 'medium' : 'hard'
-            } else {
-              difficulty =
-                numInt % 4 === 0 ? 'hard' : numInt % 4 === 1 ? 'easy' : 'medium'
-            }
-            // TODO : Need to fix this;
-            // difficulty = fetchDifficulty(problemNum, title)
-          }
+      if (lname.includes('easy') || lname.match(/\beasy\b/i))
+        difficulty = 'easy'
+      else if (lname.includes('hard') || lname.match(/\bhard\b/i))
+        difficulty = 'hard'
+      else {
+        const problemNum = extractProblemNumber(link)
+        if (problemNum) {
+          const numInt = parseInt(problemNum)
+
+          const problemFromData = data[parseInt(problemNum, 10)]
+          if (problemFromData?.difficulty)
+            difficulty = problemFromData.difficulty
         }
-        problems.push({ name, link, difficulty })
       }
+      problems.push({ name, link, difficulty })
     }
     result[title || 'Untitled'] = problems
   }
-
   topics.value = result
 }
 
