@@ -40,7 +40,7 @@ function extractProblemNumber(link) {
   return null
 }
 
-async function fetchDifficulty(problemNumber) {
+async function fetchDifficulty(problemNumber, title) {
   try {
     const res = await fetch(
       `https://prep-psi-eight.vercel.app/api/fetchDifficulty?titleSlug=${problemNumber}`,
@@ -74,6 +74,7 @@ function parseMarkdown(mdText) {
         let difficulty = 'medium'
         const lname = name.toLowerCase()
 
+        console.log(name)
         if (lname.includes('easy') || lname.match(/\beasy\b/i)) {
           difficulty = 'easy'
         } else if (lname.includes('hard') || lname.match(/\bhard\b/i)) {
@@ -93,7 +94,8 @@ function parseMarkdown(mdText) {
               difficulty =
                 numInt % 4 === 0 ? 'hard' : numInt % 4 === 1 ? 'easy' : 'medium'
             }
-            difficulty = fetchDifficulty(problemNum)
+            // TODO : Need to fix this;
+            // difficulty = fetchDifficulty(problemNum, title)
           }
         }
         problems.push({ name, link, difficulty })
