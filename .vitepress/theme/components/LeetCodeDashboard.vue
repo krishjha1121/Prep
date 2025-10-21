@@ -17,6 +17,7 @@ async function loadMarkdown() {
     }
     if (!res.ok) throw new Error(`fetch failed: ${res.status}`)
     const text = await res.text()
+    console.log(text)
     parseMarkdown(text)
   } catch (e) {
     console.error(
@@ -41,26 +42,13 @@ function extractProblemNumber(link) {
 
 async function fetchDifficulty(problemNumber) {
   try {
-    const query = `
-      query questionTitle($titleSlug: String!) {
-        question(titleSlug: $titleSlug) {
-          difficulty
-        }
-      }
-    `
+    const res = await fetch(
+      `https://prep-psi-eight.vercel.app/api/fetchDifficulty?titleSlug=${problemNumber}`,
+    )
 
-    const response = await fetch('https://leetcode.com/graphql', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query,
-        variables: { titleSlug: problemNumber },
-      }),
-    })
-
-    if (response.ok) {
-      const data = await response.json()
-      return data.data?.question?.difficulty?.toLowerCase() || 'medium'
+    if (res.ok) {
+      const data = await res.json()
+      return data.difficulty || 'medium'
     }
   } catch (e) {
     console.warn(`Could not fetch difficulty for ${problemNumber}:`, e)
@@ -92,6 +80,7 @@ function parseMarkdown(mdText) {
           difficulty = 'hard'
         } else {
           const problemNum = extractProblemNumber(link)
+          console.log(problemNum)
           if (problemNum) {
             const numInt = parseInt(problemNum)
             if (numInt <= 500) {
@@ -104,9 +93,9 @@ function parseMarkdown(mdText) {
               difficulty =
                 numInt % 4 === 0 ? 'hard' : numInt % 4 === 1 ? 'easy' : 'medium'
             }
+            difficulty = fetchDifficulty(problemNum)
           }
         }
-
         problems.push({ name, link, difficulty })
       }
     }
