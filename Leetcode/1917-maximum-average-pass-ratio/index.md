@@ -1,0 +1,105 @@
+<div align = "center">
+<h style = "margin-bottom: 0px; margin-top: 0px; color : purple;" align = "center" class = "header">
+
+## ⌨ 1917. Maximum Average Pass Ratio
+
+</h>
+</div>
+
+<h2><a href="https://leetcode.com/problems/maximum-average-pass-ratio" target = "_blank">1917. Maximum Average Pass Ratio</a></h2><h3>Medium</h3><hr><p>There is a school that has classes of students and each class will be having a final exam. You are given a 2D integer array <code>classes</code>, where <code>classes[i] = [pass<sub>i</sub>, total<sub>i</sub>]</code>. You know beforehand that in the <code>i<sup>th</sup></code> class, there are <code>total<sub>i</sub></code> total students, but only <code>pass<sub>i</sub></code> number of students will pass the exam.</p>
+
+<p>You are also given an integer <code>extraStudents</code>. There are another <code>extraStudents</code> brilliant students that are <strong>guaranteed</strong> to pass the exam of any class they are assigned to. You want to assign each of the <code>extraStudents</code> students to a class in a way that <strong>maximizes</strong> the <strong>average</strong> pass ratio across <strong>all</strong> the classes.</p>
+
+<p>The <strong>pass ratio</strong> of a class is equal to the number of students of the class that will pass the exam divided by the total number of students of the class. The <strong>average pass ratio</strong> is the sum of pass ratios of all the classes divided by the number of the classes.</p>
+
+<p>Return <em>the <strong>maximum</strong> possible average pass ratio after assigning the </em><code>extraStudents</code><em> students. </em>Answers within <code>10<sup>-5</sup></code> of the actual answer will be accepted.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre>
+<strong>Input:</strong> classes = [[1,2],[3,5],[2,2]], <code>extraStudents</code> = 2
+<strong>Output:</strong> 0.78333
+<strong>Explanation:</strong> You can assign the two extra students to the first class. The average pass ratio will be equal to (3/4 + 3/5 + 2/2) / 3 = 0.78333.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> classes = [[2,4],[3,9],[4,5],[2,10]], <code>extraStudents</code> = 4
+<strong>Output:</strong> 0.53485
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= classes.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>classes[i].length == 2</code></li>
+	<li><code>1 &lt;= pass<sub>i</sub> &lt;= total<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
+	<li><code>1 &lt;= extraStudents &lt;= 10<sup>5</sup></code></li>
+</ul>
+
+<CodeTabs :languages="[ { name: 'C++', slot: 'cpp' }, { name: 'Java', slot: 'java' } ]">
+
+<template #java>
+
+```java
+class Solution {
+    static class Pair {
+        double delta;
+        double pass;
+        double total;
+        public Pair(double delta, double pass, double total) {
+            this.delta = delta;
+            this.pass = pass;
+            this.total = total;
+        }
+    }
+    static class sorting implements Comparator<Pair> {
+        @Override
+        public int compare(Pair first, Pair second) {
+            return Double.compare(second.delta, first.delta);
+        }
+    }
+    public double maxAverageRatio(int[][] classes, int extraStudents) {
+        PriorityQueue<Pair> pq = new PriorityQueue<>(new sorting());
+        for (int current[] : classes) {
+            double pass = (double)current[0];
+            double total = (double)current[1];
+            double delta = (double)(pass + 1) / (double)(total + 1) - (double)(pass) / (double)(total);
+            pq.offer(new Pair(delta, pass, total));
+        }
+        while (extraStudents > 0) {
+            double pass = pq.peek().pass;
+            double total = pq.peek().total;
+            double delta = pq.peek().delta;
+            pass++;
+            total++;
+            double newDelta = (double)(pass + 1) / (double)(total + 1) - (double)(pass) / (double)(total);
+            pq.poll();
+            pq.offer(new Pair(newDelta, pass, total));
+            extraStudents--;
+        }
+        double ans = 0;
+        int total = pq.size();
+        while (!pq.isEmpty()) {
+            ans += (double)pq.peek().pass / (double)pq.peek().total;
+            pq.poll();
+        }
+        return (double)(ans / (double) total);
+    }
+}
+```
+
+</template>
+
+<template #cpp>
+
+```cpp
+// Add your C++ solution here
+```
+
+</template>
+
+</CodeTabs>

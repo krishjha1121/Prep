@@ -28,7 +28,7 @@ export default withMermaid(
 				{ text: "🎓 Academics", link: "/branch/" },
 				{
 					text: '<img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760785019/icons8-leetcode-96_mmv1f2.png" style="width:16px;height:16px;display:inline;margin-right:4px;vertical-align:text-top;">Leetcode Solutions',
-					link: "/DSA/Leetcode/",
+					link: "/Leetcode/",
 				},
 				{
 					text: "📚 Core CS",
