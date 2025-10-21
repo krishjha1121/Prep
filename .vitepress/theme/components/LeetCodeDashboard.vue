@@ -62,6 +62,9 @@ async function fetchDifficulty(problemIdentifier) {
 async function fetchAllProblemsData() {
   try {
     const res = await fetch('/Prep/data/problems.json')
+    if (!res.ok) {
+      res = await fetch('/data/problems.json')
+    }
     return await res.json()
   } catch (err) {
     console.warn('Could not fetch problems.json:', err)
