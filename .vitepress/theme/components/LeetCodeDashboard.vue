@@ -409,6 +409,7 @@ onMounted(loadMarkdown)
               target="_blank"
               >{{ p.name }}</a
             >
+
             <span class="difficulty" :class="p.difficulty">{{
               p.difficulty.charAt(0).toUpperCase() + p.difficulty.slice(1)
             }}</span>
@@ -583,14 +584,14 @@ onMounted(loadMarkdown)
 .lc-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   margin-top: 0.5rem;
   align-items: start;
 }
 
 @media (min-width: 1400px) {
   .lc-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr !important;
   }
 }
 
