@@ -12,12 +12,15 @@ const viewMode = ref('grid')
 async function loadMarkdown() {
   try {
     const res = await fetch('/Prep/Leetcode/problems.md')
+    if (!res.ok) {
+      res = await fetch('/Leetcode/problems.md')
+    }
     if (!res.ok) throw new Error(`fetch failed: ${res.status}`)
     const text = await res.text()
     parseMarkdown(text)
   } catch (e) {
     console.error(
-      'Failed to load /leetcode.md — make sure the file is at provided location',
+      'Failed to load that markdown — make sure the file is at provided location',
       e,
     )
   }
