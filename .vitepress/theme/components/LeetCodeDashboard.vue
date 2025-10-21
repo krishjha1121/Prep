@@ -11,7 +11,7 @@ const viewMode = ref('grid')
 
 async function loadMarkdown() {
   try {
-    const res = await fetch('/Prep/.vitepress/theme/components/index.md')
+    const res = await fetch('/Prep/Leetcode/problems.md')
     if (!res.ok) throw new Error(`fetch failed: ${res.status}`)
     const text = await res.text()
     parseMarkdown(text)
