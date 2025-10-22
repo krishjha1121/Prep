@@ -88,7 +88,7 @@ The interviewers were professional, engaging, and supportive throughout the proc
 
 ---
 
-**✍️ Author:** Swarup  Chandra
+**✍️ Shared by:** Swarup  Chandra
 
 ---
 
