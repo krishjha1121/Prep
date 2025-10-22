@@ -71,8 +71,8 @@
   role="Lead Developer"
   description="Founder and Vue expert."
   :links='[
-    { "label": "GitHub", "url": "https://github.com/john" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/john" },
+    { "label": "GitHub", "url": "https://github.com/" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/" },
     { "label": "Leetcode", "url": "mailto:john@example.com" }
   ]'
 />
@@ -86,7 +86,8 @@
   :links='[
     { "label": "GitHub", "url": "https://github.com/Aniljangir89" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/anil-kumar-364b7b280" },
-    { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" }
+    { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" },
+    { "label": "monkeytype", "url": "https://monkeytype.com/profile/Aniljangir89" }
   ]'
 />
 
