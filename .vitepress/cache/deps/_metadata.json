@@ -1,73 +1,124 @@
 {
+<<<<<<< Updated upstream
   "hash": "83a74ec2",
   "configHash": "c21dfbdc",
   "lockfileHash": "ae89e3f3",
   "browserHash": "2c212686",
+=======
+  "hash": "39c0c213",
+  "configHash": "22845c10",
+  "lockfileHash": "2df6a059",
+  "browserHash": "222cdf89",
+>>>>>>> Stashed changes
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
+<<<<<<< Updated upstream
       "fileHash": "2333c767",
+=======
+      "fileHash": "9131b7fa",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
+<<<<<<< Updated upstream
       "fileHash": "dbcbbfac",
+=======
+      "fileHash": "07f26f57",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
+<<<<<<< Updated upstream
       "fileHash": "4aeaec44",
+=======
+      "fileHash": "59adc6c9",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "@braintree/sanitize-url": {
       "src": "../../../node_modules/@braintree/sanitize-url/dist/index.js",
       "file": "@braintree_sanitize-url.js",
+<<<<<<< Updated upstream
       "fileHash": "d62dc424",
+=======
+      "fileHash": "a640bfdf",
+>>>>>>> Stashed changes
       "needsInterop": true
     },
     "dayjs": {
       "src": "../../../node_modules/dayjs/dayjs.min.js",
       "file": "dayjs.js",
+<<<<<<< Updated upstream
       "fileHash": "416e1725",
+=======
+      "fileHash": "06951132",
+>>>>>>> Stashed changes
       "needsInterop": true
     },
     "debug": {
       "src": "../../../node_modules/debug/src/browser.js",
       "file": "debug.js",
+<<<<<<< Updated upstream
       "fileHash": "805676c2",
+=======
+      "fileHash": "15099e3b",
+>>>>>>> Stashed changes
       "needsInterop": true
     },
     "cytoscape-cose-bilkent": {
       "src": "../../../node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js",
       "file": "cytoscape-cose-bilkent.js",
+<<<<<<< Updated upstream
       "fileHash": "8f485d29",
+=======
+      "fileHash": "b29c4da1",
+>>>>>>> Stashed changes
       "needsInterop": true
     },
     "cytoscape": {
       "src": "../../../node_modules/cytoscape/dist/cytoscape.esm.mjs",
       "file": "cytoscape.js",
+<<<<<<< Updated upstream
       "fileHash": "52825301",
+=======
+      "fileHash": "c1c31f86",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
+<<<<<<< Updated upstream
       "fileHash": "c1c95201",
+=======
+      "fileHash": "24e1d2e1",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
+<<<<<<< Updated upstream
       "fileHash": "e4a39113",
+=======
+      "fileHash": "a082ac61",
+>>>>>>> Stashed changes
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
+<<<<<<< Updated upstream
       "fileHash": "2a755451",
+=======
+      "fileHash": "d236a41f",
+>>>>>>> Stashed changes
       "needsInterop": false
     }
   },
