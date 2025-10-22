@@ -50,7 +50,7 @@
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699084/kanika_a0irao.png"   
   title="Kanika punia"
   role="Between Syntax error and success!"
@@ -65,7 +65,7 @@
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
   title="Nikhil sahani"
   role="Lead Developer"
@@ -78,7 +78,7 @@
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699086/anil_sjtzyd.jpg"
   title="Anil Kumar"
   role=" Developer "
