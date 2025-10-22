@@ -26,13 +26,13 @@
   { name: 'EVS Notes', fileId: '1U_P0NimsFT6PsyILPUPM024MWnGkjSwx' },
   { name: 'EVS', fileId: '1N4CQon5aFLqSNPwXTsmHhD1rJbAkQz59' },
   { name: 'Starting', fileId: '1U0F_VLkGUnyGFy5OMSYbYH7FY3GNV-Yp' },
-  {name: 'Assignment 01 Solutions', fileID: '1SYmfkYv77pr7LM36zLKIc4EepSf6lgJC'},
-  {name: 'JP Sharma Book', fileID: '1Yc0Bik1YZYvsybCZf-zUraMa3PZnmhrm'},
-  {name: 'Book Portion Upto Mid Sems', fileID: '1U5_Kae1zGYVGLlA5yJSwEBIDTwLDM4Yt'},
-  {name: 'Assignment 01', fileID: '1TGO1Z8y0lNiToiZROdS65vh8zj7h875g'},
-  {name: 'Assignment 02', fileID: '1_Fa9Cgj-CWhE8dc_77BZ_E7hbmmdALIy'},
-  {name: 'Complete Assignment Solution', fileID: '1SVlzfTbj1ilOqkrJvO0jXghDJJXsytBA'},
-  {name: 'Book Part 2',fileID: '1Gf55JkMwVOjZCDC2ACbPzWMraEslReaQ'}
+  {name: 'Assignment 01 Solutions', fileId: '1SYmfkYv77pr7LM36zLKIc4EepSf6lgJC'},
+  {name: 'JP Sharma Book', fileId: '1Yc0Bik1YZYvsybCZf-zUraMa3PZnmhrm'},
+  {name: 'Book Portion Upto Mid Sems', fileId: '1U5_Kae1zGYVGLlA5yJSwEBIDTwLDM4Yt'},
+  {name: 'Assignment 01', fileId: '1TGO1Z8y0lNiToiZROdS65vh8zj7h875g'},
+  {name: 'Assignment 02', fileId: '1_Fa9Cgj-CWhE8dc_77BZ_E7hbmmdALIy'},
+  {name: 'Complete Assignment Solution', fileId: '1SVlzfTbj1ilOqkrJvO0jXghDJJXsytBA'},
+  {name: 'Book Part 2',fileId: '1Gf55JkMwVOjZCDC2ACbPzWMraEslReaQ'}
 ]" />
 
 </div>
