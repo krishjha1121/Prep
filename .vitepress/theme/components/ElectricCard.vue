@@ -388,7 +388,7 @@ const initials = computed(() => {
     padding: 14px 18px 18px 18px;
   }
   .desc {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
