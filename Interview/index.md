@@ -22,6 +22,13 @@ features:
       details: Making sure you order a keyboard at 2 AM and get it before sunrise. Also, somehow finds time to grill you with DSA questions in 45 minutes flat.
       link: ./Amazon
 
+    - icon: '<img src="https://logo.clearbit.com/fanatics.com" width="36" style="vertical-align:middle;">'
+      title: Fanatics
+      details: Turning sports passion into fashion. Might ask you to optimise your code faster than a last-second goal in overtime.
+      link: ./Fanatics
+
+
+
     
 ---
 
