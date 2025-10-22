@@ -10,7 +10,9 @@
 
 The first round was an **online coding assessment** conducted on **HackerRank**.  
 It consisted of standard **Data Structures and Algorithms (DSA)** problems testing logic, problem-solving ability, and time efficiency.  
-This round served as the **shortlisting stage** for the technical interviews that followed.
+This round served as the **shortlisting stage** for the technical interviews that followed.  
+
+🧠 *Preparation Tip:* You can practice similar level problems on [HackerRank](https://www.hackerrank.com/domains/tutorials/10-days-of-javascript) or [LeetCode Explore DSA section](https://leetcode.com/explore/interview/card/top-interview-questions-easy/).  
 
 ✅ **Outcome:** Cleared Round 1
 
@@ -26,10 +28,16 @@ In this round, I was asked **two medium-level DSA questions**, both focused on l
 I began with the brute force explanation and discussed its limitations. Then I optimized the solution using the **two-pointer (sliding window)** technique.  
 I wrote the code efficiently in **Java**, explained each step clearly, and ran test cases to verify correctness.  
 
+📘 You can practice this problem here:  
+- [Longest Substring Without Repeating Characters – LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)  
+
 **2️⃣ Three Sum Problem**  
 Next, I was asked to find all unique triplets in an array that sum to zero.  
 I approached it using **sorting + two-pointer** logic to reduce complexity from `O(n³)` to `O(n²)`.  
 After implementation, I discussed edge cases and handling duplicates.  
+
+💡 Reference:  
+- [Three Sum – LeetCode Problem](https://leetcode.com/problems/3sum/)  
 
 ---
 
@@ -40,6 +48,8 @@ They focused on:
 - How my **projects** were built and the **challenges** I faced  
 - My **internship learnings** and technical responsibilities  
 - Technologies I used, especially in **backend and APIs**  
+
+If you’re preparing for this round, make sure to go through your projects thoroughly and understand the implementation flow — backend APIs, database design, and tech stack decisions.  
 
 Overall, the round balanced **DSA**, **resume understanding**, and **technical communication**.  
 
@@ -60,13 +70,17 @@ After that, a few behavioral questions were asked:
 - “What’s your approach when deadlines are tight?”  
 - “Why do you want to join Fanatics?”  
 
+For similar HR-style discussions, you can review:  
+- [Top HR Interview Questions – GeeksforGeeks](https://www.geeksforgeeks.org/hr-interview-questions-and-answers/)  
+- [Behavioral Interview Questions – Glassdoor Guide](https://www.glassdoor.com/blog/guide/behavioral-interview-questions/)  
+
 I explained how I value Fanatics’ work in **sports merchandise and tech-driven e-commerce**, and how it aligns with my interest in building impactful systems.  
 The interviewer encouraged me to share my genuine thoughts and experiences rather than memorized answers.  
-The overall conversation was positive and comfortable.
+The overall conversation was positive and comfortable.  
 
-However, I couldn’t make it to the final selection list.
+However, I couldn’t make it to the final selection list.  
 
-❌ **Outcome:** Rejected after HR Round
+❌ **Outcome:** Rejected after HR Round  
 
 ---
 
@@ -74,7 +88,7 @@ However, I couldn’t make it to the final selection list.
 
 The entire process was **smooth and learning-oriented**.  
 The interviewers were polite and gave enough time to think through each question.  
-Although I didn’t get selected, the experience helped me understand **where I need to improve**, especially in **communication and confidence** while explaining my thoughts.
+Although I didn’t get selected, the experience helped me understand **where I need to improve**, especially in **communication and confidence** while explaining my thoughts.  
 
 ---
 
@@ -82,6 +96,7 @@ Although I didn’t get selected, the experience helped me understand **where I 
 
 - **Focus on LeetCode practice:**  
   Solve medium-level DSA problems regularly, especially **sliding window**, **two-pointer**, and **hash map** based patterns.  
+  📚 Reference: [LeetCode Patterns Practice List](https://leetcode.com/discuss/interview-question/460599/blind-75-leetcode-questions)  
 
 - **Be honest on your resume:**  
   Only include projects and technologies you’ve **actually worked on**, because interviewers go deep into them.  
@@ -90,16 +105,16 @@ Although I didn’t get selected, the experience helped me understand **where I 
   Instead of copying answers online, **reflect on your own experiences** and frame genuine responses.  
 
 - **Work on your introduction:**  
-  A confident and well-structured intro sets a positive tone for the whole interview.
+  A confident and well-structured intro sets a positive tone for the whole interview.  
 
 ---
 
 ## 🏁 Result  
-❌ **Rejected after HR Round (Fanatics Intern + FTE On-Campus)**
+❌ **Rejected after HR Round (Fanatics Intern + FTE On-Campus)**  
 
 ---
 
-**✍️ Shared by** Anonymous <!-- Arunav -->
+**✍️ Shared by:** Anonymous <!-- Arunav -->
 
 ---
 
