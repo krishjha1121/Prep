@@ -27,6 +27,16 @@ features:
       details: Turning sports passion into fashion. Might ask you to optimise your code faster than a last-second goal in overtime.
       link: ./Fanatics
 
+    - icon: '<img src="https://logo.clearbit.com/mathworks.com" width="36" style="vertical-align:middle;">'
+      title: MathWorks
+      details: Where math meets engineering, building tools that turn equations into innovation. And yes, MATLAB still finds new ways to humble even the best coders.
+      link: ./MathWorks
+
+    - icon: '<img src="https://logo.clearbit.com/linkedin.com" width="36" style="vertical-align:middle;">'
+      title: LinkedIn
+      details: Turning cold messages into warm opportunities, until it’s your turn to get grilled on graphs, arrays, and algorithms you once bragged about mastering.
+      link: ./LinkedIn
+
 
 
     

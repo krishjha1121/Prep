@@ -19,10 +19,21 @@ I started with the standard implementation and clearly explained the **time and 
 Then, the interviewer asked me to **optimize it** using an **OOP-based approach** to achieve constant-time operations.  
 Initially, I struggled a bit but later reasoned through different strategies and successfully designed a more efficient solution. The interviewer appreciated my problem-solving process and persistence.  
 
+📘 You can practice these questions here:  
+- [Implement Queue using Stacks – LeetCode Problem](https://leetcode.com/problems/implement-queue-using-stacks/)  
+- [Implement Stack using Queues – LeetCode Problem](https://leetcode.com/problems/implement-stack-using-queues/)  
+
 **2️⃣ 0/1 Knapsack Problem (Dynamic Programming)**  
 The next question was a **DP-based problem** — implementing the **0/1 Knapsack**.  
 I chose to solve it using **memoization**, explaining each **state transition** clearly.  
 Although my first attempt had a small bug, I quickly debugged and fixed it, demonstrating my structured thought process and attention to detail.  
+
+🧠 If you’d like to practice similar DP problems:  
+- [0/1 Knapsack Problem – LeetCode Discussion](https://leetcode.com/problems/knapsack/)  
+- [Subset Sum Problem – GeeksforGeeks](https://www.geeksforgeeks.org/subset-sum-problem-dp-25/)  
+- [Longest Increasing Subsequence – LeetCode](https://leetcode.com/problems/longest-increasing-subsequence/)
+
+---
 
 ### 🌐 Computer Networks Questions  
 
@@ -32,6 +43,8 @@ After the coding section, the interviewer asked some conceptual questions from *
 - “What is Network Address Translation (NAT)?”  
 
 I explained concepts like **DNS resolution**, **IP addressing**, and **NAT** with clarity and confidence.  
+If you want to revise these topics, check: [Computer Networks Basics – GeeksforGeeks](https://www.geeksforgeeks.org/computer-network-tutorials/)
+
 The interviewer was satisfied with my understanding and articulation.  
 
 ✅ **Outcome:** Cleared Round 1  
@@ -58,6 +71,10 @@ Then, she shifted focus to my **Machine Learning project**, asking:
 
 I discussed the project’s objective, the **ML model used**, and what I learned about **data handling, optimization**, and **practical implementation**.  
 
+For brushing up on project-related technicals:  
+- [Common Machine Learning Interview Questions – GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning-interview-questions/)  
+- [Behavioral Interview Questions at Microsoft – Glassdoor](https://www.glassdoor.co.in/Interview/Microsoft-Interview-Questions-E1651.htm)  
+
 The round ended with **behavioral questions** around teamwork, problem-solving, and adaptability.  
 The interviewer also shared valuable insights about how Microsoft emphasizes **collaboration**, **continuous learning**, and a **growth mindset**.  
 
@@ -76,7 +93,11 @@ The interviewers were professional, engaging, and supportive throughout the proc
 ## 💡 Advice for Others  
 
 - **Focus on DSA fundamentals** — especially stacks, queues, linked lists, and DP problems like **Knapsack**, **LIS**, and **Subset Sum**.  
+  📘 [DSA Preparation Guide – LeetCode Explore](https://leetcode.com/explore/interview/card/top-interview-questions-easy/)  
+
 - **Revise CS basics** — topics like **OOP, DBMS, and Computer Networks** can appear anytime.  
+  🔗 [Core CS Concepts – GeeksforGeeks](https://www.geeksforgeeks.org/computer-science-core-subjects/)  
+
 - **Think out loud** — explain your reasoning and approach while solving.  
 - **Know your projects deeply** — be ready to discuss challenges, contributions, and outcomes.  
 - **Stay calm and confident** — interviews evaluate mindset and clarity, not just answers.  
@@ -88,7 +109,7 @@ The interviewers were professional, engaging, and supportive throughout the proc
 
 ---
 
-**✍️ Shared by:** Swarup  Chandra
+**✍️ Shared by:** Swarup Chandra  
 
 ---
 

@@ -9,7 +9,9 @@
 ## 🌐 Opportunity Source  
 
 This opportunity came through **Hack-On**, a coding challenge and hiring event by Amazon.  
-After clearing the **Online Assessment (OA)**, I received the **interview link** for the next round.
+After clearing the **Online Assessment (OA)**, I received the **interview link** for the next round.  
+
+📘 Learn more about the event: [Hack-On by Amazon – Official Page](https://www.aboutamazon.in/news/working-at-amazon/hack-on)
 
 ---
 
@@ -23,6 +25,8 @@ After that, the interviewer asked:
 > “What is the difference between **authentication** and **authorization**?”  
 
 I explained both clearly — **authentication** verifies *who you are*, while **authorization** decides *what you’re allowed to access*.  
+📖 You can read more about these concepts here: [Authentication vs Authorization – GeeksforGeeks](https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/)  
+
 This part took around **5–7 minutes** before we moved into coding.
 
 ---
@@ -34,18 +38,22 @@ This part took around **5–7 minutes** before we moved into coding.
 > You have to find the **smallest substring** containing **all letters** of the virus.  
 
 I explained the **two-pointer (sliding window)** logic, walked through a **dry run**, and coded it efficiently.  
+📘 Reference: [Minimum Window Substring – LeetCode Problem](https://leetcode.com/problems/minimum-window-substring/)  
+
+---
 
 **2️⃣ Number of Islands (Graph / DFS Problem)**  
 > The second problem was similar to the **“Number of Islands”** question on LeetCode, just reworded differently.  
 
 I solved it using **Depth First Search (DFS)** to count connected components in a grid.  
 I explained both **time and space complexity**, and all test cases passed successfully.  
+💡 Practice similar graph problems here: [Number of Islands – LeetCode](https://leetcode.com/problems/number-of-islands/)  
 
 Though I took around **1 hour 10 minutes**, the interviewer appreciated my clarity and explanation.
 
 ---
 
-✅ **Outcome:** Selected for Amazon Winter Internship via Hack-On
+✅ **Outcome:** Selected for Amazon Winter Internship via Hack-On  
 
 ---
 
@@ -59,8 +67,12 @@ The interviewer was friendly and supportive, making the discussion feel collabor
 ## 💡 Advice for Others  
 
 - **Take Hack-On seriously:**  
-  It’s a great way to earn an interview opportunity with Amazon.  
+  It’s one of the best platforms to get interview opportunities with Amazon.  
+  🔗 [Hack-On Event Info – Amazon India](https://www.aboutamazon.in/news/working-at-amazon/hack-on)
+
 - Focus on **two-pointer** and **graph (DFS/BFS)** problems.  
+  📘 [Graph Interview Questions – GeeksforGeeks](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)  
+
 - Explain your approach clearly before coding — and always **dry run your logic**.  
 
 ---
