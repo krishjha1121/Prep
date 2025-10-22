@@ -53,12 +53,14 @@
   badge="Contributor"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699084/kanika_a0irao.png"   
   title="Kanika punia"
-  role="Lead Developer"
-  description="Founder and Vue expert."
+  role="Between Syntax error and success!"
+  description="From searching to riding innovation."
   :links='[
-    { "label": "GitHub", "url": "https://github.com/john" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/john" },
-    { "label": "Leetcode", "url": "mailto:john@example.com" }
+    { "label": "GitHub", "url": "https://github.com/KanikaPunia119" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kanika-punia-5b15a5210/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/Kanika_Punia/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/kanika119"},
+    { "label" : "monkeytype", "url" : "https://monkeytype.com/profile/kanika119"} 
   ]'
 />
 
