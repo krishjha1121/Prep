@@ -331,7 +331,7 @@ const initials = computed(() => {
 .desc {
   margin: 0;
   color: rgba(255, 255, 255, 0.55);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   text-align: left;
 }
@@ -388,7 +388,7 @@ const initials = computed(() => {
     padding: 14px 18px 18px 18px;
   }
   .desc {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 

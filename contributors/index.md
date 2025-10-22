@@ -50,7 +50,7 @@
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699084/kanika_a0irao.png"   
   title="Kanika punia"
   role="Between Syntax error and success!"
@@ -65,20 +65,20 @@
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
   title="Nikhil sahani"
   role="Lead Developer"
   description="Founder and Vue expert."
   :links='[
-    { "label": "GitHub", "url": "https://github.com/john" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/john" },
+    { "label": "GitHub", "url": "https://github.com/" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/" },
     { "label": "Leetcode", "url": "mailto:john@example.com" }
   ]'
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699086/anil_sjtzyd.jpg"
   title="Anil Kumar"
   role=" Developer "
@@ -86,7 +86,8 @@
   :links='[
     { "label": "GitHub", "url": "https://github.com/Aniljangir89" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/anil-kumar-364b7b280" },
-    { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" }
+    { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" },
+    { "label": "monkeytype", "url": "https://monkeytype.com/profile/Aniljangir89" }
   ]'
 />
 
