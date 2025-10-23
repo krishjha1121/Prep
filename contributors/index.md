@@ -67,14 +67,17 @@
 <ElectricCard
   badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
-  title="Nikhil sahani"
-  role="Lead Developer"
-  description="Founder and Vue expert."
+  title="Nikhil Sahani"
+  role="CSE @NITS"
+  description="Even in the darkest code, there’s always a closing tag of hope."
   :links='[
-    { "label": "GitHub", "url": "https://github.com/" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/" },
-    { "label": "Leetcode", "url": "mailto:john@example.com" }
-  ]'
+    { "label": "GitHub", "url": "https://github.com/nikhilsenju" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/nikhil-sahani-153947257/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/NICK_EL_03/" },
+    { "label": "MonkeyType", "url" :"https://monkeytype.com/profile/NICK_EL_03"},
+    { "label": "Codeforces", "url" :"https://codeforces.com/profile/KRISHN-ick"},
+    { "label": "Matiks", "url" :"https://www.matiks.com/profile/nikhilsahani"}
+  ]' 
 />
 
 <ElectricCard
