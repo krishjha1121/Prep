@@ -102,6 +102,8 @@ const getIcon = (label) => {
     return 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg'
   if (lower.includes('monkeytype'))
     return 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/monkeytype.svg'
+  if (lower.includes('matiks'))
+    return 'https://res.cloudinary.com/dzjxhzxym/image/upload/v1761233815/Screenshot_from_2025-10-23_21-05-44_rrjftz.png'
   return 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/link.svg'
 }
 
