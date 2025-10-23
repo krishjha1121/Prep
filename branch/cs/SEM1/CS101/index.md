@@ -31,7 +31,14 @@
   { name: 'lec07', fileId: '1bEzhp5KJaNRsy6hKP9HhQPZ_ZI5J68U1' },
   { name: 'lec08-conditional-while', fileId: '14ArTd9pxtCxYI7ZX6AfiWGAEg0UbpDU_' },
   { name: 'lec09-loops', fileId: '1A3WB9MswVteLswzRh7YZV0raRWQTUdfZ' },
-  { name: 'Object Oriented programming', fileId: '1d7N1Hr4Cks3ObN41xm0NSSXcZbEDeiZD' }
+  { name: 'Object Oriented programming', fileId: '1d7N1Hr4Cks3ObN41xm0NSSXcZbEDeiZD' },
+  { name: 'Assignment 01 || 2023', fileId: '1InCqja4o9DO5gI7xEheECxo5w8Icwm5i'},
+  { name: 'Assignment 02 || 2023', fileId: '1IwF12nZH-HWAz26DEmd9Qo2h4cLSN6Hd'},
+  { name: 'Assignment 03 || 2023', fileId: '1IwUvPlQVKMBlW3O-WTYVwHsH3w-XzVDi'},
+  { name: 'C Complete Notes || Code With Harry', fileId: '1DCKGLO74mFUJx4IU56SXk9XUPNBjnmcP'},
+  { name: 'Tutorial 01 || 2023', fileId: '1IwLJyfEvYtXJnj_LoAANGnOjugojpLH-'},
+  { name: 'C Notes || 2023', fileId: '1IxIxiA3I4_eAmHJtsWOIOe73xWb2-Tra'},
+  { name: 'Lecture Plannar C', fileId: '1jmtsgLSiGtXm73Wk3ZuIyV4PXC8xyBOK'},
 ]" />
 
 </div>
