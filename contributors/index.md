@@ -69,14 +69,13 @@
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
   title="Nikhil Sahani"
   role="CSE @NITS"
-  description="Even in the darkest code, there’s always a closing tag of hope."
+  description="Dream it. Believe it. Build it."
   :links='[
     { "label": "GitHub", "url": "https://github.com/nikhilsenju" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/nikhil-sahani-153947257/" },
     { "label": "Leetcode", "url": "https://leetcode.com/u/NICK_EL_03/" },
     { "label": "MonkeyType", "url" :"https://monkeytype.com/profile/NICK_EL_03"},
     { "label": "Codeforces", "url" :"https://codeforces.com/profile/KRISHN-ick"},
-    { "label": "Matiks", "url" :"https://www.matiks.com/profile/nikhilsahani"}
   ]' 
 />
 
