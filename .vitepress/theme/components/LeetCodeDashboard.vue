@@ -51,7 +51,6 @@ async function fetchDifficulty(problemIdentifier) {
 
     const problem = data[problemNumber] // now works even if input had leading zeros
 
-    // console.log(problem.difficulty)
     return problem?.difficulty || 'medium'
   } catch (err) {
     console.warn(`Could not fetch difficulty for ${problemIdentifier}:`, err)
@@ -166,11 +165,16 @@ const filteredTopics = computed(() => {
     return filteredProblems(problems).length > 0
   })
 
+  const stripEmoji = (str) =>
+    str
+      .replace(/[\p{Emoji}\p{Extended_Pictographic}\uFE0F\u200D]+/gu, '')
+      .trim()
+
   // Sort topics
   if (sortBy.value === 'name-asc') {
-    result.sort((a, b) => a[0].localeCompare(b[0]))
+    result.sort((a, b) => stripEmoji(a[0]).localeCompare(stripEmoji(b[0])))
   } else if (sortBy.value === 'name-desc') {
-    result.sort((a, b) => b[0].localeCompare(a[0]))
+    result.sort((a, b) => stripEmoji(b[0]).localeCompare(stripEmoji(a[0])))
   } else if (sortBy.value === 'count-asc') {
     result.sort(
       (a, b) => filteredProblems(a[1]).length - filteredProblems(b[1]).length,
@@ -180,7 +184,6 @@ const filteredTopics = computed(() => {
       (a, b) => filteredProblems(b[1]).length - filteredProblems(a[1]).length,
     )
   }
-
   return result
 })
 
