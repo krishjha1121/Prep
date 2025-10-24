@@ -93,4 +93,32 @@
   ]'
 />
 
+<ElectricCard
+  badge="CONTRIBUTOR"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761332667/Image_Personal_abjsy2.jpg"
+  title="Abhishekh Mishra"
+  role=" Coding Enthusiast"
+  description=""
+  :links='[
+    { "label": "GitHub", "url": "https://github.com/Abhishekhmishra0" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/abhishekh-mishra-81a655291/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/Abhishekh_Mishra/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/AbskMishra"},
+  ]'
+/>
+
+<ElectricCard
+  badge="CONTRIBUTOR"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761333166/IMG_6209_xwpbz8.jpg"
+  title="Astitwa Roy"
+  role=" CSE @NITS"
+  description=""
+  :links='[
+    { "label": "GitHub", "url": "https://github.com/astitwaroy" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/astitwa-roy-8a7656291/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/astitwaroyy/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/astitwaroy"},
+  ]'
+/>
+
 </div>
