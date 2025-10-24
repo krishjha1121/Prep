@@ -91,7 +91,35 @@ class Solution {
 <template #cpp>
 
 ```cpp
-// Add your C++ solution here
+class Solution {
+public:
+    bool isMatch(string s, string p) {
+        vector<vector<int>> dp(s.size(), vector<int>(p.size(), -1));
+        return solve(s, p, 0, 0, dp);
+    }
+    bool solve(string &s, string &p, int i, int j, vector<vector<int>> &dp) {
+        if(i >= s.size() && j >= p.size())
+            return true;
+        if(j >= p.size())
+            return false;
+        if(i < s.size() && dp[i][j] != -1)
+            return dp[i][j];
+        bool op1 = (i < s.size() && (s[i] == p[j] || p[j] == '.'));
+        if(j + 1 < p.size() && p[j + 1] == '*') {
+            bool op2 = solve(s, p, i, j + 2, dp) || (op1 && solve(s, p, i + 1, j, dp));
+            if(i < s.size())
+                dp[i][j] = op2;
+            return op2;
+        }
+        if(op1) {
+            dp[i][j] = solve(s, p, i + 1, j + 1, dp);
+            return dp[i][j];
+        }
+        if(i < s.size())
+            dp[i][j] = false;
+        return false;
+    }
+};
 ```
 
 </template>
