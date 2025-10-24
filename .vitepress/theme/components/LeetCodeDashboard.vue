@@ -39,36 +39,40 @@ function extractProblemNumber(link) {
   return null
 }
 
-async function fetchDifficulty(problemNumber) {
+async function fetchDifficulty(problemIdentifier) {
   try {
-    const query = `
-      query questionTitle($titleSlug: String!) {
-        question(titleSlug: $titleSlug) {
-          difficulty
-        }
-      }
-    `
+    const match = problemIdentifier.match(/^(\d+)-/)
+    if (!match) return 'medium' // fallback if format is wrong
 
-    const response = await fetch('https://leetcode.com/graphql', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query,
-        variables: { titleSlug: problemNumber },
-      }),
-    })
+    const problemNumber = parseInt(match[1], 10)
 
-    if (response.ok) {
-      const data = await response.json()
-      return data.data?.question?.difficulty?.toLowerCase() || 'medium'
-    }
-  } catch (e) {
-    console.warn(`Could not fetch difficulty for ${problemNumber}:`, e)
+    // Fetch local problems.json
+    const data = await fetch('/Prep/data/problems.json').then((r) => r.json())
+
+    const problem = data[problemNumber] // now works even if input had leading zeros
+
+    return problem?.difficulty || 'medium'
+  } catch (err) {
+    console.warn(`Could not fetch difficulty for ${problemIdentifier}:`, err)
+    return 'medium'
   }
-  return 'medium'
 }
 
-function parseMarkdown(mdText) {
+async function fetchAllProblemsData() {
+  try {
+    const res = await fetch('/Prep/data/problems.json')
+    if (!res.ok) {
+      res = await fetch('/data/problems.json')
+    }
+    return await res.json()
+  } catch (err) {
+    console.warn('Could not fetch problems.json:', err)
+    return {}
+  }
+}
+
+async function parseMarkdown(mdText) {
+  const data = await fetchAllProblemsData()
   const sections = mdText.split(/^##\s+/m).slice(1)
   const result = {}
 
@@ -79,40 +83,31 @@ function parseMarkdown(mdText) {
 
     for (const line of lines.slice(1)) {
       const m = line.match(/\[([^\]]+)\]\(([^)]+)\)/)
-      if (m) {
-        const name = m[1].trim()
-        const link = m[2].trim()
+      if (!m) continue
 
-        let difficulty = 'medium'
-        const lname = name.toLowerCase()
+      const name = m[1].trim()
+      const link = m[2].trim()
+      let difficulty = 'medium'
+      const lname = name.toLowerCase()
 
-        if (lname.includes('easy') || lname.match(/\beasy\b/i)) {
-          difficulty = 'easy'
-        } else if (lname.includes('hard') || lname.match(/\bhard\b/i)) {
-          difficulty = 'hard'
-        } else {
-          const problemNum = extractProblemNumber(link)
-          if (problemNum) {
-            const numInt = parseInt(problemNum)
-            if (numInt <= 500) {
-              difficulty =
-                numInt % 3 === 0 ? 'hard' : numInt % 3 === 1 ? 'easy' : 'medium'
-            } else if (numInt <= 1000) {
-              difficulty =
-                numInt % 3 === 0 ? 'easy' : numInt % 3 === 1 ? 'medium' : 'hard'
-            } else {
-              difficulty =
-                numInt % 4 === 0 ? 'hard' : numInt % 4 === 1 ? 'easy' : 'medium'
-            }
-          }
+      if (lname.includes('easy') || lname.match(/\beasy\b/i))
+        difficulty = 'easy'
+      else if (lname.includes('hard') || lname.match(/\bhard\b/i))
+        difficulty = 'hard'
+      else {
+        const problemNum = extractProblemNumber(link)
+        if (problemNum) {
+          const numInt = parseInt(problemNum)
+
+          const problemFromData = data[parseInt(problemNum, 10)]
+          if (problemFromData?.difficulty)
+            difficulty = problemFromData.difficulty
         }
-
-        problems.push({ name, link, difficulty })
       }
+      problems.push({ name, link, difficulty })
     }
     result[title || 'Untitled'] = problems
   }
-
   topics.value = result
 }
 
@@ -170,11 +165,16 @@ const filteredTopics = computed(() => {
     return filteredProblems(problems).length > 0
   })
 
+  const stripEmoji = (str) =>
+    str
+      .replace(/[\p{Emoji}\p{Extended_Pictographic}\uFE0F\u200D]+/gu, '')
+      .trim()
+
   // Sort topics
   if (sortBy.value === 'name-asc') {
-    result.sort((a, b) => a[0].localeCompare(b[0]))
+    result.sort((a, b) => stripEmoji(a[0]).localeCompare(stripEmoji(b[0])))
   } else if (sortBy.value === 'name-desc') {
-    result.sort((a, b) => b[0].localeCompare(a[0]))
+    result.sort((a, b) => stripEmoji(b[0]).localeCompare(stripEmoji(a[0])))
   } else if (sortBy.value === 'count-asc') {
     result.sort(
       (a, b) => filteredProblems(a[1]).length - filteredProblems(b[1]).length,
@@ -184,7 +184,6 @@ const filteredTopics = computed(() => {
       (a, b) => filteredProblems(b[1]).length - filteredProblems(a[1]).length,
     )
   }
-
   return result
 })
 
@@ -413,6 +412,7 @@ onMounted(loadMarkdown)
               target="_blank"
               >{{ p.name }}</a
             >
+
             <span class="difficulty" :class="p.difficulty">{{
               p.difficulty.charAt(0).toUpperCase() + p.difficulty.slice(1)
             }}</span>
@@ -587,14 +587,14 @@ onMounted(loadMarkdown)
 .lc-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   margin-top: 0.5rem;
   align-items: start;
 }
 
 @media (min-width: 1400px) {
   .lc-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr !important;
   }
 }
 

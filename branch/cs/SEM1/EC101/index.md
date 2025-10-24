@@ -25,7 +25,20 @@
   { name: 'EC LAB INPUT OUTPUT CHARACTERISTICS OF COMMON EMITTER TRANSISTOR', fileId: '1HqmJwnUW4BTqYcgr2hGkMjEaxlE9NlO2' },
   { name: 'EC', fileId: '1A2QXyihsuEdXjcifPi-_adB-hxDd99dR' },
   { name: 'Intro & Diodes', fileId: '1zmSZ40tBK2eRaYSV9fD_HLP8LT6TQn33' },
-  { name: 'Semiconductor Bangla', fileId: '10Qxr6kmdFN9id2e7FGowmFQqz8hOfveI' }
+  { name: 'Semiconductor Bangla', fileId: '10Qxr6kmdFN9id2e7FGowmFQqz8hOfveI' },
+  { name: 'Tutorial_Semiconductor Diodes || 2023', fileId: '1OGPiTUffiFHPSGZj1guUl78st1eaiyc5'},
+  { name: 'Adder and Multiplexer', fileId: '11ioaDgvrZPjaTaKUuwXFxMYSNYyZhTzh'},
+  { name: 'BJT', fileId: '11hqU-SWI515ZJSXEUAu5B-iDWhMBUuc6'},
+  { name: 'Boolean Algebra', fileId: '11mNeK9jAnVz0y552vrWKFLIv1qbrjJnf'},
+  { name: 'Operational Amplifiers', fileId: '136hB4xlEz4dNvg7j2VcprKLniuKWBA71'},
+  { name: 'K-Map_organized', fileId: '11n6tbzO9yHWtHmK-TCQOOthpAzyokchf'},
+  { name: 'Module-2A_Semiconductor Diodes_13 Sept 2023', fileId: '1J3f1MmOB2C6d5EnrQLIa_6lMC7gYjJ36'},
+  { name: 'Module-2B_Diode Applications_Clamper Circuits.pptx', fileId: '1jsoL_z4QBQuJFCAMXmUzPEsDF5JsgVHl'},
+  { name: 'Module-2B_Diode Applications_Clipper Circuits.pptx', fileId: '1jpeJhwBCb7grRP5kNZUN2MdfXdzbp_8g'},
+  { name: 'Module-2B_Diode Applications_Zener Diodes', fileId: '1WKCcjjITCOt9H8ddSVzktNQVfoW4gdxs'},
+  { name: 'Module-2B_Diode Rectifiers_13 Sept 2023', fileId: '1J-AXrCJa0_17FikQftajfH4pVZG102Xi'},
+  { name: 'Module-2B_Rectifier with Filter', fileId: '1WIyAoJxxydujGL0fwPKKMiL-2M5qwMEB'},
+  { name: 'op amp Ec note Handwritten', fileId: '124-UOHz_l53UF-iqoL777cKC0tPJ0khs'}
 ]" />
 
 </div>

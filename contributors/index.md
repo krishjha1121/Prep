@@ -50,33 +50,37 @@
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699084/kanika_a0irao.png"   
   title="Kanika punia"
-  role="Lead Developer"
-  description="Founder and Vue expert."
+  role="Between Syntax error and success!"
+  description="From searching to riding innovation."
   :links='[
-    { "label": "GitHub", "url": "https://github.com/john" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/john" },
-    { "label": "Leetcode", "url": "mailto:john@example.com" }
+    { "label": "GitHub", "url": "https://github.com/KanikaPunia119" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kanika-punia-5b15a5210/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/Kanika_Punia/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/kanika119"},
+    { "label" : "monkeytype", "url" : "https://monkeytype.com/profile/kanika119"} 
   ]'
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
-  title="Nikhil sahani"
-  role="Lead Developer"
-  description="Founder and Vue expert."
+  title="Nikhil Sahani"
+  role="CSE @NITS"
+  description="Dream it. Believe it. Build it."
   :links='[
-    { "label": "GitHub", "url": "https://github.com/john" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/john" },
-    { "label": "Leetcode", "url": "mailto:john@example.com" }
-  ]'
+    { "label": "GitHub", "url": "https://github.com/nikhilsenju" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/nikhil-sahani-153947257/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/NICK_EL_03/" },
+    { "label": "MonkeyType", "url" :"https://monkeytype.com/profile/NICK_EL_03"},
+    { "label": "Codeforces", "url" :"https://codeforces.com/profile/KRISHN-ick"},
+  ]' 
 />
 
 <ElectricCard
-  badge="Contributor"
+  badge="Collaborator"
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699086/anil_sjtzyd.jpg"
   title="Anil Kumar"
   role=" Developer "
@@ -84,7 +88,36 @@
   :links='[
     { "label": "GitHub", "url": "https://github.com/Aniljangir89" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/anil-kumar-364b7b280" },
-    { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" }
+    { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" },
+    { "label": "monkeytype", "url": "https://monkeytype.com/profile/Aniljangir89" }
+  ]'
+/>
+
+<ElectricCard
+  badge="CONTRIBUTOR"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761332667/Image_Personal_abjsy2.jpg"
+  title="Abhishekh Mishra"
+  role=" Coding Enthusiast"
+  description=""
+  :links='[
+    { "label": "GitHub", "url": "https://github.com/Abhishekhmishra0" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/abhishekh-mishra-81a655291/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/Abhishekh_Mishra/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/AbskMishra"},
+  ]'
+/>
+
+<ElectricCard
+  badge="CONTRIBUTOR"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761333166/IMG_6209_xwpbz8.jpg"
+  title="Astitwa Roy"
+  role=" CSE @NITS"
+  description=""
+  :links='[
+    { "label": "GitHub", "url": "https://github.com/astitwaroy" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/astitwa-roy-8a7656291/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/astitwaroyy/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/astitwaroy"},
   ]'
 />
 

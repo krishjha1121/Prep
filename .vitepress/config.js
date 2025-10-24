@@ -53,7 +53,8 @@ export default withMermaid(
 						},
 					],
 				},
-				{ text: "🛠 LLD", link: "/LLD/" },
+				// { text: "🛠 LLD", link: "/LLD/" },
+				{ text: "👔 Interview Exp", link: "/Interview/" },
 				{ text: "👥 Contributors", link: "/contributors/" },
 			],
 
