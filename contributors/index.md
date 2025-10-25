@@ -29,7 +29,7 @@
 }
 </style>
 
-# Contributors
+# Contributors: Who turned ideas into reality
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin: 2rem auto; max-width: 900px;">
 

@@ -1,6 +1,7 @@
-# Low Level Design
+# Low Level Design: The Blueprint of Scalable Systems
 
-Master system design fundamentals, SOLID principles, and design patterns.
+🚀 Design smarter: learn how great code is built from the ground up.
+> Dive deep into object-oriented principles, master SOLID design, and apply real-world patterns to craft systems that are clean, scalable, and easy to maintain.
 
 ## Learning Path
 
