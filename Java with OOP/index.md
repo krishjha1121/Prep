@@ -2,9 +2,15 @@
 layout: home
 
 hero:
+<<<<<<< Updated upstream
     name: 'Decode Java'
     text: 'Turn Coffee into Code -> Master the Art of Java'
     tagline: OOPS, Exception Handling, MulthThreading, Garbage Collection, and More
+=======
+    name: 'Java'
+    text: 'Complete Java Programming and Object-Oriented Concepts'
+    tagline: OOPS, Exception Handling, MultiThreading, Garbage Collection, and More
+>>>>>>> Stashed changes
 
 features:
     - icon: 🧱
