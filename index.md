@@ -3,7 +3,7 @@ layout: home
 
 hero:
     name: 'Prep Notes'
-    text: 'Complete CS Preparation'
+    text: 'All-in-One Hub to Master Computer Science'
     tagline: DSA, System Design, OS, DBMS, Networks & More
     actions:
         - theme: brand
