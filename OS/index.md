@@ -1,13 +1,13 @@
-🧑‍💻 **Author:** RK ROY
+<div align = "center">
 
-[Download Full Notes PDF](./OS_Full_Notes.pdf)
+## ⚙️ Operating System
 
-<div align = "center"> <h1 style = "color:purple"> 🖥️ Operating System</h1></div>
+</div>
 
 - Operating system is a system software that acts as an interface between user and computer's hardware.
 - A resource manager.
 
-# 🔑Key functions of os
+### 🔑 Key functions of os
 
 - Process Management – Manages execution of multiple processes (multitasking).
 - Memory Management – Allocates and deallocates memory space as needed.
@@ -16,20 +16,41 @@
 - Security and Access Control – Ensures authorized access to data and resources.
 - User Interface – Provides interfaces like CLI (Command Line Interface) or GUI (Graphical User Interface).
 
-<div align="center"> 
-    <img src = "./pic/os.png" width = "500" height = "500">
-</div>
+```mermaid
+graph TD
+    A[User Applications] --> B[System Calls Interface]
+    B --> C[Operating System Kernel]
 
-# 📚 Goals of os
+    C --> D[Process Management]
+    C --> E[Memory Management]
+    C --> F[File System Management]
+    C --> G[I/O Management]
+    C --> H[Device Drivers]
+
+    D --> I[Hardware Layer]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J[CPU]
+    I --> K[Memory/RAM]
+    I --> L[Storage Devices]
+    I --> M[I/O Devices]
+```
+
+### 📚 Goals of Operating Systems
 
 - Convenient to Use
 - Efficient Resource management
 - provide security and protection
 - To enable multitasking and multiprogramming
 
-<br>
+<div align = "center">
 
-<div align = "center"> <h1  style="color:purple"> 🥷 Types of OS </h1></div>
+## 🥷 Types of OS
+
+</div>
 
 - Single process operating system
 - Batch-processing operating system
@@ -39,27 +60,45 @@
 - Distributed system
 - Real time OS
 
-# 📚 Single process os
+### 📚 Single process os
 
 - A single-process operating system, specifically a single-user single-tasking operating system, allows only one process (or program) to be executed at a time by a single user
 
-## Advantages
+### Advantages
 
 - Occupies less space in memory
 - Easy to maintain
 - Less chance of damage
 
-## Disadvantages
+### Disadvantages
 
 - It can perform only a single task at a time.
 - Tasks take longer to complete.
 - os remains idle for most of the time and is not utilized to its maximum.
 
-<div align = "center"> 
-    <img src = "./pic/singleProcessOs.png" width = "600" height = "400" style = "border-radius: 15px;">
+<div align = "center">
+
+```mermaid
+graph TD
+    A[Single User<br/>Single Tasking]
+    B[PROS]
+    C[CONS]
+    D[Only one task<br/>open at a time]
+    E[Example: Android, IOS]
+
+    B --> A
+    A --> D
+    A --> C
+    C --> E
+
+    B -.->|Features| F[• Loads quicker<br/>than multitasking OS]
+    A -.->|Characteristics| G[• Only one user can use at a time]
+    C -.->|Limitations| H[• Only one program is useable at a time]
+```
+
 </div>
 
-# 📚 Batch processing os
+### 📚 Batch processing os
 
 - A batch processing operating system is an operating system that is designed to perform multiple tasks in a sequential manner.
 - Firstly, user prepares his job using punch cards.
@@ -69,12 +108,12 @@
 - Then, operator submits the batches to the processor one by one.
 - All the jobs of one batch are executed together.
 
-## Advantages
+### Advantages
 
 - It can perform multiple tasks at a time.
 - It can perform tasks faster than a single-process operating system.
 
-## Disadvantages
+### Disadvantages
 
 - Priorities cannot be set, if a job comes with some higher priority.
 - May lead to starvation. (A batch may take more time to complete)
@@ -84,7 +123,7 @@
     <img src = "./pic/batchOs.png" width = "600" height = "350" style = "border-radius: 15px;">
 </div>
 
-# 📚 Multiprogramming os
+### 📚 Multiprogramming os
 
 - Multiprogramming increases CPU utilization by keeping multiple jobs (code and data)
   in the memory so that the CPU always has one to execute in case some job gets busy with
@@ -94,7 +133,7 @@
     - Switch happens when current process goes to wait state.
     - CPU idle time reduced.
 
-# 📚 Multitasking os
+### 📚 Multitasking os
 
 - Multitasking is a logical extension of multiprogramming.
     - Single CPU.
@@ -102,7 +141,7 @@
     - context switching and time sharing is used.
     - CPU idle time is further reduced.
 
-# 📚 Multi-processing os
+### 📚 Multi-processing os
 
 - More than one CPUs in a single computer.
     - Increases reliability, 1 cpu fails, other can work.
@@ -111,7 +150,7 @@
       working on some process, other can be
       executed on other CPU)
 
-# 📚 Distributed os
+### 📚 Distributed os
 
 - A Distributed Operating System is an OS that manages a collection of independent computers (nodes) and makes them appear to the user as a single coherent system.
     - Each node has its own processor and memory.
@@ -136,7 +175,7 @@
     - Security (data is spread across many nodes).
     - Communication overhead (network delays, message passing).
 
-# 📚 RTOS
+### 📚 RTOS
 
 - Real time error free, computations
   within tight-time boundaries.
@@ -144,21 +183,17 @@
 - Eg--> FreeRTOS, NuttX, Contiki, TinyOS, VxWorks, etc.
 - RTOS is like a strict teacher 👩‍🏫 who ensures every student (task) speaks exactly on time, never late. A general OS is like a friendly teacher who tries to give everyone equal chance, but doesn’t mind small delays.
 
-<br>
+## 📖 Multi-Tasking and Multi-Threading
 
-<div align = "center"> 
-    <h1 style = "color:purple"> 📖 Multi-Tasking and Multi-Threading </h1>
-</div>
-
-# 📨 Program
+### 📨 Program
 
 A program is a set of instructions written in a programming language to perform a specific task.
 
-# 📨 Process
+### 📨 Process
 
 A process is an active instance of a program in execution.
 
-# 📨 Thread
+### 📨 Thread
 
 A thread is the smallest unit of execution within a process.
 
@@ -168,11 +203,11 @@ A thread is the smallest unit of execution within a process.
 | Concept of more than 1 processes being context switched.                                                                      | Concept of more than 1 thread. Threads are context switche                                                                                                                                                               |
 | Isolation and memory protection exists. OS must allocate separate memory and resources to each program that CPU is executing. | No isolation and memory protection, resources are shared among threads of that process. OS allocates memory to a process; multiple threads of that process share the same memory and resources allocated to the process. |
 
-# 📘 Thread Scheduling
+## 📘 Thread Scheduling
 
 - Threads are scheduled for execution based on their priority.
 
-## Difference between Thread Context Switching and Process Context Switching:
+### Difference between Thread Context Switching and Process Context Switching:
 
 | Thread context switching                                                                                  | Process context switching                                                               |
 | :-------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
@@ -181,17 +216,17 @@ A thread is the smallest unit of execution within a process.
 | Fast Switching                                                                                            | Slow Switching                                                                          |
 | CPU’s cache state is preserved.                                                                           | CPU’s cache state is flushed.                                                           |
 
-## Context Switching
+### Context Switching
 
 - Context Switching is the process of storing the state of a currently running process or thread, so that it can be resumed later, and loading the state of another process or thread to start or resume its execution.
 
-## 🧠 Why is Context Switching needed?
+### 🧠 Why is Context Switching needed?
 
 - To implement multitasking or multithreading.
 - To ensure fair CPU time among all active processes/threads.
 - To allow the OS to switch between user applications and system tasks.
 
-## 🔍 Example:
+### 🔍 Example:
 
 Suppose Process A is running and its time slice ends. The OS:
 
@@ -199,24 +234,26 @@ Suppose Process A is running and its time slice ends. The OS:
 - Loads context of Process B from B’s PCB.
 - CPU resumes execution of Process B.
 
-<br>
+<div align = "center">
 
-<div align = "center"> <h1 style = "color:purple"> 🖥️ Components of OS </h1></div>
+## 🖥️ Components of OS
 
-# 🎰 Kernel
+</div>
+
+### 🎰 Kernel
 
 - A kernel is that part of the operating system which interacts directly with
   the hardware and performs the most crucial tasks
     - Heart of OS/Core component
     - very first part of OS to load on start-up
 
-# 👨‍🦲 User space
+### 👨‍🦲 User space
 
 - Where application software runs, apps don’t have privileged access to the
   underlying hardware. It interacts with kernel.
     - GUI, CLI, etc.
 
-# 📳 User Mode V/S Kernel Mode
+### 📳 User Mode V/S Kernel Mode
 
 - User Mode
     - The CPU executes application code.
@@ -230,44 +267,46 @@ Suppose Process A is running and its time slice ends. The OS:
 
 - 🧠 Example
 
-    ```C
-    #include<unistd.h>
-    #include<stdio.h>
-    int main() {
-        int a, b, c;
-        a = 1;
-        fork();
-        system("Hi");
-        return 0;
-    }
-    ```
+```C
+#include<unistd.h>
+#include<stdio.h>
+int main() {
+    int a, b, c;
+    a = 1;
+    fork();
+    system("Hi");
+    return 0;
+}
+```
 
-    - First line of code is in a user mode.
-    - Second line of code is in a user mode.
-    - Third line of code is in a kernel mode.
-        - when third line gets executed, the CPU switches to kernel mode.
-        - The CPU executes the system call.
-        - It creates a new process and copies all the instructions in the program and starts executing them from next instructions after fork().
-        - when its done, it returns to the previous process and start executing from the next instructions from fork().
-    - If we have N forks() we will be creating $2^N$ processes in total including the first process.
+- First line of code is in a user mode.
+- Second line of code is in a user mode.
+- Third line of code is in a kernel mode.
+    - when third line gets executed, the CPU switches to kernel mode.
+    - The CPU executes the system call.
+    - It creates a new process and copies all the instructions in the program and starts executing them from next instructions after fork().
+    - when its done, it returns to the previous process and start executing from the next instructions from fork().
+- If we have N forks() we will be creating 2<sup>N</sup> processes in total including the first process.
 
-<div align = "center"> 
+<div align = "center">
+
 <img src = "./pic/fork.png" width = "700" height = "400" style = "border-radius: 15px;">
+
 </div>
 
-# 👩‍💻 Shell
+### 👩‍💻 Shell
 
 - A shell, also known as a command interpreter, is that part of the operating system that receives
   commands from the users and gets them executed.
 
-# 📚 Functions of Kernel
+### 📚 Functions of Kernel
 
 - Process Management
 - Memory Management
 - File Management
 - I/O Management
 
-# 🌐 Types of Kernel
+### 🌐 Types of Kernel
 
 - Monolithic Kernel
     - All functions are in kernel itself.
@@ -298,9 +337,11 @@ Suppose Process A is running and its time slice ends. The OS:
 
 - Nano/Exo kernels
 
-<br>
+<div align = "center">
 
-<div align = "center"> <h1 style = "color:purple"> 📲 System Calls</h1></div>
+## 📲 System Calls
+
+</div>
 
 - How does apps interacts with kernel ?
     - using system calls.
@@ -309,6 +350,7 @@ Suppose Process A is running and its time slice ends. The OS:
 - System Calls are the only way through which a process can go into kernel mode from user mode.
 
 <div align = "center">
+
 - Examples of windows and unix system calls
 
 | Category          |                                  windows                                   |                     unix                     |
@@ -320,7 +362,7 @@ Suppose Process A is running and its time slice ends. The OS:
 
 </div>
 
-# 🧠 What happens when you turn on your computer ?
+### 🧠 What happens when you turn on your computer ?
 
 - PC On
 - CPU initializes itself and looks for a firmware program (BIOS) stored in
@@ -358,9 +400,11 @@ Suppose Process A is running and its time slice ends. The OS:
   uses a bootloader named Windows Boot Manager (Bootmgr.exe), most
   Linux systems use GRUB, and Macs use something called boot.efi
 
-<br>
+<div align = "center">
 
-<div align = "center"> <h1 style = "color:purple"> 📚 Process </h1></div>
+## 🔯 Process
+
+</div>
 
 - A process is an active instance of a program in execution.
 
@@ -390,9 +434,9 @@ Suppose Process A is running and its time slice ends. The OS:
 - PCB : Stores all the information about the process.
     - Stores information of a process such as process id, program counter, process state, priority, etc.
 
-<div align = "center">
+### 🖥️ Process Control Block (PCB Diagram)
 
-🖥️ Process Control Block (PCB Diagram)
+<div align = "center">
 
 | **Field**                  | **Description**                                   |
 | -------------------------- | ------------------------------------------------- |
@@ -407,44 +451,47 @@ Suppose Process A is running and its time slice ends. The OS:
 
 </div>
 
-- Process States
-    - As Process executes, it changes its state. Each Process may be in one of the following states
-        - New : OS is about to pick the program & convert it into process. OR the process is being created and we allocate the resrouces.
-        - Run : Instructions are being executed. CPU is Allocated.
-        - Waiting : Waiting for IO.
-        - Ready : The process is in memory and waiting to be executed.
-        - Terminated : The process has finished execution.
+### 🔯 Process States
+
+- As Process executes, it changes its state. Each Process may be in one of the following states
+- New : OS is about to pick the program & convert it into process. OR the process is being created and we allocate the resrouces.
+- Run : Instructions are being executed. CPU is Allocated.
+- Waiting : Waiting for IO.
+- Ready : The process is in memory and waiting to be executed.
+- Terminated : The process has finished execution.
 
 <div align = "center"> <img src = "./pic/process_states.png" width = "700" height = "400" style = "border-radius: 15px;"> </div>
 
-# 📖 Swapping
+## 📖 Swapping
 
 - Swapping is a mechanism in which a process can be swapped temporarily out of main memory (or move) to secondary storage (disk) and make that memory available to other processes. At some
   later time, the system swaps back the process from the secondary storage to the main memory.
 
 <div align = "center"> <img src = "./pic/swapping.png" width = "600" height = "450" style = "border-radius: 15px;"> </div>
 
-# 📖 Context Switching
+### 📖 Context Switching
 
 - Switching the CPU to another process requires performing a state save of the current process and a state restore of a different process.
 - When this occurs, the kernel saves the context of the old process in its PCB and loads the saved context of the new process schedule to run.
 
-# 📖 Orphan Process
+### 📖 Orphan Process
 
 - The process whose parent process has been terminated and it is still running.
 - Orphan processes are adopted by init process.
 - init is the first process of OS.
 
-# 📖 Zombie Process / Defunct Process
+### 📖 Zombie Process / Defunct Process
 
 - A zombie process is a process whose execution is completed but it still has an entry in the process table.
 - Zombie processes usually occur for child processes, as the parent process still needs to read its child’s exit status. Once this is done using the wait system call, the zombie process is eliminated from the process table. This is known as reaping the zombie process.
 - It is because parent process may call wait () on child process for a longer time duration and child process got terminated much earlier.
 - As entry in the process table can only be removed, after the parent process reads the exit status of child process. Hence, the child process remains a zombie till it is removed from the process table.
 
-<br>
+<div align = "center">
 
-<div align = "center"> <h1 style = "color:purple"> 🚸 Process Scheduling </h1> </div>
+## 🚸 Process Scheduling
+
+</div>
 
 - Process Scheduling is the method by which an operating system decides which process in the ready queue should be executed next by the CPU. The goal is to maximize CPU utilization and system responsiveness while ensuring fairness among processes.
 
@@ -491,10 +538,9 @@ Suppose Process A is running and its time slice ends. The OS:
 <img src = "./pic/convoyEffect.png"  style = "border-radius: 15px;">
 </div>
 
-<br>
-
 <div align = "center">
-    <h1 style = "color:purple"> 📖 Inter Process Communication and Synchronization </h1>
+
+## 👨‍💼 Inter Process Communication and Synchronization
 
 </div>
 
@@ -768,18 +814,22 @@ int main() {
 
 <br>
 
-<div align = "center"><h1 style = "color:purple"> 🔏 Critical Section </h1> </div>
+<div align = "center">
+
+## 🔏 Critical Section
+
+</div>
 
 - Proces Synchronization techniques play a key role in maintaining the consistency of shared data.
 
-# 📚 Critical Section
+### 📚 Critical Section
 
 - The critical section refers to the segment of code where processes/threads
   access shared resources, such as common variables and files, and perform
   write operations on them. Since processes/threads execute concurrently, any
   process can be interrupted mid-execution.
 
-# 📖 Race Condition
+### 📖 Race Condition
 
 - A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
 
@@ -795,7 +845,7 @@ int main() {
             - Starvation of high priority threads.
             - Contention : one thread has acquired the lock, other thread will be busy waiting, what if thread that had acquired the lock dies, then all other threads will be in infinite waiting.
 
-# 📖 Mututal Exclusion
+### 📖 Mututal Exclusion
 
 - Mutual Exclusion ensures that only one process or thread can access a critical section (shared resource) at a time. This prevents race conditions, data inconsistency, and unexpected behavior.
 
@@ -833,7 +883,11 @@ int main() {
 }
 ```
 
-# 📖 Semaphores
+<div align = "center">
+    
+## 📖 Semaphores
+
+</div>
 
 - A semaphore is a synchronization tool used to control access to shared resources in a concurrent system like a multitasking OS.
 
@@ -1009,7 +1063,11 @@ int main() {
 
 <br>
 
-<div align = "center"><h1 style = "color:purple"> ㊙️ Introduction to concurrency </h1> </div>
+<div align = "center">
+
+## ㊙️ Introduction to concurrency
+
+</div>
 
 - Concurrency in Operating System refers to the ability of the system to execute multiple tasks or processes at the same time improving resource utilization and system efficiency.
 
@@ -1077,45 +1135,51 @@ int main() {
 - If graph contains a cycle → if only one instance per resource type, then deadlock.
   if several instances per resource type, possibility of deadlock
 
-- # ❕Necessary Conditions for deadlock
-    - A deadlock can occur only if all four conditions hold simultaneously:
-        - Mututal Exclusion :
-            - if there exist a deadlock that means, there exist a critical section and shared resources(cpu, variables, semaphores) concept being used between two processes or threads.
-        - Hold and wait :
-            - A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
-        - No Preemption :
-            - A resource cannot be forcibly taken away; it must be released voluntarily.
-        - Circular wait :
-            - A closed chain of processes exists, where each process is waiting for a resource held by the next.
+### ❕Necessary Conditions for deadlock
 
-- # 🔑 Deadlock Prevention
-    - By ensuring at least one of the necessary conditions cannot hold.
-        - Mututal Exclusion
-            - Try to avoid resource sharing between processes meaning not having a critical section (which is almost not possible).
+- A deadlock can occur only if all four conditions hold simultaneously:
+    - Mututal Exclusion :
+        - if there exist a deadlock that means, there exist a critical section and shared resources(cpu, variables, semaphores) concept being used between two processes or threads.
+    - Hold and wait :
+        - A process must be holding at least one resource & waiting to acquire additional resources that are currently being held by other processes.
+    - No Preemption :
+        - A resource cannot be forcibly taken away; it must be released voluntarily.
+    - Circular wait :
+        - A closed chain of processes exists, where each process is waiting for a resource held by the next.
 
-        - Preemption
-            - Allow the OS to forcibly take resources.
-                - forcefull preemption.
-                - self preemption.
-            - We can use the concept of priority to achieve it.
-            - Starvation Problem
+### 🔑 Deadlock Prevention
 
-        - Circular Wait
-            - Impose ordering on resources (e.g., request in increasing order).
-            - Every process will request the resoures in inreasing order of the resource id.
-            - Starvation Problem.
-        - Hold and Wait
-            - Let a process request all the resources it needs, let's say it needs r1, r2, r3, and just in case if any of the resources are not available, then don't allocate any of the resources(r1, r2, r3) to the current process.
-            - if process request ri and if all the previously allocated id of rp is less than id of ri we will allocat it, but if not we will release all the rp whose id > id of ri and will request them in future.
-            - Starvation Problem.
+- By ensuring at least one of the necessary conditions cannot hold.
+    - Mututal Exclusion
+        - Try to avoid resource sharing between processes meaning not having a critical section (which is almost not possible).
 
-- # 🚷 Deadlock Avoidance
+    - Preemption
+        - Allow the OS to forcibly take resources.
+            - forcefull preemption.
+            - self preemption.
+        - We can use the concept of priority to achieve it.
+        - Starvation Problem
+
+    - Circular Wait
+        - Impose ordering on resources (e.g., request in increasing order).
+        - Every process will request the resoures in inreasing order of the resource id.
+        - Starvation Problem.
+    - Hold and Wait
+        - Let a process request all the resources it needs, let's say it needs r1, r2, r3, and just in case if any of the resources are not available, then don't allocate any of the resources(r1, r2, r3) to the current process.
+        - if process request ri and if all the previously allocated id of rp is less than id of ri we will allocat it, but if not we will release all the rp whose id > id of ri and will request them in future.
+        - Starvation Problem.
+
+### 🚷 Deadlock Avoidance
 
 - Deadlock avoidance is a technique in operating systems used to dynamically decide whether it is safe to allocate a requested resource to a process, before doing so — ensuring the system never enters an unsafe (potentially deadlocked) state.
 
 - Banker's Algorithm: Deadlock avoidance algorithm that uses a banker's queue to ensure that a process is not starved of resources.
 
-<div align = "center"> <h1 style = "color:purple"> 💀 Banker's Algorithm (Deadlock Avoidance Algorithm)</h1> </div>
+<div align = "center">
+
+## 💀 Banker's Algorithm (Deadlock Avoidance Algorithm)
+
+</div>
 
 - Banker's Algorithm is a resource allocation and deadlock avoidance algorithm used in operating systems. It ensures that a system remains in a safe state by carefully allocating resources to processes while avoiding unsafe states that could lead to deadlocks.
 
@@ -1223,10 +1287,10 @@ class Banker {
 }
 ```
 
-<br>
-
 <div align = "center"> 
-    <h1 style = "color:purple"> ♏ Multi-Threading </h1>
+    
+## ♏ Multi-Threading
+
 </div>
 
 - Multithreading is a feature in operating systems that allows a program to do several tasks at the same time. Think of it like having multiple hands working together to complete different parts of a job faster. Each "hand" is called a thread, and they help make programs run more efficiently.
@@ -1255,11 +1319,15 @@ class Banker {
     - 📈 Scalability – Effective use of multi-core processors for parallel execution.
 
 <br> 
-<div align = "center"> <h1 style = "color:purple"> 👨‍🏭 Memory Management </h1> </div>
+<div align = "center">
+
+## 👨‍🏭 Memory Management
+
+</div>
 
 - Memory is a hardware component that stores data, instructions and information temporarily or permanently for processing. It consists of an array of bytes or words, each with a unique address.
 
-# 📚 Static and Dynamic Loading
+### 📚 Static and Dynamic Loading
 
 - Static loading
     - Static Loading is basically loading the entire program into a fixed address. It requires more memory space.
@@ -1271,7 +1339,7 @@ class Banker {
     - Speed of execution is slower than static loading.
     - Efficient use of memory since we are loading only the modules that are needed.
 
-# 📚 Logical and Physical Address
+### 📚 Logical and Physical Address
 
 - Logical Address
     - An address generated by the CPU.
@@ -1299,7 +1367,7 @@ class Banker {
     - To proper utilization of main memory.
     - To maintain data integrity while executing of process.
 
-# 📚 Memory Management Techniques
+### 📚 Memory Management Techniques
 
 - Memory management techniques are methods used by an operating system to efficiently allocate, utilize, and manage memory resources for processes.
 
@@ -1377,7 +1445,7 @@ class Banker {
         - Each process is divided into a number of segments, all of which are loaded into memory at run time, though not necessarily contiguously.
     - <p style = "color:orange"> Segment Table</p>
        
-       - It maps a two-dimensional Logical address into a one-dimensional Physical address. It's each table entry has:
+    - It maps a two-dimensional Logical address into a one-dimensional Physical address. It's each table entry has:
             - Base Address :  It contains the starting physical address where the segments reside in memory. 
             - Segment Limit: Also known as segment offset. It specifies the length of the segment.
     - <p style = "color:orange"> Advantages </p>
@@ -1391,7 +1459,13 @@ class Banker {
         - Complexity
         - Overhead is associated with keeping a segment table for each activity.
 
-<div align = "center"> <h1 style = "color:purple"> 🖥️ Virtual Memory </h1> </div>
+<br>
+
+<div align = "center">
+
+## 🖥️ Virtual Memory
+
+</div>
 
 - Virtual memory is a memory management technique used by operating systems to give the appearance of a large, continuous block of memory to applications, even if the physical memory (RAM) is limited. It allows larger applications to run on systems with less RAM.
 

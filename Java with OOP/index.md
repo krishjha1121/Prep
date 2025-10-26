@@ -4,7 +4,7 @@ layout: home
 hero:
     name: 'Java'
     text: 'Complete Java Programming and Object-Oriented Concepts'
-    tagline: OOPS, Exception Handling, MulthThreading, Garbage Collection, and More
+    tagline: OOPS, Exception Handling, MultiThreading, Garbage Collection, and More
 
 features:
     - icon: 🧱

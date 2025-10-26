@@ -29,7 +29,7 @@
 }
 </style>
 
-# Contributors
+# Contributors: Who turned ideas into reality
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin: 2rem auto; max-width: 900px;">
 
@@ -69,14 +69,13 @@
   image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1760699082/nikhil_uguiec.jpg"
   title="Nikhil Sahani"
   role="CSE @NITS"
-  description="Even in the darkest code, there’s always a closing tag of hope."
+  description="Dream it. Believe it. Build it."
   :links='[
     { "label": "GitHub", "url": "https://github.com/nikhilsenju" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/nikhil-sahani-153947257/" },
     { "label": "Leetcode", "url": "https://leetcode.com/u/NICK_EL_03/" },
     { "label": "MonkeyType", "url" :"https://monkeytype.com/profile/NICK_EL_03"},
     { "label": "Codeforces", "url" :"https://codeforces.com/profile/KRISHN-ick"},
-    { "label": "Matiks", "url" :"https://www.matiks.com/profile/nikhilsahani"}
   ]' 
 />
 
@@ -91,6 +90,34 @@
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/anil-kumar-364b7b280" },
     { "label": "Leetcode", "url": "https://leetcode.com/u/anilkumar89" },
     { "label": "monkeytype", "url": "https://monkeytype.com/profile/Aniljangir89" }
+  ]'
+/>
+
+<ElectricCard
+  badge="CONTRIBUTOR"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761332667/Image_Personal_abjsy2.jpg"
+  title="Abhishekh Mishra"
+  role=" Coding Enthusiast"
+  description=""
+  :links='[
+    { "label": "GitHub", "url": "https://github.com/Abhishekhmishra0" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/abhishekh-mishra-81a655291/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/Abhishekh_Mishra/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/AbskMishra"},
+  ]'
+/>
+
+<ElectricCard
+  badge="CONTRIBUTOR"
+  image="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761333166/IMG_6209_xwpbz8.jpg"
+  title="Astitwa Roy"
+  role=" CSE @NITS"
+  description=""
+  :links='[
+    { "label": "GitHub", "url": "https://github.com/astitwaroy" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/astitwa-roy-8a7656291/" },
+    { "label": "Leetcode", "url": "https://leetcode.com/u/astitwaroyy/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/astitwaroy"},
   ]'
 />
 

@@ -1014,6 +1014,7 @@ Leetcode Solutions
 | [3649-minimum-time-to-break-locks-i](./3649-minimum-time-to-break-locks-i)                                                             |
 | [3677-maximum-amount-of-money-robot-can-earn](./3677-maximum-amount-of-money-robot-can-earn)                                           |
 | [3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences](./3714-maximum-and-minimum-sums-of-at-most-size-k-subsequences)         |
+| [4069-count-ways-to-choose-coprime-integers-from-rows](./4069-count-ways-to-choose-coprime-integers-from-rows)                         |
 
 ## 🥁 Stack
 
@@ -1261,6 +1262,7 @@ Leetcode Solutions
 | [3445-lexicographically-minimum-string-after-removing-stars](./3445-lexicographically-minimum-string-after-removing-stars)               |
 | [3741-reschedule-meetings-for-maximum-free-time-ii](./3741-reschedule-meetings-for-maximum-free-time-ii)                                 |
 | [3743-reschedule-meetings-for-maximum-free-time-i](./3743-reschedule-meetings-for-maximum-free-time-i)                                   |
+| [4042-minimum-operations-to-transform-array](./4042-minimum-operations-to-transform-array)                                               |
 
 ## 🔯 Data Stream
 
